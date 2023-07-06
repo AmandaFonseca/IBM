@@ -406,11 +406,14 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 					}
 					self.ui.show("WorkExecution.WorkItemsView");				
 				}
+				let retorno;
 				if(newStatus == "PLANEJAR"){
 					if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Sim") && (pd_inspquestion03 == null) 
 					&& (pd_inspquestion01 != "") && (pd_inspquestion02 != "")
 					&& (pd_inspdate != null) && (ms_inspector !=null) && (pd_inspdate != "") && (ms_inspector !="")){
+
 						ModelService.save(recordSet).then(function(woSet){
+							retorno = 200;
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 							self.initEditStatusViewCustom(recordSet,statusChange);
