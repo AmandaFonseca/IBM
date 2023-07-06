@@ -54,8 +54,8 @@
 			</requiredResources>
 			<container cssClass="loginForm" id="platform.LoginView_container_0">
 				<!--<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/app_icon_main.svg" cssClass="productLogo"/>-->
-				<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZInsp_H.svg"/>
-				<!-- <image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_Insp.svg"/>-->
+				 <image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZInsp_H.svg"/>
+				<!--<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_Insp.svg"/>-->
  				<!--<text cssClass="productName" editable="false" id="platform.LoginView_container_0_appName" resourceAttribute="appName"/>-->  
 				<text cssClass="errorMsg" editable="false" id="platform.LoginView_container_0_errorMsg" resourceAttribute="errorMsg"/>
 				 <!-- If you want device-side SSO comment out this view -->	
@@ -102,7 +102,7 @@
 					</eventHandlers>
 				</link>
 				
-				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2906231600H"/>
+				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2706231700H"/>
 
 								
 			</container>

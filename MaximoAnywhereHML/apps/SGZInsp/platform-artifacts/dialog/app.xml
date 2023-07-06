@@ -581,7 +581,7 @@
 			</container>
 		</dialog>
 		
-		<dialog id="Platform.ExitApplicationPrompt">
+		<!--<dialog id="Platform.ExitApplicationPrompt">
 			<container cssClass="mblSimpleDialogText" id="Platform.ExitApplicationPrompt_container_0">
 				<text editable="false" id="Platform.ExitApplicationPrompt_container_0_Doyouwanttoclose" value="Do you want to close the app?"/>
 			</container>
@@ -597,7 +597,7 @@
 					</eventHandlers>
 				</button>
 			</container>
-		</dialog>
+		</dialog>-->
 		<dialog id="Platform.LogOutPrompt">
 			<container cssClass="mblSimpleDialogText" id="Platform.LogOutPrompt_container_0">
 				<text editable="false" id="Platform.LogOutPrompt_container_0_Doyouwanttologo" value="Do you want to log out of the app?"/>

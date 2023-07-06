@@ -4,8 +4,8 @@
              disclosure restricted by GSA ADP Schedule Contract with IBM Corp. -->
              <!-- Attribute "id" must be identical to application folder name -->
  <application xmlns="http://www.worklight.com/application-descriptor" id="SGZInsp" platformVersion="7.1.0.00.20190319-1506">
-    <displayName>SGZInsp</displayName>
-    <description>SGZInsp</description>
+    <displayName>SGZ Insp</displayName>
+    <description>SGZ Insp</description>
     <author>
         <name>application's author</name>
         <email>application author's e-mail</email>

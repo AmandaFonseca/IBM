@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-05 23:43:30
+// Build: 2023-07-04 20:57:07
 //----------------------------------------------------------------//
 define(   "generated/application/data/ApplicationStoresBuilder", 
       [
@@ -9287,15 +9287,12 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'remoteName' : 'spi:blindcount',
                }).
                addField({
-                  'multiplicity' : 'exactly-one',
                   'displayValueRemoteName' : 'spi:type',
                   'dataType' : 'string',
-                  'usage' : 'upper',
                   'referenceResource' : 'anywhereResVal',
                   'name' : 'type',
                   'index' : false,
                   'artifactId' : 'AnywhereResValType',
-                  'maxSize' : 80,
                   'id' : 'aw81e2aabe',
                   'local' : false,
                   'remoteName' : 'spi:resanywhereresource',
