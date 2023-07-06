@@ -69,8 +69,44 @@
 		<downloadOneRdf context="/oslc/sp/SmarterPhysicalInfrastructure" />
 		<downloadOneRdf context="/oslc/sp/FriendOfAFriend" />
 		
+		<downloadOneRdf context="/oslc/shapes/oslcmsarbo" />
+		<downloadOneRdf context="/oslc/shapes/msoslcsarbopec" />
+		<downloadOneRdf context="/oslc/shapes/msoslcsarbopec/numericdomain" />				
+		<downloadOneRdf context="/oslc/shapes/msoslcsarbocient" />
+		<downloadOneRdf context="/oslc/shapes/msoslcsarbocient/numericdomain" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo" />
+    	<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/ms_arbo" />	
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/ms_arborpt" />		 
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/assetstatus" />		 
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/assetspec" />			 
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/classspec" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/person" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/asset" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks/attachment" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks/attachment/meta" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcclassif" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/pluscassetstatus" />
+		<downloadOneRdf context="/oslc/shapes/oslcmaxdomain/numericdomain" />
 		
-		<!-- <downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" /> -->
+		<downloadOneRdf context="/oslc/shapes/oslcmaxdomain/alndomain" />
+		<downloadOneRdf context="/oslc/shapes/oslcmaxdomain/numrangedomain" />
+		<downloadOneRdf context="/oslc/shapes/oslcnumericdomain" />
+		<downloadOneRdf context="/oslc/shapes/oslcmaxuser" />
+		<downloadOneRdf context="/oslc/shapes/oslcmaxuser/groupuser" />
+		<downloadOneRdf context="/oslc/shapes/oslcsynonymdomain" />
+		<downloadOneRdf context="/oslc/shapes/oslcmaxvars" />
+		<downloadOneRdf context="/oslc/shapes/oslcsite" />
+		<downloadOneRdf context="/oslc/shapes/oslcappdoctype" />
+		<downloadOneRdf context="/oslc/shapes/oslcclassstructure" />
+		<downloadOneRdf context="/oslc/shapes/oslcclassstructure/classspec" />
+		<downloadOneRdf context="/oslc/shapes/oslcclassstructure/classusewith" />
+		<downloadOneRdf context="/oslc/shapes/oslcclassspec" />
+		<downloadOneRdf context="/oslc/shapes/oslcclassspec/classspecusewith" />
+		<downloadOneRdf context="/oslc/shapes/oslcclassspec/assetattribute" />
+		<downloadOneRdf context="/oslc/shapes/oslcclassspecusewith" />	
+		<downloadOneRdf context="/oslc/shapes/oslcassetattr" /> 
+		<!-- ESTRUTURAS PARA APP SGZDescarte: -->
 		<!--
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/doclinks" />
@@ -84,16 +120,13 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/companies" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/alndomain" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_doclinks" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />-->
-		<!-- <downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi/doclinks" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi/doclinks/attachment" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi/doclinks/attachment/meta" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach" />
-        <downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks/attachment" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks/attachment/meta" />
-        
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />
+		-->
+		<!-- FIM ESTRUTURAS PARA APP SGZDescarte -->
+		
+		<!-- ESTRUTURAS PARA APP SGZTec: -->
+		<!--
+        <downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/doclinks/attachment" />
@@ -105,10 +138,19 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/ms_photosessionline" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/ms_doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/labtrans" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/workorderspec" /> -->	
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/workorderspec" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks/attachment" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks/attachment/meta" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
+		-->
+		<!-- FIM ESTRUTURAS PARA APP SGZTec -->
 		
-		<!-- ms_oslcsgzinsp Related shape references -->
-		<!-- <downloadOneRdf context="/oslc/shapes/ms_oslcsgzinsp" />
+		
+		<!-- ESTRUTURAS PARA APP SGZInsp: -->
+		<!-- 
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzinsp" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzinsp/assignment" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzinsp/doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzinsp/doclinks/attachment" />
@@ -126,9 +168,11 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzinsp/wpmaterial" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzinsp/wpservice" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzinsp/wptool" /> -->
+		<!-- FIM ESTRUTURAS PARA APP SGZInsp: -->
+
 		
-		
-		<!-- ms_oslcsgzmobile Related shape references 
+		<!-- ESTRUTURAS PARA APP SGZMobile: -->
+		<!-- 
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/assetspec" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/assignment" />
@@ -150,33 +194,21 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/ms_woamtkdisch" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/ms_photosessionline" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/ms_doclinks" />
-		
-		<downloadOneRdf context="/oslc/shapes/ms_oslcwotickets" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcancestor" />-->
-		
-		<!--
-		<downloadOneRdf context="/oslc/shapes/oslcmsarbo" />
-		<downloadOneRdf context="/oslc/shapes/msoslcsarbopec" />
-		<downloadOneRdf context="/oslc/shapes/msoslcsarbopec/numericdomain" />				
-		<downloadOneRdf context="/oslc/shapes/msoslcsarbocient" />
-		<downloadOneRdf context="/oslc/shapes/msoslcsarbocient/numericdomain" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo" />
-    	<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/ms_arbo" />	
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/ms_arborpt" />		 
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/assetstatus" />		 
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/assetspec" />			 
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/classspec" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/person" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks/attachment" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks/attachment/meta" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcclassif" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/asset"/>
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/Asset"/>
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/ms_arbo/ms_target"/>
+		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew" />
+		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew/person" />	
 		-->
+		<!-- FIM ESTRUTURAS PARA APP SGZMobile: -->
 
-		<!-- <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina" />
+		
+		<!-- ESTRUTURAS PARA APP SGZArbo: -->
+		<!--
+		
+		-->
+		<!-- FIM ESTRUTURAS PARA APP SGZArbo: -->
+
+		
+		<!-- ESTRUTURAS PARA APP SGZUsina: -->
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/doclinks" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/ms_aptoolauth" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/ms_asphaltplant" />
@@ -185,8 +217,9 @@
         <downloadOneRdf context="/oslc/shapes/ms_oslcasphaltplant" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcsite" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcauthperson" />
-        <downloadOneRdf context="/oslc/shapes/ms_oslctoolsiteauth" /> -->
-		
+        <downloadOneRdf context="/oslc/shapes/ms_oslctoolsiteauth" />
+		<!-- ESTRUTURAS PARA APP SGZUsina: -->
+
 		
 		
 		<!-- <downloadOneRdf context="/oslc/shapes/oslcasset" />
@@ -234,14 +267,14 @@
 		<downloadOneRdf context="/oslc/shapes/oslcwoticketrel" />
 		<downloadOneRdf context="/oslc/shapes/oslcmatusetrans" />
 		<downloadOneRdf context="/oslc/shapes/oslcwoactivity" />
-		<downloadOneRdf context="/oslc/shapes/oslcmaxvars" />
+		
 		<downloadOneRdf context="/oslc/shapes/oslclabor" />
 		<downloadOneRdf context="/oslc/shapes/oslclabor/laborqual" />
 		<downloadOneRdf context="/oslc/shapes/oslcassignment" />
 		<downloadOneRdf context="/oslc/shapes/oslcwostatus" />
 		<downloadOneRdf context="/oslc/shapes/oslcticket" />
 		<downloadOneRdf context="/oslc/shapes/oslcmaxuser" />
-		<downloadOneRdf context="/oslc/shapes/oslcsynonymdomain" />
+		
 		<downloadOneRdf context="/oslc/shapes/oslctoolitem" />
 		<downloadOneRdf context="/oslc/shapes/oslctoolitem/toolqual" />
 		<downloadOneRdf context="/oslc/shapes/oslcmultiassetlocci" />
@@ -268,7 +301,7 @@
 		<downloadOneRdf context="/oslc/shapes/oslcwodetail/assetancestor" />
 		<downloadOneRdf context="/oslc/shapes/oslcwodetail/locancestor" />
 		<downloadOneRdf context="/oslc/shapes/oslctoolitem/itemorginfo" />
-		<downloadOneRdf context="/oslc/shapes/oslcappdoctype" />
+		
 		<downloadOneRdf context="/oslc/shapes/oslcwodetail/doclinks" />
 		<downloadOneRdf context="/oslc/shapes/oslcwodetail/doclinks/attachment" />
 		<downloadOneRdf context="/oslc/shapes/oslcwodetail/doclinks/attachment/meta" /> 
@@ -285,13 +318,7 @@
 		<downloadOneRdf context="/oslc/shapes/oslcinvlot" />
 		<downloadOneRdf context="/oslc/shapes/oslcinvbalview" />
 		<downloadOneRdf context="/oslc/shapes/oslcclassification" />
-		<downloadOneRdf context="/oslc/shapes/oslcclassstructure" />
-		<downloadOneRdf context="/oslc/shapes/oslcclassstructure/classspec" />
-		<downloadOneRdf context="/oslc/shapes/oslcclassstructure/classusewith" />
-		<downloadOneRdf context="/oslc/shapes/oslcclassspec" />
-		<downloadOneRdf context="/oslc/shapes/oslcclassspec/classspecusewith" />
-		<downloadOneRdf context="/oslc/shapes/oslcclassspec/assetattribute" />
-		<downloadOneRdf context="/oslc/shapes/oslcclassspecusewith" />	
+		
 		<downloadOneRdf context="/oslc/shapes/oslcwodetail/workorderspec" />
 		<downloadOneRdf context="/oslc/shapes/oslcwodetail/assetspec" />
 		<downloadOneRdf context="/oslc/shapes/oslcassetattr" /> 

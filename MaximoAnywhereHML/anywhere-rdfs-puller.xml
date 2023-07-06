@@ -70,7 +70,7 @@
 		<downloadOneRdf context="/oslc/sp/FriendOfAFriend" />
 		
 		
-		<!-- <downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" /> -->
+		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/doclinks/attachment" />
@@ -84,6 +84,7 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/alndomain" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />
+
 <!-- 		<downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi/doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi/doclinks/attachment" />
