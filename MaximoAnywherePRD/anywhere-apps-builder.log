@@ -1,0 +1,11 @@
+Property "bldTarget" has not been set
+Property "androidSenderId" has not been set
+Property "androidPushKey" has not been set
+Property "iosPushPswd" has not been set
+Importing file D:\Any764\IBM\Anywhere\MaximoAnywhere\build-taskdef.xml from D:\Any764\IBM\Anywhere\MaximoAnywhere\anywhere-apps-builder.xml
+Overriding previous definition of reference to ant.projectHelper
+parsing buildfile D:\Any764\IBM\Anywhere\MaximoAnywhere\build-taskdef.xml with URI = file:/D:/Any764/IBM/Anywhere/MaximoAnywhere/build-taskdef.xml
+parsing buildfile jar:file:/D:/Any764/IBM/Anywhere/MaximoAnywhere/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/D:/Any764/IBM/Anywhere/MaximoAnywhere/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
+Overriding previous definition of reference to ant.projectHelper
+Override ignored for property "appsToBuild"
+Property "env.JAVA_HOME" has not been set

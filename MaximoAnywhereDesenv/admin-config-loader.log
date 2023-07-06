@@ -1,0 +1,12 @@
+
+-process-app-artifact:
+     [echo] processing app C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereDesenv\apps\SGZInsp
+
+admin-loader:
+     [java] authenticate() send request to get HttpSession cookie. 
+     [java] 
+     [java] Get http://35.199.113.215:80/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZInsp%22
+     [java] authenticate() send request to get HttpSession cookie. 
+     [java] 
+     [java] Get http://35.199.113.215:80/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZInsp%22
+     [java] App entry already exists on maximo.

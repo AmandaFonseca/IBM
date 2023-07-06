@@ -1,0 +1,14 @@
+<application xmlns="http://www.worklight.com/application-descriptor" id="SGZUsina" platformVersion="7.1.0.00.20171101-1704">
+    <appName>SGZUsina</appName>
+    <packageName>com.ibm.maximo.anywhere.sgzusina</packageName>
+    <displayName>SGZUsina</displayName>
+    <description>SGZUsina</description>
+    <author>
+        <name>application's author</name>
+        <email>application author's e-mail</email>
+        <homepage>http://mycompany.com</homepage>
+        <copyright>Copyright My Company</copyright>
+    </author>
+    <mainFile>index.html</mainFile>
+    <appIcon>common/images/thumbnail.png</appIcon>
+</application>

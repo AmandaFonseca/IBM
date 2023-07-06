@@ -1,0 +1,52 @@
+
+init:
+     [echo] RunBuild - init target
+
+runAdmLdr:
+     [echo] running adminloader
+
+init:
+     [echo] RunBuild - init target
+
+checkos:
+     [echo] RunBuild - checkos target
+
+runBat:
+     [echo] Run Bat with D:\Any764\IBM\Anywhere
+     [exec] D:\Any764\IBM\Anywhere\MaximoAnywhere\build\tools\curl\win64
+     [exec] 
+     [exec] ÒXITO: o valor especificado foi salvo.
+     [exec] Buildfile: D:\Any764\IBM\Anywhere\MaximoAnywhere\admin-config-loader.xml
+     [exec] 
+     [exec] allApps:
+     [exec] 
+     [exec] -process-app-artifact:
+     [exec]      [echo] processing app D:\Any764\IBM\Anywhere\MaximoAnywhere\apps\AssetAudit
+     [exec] 
+     [exec] admin-loader:
+     [exec]      [java] authenticate() send request to get HttpSession cookie. 
+     [exec]      [java] 
+     [exec]      [java] Get http://10.20.22.35:80/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22AssetAudit%22
+     [exec]      [java] authenticate() send request to get HttpSession cookie. 
+     [exec]      [java] 
+     [exec]      [java] Get http://10.20.22.35:80/maximo/oslc/os/oslcanywhereresrc/?&oslc.where=spi%3Aappid%3D%22AssetAudit%22
+     [exec]      [java] Get http://10.20.22.35:80/maximo/oslc/os/oslcanywhereresrc/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22AssetAudit%22and+spi%3Aresourceid%3D%22asset%22
+     [exec]      [java] PUT https://10.20.22.35/maximo/oslc/os/oslcanywhereresrc/_QVNTRVRBVURJVC9hc3NldC9UUkFOU0VD
+     [exec]      [java] **Resource record's domain doesn't match domain of parent.
+     [exec]      [java]   Please check server system property mxe.oslc.webappurl
+     [exec]      [java]   Domain should not be 10.20.22.35
+     [exec] 
+     [exec] BUILD FAILED
+     [exec] D:\Any764\IBM\Anywhere\MaximoAnywhere\admin-config-loader.xml:41: The following error occurred while executing this line:
+     [exec] D:\Any764\IBM\Anywhere\MaximoAnywhere\admin-config-loader.xml:54: The following error occurred while executing this line:
+     [exec] D:\Any764\IBM\Anywhere\MaximoAnywhere\admin-config-loader.xml:90: Java returned: 5
+     [exec] 
+     [exec] Total time: 13 seconds
+     [exec] Result: 1
+     [echo] Run Bat with D:\Any764\IBM\Anywhere and bldfile: admin-config-loader.xml completed with RC: 1
+
+runSh:
+
+runAntCall:
+     [echo] runAntCall completed
+     [echo] running adminloader finished with: ${admLdrFailed}

@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Licensed Materials - Property of IBM 5725-M39 (C) COPYRIGHT IBM CORP. 
+	2013 All Rights Reserved US Government Users Restricted Rights - Use, duplication 
+	or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. -->
+	<!-- =================================== -->
+	<!-- SGZATERRO APPLICATION ARTIFACT --><!-- =================================== -->
+    <app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" blindQuerySupport="false" combinedViews="true" debug="false" id="SGZAterro" logLevel="0" 
+	requiredRole="ANYWHERE_DISCARD" version="20190120_031802-0500" xsi:noNamespaceSchemaLocation="../../../build/app.xsd">
+	 
+	<!-- Back up this file before you edit it. -->
+
+	
+	<!--UI SECTION-->
+	<!--To change the display name of any element, change the label attribute.-->
+	<!--If you support additional languages, you must also update the label in the common/js/application/translation/nls/<language>/artifact.js file for that language.-->
+
+	<ui id="ui">
+	<!--Action panel-->
+	<!--My Reported SR view-->
+		
+	<view id="SGZDescarte.ActionPanel" label="Informações do Veículo" resource="plateResource" showBackButton="false">
+   		<requiredResources id="SGZDescarte.ActionPanel_errorResource">
+   		    <requiredResource id="SGZDescarte.ActionPanel_serviceRequest" name="plateResource"/>
+			<requiredResource id="SGZDescarte.ActionPanel_requiredResource_errorResource" name="errorResource"/>
+		</requiredResources>			
+		<progressIndicator id="SGZDescarte.ActionPanel_0"/>
+		<actions id="SGZDescarte.ActionPanel_actions">
+			<action id="SGZDescarte.ActionPanel_SynchronizeData_action" label="Synchronize Data" overflow="true">
+				<eventHandlers id="SGZDescarte.ActionPanel_SynchronizeData_action_eventHandlers">
+					<eventHandler class="platform.handlers.WorkOfflineHandler" event="click" id="SGZDescarte.ActionPanel_SynchronizeData_action_eventHandlers_click_sync" method="sync"/>
+					<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="SGZDescarte.ActionPanelR_SynchronizeData_action_eventHandlers_render_enableDisableMenu" method="enableDisableSyncMenu"/>
+				</eventHandlers>
+			</action>
+		</actions>
+		<container id="SGZDescarte.ActionPanel_container_1">
+		    <group id="action1">
+			    <groupitem id="action2groupitem" layout="Button1Item1" transitionTo="SGZDescarte.inputPlate">
+			    	<image cssClass="actionButton" id="sricon2" image="acBtn_viewList.svg" label="Validar Placa" layoutInsertAt="button1" platform="false"/>
+			    	<text id="createsrtext2" layoutInsertAt="item1" value="Validar Placa"/>
+			    </groupitem>
+		    </group>
+		</container>
+	</view>
+	
+	<view id="SGZDescarte.inputPlate" label="Validar Placa" resource="plateResource" showBackButton="false">
+		<requiredResources id="SGZDescarte.inputPlate_requiredResources">
+			<requiredResource id="SGZDescarte.inputPlate_serviceRequest" name="plateResource"/>		
+			<requiredResource id="SGZDescarte.DefaultList_sgzDescarte" name="sgzDescarte"/>
+		</requiredResources>
+			<eventHandlers id="SGZDescarte.inputPlate_eventHandlers">
+				<!--<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="SGZDescarte.inputPlate_eventHandlers_initialize_initPlate" method="initPlate"/>-->
+				<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="SGZDescarte.DefaultList_SynchronizeData_action_eventHandlers_click_sync0_render" method="sync"/>
+			</eventHandlers>
+			<container id="SGZDescarte.inputPlate_serviceRequest_container_0" resource="plateResource">		
+			<group id="SGZDescarte.inputPlate_group_0">
+				<groupitem id="SGZDescarte.inputPlate_serviceRequest_groupitem_ServiceRequest_ms_plate">
+					<text codeScannable="true" editable="true" required="true"  id="SGZDescarte.inputPlate_serviceRequest_groupitem_ServiceRequest.ms_plate" label="Placa" resourceAttribute="ms_plate"/>
+				</groupitem>				
+			</group>			
+		</container>				
+		
+		<footer id="SGZDescarte.inputPlate_footer">
+			<button cssClass="mblPrimaryButton" id="SGZDescarte.inputPlate_wonum_Create_button" label="Validar Placa" primary="true" resourceAttribute="identifier">
+				<eventHandlers id="SGZDescarte.inputPlate_wonum_Create_button_eventHandlers">
+					<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.inputPlate_wonum_Create_button_eventHandlers_click_commitNewServiceRequestView" method="findTickets"/>
+				</eventHandlers>
+			</button>
+		</footer>
+		<actions id="SGZDescarte.ActionPanel_actions00">
+			<action id="SGZDescarte.ActionPanel_SynchronizeData_action00" label="Synchronize Data" overflow="true">
+				<eventHandlers id="SGZDescarte.ActionPanel_SynchronizeData_action_eventHandlers00">
+					<eventHandler class="platform.handlers.WorkOfflineHandler" event="click" id="SGZDescarte.ActionPanel_SynchronizeData_action_eventHandlers_click_sync00" method="sync"/>
+					<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="SGZDescarte.ActionPanelR_SynchronizeData_action_eventHandlers_render_enableDisableMenu00" method="enableDisableSyncMenu"/>
+				</eventHandlers>
+			</action>
+		</actions>
+	</view>
+	
+	<view id="SGZDescarte.platePhotoView" label="Foto da Placa" showOverflow="true">
+			<requiredResources id="SGZDescarte.platePhotoView_requiredResources">
+				<requiredResource id="SGZDescarte.platePhotoView_serviceRequest" name="sgzDescarte">
+					<requiredAttribute id="SGZDescarte.platePhotoView_serviceRequest_attachments" name="attachments" reload="true"/>
+				</requiredResource>
+			</requiredResources>
+			<actions id="SGZDescarte.platePhotoView_actions">
+				<action id="SGZDescarte.platePhotoView_TakePhoto_action" image="/images/header_camera_off.svg" label="Take Photo">
+					<eventHandlers id="SGZDescarte.platePhotoView_TakePhoto_action_eventHandlers">
+								<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="SGZDescarte.platePhotoView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
+								<eventHandler class="application.handlers.SRAttachmentHandler" event="render" id="SGZDescarte.platePhotoView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
+							</eventHandlers>
+				</action>
+				<action id="SGZDescarte.platePhotoView_PickfromGallery_action" image="header_add_OFF.svg" label="Pick from Gallery">
+					<eventHandlers id="SGZDescarte.platePhotoView_PickfromGallery_action_eventHandlers">
+						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="SGZDescarte.platePhotoView_PickfromGallery_action_eventHandlers_click_launchGallery" method="launchGallery"/>
+					</eventHandlers>
+				</action>
+			</actions>
+			<list attribute="attachments" id="SGZDescarte.platePhotoView_serviceRequest_attachments_list" resource="sgzDescarte">
+				<sortOptions id="SGZDescarte.platePhotoView_serviceRequest_attachments_list_sortOptions">
+					<sortOption id="SGZDescarte.platePhotoView_sortOption_CreatedDate" label="Created Date">
+						<sortAttribute direction="asc" id="SGZDescarte.platePhotoView_CreatedDate_sortAttribute_displayCreationDate" name="displayCreationDate"/>
+					</sortOption>
+					<sortOption id="SGZDescarte.platePhotoView_sortOption_FileName" label="File Name">
+						<sortAttribute direction="asc" id="SGZDescarte.platePhotoView_FileName_sortAttribute_displayFileName" name="displayFileName"/>
+					</sortOption>
+					<sortOption id="SGZDescarte.platePhotoView_sortOption_Description" label="Description">
+						<sortAttribute direction="asc" id="SGZDescarte.platePhotoView_Description_sortAttribute_displayDescription" name="displayDescription"/>
+					</sortOption>
+				</sortOptions>
+
+				<listItemTemplate id="SGZDescarte.platePhotoView_serviceRequest_attachments_listItemTemplate_AttachmentsListItem" layout="AttachmentsListItem">
+					<listtext cssClass="bold textappearance-medium" id="SGZDescarte.platePhotoView_serviceRequest_AttachmentsListItem_displayFileName" layoutInsertAt="item1" resourceAttribute="displayFileName"/>
+					<listtext id="SGZDescarte.platePhotoView_serviceRequest_AttachmentsListItem_displayDescription" layoutInsertAt="item2" resourceAttribute="displayDescription"/>
+					<listtext id="SGZDescarte.platePhotoView_serviceRequest_AttachmentsListItem_displayFileType" layoutInsertAt="item3" resourceAttribute="displayFileType"/>
+										
+					<button border="false" cssClass="attachmentIcon" id="SGZDescarte.platePhotoView_serviceRequest_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.svg_button" image="/images/msg_downloadComplete_small.svg" layoutInsertAt="icon" resourceAttribute="anywhereAttachDownloaded">
+						<eventHandlers id="SGZDescarte.platePhotoView_serviceRequest_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.svg_button_eventHandlers">
+							<eventHandler class="application.handlers.SRAttachmentHandler" event="datachange" id="SGZDescarte.platePhotoView_serviceRequest_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.svg_button_eventHandlers_datachange_displayLocal" method="displayLocal"/>
+							<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="SGZDescarte.platePhotoView_serviceRequest_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.svg_button_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>
+						</eventHandlers>
+					</button>
+					<listtext id="SGZDescarte.platePhotoView_serviceRequest_AttachmentsListItem_displaySize" layoutInsertAt="item4" resourceAttribute="displaySize"/>
+					<listtext id="SGZDescarte.platePhotoView_serviceRequest_AttachmentsListItem_createby" layoutInsertAt="item5" resourceAttribute="createby"/>
+					<listtext id="SGZDescarte.platePhotoView_serviceRequest_AttachmentsListItem_displayCreationDate" layoutInsertAt="item6" resourceAttribute="displayCreationDate"/>
+					<eventHandlers id="SGZDescarte.platePhotoView_serviceRequest_attachments_listItemTemplate_AttachmentsListItem_eventHandlers">
+						<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="SGZDescarte.platePhotoView_serviceRequest_attachments_listItemTemplate_AttachmentsListItem_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>
+					</eventHandlers>
+				</listItemTemplate>
+			</list>
+            <footer id="SGZDescarte.platePhotoView_footer">
+			<button cssClass="mblPrimaryButton" id="SGZDescarte.platePhotoView_wonum_Create_button" label="Validar Foto" primary="true">
+				<eventHandlers id="SGZDescarte.platePhotoView_wonum_Create_button_eventHandlers">
+					<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.platePhotoView.validate" method="validatePlatePhoto"/>
+				</eventHandlers>
+			</button>
+		</footer>
+        <eventHandlers id="SGZDescarte.platePhotoView.eventHandlers">
+            <eventHandler class="custom.handlers.MSSRDetailHandler" event="back" id="SGZDescarte.platePhotoView.eventHandler.noBack" method="noBack"/>
+        </eventHandlers>
+		</view>
+
+		<view id="SGZDescarte.DefaultList" label="Default List View" saveonshow="true" showBackButton="false">
+			<queries id="SGZDescarte.DefaultList_serviceRequest_queries" resource="sgzDescarte">
+				<query id="SGZDescarte.DefaultList_MY_REPORTED_SR" label="Meus Tickets" queryBase="ms_sgzdescarte"/> 
+				<query id="SGZDescarte.DefaultList___errored__" label="Records with Errors" queryBase="__errored__" system="true">
+					<eventHandlers id="SGZDescarte.DefaultList___errored___eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZDescarte.DefaultList___errored___eventHandlers_render_hideShowErrorMenu" method="hideShowErrorMenu"/>
+					</eventHandlers>
+				</query>
+				
+			</queries>
+			<requiredResources id="SGZDescarte.DefaultList_requiredResources">
+				<requiredResource id="SGZDescarte.DefaultList_serviceRequest" name="sgzDescarte"/>
+			</requiredResources>		
+
+			<progressIndicator id="SGZDescarte.DefaultList_0"/>
+			
+			<list displayPageSize="20" id="SGZDescarte.DefaultList_serviceRequest_list" resource="sgzDescarte" transitionTo="SGZDescarte.SRDetail">
+					
+<!-- 				<sortOptions id="SGZDescarte.WorkItemsView_serviceRequest_list_sortOptions">
+
+					<sortOption id="SGZDescarte.WorkItemsView_sortOption_srnum" label="Request Number">
+						<sortAttribute direction="desc" id="SGZDescarte.WorkItemsView_srnum_sortAttribute_identifier" name="identifier"/>
+					</sortOption>
+				</sortOptions> -->
+				
+				<listItemTemplate id="SGZDescarte.DefaultList_serviceRequest_listItemTemplate_WorkListItem" layout="WorkListItem">
+					<listtext cssClass="bold textappearance-medium" id="SGZDescarte.DefaultList_serviceRequest_WorkListItem_srnum" layoutInsertAt="item1" resourceAttribute="identifier"/>
+					<listtext cssAttributes="status" id="ServiceRequestMyReportedSR_serviceRequest_WorkListItem_ms_plate" layoutInsertAt="item4" resourceAttribute="ms_plate"/>
+					<listtext cssAttributes="status" id="ServiceRequestMyReportedSR_serviceRequest_WorkListItem_ms_pecode" layoutInsertAt="item1" resourceAttribute="ms_pecode"/>
+					<listtext cssAttributes="status" id="ServiceRequestMyReportedSR_serviceRequest_WorkListIte_ms_type" layoutInsertAt="item4" resourceAttribute="ms_description"/>
+					<listtext cssClass="bold textappearance-medium" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_starttime" layoutInsertAt="item1" resourceAttribute="ms_expiredate"/>
+					<image cssAttributes="internalStatus" cssClass="statusDesc" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_statusimg" image="statusicons/{:ms_status}.png" layoutInsertAt="item4" platform="false"/> 
+					<image cssAttributes="internalStatus" cssClass="statusDesc" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_emergencyimg" image="statusicons/{:ms_emergency}.png" layoutInsertAt="item4" platform="false"/>
+					<listtext cssAttributes="status" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_statusdesc" layoutInsertAt="item4" resourceAttribute="statusdesc"/>
+					
+				</listItemTemplate>
+			</list>
+			<eventHandlers id="SGZDescarte.DefaultList_SynchronizeData_action_eventHandlers">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZDescarte.platePhotoView.eventHandler.noBack.findTickets" method="findTicketsRender"/>
+			</eventHandlers>
+		</view>
+
+		<!---View dos detalhes da criacao do Ticket-->
+		<view id="SGZDescarte.SRDetail" label="Detalhes do Ticket" resource="sgzDescarte" showBackButton="true">
+			<requiredResources id="ServiceRequest.SRDetail_requiredResources">
+				<requiredResource id="ServiceRequest.SRDetail_serviceRequest" name="sgzDescarte"/>
+			</requiredResources>
+<!-- 			<eventHandlers id="ServiceRequest.SRDetail_eventHandlers">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="ServiceRequest.SRDetail_eventHandlers_initialize_fetchAllListSizes" method="fetchAllListSizes"/>
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="ServiceRequest.SRDetailw_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
+			</eventHandlers> -->
+			<container id="ServiceRequest.SRDetail_serviceRequest_container_0" resource="sgzDescarte">
+			<errorIndicator id="ServiceRequest.SRDetail_errorIndicator"/>
+				<group id="ServiceRequest.SRDetail_group_0">
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_status_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_amticketid_0" label="Ticket" resourceAttribute="identifier"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_srnum_00101010">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.codattero" label="Cod. Aterro Sanitário" resourceAttribute="ms_landfillid"/>
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.descaterro" label="Aterro Sanitário" resourceAttribute="landfilldesc"/>
+					</groupitem>
+					
+					
+					<!--<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_apidauth_000012">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.usina_0" label="Complet Carreg: Usina Crendenciada" lookup="ServiceRequest.MSasphaltplantLookup" lookupAttribute="idusina" placeHolder="Tap to enter"  resourceAttribute="ms_asphaltplantid"/>
+					</groupitem>-->
+			
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_owner_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.Subprefeitura_0" label="Subprefeitura" resourceAttribute="ms_siteid"/>
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.orgao_1" label="Orgão" resourceAttribute="pedesc"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_summary_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_status_0" label="Status" resourceAttribute="statusdesc"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_0">
+						<text cssClass="richText" editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_0_ms_expiredate" label="Data de Validade" resourceAttribute="ms_expiredate"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.EditLocationView_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.LocationView_0_contratada" label="N. Contratada" resourceAttribute="ms_company"/>
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.LocationView_0_contratadadesc" label="Contratada" resourceAttribute="companieName"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_plate_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_plate_0" label="Placa" resourceAttribute="ms_plate"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_tareweight_1">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_grossweight_0" label="Peso Bruto (Kg)" resourceAttribute="ms_grossweight" />
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_tareweight_0" label="Peso Tara (Kg)" resourceAttribute="ms_tareweight" />
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_netweight_1" label="Peso Liquido (Kg)" resourceAttribute="ms_netweight" />
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_type_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.type_0" label="Tipo de Resíduo" resourceAttribute="ms_type"/>
+					</groupitem>						
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_pperequirement_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_pperequirement_0" label="EPIs Obrigatórios" resourceAttribute="ms_pperequirement"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_reportedpriority_0">
+						<text editable="true" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_remarks_0" label="Observações" resourceAttribute="ms_remarks"/>
+					</groupitem>
+					<groupitem enableFeatureByProperty="attachments.enabled" id="ServiceRequest.SRDetail_groupitem_ServiceRequest.AttachmentsView_013" layout="Item1Count1Button2">
+						<text cssClass="relatedRecords" editable="false" id="ServiceRequest.SRDetail_groupitem_ServiceRequest.AttachmentsView_0_Attachments013" layoutInsertAt="item1" value="Fotos"/>
+						<eventHandlers id="sgzAterro.fotos.eventHandlers">
+							<eventHandler id="sgzAterro.fotos.eventHandler.hasAttCategory" class="custom.handlers.MSSRDetailHandler" event="click" method="hasAttCategory" />
+						</eventHandlers>
+					</groupitem>
+					
+				</group>	
+			</container>
+			<footer id="SGZDescarte.SRDetail_footer">
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer_finish" label="Concluir Descarte" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZDescarte.footer_finishdiscard">
+						<eventHandler id="SGZDescarte.footer_finishdiscard.click" class="custom.handlers.MSSRDetailHandler" event="click" method="finishDiscard"/>
+						<eventHandler id="SGZDescarte.showHideFinishDiscard.showHideEmergencyDisposal.footer_finishdiscard.click" class="custom.handlers.MSSRDetailHandler" event="render" method="showHideFinishDiscard"/>
+					</eventHandlers>
+				</button>				
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.02.footer_finish" label="Validar Placa" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZDescarte.02.footer_finishdiscard">
+						<eventHandler id="SGZDescarte.02.footer_finishdiscard.click" class="custom.handlers.MSSRDetailHandler" event="click" method="finishDiscard"/>
+						<eventHandler id="SGZDescarte.showHideEmergencyDisposal.footer_finishdiscard.click" class="custom.handlers.MSSRDetailHandler" event="render" method="showHideEmergencyDisposal"/>
+					</eventHandlers>
+				</button>
+			</footer>		
+		</view>
+		<view id="SGZDescarte.finishDiscard.view" resource="sgzDescarte">
+			<requiredResources id="SGZDescarte.finishDiscard.footer.requiredResources">
+				<requiredResource id="SGZDescarte.finishDiscard.footer.requiredResource" name="sgzDescarte"/>
+			</requiredResources>
+			<actions id="SGZArbo.NewAssetView_actions">
+				<action id="WorkExecution.WorkDetailView_CaptureGPS_action" image="/images/Use-Current-Location.svg" label="Capture GPS">
+					<eventHandlers id="WorkExecution.WorkDetailView_CaptureGPS_action_action_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="WorkExecution.WorkDetailView_CaptureGPS_action_eventHandlers_click" method="updateCurrentGPSPosition"/>
+					</eventHandlers>
+				</action>
+			</actions>
+			<container id="SGZDescarte.footer.container">
+				<group id="SGZDescarte.footer.container.group">
+					<groupitem id="SGZDescarte.footer.container.group.groupitem">
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.container.group.groupitem.text" layoutInsertAt="item1" value="Descarte concluído com sucesso?"/>
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.container.group.groupitem.text1" layoutInsertAt="item1" resourceAttribute="ms_latitudey" label="Latitude"/>
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.container.group.groupitem.text2" layoutInsertAt="item1" resourceAttribute="ms_longitudex" label="Longitude"/>
+					</groupitem>
+				</group>
+			</container>
+			<footer id="SGZDescarte.footer_sim_footer">
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer_sim" label="Sim" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZDescarte.footer_sim_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.footer_sim_finishDiscard" method="finishDiscardSucess"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer_nao" label="Não" primary="true" resourceAttribute="identifier" transitionTo="SGZDescarte.reasonView">
+				</button>
+			</footer>
+		</view>
+		<view id="SGZDescarte.finish.emergency.Discard.view" resource="sgzDescarte">
+			<requiredResources id="SGZDescarte.finishDiscard.footer.emergency.requiredResources">
+				<requiredResource id="SGZDescarte.finishDiscard.footer.emergency.requiredResource" name="sgzDescarte"/>
+			</requiredResources>
+			<actions id="SGZArbo.emergencyAssetView_emergency_actions">
+				<!--<action id="WorkExecution.WorkDetailView_CaptureGPS_action-emergency" image="/images/Use-Current-Location.svg" label="Capture GPS">
+					<eventHandlers id="WorkExecution.WorkDetailView_CaptureGPS_action-emergency_action_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="WorkExecution.WorkDetailView_CaptureGPS_action-emergency_eventHandlers_click" method="updateCurrentGPSPosition"/>
+					</eventHandlers>
+				</action>-->
+			</actions>
+			<container id="SGZDescarte.footer.emergency.container">
+				<group id="SGZDescarte.footer.emergency.container.group">
+					<groupitem id="SGZDescarte.footer.emergency.container.group.groupitem">
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.emergency.container.group.groupitem.text" layoutInsertAt="item1" value="O caminhão está autorizado para realizar o descarte?"/>
+						<!--<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.emergency.container.group.groupitem.text1" layoutInsertAt="item1" resourceAttribute="ms_latitudey" label="Latitude"/>
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.emergency.container.group.groupitem.text2" layoutInsertAt="item1" resourceAttribute="ms_longitudex" label="Longitude"/>-->
+					</groupitem>
+				</group>
+			</container>
+			<footer id="SGZDescarte.footer.emergency_sim_footer">
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer.emergency_sim" label="Sim" primary="true" resourceAttribute="identifier" transitionTo="SGZDescarte.finishDiscard.view"/>
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer.emergency_no" label="Não" primary="true" resourceAttribute="identifier">				
+					<eventHandlers id="SGZDescarte.footer.emergency_sim_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.footer.emergency_sim_finishDiscard" method="cancel"/>
+					</eventHandlers>
+				</button>
+			</footer>			
+		</view>
+
+		
+		<view id="SGZDescarte.reasonView" resource="sgzDescarte">
+			<requiredResources id="SGZDescarte.reasonView.requiredResources">
+				<requiredResource id="SGZDescarte.reasonView.requiredResource.sgzDescarte" name="sgzDescarte"/>
+			</requiredResources>
+			<container id="SGZDescarte.reasonView.container">
+				<group id="SGZDescarte.reasonView.group">
+					<groupitem id="SGZDescarte.reasonView.group.groupitem_0">
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.reasonView.group.groupitem.text_0" layoutInsertAt="item1" value="Selecione o motivo da falha no descarte:"/>
+					</groupitem>
+                    <groupitem id="SGZDescarte.reasonView.group.groupitem_1">
+						<text required="true" editable="false" id="SGZDescarte.reasonView.group.groupitem.text_1" layoutInsertAt="item1" label="Motivo" resourceAttribute="ms_whynum" lookup="SGZDescarte.whylookup"/>
+					</groupitem>
+				</group>
+			</container>
+			<footer id="SGZDescarte.reasonView.footer">
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.reasonView.concluir" label="Rejeitar ticket" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZDescarte.reasonView.concluir_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.reasonView.concluir_finishDiscardFail" method="finishDiscardFail"/>
+					</eventHandlers>
+				</button>
+			</footer>
+		</view>
+<!--Fim alteracao 1-->
+
+	<!-- Cód. Amanda nova view para status novo -->
+		<view id="SGZDescarte.finish.new.Discard.view" resource="sgzDescarte">
+			<requiredResources id="SGZDescarte.finishDiscard.footer.new.requiredResources">
+				<requiredResource id="SGZDescarte.finishDiscard.footer.new.requiredResource" name="sgzDescarte"/>
+			</requiredResources>
+			<actions id="SGZArbo.newAssetView_new_actions">
+				<!--<action id="WorkExecution.WorkDetailView_CaptureGPS_action-new" image="/images/Use-Current-Location.svg" label="Capture GPS">
+					<eventHandlers id="WorkExecution.WorkDetailView_CaptureGPS_action-new_action_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="WorkExecution.WorkDetailView_CaptureGPS_action-new_eventHandlers_click" method="updateCurrentGPSPosition"/>
+					</eventHandlers>
+				</action>-->
+			</actions>
+			<container id="SGZDescarte.footer.new.container">
+				<group id="SGZDescarte.footer.new.container.group">
+					<groupitem id="SGZDescarte.footer.new.container.group.groupitem">
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.new.container.group.groupitem.text" layoutInsertAt="item1" value="O caminhão está autorizado para realizar o descarte?"/>
+						<!--<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.new.container.group.groupitem.text1" layoutInsertAt="item1" resourceAttribute="ms_latitudey" label="Latitude"/>
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.new.container.group.groupitem.text2" layoutInsertAt="item1" resourceAttribute="ms_longitudex" label="Longitude"/>-->
+					</groupitem>
+				</group>
+			</container>
+			<footer id="SGZDescarte.footer.new_sim_footer">
+				<!--<button cssClass="mblPrimaryButton" id="SGZDescarte.footer.new_sim" label="Sim" primary="true" resourceAttribute="identifier" transitionTo="SGZDescarte.finish.new.Discard.view02"/>
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer.new_no" label="Não" primary="true" resourceAttribute="identifier">				
+					<eventHandlers id="SGZDescarte.footer.new_sim_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.footer.new_sim_finishDiscard" method="cancel"/>
+					</eventHandlers>
+				</button>-->
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer.novo.new_sim02" label="Sim" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZDescarte.footer.novo.new_sim_eventHandlers02">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.footer.novo.new_sim_finishDiscard02" method="finishDiscardSucess"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer.novo.new_nao02" label="Não" primary="true" resourceAttribute="identifier" transitionTo="SGZDescarte.reasonView">
+				</button>				
+			</footer>			
+		</view>
+
+		<view id="SGZDescarte.finish.new.Discard.view02" resource="sgzDescarte">
+			<requiredResources id="SGZDescarte.finishDiscard.footer02.new.requiredResources">
+				<requiredResource id="SGZDescarte.finishDiscard.footer02.new.requiredResource" name="sgzDescarte"/>
+			</requiredResources>
+			<actions id="SGZArbo.newAssetView_new_actions02">
+				<action id="WorkExecution.WorkDetailView_CaptureGPS_action-new02" image="/images/Use-Current-Location.svg" label="Capture GPS">
+					<eventHandlers id="WorkExecution.WorkDetailView_CaptureGPS02_action-new_action_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="WorkExecution.WorkDetailView_CaptureGPS_action-new_eventHandlers_click02" method="updateCurrentGPSPosition"/>
+					</eventHandlers>
+				</action>
+			</actions>
+			<container id="SGZDescarte.footer.new.container02">
+				<group id="SGZDescarte.footer.new.container.group02">
+					<groupitem id="SGZDescarte.footer.new.container.group.groupitem02">
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.new.container.group.groupitem.text02" layoutInsertAt="item1" value="Descarte concluído com sucesso?"/>
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.new.container.group.groupitem.text102" layoutInsertAt="item1" resourceAttribute="ms_latitudey" label="Latitude"/>
+						<text cssClass="relatedRecords" editable="false" id="SGZDescarte.footer.new.container.group.groupitem.text202" layoutInsertAt="item1" resourceAttribute="ms_longitudex" label="Longitude"/>
+					</groupitem>
+				</group>
+			</container>
+			<footer id="SGZDescarte.footer.new_sim_footer02">
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer.new_sim02" label="Sim" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZDescarte.footer.new_sim_eventHandlers02">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.footer.new_sim_finishDiscard02" method="finishDiscardSucess"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.footer.new_nao02" label="Não" primary="true" resourceAttribute="identifier" transitionTo="SGZDescarte.reasonView">
+				</button>
+			</footer>			
+		</view>
+
+
+
+
+
+
+
+		<!-- RAJ SGZMOBILE Categorias de Anexos View Adicionado em 01-06-2022 1110 adramos -->
+		<view id="SGZDescarte.AttachmentsCategory" label="Categorias de Anexos">
+			<requiredResources id="SGZDescarte.AttachmentsCategory_requiredResources">
+				<requiredResource id="SGZDescarte.AttachmentsCategory_sgzDescarte" name="sgzDescarte">
+					<requiredAttribute id="SGZDescarte.AttachmentsCategory_attribute1" name="atcsessionlist"/>
+					<requiredAttribute id="SGZDescarte.AttachmentsCategory_attribute2" name="attachments"/>
+					<requiredAttribute id="SGZDescarte.AttachmentsCategory_attribute3" name="msdoclinkslist"/>
+				</requiredResource>
+			</requiredResources>
+             <eventHandlers id="SGZDescarte.AttachmentsCategory.countAttachmentsSection">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="show" id="SGZDescarte.AttachmentsCategory.countAttachmentsSectionc_show" method="countAttachmentsSection"/>
+			</eventHandlers>
+			<list id="SGZDescarte.AttachmentsCategory_list" label="Categorias" resource="sgzDescarte" attribute="atcsessionlist" showHeader="false">
+				<listItemTemplate id="SGZDescarte.AttachmentsCategory_listCategories" >
+					<listtext cssClass="bold textappearance-medium" id="SGZDescarte.AttachmentsCategory_listCategories_description" resourceAttribute="ms_description"/> 
+					<listtext cssClass="bold textappearance-medium" id="SGZDescarte.AttachmentsCategory_listCategories_count" resourceAttribute="secCount"/> 
+					<eventHandlers id="SGZDescarte.AttachmentsCategory_render_eventHandlers">
+                        <eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.AttachmentsCategory_sgzDescarte_attachments_eventHandlers_render_hasChildSection" method="hasChildSection"/>		
+                    </eventHandlers> 
+				</listItemTemplate>
+			</list>
+		</view>
+		<!-- Anexos sem categorias -->
+		<view id="sgzDescarte.AttachmentsView"  label="Attachments" showOverflow="true">
+			<requiredResources id="sgzDescarte.AttachmentsView_requiredResources">
+				<requiredResource id="sgzDescarte.AttachmentsView_sgzDescarte" name="sgzDescarte">
+					<requiredAttribute id="sgzDescarte.AttachmentsView_sgzDescarte_attachments" name="attachments" />
+					<requiredAttribute id="sgzDescarte.AttachmentsView_sgzDescarte_atcsessionlist" name="atcsessionlist" />
+					<requiredAttribute id="sgzDescarte.AttachmentsView_sgzDescarte_msdoclinkslist" name="msdoclinkslist" />
+				</requiredResource>
+			</requiredResources>
+			<actions id="sgzDescarte.AttachmentsView_actions">
+				<action id="sgzDescarte.AttachmentsView_TakePhoto_action" image="/images/header_camera_off.svg" label="Take Photo">
+					<eventHandlers id="sgzDescarte.AttachmentsView_TakePhoto_action_eventHandlers">
+                        <eventHandler class="platform.handlers.AttachmentHandler" event="click" id="sgzDescarte.AttachmentsView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
+                        <eventHandler class="application.handlers.SRAttachmentHandler" event="render" id="sgzDescarte.AttachmentsView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
+                    </eventHandlers>
+				</action>
+				<action id="sgzDescarte.AttachmentsView_PickfromGallery_action" image="header_add_OFF.svg" label="Pick from Gallery">
+					<eventHandlers id="sgzDescarte.AttachmentsView_PickfromGallery_action_eventHandlers">
+						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="sgzDescarte.AttachmentsView_PickfromGallery_action_eventHandlers_click_launchGallery" method="launchGallery"/>
+					</eventHandlers>
+				</action>
+			</actions>
+			<list attribute="attachments" id="sgzDescarte.AttachmentsView_sgzDescarte_attachments_list" resource="sgzDescarte">
+
+				<sortOptions id="sgzDescarte.AttachmentsView_sgzDescarte_attachments_list_sortOptions">
+					<sortOption id="sgzDescarte.AttachmentsView_sortOption_CreatedDate" label="Created Date">
+						<sortAttribute direction="asc" id="sgzDescarte.AttachmentsView_CreatedDate_sortAttribute_displayCreationDate" name="displayCreationDateISO"/>
+					</sortOption>
+					<sortOption id="sgzDescarte.AttachmentsView_sortOption_FileName" label="File Name">
+						<sortAttribute direction="asc" id="sgzDescarte.AttachmentsView_FileName_sortAttribute_displayFileName" name="displayFileName"/>
+					</sortOption>
+					<sortOption id="sgzDescarte.AttachmentsView_sortOption_Description" label="Description">
+						<sortAttribute direction="asc" id="sgzDescarte.AttachmentsView_Description_sortAttribute_displayDescription" name="displayDescription"/>
+					</sortOption>
+				</sortOptions>
+
+				<listItemTemplate id="sgzDescarte.AttachmentsView_sgzDescarte_attachments_listItemTemplate_AttachmentsListItem" layout="AttachmentsListItem">
+					<listtext cssClass="attachmentLabel" id="sgzDescarte.AttachmentsView_sgzDescarte_AttachmentsListItem_displayFileName" layoutInsertAt="item1" resourceAttribute="displayFileName"/>
+					<listtext cssClass="attachmentInfo" id="sgzDescarte.AttachmentsView_sgzDescarte_AttachmentsListItem_displayDescription" layoutInsertAt="item2" resourceAttribute="displayDescription"/>
+					<listtext cssClass="attachmentInfo" id="sgzDescarte.AttachmentsView_sgzDescarte_AttachmentsListItem_displayFileType" layoutInsertAt="item3" resourceAttribute="displayFileType"/>
+					<button border="false" cssClass="attachmentIcon" id="sgzDescarte.AttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button" image="/images/msg_downloadComplete_small.svg" layoutInsertAt="icon" resourceAttribute="anywhereAttachDownloaded">					    					    
+						<eventHandlers id="sgzDescarte.AttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers">
+							<eventHandler class="application.handlers.SRAttachmentHandler" event="datachange" id="sgzDescarte.AttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers_datachange_displayLocal" method="displayLocal"/>
+							<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="sgzDescarte.AttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>
+						</eventHandlers>
+					</button>					
+					<listtext cssClass="attachmentInfo" id="sgzDescarte.AttachmentsView_sgzDescarte_AttachmentsListItem_displaySize" layoutInsertAt="item4" resourceAttribute="displaySize"/>
+					<listtext cssClass="attachmentInfo" id="sgzDescarte.AttachmentsView_sgzDescarte_AttachmentsListItem_createby" layoutInsertAt="item5" resourceAttribute="createby"/>			
+					<listtext cssClass="attachmentInfo" id="sgzDescarte.AttachmentsView_sgzDescarte_AttachmentsListItem_displayCreationDate" layoutInsertAt="item6" resourceAttribute="displayCreationDate"/>										 
+					<eventHandlers id="sgzDescarte.AttachmentsView_sgzDescarte_attachments_listItemTemplate_AttachmentsListItem_eventHandlers">				
+						<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="sgzDescarte.AttachmentsView_sgzDescarte_attachments_listItemTemplate_AttachmentsListItem_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>						
+					</eventHandlers>
+				</listItemTemplate>
+			</list>
+
+		</view>
+		<!-- Define Attachments List view -->
+		<view id="WorkExecution.FilteredAttachmentsView"  label="Attachments" showOverflow="true">
+			<requiredResources id="WorkExecution.FilteredAttachmentsView_requiredResources">
+				<requiredResource id="WorkExecution.FilteredAttachmentsView_sgzDescarte" name="sgzDescarte">
+					<requiredAttribute id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments" name="attachments" />
+					<requiredAttribute id="WorkExecution.FilteredAttachmentsView_sgzDescarte_atcsessionlist" name="atcsessionlist" />
+					<requiredAttribute id="WorkExecution.FilteredAttachmentsView_sgzDescarte_msdoclinkslist" name="msdoclinkslist" />
+				</requiredResource>
+			</requiredResources>
+			<actions id="WorkExecution.FilteredAttachmentsView_actions">
+				<action id="WorkExecution.FilteredAttachmentsView_TakePhoto_action" image="/images/header_camera_off.svg" label="Take Photo">
+					<eventHandlers id="WorkExecution.FilteredAttachmentsView_TakePhoto_action_eventHandlers">
+                        <eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
+                        <eventHandler class="application.handlers.SRAttachmentHandler" event="render" id="WorkExecution.FilteredAttachmentsView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
+                    </eventHandlers>
+				</action>
+				<action id="WorkExecution.FilteredAttachmentsView_PickfromGallery_action" image="header_add_OFF.svg" label="Pick from Gallery">
+					<eventHandlers id="WorkExecution.FilteredAttachmentsView_PickfromGallery_action_eventHandlers">
+						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_PickfromGallery_action_eventHandlers_click_launchGallery" method="launchGallery"/>
+					</eventHandlers>
+				</action>
+			</actions>
+            <eventHandlers id="WorkExecution.FilteredAttachmentsView_Filter_eventHandlers">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="show" id="WorkExecution.FilteredAttachmentsView_Filter_eventHandlers_render_filterAttachments" method="filterAttachments"/>
+			</eventHandlers>
+			<list attribute="attachments" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_list" resource="sgzDescarte">
+
+				<sortOptions id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_list_sortOptions">
+					<sortOption id="WorkExecution.FilteredAttachmentsView_sortOption_CreatedDate" label="Created Date">
+						<sortAttribute direction="asc" id="WorkExecution.FilteredAttachmentsView_CreatedDate_sortAttribute_displayCreationDate" name="displayCreationDateISO"/>
+					</sortOption>
+					<sortOption id="WorkExecution.FilteredAttachmentsView_sortOption_FileName" label="File Name">
+						<sortAttribute direction="asc" id="WorkExecution.FilteredAttachmentsView_FileName_sortAttribute_displayFileName" name="displayFileName"/>
+					</sortOption>
+					<sortOption id="WorkExecution.FilteredAttachmentsView_sortOption_Description" label="Description">
+						<sortAttribute direction="asc" id="WorkExecution.FilteredAttachmentsView_Description_sortAttribute_displayDescription" name="displayDescription"/>
+					</sortOption>
+				</sortOptions>
+
+				<listItemTemplate id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_listItemTemplate_AttachmentsListItem" layout="AttachmentsListItem">
+					<listtext cssClass="attachmentLabel" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displayFileName" layoutInsertAt="item1" resourceAttribute="displayFileName"/>
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displayDescription" layoutInsertAt="item2" resourceAttribute="displayDescription"/>
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displayFileType" layoutInsertAt="item3" resourceAttribute="displayFileType"/>
+					<button border="false" cssClass="attachmentIcon" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button" image="/images/msg_downloadComplete_small.svg" layoutInsertAt="icon" resourceAttribute="anywhereAttachDownloaded">					    					    
+						<eventHandlers id="WorkExecution.FilteredAttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers">
+							<eventHandler class="application.handlers.SRAttachmentHandler" event="datachange" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers_datachange_displayLocal" method="displayLocal"/>
+							<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>
+						</eventHandlers>
+					</button>					
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displaySize" layoutInsertAt="item4" resourceAttribute="displaySize"/>
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_createby" layoutInsertAt="item5" resourceAttribute="createby"/>			
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displayCreationDate" layoutInsertAt="item6" resourceAttribute="displayCreationDate"/>										 
+					<eventHandlers id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_listItemTemplate_AttachmentsListItem_eventHandlers">				
+						<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_listItemTemplate_AttachmentsListItem_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>						
+					</eventHandlers>
+				</listItemTemplate>
+			</list>
+
+		</view>
+	
+		<dialog id="SGZDescarte.ConfirmCancel">
+			<container cssClass="mblSimpleDialogText" id="SGZDescarte.ConfirmCancel_container_0">
+				<text id="SGZDescarte.ConfirmCancel_container_0_Areyousure" value="Are you sure you wish to Cancel?  All changes to this request will be lost."/>
+			</container>
+			<container cssClass="mblSimpleDialogFooter" id="SGZDescarte.ConfirmCancel_container_1">
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.ConfirmCancel_Yes_button" label="Yes">
+					<eventHandlers id="SGZDescarte.ConfirmCancel_Yes_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.ConfirmCancel_Yes_button_eventHandlers_click_yesOnCancel" method="yesOnCancel"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZDescarte.ConfirmCancel_No_button" label="No">
+					<eventHandlers id="SGZDescarte.ConfirmCancel_No_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.ConfirmCancel_No_button_eventHandlers_click_noOnCancel" method="noOnCancel"/>
+					</eventHandlers>
+				</button>
+			</container>
+		</dialog>
+		
+		
+		<dialog id="SGZDescarte.CompleCarreg">
+			<container cssClass="mblSimpleDialogText" id="SGZDescarte.CompleCarreg_container_0">
+				<text id="SGZDescarte.CompleCarreg_container_0_Areyousure" value="Tem certeza que deseja finalizar o ticket?"/>
+			</container>
+			<container cssClass="mblSimpleDialogFooter" id="SGZDescarte.CompleCarreg_container_1">
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.CompleCarreg_Yes_button" label="Yes">
+					<eventHandlers id="SGZDescarte.CompleCarreg_Yes_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.CompleCarreg_Yes_button_eventHandlers_click_yesOnCancel" method="finalizarSgzUsinaView"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZDescarte.CompleCarreg_No_button" label="No">
+					<eventHandlers id="SGZDescarte.CompleCarreg_No_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.CompleCarreg_No_button_eventHandlers_click_noOnCancel" method="carregAfterIncShowDialog"/>
+					</eventHandlers>
+				</button>
+			</container>
+		</dialog>
+		<dialog id="SGZDescarte.After.CompleCarreg">
+			<container cssClass="mblSimpleDialogText" id="SGZDescarte.After.CompleCarreg_container_0">
+				<text id="SGZDescarte.After.CompleCarreg_container_0_Areyousure" value="O carregamento desse ticket esta completo?"/>
+			</container>
+			<container cssClass="mblSimpleDialogFooter" id="SGZDescarte.After.CompleCarreg_container_1">
+				<button cssClass="mblPrimaryButton" id="SGZDescarte.After.CompleCarreg_Yes_button" label="Yes">
+					<eventHandlers id="SGZDescarte.After.CompleCarreg_Yes_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.After.CompleCarreg_Yes_button_eventHandlers_click_yesOnCancel" method="finalizarSgzUsinaViewNovo"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZDescarte.After.CompleCarreg_No_button" label="No">
+					<eventHandlers id="SGZDescarte.After.CompleCarreg_No_button_eventHandlers">
+						<!--<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.After.CompleCarreg_No_button_eventHandlers_click_noOnCancel" method="carregIncSgzUsinaView"/>-->
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.After.CompleCarreg_No_button_eventHandlers_click_noOnCancel" method="carregAfterIncShowView02"/>
+					</eventHandlers>
+				</button>
+			</container>
+		</dialog>
+
+		<!--Fim Amanda ....... Novos dialogs-->
+
+				
+		<!-- *********************** -->
+		<!-- LOOKUP SECTION -->
+		<!-- *********************** -->
+		<lookup id="SGZDescarte.whylookup" label="Selecione o motivo" resource="whylist">
+			<requiredResources id="SGZDescarte.whylookup_requiredResources">
+				<requiredResource id="SGZDescarte.whylookup.requiredResource.whylist" name="whylist"/>
+			</requiredResources>
+			<list id="SGZDescarte.whylookup.list" resource="whylist">
+				<listItemTemplate id="SGZDescarte.whylookup.listItemTemplate">
+					<listtext cssClass="bold textappearance-medium" id="SGZDescarte.whylookup.listtext.description" resourceAttribute="description"/>
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="SGZDescarte.whylookup.returnAttributes">
+				<returnAttribute id="SGZDescarte.whylookup.returnAttributes.pd_whynum.ms_whynum" sourceAttribute="pd_whynum" targetAttribute="ms_whynum"/>
+			</returnAttributes>
+		</lookup>
+		<!-- AppDocType lookup for Attachments -->
+		<lookup id="SGZDescarte.appDocTypeLookup" label="Select Value" resource="appDocType">
+			<requiredResources id="SGZDescarte.appDocTypeLookup_requiredResources">
+				<requiredResource id="SGZDescarte.appDocTypeLookup_appDocType" name="appDocType"/>
+			</requiredResources>
+			<list id="SGZDescarte.appDocTypeLookup_appDocType_list" resource="appDocType">
+				<listItemTemplate id="SGZDescarte.appDocTypeLookup_appDocType_listItemTemplate">
+					<listtext cssClass="bold textappearance-medium" id="SGZDescarte.appDocTypeLookup_appDocType_doctype" resourceAttribute="doctype"/>
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="SGZDescarte.appDocTypeLookup_returnAttributes">
+				<returnAttribute id="SGZDescarte.appDocTypeLookup_doctype_category" sourceAttribute="doctype" targetAttribute="category"/>
+			</returnAttributes>
+		</lookup>
+		
+		
+		<!-- ToolsAuth lookup -->
+		<lookup id="ServiceRequest.MSaptoolauthLookup" label="Selecione" resource="MSaptoolauth">
+			<requiredResources id="ServiceRequest.MSaptoolauthLookup_requiredResources">
+				<requiredResource id="ServiceRequest.MSaptoolauthLookup_additionalMSaptoolauth" name="MSaptoolauth"/>
+			</requiredResources>
+
+			<list id="ServiceRequest.MSaptoolauth_list" resource="MSaptoolauth">
+				<listItemTemplate id="ServiceRequest.MSaptoolauth_listItemTemplate_Item1Desc1" layout="Item1Desc1">
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_itemnum" layoutInsertAt="item1" resourceAttribute="ms_itemnum"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_plate" layoutInsertAt="desc1" resourceAttribute="ms_plate"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_active" layoutInsertAt="item2" resourceAttribute="ms_active"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_asphaltplantid" layoutInsertAt="item2" resourceAttribute="ms_asphaltplantid"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_company" layoutInsertAt="item2" resourceAttribute="ms_company"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_loadcapacity" layoutInsertAt="item2" resourceAttribute="ms_loadcapacity"/>
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="ServiceRequest.AssetLookup_returnAttributes">
+				<returnAttribute id="ServiceRequest.MSaptoolauthLookup_ms_itemnum" sourceAttribute="ms_itemnum" targetAttribute="ms_itemnum"/>
+				<returnAttribute id="ServiceRequest.MSaptoolauthLookup_ms_plate" sourceAttribute="ms_plate" targetAttribute="ms_plate"/>
+			</returnAttributes>
+		</lookup>
+		
+		
+		<!-- MSasphaltplant lookup -->
+		<lookup id="ServiceRequest.MSasphaltplantLookup" label="Selecione Usina Credenciada" resource="MSasphaltTransf">
+			<requiredResources id="ServiceRequest.MSasphaltplantLookup_requiredResources">
+				<requiredResource id="ServiceRequest.MSasphaltplantLookup_additionalMSasphaltplant" name="MSasphaltTransf"/>
+			</requiredResources>
+
+			<list id="ServiceRequest.MSasphaltplant_list" resource="MSasphaltTransf">
+				<listItemTemplate id="ServiceRequest.MSasphaltplant_listItemTemplate_Item1Desc1" layout="Item1Desc1">
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSasphaltplant_Item1Desc1_identifier" layoutInsertAt="item1" resourceAttribute="idusina"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSasphaltplant_Item1Desc1_ms_description" layoutInsertAt="desc1" resourceAttribute="description"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSasphaltplant_Item1Desc1_ms_active" layoutInsertAt="item2" resourceAttribute="ms_active"/>
+				</listItemTemplate>
+			</list>
+
+			<returnAttributes id="ServiceRequest.Lookup_returnAttributes01">
+				<returnAttribute id="ServiceRequest.PriorityLookup_value_reportedpriority" sourceAttribute="idusina" targetAttribute="ms_apidauth"/>
+				<returnAttribute id="ServiceRequest.priorityLookup_description_prioritydesc" sourceAttribute="description" targetAttribute="usinadesc"/>
+			</returnAttributes>
+		</lookup>
+		
+		
+		
+		
+		
+		
+		<!-- subpref lookup -->
+		<lookup filterClass="custom.handlers.MSSRDetailHandler" filterMethod="verificaVeiculoLookup" id="ServiceRequest.msSiteLookup" label="Selecione Site" resource="subpref">
+			<requiredResources id="ServiceRequest.msSiteLookup_requiredResources">
+				<requiredResource id="ServiceRequest.msSiteLookup_additionalmsSite" name="subpref"/>
+			</requiredResources>
+
+			<list id="ServiceRequest.msSite_list" resource="subpref">
+			
+				<!-- <searchAttributes id="ServiceRequest.subprefLookup_subpref_searchAttributes">
+					<searchAttribute id="ServiceRequest.subprefLookup_additionallocations_searchAttribute_location" name="siteid"/>
+  					<searchAttribute id="ServiceRequest.subprefLookup_additionallocations_searchAttribute_description" name="description"/>
+				</searchAttributes> -->
+				<listItemTemplate id="ServiceRequest.subpref_listItemTemplate_Item1Desc1" layout="Item1Desc1">
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.subpref_Item1Desc1_identifier" layoutInsertAt="item1" resourceAttribute="siteid"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.subpref_Item1Desc1_ms_description" layoutInsertAt="desc1" resourceAttribute="description"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.subpref_Item1Desc1_ms_active" layoutInsertAt="item2" resourceAttribute="orgid"/>
+				</listItemTemplate>
+			</list>
+
+			<returnAttributes id="ServiceRequest.Lookup_returnAttributes02">
+				<returnAttribute id="ServiceRequest.msSiteLookup_value_siteid" sourceAttribute="siteid" targetAttribute="ms_siteid"/>
+				<returnAttribute id="ServiceRequest.msSiteLookup_description_sitedesc" sourceAttribute="description" targetAttribute="sitedesc"/>
+			</returnAttributes>
+		</lookup>
+		
+	
+	</ui>
+
+	<!--DATA DEFINITION SECTION-->
+	<data id="data">	
+    
+    <!--APP SGZUsina resource-->
+		<resource describedBy="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE" hasManagedQuery="true" id="sgzDescarte" name="sgzDescarte" pageSize="200" providedBy="/oslc/sp/WorkManagement"> 
+			<attributes id="sgzDescarte_attributes">
+				<!-- Inicio Amanda baixando recurso-->
+				<attribute describedByProperty="spi_wm:ms_emergency" id="sgzDescarte_MS_EMERGENCY" name="ms_emergency"/>
+				<!--Fim Amanda baixando recurso-->
+				<attribute describedByProperty="dcterms:identifier" id="sgzDescarte_identifier_dctermsidentifier" index="true" name="identifier"/>
+				<attribute describedByProperty="spi_wm:ms_waste{spi_wm:ms_pperequirement}" id="sgzDescarte_MS_PPEREQUIREMENT" name="ms_pperequirement"/>
+				<attribute describedByProperty="spi_wm:ms_waste{spi_wm:ms_description}" id="sgzDescarte_MS_WASTE_MS_DESCRIPTION" name="ms_description"/>
+				<attribute describedByProperty="spi_wm:status{spi_wm:description}" id="sgzDescarte_statusdesc" name="statusdesc"/>
+				<attribute describedByProperty="spi_wm:ms_actualdate" id="sgzDescarte_MS_ACTUALDATE" name="ms_actualdate"/>
+				<attribute describedByProperty="spi_wm:ms_exitdate" id="sgzDescarte_ms_exitdate" name="ms_exitdate"/>
+				<attribute describedByProperty="spi_wm:ms_authdate" id="sgzDescarte_MS_AUTHDATE" name="ms_authdate"/>
+				<attribute describedByProperty="spi_wm:ms_whynum" id="sgzDescarte_ms_whynum" name="ms_whynum"/>
+				<attribute describedByProperty="spi_wm:ms_authqty" id="sgzDescarte_MS_AUTHQTY" name="ms_authqty"/>
+				<attribute describedByProperty="spi_wm:ms_status" id="sgzDescarte_ms_status" name="ms_status"/>
+				<attribute describedByProperty="spi_wm:ms_changeby" id="sgzDescarte_MS_CHANGEBY" name="ms_changeby"/>
+				<attribute describedByProperty="spi_wm:ms_changedate" id="sgzDescarte_MS_CHANGEDATE" name="ms_changedate"/>
+				<attribute describedByProperty="spi_wm:ms_company" id="sgzDescarte_MS_COMPANY" name="ms_company"/>
+				<attribute describedByProperty="spi_wm:ms_contractnum" id="sgzDescarte_MS_CONTRACTNUM" name="ms_contractnum"/>
+				<attribute describedByProperty="spi_wm:ms_enterby" id="sgzDescarte_MS_ENTERBY" name="ms_enterby"/>
+				<attribute describedByProperty="spi_wm:ms_expiredate" id="sgzDescarte_MS_EXPIREDATE" name="ms_expiredate"/>
+				<attribute describedByProperty="spi_wm:ms_formattedaddress" id="sgzDescarte_MS_FORMATTEDADDRESS" name="ms_formattedaddress"/>
+				<attribute describedByProperty="spi_wm:ms_grossweight" id="sgzDescarte_MS_GROSSWEIGHT" name="ms_grossweight"/>
+				<attribute describedByProperty="spi_wm:ms_historyflag" id="sgzDescarte_MS_HISTORYFLAG" name="ms_historyflag"/>
+				<attribute describedByProperty="spi_wm:ms_isauth" id="sgzDescarte_MS_ISAUTH" name="ms_isauth"/>
+				<attribute describedByProperty="spi_wm:ms_itemnum" id="sgzDescarte_MS_ITEMNUM" name="ms_itemnum"/>
+				<attribute describedByProperty="spi_wm:ms_landfill{spi_wm:ms_landfillid}" id="sgzDescarte_MS_LANDFILLID" name="ms_landfillid"/>
+				<attribute describedByProperty="spi_wm:ms_landfill{spi_wm:ms_description}" id="sgzDescarte_landfilldesc" name="landfilldesc"/>
+				<attribute describedByProperty="spi_wm:companies{spi_wm:name}" id="sgzDescarte_companieName" name="companieName"/>
+				<attribute describedByProperty="spi_wm:ms_latitudestr" id="sgzDescarte_MS_LATITUDESTR" name="ms_latitudestr"/>
+				<attribute describedByProperty="spi_wm:ms_latitudey" id="sgzDescarte_MS_LATITUDEY" name="ms_latitudey"/>
+				<attribute describedByProperty="spi_wm:ms_lfdesc" id="sgzDescarte_MS_LFDESC" name="ms_lfdesc"/>
+				<attribute describedByProperty="spi_wm:ms_lfidauth" id="sgzDescarte_MS_LFIDAUTH" name="ms_lfidauth"/>
+				<attribute describedByProperty="spi_wm:ms_longitudestr" id="sgzDescarte_MS_LONGITUDESTR" name="ms_longitudestr"/>
+				<attribute describedByProperty="spi_wm:ms_longitudex" id="sgzDescarte_MS_LONGITUDEX" name="ms_longitudex"/>
+				<attribute describedByProperty="spi_wm:ms_netweight" id="sgzDescarte_MS_NETWEIGHT" name="ms_netweight"/>
+				<attribute describedByProperty="spi_wm:ms_pecode" id="sgzDescarte_MS_PECODE" name="ms_pecode"/>
+				<attribute describedByProperty="spi_wm:ms_plate" id="sgzDescarte_MS_PLATE" name="ms_plate"/>
+				<attribute describedByProperty="spi_wm:ms_refdate" id="sgzDescarte_MS_REFDATE" name="ms_refdate"/>
+				<attribute describedByProperty="spi_wm:ms_remarks" id="sgzDescarte_MS_REMARKS" name="ms_remarks"/>
+				<attribute describedByProperty="spi_wm:ms_sdtkidauth" id="sgzDescarte_MS_SDTKIDAUTH" name="ms_sdtkidauth"/>
+				<attribute describedByProperty="spi_wm:ms_sdtkidauthstr" id="sgzDescarte_MS_SDTKIDAUTHSTR" name="ms_sdtkidauthstr"/>
+				<attribute describedByProperty="spi_wm:ms_siteid" id="sgzDescarte_MS_SITEID" name="ms_siteid"/>
+				<attribute describedByProperty="spi_wm:ms_pe{spi_wm:ms_description}" id="sgzDescarte_ms_pe_description" name="pedesc"/>
+				<attribute describedByProperty="spi_wm:ms_tareweight" id="sgzDescarte_MS_TAREWEIGHT" name="ms_tareweight"/>
+				<attribute describedByProperty="spi_wm:ms_type" id="sgzDescarte_MS_TYPE" name="ms_type"/>
+				<attribute describedByProperty="spi_wm:ms_wasteid" id="sgzDescarte_MS_WASTEID" name="ms_wasteid"/>
+				<attribute describedByProperty="spi_wm:ms_weightreading" id="sgzDescarte_MS_WEIGHTREADING" name="ms_weightreading"/>
+				<attribute describedByProperty="spi:attachments" describedByResource="attachments" id="sgzDescarte_attachments_spiattachments" name="attachments"/>
+				<attribute describedByProperty="spi_wm:ms_psconfigid" id="sgzDescarte_identifier_spi_wm_ms_ms_psconfigid" name="ms_psconfigid"/>
+				<attribute describedByProperty="spi_wm:ms_psversion" id="sgzDescarte_identifier_spi_wm_ms_ms_psversion" name="ms_psversion"/>
+				<attribute describedByProperty="spi_wm:ms_photosessionid" id="sgzDescarte_identifier_spi_wm_ms_photosessionid" name="ms_photosessionid"/>
+				<attribute describedByProperty="spi_wm:ms_photosessionline" describedByResource="photosessionlineResource" id="sgzDescarte_atcsessionlist_spi_ms_photosessionline" name="atcsessionlist"/>
+				<attribute describedByProperty="spi_wm:ms_doclinks" describedByResource="msDoclinksResource" id="sgzDescarte_msdoclinkslist_spi_ms_doclinks" name="msdoclinkslist"/>
+			</attributes>
+			
+			<creationFactories id="sgzDescarte_creationFactories">
+		        <creationFactory creationUri="/oslc/os/ms_oslcsgzdescarte" id="serviceRequest_creationFactory_createSR" name="createSR"/>
+	        </creationFactories>
+			
+			<queryBases id="sgzDescarte_queryBases">
+				<queryBase id="sgzDescarte_queryBase_getAllTickets" name="ConsultaPadraoSGZDescarte" queryUri="/oslc/os/ms_oslcsgzdescarte?savedQuery=ConsultaPadraoSGZDescarte"/>
+			</queryBases>
+		</resource>		
+		
+		<!-- Recurso para linhas de categorias para fotos (Categorias)  -->
+		<resource id="photosessionlineResource" name="photosessionlineResource" pageSize="20">
+			<attributes id="photosessionlineResource_attributes">
+			    <attribute describedByProperty="spi_wm:ms_photosessionlineid" id="photosessionlineResource_value_dcterms_identifier" name="ms_photosessionlineid"/>
+			    <attribute describedByProperty="spi_wm:ms_photosessionid" id="photosessionlineResource_value_spi_wm_ms_photosessionid" name="ms_photosessionid"/>
+			    <attribute describedByProperty="spi_wm:ms_parent" id="photosessionlineResource_value_spi_ms_parent" name="ms_parent"/>
+			    <attribute describedByProperty="spi_wm:ms_required" id="photosessionlineresource_ms_required_spi_ms_required" name="ms_required"/>
+			    <attribute describedByProperty="spi_wm:ms_sequence" id="photosessionlineresource_ms_sequence_spi_ms_sequence" name="ms_sequence"/>
+			    <attribute describedByProperty="spi_wm:ms_description" id="photosessionlineresource_ms_description_spi_ms_description" name="ms_description"/>
+			    <attribute describedByProperty="spi_wm:ms_minqty" id="photosessionlineresource_ms_minqty_spi_ms_minqty" name="ms_minqty"/>
+                <localAttribute dataType="string" id="photosessionlineresource_secCount_string" index="true" name="secCount"/>
+			</attributes>  		
+		</resource>
+		
+		<!-- Recurso para tabela ms_doclinks -->
+		<resource id="msDoclinksResource" name="msDoclinksResource" pageSize="10">
+			<attributes id="msDoclinksResource_attributes">
+			    <attribute describedByProperty="spi_wm:ms_anywhererefid" id="msDoclinksResource_ms_anywhererefid" name="anywhererefid"/>
+			    <attribute describedByProperty="spi_wm:ms_photosessionid" id="msDoclinksResource_value_spi_ms_photosessionid" name="ms_photosessionid"/>
+			    <attribute describedByProperty="spi_wm:ms_psconfigid" id="msDoclinksResource_ms_required_spi_ms_psconfigid" name="ms_psconfigid"/>
+			    <attribute describedByProperty="spi_wm:ms_version" id="msDoclinksResource_ms_sequence_ms_version" name="ms_version"/>
+			</attributes>  		
+		</resource>
+		
+		<!-- UserInfo attribute list -->
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#MaxUser" id="userInfo" name="userInfo" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">	
+	        <attributes id="userInfo_attributes">
+		        <attribute describedByProperty="dcterms:identifier" id="userInfo_maxuserid_dctermsidentifier" name="maxuserid"/>
+		        <attribute describedByProperty="spi:userid" id="userInfo_userid_spiuserid" name="userid"/>
+		        <attribute describedByProperty="spi:loginid" id="userInfo_loginid_spiloginid" name="loginid"/>
+		        <attribute describedByProperty="spi:storeroomsite" id="userInfo_storeroomsite_spistoreroomsite" name="storeroomsite"/>
+		        <attribute describedByProperty="spi:type" id="userInfo_type_spitype" name="type"/>
+		        <attribute describedByProperty="spi:personid" id="userInfo_personid_spipersonid" name="personid"/>
+		        <attribute describedByProperty="spi:sysuser" id="userInfo_sysuser_spisysuser" name="sysuser"/>
+		        <attribute describedByProperty="spi:querywithsite" id="userInfo_querywithsite_spiquerywithsite" name="querywithsite"/>
+		        <attribute describedByProperty="spi:defsite{oslc:shortTitle}" id="userInfo_defsite_spidefsiteoslcshortTitle" name="defsite"/>
+		        <attribute describedByProperty="spi:defsite{spi:orgid}" id="userInfo_deforg_spidefsitespiorgid" name="deforg"/>
+		        <attribute describedByProperty="spi:status" id="userInfo_status_spistatus" name="status"/>
+		        <attribute describedByProperty="spi:emailpswd" id="userInfo_emailpswd_spiemailpswd" name="emailpswd"/>
+		        <attribute describedByProperty="spi:screenreader" id="userInfo_screenreader_spiscreenreader" name="screenreader"/>
+		        <attribute describedByProperty="spi:failedlogins" id="userInfo_failedlogins_spifailedlogins" name="failedlogins"/>
+		        <attribute describedByProperty="spi:inactivesites" id="userInfo_inactivesites_spiinactivesites" name="inactivesites"/>
+		        <attribute describedByProperty="spi:groupuser" describedByResource="userRoles" id="userInfo_groupList_spigroupuser" name="groupList"/>
+		     </attributes>
+		     <queryBases id="userInfo_queryBases">
+				<queryBase id="userInfo_queryBase_currentUser" name="currentUser" queryUri="/oslc/os/oslcmaxuser?savedQuery=currentUser"/>
+			</queryBases>
+	    </resource>
+	   
+	   
+		<!-- Attachments resource-->
+		<!--NOTICE: There must be at least two attributes with these aliases: fileSize and fileName-->
+		<!--CLAUDIO-->
+		
+		<resource class="application.business.AttachmentsObject" id="attachments" isAttachment="true" name="attachments">
+			<attributes id="attachments_attributes">
+				<attribute describedByProperty="oslc_cm:attachmentSize" id="attachments_fileSize_oslc_cmattachmentSize" name="fileSize"/> 
+				<attribute describedByProperty="dcterms:title" id="attachments_fileName_dctermstitle" key="1" name="fileName"/>
+				<attribute describedByProperty="spi:fileName" id="attachments_fullFileName_spifileName" key="2" name="fullFileName"/> 
+				<attribute describedByProperty="dcterms:description" id="attachments_description_dctermsdescription" name="description"/>
+				<attribute describedByProperty="dcterms:created" id="attachments_creationDate_dctermscreated" key="3" name="creationDate"/>
+				<attribute describedByProperty="spi:urlType" id="attachments_urlType_spiurlType" name="urlType"/>
+				<attribute describedByProperty="spi:docType" id="attachments_docType_spidocType" name="docType"/>
+				<attribute describedByProperty="spi:printthrulink" id="attachments_bulkDownload_spiprintthrulink" name="bulkDownload"/>
+				<attribute describedByProperty="spi:contentLocation" id="attachments_contentLocation_spicontentLocation" name="contentLocation"/>
+				<attribute describedByProperty="spi:anywhererefid" id="attachments_anywhereRefId_spianywhererefid" name="anywhereRefId"/>
+				<attribute describedByProperty="spi:createby" id="attachments_createby_spicreateby" name="createby"/> 
+				<localAttribute dataType="string" id="attachments_displaySize_string" name="displaySize"/>
+				<localAttribute dataType="string" formula="(${fileName} || ${anywhereAttachName})" id="attachments_displayFileName_string" name="displayFileName"/>
+				<localAttribute dataType="string" formula="(${description} || ${anywhereAttachDescription})" id="attachments_displayDescription_string" name="displayDescription"/>
+				<localAttribute dataType="string" formula="(${docType} || ${anywhereAttachCategory})" id="attachments_displayCategory_string" name="displayCategory"/>
+				<localAttribute dataType="dateTime" formula="(${creationDate} || ${anywhereCreationDate})" id="attachments_displayCreationDate_dateTime" name="displayCreationDate"/>
+				<localAttribute dataType="string" id="attachments_displayFileType_string" name="displayFileType"/>
+				<localAttribute dataType="string" id="attachments_category_string" index="true" name="category"/>
+				<localAttribute dataType="string" id="attachments_section_string" index="true" name="section"/>
+			</attributes>
+		</resource>
+		
+	    											    
+		<!-- Roles attribute list -->				
+	    <resource id="userRoles" name="userRoles">
+			<attributes id="userRoles_attributes">
+				<attribute describedByProperty="spi:groupname" id="userRoles_roleName_spigroupname" name="roleName"/>			
+			</attributes>
+		</resource>
+		
+		
+   		<resource id="errorResource" name="errorResource" singleton="true">
+   			<attributes id="errorResource_attributes">
+   				<localAttribute dataType="boolean" id="errorResource_hasErrors_boolean" name="hasError"/>
+   			</attributes>
+   		</resource>   		
+		
+		<resource id="plateResource" name="plateResource" singleton="true">
+   			<attributes id="msplate_attributes">
+   				<localAttribute dataType="string" id="msplate_hasErrors_plate" name="ms_plate"/>
+   			</attributes>
+   		</resource>
+		
+		<resource describedBy="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_pdwhy" id="whylist" name="whylist" pageSize="50" providedBy="/oslc/sp/WorkManagement">
+			<attributes id="whylist_attributes">
+				<attribute describedByProperty="spi_wm:pd_whynum" id="whylist_pd_whynum_spipd_whynum" index="true" name="pd_whynum"/> 
+				<attribute describedByProperty="spi_wm:description" id="whylist_description_spidescription" index="true" name="description"/>
+			</attributes>
+			<queryBases id="whylist_queryBases">
+ 	 			<queryBase id="whylist_queryBase_sgzdescartewhy" name="getsgzdescartewhy" queryUri="/oslc/os/ms_oslcpdwhy?savedQuery=sgzdescartewhy"/>
+	 		</queryBases>
+	 		<whereClause id="whylist_whereClause"/>
+		</resource>	
+		
+		
+		
+		<!-- APPDOCTYPE --> 
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#AppDocType" id="appDocType" isSystem="true" name="appDocType" pageSize="50" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">
+			<attributes id="appDocType_attributes">
+				<attribute describedByProperty="spi:appdoctypeid" id="appDocType_identifier_spiappdoctypeid" index="true" name="identifier"/> 
+				<attribute describedByProperty="spi:doctype" id="appDocType_doctype_spidoctype" index="true" name="doctype"/>
+				<attribute describedByProperty="spi:app" id="appDocType_app_spiapp" index="true" name="app"/>
+			</attributes>
+			<queryBases id="appDocType_queryBases">
+ 	 			<queryBase id="appDocType_queryBase_getSRDocTypes" name="getSRDocTypes" queryUri="/oslc/os/oslcappdoctype?oslc.where=spi:app=%22MS_AMTK%22"/>
+	 		</queryBases>
+	 		<whereClause id="appDocType_whereClause"/>
+		</resource>
+		
+		
+	</data>
+	
+	<messages id="messages">
+		<message defaultMessage="Service Request" id="primaryResourceSingleLabel"/>
+		<message defaultMessage="Service Requests" id="primaryResourcePluralLabel"/>
+		<!--<message defaultMessage="IBM Maximo Service Request" id="applicationName"/>-->
+		<message defaultMessage="SGZAterro" id="SGZAterro"/>
+		<message defaultMessage="The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online." id="invalidLocation"/>
+		<message defaultMessage="The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online." id="invalidAsset"/>
+		<message defaultMessage="The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online." id="invalidPriority"/>
+		<message defaultMessage="Veiculo Nao Autorizado." id="veiculoinvalido"/>
+		<message defaultMessage="Quantidade nao Autorizada." id="qtdAuthqty"/>
+		<message defaultMessage="Por Favor! Tire a Foto da Placa do Veiculo." id="semanexo"/>
+		<message defaultMessage="An error exists. Click here to view the error." id="errorExists"/>
+		<message defaultMessage="Errors Exist. Review the errors." id="reviewErrors"/>
+	</messages>
+</app>

@@ -1,0 +1,36 @@
+Property "bldTarget" has not been set
+Property "androidSenderId" has not been set
+Property "androidPushKey" has not been set
+Property "iosPushPswd" has not been set
+Importing file D:\Any764\IBM\Anywhere\MaximoAnywhere\build-taskdef.xml from D:\Any764\IBM\Anywhere\MaximoAnywhere\build-configuration.xml
+Overriding previous definition of reference to ant.projectHelper
+parsing buildfile D:\Any764\IBM\Anywhere\MaximoAnywhere\build-taskdef.xml with URI = file:/D:/Any764/IBM/Anywhere/MaximoAnywhere/build-taskdef.xml
+parsing buildfile jar:file:/D:/Any764/IBM/Anywhere/MaximoAnywhere/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/D:/Any764/IBM/Anywhere/MaximoAnywhere/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
+Overriding previous definition of reference to ant.projectHelper
+Build sequence for target(s) `clean-changetrack' is [clean-changetrack]
+Complete build sequence is [clean-changetrack, configure-features, configure-dataEncryption, configure-adapter, clean, init, configure-androidmanifest, configure-authenticationconfig, configure-worklightproperties, configure-androidprojectproperties, configure, export, all, Application Utils Script.test, update-manifest-all, update-manifest-clean, configure-ios-features, --configure-androidprojectproperties-impl, update-manifest-sdk, update-manifest-permissions, -eclipse-refresh-server-war, configure-features-app, --configure-dataEncryption, update-manifest-screens, --configure-androidmanifest, test, update-manifest, ]
+
+clean-changetrack:
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\.buildconfigchecksum
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\AssetAudit\app-feature.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\AssetDataManager\app-feature.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\Inspection\app-feature.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\IssuesReturns\app-feature.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\PhysicalCount\app-feature.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\ServiceRequest\app-feature.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\Transfers\app-feature.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\WorkApproval\app-feature.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\WorkExecution\app-feature.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\build.properties.MD5
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\WorkExecution
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\WorkApproval
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\Transfers
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\ServiceRequest
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\PhysicalCount
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\IssuesReturns
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\Inspection
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\AssetDataManager
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps\AssetAudit
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig\apps
+   [delete] Deleting D:\Any764\IBM\Anywhere\MaximoAnywhere\.changetrack\.buildconfig\buildconfig
+clean-changetrack:  duration 0 seconds

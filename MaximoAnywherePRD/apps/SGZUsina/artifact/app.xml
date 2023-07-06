@@ -1,0 +1,1271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed Materials - Property of IBM 5725-M39 (C) COPYRIGHT IBM CORP. 
+	2013 All Rights Reserved US Government Users Restricted Rights - Use, duplication 
+	or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. -->
+<!-- =================================== -->
+<!-- SGZ USINA APPLICATION ARTIFACT -->
+<!-- =================================== -->
+<app blindQuerySupport="false" id="SGZUsina" logLevel="0" requiredRole="ANYWHERE_SERVICE_REQUEST" version="20190120_031802-0500" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../build/app.xsd" combinedViews="true" debug="false">
+	 
+	<!-- Back up this file before you edit it. -->
+
+	
+	<!--UI SECTION-->
+	<!--To change the display name of any element, change the label attribute.-->
+	<!--If you support additional languages, you must also update the label in the common/js/application/translation/nls/<language>/artifact.js file for that language.-->
+
+	<ui id="ui">
+	<!--Action panel-->
+   	<view id="SGZUsina.ActionPanel" label="Lista Padrão" resource="sgzUsina" showBackButton="false">
+   		<requiredResources id="SGZUsina.ActionPanel_errorResource">
+   		    <requiredResource id="SGZUsina.ActionPanel_serviceRequest" name="sgzUsina" reload="true"/>
+			<requiredResource id="SGZUsina.ActionPanel_requiredResource_errorResource" name="errorResource"/>
+		</requiredResources>			
+		<progressIndicator id="SGZUsina.ActionPanel_0"/>
+		<actions id="SGZUsina.ActionPanel_actions">
+			<action id="SGZUsina.ActionPanel_SynchronizeData_action" label="Synchronize Data" overflow="true">
+				<eventHandlers id="SGZUsina.ActionPanel_SynchronizeData_action_eventHandlers">
+					<eventHandler class="platform.handlers.WorkOfflineHandler" event="click" id="SGZUsina.ActionPanel_SynchronizeData_action_eventHandlers_click_sync" method="sync"/>
+					<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="SGZUsina.ActionPanelR_SynchronizeData_action_eventHandlers_render_enableDisableMenu" method="enableDisableSyncMenu"/>
+				</eventHandlers>
+			</action>
+		</actions>
+			
+		<container cssClass="errorheader" id="SGZUsina.ActionPanel_container_0">
+			<link id="link" label="">
+				<eventHandlers id="link_eventHandlers">
+					<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="link_eventHandlers_render_hideShowSelectLink" method="hideShowErrorLink"/>
+					<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="link_eventHandlers_click" method="showErrorPage"/>
+					<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="link_eventHandlers_click_init" method="initMyReportedSRNovoSessionStorage"/>
+				</eventHandlers>
+			</link>
+		</container>
+		
+		<container id="SGZUsina.ActionPanel_container_1">
+		    <group id="action1">
+				<groupitem id="action1groupitem" layout="Button1Item1" transitionTo="SGZUsina.CreateSR">
+			    	<image cssClass="actionButton" id="sricon" image="acBtn_createNew.svg" label= "Generate new Service Order" layoutInsertAt="button1" platform="false"/>
+			    	<text id="createsrtext" layoutInsertAt="item1" value= "Generate new Service Order"/>
+			    </groupitem>
+			    <groupitem id="action2groupitem" layout="Button1Item1" transitionTo="SGZUsina.MyReportedSR">
+			    	<image cssClass="actionButton" id="sricon2" image="acBtn_viewList.svg" label="My Work Order List" layoutInsertAt="button1" platform="false"/>
+			    	<text id="createsrtext2" layoutInsertAt="item1" value="My Work Order List"/>
+			    </groupitem>
+		    </group>
+		</container>
+		<eventHandlers id="SGZUsina.ActionPanel_eventHandlers">
+  			<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="SGZUsina.ActionPanel_eventHandlers_initialize_initActionPanel" method="initActionPanel"/>
+		</eventHandlers>
+	</view>
+
+	<!--My Reported SR view-->
+		<view id="SGZUsina.MyReportedSR" label="My Reported SRs" resource="sgzUsina" showBackButton="true">
+			<queries id="SGZUsina.MyReportedSR_serviceRequest_queries" resource="sgzUsina">
+				<query id="SGZUsina.MyReportedSR_MY_REPORTED_SR" label="My Service Orders" queryBase="ConsultaPadraoSGZUsina"/> 
+				
+				<query id="SGZUsina.MyReportedSR___errored__" label="Records with Errors" queryBase="__errored__" system="true">
+					<eventHandlers id="SGZUsina.MyReportedSR___errored___eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.MyReportedSR___errored___eventHandlers_render_hideShowErrorMenu" method="hideShowErrorMenu"/>
+					</eventHandlers>
+				</query>
+				
+			</queries>
+			<requiredResources id="SGZUsina.MyReportedSR_requiredResources">
+				<requiredResource id="SGZUsina.MyReportedSR_serviceRequest" name="sgzUsina" reload="true"/>
+				<requiredResource id="WorkExecution.WorkItemsView_gpslocalstore" name="PlatformGeolocationLocalStore"/>
+			</requiredResources>
+		
+  			<eventHandlers id="SGZUsina.MyReportedSR_eventHandlers">
+  				<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="SGZUsina.MyReportedSR_eventHandlers_initialize_initMyReportedSR" method="initMyReportedSRNovo"/>
+			</eventHandlers>
+			
+
+			<progressIndicator id="SGZUsina.MyReportedSR_0"/>
+			
+			<list displayPageSize="20" id="SGZUsina.MyReportedSR_serviceRequest_list" resource="sgzUsina">
+			
+				<sortOptions id="SGZUsina.WorkItemsView_serviceRequest_list_sortOptions">
+
+					<sortOption id="SGZUsina.WorkItemsView_sortOption_srnum" label="Request Number">
+						<sortAttribute direction="desc" id="SGZUsina.WorkItemsView_srnum_sortAttribute_identifier" name="identifier"/>
+					</sortOption>
+				</sortOptions>
+				
+				<listItemTemplate id="SGZUsina.MyReportedSR_serviceRequest_listItemTemplate_WorkListItem" layout="WorkListItem">
+				
+					<eventHandlers id="SGZUsina.MyReportedSR_eventHandlers011">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.MyReportedSR_eventHandlers_carregIncView" method="carregIncView"/>
+					</eventHandlers>
+					
+					<listtext cssClass="bold textappearance-medium" id="SGZUsina.MyReportedSR_serviceRequest_WorkListItem_srnum" layoutInsertAt="item1" resourceAttribute="identifier"/>
+					<listtext cssAttributes="status" id="ServiceRequestMyReportedSR_serviceRequest_WorkListItem_ms_plate" layoutInsertAt="item4" resourceAttribute="ms_plate"/>
+					<listtext cssClass="bold textappearance-medium" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_starttime" layoutInsertAt="item2" resourceAttribute="ms_expiredate" />
+					<image id="WorkExecution.action_timer_OFF" image="/images/action_timer_OFF.svg" layoutInsertAt="item2" platform="false"/>
+					<image cssAttributes="internalStatus" cssClass="statusDesc" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_statusimg" image="statusicons/{:ms_status}.svg" layoutInsertAt="item4" platform="false"/>
+					<listtext cssAttributes="status"  id="WorkExecution.WorkItemsView_workOrder_WorkListItem_statusdesc" layoutInsertAt="item4" resourceAttribute="ms_status"/>
+ 
+ 				</listItemTemplate>
+			</list>
+			<actions id="SGZUsina.MyReportedSR_actions">
+				<action id="SGZUsina.MyReportedSR_CreateSR_action" label="Gerar Nova Ordem de Serviço" overflow="true" transitionTo="SGZUsina.CreateSR"/>
+				<action id="SGZUsina.MyReportedSR_SynchronizeData_action" label="Synchronize Data" overflow="true">
+					<eventHandlers id="SGZUsina.MyReportedSR_SynchronizeData_action_eventHandlers">
+						<eventHandler class="platform.handlers.WorkOfflineHandler" event="click" id="SGZUsina.MyReportedSR_SynchronizeData_action_eventHandlers_click_sync" method="sync"/>
+						<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="SGZUsina.MyReportedSR_SynchronizeData_action_eventHandlers_render_enableDisableMenu" method="enableDisableSyncMenu"/>
+					</eventHandlers>
+				</action>
+			</actions>
+		</view>
+		
+
+		<!--VIEW CARREG INCOMPLETO -->
+		<view editableView="SGZUsina.CredDetailCredEdit" id="SGZUsina.CredDetail" label="Completar Carregamento" resource="sgzUsina" showBackButton="true">
+			<requiredResources id="ServiceRequest.CredDetail_requiredResources">
+				<requiredResource id="ServiceRequest.CredDetail_serviceRequest" name="sgzUsina"/>
+			</requiredResources>
+			<eventHandlers id="ServiceRequest.CredDetail_eventHandlers">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="ServiceRequest.CredDetail_eventHandlers_initialize_fetchAllListSizes" method="fetchAllListSizes"/>
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="ServiceRequest.CredDetailw_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
+			</eventHandlers>
+			<container id="ServiceRequest.CredDetail_serviceRequest_container_0" resource="sgzUsina">
+				<errorIndicator id="ServiceRequest.CredDetail_errorIndicator"/>
+				<group id="ServiceRequest.CredDetail_group_0">
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_status_0">
+						<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_amticketid_0" label="Work Order No." resourceAttribute="identifier"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_srnum_0">
+						<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.usina_0" label="Usina" resourceAttribute="usina"/>
+					</groupitem>
+					
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_apidauth_0">
+						<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_apidauth" label="Usina Autorizada" resourceAttribute="ms_apidauth"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_owner_0">
+						<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.Subprefeitura_0" label="Subprefeitura" resourceAttribute="ms_siteid"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_summary_0">
+						<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_status_0" label="Status" resourceAttribute="ms_status"/>
+					</groupitem>
+		
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_0">
+						<text cssClass="richText" editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_0_ms_expiredate" label="Data de Validade" resourceAttribute="ms_expiredate"/>
+					</groupitem>
+										
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.EditLocationView_0">
+						<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.LocationView_0_contratada" label="Contratada" resourceAttribute="contratada"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_plate_0">
+						<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_plate_0000" label="Placa" resourceAttribute="ms_plate"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.AssetView_0">
+						<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest._0_ms_authqty" label="Quantidade de Massa Asfáltica (kg)" resourceAttribute="ms_authqty"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_reportedpriority_0">
+						<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_remarks_0" label="Observações" resourceAttribute="ms_remarks"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_tareweight_0">
+						<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_tareweight" label="Peso Tara (kg)" resourceAttribute="ms_tareweight"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_netweight_0">
+						<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_netweight" label="Peso Líquido (kg)" resourceAttribute="ms_netweight"/>	
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_qtd_massa_0_0">
+						<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.qtd_massa_0" label="Quantidade de Massa Asfáltica Carregada (kg)" resourceAttribute="qtd_massa"/>
+					</groupitem>
+					
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_qtd_emulsao_0">
+						<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.qtd_emulsao_0000" label="Quantidade de Emulsão Carregada (kg)" resourceAttribute="qtd_emulsao"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_grossweight_1">
+						<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_grossweight_0" label="Peso Bruto (Kg)" resourceAttribute="ms_grossweight">
+						</text>
+					</groupitem>
+
+										
+					<groupitem enableFeatureByProperty="attachments.enabled" id="ServiceRequest.CredDetailViewEdit_groupitem_ServiceRequest.AttachmentsView_013" layout="Item1Count1Button2" transitionTo="SGZUsina.AttachmentsView">
+						<eventHandlers id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_button_eventHandlers">
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_eventHandlers_click_discardNewServiceRequestView_11" method="control_final"/>
+						</eventHandlers>
+						<text cssClass="relatedRecords" editable="false" id="ServiceRequest.CredDetailViewEdit_groupitem_ServiceRequest.AttachmentsView_0_Attachments013" layoutInsertAt="item1" value="Foto Ordem Serviço Carregamento"/>
+					</groupitem>
+					
+				</group>			
+			</container>
+					
+			<footer id="SGZUsina.CredDetail_viewDetail_footer">
+				<button id="SGZUsina.CredDetail_Cancel_viewDetail" label="Cancel">
+					<eventHandlers id="SGZUsina.CredDetail_Cancel_button_viewDetail_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.CredDetail_Cancel_button_eventHandlers_click_discardNewServiceRequestView_1" method="control_final"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.CredDetail_Cancel_button_eventHandlers_click_discardNewServiceRequestView_2" method="discardNewServiceRequestView"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZUsina.CreateSR_Salvar_viewDetail" label="Salvar">
+					<eventHandlers id="SGZUsina.CredDetail_Salvar_button_viewDetail_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.CredDetail_Salvarms_netweight_eventHandlers_discardNewServiceRequestView_1" method="control_final"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.CredDetail_Salvarms_netweight_eventHandlers_click" method="calcNetweight"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.CredDetail_Salvar_button_eventHandlers_click" method="salvarTicket"/>
+					</eventHandlers>
+				</button>
+				
+				<button cssClass="mblPrimaryButton" id="SGZUsina.CredDetail_Finalizar_button" label="Finalizar" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZUsina.CredDetail_finalizar_button_eventHandlers">
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.CredDetail_finalizarms_netweight_eventHandlers_click" method="calcNetweight"/>
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.CredDetail_finalizar_button_eventHandlers_click_commitNewServiceRequestView_1" method="control_final"/>
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.CredDetail_finalizar_button_eventHandlers_click_commitNewServiceRequestView_2" method="carregIncShowDialog"/>
+					</eventHandlers>
+				</button>
+			</footer>
+		</view>
+
+		
+		<!--Inicio Amanda ............. TRANSFERE USINA -->
+		<view  id="SGZUsina.TransferCredEdit" label="Transferir para outra Usina" resource="sgzUsina" showBackButton="true">
+			<requiredResources id="ServiceRequest.Transfer_requiredResources">
+				<requiredResource id="ServiceRequest.Transfer_serviceRequest" name="sgzUsina"/>
+				<requiredResource id="ServiceRequest.CreateSR_MSasphaltplant00" name="MSasphaltplant"/>
+			</requiredResources>
+			<eventHandlers id="ServiceRequest.Transfer_eventHandlers">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="ServiceRequest.Transfer_eventHandlers_initialize_fetchAllListSizes" method="fetchAllListSizes"/>
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="ServiceRequest.Transferw_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
+			</eventHandlers>
+			<container id="ServiceRequest.Transfer_serviceRequest_container_0" resource="sgzUsina">
+			<errorIndicator id="ServiceRequest.Transfer_errorIndicator"/>
+			<group id="ServiceRequest.CredDetail_group_tr">
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_status_tr">
+					<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_amticketid_tr" label="Work Order No." resourceAttribute="identifier"/>
+				</groupitem>
+				
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_srnum_tr">
+					<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.usina_tr" label="Usina" resourceAttribute="usina"/>
+				</groupitem>		
+				<!--<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_apidauth_tr">
+					<text editable="false" id="ServiceRequest.SRDetail_transfer_Usina_serviceRequest_groupitem_ServiceRequest.usina_tr" label="Complet Carreg: Usina Crendenciada" lookup="ServiceRequest.MSasphaltplantLookup" lookupAttribute="idusina" placeHolder="Tap to enter"  resourceAttribute="ms_asphaltplantid"/>
+				</groupitem>-->
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_apidauth_tr">
+					<text editable="false" required= "true" id="ServiceRequest.CreateSR_serviceRequest_groupitem_ServiceRequest_ms_apidauth_tr" label="Complet Carreg: Usina Crendenciada" lookup="ServiceRequest.MSasphaltplantLookup" lookupAttribute="idusina" placeHolder="Tap to enter" resourceAttribute="ms_apidauth">
+						<eventHandlers id="ServiceRequest.SRDetail_transfer_Usina_serviceRequest_groupitem_ServiceRequest.usina_tr">
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="validate" id="ServiceRequest.SRDetail_transfer_serviceRequest_groupitem_ServiceRequest.EditPriorityView_0_Priority_Priority_eventHandlers_validate_validateSitetr" method=""/>
+						</eventHandlers>
+					</text>
+				</groupitem>
+
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_owner_tr">
+					<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.Subprefeitura_tr" label="Subprefeitura" resourceAttribute="ms_siteid"/>
+				</groupitem>
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_summary_tr">
+					<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_status_tr" label="Status" resourceAttribute="ms_status"/>
+				</groupitem>
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_tr">
+					<text cssClass="richText" editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_tr_ms_expiredate" label="Data de Validade" resourceAttribute="ms_expiredate"/>
+				</groupitem>
+				
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.EditLocationView_tr">
+					<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.LocationView_tr_contratada" label="Contratada" resourceAttribute="contratada"/>
+				</groupitem>
+				
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_plate_tr">
+					<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_plate_tr000" label="Placa" resourceAttribute="ms_plate"/>
+				</groupitem>
+				
+				<!--<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.AssetView_tr">
+					<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest._tr_ms_authqty" label="Quantidade de Massa Asfáltica (kg)" resourceAttribute="ms_authqty" value="0"/>
+				</groupitem>-->
+				
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_reportedpriority_tr">
+					<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_remarks_tr" label="Observações" resourceAttribute="ms_remarks"/>
+				</groupitem>
+				
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_tareweight_tr">
+					<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_tareweight2" label="Peso Tara (kg)" resourceAttribute="ms_tareweight"/>
+				</groupitem>
+				
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_netweight_tr">
+					<text editable="false" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_netweight3" label="Peso Líquido (kg)" resourceAttribute="ms_netweight"/>			
+				</groupitem>
+				
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_qtd_massa_tr_tr">
+					<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.qtd_massa_tr" label="Quantidade de Massa Asfáltica Carregada (kg)" resourceAttribute="qtd_massa"/>
+				</groupitem>
+				
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_qtd_emulsao_tr">
+					<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.qtd_emulsao_tr000" label="Quantidade de Emulsão Carregada (kg)" resourceAttribute="qtd_emulsao" />
+				</groupitem>
+				
+				<groupitem id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest_ms_grossweight_tr">
+					<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_grossweight_tr" label="Peso Bruto (Kg)" resourceAttribute="ms_grossweight">
+					</text>
+				</groupitem>
+									
+				<!--<groupitem enableFeatureByProperty="attachments.enabled" id="ServiceRequest.CredDetailViewEdit_groupitem_ServiceRequest.AttachmentsView_tr13" layout="Item1Count1Button2" transitionTo="SGZUsina.AttachmentsView">
+					<text cssClass="relatedRecords" editable="false" id="ServiceRequest.CredDetailViewEdit_groupitem_ServiceRequest.AttachmentsView_tr_Attachments013" layoutInsertAt="item1" value="Foto Ticket de Carregamento"/>
+				</groupitem>-->			
+			</group>
+			</container>
+					
+			<footer id="SGZUsina.Transfer_viewDetail_footer">
+				<button id="SGZUsina.Transfer_Cancel_viewDetail" label="Cancel">
+					<eventHandlers id="SGZUsina.Transfer_Cancel_button_viewDetail_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.Transfer_Cancel_button_eventHandlers_click_discardNewServiceRequestView_1" method="control_final"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.Transfer_Cancel_button_eventHandlers_click_discardNewServiceRequestView_2" method="discardNewServiceRequestView"/>
+					</eventHandlers>
+				</button>
+
+				<button cssClass="mblPrimaryButton" id="SGZUsina.Transfer_Finalizar_button" label="Finalizar" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZUsina.Transfer_finalizar_button_eventHandlers">
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.Transfer_finalizarms_netweight_eventHandlers_click" method="calcNetweight"/>
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.Transfer_finalizar_button_eventHandlers_click_commitNewServiceRequestView_1" method="control_final"/>
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.Transfer_finalizar_button_eventHandlers_click_commitNewServiceRequestView_2" method="carregIncSgzUsinaViewNovo"/>
+					</eventHandlers>
+				</button>
+			</footer>
+		</view>
+        <!--Fim Amanda TRANSFERE USINA -->		
+
+
+
+		
+	<!--Create SR view-->
+	<view id="SGZUsina.CreateSR" label="Generate new Service Order" resource="sgzUsina" showKeyboard="true">
+		<requiredResources id="SGZUsina.CreateSR_requiredResources">
+			<requiredResource id="SGZUsina.CreateSR_serviceRequest" name="sgzUsina"/>
+			<requiredResource id="ServiceRequest.CreateSR_MSaptoolauth" name="MSaptoolauth"/>
+			<requiredResource id="ServiceRequest.CreateSR_MSasphaltplant" name="MSasphaltplant"/>
+			<requiredResource id="ServiceRequest.CreateSR_MSPersonAut" name="MSPersonAut"/>
+			<requiredResource id="ServiceRequest.CredDetail_subpref" name="subpref"/>
+			<requiredResource id="ServiceRequest.CredDetail_toolsiteauth" name="toolsiteauth"/>			
+		</requiredResources>
+			<eventHandlers id="SGZUsina.CreateSR_eventHandlers">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="SGZUsina.CreateSR_eventHandlers_initialize_initNewServiceRequestView" method="initNewServiceRequestView"/>
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="SGZUsina.CreateSR_eventHandlers_initialize_initMyReportedSR" method="initMyReportedSRNovoSessionStorage"/>
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="cleanup" id="SGZUsina.CreateSR_eventHandlers_cleanup_handleBackButton" method="handleBackButton"/>
+			</eventHandlers>
+			<container id="SGZUsina.CreateSR_serviceRequest_container_0" resource="sgzUsina">		
+			<group id="SGZUsina.CreateSR_group_0">
+				
+				<!-- <groupitem id="ServiceRequest.CreateSR_serviceRequest_groupitem_ServiceRequest_">
+					<text editable="false" required="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.usina_1" label="Usina" lookup="ServiceRequest.MSasphaltplantLookup" lookupAttribute="idusina" placeHolder="Tap to enter"  resourceAttribute="ms_apidauth"/>
+				</groupitem> -->
+				
+				<groupitem id="SGZUsina.CreateSR_serviceRequest_groupitem_ServiceRequest_ms_plate">
+					<text codeScannable="true" editable="true" required="false"  id="SGZUsina.CreateSR_serviceRequest_groupitem_ServiceRequest.ms_plate" label="Placa" resourceAttribute="ms_plate">
+						<eventHandlers id="ServiceRequest.CreateSR_serviceRequest_groupitem_ServiceRequest.CreateSR_0_validateplate_eventHandlers">
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="validate" id="ServiceRequest.CreateSR_validateplate" method="validatePlate02"/>						
+						</eventHandlers>
+					</text>
+				</groupitem>
+												
+				<groupitem id="ServiceRequest.CreateSR_serviceRequest_groupitem_ServiceRequest_Subprefeitura00001">
+					<text editable="false" required= "true" id="ServiceRequest.CreateSR_serviceRequest_groupitem_ServiceRequest.Subprefeitura" label="Subprefeitura" lookup="ServiceRequest.msSiteLookup" lookupAttribute="siteid" placeHolder="Tap to enter" resourceAttribute="ms_siteid">
+						<eventHandlers id="ServiceRequest.SRDetailEdit_serviceRequest_groupitem_ServiceRequest.CreateSR_0_Priority_Priority_eventHandlers">
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="validate" id="ServiceRequest.SRDetailEdit_serviceRequest_groupitem_ServiceRequest.EditPriorityView_0_Priority_Priority_eventHandlers_validate_validateSiteid" method="validateSiteid"/>
+						</eventHandlers>
+					</text>
+				</groupitem>
+				<!-- <groupitem id="SGZUsina.CreateSR_serviceRequest_groupitem_ServiceRequest_ms_remarks">
+					<text editable="true" id="SGZUsina.CreateSR_serviceRequest_groupitem_ServiceRequest.ms_remarks" label="Observações" placeHolder="Tap to enter" resourceAttribute="ms_remarks"/>
+				</groupitem> -->				
+			</group>			
+		</container>				
+		<container id="SGZUsina.CreateSR_serviceRequest_container_2" resource="sgzUsina">
+			<group id="SGZUsina.CreateSR_group_011">
+				<groupitem enableFeatureByProperty="attachments.enabled" id="ServiceRequest.SRDetailViewEdit_groupitem_ServiceRequest.AttachmentsView_0" layout="Item1Count1Button2" transitionTo="SGZUsina.AttachmentsView">
+					<text cssClass="relatedRecords" editable="false" id="ServiceRequest.SRDetailViewEdit_groupitem_ServiceRequest.AttachmentsView_0_Attachments" layoutInsertAt="item1" value="Foto Placa"/>
+					<text editable="false" id="ServiceRequest.SRDetailViewEdit_groupitem_ServiceRequest.AttachmentsView_0_attachmentssize" layoutInsertAt="count1" resourceAttribute="attachmentssize">
+					</text>
+				</groupitem>
+			</group>						
+		</container>
+		
+		<footer id="SGZUsina.CreateSR_footer">
+			<button id="SGZUsina.CreateSR_Cancel_button" label="Cancel">
+				<eventHandlers id="SGZUsina.CreateSR_Cancel_button_eventHandlers">
+					<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.CreateSR_Cancel_button_eventHandlers_click_discardNewServiceRequestView" method="discardNewServiceRequestView"/>
+				</eventHandlers>
+			</button>
+			<button cssClass="mblPrimaryButton" id="SGZUsina.CreateSR_wonum_Create_button" label="Create" primary="true" resourceAttribute="identifier">
+				<eventHandlers id="SGZUsina.CreateSR_wonum_Create_button_eventHandlers">
+					<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.CreateSR_wonum_Create_button_eventHandlers_click_commitNewServiceRequestView" method="commitNewSgzUsinaView"/>
+				</eventHandlers>
+			</button>
+		</footer>
+	</view>
+		
+		
+		
+<!-- Alteração 1-->		
+		
+		<!---View dos detalhes da criação do OS-->
+		<view editableView="SGZUsina.SRDetailEdit" id="SGZUsina.SRDetail" label="Work Order Details Awaiting Loading" resource="sgzUsina" showBackButton="true">
+			<requiredResources id="ServiceRequest.SRDetail_requiredResources">
+				<requiredResource id="ServiceRequest.SRDetail_serviceRequest" name="sgzUsina"/>
+			</requiredResources>
+			<eventHandlers id="ServiceRequest.SRDetail_eventHandlers">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="ServiceRequest.SRDetail_eventHandlers_initialize_fetchAllListSizes" method="fetchAllListSizes"/>
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="ServiceRequest.SRDetailw_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
+			</eventHandlers>
+			<container id="ServiceRequest.SRDetail_serviceRequest_container_0" resource="sgzUsina">
+			<errorIndicator id="ServiceRequest.SRDetail_errorIndicator"/>
+				<group id="ServiceRequest.SRDetail_group_0">
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_status_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_amticketid_0" label="Work Order No." resourceAttribute="identifier"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_srnum_00101010">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.usina_001010101" label="Usina" resourceAttribute="usina"/>
+					</groupitem>
+					
+					
+					<!--<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_apidauth_000012">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.usina_0" label="Complet Carreg: Usina Crendenciada" lookup="ServiceRequest.MSasphaltplantLookup" lookupAttribute="idusina" placeHolder="Tap to enter"  resourceAttribute="ms_asphaltplantid"/>
+					</groupitem>-->
+			
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_owner_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.Subprefeitura_0" label="Subprefeitura" resourceAttribute="ms_siteid"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_summary_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_status_0" label="Status" resourceAttribute="ms_status"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_0">
+						<text cssClass="richText" editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_0_ms_expiredate" label="Data de Validade" resourceAttribute="ms_expiredate"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.EditLocationView_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.LocationView_0_contratada" label="Contratada" resourceAttribute="contratada"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_plate_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_plate_0" label="Placa" resourceAttribute="ms_plate"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.AssetView_0">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest._0_ms_authqty" label="Quantidade de Massa Asfáltica (Kg)" resourceAttribute="ms_authqty"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_reportedpriority_0">
+						<text editable="true" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_remarks_0" label="Observações" resourceAttribute="ms_remarks"/>
+					</groupitem>
+					
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_tareweight_1">
+						<text editable="true" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_tareweight_0" label="Peso Tara (Kg)" resourceAttribute="ms_tareweight">
+						</text>
+					</groupitem>
+					
+																
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_netweight_1">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_netweight_1" label="Peso Líquido (Kg)" resourceAttribute="ms_netweight">
+						</text>
+					</groupitem>
+					
+					
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_qtd_massa_0_0">
+						<text editable="true" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.qtd_massa_0" label="Quantidade de Massa Asfáltica Carregada (Kg)" resourceAttribute="qtd_massa"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_qtd_emulsao_0">
+						<text editable="true" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.qtd_emulsao_0" label="Quantidade de Emulsão Carregada (Kg)" resourceAttribute="qtd_emulsao">
+						</text>
+					</groupitem>
+					
+															
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_grossweight_1">
+						<text editable="true" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.ms_grossweight_0" label="Peso Bruto (Kg)" resourceAttribute="ms_grossweight">
+						</text>
+					</groupitem>
+					
+					<groupitem enableFeatureByProperty="attachments.enabled" id="ServiceRequest.SRDetail_groupitem_ServiceRequest.AttachmentsView_013" layout="Item1Count1Button2" transitionTo="SGZUsina.AttachmentsView">
+						<eventHandlers id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_button_eventHandlers">
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_eventHandlers_click_discardNewServiceRequestView_11" method="control_final"/>
+						</eventHandlers>
+						<text cssClass="relatedRecords" editable="false" id="ServiceRequest.SRDetail_groupitem_ServiceRequest.AttachmentsView_0_Attachments013" layoutInsertAt="item1" value="Foto Ordem Serviço Carregamento"/>
+					</groupitem>
+					
+				</group>	
+			</container>
+					
+			<footer id="SGZUsina.SRDetail_viewDetail_footer">
+				<button id="SGZUsina.SRDetail_Cancel_viewDetail" label="Cancel">
+					<eventHandlers id="SGZUsina.SRDetail_Cancel_button_viewDetail_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.SRDetail_Cancel_button_eventHandlers_click_discardNewServiceRequestView_11" method="control_final"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetail_Cancel_button_eventHandlers_click_discardNewServiceRequestView_2" method="discardNewServiceRequestView"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZUsina.SRDetail_Salvar_viewDetail" label="Salvar">
+					<eventHandlers id="SGZUsina.SRDetail_Salvar_button_viewDetail_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.SRDetail_Cancel_button_eventHandlers_click_discardNewServiceRequestView_111" method="control_final"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetail_salvarms_netweight_eventHandlers_click" method="calcNetweight"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetail_Salvar_button_eventHandlers_click_discardNewServiceRequestView_1" method="salvarTicket"/>				
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZUsina.SRDetail_Finalizar_button1" label="Finalizar" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZUsina.SRDetail_finalizar_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetail_finalizarms_netweight_eventHandlers_click" method="calcNetweight"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.SRDetail_finalizar_button_eventHandlers_click_commitNewServiceRequestView_11" method="control_final"/>
+						<!--<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetail_finalizar_button_eventHandlers_click_commitNewServiceRequestView_22" method="carregIncShowDialog"/>-->
+						<!-- Novas funcionalidades @autor:AMANDA FONSECA -MAGNA SISTEMAS -->
+							<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetail_finalizar_button_eventHandlers_click_commitNewServiceRequestView_22" method="carregPreviewIncShowDialogAfter"/>
+						<!-- fim funcionalidades @autor:AMANDA FONSECA -MAGNA SISTEMAS -->
+					</eventHandlers>
+				</button>
+			</footer>
+		</view>
+<!--Fim alteração 1-->
+		
+		<!--Detalhes do OS 2-->
+		<view editableView="SGZUsina.SRDetailEdit" id="SGZUsina.SRDetailEdit" label="Work Order Details" resource="sgzUsina" showBackButton="true">
+			<requiredResources id="ServiceRequest.SRDetail_requiredResources00">
+				<requiredResource id="ServiceRequest.SRDetail_serviceRequest010" name="sgzUsina"/>
+			</requiredResources>
+			<eventHandlers id="ServiceRequest.SRDetail_eventHandlers010">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="ServiceRequest.SRDetail_eventHandlers_initialize_fetchAllListSizes0010" method="fetchAllListSizes"/>
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="ServiceRequest.SRDetailw_eventHandlers_render_refreshAllListSizes0010" method="refreshAllListSizes"/>
+			</eventHandlers>
+			<container id="ServiceRequest.SRDetail_serviceRequest_container_001" resource="sgzUsina">
+			<errorIndicator id="ServiceRequest.SRDetail_errorIndicator_01"/>
+				<group id="ServiceRequest.SRDetail_group_001">
+					
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest_identifier_01">
+						<text editable="false" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.ms_amticketid_01" label="Work Order No." resourceAttribute="identifier"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest_srnum_01">
+						<text editable="false" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.usina_01" label="Usina" resourceAttribute="usina"/>
+					</groupitem>
+
+					<groupitem id="ServiceRequest.SRDetailEditeRequest_groupitem_ServiceRequest_owner_0100">
+						<text editable="true" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.Subprefeitura_0100" label="tura" resourceAttribute="ms_siteid"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest_summary_01">
+						<text editable="false" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.ms_status_01" label="Status" resourceAttribute="ms_status"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_01">
+						<text cssClass="richText" editable="false" id="ServiceRequest.SRDetailEditRequest_groupitem_01_ms_expiredate" label="Data de Validade" resourceAttribute="ms_expiredate"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.EditLocationView_01">
+						<text editable="false" id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest.LocationView_01_contratada" label="Contratada" resourceAttribute="contratada"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest_ms_plate_011">
+						<text editable="false" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.ms_plate_001" label="Placa" resourceAttribute="ms_plate"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.AssetView_01">
+						<text editable="false" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest._01_ms_authqty" label="Quantidade de Massa Asfáltica (Kg)" resourceAttribute="ms_authqty"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest_reportedpriority_01">
+						<text editable="true" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.ms_remarks_01" label="Observações" resourceAttribute="ms_remarks"/>
+					</groupitem>
+					
+					
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest_ms_tareweight_3">
+						<text editable="true" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.ms_tareweight_2" label="Peso Tara (Kg)" resourceAttribute="ms_tareweight"/>
+					</groupitem>
+					
+								
+					<groupitem id="ServiceRequest.SRDetail_serviceRequest_groupitem_ServiceRequest_ms_netweight_3">
+						<text editable="false" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.ms_netweight_2" label="Peso Líquido (Kg)" resourceAttribute="ms_netweight">
+						</text>
+					</groupitem>
+					
+					
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest_qtd_massa_0_0111">
+						<text editable="true" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.qtd_massa_01" label="Quantidade de Massa Asfáltica Carregada (Kg)" resourceAttribute="qtd_massa"/>
+					</groupitem>
+					
+					
+					<groupitem id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest_qtd_emulsao_01">
+						<text editable="true" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.qtd_emulsao_01" label="Quantidade de Emulsão Carregada (Kg)" resourceAttribute="qtd_emulsao"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.SSRDetailEditRequest_groupitem_ServiceRequest_ms_grossweight_1">
+						<text editable="true" id="ServiceRequest.SRDetailEditRequest_groupitem_ServiceRequest.ms_grossweight_0" label="Peso Bruto (Kg)" resourceAttribute="ms_grossweight">
+						</text>
+					</groupitem>
+	
+					<groupitem enableFeatureByProperty="attachments.enabled" id="ServiceRequest.SRDetailEditEdit_groupitem_ServiceRequest.AttachmentsView_013" layout="Item1Count1Button2" transitionTo="SGZUsina.AttachmentsView">
+						<text cssClass="relatedRecords" editable="false" id="ServiceRequest.SRDetailEdit_groupitem_ServiceRequest.AttachmentsView_0_Attachments013" layoutInsertAt="item1" value="Foto Ordem Serviço Carregamento"/>
+					</groupitem>
+					
+				</group>		
+			</container>
+			
+			
+			<footer id="SGZUsina.SRDetail_viewDetail_footer_01">
+				<button id="SGZUsina.SRDetail_Cancel_viewDetail_01" label="Cancel">
+					<eventHandlers id="SGZUsina.SRDetail_Cancel_button_viewDetail_eventHandlers_01">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.SRDetail_Cancel_button_eventHandlers_click_discardNewServiceRequestView_100" method="control_final"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetail_Cancel_button_eventHandlers_click_discardNewServiceRequestView_20" method="discardNewServiceRequestView"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZUsina.SRDetail_view_Salvar_viewDetail" label="Salvar">
+					<eventHandlers id="SGZUsina.SRDetailEdit_Salvar_button_viewDetail_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetailsalvarEditms_netweight_eventHandlers_click" method="calcNetweight"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetail_Salvar_button_eventHandlers_click_discardNewServiceRequestView_133" method="salvarTicket"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZUsina.CreateSR_Finalizar_button_01" label="Finalizar" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZUsina.SRDetail_finalizar_button_eventHandlers_01">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetailEditfinalizarms_netweight_eventHandlers_click" method="calcNetweight"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.SRDetail_finalizar_button_eventHandlers_click_controlNewServiceRequestView_10" method="control_final"/>
+						<!-- Novas funcionalidades @autor:AMANDA FONSECA -MAGNA SISTEMAS -->
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.SRDetail_finalizar_button_eventHandlers_click_commitNewServiceRequestView_20" method="carregPreviewIncShowDialogAfter"/>
+						<!-- fim funcionalidades @autor:AMANDA FONSECA -MAGNA SISTEMAS -->					
+					</eventHandlers>
+				</button>
+			</footer>
+		</view>
+		
+		<!--COMPLEMENTO - NOVO TICKET Detalhes do OS 3-->
+		<view editableView="SGZUsina.TKComplEdit" id="SGZUsina.TKCompl" label="Work Order Details" resource="sgzUsina" showBackButton="true">
+			<requiredResources id="ServiceRequest.TKCompl_requiredResources">
+				<requiredResource id="ServiceRequest.TKCompl_serviceRequest" name="sgzUsina"/>
+			</requiredResources>
+			<eventHandlers id="ServiceRequest.TKCompl_eventHandlers">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="initialize" id="ServiceRequest.TKCompl_eventHandlers_initialize_fetchAllListSizes" method="fetchAllListSizes"/>
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="ServiceRequest.TKCompl_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
+			</eventHandlers>
+			<container id="ServiceRequest.TKCompl_serviceRequest_container_0" resource="sgzUsina">
+			<errorIndicator id="ServiceRequest.TKCompl_errorIndicator"/>
+				<group id="ServiceRequest.TKCompl_group_0">
+					
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_status_0">
+						<text editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.ms_amticketid_0" label="Work Order No." resourceAttribute="identifier"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_srnum_00101010">
+						<text editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.usina_001010101" label="Usina" resourceAttribute="usina"/>
+					</groupitem>		
+					
+					<!--<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_ms_apidauth_000012">
+						<text editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.usina_0" label="Usina Crendenciada/Autorizada" resourceAttribute="ms_apidauth"/>
+					</groupitem>-->
+			
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_owner_0">
+						<text editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.Subprefeitura_0" label="Subprefeitura" resourceAttribute="ms_siteid"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_summary_0">
+						<text editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.ms_status_0" label="Status" resourceAttribute="ms_status"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_0">
+						<text cssClass="richText" editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_0_ms_expiredate" label="Data de Validade" resourceAttribute="ms_expiredate"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.EditLocationView_0">
+						<text editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.LocationView_0_contratada" label="Contratada" resourceAttribute="contratada"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_ms_plate_0">
+						<text editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.ms_plate_0" label="Placa" resourceAttribute="ms_plate"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.AssetView_0">
+						<text editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest._0_ms_authqty" label="Quantidade de Massa Asfáltica (Kg)" resourceAttribute="ms_authqty"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_reportedpriority_0">
+						<text editable="true" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.ms_remarks_0" label="Observações" resourceAttribute="ms_remarks"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_ms_tareweight_2">
+						<text editable="true" id="ServiceRequest.CredDetail_serviceRequest_groupitem_ServiceRequest.ms_tareweight_1" label="Peso Tara (Kg)" resourceAttribute="ms_tareweight"/>
+					</groupitem>
+									
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_ms_netweight_2">
+						<text editable="false" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.ms_netweight_10" label="Peso Líquido (Kg)" resourceAttribute="ms_netweight">
+						</text>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_qtd_massa_0_0">
+						<text editable="true" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.qtd_massa_0" label="Quantidade de Massa Asfáltica Carregada (Kg)" resourceAttribute="qtd_massa"/>
+					</groupitem>
+	
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_qtd_emulsao_0">
+						<text editable="true" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.qtd_emulsao_0" label="Quantidade de Emulsão Carregada (Kg)" resourceAttribute="qtd_emulsao"/>
+					</groupitem>
+					
+					<groupitem id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest_ms_grossweight_2">
+						<text editable="true" id="ServiceRequest.TKCompl_serviceRequest_groupitem_ServiceRequest.ms_grossweight_1" label="Peso Bruto (Kg)" resourceAttribute="ms_grossweight"/>
+					</groupitem>
+					
+					<groupitem enableFeatureByProperty="attachments.enabled" id="ServiceRequest.TKCompl_serviceEdit_groupitem_ServiceRequest.AttachmentsView_013" layout="Item1Count1Button2" transitionTo="SGZUsina.AttachmentsView">
+						<text cssClass="relatedRecords" editable="false" id="ServiceRequest.TKCompl_service_groupitem_ServiceRequest.AttachmentsView_0_Attachments013" layoutInsertAt="item1" value="Foto Ordem Serviço Carregamento"/>
+					</groupitem>
+	
+				</group>
+			</container>
+
+
+			<footer id="SGZUsina.TKCompl_viewDetail_footer">
+				<button id="SGZUsina.TKCompl_Cancel_viewDetail" label="Cancel">
+					<eventHandlers id="SGZUsina.TKCompl_Cancel_button_viewDetail_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.TKCompl_Cancel_button_eventHandlers_click_discardNewServiceRequestView_1" method="control_final"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.TKCompl_Cancel_button_eventHandlers_click_discardNewServiceRequestView_2" method="discardNewServiceRequestView"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZUsina.TKCompl_Salvar_viewDetail" label="Salvar">
+					<eventHandlers id="SGZUsina.TKCompl_Salvar_button_viewDetail_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.TKCompl_salvarms_netweight_eventHandlers_click" method="calcNetweight"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.TKCompl_Salvar_button_eventHandlers_click_discardNewServiceRequestView_1" method="salvarTicket"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZUsina.TKCompl_Finalizar_button" label="Finalizar" primary="true" resourceAttribute="identifier">
+					<eventHandlers id="SGZUsina.TKCompl_finalizar_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.TKCompl_finalizar_ms_netweight_eventHandlers_click" method="calcNetweight"/>
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="SGZUsina.TKCompl_finalizar_button_eventHandlers_click_commitNewServiceRequestView_1" method="control_final"/>
+						<!-- Novas funcionalidades @autor:AMANDA FONSECA -MAGNA SISTEMAS -->
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.TKCompl_finalizar_button_eventHandlers_click_commitNewServiceRequestView_2" method="carregPreviewIncShowDialogAfter"/>
+						<!-- fim funcionalidades @autor:AMANDA FONSECA -MAGNA SISTEMAS -->					</eventHandlers>
+				</button>
+			</footer>
+		</view>
+		
+
+		<!-- Define Attachments List view -->
+		<view id="SGZUsina.AttachmentsView" label="Attachments" showOverflow="true">
+			<requiredResources id="SGZUsina.AttachmentsView_requiredResources">
+				<requiredResource id="SGZUsina.AttachmentsView_serviceRequest" name="sgzUsina">
+					<requiredAttribute id="SGZUsina.AttachmentsView_serviceRequest_attachments" name="attachments" reload="true"/>
+				</requiredResource>
+			</requiredResources>
+			<actions id="SGZUsina.AttachmentsView_actions">
+				<action id="SGZUsina.AttachmentsView_TakePhoto_action" image="/images/header_camera_off.svg" label="Take Photo">
+					<eventHandlers id="SGZUsina.AttachmentsView_TakePhoto_action_eventHandlers">
+								<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="SGZUsina.AttachmentsView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
+								<eventHandler class="application.handlers.SRAttachmentHandler" event="render" id="SGZUsina.AttachmentsView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
+							</eventHandlers>
+				</action>
+				<action id="SGZUsina.AttachmentsView_PickfromGallery_action" image="header_add_OFF.svg" label="Pick from Gallery">
+					<eventHandlers id="SGZUsina.AttachmentsView_PickfromGallery_action_eventHandlers">
+						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="SGZUsina.AttachmentsView_PickfromGallery_action_eventHandlers_click_launchGallery" method="launchGallery"/>
+					</eventHandlers>
+				</action>
+			</actions>
+			<list attribute="attachments" id="SGZUsina.AttachmentsView_serviceRequest_attachments_list" resource="sgzUsina">
+				<sortOptions id="SGZUsina.AttachmentsView_serviceRequest_attachments_list_sortOptions">
+					<sortOption id="SGZUsina.AttachmentsView_sortOption_CreatedDate" label="Created Date">
+						<sortAttribute direction="asc" id="SGZUsina.AttachmentsView_CreatedDate_sortAttribute_displayCreationDate" name="displayCreationDate"/>
+					</sortOption>
+					<sortOption id="SGZUsina.AttachmentsView_sortOption_FileName" label="File Name">
+						<sortAttribute direction="asc" id="SGZUsina.AttachmentsView_FileName_sortAttribute_displayFileName" name="displayFileName"/>
+					</sortOption>
+					<sortOption id="SGZUsina.AttachmentsView_sortOption_Description" label="Description">
+						<sortAttribute direction="asc" id="SGZUsina.AttachmentsView_Description_sortAttribute_displayDescription" name="displayDescription"/>
+					</sortOption>
+				</sortOptions>
+
+				<listItemTemplate id="SGZUsina.AttachmentsView_serviceRequest_attachments_listItemTemplate_AttachmentsListItem" layout="AttachmentsListItem">
+					<listtext cssClass="bold textappearance-medium" id="SGZUsina.AttachmentsView_serviceRequest_AttachmentsListItem_displayFileName" layoutInsertAt="item1" resourceAttribute="displayFileName"/>
+					<listtext id="SGZUsina.AttachmentsView_serviceRequest_AttachmentsListItem_displayDescription" layoutInsertAt="item2" resourceAttribute="displayDescription"/>
+					<listtext id="SGZUsina.AttachmentsView_serviceRequest_AttachmentsListItem_displayFileType" layoutInsertAt="item3" resourceAttribute="displayFileType"/>
+										
+					<button border="false" cssClass="attachmentIcon" id="SGZUsina.AttachmentsView_serviceRequest_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.svg_button" image="/images/msg_downloadComplete_small.svg" layoutInsertAt="icon" resourceAttribute="anywhereAttachDownloaded">
+						<eventHandlers id="SGZUsina.AttachmentsView_serviceRequest_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.svg_button_eventHandlers">
+							<eventHandler class="application.handlers.SRAttachmentHandler" event="datachange" id="SGZUsina.AttachmentsView_serviceRequest_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.svg_button_eventHandlers_datachange_displayLocal" method="displayLocal"/>
+							<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="SGZUsina.AttachmentsView_serviceRequest_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.svg_button_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>
+						</eventHandlers>
+					</button>
+					<listtext id="SGZUsina.AttachmentsView_serviceRequest_AttachmentsListItem_displaySize" layoutInsertAt="item4" resourceAttribute="displaySize"/>
+					<listtext id="SGZUsina.AttachmentsView_serviceRequest_AttachmentsListItem_createby" layoutInsertAt="item5" resourceAttribute="createby"/>
+					<listtext id="SGZUsina.AttachmentsView_serviceRequest_AttachmentsListItem_displayCreationDate" layoutInsertAt="item6" resourceAttribute="displayCreationDate"/>
+					<eventHandlers id="SGZUsina.AttachmentsView_serviceRequest_attachments_listItemTemplate_AttachmentsListItem_eventHandlers">
+						<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="SGZUsina.AttachmentsView_serviceRequest_attachments_listItemTemplate_AttachmentsListItem_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>
+					</eventHandlers>
+				</listItemTemplate>
+			</list>
+		</view>
+	
+		<dialog id="SGZUsina.ConfirmCancel">
+			<container cssClass="mblSimpleDialogText" id="SGZUsina.ConfirmCancel_container_0">
+				<text id="SGZUsina.ConfirmCancel_container_0_Areyousure" value="Are you sure you wish to Cancel?  All changes to this request will be lost."/>
+			</container>
+			<container cssClass="mblSimpleDialogFooter" id="SGZUsina.ConfirmCancel_container_1">
+				<button cssClass="mblPrimaryButton" id="SGZUsina.ConfirmCancel_Yes_button" label="Yes">
+					<eventHandlers id="SGZUsina.ConfirmCancel_Yes_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.ConfirmCancel_Yes_button_eventHandlers_click_yesOnCancel" method="yesOnCancel"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZUsina.ConfirmCancel_No_button" label="No">
+					<eventHandlers id="SGZUsina.ConfirmCancel_No_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.ConfirmCancel_No_button_eventHandlers_click_noOnCancel" method="noOnCancel"/>
+					</eventHandlers>
+				</button>
+			</container>
+		</dialog>
+		
+		
+		<dialog id="SGZUsina.CompleCarreg">
+			<container cssClass="mblSimpleDialogText" id="SGZUsina.CompleCarreg_container_0">
+				<text id="SGZUsina.CompleCarreg_container_0_Areyousure" value="Are you sure you want to finalize Work Order?"/>
+			</container>
+			<container cssClass="mblSimpleDialogFooter" id="SGZUsina.CompleCarreg_container_1">
+				<button cssClass="mblPrimaryButton" id="SGZUsina.CompleCarreg_Yes_button" label="Yes">
+					<eventHandlers id="SGZUsina.CompleCarreg_Yes_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.CompleCarreg_Yes_button_eventHandlers_click_yesOnCancel" method="finalizarSgzUsinaView"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZUsina.CompleCarreg_No_button" label="No">
+					<eventHandlers id="SGZUsina.CompleCarreg_No_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.CompleCarreg_No_button_eventHandlers_click_noOnCancel" method="carregAfterIncShowDialog"/>
+					</eventHandlers>
+				</button>
+			</container>
+		</dialog>
+		
+		<!-- Novas funcionalidades @autor:AMANDA FONSECA- v261221 -MAGNA SISTEMAS ....... Novos dialogs-->	
+		<!--<dialog id="SGZUsina.Preview01.CompleCarreg">
+			<container cssClass="mblSimpleDialogText" id="SGZUsina.Preview01.CompleCarreg_container_0">
+				<text id="SGZUsina.Preview01.CompleCarreg_container_0_Areyousure" value="O campo Emulsão não está preenchido. Tem certeza  que deseja finalizar?"/>
+			</container>
+			<container cssClass="mblSimpleDialogFooter" id="SGZUsina.Preview01.CompleCarreg_container_1">
+				<button cssClass="mblPrimaryButton" id="SGZUsina.Preview01.CompleCarreg_Yes_button" label="Yes">
+					<eventHandlers id="SGZUsina.Preview01.CompleCarreg_Yes_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.Preview01.CompleCarreg_Yes_button_eventHandlers_click_yesOnCancel" method="carregAfterIncShowDialog"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZUsina.Preview01.CompleCarreg_No_button" label="No">
+					<eventHandlers id="SGZUsina.Preview01.CompleCarreg_No_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.Preview01.CompleCarreg_No_button_eventHandlers_click_noOnCancel" method="salvarTicket"/>
+					</eventHandlers>
+				</button>
+			</container>
+		</dialog>
+
+		<dialog id="SGZUsina.Preview02.CompleCarreg">
+			<container cssClass="mblSimpleDialogText" id="SGZUsina.Preview02.CompleCarreg_container_0">
+				<text id="SGZUsina.Preview02.CompleCarreg_container_0_Areyousure" value="O campo Massa não está preenchido. Tem certeza  que deseja finalizar?"/>
+			</container>
+			<container cssClass="mblSimpleDialogFooter" id="SGZUsina.Preview02.CompleCarreg_container_1">
+				<button cssClass="mblPrimaryButton" id="SGZUsina.Preview02.CompleCarreg_Yes_button" label="Yes">
+					<eventHandlers id="SGZUsina.Preview02.CompleCarreg_Yes_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.Preview02.CompleCarreg_Yes_button_eventHandlers_click_yesOnCancel" method="carregAfterIncShowDialog"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZUsina.Preview02.CompleCarreg_No_button" label="No">
+					<eventHandlers id="SGZUsina.Preview02.CompleCarreg_No_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.Preview02.CompleCarreg_No_button_eventHandlers_click_noOnCancel" method="salvarTicket"/>
+					</eventHandlers>
+				</button>
+			</container>
+		</dialog>
+	-->
+		<!-- Fim novas funcionalidades @autor:AMANDA FONSECA- v261221 -MAGNA SISTEMAS ....... Novos dialogs-->
+
+
+		<dialog id="SGZUsina.After.CompleCarreg">
+			<container cssClass="mblSimpleDialogText" id="SGZUsina.After.CompleCarreg_container_0">
+				<text id="SGZUsina.After.CompleCarreg_container_0_Areyousure" value="Is the loading of this Work Order complete?"/>
+			</container>
+			<container cssClass="mblSimpleDialogFooter" id="SGZUsina.After.CompleCarreg_container_1">
+				<button cssClass="mblPrimaryButton" id="SGZUsina.After.CompleCarreg_Yes_button" label="Yes">
+					<eventHandlers id="SGZUsina.After.CompleCarreg_Yes_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.After.CompleCarreg_Yes_button_eventHandlers_click_yesOnCancel" method="finalizarSgzUsinaViewNovo"/>
+					</eventHandlers>
+				</button>
+				<button id="SGZUsina.After.CompleCarreg_No_button" label="No">
+					<eventHandlers id="SGZUsina.After.CompleCarreg_No_button_eventHandlers">
+						<!--<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.After.CompleCarreg_No_button_eventHandlers_click_noOnCancel" method="carregIncSgzUsinaView"/>-->
+						<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZUsina.After.CompleCarreg_No_button_eventHandlers_click_noOnCancel" method="carregAfterIncShowView02"/>
+					</eventHandlers>
+				</button>
+			</container>
+		</dialog>
+
+		<!--Fim Amanda ....... Novos dialogs-->
+
+				
+		<!-- *********************** -->
+		<!-- LOOKUP SECTION -->
+		<!-- *********************** -->
+		<!--CLAUDIO-->
+		<!-- AppDocType lookup for Attachments -->
+		<lookup id="SGZUsina.appDocTypeLookup" label="Select Value" resource="appDocType">
+			<requiredResources id="SGZUsina.appDocTypeLookup_requiredResources">
+				<requiredResource id="SGZUsina.appDocTypeLookup_appDocType" name="appDocType"/>
+			</requiredResources>
+			<list id="SGZUsina.appDocTypeLookup_appDocType_list" resource="appDocType">
+				<listItemTemplate id="SGZUsina.appDocTypeLookup_appDocType_listItemTemplate">
+					<listtext cssClass="bold textappearance-medium" id="SGZUsina.appDocTypeLookup_appDocType_doctype" resourceAttribute="doctype"/>
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="SGZUsina.appDocTypeLookup_returnAttributes">
+				<returnAttribute id="SGZUsina.appDocTypeLookup_doctype_category" sourceAttribute="doctype" targetAttribute="category"/>
+			</returnAttributes>
+		</lookup>
+		
+		
+		<!-- ToolsAuth lookup -->
+		<lookup id="ServiceRequest.MSaptoolauthLookup" label="Selecione" resource="MSaptoolauth">
+			<requiredResources id="ServiceRequest.MSaptoolauthLookup_requiredResources">
+				<requiredResource id="ServiceRequest.MSaptoolauthLookup_additionalMSaptoolauth" name="MSaptoolauth"/>
+			</requiredResources>
+
+			<list id="ServiceRequest.MSaptoolauth_list" resource="MSaptoolauth">
+				<listItemTemplate id="ServiceRequest.MSaptoolauth_listItemTemplate_Item1Desc1" layout="Item1Desc1">
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_itemnum" layoutInsertAt="item1" resourceAttribute="ms_itemnum"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_plate" layoutInsertAt="desc1" resourceAttribute="ms_plate"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_active" layoutInsertAt="item2" resourceAttribute="ms_active"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_asphaltplantid" layoutInsertAt="item2" resourceAttribute="ms_asphaltplantid"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_company" layoutInsertAt="item2" resourceAttribute="ms_company"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSaptoolauth_Item1Desc1_ms_loadcapacity" layoutInsertAt="item2" resourceAttribute="ms_loadcapacity"/>
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="ServiceRequest.AssetLookup_returnAttributes">
+				<returnAttribute id="ServiceRequest.MSaptoolauthLookup_ms_itemnum" sourceAttribute="ms_itemnum" targetAttribute="ms_itemnum"/>
+				<returnAttribute id="ServiceRequest.MSaptoolauthLookup_ms_plate" sourceAttribute="ms_plate" targetAttribute="ms_plate"/>
+			</returnAttributes>
+		</lookup>
+		
+		
+		<!-- MSasphaltplant lookup -->
+		<lookup id="ServiceRequest.MSasphaltplantLookup" label="Selecione Usina Credenciada" resource="MSasphaltTransf">
+			<requiredResources id="ServiceRequest.MSasphaltplantLookup_requiredResources">
+				<requiredResource id="ServiceRequest.MSasphaltplantLookup_additionalMSasphaltplant" name="MSasphaltTransf"/>
+			</requiredResources>
+
+			<list id="ServiceRequest.MSasphaltplant_list" resource="MSasphaltTransf">
+				<listItemTemplate id="ServiceRequest.MSasphaltplant_listItemTemplate_Item1Desc1" layout="Item1Desc1">
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSasphaltplant_Item1Desc1_identifier" layoutInsertAt="item1" resourceAttribute="idusina"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSasphaltplant_Item1Desc1_ms_description" layoutInsertAt="desc1" resourceAttribute="description"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.MSasphaltplant_Item1Desc1_ms_active" layoutInsertAt="item2" resourceAttribute="ms_active"/>
+				</listItemTemplate>
+			</list>
+
+			<returnAttributes id="ServiceRequest.Lookup_returnAttributes01">
+				<returnAttribute id="ServiceRequest.PriorityLookup_value_reportedpriority" sourceAttribute="idusina" targetAttribute="ms_apidauth"/>
+				<returnAttribute id="ServiceRequest.priorityLookup_description_prioritydesc" sourceAttribute="description" targetAttribute="usinadesc"/>
+			</returnAttributes>
+		</lookup>
+		
+		
+		
+		
+		
+		
+		<!-- subpref lookup -->
+		<lookup filterClass="custom.handlers.MSSRDetailHandler" filterMethod="verificaVeiculoLookup" id="ServiceRequest.msSiteLookup" label="Selecione Site" resource="subpref">
+			<requiredResources id="ServiceRequest.msSiteLookup_requiredResources">
+				<requiredResource id="ServiceRequest.msSiteLookup_additionalmsSite" name="subpref"/>
+			</requiredResources>
+
+			<list id="ServiceRequest.msSite_list" resource="subpref">
+			
+				<!-- <searchAttributes id="ServiceRequest.subprefLookup_subpref_searchAttributes">
+					<searchAttribute id="ServiceRequest.subprefLookup_additionallocations_searchAttribute_location" name="siteid"/>
+  					<searchAttribute id="ServiceRequest.subprefLookup_additionallocations_searchAttribute_description" name="description"/>
+				</searchAttributes> -->
+				<listItemTemplate id="ServiceRequest.subpref_listItemTemplate_Item1Desc1" layout="Item1Desc1">
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.subpref_Item1Desc1_identifier" layoutInsertAt="item1" resourceAttribute="siteid"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.subpref_Item1Desc1_ms_description" layoutInsertAt="desc1" resourceAttribute="description"/>
+					<listtext cssClass="bold textappearance-medium" id="ServiceRequest.subpref_Item1Desc1_ms_active" layoutInsertAt="item2" resourceAttribute="orgid"/>
+				</listItemTemplate>
+			</list>
+
+			<returnAttributes id="ServiceRequest.Lookup_returnAttributes02">
+				<returnAttribute id="ServiceRequest.msSiteLookup_value_siteid" sourceAttribute="siteid" targetAttribute="ms_siteid"/>
+				<returnAttribute id="ServiceRequest.msSiteLookup_description_sitedesc" sourceAttribute="description" targetAttribute="sitedesc"/>
+			</returnAttributes>
+		</lookup>
+		
+	
+	</ui>
+
+	<!--DATA DEFINITION SECTION-->
+	<data id="data">	
+    
+    <!--APP SGZUsina resource-->
+		<resource class="application.business.ServiceRequestObject" describedBy="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzUsina" hasManagedQuery="true" id="sgzUsina" name="sgzUsina" pageSize="200" providedBy="/oslc/sp/WorkManagement"> 
+
+			<attributes id="serviceRequest_attributes">
+				<attribute describedByProperty="dcterms:identifier" id="serviceRequest_identifier_dctermsidentifier" index="true" name="identifier"/>
+				<attribute describedByProperty="spi_wm:ms_plate" id="serviceRequest_ms_plate" name="ms_plate"/>
+				<attribute describedByProperty="spi_wm:ms_remarks" id="serviceRequest_ms_remarks" name="ms_remarks"/>
+				<attribute describedByProperty="spi_wm:ms_itemnum" id="serviceRequest_ms_itemnum" name="ms_itemnum"/>
+				<attribute describedByProperty="spi_wm:ms_company" id="serviceRequest_ms_company" name="ms_company"/>
+				<attribute describedByProperty="spi_wm:ms_authqty" id="serviceRequest_ms_authqty" name="ms_authqty"/>
+				<attribute describedByProperty="spi_wm:ms_changeby" id="serviceRequest_ms_changeby" name="ms_changeby"/>
+				<attribute describedByProperty="spi_wm:ms_changedate" id="serviceRequest_ms_changedate" name="ms_changedate"/>
+				<attribute describedByProperty="spi_wm:ms_rembal1" id="serviceRequest_ms_rembal1" name="ms_rembal1"/>
+				<attribute describedByProperty="spi_wm:ms_rembal2" id="serviceRequest_ms_rembal2" name="ms_rembal2"/>
+				<attribute describedByProperty="spi_wm:ms_enterby" id="serviceRequest_ms_enterby" name="ms_enterby"/>
+				<attribute describedByProperty="spi_wm:ms_refdate" id="serviceRequest_ms_refdate" name="ms_refdate"/>
+				<attribute describedByProperty="spi_wm:ms_asphaltmixqty" id="serviceRequest_qtd_massa" name="qtd_massa"/>
+				<attribute describedByProperty="spi_wm:ms_emulsionqty" id="serviceRequest_qtd_emulsao" name="qtd_emulsao"/>
+				<attribute describedByProperty="spi_wm:ms_expiredate" id="serviceRequest_ms_expiredate" name="ms_expiredate"/>
+				<attribute describedByProperty="spi_wm:ms_authdate" id="serviceRequest_ms_authdate" name="ms_authdate"/>
+				<attribute describedByProperty="spi_wm:ms_status" id="serviceRequest_ms_status" name="ms_status"/>
+				<attribute describedByProperty="spi_wm:ms_actualdate" id="serviceRequest_ms_ms_actualdate" name="ms_actualdate"/>
+				<attribute describedByProperty="spi_wm:ms_siteid" id="serviceRequest_ms_siteid" name="ms_siteid"/>
+				<attribute describedByProperty="spi_wm:ms_asphaltplantid" id="serviceRequest_ms_asphaltplantid" name="ms_asphaltplantid"/>
+				<attribute describedByProperty="spi_wm:ms_apidauth" id="serviceRequest_ms_apidauth" name="ms_apidauth"/>
+				<attribute describedByProperty="spi_wm:ms_isapauth" id="serviceRequest_ms_isapauth" name="ms_isapauth"/>
+				<attribute describedByProperty="spi_wm:ms_amtkidauth" id="serviceRequest_ms_amtkidauth" name="ms_amtkidauth"/>
+				<attribute describedByProperty="spi_wm:ms_tareweight" id="serviceRequest_ms_tareweight" name="ms_tareweight"/>
+				<attribute describedByProperty="spi_wm:ms_grossweight" id="serviceRequest_ms_grossweight" name="ms_grossweight"/>
+				<attribute describedByProperty="spi_wm:ms_netweight" id="serviceRequest_ms_netweight" name="ms_netweight"/>
+				<attribute describedByProperty="spi_wm:ms_contractnum" id="serviceRequest_ms_contractnum" name="ms_contractnum"/>
+				
+
+						
+				<attribute describedByProperty="spi_wm:ms_latitudey" id="serviceRequest_mslatitudey_spi_wmcalculatedy" name="ms_latitudey"/>
+				<attribute describedByProperty="spi_wm:ms_longitudex" id="serviceRequest_mslongitudex_spi_wmcalculatedx" name="ms_longitudex"/>
+				
+				<!-- Campo Provisório latxlong-->
+				<attribute describedByProperty="spi_wm:ms_latitudestr" id="serviceRequest_ms_latitudestr" name="ms_latitudestr"/>
+				<attribute describedByProperty="spi_wm:ms_longitudestr" id="serviceRequest_ms_longitudestr" name="ms_longitudestr"/>
+				
+				<!-- Campo Provisório OS_ID-->
+				<attribute describedByProperty="spi_wm:ms_amtkidauthstr" id="serviceRequest_ms_amtkidauthstr" name="ms_amtkidauthstr"/>
+				
+				
+				
+				<attribute describedByProperty="spi_wm:ms_isauth" id="serviceRequest_ms_isauth" name="ms_isauth"/>
+
+				<!--ms_asphaltplant-->
+				<attribute describedByProperty="spi_wm:ms_asphaltplant{dcterms:title}" id="serviceRequest_ms_itemnum_spi_wm_ms_description" name="usina"/>
+				<attribute describedByProperty="spi_wm:ms_asphaltplant{spi_wm:ms_active}" id="serviceRequest_ms_itemnum_spi_wm_ms_active" name="ms_active"/>
+		
+			
+			
+				<localAttribute dataType="string" id="serviceRequest_usinadesc_string" name="usinadesc"/>
+				<localAttribute dataType="string" id="serviceRequest_sitedesc_string" name="sitedesc"/>
+				
+				<!--companies-->
+				<attribute describedByProperty="spi_wm:companies{dcterms:title}" id="serviceRequest_ms_itemnum_spi_wm_contratada" name="contratada"/>
+				<attribute describedByProperty="spi_wm:companies{spi_wm:company}" id="serviceRequest_ms_itemnum_spi_wm_company" name="company"/>
+				<localAttribute dataType="string" id="serviceRequest_attachmentssize_string" name="attachmentssize" persistent="false"/>
+				
+				<!--DESENV-->
+				<!-- Attribute need for gps location on SR -->
+				<localAttribute dataType="boolean" id="serviceRequest_gpsLocation_boolean" name="gpsLocation"/>
+	
+				
+				<attribute describedByProperty="spi:attachments" describedByResource="attachments" id="serviceRequest_attachments_spiattachments" name="attachments"/>
+    		</attributes>
+
+	        <creationFactories id="sgzUsina_creationFactories">
+		        <creationFactory creationUri="/oslc/os/ms_oslcsgzusina" id="serviceRequest_creationFactory_createSR" name="createSR"/>
+	        </creationFactories>
+
+			<queryBases id="serviceRequest_queryBases">
+				<!-- list of query bases the app will rely upon for this resource -->
+				<queryBase id="serviceRequest_queryBase_MY_REPORTED_SR" name="ConsultaPadraoSGZUsina" queryUri="/oslc/os/ms_oslcsgzusina?savedQuery=MS_AMTK%3AConsultaPadraoSGZUsina"/>
+			</queryBases>
+		</resource>
+		
+		<!-- UserInfo attribute list -->
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#MaxUser" id="userInfo" name="userInfo" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">	
+	        <attributes id="userInfo_attributes">
+		        <attribute describedByProperty="dcterms:identifier" id="userInfo_maxuserid_dctermsidentifier" name="maxuserid"/>
+		        <attribute describedByProperty="spi:userid" id="userInfo_userid_spiuserid" name="userid"/>
+		        <attribute describedByProperty="spi:loginid" id="userInfo_loginid_spiloginid" name="loginid"/>
+		        <attribute describedByProperty="spi:storeroomsite" id="userInfo_storeroomsite_spistoreroomsite" name="storeroomsite"/>
+		        <attribute describedByProperty="spi:type" id="userInfo_type_spitype" name="type"/>
+		        <attribute describedByProperty="spi:personid" id="userInfo_personid_spipersonid" name="personid"/>
+		        <attribute describedByProperty="spi:sysuser" id="userInfo_sysuser_spisysuser" name="sysuser"/>
+		        <attribute describedByProperty="spi:querywithsite" id="userInfo_querywithsite_spiquerywithsite" name="querywithsite"/>
+		        <attribute describedByProperty="spi:defsite{oslc:shortTitle}" id="userInfo_defsite_spidefsiteoslcshortTitle" name="defsite"/>
+		        <attribute describedByProperty="spi:defsite{spi:orgid}" id="userInfo_deforg_spidefsitespiorgid" name="deforg"/>
+		        <attribute describedByProperty="spi:status" id="userInfo_status_spistatus" name="status"/>
+		        <attribute describedByProperty="spi:emailpswd" id="userInfo_emailpswd_spiemailpswd" name="emailpswd"/>
+		        <attribute describedByProperty="spi:screenreader" id="userInfo_screenreader_spiscreenreader" name="screenreader"/>
+		        <attribute describedByProperty="spi:failedlogins" id="userInfo_failedlogins_spifailedlogins" name="failedlogins"/>
+		        <attribute describedByProperty="spi:inactivesites" id="userInfo_inactivesites_spiinactivesites" name="inactivesites"/>
+		        <attribute describedByProperty="spi:groupuser" describedByResource="userRoles" id="userInfo_groupList_spigroupuser" name="groupList"/>
+		     </attributes>
+		     <queryBases id="userInfo_queryBases">
+				<queryBase id="userInfo_queryBase_currentUser" name="currentUser" queryUri="/oslc/os/oslcmaxuser?savedQuery=currentUser"/>
+			</queryBases>
+	    </resource>
+	   
+	   
+		<!-- Attachments resource-->
+		<!--NOTICE: There must be at least two attributes with these aliases: fileSize and fileName-->
+		<!--CLAUDIO-->
+		
+		<resource class="application.business.AttachmentsObject" id="attachments" isAttachment="true" name="attachments">
+			<attributes id="attachments_attributes">
+				<attribute describedByProperty="oslc_cm:attachmentSize" id="attachments_fileSize_oslc_cmattachmentSize" name="fileSize"/> 
+				<attribute describedByProperty="dcterms:title" id="attachments_fileName_dctermstitle" key="1" name="fileName"/>
+				<attribute describedByProperty="spi:fileName" id="attachments_fullFileName_spifileName" key="2" name="fullFileName"/> 
+				<attribute describedByProperty="dcterms:description" id="attachments_description_dctermsdescription" name="description"/>
+				<attribute describedByProperty="dcterms:created" id="attachments_creationDate_dctermscreated" key="3" name="creationDate"/>
+				<attribute describedByProperty="spi:urlType" id="attachments_urlType_spiurlType" name="urlType"/>
+				<attribute describedByProperty="spi:docType" id="attachments_docType_spidocType" name="docType"/>
+				<attribute describedByProperty="spi:printthrulink" id="attachments_bulkDownload_spiprintthrulink" name="bulkDownload"/>
+				<attribute describedByProperty="spi:contentLocation" id="attachments_contentLocation_spicontentLocation" name="contentLocation"/>
+				<attribute describedByProperty="spi:anywhererefid" id="attachments_anywhereRefId_spianywhererefid" name="anywhereRefId"/>
+				<attribute describedByProperty="spi:createby" id="attachments_createby_spicreateby" name="createby"/> 
+				<localAttribute dataType="string" id="attachments_displaySize_string" name="displaySize"/>
+				<localAttribute dataType="string" formula="(${fileName} || ${anywhereAttachName})" id="attachments_displayFileName_string" name="displayFileName"/>
+				<localAttribute dataType="string" formula="(${description} || ${anywhereAttachDescription})" id="attachments_displayDescription_string" name="displayDescription"/>
+				<localAttribute dataType="string" formula="(${docType} || ${anywhereAttachCategory})" id="attachments_displayCategory_string" name="displayCategory"/>
+				<localAttribute dataType="dateTime" formula="(${creationDate} || ${anywhereCreationDate})" id="attachments_displayCreationDate_dateTime" name="displayCreationDate"/>
+				<localAttribute dataType="string" id="attachments_displayFileType_string" name="displayFileType"/>
+			</attributes>
+		</resource>
+		
+	    											    
+		<!-- Roles attribute list -->				
+	    <resource id="userRoles" name="userRoles">
+			<attributes id="userRoles_attributes">
+				<attribute describedByProperty="spi:groupname" id="userRoles_roleName_spigroupname" name="roleName"/>			
+			</attributes>
+		</resource>
+		
+		
+   		<resource id="errorResource" name="errorResource" singleton="true">
+   			<attributes id="errorResource_attributes">
+   				<localAttribute dataType="boolean" id="errorResource_hasErrors_boolean" name="hasError"/>
+   			</attributes>
+   		</resource>
+		
+		
+		
+		<!-- APPDOCTYPE --> 
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#AppDocType" id="appDocType" isSystem="true" name="appDocType" pageSize="50" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">
+			<attributes id="appDocType_attributes">
+				<attribute describedByProperty="spi:appdoctypeid" id="appDocType_identifier_spiappdoctypeid" index="true" name="identifier"/> 
+				<attribute describedByProperty="spi:doctype" id="appDocType_doctype_spidoctype" index="true" name="doctype"/>
+				<attribute describedByProperty="spi:app" id="appDocType_app_spiapp" index="true" name="app"/>
+			</attributes>
+			<queryBases id="appDocType_queryBases">
+ 	 			<queryBase id="appDocType_queryBase_getSRDocTypes" name="getSRDocTypes" queryUri="/oslc/os/oslcappdoctype?oslc.where=spi:app=%22MS_AMTK%22"/>
+	 		</queryBases>
+	 		<whereClause id="appDocType_whereClause"/>
+		</resource>	
+		
+		
+		<!-- ms_aptoolauth resource-->
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_APtoolauth" id="MSaptoolauth" isSystem="true" name="MSaptoolauth" pageSize="10" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">
+			<attributes id="ms_aptoolauth_attributes">
+				<attribute describedByProperty="spi:ms_plate" id="ms_aptoolauth_ms_plate_spi" index="true" name="ms_plate"/>
+				<attribute describedByProperty="spi:ms_itemnum" id="ms_aptoolauth_ms_plate_spims_itemnum" index="true" name="ms_itemnum"/>
+				<attribute describedByProperty="dcterms:identifier" id="ms_aptoolauth_ms_aptoolauthid_dctermsidentifier" index="true" name="identifier"/>
+				<attribute describedByProperty="spi:ms_active" id="ms_aptoolauth_ms_aptoolauthid_ms_active" name="ms_active"/>
+				<attribute describedByProperty="spi:ms_asphaltplantid" id="ms_aptoolauth_ms_aptoolauthid_ms_asphaltplantid" name="ms_asphaltplantid"/>
+				<attribute describedByProperty="spi:ms_company" id="ms_aptoolauth_ms_aptoolauthid_ms_company" name="ms_company"/>
+				<attribute describedByProperty="spi:ms_loadcapacity" id="ms_aptoolauth_ms_aptoolauthid_ms_loadcapacity" name="ms_loadcapacity"/>	
+				<attribute describedByProperty="spi:ms_startdate" id="ms_aptoolauth_ms_aptoolauthid_ms_startdate" name="ms_startdate"/>	
+				<attribute describedByProperty="spi:ms_enddate" id="ms_aptoolauth_ms_aptoolauthid_ms_enddate" name="ms_enddate"/>	
+				<attribute describedByProperty="spi:ms_shiftnum" id="ms_aptoolauth_ms_aptoolauthid_ms_shiftnum" name="ms_shiftnum"/>	
+			</attributes>				
+			<queryBases id="ms_aptoolauth_queryBases">
+				<queryBase id="ms_aptoolauth_queryBase_getms_aptoolauth" name="getms_aptoolauth" queryUri="/oslc/os/ms_oslcaptoolauth?savedQuery=MS_Veiculo_Ativo"/>
+	 		</queryBases>
+			<!-- <whereClause clause="spi:ms_active=1" id="ms_aptoolauth_whereClause"/> -->
+			<whereClause id="ms_aptoolauth_whereClause"/>
+		</resource>
+		
+		<!-- MSasphaltplant resource-->
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_asphaltPlant" id="MSasphaltplant" isSystem="true" name="MSasphaltplant" pageSize="10" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">
+			<attributes id="ms_asphaltPlant_attributes">
+				<attribute describedByProperty="spi:ms_asphaltplantid" id="ms_asphaltPlant_MSasphaltplant_dctermsidentifier" index="true" name="idusina"/>
+				<attribute describedByProperty="spi:ms_active" id="ms_asphaltPlant_MSasphaltplant_ms_active" name="active"/>
+				<attribute describedByProperty="spi:ms_description" id="ms_asphaltPlant_MSasphaltplant_ms_description" name="description"/>
+			</attributes>				
+			<queryBases id="ms_oslcasphaltplant_queryBases">
+				<queryBase id="ms_oslcasphaltplant_queryBase_getms_oslcasphaltplant" name="getms_asphaltplant" queryUri="/oslc/os/ms_oslcasphaltplant?savedQuery=ms_usinaperson"/>
+	 		</queryBases>
+			<whereClause id="ms_oslcasphaltplant_whereClause"/>
+		</resource>
+		
+		
+		
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_asphaltPlant" id="MSasphaltTransf" isSystem="true" name="MSasphaltTransf" pageSize="10" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">
+			<attributes id="ms_MSasphaltTransf_attributes">
+				<attribute describedByProperty="spi:ms_asphaltplantid" id="ms_asphaltPlant_MSasphaltTransf" index="true" name="idusina"/>
+				<attribute describedByProperty="spi:ms_active" id="ms_asphaltPlant_MSasphaltTransf_ms_active" name="active"/>
+				<attribute describedByProperty="spi:ms_description" id="ms_asphaltPlant_MSasphaltTransf_ms_description" name="description"/>
+			</attributes>				
+			<queryBases id="ms_MSasphaltTransf_queryBases">
+				<queryBase id="ms_oslcasphaltplant_queryBase_getms_MSasphaltTransf" name="getms_MSasphaltTransf" queryUri="/oslc/os/ms_oslcasphaltplant?savedQuery=ms_usinapersonTranf"/>
+	 		</queryBases>
+			<whereClause id="ms_MSasphaltTransf_whereClause"/>
+		</resource>
+		
+		
+		
+		<!-- ms_PersonAut resource-->
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_PersonAut" id="MSPersonAut" isSystem="true" name="MSPersonAut" pageSize="10" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">
+			<attributes id="ms_PersonAut_attributes">
+				<attribute describedByProperty="spi:personid" id="ms_oslcpersonaut_MSPersonAut_dctermsidentifier" index="true" name="personid"/>
+				<attribute describedByProperty="spi:status" id="ms_oslcpersonaut_MSPersonAut_status" name="status"/>
+			</attributes>				
+			<queryBases id="ms_oslcpersonaut_queryBases">
+				<queryBase id="ms_oslcauthperson_queryBase_getms_oslcpersonaut" name="getms_personaut" queryUri="/oslc/os/ms_oslcauthperson?savedQuery=ms_personauth"/>
+	 		</queryBases>
+		</resource>
+		
+
+		<!-- subpref resource-->
+		<resource additionalData="true" describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_site" id="subpref" isSystem="true" name="subpref" pageSize="10" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">
+			<attributes id="ms_site_attributes">
+				<attribute describedByProperty="spi:siteid" id="ms_site_siteid" index="true" isExactMatchIndex="true" name="siteid"/>
+				<attribute describedByProperty="spi:orgid" id="ms_site_orgid" name="orgid"/>
+				<attribute describedByProperty="spi:description" id="mms_site_description" name="description"/>
+			</attributes>				
+			<queryBases id="ms_site_queryBases">
+				<queryBase id="ms_site_queryBase_getms_msoslcsite" name="getms_msoslcsite" queryUri="/oslc/os/ms_oslcsite?savedQuery=ms_siteveiculo"/>
+	 		</queryBases>
+			<!-- <whereClause clause="spi:orgid='PMSP'" id="ms_site_whereClause"/> -->
+		</resource>
+		
+		
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_toolsSiteAuth" id="toolsiteauth" isSystem="true" name="toolsiteauth" pageSize="10" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">
+			<attributes id="toolsiteauth_attributes">
+				
+				
+				<attribute describedByProperty="dcterms:identifier" id="toolsiteauth_identifier" index="true" name="identifier"/>
+				<attribute describedByProperty="spi:ms_siteid" id="toolsiteauth_siteid"  name="ms_siteid"/>
+				<attribute describedByProperty="spi:ms_contractnum" id="toolsiteauth_ms_contractnum" name="ms_contractnum"/>
+				<attribute describedByProperty="spi:ms_plate" id="toolsiteauth_orgid" name="ms_plate"/>
+				<attribute describedByProperty="spi:ms_itemnum" id="toolsiteauth_ms_itemnum" index="true" name="ms_itemnum"/>
+				<attribute describedByProperty="spi:ms_status" id="toolsiteauth_ms_status" name="ms_status"/>
+				<attribute describedByProperty="spi:ms_asphaltplantid" id="toolsiteauth_ms_asphaltplantid" name="ms_asphaltplantid"/>
+				
+			</attributes>				
+			<queryBases id="toolsiteauth_queryBases">
+				<queryBase id="ms_site_queryBase_getms_toolsiteauth" name="getms_toolsiteauth" queryUri="/oslc/os/ms_oslctoolsiteauth"/>
+	 		</queryBases>
+			<whereClause id="toolsiteauth_whereClause"/>
+		</resource>
+
+	</data>
+	
+	<messages id="messages">
+		<message defaultMessage="Service Request" id="primaryResourceSingleLabel"/>
+		<message defaultMessage="Service Requests" id="primaryResourcePluralLabel"/>
+		<!--<message defaultMessage="IBM Maximo Service Request" id="applicationName"/>-->
+		<message defaultMessage="Maximo Anywhere Usina de Asfalto" id="applicationName"/>
+		<message defaultMessage="The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online." id="invalidLocation"/>
+		<message defaultMessage="The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online." id="invalidAsset"/>
+		<message defaultMessage="The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online." id="invalidPriority"/>
+		<message defaultMessage="Veiculo Não Autorizado." id="veiculoinvalido"/>
+		<message defaultMessage="Quantidade não Autorizada." id="qtdAuthqty"/>
+		<message defaultMessage="Por Favor! Tire a Foto da Placa do Veículo." id="semanexo"/>
+		<message defaultMessage="An error exists. Click here to view the error." id="errorExists"/>
+		<message defaultMessage="Errors Exist. Review the errors." id="reviewErrors"/>
+	</messages>
+</app>
