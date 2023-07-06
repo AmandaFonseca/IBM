@@ -384,8 +384,8 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			if (typeInsp == "1") {
 				Logger.error("Eh uma confirmação de existencia");
 				if(newStatus == "PRECANC"){
-					if ((pd_inspquestion01 == "Não") && (pd_inspquestion01 != "") && (pd_inspquestion02 == null) && (pd_inspquestion03 == null) &&(ms_inspwhy !=null)
-					&& (pd_inspdate != null) && (ms_inspector !=null)  && (pd_inspdate != "") && (ms_inspector !="")){
+					if ((pd_inspquestion01 == "Não") && (pd_inspquestion02 == null) && (pd_inspquestion03 == null) &&(ms_inspwhy !=null)
+					&& (pd_inspdate != null) && (ms_inspector !=null)){
 						ModelService.save(recordSet).then(function(woSet){
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
@@ -396,8 +396,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 				}
 				if(newStatus == "PREPLAN"){
 					if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Não") && (pd_inspquestion03 != null) 
-					&& (pd_inspquestion01 != "") && (pd_inspquestion02 != "")
-					&& (pd_inspdate != null) && (ms_inspector !=null)  && (pd_inspdate != "") && (ms_inspector !="")){
+					&& (pd_inspdate != null) && (ms_inspector !=null)){
 						ModelService.save(recordSet).then(function(woSet){
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
@@ -406,14 +405,10 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 					}
 					self.ui.show("WorkExecution.WorkItemsView");				
 				}
-				let retorno;
 				if(newStatus == "PLANEJAR"){
 					if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Sim") && (pd_inspquestion03 == null) 
-					&& (pd_inspquestion01 != "") && (pd_inspquestion02 != "")
-					&& (pd_inspdate != null) && (ms_inspector !=null) && (pd_inspdate != "") && (ms_inspector !="")){
-
+					&& (pd_inspdate != null) && (ms_inspector !=null)){
 						ModelService.save(recordSet).then(function(woSet){
-							retorno = 200;
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 							self.initEditStatusViewCustom(recordSet,statusChange);
@@ -421,18 +416,17 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 					}
 					self.ui.show("WorkExecution.WorkItemsView");				
 				}
-				}else{
-					if ((ms_inspdate04 != null ) && (ms_inspquestion04  != null ) && (ms_inspector04 == null)
-					&& (ms_inspquestion04  != "" ) && (ms_inspector04 == "")){
-						ModelService.save(recordSet).then(function(woSet){
-							var wo = woSet.getCurrentRecord();
-							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
-							self.initEditStatusViewCustom(recordSet,statusChange);
-						});					
-					}
-					self.ui.show("WorkExecution.WorkItemsView");
-		
+			}else{
+				if ((ms_inspdate04 != null ) && (ms_inspquestion04  != null ) && (ms_inspector04 == null)){
+					ModelService.save(recordSet).then(function(woSet){
+						var wo = woSet.getCurrentRecord();
+						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
+						self.initEditStatusViewCustom(recordSet,statusChange);
+					});					
 				}
+				self.ui.show("WorkExecution.WorkItemsView");
+	
+			}
 			
 		},
 		
