@@ -101,7 +101,7 @@
 					</eventHandlers>
 				</link>
 				
-				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:1805231700D"/>
+				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2305231200D"/>
 								
 			</container>
 			<eventHandlers id="platform.LoginView_eventHandlers">
