@@ -455,12 +455,78 @@ define("custom/handlers/MSSRDetailHandler", [
       );
       CommonHandler._clearFilterForResource(eventContext, subpref);
 
+      let plate = currSR.getPendingOrOriginalValue('ms_plate');	
+
       var isValidSiteid = subpref.find("siteid == $1", site);
 
       if (isValidSiteid.length == 0) {
         eventContext.ui.showMessage("Subprefeitura Inválida");
         return;
       }
+	  var site = currSR.getPendingOrOriginalValue("ms_siteid");
+	
+      var toolsiteauth = CommonHandler._getAdditionalResource(eventContext,"toolsiteauth");
+      CommonHandler._clearFilterForResource(eventContext, toolsiteauth);
+	   
+      let idUsina = CommonHandler._getAdditionalResource(eventContext,"MSasphaltplant").getCurrentRecord().get('idusina');	
+		
+		
+	    var isSiteAuth = toolsiteauth.find('ms_plate == $1 && ms_asphaltplantid == $2', plate, idUsina);
+      if (isSiteAuth.length == 0) {
+				throw new PlatformRuntimeException("Veículo não Autorizado! Veículo não tem contrato aprovado");
+				return;
+			}
+      if(isSiteAuth.length == 1){
+        currSR.set('ms_siteid', isSiteAuth[0].ms_siteid);
+      }
+
+      //Novo
+      var MSaptoolauth = CommonHandler._getAdditionalResource(eventContext,'MSaptoolauth');
+      CommonHandler._clearFilterForResource(eventContext, MSaptoolauth);
+
+      var isSiteAuth = toolsiteauth.find('ms_plate == $1 && ms_asphaltplantid == $2', plate, idUsina);
+
+      let isValidPlate = toolsiteauth.find('ms_plate == $1 && ms_asphaltplantid == $2 && ms_siteid  == $3 && ms_status ==$4', plate, idUsina, site, "APROVADO");
+
+
+      let veiculos = [];
+      if (isValidPlate.length > 0 && typeof isValidPlate == 'object') {
+        for (let index = 0; index < [isValidPlate].length; index++) {
+          const item = isValidPlate[index];
+          veiculos.push(item);
+        }
+      }
+      var isValidPlateItemContract = toolsiteauth.find('ms_plate == $1 && ms_asphaltplantid == $2 &&  ms_siteid == $3 && ms_status ==$4', plate,idUsina, site, "APROVADO");
+
+      let veiculosConc = [];
+      if (isValidPlateItemContract.length > 0 && typeof isValidPlateItemContract == 'object') {
+        for (let index = 0; index < [isValidPlateItemContract].length; index++) {
+          const item = isValidPlateItemContract[index];
+          veiculosConc.push(item);
+        }
+      }
+
+      let msg = "Veículo divergente com Itens de contrato! Favor entre em contato com o administrador";
+
+    
+      for (let index = 0; index < veiculos.length; index++) {
+        const veiculo = veiculos[index].get('ms_itemnum');
+        for (let index = 0; index < veiculosConc.length; index++) {
+          const veiculoConcItem = veiculosConc[index].get('ms_itemnum');
+          if (veiculo != veiculoConcItem) {
+            eventContext.ui.showMessage(msg);
+            Logger.error("Placa Valida" + veiculo);
+            return;
+          }else{
+            currSR.set('ms_itemnum',veiculoConcItem);
+          }
+        }   
+      
+      }
+
+      return;
+
+
     },
 
     //sync validate validateSiteUsina
@@ -2418,5 +2484,33 @@ define("custom/handlers/MSSRDetailHandler", [
         eventContext.setDisplay(false);
       }
     },
+
+    initMyReportedSRNovoSessionStorageInicial: function (eventContext) {
+      var idUsinaAtual;
+      var idUsinaAtualStorage;
+      //idUsinaAtualStorage = sessionStorage.idUsinaAtual;
+      idUsinaAtualStorage = sessionStorage.getItem("idUsinaAtual");
+      if((idUsinaAtualStorage == undefined)||(idUsinaAtualStorage == null)||(idUsinaAtualStorage == 0)){
+        var currServiceRequestSet = CommonHandler._getAdditionalResource(eventContext,"MSasphaltplant");
+        var currSR = currServiceRequestSet.getCurrentRecord();
+        idUsinaAtual = currSR.get('idusina');;
+        if((idUsinaAtual > 0)||(idUsinaAtual != null)||(idUsinaAtual != undefined)){
+          idUsinaAtual = currSR.get("idusina");
+        }
+        if((idUsinaAtual > 0)||(idUsinaAtual != null)||(idUsinaAtual != undefined)){
+          sessionStorage.setItem('idUsinaAtual', JSON.stringify(idUsinaAtual));
+        }
+      }else{
+        try {
+          idUsinaAtualStorage = JSON.parse(sessionStorage.idUsinaAtual);
+          idUsinaAtual = idUsinaAtualStorage;
+        } catch (error) {
+          console.log(error);
+          console.log("linha 1948 -- initMyReportedSRNovoSessionStorageInicial");          
+        }
+
+      }
+    },
+    
   });
 });
