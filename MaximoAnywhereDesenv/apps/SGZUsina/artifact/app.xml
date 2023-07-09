@@ -20,6 +20,7 @@
    		<requiredResources id="SGZUsina.ActionPanel_errorResource">
    		    <requiredResource id="SGZUsina.ActionPanel_serviceRequest" name="sgzUsina" reload="true"/>
 			<requiredResource id="SGZUsina.ActionPanel_requiredResource_errorResource" name="errorResource"/>
+			<requiredResource id="ServiceRequest.CreateSR_MSasphaltplant.ActionPanel" name="MSasphaltplant"/>
 		</requiredResources>			
 		<progressIndicator id="SGZUsina.ActionPanel_0"/>
 		<actions id="SGZUsina.ActionPanel_actions">
@@ -36,7 +37,7 @@
 				<eventHandlers id="link_eventHandlers">
 					<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="link_eventHandlers_render_hideShowSelectLink" method="hideShowErrorLink"/>
 					<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="link_eventHandlers_click" method="showErrorPage"/>
-					<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="link_eventHandlers_click_init" method="initMyReportedSRNovoSessionStorage"/>
+					<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="link_eventHandlers_click_init" method="initMyReportedSRNovoSessionStorageInicial"/>
 				</eventHandlers>
 			</link>
 		</container>
