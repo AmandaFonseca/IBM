@@ -1171,8 +1171,7 @@ define(
 						msamcrew.filter('ms_contractnum == $1 && ms_active == $2', pd_contractnum, 1);
 					},
 
-										
-					isOrigRec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
+					/*isOrigRec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 						var curWo = workOrderSet.getCurrentRecord();
 						let classifications = ['1569','1570','1571','1572', '1573'];
@@ -1187,6 +1186,19 @@ define(
 							});
 								
 						}
+					},
+					*/
+					isOrigRec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
+						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
+						var curWo = workOrderSet.getCurrentRecord();
+						var parentWO = curWo.get("parentwonum");
+						var wotcorigrec = CommonHandler._getAdditionalResource(this,"wotcorigirec");
+						var subItem = curWo.get('wonum');
+						CommonHandler._clearFilterForResource(eventContext,wotcorigrec);
+						let isOrigRec = wotcorigrec.filter("subitemtc == $1", subItem);
+						if(!isOrigRec.data.length > 0){
+							eventContext.setDisplay(false);
+							eventContext.setVisibility(false);							}
 					},
 
 
