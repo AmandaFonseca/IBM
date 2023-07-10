@@ -40,15 +40,18 @@ function(declare, ApplicationHandlerBase, AdditionalDataManager, SystemDataManag
 
 /**@memberOf custom.handlers.MSLoginHandle */
 		resetLinkClicked:function(eventContext){
-			
-			//PROD
-			//var url = "https://smgi.prefeitura.sp.gov.br/prs/resetPassword.jsp?reset=request";
-			
-			//Hom
-			var url = "https://smgisgzhomolog.prefeitura.sp.gov.br/prs/resetPassword.jsp?reset=request";
+			let self = this;
+			var domain = self.ui.application.WL.StaticAppProps.WORKLIGHT_BASE_URL;	
+			var url;
+			if(domain.includes('https://smgimax.prefeitura.sp.gov.br:443')){
+				url = "https://smgi.prefeitura.sp.gov.br/prs/resetPassword.jsp?reset=request";
+			}else{
+				url = "https://smgisgzhomolog.prefeitura.sp.gov.br/prs/resetPassword.jsp?reset=request";
+			}
 			window.open(url, '_system');
-		},	
-		acesso_manuaisClicked:function(eventContext){		
+		},
+		
+		acesso_manuaisClicked:function(eventContext){	
 			let self = this;
 			let appId = self.application.appId;
 			var domain = self.ui.application.WL.StaticAppProps.WORKLIGHT_BASE_URL;

@@ -54,8 +54,8 @@
 			</requiredResources>
 			<container cssClass="loginForm" id="platform.LoginView_container_0">
 				<!--<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_H_Mobile.svg" cssClass="productLogo"/>-->
-				<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_H_Tec.svg"/>
-				<!--<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_Mobile.svg"/>-->
+				<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_H_Tec.png"/>
+				<!--<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_Tec.svg"/>-->
  				<!--<text cssClass="productName" editable="false" id="platform.LoginView_container_0_appName" resourceAttribute="appName"/>-->  
 				<text cssClass="errorMsg" editable="false" id="platform.LoginView_container_0_errorMsg" resourceAttribute="errorMsg"/>
 				 <!-- If you want device-side SSO comment out this view -->	
@@ -90,7 +90,6 @@
 					</eventHandlers>
 				</text>
 				
-				
 				<!-- end of the comment block to enable device-side SSO -->
 				<link enableFeatureByProperty="connection.settings.enabled" id="ConnectionSettings_link" label="Connection Settings">
 					<eventHandlers id="ConnectionSettings_link_eventHandlers">
@@ -98,7 +97,7 @@
 						<eventHandler class="platform.handlers.LoginHandler" event="render" id="ConnectionSettings_link_eventHandlers_render_showHideSettingsLink" method="showHideSettingsLink"/>
 					</eventHandlers>
 				</link>
-				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:300820221611*H"/>
+				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2306230900H"/>
 								
 			</container>
 			<eventHandlers id="platform.LoginView_eventHandlers">
