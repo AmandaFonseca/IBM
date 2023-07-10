@@ -149,7 +149,7 @@
 		</view>
 
 	<!-- Search OS view -->
-		<view id="AssetDataManager.SearchAssetView" label="Buscar Subitem de Fiscalização">
+		<view id="AssetDataManager.SearchAssetView" label="Research Inspection Subitem">
 			<requiredResources id="AssetDataManager.SearchAssetView_requiredResources">
 				<requiredResource id="AssetDataManager.SearchAssetView_searchasset" name="searchWorkOrder"/>
 				<requiredResource id="AssetDataManager.SearchAssetView_asset" name="workOrder"/>

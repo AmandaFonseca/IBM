@@ -89,7 +89,7 @@
 						<eventHandler class="platform.handlers.LoginHandler" event="click" id="PrivacyPolicy_link_eventHandlers_click" method="privacyPolicyLinkClicked"/>
 					</eventHandlers>
 				</text>
-				
+							
 				<!-- end of the comment block to enable device-side SSO -->
 				<link enableFeatureByProperty="connection.settings.enabled" id="ConnectionSettings_link" label="Connection Settings">
 					<eventHandlers id="ConnectionSettings_link_eventHandlers">
@@ -97,7 +97,7 @@
 						<eventHandler class="platform.handlers.LoginHandler" event="render" id="ConnectionSettings_link_eventHandlers_render_showHideSettingsLink" method="showHideSettingsLink"/>
 					</eventHandlers>
 				</link>
-				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2306230900D"/>
+				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2306230900H"/>
 								
 			</container>
 			<eventHandlers id="platform.LoginView_eventHandlers">
