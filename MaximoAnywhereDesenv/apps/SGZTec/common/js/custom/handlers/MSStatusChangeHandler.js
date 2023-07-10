@@ -571,14 +571,17 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
                         var countNum = 0;
                         var countAln = 0;
 						var concasf = 0;
+                        /*for (var i = 0; i < currentWorkOrder.workOrderSpec.count(); i++) {
+                            var currWorkOrderSpec = currentWorkOrder.workOrderSpec.getRecordAt(i);
+*/
 						var currWorkOrderSpecList = currentWorkOrder.workOrderSpec;
 						CommonHandler._clearFilterForResource(eventContext,currWorkOrderSpecList);
 						currWorkOrderSpecList.filter("refobjectid == $1", currentWorkOrder.get('identifier'));
 
-                        for (var i = 0; i < currWorkOrderSpecList.count(); i++) {
-                            var currWorkOrderSpec = currWorkOrderSpecList.getRecordAt(i);
+						for (var i = 0; i < currWorkOrderSpecList.count(); i++) {
+							var currWorkOrderSpec = currWorkOrderSpecList.getRecordAt(i);
 
-                            var numValue = currWorkOrderSpec.get("numvalue");
+						var numValue = currWorkOrderSpec.get("numvalue");
                             var alnValue = currWorkOrderSpec.get("alnvalue");
                             
                             var pdSpecReq = currWorkOrderSpec.get("pd_spec_required");

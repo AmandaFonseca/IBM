@@ -87,7 +87,7 @@ define(
 							newWorkOrder.set('woservicecity', this.originalWorkOrder.get('woservicecity'));
 							newWorkOrder.set('woservicestateprovince', this.originalWorkOrder.get('woservicestateprovince'));
 						
-							this.originalWorkOrder.getModelDataSet('toollist', true).then(function(toollistSet){
+							/*this.originalWorkOrder.getModelDataSet('toollist', true).then(function(toollistSet){
 								newWorkOrder.getModelDataSet('toollist', true).then(function(newWorkOrderToollistSet) {
 									  for(var i=0; i<toollistSet.count();i++){
 										var newRec = newWorkOrderToollistSet.createNewRecord();
@@ -124,7 +124,7 @@ define(
 									}
 								});
 							});
-							
+							*/
 							
 										
 							newWorkOrder.set('siteid', this.originalWorkOrder.get("siteid"));
@@ -172,6 +172,46 @@ define(
 							} else {
 								eventContext.ui.show("WorkExecution.FollowUpWorkOrderView");
 								eventContext.application.hideBusy();
+							}
+						},
+
+						clearSearchFields: function(eventContext){
+							eventContext.application.getResource("searchAsset").createNewRecord();
+						},
+
+						
+		
+
+						
+						commitNewWorkOrderView : function(eventContext) {
+							if (eventContext.ui.getCurrentViewControl().validate()) {
+								eventContext.application.showBusy();
+								var workOrderSet = eventContext.application.getResource('workOrder');
+								var newWorkOrder = workOrderSet.getCurrentRecord();
+								/* newWorkOrder.set('classstructureid', newWorkOrder.get('classificationdesc')); */
+								newWorkOrder.set('classstructureid', newWorkOrder.get('classstructureid'));
+								if(!newWorkOrder.get("woservicepostalcode")){
+									newWorkOrder.set("woservicepostalcode", "-");
+								}
+								var self = this;
+								/*
+								if(this.originalWorkOrder) {
+									workOrderSet.setCurrentIndexByRecord(this.originalWorkOrder);
+									this.handleWOSpecResourceWhenGoingBack(eventContext,this.originalWorkOrder);
+								}
+								*/
+								
+									ModelService.saveAll([workOrderSet]).then(function() {
+										var statuses = CommonHandler._getAdditionalResource(eventContext,'domainwostatus');
+										CommonHandler._clearFilterForResource(eventContext,statuses);
+										eventContext.ui.hideCurrentView();
+										self.originalWorkOrder = null;
+										
+									}).
+									otherwise(function(err){
+										eventContext.application.hideBusy();
+										eventContext.ui.showMessage(err);						
+									});
 							}
 						},
 
@@ -295,6 +335,36 @@ define(
 							
 							eventContext.refresh();
 						},
+
+                        readOnlyOrigSpecDefault : function(eventContext) {
+							var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
+							var Spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
+							var medicoes = ['E_PATOLOGIA','F_AFUND','G_TRINCA','H_REQ','I_OND','J_EXSUDACAO','K_ESC','L_DESAGRE','M_DEF_PLA','N_BUR_PAN'];
+							if (currentWorkOrder != null && currentWorkOrder.workOrderSpec != null && Spec !== undefined){
+								for (var i = 0; i < Spec.count(); i++) {
+									var currWorkOrderSpec = Spec.getRecordAt(i);
+                                    var currSpec = currWorkOrderSpec.get('assetattrid');
+									let alnvalue_value;
+									if (currWorkOrderSpec.get('alnvalue')) {
+										alnvalue_value = currWorkOrderSpec.get('alnvalue');
+									}
+									for (let index = 0; index < medicoes.length; index++) {
+										const medicao_index = medicoes[index];
+										if (currSpec == medicao_index) {
+											if (alnvalue_value == ""||alnvalue_value == null) {
+												console.log('alnvalue_value' + alnvalue_value);
+												console.log('assetattrid' + currSpec);
+												currWorkOrderSpec.set('alnvalue','Não') 										
+											}
+														
+										}
+									}
+                                }
+								
+							}
+							eventContext.refresh();
+						},
+
                         ValidateDateSpecBack : function(eventContext) {
 							Logger.error("###### inicio ValidateDateSpec");
 							var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
@@ -756,12 +826,14 @@ define(
                                 for(var j = 0 ; j < findNoCat.length; j++){
                                    findNoCat[j].set("category", section); //Define sua categoria
                                 }
-                            } */
+                            }
+                             */
                             var appAttachmentSet = eventContext.application.getResource('attachments');
                             CommonHandler._clearFilterForResource(eventContext,appAttachmentSet);
                             var ActCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource").getCurrentRecord();
-							var section = ActCategory.get("ms_photosessionid");
-							appAttachmentSet.filter('category == $1', section);
+                            var section = ActCategory.get("ms_photosessionid");
+                            appAttachmentSet.filter('category == $1');
+                            var section = ActCategory.get("ms_photosessionid");
                             //var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
                             //eventContext.ui.getCurrentViewControl().refresh();
                             //eventContext.ui.getCurrentViewControl().refreshLists();
@@ -1094,6 +1166,15 @@ define(
                                 }  */
                              
                             
+						},
+						verifyEmergency: function(eventContext){
+							var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+							var currWO = workOrderSet.getCurrentRecord();
+							let emergency = currWO.get('ms_emergency');
+							if (!emergency) {								
+								eventContext.setDisplay(false);
+								eventContext.setVisibility(false);
+							}
 						},
 					});
 			

@@ -85,6 +85,8 @@
 						<eventHandler class="application.handlers.WOListHandler" event="render" id="WorkExecution.WorkItemsView_MaterialsTools_action_eventHandlers_render_enableDisableMaterialToolsAction" method="enableDisableMaterialToolsAction"/>
 					</eventHandlers>
 				</action> -->
+
+				<action id="AssetDataManager.AssetListView_Search_action" label="Buscar Subitem de Fiscalização" overflow="true" transitionTo="AssetDataManager.SearchAssetView"/>
 				
 			</actions>
 
@@ -145,6 +147,41 @@
 
 			</eventHandlers>
 		</view>
+
+	<!-- Search OS view -->
+		<view id="AssetDataManager.SearchAssetView" label="Search Tree">
+			<requiredResources id="AssetDataManager.SearchAssetView_requiredResources">
+				<requiredResource id="AssetDataManager.SearchAssetView_searchasset" name="searchWorkOrder"/>
+				<requiredResource id="AssetDataManager.SearchAssetView_asset" name="workOrder"/>
+				<requiredResource id="WorkExecution.AssetDataManager.WorkItemsView_domainwostatus" name="domainwostatus"/>
+				<requiredResource id="AssetDataManager.SearchAssetView_statusChangeResource" name="statusChangeResource"/>
+			</requiredResources>
+			<container id="AssetDataManager.SearchAssetView_searchAsset_container_0" resource="searchWorkOrder">
+				<group id="AssetDataManager.SearchAssetView_group_0">
+					<groupitem id="AssetDataManager.SearchAssetView_searchAsset_groupitem_0">
+						<text editable="true" id="AssetDataManager.SearchAssetView_searchAsset_groupitem_0_assetnum_asset" label="Subitem de Fiscalização" placeHolder="Tap to enter" resourceAttribute="wonum"/>
+					</groupitem>
+				</group>
+			</container>
+			<footer id="AssetDataManager.SearchAssetView_footer">
+				<button id="AssetDataManager.SearchAssetView_Clear_button" label="Clear">
+					<eventHandlers id="AssetDataManager.SearchAssetView_Clear_button_eventHandlers">
+						<eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="AssetDataManager.SearchAssetView_Clear_button_eventHandlers_click_clearSearchFields" method="clearSearchFields"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="AssetDataManager.SearchAssetView_Search_button" label="Search" primary="true">
+					<eventHandlers id="AssetDataManager.SearchAssetView_Search_button_eventHandlers">
+						<eventHandler class="application.handlers.WODetailHandler" event="click" id="AssetDataManager.SearchAssetView_Search_button_eventHandlers_click_setSearchQuery" method="setSearchQuery"/>
+					</eventHandlers>
+				</button>
+			</footer>
+			<eventHandlers id="AssetDataManager.SearchAssetView_eventHandlers">
+				<eventHandler class="application.handlers.WODetailHandler" event="initialize" id="AssetDataManager.SearchAssetView_eventHandlers_initialize_initSearchData" method="initSearchData"/>
+				<eventHandler class="application.handlers.WODetailHandler" event="show" id="AssetDataManager.SearchAssetView_eventHandlers_show_showSearch" method="showSearch"/>
+				<eventHandler class="application.handlers.WODetailHandler" event="hide" id="AssetDataManager.SearchAssetView_eventHandlers_hide_hideSearch" method="hideSearch"/>
+				<eventHandler class="application.handlers.WODetailHandler" event="cleanup" id="AssetDataManager.SearchAssetView_eventHandlers_cleanup_discardSummaryView" method="discardSummaryView"/>
+			</eventHandlers>
+		</view>		
 		
 		<!--SGZMOBILE Work Order Details view Changed to Service Item Details-->
 		<view id="WorkExecution.WorkDetailView" label="Service Item Details" resource="workOrder">
@@ -176,12 +213,24 @@
 				<requiredResource id="WorkExecution.WorkDetailView_domaintypes" name="domaintypes"/>
 				<requiredResource id="WorkExecution.FollowUpWorkOrderView_ancestorLoc" name="ancestorLoc"/>
 				<requiredResource id="WorkExecution.FollowUpWorkOrderView_wotcorigrec" name="wotcorigirec"/>
+				<requiredResource id="sgzMobile.amcrewLookup_msamcrew_0" name="msamcrew"/>
 				<!-- <requiredResource id="WorkExecution.WorkDetailView_amtickets" name="amtickets"/> -->
 
-				</requiredResources>	
+			</requiredResources>	
+
+			<actions id="WorkExecution.WorkDetailView_actions">
+				<action id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action" label="Create Follow-Up Service Item" overflow="true">
+					<eventHandlers id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers">
+					 	<eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers_click_createFollowUpAction" method="createServiceItemAction"/>
+					    <eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers_render_renderCreateFollowUpAction" method="renderCreateServiceItemAction"/>
+					</eventHandlers>
+				</action>
+				<action enableFeatureByProperty="map.enabled" id="WorkExecution.WorkDetailView_Map_action" image="header_mapView_OFF.svg" label="Map" transition="fade" transitionTo="WorkExecution.MapViewFromWD"/>
+			</actions> 
+
 			<eventHandlers id="WorkExecution.WorkDetailView_eventHandlers">
 				<!-- <eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="filterAttributes" method="filterAttributesItem"/> -->
-				<!--<eventHandler class="application.handlers.DataSheetHandler" enableFeatureByProperty="calibration.enabled" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_fetchDataSheetList" method="fetchDataSheetList"/>-->
+				<eventHandler class="application.handlers.DataSheetHandler" enableFeatureByProperty="calibration.enabled" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_fetchDataSheetList" method="fetchDataSheetList"/>
 				<eventHandler class="application.handlers.WODetailHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_fetchAllListSizes" method="fetchAllListSizes"/>
 				<eventHandler class="application.handlers.WODetailHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
 				
@@ -192,10 +241,7 @@
 			</eventHandlers>
 
 			<container id="WorkExecution.WorkDetailView_workOrder_container_0" resource="workOrder">
-			
 				<errorIndicator class="application.handlers.WOExtDownloadHandler" clearMethod="confirmClearChanges" id="WorkExecution.WorkDetailView_errorIndicator"/>
-				
-				
 				<group id="WorkExecution.WorkDetailView_group_0">
 					<eventHandlers id="workexecution.hide_wo">
 						<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_WODetailsView" method="hide_WODetailsView"/>
@@ -206,39 +252,29 @@
                             <eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_clic_ValidateDateSpec" method="ValidateDateSpec"/>
                          </eventHandlers> -->
 					</groupitem>
-					
 					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_0">
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_0_wonum_WorkOrder" label="Inspection Item" resourceAttribute="parentwonum"/>
 					</groupitem>
-					
 					<groupitem id="WorkExecution.WorkDetailView_workOrder_Parent_groupitem_0">
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_0_Parent_WorkOrder" label="Subitem de Fiscalização" resourceAttribute="wonum"/>
 					</groupitem>
-
-<!--                     <groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_02" >
+					<!-- <groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_02" >
                         <text editable="false"  id="WorkExecution.WorkDetailView_workOrder_groupitem_0_orig_WorkOrder" label="Item de Serviço Originante" />
                         <eventHandlers id="workexecution.filterOrigRec">
                             <eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_clic_filterOrigRec" method="filterOrigRec"/>
                          </eventHandlers>
                     </groupitem> -->
                     <groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.ClassifyWorkOrderView_0">
-							
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationdesc" label="Classification" resourceAttribute="classificationdesc"/>
 					</groupitem>
 					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_ms_aging">
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_0_ms_aging_WorkOrder" label="Days" resourceAttribute="ms_aging"/>
-					</groupitem>
-									
+					</groupitem>									
 					<!-- SGZ Mobile Add Siteid -->
 					<groupitem id="WorkExecution.WorkDetailView_groupitem_WorkExecution.EditSiteidView_0">
 						<text editable="false" id="WorkExecution.WorkDetailView_groupitem_0_siteid_WorkOrder" label="Subprefeitura" resourceAttribute="siteid"/>
 					</groupitem>
-					
 					<!-- SGZ Mobile Add LongDescription -->
-					
-						
-					
-					
 					<!-- SGZ Mobile add serviceaddress -->
 					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_1">
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_1_woserviceaddress_woserviceaddressaddressline2" label="Logradouro" resourceAttribute="woserviceaddressline2"/>
@@ -246,7 +282,6 @@
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_1_woserviceaddress_woserviceaddressaddressline3" label="District" resourceAttribute="woserviceaddressline3"/>
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_1_woserviceaddress_woserviceaddresspostalcode" label="Postal Code" resourceAttribute="woservicepostalcode"/>						
 					</groupitem>
-					
 					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_2">
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_2_starttime_ScheduledStart" label="Approval date" placeHolder="Select" resourceAttribute="starttime" />						
 					</groupitem>
@@ -254,7 +289,12 @@
 						<textarea editable="false" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.Pd_Obs_0_obs_pd_obs" label="Comments" resourceAttribute="pd_obs"/>
 					</groupitem>
 					<!-- SGZ Mobile add fields --> 
-
+					<groupitem id="ReadOnlyWorkExecution.WorkDetailView_groupitem_WorkExecution.EditSiteidView_team">
+						<text editable="false" id="ReadOnlyWorkExecution.WorkDetailView_groupitem_0_siteid_WorkOrder_team" label="Crew" resourceAttribute="amcrew" lookup="sgzMobile.amcrewLookup"/>
+						<!--<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_ms_emergencial">
+							<eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_ms_emergencial" method="verifyEmergency"/>
+						</eventHandlers>-->
+					</groupitem>
 				</group>
 			</container>
            
@@ -301,6 +341,161 @@
 				</group>
 			</container>
 	
+		</view>
+
+		<view id="WorkExecution.FollowUpWorkOrderView" label="Service Item Details" resource="workOrder" >
+			<requiredResources id="WorkExecution.0.WorkDetailView_requiredResources">
+				<requiredResource id="WorkExecution.0.WorkDetailView_workOrder" name="workOrder">
+					<requiredAttribute id="WorkExecution.0.WorkDetailView_workOrder_attachments" name="attachments"/>
+					<requiredAttribute id="WorkExecution.0.WorkDetailView_workOrder_workOrderSpec" name="workOrderSpec"/>
+					<!-- <requiredAttribute id="WorkExecution.0.WorkDetailView_workOrder_assetSpec" name="assetSpec" reload="true"/> -->
+				</requiredResource>
+				
+				<requiredResource id="WorkExecution.0.WorkDetailView_oslcmaxvars" name="oslcmaxvars"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_mylabor" name="mylabor"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_mylaborcraftrate" name="mylaborcraftrate"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_additionalworktype" name="additionalworktype"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_domainwoclass" name="domainwoclass"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_domainAssetstatus" name="domainAssetstatus"/>
+				<!-- <requiredResource id="WorkExecution.0.WorkDetailView_additionalasset" name="additionalasset"/> -->
+				<requiredResource id="WorkExecution.0.WorkDetailView_domainwostatus" name="domainwostatus"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_laborcrew" name="laborcrew" reload="true"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_site" name="site"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_classstructure" name="classstructure"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_maxdomain" name="maxdomain"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_assetattrtypes" name="assetattrtypes"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_domainitemtype" name="domainitemtype"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_woFollowUpInfo" name="woFollowUpInfo"/>						
+				<requiredResource id="WorkExecution.0.WorkDetailView_domainworktype" name="domainworktype"/>
+				<requiredResource id="WorkExecution.0.WorkDetailView_domaintypes" name="domaintypes"/>
+				<requiredResource id="WorkExecution.0.FollowUpWorkOrderView_ancestorLoc" name="ancestorLoc"/>
+				<requiredResource id="WorkExecution.0.FollowUpWorkOrderView_wotcorigrec" name="wotcorigirec"/>
+				<!-- <requiredResource id="WorkExecution.0.WorkDetailView_amtickets" name="amtickets"/> -->
+
+			</requiredResources>	
+			<actions id="WorkExecution.FollowUpWorkOrderView_actions">
+			    <action enableFeatureByProperty="attachments.enabled" id="WorkExecution.FollowUpWorkOrderView_TakePhoto_action" image="/images/header_camera_off.svg" label="Take Photo">
+					<eventHandlers id="WorkExecution.FollowUpWorkOrderView_TakePhoto_action_eventHandlers">
+						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.FollowUpWorkOrderView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
+						<eventHandler class="application.handlers.WOAttachmentHandler" event="render" id="WorkExecution.FollowUpWorkOrderView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
+					</eventHandlers>
+				</action>
+			</actions>
+
+			<container id="WorkExecution.FollowUpWorkOrderView_container_0">
+				<group id="WorkExecution.FollowUpWorkOrderView_group_0">
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_0">
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_0_Parent_WorkOrder_new" label="Subitem de Fiscalização" resourceAttribute="wonum"/>
+					</groupitem>
+					
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.EditStatusView_0">
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0_statusdesc_Status_new" label="Status" labelCss="editableLabel" layoutInsertAt="item1" resourceAttribute="statusdesc"/>
+					</groupitem>
+					
+					
+					<!-- SGZ Mobile Add Siteid -->
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.EditSiteidView_0">
+						<text editable="false" id="WorkExecution.WorkDetailView_groupitem_0_siteid_WorkOrder_new" label="Subprefeitura" resourceAttribute="siteid"/>
+					</groupitem>
+					
+					
+					<!-- SGZ add field -->
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.Pd_Obs_0">
+						<textarea editable="false" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.Pd_Obs_0_obs_pd_obs_new" label="Comments" resourceAttribute="pd_obs"/>
+					</groupitem>
+					
+					<!-- SGZ Mobile add serviceaddress -->
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_workOrder_groupitem_1">
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_1_woserviceaddress_woserviceaddressaddressline2_new" label="Logradouro" resourceAttribute="woserviceaddressline2"/>
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_1_woserviceaddress_woserviceaddressstaddrnumber_new" label="Number" resourceAttribute="woservicetaddrnumber"/>
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_1_woserviceaddress_woserviceaddressaddressline3_new" label="District" resourceAttribute="woserviceaddressline3"/>
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_1_woserviceaddress_woserviceaddresspostalcode_new" label="Postal Code" resourceAttribute="woservicepostalcode"/>	
+                        <text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution_groupitem_0_siteid_WorkOrderlat" label="Latitude" resourceAttribute="latitudey"/>
+						<text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution_groupitem_0_siteid_WorkOrderlong" label="Longitude" resourceAttribute="longitudex"/>
+					</groupitem>
+					
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_5">
+						<text editable="true" id="WorkExecution.FollowUpWorkOrderView_groupitem_2_starttime_ScheduledStart" label="Scheduled Start" placeHolder="Select" resourceAttribute="starttime"/>
+					</groupitem>
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_6">
+						<text editable="true" id="WorkExecution.FollowUpWorkOrderView_groupitem_3_finishtime_ScheduledFinish" label="Scheduled Finish" placeHolder="Select" resourceAttribute="finishtime"/>
+					</groupitem>
+					
+					
+					<!-- Classificacao SGZMobile -->
+					<!-- <groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0" transitionTo="WorkExecution.ClassifyWorkOrderView"> -->
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0">
+						<!-- <text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationpath_Classification" label="Classification" labelCss="editableLabel" lookup="WorkExecution.classifyLookup" lookupAttribute="classstructureid" placeHolder="Classify Work Order" resourceAttribute="classificationpath"/> -->
+						<!-- <text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationpath_Classification" label="Classification" labelCss="editableLabel" placeHolder="Classify Work Order" resourceAttribute="classificationpath"/> -->
+						<text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationdesc" label="Classification" labelCss="editableLabel" required="true" lookup="WorkExecution.classifyLookup" lookupAttribute="classstructureid" placeHolder="Classify Work Order" resourceAttribute="classstructureid"/>
+					</groupitem>
+					
+
+				</group>
+				</container>
+				<!-- Specification Form BEGIN
+				<list attribute="workOrderSpec" collapsible="true" displayPageSize="25" hideEmpty="true" id="WorkExecution.FollowUpWorkOrderView_workOrder_workOrderSpec_list" label="Specifications" mixinclass="SpecificationStoreList" resource="workOrder">
+					<listItemTemplate id="WorkExecution.FollowUpWorkOrderView_workOrder_workOrderSpec_listItemTemplate">
+					  	<listtext cssClass="specLayoutLeft editableLabel" id="WorkExecution.FollowUpWorkOrderView_workOrder_assetattrid" resourceAttribute="assetattrid" showreqattribute="mandatory"/>
+						<listtext cssClass="specLayoutRight editableLabel" id="WorkExecution.FollowUpWorkOrderView_workOrder_description" resourceAttribute="description"/>
+				  		<listtext cssClass="specLayoutLeftReset editableLabel" hideEmpty="true" id="WorkExecution.FollowUpWorkOrderView_workOrder_measureunitid" resourceAttribute="measureunitid"/>
+					</listItemTemplate>
+					
+				</list>-->
+				
+			
+				<!-- Specification Form END-->
+				
+				<container id="WorkExecution.FollowUpWorkOrderView_container_10">	
+				
+				<group id="WorkExecution.FollowUpWorkOrderView_group_2">
+					<groupitem enableFeatureByProperty="attachments.enabled" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.AttachmentsView_0" layout="Item1Count1Button2" transitionTo="WorkExecution.AttachmentsView">
+						<text cssClass="relatedRecords" editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.AttachmentsView_0_Attachments" layoutInsertAt="item1" value="Attachments"/>
+						<text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.AttachmentsView_0_attachmentssize" layoutInsertAt="count1" resourceAttribute="attachmentssize">
+						</text>
+					</groupitem>
+				</group>
+				<group id="WorkExecution.FollowUpWorkOrderView_group_5">
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_group_5_groupitem" layout="Item1Count1Button1" transitionTo="WorkExecution.LaborAssignmentsView">
+						<text cssClass="relatedRecords" editable="false" id="WorkExecution.FollowUpWorkOrderView_group_5_groupitem_WorkExecution.LaborAssignmentsView_0_LaborAssignments" layoutInsertAt="item1" value="Labor Assignments"/>
+						<text editable="false" id="WorkExecution.FollowUpWorkOrderView_group_5_groupitem_WorkExecution.LaborAssignmentsView_0_assignmentlistsize" layoutInsertAt="count1" resourceAttribute="assignmentlistsize">
+						</text>
+					</groupitem>
+				</group>
+				<group id="WorkExecution.FollowUpWorkOrderView_group_4">
+					<groupitem id="WorkExecution.FollowUpWorkOrderView_group.PlannedToolsView_0" layout="Item1Count1Button1" transitionTo="WorkExecution.PlannedToolsView">
+						<text cssClass="relatedRecords" editable="false" id="WorkExecution.FollowUpWorkOrderView_group_groupitem_WorkExecution.PlannedToolsView_0_PlannedTools" layoutInsertAt="item1" value="Planned Tools"/>
+						<text editable="false" id="WorkExecution.FollowUpWorkOrderView_group_groupitem_WorkExecution.PlannedToolsView_0_toollistsize" layoutInsertAt="count1" resourceAttribute="toollistsize">
+						</text>
+					</groupitem>
+				</group>
+				<group id="WorkExecution.FollowUpWorkOrderView_group_3">
+					
+				</group>
+				
+			</container>
+
+			<container id="WorkExecution.FollowUpWorkOrderView_container_1">	
+			</container>
+			<footer id="WorkExecution.FollowUpWorkOrderView_footer">
+				<button id="WorkExecution.FollowUpWorkOrderView_Cancel_button" label="Cancel">
+					<eventHandlers id="WorkExecution.FollowUpWorkOrderView_Cancel_button_eventHandlers">
+						
+						 <eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="WorkExecution.FollowUpWorkOrderView_Cancel_button_eventHandlers_click_discardNewWorkOrderView" method="discardNewWorkOrderView"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="WorkExecution.FollowUpWorkOrderView_wonum_Create_button" label="Create" primary="true" resourceAttribute="wonum">
+					<eventHandlers id="WorkExecution.FollowUpWorkOrderView_wonum_Create_button_eventHandlers">
+						<eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="WorkExecution.FollowUpWorkOrderView_wonum_Create_button_eventHandlers_click_commitNewWorkOrderView" method="commitNewWorkOrderView"/>
+					</eventHandlers>
+				</button>
+			</footer>
+			<eventHandlers id="WorkExecution.FollowUpWorkOrderView_eventHandlers">
+				<eventHandler class="custom.handlers.WODetailExtensionHandler" event="cleanup" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_cleanup_discardNewWorkOrderView" method="discardNewWorkOrderView"/>
+				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
+				<eventHandler class="application.handlers.ClassificationFormHandler" event="initialize" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_initialize_initializeWOSpec2" method="initializeWOSpec"/> 		
+	 			<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>  							
+			</eventHandlers>
 		</view>
         
         
@@ -369,6 +564,7 @@
 				</listItemTemplate>
                  <eventHandlers id="origReadOnlyWorkExecution.SpecificationView_workOrder_workOrderSpec_eventHandlers">
                     <eventHandler event="render" id="origReadOnlyWorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_render_readOnlySpec" class="custom.handlers.WODetailExtensionHandler" method="readOnlyOrigSpec"/>
+                    <eventHandler event="render" id="origReadOnlyWorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_render_readOnlySpec_set" class="custom.handlers.WODetailExtensionHandler" method="readOnlyOrigSpecDefault"/>
                 </eventHandlers>
 			</list>
 
@@ -1620,6 +1816,32 @@
 		</lookup>
 		
 		
+		<!-- TROCA DE EQUIPES-->
+		<lookup id="sgzMobile.amcrewLookup" label="Equipes" resource="msamcrew" filterClass="custom.handlers.WODetailExtensionHandler" filterMethod="selectTeamLookup">
+			<requiredResources id="sgzMobile.amcrewLookup_requiredResources">
+				<requiredResource id="sgzMobile.amcrewLookup_msamcrew" name="msamcrew"/>
+			</requiredResources>
+
+			<list id="sgzMobile.amcrewLookup_list" resource="msamcrew">
+				<searchAttributes id="sgzMobile.amcrewLookup_list_searchAttributes">
+					<searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_amcrew" name="amcrew"/>
+					<searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_description" name="displayname"/>
+				</searchAttributes>
+				<listItemTemplate id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1" layout="Item1Desc1" >
+					<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_list">
+						<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_list" method="setLocaleCrew"/>
+					</eventHandlers>
+					<listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_amcrew" layoutInsertAt="item1" resourceAttribute="amcrew"/>
+					<listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_description" layoutInsertAt="desc1" resourceAttribute="displayname"/>
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="sgzMobile.amcrewLookup_returnAttributes">
+				<returnAttribute id="sgzMobile.amcrewLookup_returnAttributes_amcrew_amcrew" sourceAttribute="amcrew" targetAttribute="amcrew"/>
+			</returnAttributes>
+			<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_hide_footer">
+				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_hide_footer" method="hideFooterLookup"/>
+			</eventHandlers>
+		</lookup>
 	
 	</ui>
 
@@ -1630,7 +1852,7 @@
 		<resource class="application.business.WorkOrderObject" defaultOrderBy="wonum asc" describedBy="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec" hasManagedQuery="true" id="workOrder" name="workOrder" pageSize="50" providedBy="/oslc/sp/WorkManagement">
 			<attributes id="workOrder_attributes">
 				<!-- limits the scope of attributes used from full Work Order RDF -->
-				
+				<attribute describedByProperty="spi_wm:amcrew" id="workOrder_identifier_spi_wm_amcrew" name="amcrew"/>
 				<attribute describedByProperty="spi_wm:ms_originagreeasph" id="workOrder_identifier_spi_wm_ms_originagreeasph" name="ms_originagreeasph"/>
 				<attribute describedByProperty="spi_wm:ms_parentorigreasph" id="workOrder_identifier_spi_wm_ms_parentorigreasph" name="ms_parentorigreasph"/>
 				<attribute describedByProperty="spi_wm:ms_photosessionid" id="workOrder_identifier_spi_wm_ms_photosessionid" name="ms_photosessionid"/>
@@ -2057,6 +2279,21 @@
 				<localAttribute dataType="boolean" id="actualLaborResource_dontDiscard_boolean" name="dontDiscard"/>				
 				<attribute describedByProperty="spi_wm:anywhererefid" id="actualLaborResource_anywhereRefId_spi_wmanywhererefid" name="anywhereRefId"/>
 			</attributes>
+		</resource>
+
+		<!-- Teste do domanios de troca de equipe-->
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#MS_SGZMOBILEAMCREWCON" id="msamcrew" name="msamcrew" pageSize="5000" providedBy="/oslc/sp/SmarterPhysicalInfrastructure"> 
+			<attributes id="msamcrew_attributes">
+				<attribute describedByProperty="spi:amcrew{oslc:shortTitle}" id="msamcrew_amcrew" name="amcrew"/>
+				<attribute describedByProperty="spi:amcrew{oslc:title}" id="msamcrew_description" name="description"/>
+				<attribute describedByProperty="spi:ms_active" id="msamcrew_ms_active" name="ms_active"/>
+				<attribute describedByProperty="spi:person{spi:displayname}" id="msamcrew_displayname" name="displayname"/>
+				<attribute describedByProperty="spi:ms_contractnum" id="msamcrew_ms_contractnum" name="ms_contractnum"/>
+				<attribute describedByProperty="oslc:identifier" id="msamcrew_ms_identifier" name="identifier"/>
+			</attributes>
+			<queryBases id="msamcrew_queryBases">
+					<queryBase id="msamcrew_queryBase_getamcrew" name="getamcrew" queryUri="/oslc/os/MS_SGZMOBILEAMCREW?savedQuery=MS_CREWCONTRACTSGZMOBILE"/>
+			</queryBases> 
 		</resource>
 
 		<!-- *********************** -->
