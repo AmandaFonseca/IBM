@@ -149,7 +149,7 @@
 		</view>
 
 	<!-- Search OS view -->
-		<view id="AssetDataManager.SearchAssetView" label="Search Tree">
+		<view id="AssetDataManager.SearchAssetView" label="Buscar Subitem de Fiscalização">
 			<requiredResources id="AssetDataManager.SearchAssetView_requiredResources">
 				<requiredResource id="AssetDataManager.SearchAssetView_searchasset" name="searchWorkOrder"/>
 				<requiredResource id="AssetDataManager.SearchAssetView_asset" name="workOrder"/>
@@ -184,13 +184,15 @@
 		</view>		
 		
 		<!--SGZMOBILE Work Order Details view Changed to Service Item Details-->
-		<view id="WorkExecution.WorkDetailView" label="Service Item Details" resource="workOrder">
+		<view id="WorkExecution.WorkDetailView" label="Detalhes do item de serviço" resource="workOrder">
 			
 			
 			<requiredResources id="WorkExecution.WorkDetailView_requiredResources">
 				<requiredResource id="WorkExecution.WorkDetailView_workOrder" name="workOrder">
 					<requiredAttribute id="WorkExecution.WorkDetailView_workOrder_attachments" name="attachments"/>
 					<requiredAttribute id="WorkExecution.WorkDetailView_workOrder_workOrderSpec" name="workOrderSpec"/>
+					<requiredAttribute id="WorkExecution.WorkDetailView_workOrder_toollist" name="toollist"/>
+					<requiredAttribute id="WorkExecution.WorkDetailView_workOrder_assignmentlist" name="assignmentlist"/>
 					<!-- <requiredAttribute id="WorkExecution.WorkDetailView_workOrder_assetSpec" name="assetSpec" reload="true"/> -->
 				</requiredResource>
 				
@@ -216,13 +218,14 @@
 				<requiredResource id="sgzMobile.amcrewLookup_msamcrew_0" name="msamcrew"/>
 				<!-- <requiredResource id="WorkExecution.WorkDetailView_amtickets" name="amtickets"/> -->
 
+
 			</requiredResources>	
 
 			<actions id="WorkExecution.WorkDetailView_actions">
 				<action id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action" label="Create Follow-Up Service Item" overflow="true">
 					<eventHandlers id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers">
 					 	<eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers_click_createFollowUpAction" method="createServiceItemAction"/>
-					    <eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers_render_renderCreateFollowUpAction" method="renderCreateServiceItemAction"/>
+					 <!--  <eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers_render_renderCreateFollowUpAction" method="renderCreateServiceItemAction"/>--> 
 					</eventHandlers>
 				</action>
 				<action enableFeatureByProperty="map.enabled" id="WorkExecution.WorkDetailView_Map_action" image="header_mapView_OFF.svg" label="Map" transition="fade" transitionTo="WorkExecution.MapViewFromWD"/>
@@ -234,7 +237,7 @@
 				<eventHandler class="application.handlers.WODetailHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_fetchAllListSizes" method="fetchAllListSizes"/>
 				<eventHandler class="application.handlers.WODetailHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
 				
-				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
+				<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>
 				<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>
                 <!--<eventHandler class="custom.handlers.MSStatusChangeHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_saveWOShowView" method="saveWOShowView"/>-->
 				
@@ -253,7 +256,7 @@
                          </eventHandlers> -->
 					</groupitem>
 					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_0">
-						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_0_wonum_WorkOrder" label="Inspection Item" resourceAttribute="parentwonum"/>
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_0_wonum_WorkOrder" label="Item de Fiscalização" resourceAttribute="parentwonum"/>
 					</groupitem>
 					<groupitem id="WorkExecution.WorkDetailView_workOrder_Parent_groupitem_0">
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_0_Parent_WorkOrder" label="Subitem de Fiscalização" resourceAttribute="wonum"/>
@@ -305,6 +308,7 @@
                         <text editable="false" cssClass="relatedRecords" id="WorkExecution.WorkDetailView_workOrder_groupitem_0_orig_WorkOrder" value="Item de Serviço Originante" layoutInsertAt="item1" />
                         <eventHandlers id="workexecution.filterOrigRec">
                             <eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_clic_filterOrigRec" method="filterOrigRec"/>
+                            <eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_clic_isOrigRec" method="isOrigRec"/>
                          </eventHandlers>
                     </groupitem>
 					<!-- Editado por adramos em 01-06-2022 1543 include de metodo click para verificar se o item possui categorias de anexos -->
@@ -343,7 +347,7 @@
 	
 		</view>
 
-		<view id="WorkExecution.FollowUpWorkOrderView" label="Service Item Details" resource="workOrder" >
+		<view id="WorkExecution.FollowUpWorkOrderView" label="Detalhes do item de serviço" resource="workOrder" >
 			<requiredResources id="WorkExecution.0.WorkDetailView_requiredResources">
 				<requiredResource id="WorkExecution.0.WorkDetailView_workOrder" name="workOrder">
 					<requiredAttribute id="WorkExecution.0.WorkDetailView_workOrder_attachments" name="attachments"/>
@@ -1928,11 +1932,10 @@
 		 		
 				<!-- Complex attributes for supporting data -->
 				<attribute describedByProperty="spi_wm:task" describedByResource="taskResource" id="workOrder_tasklist_spi_wmtask" name="tasklist"/>
-				<!-- <attribute describedByProperty="spi_wm:assignment" describedByResource="assignmentResource" id="workOrder_assignmentlist_spi_wmassignment" name="assignmentlist"/> -->
-				<!-- <attribute describedByProperty="spi_wm:wpmaterial" describedByResource="plannedMaterialResource" id="workOrder_materiallist_spi_wmwpmaterial" name="materiallist"/> -->
-				<!-- <attribute describedByProperty="spi_wm:wptool" describedByResource="plannedToolResource" id="workOrder_toollist_spi_wmwptool" name="toollist"/> -->
+				<attribute describedByProperty="spi_wm:assignment" describedByResource="assignmentResource" id="workOrder_assignmentlist_spi_wmassignment" name="assignmentlist"/>
+				<attribute describedByProperty="spi_wm:wpmaterial" describedByResource="plannedMaterialResource" id="workOrder_materiallist_spi_wmwpmaterial" name="materiallist"/>
+				<attribute describedByProperty="spi_wm:wptool" describedByResource="plannedToolResource" id="workOrder_toollist_spi_wmwptool" name="toollist"/>
 				<attribute describedByProperty="spi_wm:actuallabormob" describedByResource="actualLaborResource" id="workOrder_actuallaborlist_spi_wmactuallabor" name="actuallaborlist"/>
-				<!-- <attribute describedByProperty="spi_wm:actualtoolmob" describedByResource="actualToolResource" id="workOrder_actualtoollist_spi_wmactualtool" name="actualtoollist"/> -->		 
 				<attribute describedByProperty="spi:attachments" describedByResource="attachments" id="workOrder_attachments_spiattachments" name="attachments"/>
 				<attribute describedByProperty="spi_wm:workorderspec" describedByResource="workOrderSpecResource" id="workOrder_workOrderSpec_spi_wmworkorderspec" name="workOrderSpec"/>	
 				<attribute describedByProperty="spi:assetspec" describedByResource="assetSpecResource" id="workOrder_assetSpecResource_spi_assetSpecResource" name="assetSpec"/>	 
@@ -2022,6 +2025,74 @@
 			</queryBases>
 
 		</resource>
+
+
+		
+		<!-- Recursos externos Assignments resource -->
+		<resource class="application.business.AssignmentObject" id="assignmentResource" name="assignmentResource">
+			<attributes id="assignmentResource_attributes">
+			    <attribute describedByProperty="spi_wm:assignmentid" id="assignmentResource_assignmentid_assignmentid" name="identifier"/>
+				<attribute describedByProperty="spi_wm:taskid" id="assignmentResource_taskid_spi_wmtaskid" name="taskid"/>
+				<attribute describedByProperty="spi_wm:laborcode" id="assignmentResource_laborcode_spi_wmlaborcode" name="laborcode"/>
+				<attribute describedByProperty="spi_wm:laborname" id="assignmentResource_laborname_spi_wmlaborname" name="laborname"/>
+				<attribute describedByProperty="spi_wm:craft" id="assignmentResource_craft_spi_wmcraft" name="craft"/>
+				<attribute describedByProperty="spi_wm:skilllevel" id="assignmentResource_skilllevel_spi_wmskilllevel" name="skilllevel"/>
+				<attribute describedByProperty="spi_wm:amcrew" id="assignmentResource_crew_spi_wmamcrew" name="crew"/>
+				<attribute describedByProperty="spi_wm:amcrewtype" id="assignmentResource_amcrewtype_spi_wmamcrewtype" name="amcrewtype"/>
+				<attribute describedByProperty="spi_wm:status" id="assignmentResource_status_spi_wmstatus" name="status"/>
+				<attribute describedByProperty="spi_wm:scheduledate" id="assignmentResource_scheduledate_spi_wmscheduledate" name="scheduledate"/>
+				<attribute describedByProperty="spi_wm:laborhrs" id="assignmentResource_laborhours_spi_wmlaborhrs" name="laborhours"/>
+				<attribute describedByProperty="spi_wm:vendor" id="assignmentResource_vendor_spi_wmvendor" name="vendor"/>
+				<attribute describedByProperty="spi_wm:contractnum" id="assignmentResource_contractnum_spi_wmcontractnum" name="contractnum"/>
+				<localAttribute dataType="string" id="assignmentResource_laborcodeandname_string" name="laborcodeandname"/>
+				<localAttribute dataType="string" id="assignmentResource_crewdesc_string" name="crewdesc"/>
+			</attributes>
+		</resource>	
+
+	   <!-- Recursos externos Planned Materials resource -->
+		<resource class="application.business.PlannedMaterialObject" id="plannedMaterialResource" name="plannedMaterialResource">
+			<attributes id="plannedMaterialResource_attributes">
+			    <attribute describedByProperty="spi_wm:wpitemid" id="plannedMaterialResource_wpitemid_spi_wmwpitemid" name="identifier"/>
+				<attribute describedByProperty="spi_wm:taskid" id="plannedMaterialResource_taskid_spi_wmtaskid" name="taskid"/>
+				<attribute describedByProperty="spi_wm:itemnum" id="plannedMaterialResource_item_spi_wmitemnum" name="item"/>
+				<attribute describedByProperty="spi_wm:description" id="plannedMaterialResource_itemdesc_spi_wmdescription" name="itemdesc"/>
+				<attribute describedByProperty="spi_wm:description_longdescription" id="plannedMaterialResource_itemlongdesc_spi_wmdescription_longdescription" name="itemlongdesc"/>
+				<attribute describedByProperty="spi_wm:itemqty" id="plannedMaterialResource_quantity_spi_wmitemqty" name="quantity"/>
+				<attribute describedByProperty="spi_wm:linetype" id="plannedMaterialResource_linetype_spi_wmlinetype" name="linetype"/>
+				
+				<attribute describedByProperty="spi_wm:directreq" id="plannedMaterialResource_directrequest_spi_wmdirectreq" name="directrequest"/>
+				<localAttribute dataType="string" id="plannedMaterialResource_itemanddescription_string" name="itemanddescription"/>
+				
+				<!-- Copy plan Added three attributes -->
+				<localAttribute dataType="boolean" id="plannedMaterialResource_itemanddescription_boolean11" name="materialCB"/>
+				<attribute describedByProperty="spi_wm:itemsetid" id="plannedMaterialResource_itemsetid_spi_wmitemsetid" name="itemsetid"/>
+				<attribute describedByProperty="spi_wm:storelocsite" id="plannedMaterialResource_storelocsite_string" name="siteid"/>
+				<attribute describedByProperty="spi_wm:requestnum" id="plannedMaterialResource_requestnum_string" name="requestnum"/>
+			</attributes>
+		</resource>	
+
+
+		<!-- Recursos externos Planned Tools resource -->
+		<resource class="application.business.PlannedToolObject" id="plannedToolResource" name="plannedToolResource">
+			<attributes id="plannedToolResource_attributes">
+			    <attribute describedByProperty="spi_wm:wpitemid" id="plannedToolResource_wpitemid_spi_wmwpitemid" name="identifier"/>
+				<attribute describedByProperty="spi_wm:itemnum" id="plannedToolResource_tool_spi_wmitemnum" name="tool"/>
+				<attribute describedByProperty="spi_wm:taskid" id="plannedToolResource_taskid_spi_wmtaskid" name="taskid"/>
+				<attribute describedByProperty="spi_wm:description" id="plannedToolResource_tooldesc_spi_wmdescription" name="tooldesc"/>
+				<attribute describedByProperty="spi_wm:description_longdescription" id="plannedToolResource_toollongdesc_spi_wmdescription_longdescription" name="toollongdesc"/>
+				<attribute describedByProperty="spi_wm:itemqty" id="plannedToolResource_quantity_spi_wmitemqty" name="quantity"/>
+				<attribute describedByProperty="spi_wm:hours" id="plannedToolResource_hours_spi_wmhours" name="hours"/>
+				<attribute describedByProperty="spi_wm:linetype" id="plannedToolResource_linetype_spi_wmlinetype" name="linetype"/>
+				
+				<localAttribute dataType="string" id="plannedToolResource_toolanddescription_string" name="toolanddescription"/>
+				
+				<!-- Copy plan Added three attributes -->
+				<localAttribute dataType="boolean" id="plannedToolResource_itemanddescription_boolean11" name="toolCB"/>
+				<attribute describedByProperty="spi_wm:itemsetid" id="plannedToolResource_itemsetid_spi_wmitemsetid" name="itemsetid"/>	
+			</attributes>
+		</resource>
+
+
 		
 		<!-- recurso para recuperar dados da OS originante 08-08-2022 ms_wotcorigrec MS_OSLCWOTCORIG-->
 		<resource describedBy="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_wotcorigrec" defaultOrderBy="subitemtc desc"  id="wotcorigirec" name="wotcorigirec" pageSize="1000" providedBy="/oslc/sp/WorkManagement">
@@ -2252,7 +2323,7 @@
 			</attributes>
 		</resource>
 
-		<!-- Actual Labor resource -->
+		<!-- Recursos externos Actual Labor resource -->
 		<resource class="application.business.ActualLaborObject" id="actualLaborResource" name="actualLaborResource">
 			<attributes id="actualLaborResource_attributes">
 			    <attribute describedByProperty="dcterms:identifier" id="actualLaborResource_identifier_dctermsidentifier" name="identifier"/>
@@ -2901,8 +2972,7 @@
 		    </attributes>
 		</resource>
 		
-		
-		<!-- AssetSpec resource -->
+		<!-- Recursos externos AssetSpec resource -->
 		 <resource id="assetSpecResource" name="assetSpecResource">
 		    <attributes id="assetSpecResource_attributes">
 		        <attribute describedByProperty="spi_wm:assetspecid" id="assetSpecResource_assetSpecid_spiassetSpecid" key="1" name="assetspecid"/>
