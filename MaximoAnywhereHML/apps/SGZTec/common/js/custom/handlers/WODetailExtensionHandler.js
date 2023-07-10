@@ -1198,14 +1198,14 @@ define(
 						let isOrigRec = wotcorigrec.filter("subitemtc == $1", subItem);
 						if(!isOrigRec.data.length > 0){
 							eventContext.setDisplay(false);
-							eventContext.setVisibility(false);							}
+							eventContext.setVisibility(false);							
+						}
 					},
 
 
 				});
 		
-				
-					
+		
 				
 		
 

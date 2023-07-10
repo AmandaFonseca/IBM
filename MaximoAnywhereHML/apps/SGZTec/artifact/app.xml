@@ -171,7 +171,7 @@
 				</button>
 				<button cssClass="mblPrimaryButton" id="AssetDataManager.SearchAssetView_Search_button" label="Search" primary="true">
 					<eventHandlers id="AssetDataManager.SearchAssetView_Search_button_eventHandlers">
-						<eventHandler class="application.handlers.WODetailHandler" event="click" id="AssetDataManager.SearchAssetView_Search_button_eventHandlers_click_setSearchQuery" method="setSearchQuery"/>
+						<eventHandler class="custom.handlers.WODetailHandlerSearch" event="click" id="AssetDataManager.SearchAssetView_Search_button_eventHandlers_click_setSearchQuery" method="setSearchQuery"/>
 					</eventHandlers>
 				</button>
 			</footer>
