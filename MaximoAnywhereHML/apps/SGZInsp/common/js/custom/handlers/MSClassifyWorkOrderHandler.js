@@ -90,7 +90,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 				wo.set('classificationpath', selectedRecord.get('hierarchypath'));				
 				if (selectedRecord.haschildren) {
 					filter = {'filterparent' : selectedRecord.classstructureid};
-					this._refreshLevel(eventContext, filter);
+					this._refreshLevel(eventContext, filter, selectedRecord);
 				}
 				else {
 					this.saveClassify(eventContext);
@@ -112,12 +112,13 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 			
 		},
 				
-		_refreshLevel: function(eventContext, filter){
+		_refreshLevel: function(eventContext, filter, selectedRecord){
 			var self = this;
 			this._pushPage(eventContext, filter);
 			var promise = this._fetchLevel(eventContext,filter);
 			promise.then(function(newrecords){
 				if (newrecords.count()>0){
+					newrecords.data.push(selectedRecord);
 					self.getMyViewControl(eventContext).refreshLists();
 					/*if(!eventContext.ui.combinedViews)
 						self.getMyViewControl(eventContext).refresh();*/
