@@ -35,7 +35,7 @@ define(
 							});
 						}
 						else{
-							eventContext.ui.showMessage(MessageService.createStaticMessage("To create a service item, change the OS status to In Progress.").getMessage());
+							eventContext.ui.showMessage(MessageService.createStaticMessage("Para criar um item de serviço, altere o status da OS para em andamento.").getMessage());
 						}
 					},
 												
