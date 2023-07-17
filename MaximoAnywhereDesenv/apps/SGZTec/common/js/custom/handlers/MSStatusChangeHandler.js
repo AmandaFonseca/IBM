@@ -524,6 +524,8 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 					var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
                     var psconfigid = currentWorkOrder.get("ms_psconfigid");
+
+					let ms_invalidstatusattachmentqtdcat = "A seção de fotos {0} precisa de ao menos {1} foto(s) para alterar o status para Concluído.";
      
 					//Validate if status date change is lesser than last WO status change date
 						if(currentWorkOrder.getAsDateOrNull('changestatusdate') > statusChange.getAsDateOrNull('changedate')){
@@ -567,7 +569,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
                                         var SectionDoclinksCount = SectionDoclinks.length;
                                         
                                         if (SectionDoclinksCount < minqty){
-                                            throw new PlatformRuntimeException("ms_invalidstatusattachmentqtdcat", [sectionDesc,minqty]);
+                                            throw new PlatformRuntimeException(ms_invalidstatusattachmentqtdcat, [sectionDesc,minqty]);
                                         }
                                     }
                             }

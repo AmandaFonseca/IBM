@@ -1,28 +1,28 @@
 define(
 	"custom/handlers/WODetailExtensionHandler",
-			[ "dojo/_base/declare",
-				 "dojo/_base/array",
-				 "dojo/_base/lang",
-			"platform/handlers/_ApplicationHandlerBase",
-			"application/handlers/CommonHandler",
-			"application/business/WorkOrderObject",
-			"platform/model/ModelService", "platform/util/AsyncAwareMixin",
-			"platform/logging/Logger",
-			"platform/util/PlatformConstants",
-			"platform/auth/UserManager",
-			"platform/geolocation/GeoLocationTrackingService",
-			 "platform/map/MapProperties",
-			 "platform/translation/MessageService",
-			 "platform/store/_ResourceMetadataContext",
-			 "platform/util/DataValidator",
-			 "platform/exception/PlatformRuntimeException"],
+	[ "dojo/_base/declare",
+		 "dojo/_base/array",
+		 "dojo/_base/lang",
+	"platform/handlers/_ApplicationHandlerBase",
+	"application/handlers/CommonHandler",
+	"application/business/WorkOrderObject",
+	"platform/model/ModelService", "platform/util/AsyncAwareMixin",
+	"platform/logging/Logger",
+	"platform/util/PlatformConstants",
+	"platform/auth/UserManager",
+	"platform/geolocation/GeoLocationTrackingService",
+	 "platform/map/MapProperties",
+	 "platform/translation/MessageService",
+	 "platform/store/_ResourceMetadataContext",
+	 "platform/util/DataValidator",
+	 "platform/exception/PlatformRuntimeException"],
 	function(declare, arrayUtil, lang, ApplicationHandlerBase, CommonHandler,
 			WorkOrderObject, ModelService, AsyncAwareMixin, Logger,PlatformConstants,UserManager,GeoLocationTrackingService,MapProperties,MessageService,ResourceMetaData,DataValidator,PlatformRuntimeException) {
 
 		return declare(
 				[ ApplicationHandlerBase, AsyncAwareMixin ],
 				{
-					
+						
 					createServiceItemAction : function(eventContext) {
 						eventContext.application.showBusy();
 						var self = this;
@@ -35,10 +35,10 @@ define(
 							});
 						}
 						else{
-							eventContext.ui.showMessage(MessageService.createStaticMessage("To create a service item, change the OS status to In Progress.").getMessage());
+							eventContext.ui.showMessage(MessageService.createStaticMessage("Para criar um item de serviço, altere o status da OS para em andamento.").getMessage());
 						}
 					},
-											
+												
 					initServiceItemWorkOrderView : function(eventContext) {
 						Logger.trace("[WODetailHandler] Initializing FollowUpWorkOrderView");
 						this.originalWorkOrder = eventContext.application.getResource('workOrder').getCurrentRecord();
@@ -1171,8 +1171,7 @@ define(
 						msamcrew.filter('ms_contractnum == $1 && ms_active == $2', pd_contractnum, 1);
 					},
 
-										
-					isOrigRec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
+					/*isOrigRec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 						var curWo = workOrderSet.getCurrentRecord();
 						let classifications = ['1569','1570','1571','1572', '1573'];
@@ -1188,12 +1187,25 @@ define(
 								
 						}
 					},
+					*/
+					isOrigRec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
+						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
+						var curWo = workOrderSet.getCurrentRecord();
+						var parentWO = curWo.get("parentwonum");
+						var wotcorigrec = CommonHandler._getAdditionalResource(this,"wotcorigirec");
+						var subItem = curWo.get('wonum');
+						CommonHandler._clearFilterForResource(eventContext,wotcorigrec);
+						let isOrigRec = wotcorigrec.filter("subitemtc == $1", subItem);
+						if(!isOrigRec.data.length > 0){
+							eventContext.setDisplay(false);
+							eventContext.setVisibility(false);							
+						}
+					},
 
 
 				});
 		
-				
-					
+		
 				
 		
 
