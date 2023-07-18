@@ -1626,17 +1626,17 @@
 				<requiredResource id="WorkExecution.ClassifyWorkOrderView_classstructure" name="classstructure"/>
 			</requiredResources>
 		    <container id="WorkExecution.ClassifyWorkOrderView_container_0">
-				 <group id="WorkExecution.ClassifyWorkOrderView_group_0">
+				<group id="WorkExecution.ClassifyWorkOrderView_group_0">
 					<groupitem cssClass="pathContainer" id="WorkExecution.ClassifyWorkOrderView_groupitem_0">
 						<text editable="false" id="WorkExecution.ClassifyWorkOrderView_groupitem_0_classificationpath" resourceAttribute="classificationpath"/>    					    						 				  
 						<text editable="false" id="WorkExecution.ClassifyWorkOrderView_groupitem_0_classificationdesc" resourceAttribute="classificationdesc"/>
 					</groupitem>
 				</group>
 				<eventHandlers id="WorkExecution.ClassifyWorkOrderView_container_0_eventHandlers">
-					    <eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="render" id="WorkExecution.ClassifyWorkOrderView_container_0_eventHandlers_render_hideIfNull" method="hideIfNull"/>
-				</eventHandlers> 
+					<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="render" id="WorkExecution.ClassifyWorkOrderView_container_0_eventHandlers_render_hideIfNull" method="hideIfNull"/>
+				</eventHandlers>
 			</container>
-			<list displayPageSize="20" id="WorkExecution.ClassifyWorkOrderView_classstructure_list" label="Classify" resource="classstructure" showHeader="false">		    
+			<list displayPageSize="10" id="WorkExecution.ClassifyWorkOrderView_classstructure_list" label="Classify" resource="classstructure" showHeader="false">		    
 			    <listItemTemplate id="WorkExecution.ClassifyWorkOrderView_classstructure_listItemTemplate_FailureReportList" layout="FailureReportList">	
 					<listtext id="WorkExecution.ClassifyWorkOrderView_classstructure_FailureReportList_fulldesc" layoutInsertAt="item1" resourceAttribute="fulldesc"/>
 					<eventHandlers id="WorkExecution.ClassifyWorkOrderView_classstructure_listItemTemplate_FailureReportList_eventHandlers">
@@ -1665,7 +1665,7 @@
 				<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="back" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_back_handleClassifyBack" method="handleClassifyBack"/>
 				<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="initialize" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_initialize_openTop" method="openTop"/>
 				<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="render" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_initialize_renderTop" method="renderTop"/>
-			</eventHandlers>							 		    
+			</eventHandlers>						 		    
 		</view>
 		
 		

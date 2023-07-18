@@ -88,14 +88,14 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 				this.currentClass = selectedRecord.get('classstructureid');
 				wo.set('classificationdesc', selectedRecord.get('description'));
 				wo.set('classificationpath', selectedRecord.get('hierarchypath'));				
-				if (selectedRecord.haschildren) {
+				/*if (selectedRecord.haschildren) {
 					filter = {'filterparent' : selectedRecord.classstructureid};
 					this._refreshLevel(eventContext, filter);
-				}
-				else {
+				}*/
+				//else {
 					this.saveClassify(eventContext);
 					return;					
-				}
+				//}
 			}
 		},
 		
