@@ -612,6 +612,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		}
 
 		if (typeInsp == "1") {
+			self.application.showBusy();
 			Logger.error("Eh uma confirmação de existencia");
 			if(newStatus == "PRECANC"){
 				if ((pd_inspquestion01 == "Não") && (pd_inspquestion02 == null) && (pd_inspquestion03 == null) &&(ms_inspwhy !=null)
@@ -621,6 +622,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 						self.initEditStatusViewCustom(recordSet,statusChange);
 						self.successCallback(woSet);
+						self.application.hideBusy();
 					}).catch(error => {
 						self.failureCallback(error);
 					});			
@@ -634,6 +636,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 						self.initEditStatusViewCustom(recordSet,statusChange);
 						self.successCallback(woSet);
+						self.application.hideBusy();
 					}).catch(error => {
 						self.failureCallback(error);
 					})					
@@ -647,19 +650,21 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 						self.initEditStatusViewCustom(recordSet,statusChange);
 						self.successCallback(woSet);
+						self.application.hideBusy();
 					}).catch(error => {
 						self.failureCallback(error);
 					})					
 				}
 			}
 			}else{
-				if ((ms_inspdate04 != null ) && (ms_inspquestion04  != null ) && (ms_inspector04 == null)
-				&& (ms_inspquestion04  != "" ) && (ms_inspector04 == "")){
+				if ((ms_inspdate04 != null ) && (ms_inspquestion04  != null ) && (ms_inspector04 != null)
+				&& (ms_inspquestion04  != "" ) && (ms_inspector04 != "")){
 					ModelService.save(recordSet).then(function(woSet){
 						var wo = woSet.getCurrentRecord();
 						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 						self.initEditStatusViewCustom(recordSet,statusChange);
 						self.successCallback(woSet);
+						self.application.hideBusy();
 					}).catch(error => {
 						self.failureCallback(error);
 					})				

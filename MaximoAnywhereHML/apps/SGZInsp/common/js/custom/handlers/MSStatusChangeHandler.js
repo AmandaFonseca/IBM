@@ -388,8 +388,10 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		successCallback:function(eventContext) {
 			var self = this;
 			console.log("Registro foi salvo");
+			self.application.showBusy();
 			setTimeout(() => {
 			  this.ui.show("WorkExecution.WorkItemsView");
+				self.application.hideBusy();
 			}, "500");
 			//resolve();
 		},
@@ -448,15 +450,17 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			}
 	
 			if (typeInsp == "1") {
+				self.application.showBusy();
 				Logger.error("Eh uma confirmação de existencia");
 				if(newStatus == "PRECANC"){
 					if ((pd_inspquestion01 == "Não") && (pd_inspquestion02 == null) && (pd_inspquestion03 == null) &&(ms_inspwhy !=null)
-					&& (pd_inspdate != null) && (ms_inspector !=null)){
+					&& (pd_inspdate != null) && (ms_inspector !=null)  && (pd_inspdate != "") && (ms_inspector !="")){
 						ModelService.save(recordSet).then(function(woSet){
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 							self.initEditStatusViewCustom(recordSet,statusChange);
 							self.successCallback(woSet);
+							self.application.hideBusy();
 						}).catch(error => {
 							self.failureCallback(error);
 						});						
@@ -464,12 +468,13 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 				}
 				if(newStatus == "PREPLAN"){
 					if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Não") && (pd_inspquestion03 != null) 
-					&& (pd_inspdate != null) && (ms_inspector !=null)){
+					&& (pd_inspdate != null) && (ms_inspector !=null)  && (pd_inspdate != "") && (ms_inspector !="")){
 						ModelService.save(recordSet).then(function(woSet){
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 							self.initEditStatusViewCustom(recordSet,statusChange);
 							self.successCallback(woSet);
+							self.application.hideBusy();
 						}).catch(error => {
 							self.failureCallback(error);
 						});					
@@ -477,31 +482,33 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 				}
 				if(newStatus == "PLANEJAR"){
 					if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Sim") && (pd_inspquestion03 == null) 
-					&& (pd_inspdate != null) && (ms_inspector !=null)){
+					&& (pd_inspdate != null) && (ms_inspector !=null) && (pd_inspdate != "") && (ms_inspector !="")){
 						ModelService.save(recordSet).then(function(woSet){
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 							self.initEditStatusViewCustom(recordSet,statusChange);
 							self.successCallback(woSet);
+							self.application.hideBusy();
 						}).catch(error => {
 							self.failureCallback(error);
 						});					
 					}
-									
 				}
-			}else{
-				if ((ms_inspdate04 != null ) && (ms_inspquestion04  != null ) && (ms_inspector04 == null)){
-					ModelService.save(recordSet).then(function(woSet){
-						var wo = woSet.getCurrentRecord();
-						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
-						self.initEditStatusViewCustom(recordSet,statusChange);
-						self.successCallback(woSet);
-					}).catch(error => {
-						self.failureCallback(error);
-					});				
+				}else{
+					if ((ms_inspdate04 != null ) && (ms_inspquestion04  != null ) && (ms_inspector04 != null)
+					&& (ms_inspquestion04  != "" ) && (ms_inspector04 != "")){
+						ModelService.save(recordSet).then(function(woSet){
+							var wo = woSet.getCurrentRecord();
+							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
+							self.initEditStatusViewCustom(recordSet,statusChange);
+							self.successCallback(woSet);
+							self.application.hideBusy();
+						}).catch(error => {
+							self.failureCallback(error);
+						});				
+					}
+		
 				}
-	
-			}
 			
 		},
 		

@@ -161,8 +161,8 @@
 				<eventHandler class="application.handlers.DataSheetHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_fetchDataSheetList" method="fetchDataSheetList" enableFeatureByProperty="calibration.enabled"/>
 				<eventHandler class="application.handlers.WODetailHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_fetchAllListSizes" method="fetchAllListSizes"/>
 				<eventHandler class="application.handlers.WODetailHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
-				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
-				<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>
+				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>
+				<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>-->
 				<!--<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_details" method="sync"/>-->
 			</eventHandlers>
 
@@ -820,7 +820,7 @@
 				<eventHandler class="custom.handlers.WODetailExtensionHandler" event="cleanup" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_cleanup_discardNewWorkOrderView" method="discardNewWorkOrderView"/>
 				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
 				<eventHandler class="application.handlers.ClassificationFormHandler" event="initialize" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_initialize_initializeWOSpec2" method="initializeWOSpec"/> 		
-	 			<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>  							
+	 			<!--<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>-->  							
 			</eventHandlers>
 		</view>
 
