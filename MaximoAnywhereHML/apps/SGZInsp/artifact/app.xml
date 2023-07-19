@@ -1383,6 +1383,7 @@
 		</footer>
 
 		<eventHandlers id="WorkExecution.Reinspecview_eventHandlers">
+			<eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="classificationok_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusView_1" method="initEditStatusViewCustomBackType02"/>
 			<eventHandler class="application.handlers.StatusChangeHandler" event="initialize" id="WorkExecution.Reinspecview_initialize_initEditStatusView" method="initEditStatusView"/>
 			<eventHandler class="application.handlers.StatusChangeHandler" event="cleanup" id="WorkExecution.Reinspecview_cleanup_cleanupEditStatusView" method="cleanupEditStatusView"/>
 			<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.Reinspecview_cleanup_cleanupEditStatusView003" method="redirectList"/>
