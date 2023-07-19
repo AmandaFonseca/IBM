@@ -1,4 +1,4 @@
-     [echo] 2023-07-18 23:57:52> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
+     [echo] 2023-07-19 02:32:53> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -40,3 +40,186 @@ Trying to override old definition of task antlib:org.apache.ivy.ant:repreport
 Trying to override old definition of task antlib:org.apache.ivy.ant:var
 Trying to override old definition of task antlib:org.apache.ivy.ant:check
 Trying to override old definition of task antlib:org.apache.ivy.ant:artifactproperty
+Trying to override old definition of task antlib:org.apache.ivy.ant:buildlist
+Trying to override old definition of task antlib:org.apache.ivy.ant:install
+Trying to override old definition of task antlib:org.apache.ivy.ant:convertpom
+Trying to override old definition of task antlib:org.apache.ivy.ant:makepom
+Trying to override old definition of task antlib:org.apache.ivy.ant:artifactreport
+Trying to override old definition of task antlib:org.apache.ivy.ant:info
+Trying to override old definition of task antlib:org.apache.ivy.ant:addpath
+Trying to override old definition of task antlib:org.apache.ivy.ant:listmodules
+Trying to override old definition of task antlib:org.apache.ivy.ant:findrevision
+Trying to override old definition of task antlib:org.apache.ivy.ant:buildnumber
+Trying to override old definition of task antlib:org.apache.ivy.ant:cleancache
+Trying to override old definition of task antlib:org.apache.ivy.ant:buildobr
+Trying to override old definition of task antlib:org.apache.ivy.ant:convertmanifest
+Trying to override old definition of task propertycopy
+Trying to override old definition of task shellscript
+Trying to override old definition of task pathtofileset
+Trying to override old definition of task runtarget
+Trying to override old definition of task remoteant
+Trying to override old definition of task propertyregex
+Trying to override old definition of task assert
+Trying to override old definition of task math
+Trying to override old definition of task trycatch
+Trying to override old definition of task antserver
+Trying to override old definition of task antcallback
+Trying to override old definition of task compilewithwalls
+Trying to override old definition of task outofdate
+Trying to override old definition of task osfamily
+Trying to override old definition of task stopwatch
+Trying to override old definition of task throw
+Trying to override old definition of task antclipse
+Trying to override old definition of task urlencode
+Trying to override old definition of task timestampselector
+Trying to override old definition of task foreach
+Trying to override old definition of task if
+Trying to override old definition of task propertyselector
+Trying to override old definition of task sortlist
+Trying to override old definition of task antfetch
+Trying to override old definition of task post
+Trying to override old definition of task forget
+Trying to override old definition of task limit
+Trying to override old definition of task switch
+Trying to override old definition of task relentless
+Trying to override old definition of task var
+Trying to override old definition of task inifile
+Trying to override old definition of task verifydesign
+Trying to override old definition of task xmltask
+Trying to override old definition of task for
+Overriding previous definition of reference to ant.projectHelper
+Override ignored for property "appsToBuild"
+Override ignored for property "isWindows"
+Property "env.JAVA_HOME" has not been set
+[antcallback] Entering C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml...
+Build sequence for target(s) `init' is [init]
+Complete build sequence is [init, pull-rdfs-from-server, Application Utils Script.test, zip-upload-all-apps, -update-common-messages, -update-inspection, zip-all-apps, restart-liberty, -zip-app, -bvt-project-exists, -update-buildtimestamp, -update-config-authconfig, test, process_bvt_scripts_all, -zip-app-upload, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
+
+init:
+Overriding previous definition of property "user_pwd"
+Override ignored for property "DSTAMP"
+Override ignored for property "TSTAMP"
+Override ignored for property "TODAY"
+     [echo] 2023-07-19 02:32:54> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+Override ignored for property "si.auth.sso.identity.header"
+Override ignored for property "si.platform.context"
+Override ignored for property "si.auth.type"
+Override ignored for property "si.adminmode"
+Override ignored for property "si.auth.sso.isLTPA"
+      [get] Getting: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+      [get] To: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\.maximo-url-test
+      [get] Error opening connection java.io.IOException: Server returned HTTP response code: 500 for URL: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+      [get] Error opening connection java.io.IOException: Server returned HTTP response code: 500 for URL: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+      [get] Error opening connection java.io.IOException: Server returned HTTP response code: 500 for URL: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+      [get] Can't get https://hsmgimax.prefeitura.sp.gov.br:443/maximo to C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\.maximo-url-test
+Override ignored for property "DSTAMP"
+Override ignored for property "TSTAMP"
+Override ignored for property "TODAY"
+     [echo] 2023-07-19 02:32:54> Currently, it is an online build because the build.process=online property has been set in the build.properties file. If you prefer an offline build, change this property to be build.process=offline.
+init:  duration 0 seconds
+[antcallback] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
+verify-compatibility:  duration 0 seconds
+      [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-system-verification.xml.
+verify-environment-compatibility:  duration 0 seconds
+  [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
+all:  duration 0 seconds
+
+BUILD FAILED
+
+C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml:192: The following error occurred while executing this line:
+C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml:419: The following error occurred while executing this line:
+C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-system-verification.xml:321: The following error occurred while executing this line:
+C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml:134: The specified Maximo address is not reacheable.
+	at org.apache.tools.ant.ProjectHelper.addLocationToBuildException(ProjectHelper.java:551)
+	at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:444)
+	at org.apache.tools.ant.taskdefs.CallTarget.execute(CallTarget.java:105)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:390)
+	at org.apache.tools.ant.Target.performTasks(Target.java:411)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:809)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml:419: The following error occurred while executing this line:
+C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-system-verification.xml:321: The following error occurred while executing this line:
+C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml:134: The specified Maximo address is not reacheable.
+	at org.apache.tools.ant.ProjectHelper.addLocationToBuildException(ProjectHelper.java:551)
+	at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:444)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:390)
+	at org.apache.tools.ant.Target.performTasks(Target.java:411)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.helper.SingleCheckExecutor.executeTargets(SingleCheckExecutor.java:38)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:442)
+	... 17 more
+Caused by: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-system-verification.xml:321: The following error occurred while executing this line:
+C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml:134: The specified Maximo address is not reacheable.
+	at org.apache.tools.ant.ProjectHelper.addLocationToBuildException(ProjectHelper.java:551)
+	at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:444)
+	at net.sf.antcontrib.logic.AntCallBack.execute(AntCallBack.java:54)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:390)
+	at org.apache.tools.ant.Target.performTasks(Target.java:411)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.helper.SingleCheckExecutor.executeTargets(SingleCheckExecutor.java:38)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:442)
+	... 29 more
+Caused by: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml:134: The specified Maximo address is not reacheable.
+	at org.apache.tools.ant.taskdefs.Exit.execute(Exit.java:164)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.taskdefs.Sequential.execute(Sequential.java:68)
+	at net.sf.antcontrib.logic.IfTask.execute(IfTask.java:217)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.TaskAdapter.execute(TaskAdapter.java:154)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.taskdefs.Sequential.execute(Sequential.java:68)
+	at net.sf.antcontrib.logic.TryCatchTask$CatchBlock.execute(TryCatchTask.java:137)
+	at net.sf.antcontrib.logic.TryCatchTask.execute(TryCatchTask.java:225)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:390)
+	at org.apache.tools.ant.Target.performTasks(Target.java:411)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.helper.SingleCheckExecutor.executeTargets(SingleCheckExecutor.java:38)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:442)
+	... 42 more
