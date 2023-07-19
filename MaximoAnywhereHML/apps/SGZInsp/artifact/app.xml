@@ -1350,18 +1350,6 @@
 			</group>
 		</container>
 
-		<container id="xWorkExecution.EditStatusView_statusChangeResource_container_000" resource="workOrder">
-			<group id="xWorkExecution.EditStatusView_group__111">
-				<groupitem id="xWorkExecution.EditStatusView_statusChangeResource_groupitem_box">
-					<button id="xWorkExecution.EditStatusView_Save_button_backToLists" label="Voltar para a Lista" resource="workOrder">
-						<eventHandlers id="xWorkExecution.EditStatusView_Cancel_button_eventHandlerssjasodjia_backToLists22">
-							<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="xWorkExecution.EditStatusView_Yes01_button_eventHandler_backToLists33" method="backToList" />
-							<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="xWorkExecution.EditStatusView_cleanButtonYes_eventHandlers_backToLists33" method="cleanButtonBackToList" />
-						</eventHandlers>
-					</button>
-				</groupitem>
-			</group>
-		</container>
 			
 		<footer id="WorkExecution.Reinspecview_footer">
 			<!--<button id="WorkExecution.Reinspecview_No_button" label="Não" resource="workOrder" transitionTo="WorkExecution.QuestionsView">-->
@@ -1568,19 +1556,6 @@
 					<groupitem id="classificationok_xWorkExecution.EditStatusView_statusChangeResource_groupitem_1">
 					    <text editable="false" id="xWorkExecution.EditStatusView_statusChangeResource_groupitem_1_statusdesc_NewStatus2" label="1. Serviço existe?" resourceAttribute="pd_inspquestion01"/>
 						<text editable="false" id="classificationok_xWorkExecution.EditStatusView_statusChangeResource_groupitem_1_statusdesc_NewStatus" label="2. Serviço está correto?" resourceAttribute="pd_inspquestion02"/>
-					</groupitem>
-				</group>
-			</container>
-
-			<container id="xWorkExecution.EditStatusView_statusChangeResource_container__000" resource="workOrder">
-				<group id="xWorkExecution.EditStatusView_group_111">
-					<groupitem id="xWorkExecution.EditStatusView_statusChangeResource_groupitem_111">
-						<button id="xWorkExecution.EditStatusView_Save_button_backToLists_11" label="Voltar para a Lista" resource="workOrder">
-							<eventHandlers id="xWorkExecution.EditStatusView_Cancel_button_eventHandlerssjasodjia_backToLists">
-								<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="xWorkExecution.EditStatusView_Yes01_button_eventHandler_backToLists11" method="backToList" />
-								<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="xWorkExecution.EditStatusView_cleanButtonYes_eventHandlers_backToLists11" method="cleanButtonBackToList" />
-							</eventHandlers>
-						</button>
 					</groupitem>
 				</group>
 			</container>

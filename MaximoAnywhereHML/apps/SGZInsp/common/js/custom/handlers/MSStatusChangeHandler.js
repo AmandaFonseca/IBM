@@ -937,7 +937,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 
 		try {
 			if (statusChangeWO) {
-				typeInsp = statusChange.get("ms_insptype");
+				typeInsp = statusChangeWO.get("ms_insptype");
 				if (typeInsp == "1") {
 					if (
 						statusChangeWO.get("status") == "PLANEJAR" ||
