@@ -53,12 +53,12 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 			var wo = woSet.getCurrentRecord();
 			wo.set('classificationdesc', null);
 			wo.set('classificationpath', null);
-			this.hideIfNull(eventContext);
+			//this.hideIfNull(eventContext);
 			this.pageStack = [];
 			this.currentClass = null;
 			var csList = CommonHandler._getAdditionalResource(eventContext,"classstructure");
-			csList.filter("1==0");
-		},			
+			//csList.filter("1==0");
+		},		
 		
 		renderTop : function (eventContext) {
 			if (this.topPage) {

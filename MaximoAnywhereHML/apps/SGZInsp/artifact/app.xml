@@ -1665,7 +1665,7 @@
 			</footer>	
 			<eventHandlers id="WorkExecution.ClassifyWorkOrderView_eventHandlers">			
 				<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="back" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_back_handleClassifyBack" method="handleClassifyBack"/>
-				<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="initialize" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_initialize_openTop" method="openTop"/>
+				<eventHandler class="custom.handlers.MSClassifyWorkOrderHandler" event="initialize" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_initialize_openTop" method="openTop"/>
 				<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="render" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_initialize_renderTop" method="renderTop"/>
 			</eventHandlers>						 		    
 		</view>
