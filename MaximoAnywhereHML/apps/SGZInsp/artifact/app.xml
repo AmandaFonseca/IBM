@@ -38,6 +38,7 @@
 				</query>
 			</queries>
 			<requiredResources id="WorkExecution.WorkItemsView_requiredResources">
+				<!--<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder" reload="true"/>-->
 				<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder">
 					<requiredAttribute id="WorkExecution.WorkItemsView_attribute1" name="tasklist"/>
 				</requiredResource>
@@ -78,7 +79,7 @@
 				<findByScan enableFeatureByProperty="barcode.enabled" headerLabel="Work Orders for asset {0}" id="WorkExecution.WorkItemsView_asset" resourceAttribute="asset"/>
 
 				<eventHandlers id="WorkExecution.WorkItemsView_workOrder_list_eventHandlers">
-					<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="testoneWorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync" method="refreshWorkList"/>
+				<!--<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="testoneWorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync" method="refreshWorkList"/>-->
 					<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_workOrder_list_eventHandlers_render_keepWorkListResource" method="keepWorkListResource"/> <!-- - COMENTADO EM 25091512, incluída linha abaixo -->
 					<eventHandler class="application.handlers.DataSheetHandler" event="render" id="WorkExecution.WorkItemsView_workOrder_list_eventHandlers_render_checkDataSheetPushErrors" method="checkDataSheetPushErrors"/>
 				</eventHandlers>
