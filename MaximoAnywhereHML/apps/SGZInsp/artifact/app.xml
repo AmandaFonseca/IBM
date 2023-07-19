@@ -1515,19 +1515,6 @@
 					</groupitem>
 				</group>
 			</container>
-
-			<container id="xWorkExecution.EditStatusView_statusChangeResource_container_00" resource="workOrder">
-				<group id="xWorkExecution.EditStatusView_group_11">
-					<groupitem id="xWorkExecution.EditStatusView_statusChangeResource_groupitem_11">
-						<button id="xWorkExecution.EditStatusView_Save_button_backToLists00" label="Voltar para a Lista" resource="workOrder">
-							<eventHandlers id="xWorkExecution.EditStatusView_Cancel_button_eventHandlerssjasodjia_backToLists0">
-								<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="xWorkExecution.EditStatusView_Yes01_button_eventHandler_backToLists" method="backToList" />
-								<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="xWorkExecution.EditStatusView_cleanButtonYes_eventHandlers_backToLists" method="cleanButtonBackToList" />
-							</eventHandlers>
-						</button>
-					</groupitem>
-				</group>
-			</container>
 			
 			<footer id="xWorkExecution.EditStatusView_footer">
 				<button id="xWorkExecution.EditStatusView_Cancel_button" label="Não" resource="workOrder" transitionTo="WorkExecution.PD_WhyView">

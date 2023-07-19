@@ -384,6 +384,21 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			} catch (error) {console.log(error+' initEditStatusView')}        
 		},
 
+
+		successCallback:function(eventContext) {
+			var self = this;
+			console.log("Registro foi salvo");
+			setTimeout(() => {
+			  this.ui.show("WorkExecution.WorkItemsView");
+			}, "500");
+			//resolve();
+		},
+	
+		failueCallback:function(error) {
+			console.log("Registro não foi salvo");
+			//reject(error);
+		},		
+
 		_saveStatusChange: function(workOrderOrTask){
 			var statusChange = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 			var previousValueSet = {
@@ -441,9 +456,11 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 							self.initEditStatusViewCustom(recordSet,statusChange);
+							self.successCallback(woSet);
+						}).catch(error => {
+							self.failureCallback(error);
 						});						
 					}
-					self.ui.show("WorkExecution.WorkItemsView");
 				}
 				if(newStatus == "PREPLAN"){
 					if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Não") && (pd_inspquestion03 != null) 
@@ -452,9 +469,11 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 							self.initEditStatusViewCustom(recordSet,statusChange);
-						});						
+							self.successCallback(woSet);
+						}).catch(error => {
+							self.failureCallback(error);
+						});					
 					}
-					self.ui.show("WorkExecution.WorkItemsView");				
 				}
 				if(newStatus == "PLANEJAR"){
 					if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Sim") && (pd_inspquestion03 == null) 
@@ -463,9 +482,12 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 							var wo = woSet.getCurrentRecord();
 							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 							self.initEditStatusViewCustom(recordSet,statusChange);
-						});						
+							self.successCallback(woSet);
+						}).catch(error => {
+							self.failureCallback(error);
+						});					
 					}
-					self.ui.show("WorkExecution.WorkItemsView");				
+									
 				}
 			}else{
 				if ((ms_inspdate04 != null ) && (ms_inspquestion04  != null ) && (ms_inspector04 == null)){
@@ -473,9 +495,11 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 						var wo = woSet.getCurrentRecord();
 						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 						self.initEditStatusViewCustom(recordSet,statusChange);
-					});					
+						self.successCallback(woSet);
+					}).catch(error => {
+						self.failureCallback(error);
+					});				
 				}
-				self.ui.show("WorkExecution.WorkItemsView");
 	
 			}
 			
@@ -896,7 +920,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		this.inherited(arguments);
 	  },
 
-	  redirectList: function (eventContext) {
+	redirectList: function (eventContext) {
 		var self = this;
 		let workOrderCurrent = eventContext.getResource().getCurrentRecord();
 		var pd_inspquestion01 = workOrderCurrent.get('pd_inspquestion01');
@@ -910,27 +934,31 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 
 		typeInsp = workOrderCurrent.get("ms_insptype");
 		var statusChangeWO = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-			
-		typeInsp = statusChange.get("ms_insptype");
 
-		if (typeInsp == "1") {
-			if (
-				statusChangeWO.get("status") == "PLANEJAR" ||
-				statusChangeWO.get("status") == "PREPLAN" ||
-				statusChangeWO.get("status") == "PRECANC"
-			) {
-				this.ui.show("WorkExecution.WorkItemsView");
-			}			
-		}else{
-			if ((ms_inspdate04 == null ) && (ms_inspquestion04  == null ) && (ms_inspector04 == null)){
-			  eventContext.setDisplay(false);
-			  eventContext.setVisibility(false);			
+		try {
+			if (statusChangeWO) {
+				typeInsp = statusChange.get("ms_insptype");
+				if (typeInsp == "1") {
+					if (
+						statusChangeWO.get("status") == "PLANEJAR" ||
+						statusChangeWO.get("status") == "PREPLAN" ||
+						statusChangeWO.get("status") == "PRECANC"
+					) {
+						this.ui.show("WorkExecution.WorkItemsView");
+					}			
+				}else{
+					if ((ms_inspdate04 == null ) && (ms_inspquestion04  == null ) && (ms_inspector04 == null)){
+					  eventContext.setDisplay(false);
+					  eventContext.setVisibility(false);			
+					}
+				}
+				this.inherited(arguments);
 			}
+		} catch (error) {
+			console.log(error);
 		}
-		this.inherited(arguments);
 
-	  },
-  
+	},
   
 
 	  no_questions02: function (eventContext) {
@@ -1306,27 +1334,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  let longdescriptionSimple = nodeChildText.substring(0, lengthMax);
 		  nodeChildTextElement.textContent = `${longdescriptionSimple} ...`;
 		}
-	  },
-  
-	  backToList: function (eventContext) {
-		eventContext.ui.show("WorkExecution.WorkItemsView");
-	  },
-  
-	  cleanButtonBackToList: function (eventContext) {
-		eventContext.setDisplay(false);
-		eventContext.setVisibility(false);
-		var statusChangeWO = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-		if (
-		  statusChangeWO.get("status") == "PLANEJAR" ||
-		  statusChangeWO.get("status") == "PREPLAN" ||
-		  statusChangeWO.get("status") == "PRECANC"
-		) {
-		  eventContext.setDisplay(true);
-		  eventContext.setVisibility(true);
-		}
-  
-		this.inherited(arguments);
-	  },	  
+	  },  
 
 	  backSpec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
 		var previousView = eventContext.ui.getCurrentViewControl().id;

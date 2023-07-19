@@ -549,6 +549,20 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		} catch (error) {console.log(error+' initEditStatusView')}        
 	},
 
+	successCallback:function(eventContext) {
+		var self = this;
+		console.log("Registro foi salvo");
+		setTimeout(() => {
+		  this.ui.show("WorkExecution.WorkItemsView");
+		}, "500");
+		//resolve();
+	},
+
+	failueCallback:function(error) {
+		console.log("Registro não foi salvo");
+		//reject(error);
+	},
+
 	_saveStatusChange: function(workOrderOrTask){
 		var statusChange = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 		var previousValueSet = {
@@ -606,9 +620,11 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 						var wo = woSet.getCurrentRecord();
 						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 						self.initEditStatusViewCustom(recordSet,statusChange);
-					});						
+						self.successCallback(woSet);
+					}).catch(error => {
+						self.failureCallback(error);
+					});			
 				}
-				self.ui.show("WorkExecution.WorkItemsView");
 			}
 			if(newStatus == "PREPLAN"){
 				if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Não") && (pd_inspquestion03 != null) 
@@ -617,9 +633,11 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 						var wo = woSet.getCurrentRecord();
 						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 						self.initEditStatusViewCustom(recordSet,statusChange);
-					});						
+						self.successCallback(woSet);
+					}).catch(error => {
+						self.failureCallback(error);
+					})					
 				}
-				self.ui.show("WorkExecution.WorkItemsView");				
 			}
 			if(newStatus == "PLANEJAR"){
 				if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Sim") && (pd_inspquestion03 == null) 
@@ -628,9 +646,11 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 						var wo = woSet.getCurrentRecord();
 						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 						self.initEditStatusViewCustom(recordSet,statusChange);
-					});						
+						self.successCallback(woSet);
+					}).catch(error => {
+						self.failureCallback(error);
+					})					
 				}
-				self.ui.show("WorkExecution.WorkItemsView");				
 			}
 			}else{
 				if ((ms_inspdate04 != null ) && (ms_inspquestion04  != null ) && (ms_inspector04 == null)
@@ -639,9 +659,11 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 						var wo = woSet.getCurrentRecord();
 						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 						self.initEditStatusViewCustom(recordSet,statusChange);
-					});					
+						self.successCallback(woSet);
+					}).catch(error => {
+						self.failureCallback(error);
+					})				
 				}
-				self.ui.show("WorkExecution.WorkItemsView");
 	
 			}
 		
