@@ -625,7 +625,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 						self.application.hideBusy();
 					}).catch(error => {
 						self.failureCallback(error);
-					});			
+					});	
 				}
 			}
 			if(newStatus == "PREPLAN"){

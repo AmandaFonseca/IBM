@@ -38,7 +38,7 @@
 				</query>
 			</queries>
 			<requiredResources id="WorkExecution.WorkItemsView_requiredResources">
-				<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder" reload="true">
+				<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder">
 					<requiredAttribute id="WorkExecution.WorkItemsView_attribute1" name="tasklist"/>
 				</requiredResource>
 				<requiredResource id="WorkExecution.WorkItemsView_oslcmaxvars" name="oslcmaxvars"/>
@@ -116,7 +116,6 @@
 				<eventHandler class="application.handlers.WOListHandler" event="render" id="WorkExecution.WorkItemsView_eventHandlers_initialize_wolist" method="render"/>
 				<eventHandler class="platform.handlers.WorkOfflineHandler" event="show" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_render_sync" method="sync"/>
                 <eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_back" method="backSpec"/>
-				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="show" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_showWOSSorted_" method="showWOSSorted"/>
 			</eventHandlers>
 		</view>
         <!-- Alterado em 28/08/2019 - OS Motociclista -->
@@ -162,8 +161,8 @@
 				<eventHandler class="application.handlers.DataSheetHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_fetchDataSheetList" method="fetchDataSheetList" enableFeatureByProperty="calibration.enabled"/>
 				<eventHandler class="application.handlers.WODetailHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_fetchAllListSizes" method="fetchAllListSizes"/>
 				<eventHandler class="application.handlers.WODetailHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
-				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>
-				<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>-->
+				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
+				<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>
 				<!--<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_details" method="sync"/>-->
 			</eventHandlers>
 
@@ -821,7 +820,7 @@
 				<eventHandler class="custom.handlers.WODetailExtensionHandler" event="cleanup" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_cleanup_discardNewWorkOrderView" method="discardNewWorkOrderView"/>
 				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
 				<eventHandler class="application.handlers.ClassificationFormHandler" event="initialize" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_initialize_initializeWOSpec2" method="initializeWOSpec"/> 		
-	 			<!--<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>-->  							
+	 			<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>  							
 			</eventHandlers>
 		</view>
 
@@ -1591,17 +1590,17 @@
 				<requiredResource id="WorkExecution.ClassifyWorkOrderView_classstructure" name="classstructure"/>
 			</requiredResources>
 		    <container id="WorkExecution.ClassifyWorkOrderView_container_0">
-				<group id="WorkExecution.ClassifyWorkOrderView_group_0">
+				 <group id="WorkExecution.ClassifyWorkOrderView_group_0">
 					<groupitem cssClass="pathContainer" id="WorkExecution.ClassifyWorkOrderView_groupitem_0">
 						<text editable="false" id="WorkExecution.ClassifyWorkOrderView_groupitem_0_classificationpath" resourceAttribute="classificationpath"/>    					    						 				  
 						<text editable="false" id="WorkExecution.ClassifyWorkOrderView_groupitem_0_classificationdesc" resourceAttribute="classificationdesc"/>
 					</groupitem>
 				</group>
 				<eventHandlers id="WorkExecution.ClassifyWorkOrderView_container_0_eventHandlers">
-					<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="render" id="WorkExecution.ClassifyWorkOrderView_container_0_eventHandlers_render_hideIfNull" method="hideIfNull"/>
-				</eventHandlers>
+					    <eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="render" id="WorkExecution.ClassifyWorkOrderView_container_0_eventHandlers_render_hideIfNull" method="hideIfNull"/>
+				</eventHandlers> 
 			</container>
-			<list displayPageSize="10" id="WorkExecution.ClassifyWorkOrderView_classstructure_list" label="Classify" resource="classstructure" showHeader="false">		    
+			<list displayPageSize="20" id="WorkExecution.ClassifyWorkOrderView_classstructure_list" label="Classify" resource="classstructure" showHeader="false">		    
 			    <listItemTemplate id="WorkExecution.ClassifyWorkOrderView_classstructure_listItemTemplate_FailureReportList" layout="FailureReportList">	
 					<listtext id="WorkExecution.ClassifyWorkOrderView_classstructure_FailureReportList_fulldesc" layoutInsertAt="item1" resourceAttribute="fulldesc"/>
 					<eventHandlers id="WorkExecution.ClassifyWorkOrderView_classstructure_listItemTemplate_FailureReportList_eventHandlers">
@@ -1630,7 +1629,7 @@
 				<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="back" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_back_handleClassifyBack" method="handleClassifyBack"/>
 				<eventHandler class="custom.handlers.MSClassifyWorkOrderHandler" event="initialize" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_initialize_openTop" method="openTop"/>
 				<eventHandler class="application.handlers.ClassifyWorkOrderHandler" event="render" id="WorkExecution.ClassifyWorkOrderView_eventHandlers_initialize_renderTop" method="renderTop"/>
-			</eventHandlers>						 		    
+			</eventHandlers>							 		    
 		</view>
 		
 		

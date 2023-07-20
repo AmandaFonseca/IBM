@@ -1341,27 +1341,35 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  let longdescriptionSimple = nodeChildText.substring(0, lengthMax);
 		  nodeChildTextElement.textContent = `${longdescriptionSimple} ...`;
 		}
-	  },  
+	  },
+  
+	  backToList: function (eventContext) {
+		eventContext.ui.show("WorkExecution.WorkItemsView");
+	  },
+  
+	  cleanButtonBackToList: function (eventContext) {
+		eventContext.setDisplay(false);
+		eventContext.setVisibility(false);
+		var statusChangeWO = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
+		if (
+		  statusChangeWO.get("status") == "PLANEJAR" ||
+		  statusChangeWO.get("status") == "PREPLAN" ||
+		  statusChangeWO.get("status") == "PRECANC"
+		) {
+		  eventContext.setDisplay(true);
+		  eventContext.setVisibility(true);
+		}
+  
+		this.inherited(arguments);
+	  },	  
 
-	backSpec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
+	  backSpec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
 		var previousView = eventContext.ui.getCurrentViewControl().id;
 		let previousViewName= previousView.toLocaleLowerCase();
 		if (previousViewName == 'workexecution.workitemsview') {
 			eventContext.ui.returnToView(previousView);
 		}
 	},
-	showWOSSorted: function(eventContext){
-		var workOrder = eventContext.application.getResource("workOrder");
-		if (workOrder != null) {
-			workOrder.clearFilterAndSort();		
-			workOrder.filter("ms_insppriority == $1 || ms_insppriority == $2", 1, 2);
-			workOrder.sort('ms_insppriority asc');
-			 eventContext.ui.getCurrentViewControl("WorkExecution.WorkItemsView").refreshLists();
-			//resourceObj.filter("datatype == $1 || datatype == $2", alnType, numericType);
-			//resourceObj.sort('displaysequence asc');
-		}
-
-	}
   
 
 	});
