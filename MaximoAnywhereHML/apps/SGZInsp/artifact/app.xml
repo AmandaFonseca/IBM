@@ -116,6 +116,7 @@
 				<eventHandler class="application.handlers.WOListHandler" event="render" id="WorkExecution.WorkItemsView_eventHandlers_initialize_wolist" method="render"/>
 				<eventHandler class="platform.handlers.WorkOfflineHandler" event="show" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_render_sync" method="sync"/>
                 <eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_back" method="backSpec"/>
+				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="show" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_showWOSSorted_" method="showWOSSorted"/>
 			</eventHandlers>
 		</view>
         <!-- Alterado em 28/08/2019 - OS Motociclista -->
