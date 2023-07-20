@@ -1363,13 +1363,14 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		this.inherited(arguments);
 	  },	  
 
-	  backSpec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
-		var previousView = eventContext.ui.getCurrentViewControl().id;
-		let previousViewName= previousView.toLocaleLowerCase();
-		if (previousViewName == 'workexecution.workitemsview') {
-			eventContext.ui.returnToView(previousView);
-		}
-	},
+		backSpec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
+			var previousView = eventContext.ui.getCurrentViewControl().id;
+			let previousViewName= previousView.toLocaleLowerCase();
+			if (previousViewName == 'workexecution.workitemsview') {
+				//eventContext.ui.returnToView(previousView);
+				return false;
+			}
+		},
   
 
 	});
