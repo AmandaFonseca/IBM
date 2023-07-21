@@ -86,8 +86,7 @@
 					</eventHandlers>
 				</action> -->
 
-				<action id="AssetDataManager.AssetListView_Search_action" label="Buscar Subitem de Fiscalização" overflow="true" transitionTo="AssetDataManager.SearchAssetView"/>
-				
+<action id="AssetDataManager.AssetListView_Search_action" label="Buscar Subitem de Fiscalização" overflow="true" transitionTo="WorkExecution.SearchWorkOrderView"/>				
 			</actions>
 
 			<progressIndicator id="WorkExecution.WorkItemsView_0"/>
@@ -148,40 +147,41 @@
 			</eventHandlers>
 		</view>
 
-	<!-- Search OS view -->
-		<view id="AssetDataManager.SearchAssetView" label="Buscar Subitem de Fiscalização">
-			<requiredResources id="AssetDataManager.SearchAssetView_requiredResources">
-				<requiredResource id="AssetDataManager.SearchAssetView_searchasset" name="searchWorkOrder"/>
-				<requiredResource id="AssetDataManager.SearchAssetView_asset" name="workOrder"/>
-				<requiredResource id="WorkExecution.AssetDataManager.WorkItemsView_domainwostatus" name="domainwostatus"/>
-				<requiredResource id="AssetDataManager.SearchAssetView_statusChangeResource" name="statusChangeResource"/>
+		<!-- Search OS view -->
+		<view fullScreen="true" id="WorkExecution.SearchWorkOrderView" label="Buscar Subitem de Fiscalização">
+			<requiredResources id="WorkExecution.SearchWorkOrderView_requiredResources">
+				<requiredResource id="WorkExecution.SearchWorkOrderView_searchWorkOrder" name="searchWorkOrder"/>
+				<requiredResource id="WorkExecution.SearchWorkOrderView_workOrder" name="workOrder"/>
+				<requiredResource id="WorkExecution.SearchWorkOrderView_domainAssetstatus" name="domainAssetstatus"/>
+				<requiredResource id="WorkExecution.SearchWorkOrderView_statusChangeResource" name="statusChangeResource"/>
+				<requiredResource id="WorkExecution.SearchWorkOrderView_domainwoclass" name="domainwoclass"/>
 			</requiredResources>
-			<container id="AssetDataManager.SearchAssetView_searchAsset_container_0" resource="searchWorkOrder">
-				<group id="AssetDataManager.SearchAssetView_group_0">
-					<groupitem id="AssetDataManager.SearchAssetView_searchAsset_groupitem_0">
-						<text editable="true" id="AssetDataManager.SearchAssetView_searchAsset_groupitem_0_assetnum_asset" label="Subitem de Fiscalização" placeHolder="Tap to enter" resourceAttribute="wonum"/>
+			<container id="WorkExecution.SearchWorkOrderView_searchWorkOrder_container_0" resource="searchWorkOrder">
+				<group id="WorkExecution.SearchWorkOrderView_group_0">
+					<groupitem id="WorkExecution.SearchWorkOrderView_searchWorkOrder_groupitem_0">
+						<text editable="true" id="WorkExecution.SearchWorkOrderView_searchWorkOrder_groupitem_0_wonum_WorkOrder" label="Subitem de Fiscalização" placeHolder="Tap to enter" resourceAttribute="wonum"/>
 					</groupitem>
 				</group>
 			</container>
-			<footer id="AssetDataManager.SearchAssetView_footer">
-				<button id="AssetDataManager.SearchAssetView_Clear_button" label="Clear">
-					<eventHandlers id="AssetDataManager.SearchAssetView_Clear_button_eventHandlers">
-						<eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="AssetDataManager.SearchAssetView_Clear_button_eventHandlers_click_clearSearchFields" method="clearSearchFields"/>
+			<footer id="WorkExecution.SearchWorkOrderView_footer">
+				<button id="WorkExecution.SearchWorkOrderView_Clear_button" label="Clear">
+					<eventHandlers id="WorkExecution.SearchWorkOrderView_Clear_button_eventHandlers">
+						<eventHandler class="application.handlers.WODetailHandler" event="click" id="WorkExecution.SearchWorkOrderView_Clear_button_eventHandlers_click_clearSearchFields" method="clearSearchFields"/>
 					</eventHandlers>
 				</button>
-				<button cssClass="mblPrimaryButton" id="AssetDataManager.SearchAssetView_Search_button" label="Search" primary="true">
-					<eventHandlers id="AssetDataManager.SearchAssetView_Search_button_eventHandlers">
-						<eventHandler class="custom.handlers.WODetailHandlerSearch" event="click" id="AssetDataManager.SearchAssetView_Search_button_eventHandlers_click_setSearchQuery" method="setSearchQuery"/>
+				<button cssClass="mblPrimaryButton" id="WorkExecution.SearchWorkOrderView_Search_button" label="Search" primary="true">
+					<eventHandlers id="WorkExecution.SearchWorkOrderView_Search_button_eventHandlers">
+						<eventHandler class="application.handlers.WODetailHandler" event="click" id="WorkExecution.SearchWorkOrderView_Search_button_eventHandlers_click_setSearchQuery" method="setSearchQuery"/>
 					</eventHandlers>
 				</button>
 			</footer>
-			<eventHandlers id="AssetDataManager.SearchAssetView_eventHandlers">
-				<eventHandler class="application.handlers.WODetailHandler" event="initialize" id="AssetDataManager.SearchAssetView_eventHandlers_initialize_initSearchData" method="initSearchData"/>
-				<eventHandler class="application.handlers.WODetailHandler" event="show" id="AssetDataManager.SearchAssetView_eventHandlers_show_showSearch" method="showSearch"/>
-				<eventHandler class="application.handlers.WODetailHandler" event="hide" id="AssetDataManager.SearchAssetView_eventHandlers_hide_hideSearch" method="hideSearch"/>
-				<eventHandler class="application.handlers.WODetailHandler" event="cleanup" id="AssetDataManager.SearchAssetView_eventHandlers_cleanup_discardSummaryView" method="discardSummaryView"/>
+			<eventHandlers id="WorkExecution.SearchWorkOrderView_eventHandlers">
+				<eventHandler class="application.handlers.WODetailHandler" event="initialize" id="WorkExecution.SearchWorkOrderView_eventHandlers_initialize_initSearchData" method="initSearchData"/>
+				<eventHandler class="application.handlers.WODetailHandler" event="show" id="WorkExecution.SearchWorkOrderView_eventHandlers_show_showSearch" method="showSearch"/>
+				<eventHandler class="application.handlers.WODetailHandler" event="hide" id="WorkExecution.SearchWorkOrderView_eventHandlers_hide_hideSearch" method="hideSearch"/>
+				<eventHandler class="application.handlers.WODetailHandler" event="cleanup" id="WorkExecution.SearchWorkOrderView_eventHandlers_cleanup_discardSummaryView" method="discardSummaryView"/>
 			</eventHandlers>
-		</view>		
+		</view>	
 		
 		<!--SGZMOBILE Work Order Details view Changed to Service Item Details-->
 		<view id="WorkExecution.WorkDetailView" label="Detalhes do item de serviço" resource="workOrder">
@@ -2019,9 +2019,7 @@
 	        </creationFactories>
 			
 			<queryBases id="workOrder_queryBases">
-				<!-- list of query bases the app will rely upon for this resource -->
-	 			<queryBase defaultForSearch="true" id="workOrder_queryBase_searchAllWorkOrders" name="searchAllWorkOrders" queryUri="/oslc/os/ms_oslcsgztec?savedQuery=getWithComplexQuery"/>
-	 			<queryBase id="workOrder_queryBase_getMyAssignedWork" name="getMyAssignedWork" queryUri="/oslc/os/ms_oslcsgztec?savedQuery=ms_ControlTec"/>
+	 			<queryBase defaultForSearch="true" id="workOrder_queryBase_getMyAssignedWork" name="getMyAssignedWork" queryUri="/oslc/os/ms_oslcsgztec?savedQuery=ms_ControlTec"/>
 			</queryBases>
 
 		</resource>

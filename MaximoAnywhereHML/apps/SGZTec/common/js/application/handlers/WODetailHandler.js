@@ -1521,7 +1521,8 @@ function(declare, arrayUtil, lang, ApplicationHandlerBase, CommunicationManager,
 			eventContext.application.showBusy();
 			var search = eventContext.application.getResource("searchWorkOrder").getCurrentRecord();
 			var filteredItems = 0;			
-			var filter = {istask:false};
+			//var filter = {istask:false};
+			var filter = {istask: true};
 			
 			if (search.wonum){
 			    filter.wonum = '%'+search.wonum+'%';
@@ -1622,7 +1623,8 @@ function(declare, arrayUtil, lang, ApplicationHandlerBase, CommunicationManager,
 				}
 				var search = eventContext.application.getResource("searchWorkOrder").getCurrentRecord();
 				
-				var filter = {istask: false};
+				//var filter = {istask: false};
+				var filter = {istask: true};
 								
 				var filteredItems = 0;
 				if (search.wonum){
