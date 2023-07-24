@@ -86,7 +86,7 @@
 					</eventHandlers>
 				</action> -->
 
-<action id="AssetDataManager.AssetListView_Search_action" label="Buscar Subitem de Fiscalização" overflow="true" transitionTo="WorkExecution.SearchWorkOrderView"/>				
+				<action id="AssetDataManager.AssetListView_Search_action" label="Buscar Subitem de Fiscalização" overflow="true" transitionTo="WorkExecution.SearchWorkOrderView"/>
 			</actions>
 
 			<progressIndicator id="WorkExecution.WorkItemsView_0"/>
@@ -171,7 +171,7 @@
 				</button>
 				<button cssClass="mblPrimaryButton" id="WorkExecution.SearchWorkOrderView_Search_button" label="Search" primary="true">
 					<eventHandlers id="WorkExecution.SearchWorkOrderView_Search_button_eventHandlers">
-						<eventHandler class="application.handlers.WODetailHandler" event="click" id="WorkExecution.SearchWorkOrderView_Search_button_eventHandlers_click_setSearchQuery" method="setSearchQuery"/>
+						<eventHandler class="custom.handlers.MSWODetailHandler" event="click" id="WorkExecution.SearchWorkOrderView_Search_button_eventHandlers_click_setSearchQuery" method="setSearchQuery"/>
 					</eventHandlers>
 				</button>
 			</footer>
