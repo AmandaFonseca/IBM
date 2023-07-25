@@ -189,6 +189,7 @@ define(
 								newWorkOrder.set("woservicepostalcode", "-");
 							}
 							var self = this;
+							self.verifyClassify(eventContext);
 							/*
 							if(this.originalWorkOrder) {
 								workOrderSet.setCurrentIndexByRecord(this.originalWorkOrder);
@@ -196,7 +197,7 @@ define(
 							}
 							*/
 							
-								ModelService.saveAll([workOrderSet]).then(function() {
+								/*ModelService.saveAll([workOrderSet]).then(function() {
 									var statuses = CommonHandler._getAdditionalResource(eventContext,'domainwostatus');
 									CommonHandler._clearFilterForResource(eventContext,statuses);
 									eventContext.ui.hideCurrentView();
@@ -206,7 +207,7 @@ define(
 								otherwise(function(err){
 									eventContext.application.hideBusy();
 									eventContext.ui.showMessage(err);						
-								});
+								});*/
 						}
 					},
 
@@ -678,25 +679,78 @@ define(
 						}
 					},		
 					
-					classifyLookup02: function(eventContext){
-						
+					verifyClassify: function(eventContext){
 						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
 						var currWO = workOrderSet.getCurrentRecord();
 						var classsify = currWO.get('classstructureid');
-						
-								
+						var self = this;
+						let isValidclass;
+						let erroClassify = "";
+						let currentClass= localStorage.getItem("currentClass");   
+						try {
+							if (classsify) {
+								classsify = classsify.toString();
+								if (currentClass == '1570' && classsify == '1569'){
+									isValidclass = false;
+									erroClassify = "Não é possível incluir Itens Avulsos de classificação 1569 ou 1575 quando há um planejamento de classificação 1570";
+								}
+									
+								if (currentClass == '1570' && classsify == '1575') {
+									isValidclass = false;
+									erroClassify = "Não é possível incluir Itens Avulsos de classificação 1569 ou 1575 quando há um planejamento de classificação 1570";
+								}
+								if (currentClass == '1569' && classsify == '1570'){
+									isValidclass = false;
+									erroClassify = "Não é possível incluir Itens Avulsos de classficação 1570 ou 1574 quando há um planejamento de classificação 1569";
+								}
+								if(currentClass == '1569' && classsify == '1574') {						
+									isValidclass = false;
+									erroClassify = "Não é possível incluir Itens Avulsos de classficação 1570 ou 1574 quando há um planejamento de classificação 1569";
+								}
+							
+							}
+						} catch (error) {
+							console.log(error);
+						}
+
+
+						if (isValidclass == false) {
+							currWO.set('classstructureid',classsify);
+							throw new PlatformRuntimeException(erroClassify);
+							return;
+						}else{
+								ModelService.saveAll([workOrderSet]).then(function() {
+									var statuses = CommonHandler._getAdditionalResource(eventContext,'domainwostatus');
+									CommonHandler._clearFilterForResource(eventContext,statuses);
+									eventContext.ui.hideCurrentView();
+									self.originalWorkOrder = null;
+									localStorage.setItem("currentClass", null);   
+									
+								}).
+								otherwise(function(err){
+									eventContext.application.hideBusy();
+									eventContext.ui.showMessage(err);						
+								});
+						}
+					},
+
+					classifyLookup02: function(eventContext){
+						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+						var currWO = workOrderSet.getCurrentRecord();
+						var classsify = currWO.get('classstructureid');
+						var self = this;
+						localStorage.setItem("currentClass",classsify);        
+														
 						var classstructure = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,classstructure);
 							
 						var iscClasssify = classstructure.find('classstructureid == $1', classsify);
 						var parentClass = iscClasssify[0].ancestor;
 						
-						
 						var ancestorLoc = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,ancestorLoc);
 						ancestorLoc.filter('ancestor == $1', parentClass);
 						ancestorLoc.filter('classstructureid != $1', parentClass);
-						
 					},
 					
 					
