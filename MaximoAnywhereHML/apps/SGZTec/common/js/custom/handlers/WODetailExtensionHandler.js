@@ -680,14 +680,14 @@ define(
 						var currWO = workOrderSet.getCurrentRecord();
 						var classsify = currWO.get('classstructureid');
 						var self = this;
-						localStorage.setItem("currentClass",classsify);    	
-						var classstructure = CommonHandler._getAdditionalResource(eventContext,'classstructure');
+						var classstructure = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,classstructure);
 
 						var iscClasssify = classstructure.find('classstructureid == $1', classsify);
-						if(iscClasssify[0].parent){
+						var parentClass = iscClasssify[0].ancestor;
+						if(parentClass != '1568'){
 							eventContext.setDisplay(false);
-							eventContext.setVisibility(false);
+							eventContext.setVisibility(false);								
 						}else{
 							eventContext.setDisplay(true);
 							eventContext.setVisibility(true);						
