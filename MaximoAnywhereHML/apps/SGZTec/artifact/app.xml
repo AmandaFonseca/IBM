@@ -430,8 +430,9 @@
 					<!-- <groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0" transitionTo="WorkExecution.ClassifyWorkOrderView"> -->
 					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0">
 						<!-- <text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationpath_Classification" label="Classification" labelCss="editableLabel" lookup="WorkExecution.classifyLookup" lookupAttribute="classstructureid" placeHolder="Classify Work Order" resourceAttribute="classificationpath"/> -->
-						<!-- <text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationpath_Classification" label="Classification" labelCss="editableLabel" placeHolder="Classify Work Order" resourceAttribute="classificationpath"/> -->
-						<text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationdesc" label="Classification" labelCss="editableLabel" required="true" lookup="WorkExecution.classifyLookup" lookupAttribute="classstructureid" placeHolder="Classify Work Order" resourceAttribute="classstructureid"/>
+						<!-- <text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationpath_Classification" label="Classification" labelCss="editableLabel" placeHolder="Classify Work Order" resourceAttribute="classificationpath"/>
+						<text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationdesc" label="Classification" labelCss="editableLabel" required="true" lookup="WorkExecution.classifyLookup" lookupAttribute="classstructureid" placeHolder="Classify Work Order" resourceAttribute="classstructureid"/>-->
+						<text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.ClassifyWorkOrderView_0_classificationdesc" label="Classification" labelCss="editableLabel" required="true" lookup="WorkExecution.classifyLookup.ancestorLoc" lookupAttribute="classstructureid" placeHolder="Classify Work Order" resourceAttribute="classstructureid"/>
 					</groupitem>
 					
 
@@ -1801,12 +1802,30 @@
 		
 		
 		
-		<lookup filterClass="custom.handlers.WODetailExtensionHandler" filterMethod="classifyLookup" id="WorkExecution.classifyLookup" label="Selecione a Classificação" resource="classstructure">
+		<!--<lookup filterClass="custom.handlers.WODetailExtensionHandler" filterMethod="classifyLookup" id="WorkExecution.classifyLookup" label="Selecione a Classificação" resource="classstructure">
 			<requiredResources id="WorkExecution.classifyLookup_requiredResources">
 				<requiredResource id="WorkExecution.classifyLookup_additionalmsSite" name="classstructure"/>
 			</requiredResources>
 
 			<list id="WorkExecution.classifyLookup_list" resource="classstructure">
+			
+				<listItemTemplate id="WorkExecution.classifyLookupTemplate_Item1Desc1" layout="Item1Desc1">
+					<listtext cssClass="bold textappearance-medium" id="WorkExecution.classifyLookup_classstructureid" layoutInsertAt="item1" resourceAttribute="classstructureid"/>
+					<listtext cssClass="bold textappearance-medium" id="WorkExecution.classifyLookup_classificationid" layoutInsertAt="desc1" resourceAttribute="classificationid"/>
+				</listItemTemplate>
+			</list>
+
+			<returnAttributes id="WorkExecution.classifyLookup_returnAttributes02">
+				<returnAttribute id="WorkExecution.classifyLookup_description_sitedesc" sourceAttribute="classstructureid" targetAttribute="classstructureid"/>
+			</returnAttributes>
+		</lookup>-->
+
+		<lookup filterClass="custom.handlers.WODetailExtensionHandler" filterMethod="classifyLookup02" id="WorkExecution.classifyLookup.ancestorLoc" label="Selecione a Classificação" resource="ancestorLoc">
+			<requiredResources id="WorkExecution.classifyLookup_requiredResources">
+				<requiredResource id="WorkExecution.classifyLookup_additionalmsSite" name="ancestorLoc"/>
+			</requiredResources>
+
+			<list id="WorkExecution.classifyLookup_list" resource="ancestorLoc">
 			
 				<listItemTemplate id="WorkExecution.classifyLookupTemplate_Item1Desc1" layout="Item1Desc1">
 					<listtext cssClass="bold textappearance-medium" id="WorkExecution.classifyLookup_classstructureid" layoutInsertAt="item1" resourceAttribute="classstructureid"/>

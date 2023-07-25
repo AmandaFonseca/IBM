@@ -678,34 +678,24 @@ define(
 						}
 					},		
 					
-					/* classifyLookup: function(eventContext){
+					classifyLookup02: function(eventContext){
 						
 						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
 						var currWO = workOrderSet.getCurrentRecord();
 						var classsify = currWO.get('classstructureid');
 						
 								
-						var classstructure = CommonHandler._getAdditionalResource(eventContext,'classstructure');
+						var classstructure = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,classstructure);
 							
 						var iscClasssify = classstructure.find('classstructureid == $1', classsify);
-						var parentClass = iscClasssify[0].parent;
+						var parentClass = iscClasssify[0].ancestor;
 						
 						
 						var ancestorLoc = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,ancestorLoc);
-						
-						var isAncestor = ancestorLoc.find('ancestor == $1', parentClass);
-
-						var filter = [];			
-							for(var i = 0 ; i < isAncestor.length ; i++){					
-								var classstructureid = isAncestor[i].classstructureid;
-									
-								filter.push({'classstructureid': classstructureid});
-							}
-							ancestorLoc.lookupFilter = filter;
-					}, */
-					
+						ancestorLoc.filter('ancestor == $1', parentClass);
+					},
 					
 					
 					classifyLookup: function(eventContext){
@@ -739,6 +729,9 @@ define(
 							}
 							classstructure.lookupFilter = filter;
 					},
+
+
+
 					//Adicionado por adramos em 01-06-2022 1112 Filtro para categorias de anexos
 					AttRedirect: function(eventContext){
 						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
