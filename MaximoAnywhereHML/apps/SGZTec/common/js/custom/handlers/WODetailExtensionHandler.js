@@ -695,6 +695,8 @@ define(
 						var ancestorLoc = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,ancestorLoc);
 						ancestorLoc.filter('ancestor == $1', parentClass);
+						ancestorLoc.filter('classstructureid != $1', parentClass);
+						
 					},
 					
 					
