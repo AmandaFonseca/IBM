@@ -715,7 +715,7 @@ define(
 
 
 						if (isValidclass == false) {
-							currWO.set('classstructureid',classsify);
+							 eventContext.ui.show("WorkExecution.WorkItemsView");
 							throw new PlatformRuntimeException(erroClassify);
 							return;
 						}else{
