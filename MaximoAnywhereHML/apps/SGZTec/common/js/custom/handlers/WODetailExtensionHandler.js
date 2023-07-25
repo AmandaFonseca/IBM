@@ -734,6 +734,26 @@ define(
 						}
 					},
 
+					hideClassify: function(eventContext){
+						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+						var currWO = workOrderSet.getCurrentRecord();
+						var classsify = currWO.get('classstructureid');
+						var self = this;
+						localStorage.setItem("currentClass",classsify);    	
+						var classstructure = CommonHandler._getAdditionalResource(eventContext,'classstructure');
+						CommonHandler._clearFilterForResource(eventContext,classstructure);
+
+						var iscClasssify = classstructure.find('classstructureid == $1', classsify);
+						if(iscClasssify[0].parent){
+							eventContext.setDisplay(false);
+							eventContext.setVisibility(false);
+						}else{
+							eventContext.setDisplay(true);
+							eventContext.setVisibility(true);						
+						}
+						
+					},
+
 					classifyLookup02: function(eventContext){
 						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
 						var currWO = workOrderSet.getCurrentRecord();

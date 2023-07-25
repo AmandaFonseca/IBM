@@ -225,7 +225,8 @@
 				<action id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action" label="Create Follow-Up Service Item" overflow="true">
 					<eventHandlers id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers">
 					 	<eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers_click_createFollowUpAction" method="createServiceItemAction"/>
-					 <!--  <eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers_render_renderCreateFollowUpAction" method="renderCreateServiceItemAction"/>--> 
+					 	<!-- <eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="WorkExecution.WorkDetailView_CreateFollow-UpWorkOrder_action_eventHandlers_render_renderCreateFollowUpAction" method="renderCreateServiceItemAction"/>-->
+						<eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_show_showWOSpecSorted__" method="hideClassify"/> 
 					</eventHandlers>
 				</action>
 				<action enableFeatureByProperty="map.enabled" id="WorkExecution.WorkDetailView_Map_action" image="header_mapView_OFF.svg" label="Map" transition="fade" transitionTo="WorkExecution.MapViewFromWD"/>
