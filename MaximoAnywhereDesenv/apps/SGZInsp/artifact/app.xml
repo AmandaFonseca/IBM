@@ -38,7 +38,7 @@
 				</query>
 			</queries>
 			<requiredResources id="WorkExecution.WorkItemsView_requiredResources">
-				<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder" reload="true">
+				<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder">
 					<requiredAttribute id="WorkExecution.WorkItemsView_attribute1" name="tasklist"/>
 				</requiredResource>
 				<requiredResource id="WorkExecution.WorkItemsView_oslcmaxvars" name="oslcmaxvars"/>
