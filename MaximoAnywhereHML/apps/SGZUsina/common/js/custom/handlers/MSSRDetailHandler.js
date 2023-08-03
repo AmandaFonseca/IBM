@@ -1665,6 +1665,7 @@ define("custom/handlers/MSSRDetailHandler", [
           "ms_actualdate",
           this.application.getCurrentDateTime()
         );
+		currSR.setDateValue('ms_secondaryapid',currSR.get('ms_apidauth'));
       }
 
       if (
@@ -1672,6 +1673,7 @@ define("custom/handlers/MSSRDetailHandler", [
         currSR.get("ms_status") == "AG_CARREG"
       ) {
         currSR.set("ms_status", "CARREG_INC");
+		currSR.setDateValue('ms_secondaryapid',currSR.get('ms_apidauth'));  
         //currSR.setDateValue('ms_actualdate',this.application.getCurrentDateTime());
       }
 
@@ -1808,6 +1810,7 @@ define("custom/handlers/MSSRDetailHandler", [
 				newCurrSR.set('ms_apidauth', apidauth);
 				newCurrSR.set('ms_isapauth', true);
 				newCurrSR.set('ms_rembal1', rembal1Qtd);
+        newCurrSR.set('ms_secondaryapid', apidauth);	
 
 				ModelService.save(serviceRequestSet).then(function() {
 					Logger.error("SAVE ");
@@ -2153,15 +2156,16 @@ define("custom/handlers/MSSRDetailHandler", [
       var latitudey = latitudey + "";
       var longitudex = currSR.get('ms_longitudestr');
       var longitudex = longitudex + "";
-      //var apidauth = currSR.get('ms_apidauth');	
+      var apidauth = currSR.get('ms_apidauth');
+      var contractnum =	currSR.get("ms_contractnum");
       var sumCarreg = (qtdMassa + qtdEmulsao);
       var rembal1Qtd = (rembal1 - (qtdMassa + qtdEmulsao));
   
-  if (msApidauth == null){
-  eventContext.ui.hideCurrentDialog();
-  eventContext.ui.showMessage("Favor informar selecionar uma Usina!");
-  return ;
-  }   
+      if (msApidauth == null){
+        eventContext.ui.hideCurrentDialog();
+        eventContext.ui.showMessage("Favor informar selecionar uma Usina!");
+        return ;
+      }   
   
       //var dataAuth = this.application.getCurrentDateTime();
       //Logger.error("Ticket TST" + ticketIdTst);
@@ -2203,12 +2207,13 @@ define("custom/handlers/MSSRDetailHandler", [
   currSR.set('ms_asphaltplantid', idUsinaAtual); 
   currSR.set('ms_status', "CARREG_INC");
   currSR.set('ms_authqty', qtdMassaAutPos);			
+  currSR.set('ms_secondaryapid', apidauth);			
   currSR.setDateValue('ms_actualdate',this.application.getCurrentDateTime());			
   ModelService.save(currServiceRequestSet).then(function() {
       //eventContext.ui.show("SGZUsina.MyReportedSR");
       Logger.error("SAVE ");
       //eventContext.ui.hideCurrentView();
-  }).otherwise(function(err){
+    }).otherwise(function(err){
       eventContext.ui.showMessage(err);						
   });		
   if ((msApidauth != null ||msApidauth != 0) && status == "AG_CARREG"){
@@ -2250,6 +2255,8 @@ define("custom/handlers/MSSRDetailHandler", [
           newCurrSR.set('ms_apidauth', msApidauth);
           newCurrSR.set('ms_isapauth', true);
           newCurrSR.set('ms_rembal1', rembal1Qtd);
+		      newCurrSR.set('ms_contractnum', contractnum);
+          newCurrSR.set('ms_secondaryapid', msApidauth);
           console.log(newCurrSR);
   
   
