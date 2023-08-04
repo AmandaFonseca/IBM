@@ -1027,6 +1027,8 @@
 				<attribute describedByProperty="spi_wm:ms_netweight" id="serviceRequest_ms_netweight" name="ms_netweight"/>
 				<attribute describedByProperty="spi_wm:ms_contractnum" id="serviceRequest_ms_contractnum" name="ms_contractnum"/>
 				
+				<!--Novo campo Integração -->
+				<attribute describedByProperty="spi_wm:ms_secondaryapid" id="serviceRequest_ms_secondaryapid" name="ms_secondaryapid"/>
 
 						
 				<attribute describedByProperty="spi_wm:ms_latitudey" id="serviceRequest_mslatitudey_spi_wmcalculatedy" name="ms_latitudey"/>

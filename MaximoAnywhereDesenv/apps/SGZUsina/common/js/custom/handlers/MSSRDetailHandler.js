@@ -2153,15 +2153,17 @@ define("custom/handlers/MSSRDetailHandler", [
       var latitudey = latitudey + "";
       var longitudex = currSR.get('ms_longitudestr');
       var longitudex = longitudex + "";
-      //var apidauth = currSR.get('ms_apidauth');	
+      var apidauth = currSR.get('ms_apidauth');	
       var sumCarreg = (qtdMassa + qtdEmulsao);
       var rembal1Qtd = (rembal1 - (qtdMassa + qtdEmulsao));
-  
-  if (msApidauth == null){
-  eventContext.ui.hideCurrentDialog();
-  eventContext.ui.showMessage("Favor informar selecionar uma Usina!");
-  return ;
-  }   
+	    //NOVO PARAMETRO PARA ATENDER NOVAS VALIDAÇÕES
+      var contractnum =	currSR.get("ms_contractnum");
+		
+      if (msApidauth == null){
+        eventContext.ui.hideCurrentDialog();
+        eventContext.ui.showMessage("Favor informar selecionar uma Usina!");
+        return ;
+      }   
   
       //var dataAuth = this.application.getCurrentDateTime();
       //Logger.error("Ticket TST" + ticketIdTst);
@@ -2204,13 +2206,63 @@ define("custom/handlers/MSSRDetailHandler", [
   currSR.set('ms_status', "CARREG_INC");
   currSR.set('ms_authqty', qtdMassaAutPos);			
   currSR.setDateValue('ms_actualdate',this.application.getCurrentDateTime());			
+  //NOVO PARAMETRO PARA ATENDER NOVAS VALIDAÇÕES
+  currSR.set('ms_secondaryapid',currSR.get('ms_apidauth'))  
+  currSR.set('ms_contractnum',contractnum)  
+
   ModelService.save(currServiceRequestSet).then(function() {
       //eventContext.ui.show("SGZUsina.MyReportedSR");
-      Logger.error("SAVE ");
+      Logger.error("SAVE 01");
       //eventContext.ui.hideCurrentView();
+	  eventContext.TransferTicket(eventContext);
   }).otherwise(function(err){
       eventContext.ui.showMessage(err);						
   });		
+
+
+  },
+
+TransferTicket :function (eventContext) {
+	      var currServiceRequestSet = CommonHandler._getAdditionalResource(eventContext,"sgzUsina");
+      var currSR = currServiceRequestSet.getCurrentRecord();
+      
+      var ticketId = currSR.get('identifier');  
+      var ticketId = ticketId + "";
+      //var usinaDesc = currSR.get('usina');
+      var siteId = currSR.get('ms_siteid');
+      var status = currSR.get('ms_status');
+      //var msAsphalt = currSR.get('ms_asphaltplantid');
+      var msApidauth = currSR.get('ms_apidauth');
+      var dateExp = currSR.get('ms_expiredate');
+      //var contratada = currSR.get('contratada');
+      var obs = currSR.get('ms_remarks');
+      var qtdMassaAut = currSR.get('ms_authqty');
+      var qtdEmulsao = currSR.get('qtd_emulsao');
+      var qtdMassa = currSR.get('qtd_massa');
+      var msPlate = currSR.get('ms_plate');
+      msPlate = msPlate.trim();
+      var qtdMassaAutPos = (qtdMassaAut - (qtdMassa + qtdEmulsao));
+      
+      var pesoBruto = currSR.get('ms_grossweight');
+      var pesoTara = currSR.get('ms_tareweight');
+      
+      
+      var pesoLiquido = (pesoBruto - pesoTara);
+      
+      var msItemNum = currSR.get('ms_itemnum');
+      var usinaAut = currSR.get('ms_isauth');
+      var company = currSR.get('ms_company');
+      var isApauth = currSR.get('ms_isapauth');
+      var rembal1 = currSR.get('ms_rembal1');
+      var latitudey = currSR.get('ms_latitudestr');
+      var latitudey = latitudey + "";
+      var longitudex = currSR.get('ms_longitudestr');
+      var longitudex = longitudex + "";
+      var apidauth = currSR.get('ms_apidauth');	
+      var sumCarreg = (qtdMassa + qtdEmulsao);
+      var rembal1Qtd = (rembal1 - (qtdMassa + qtdEmulsao));
+	    //NOVO PARAMETRO PARA ATENDER NOVAS VALIDAÇÕES
+      var contractnum =	currSR.get("ms_contractnum");
   if ((msApidauth != null ||msApidauth != 0) && status == "AG_CARREG"){
           var newSR = eventContext.application.getResource('sgzUsina').createNewRecord();
           originalServiceRequest = null;
@@ -2250,15 +2302,18 @@ define("custom/handlers/MSSRDetailHandler", [
           newCurrSR.set('ms_apidauth', msApidauth);
           newCurrSR.set('ms_isapauth', true);
           newCurrSR.set('ms_rembal1', rembal1Qtd);
+	        //NOVO PARAMETRO PARA ATENDER NOVAS VALIDAÇÕES
+          newCurrSR.set('ms_secondaryapid',currSR.get('ms_apidauth'))  
+          newCurrSR.set('ms_contractnum',contractnum)  
           console.log(newCurrSR);
   
   
           
-          ModelService.save(serviceRequestSet).then(function() {
+          ModelService.save(newCurrSR).then(function() {
               Logger.error("SAVE ");
               //eventContext.ui.hideCurrentView();
               //eventContext.ui.show("SGZUsina.TransferCredEdit");
-              //eventContext.ui.show("SGZUsina.MyReportedSR");
+              eventContext.ui.show("SGZUsina.MyReportedSR");
              // eventContext.ui.returnToView("SGZUsina.ActionPanel");
             
           }).otherwise(function(err){
@@ -2272,10 +2327,8 @@ define("custom/handlers/MSSRDetailHandler", [
           eventContext.ui.showMessage("Só tickets com o status de 'Aguardando o carregamento' podem ser transferidos!");
           }   
 
-      }
-
-  },
-
+      }		
+	},  
     yesOnCancel: function (eventContext) {
       var serviceRequestSet = CommonHandler._getAdditionalResource(eventContext,"sgzUsina");
       var currSR = serviceRequestSet.getCurrentRecord();
@@ -2409,11 +2462,11 @@ define("custom/handlers/MSSRDetailHandler", [
         ModelService.multipleChildrenOf(serviceRequest, attributes).always(
           function () {
             loadingLists = false;
-            self.refreshAllListSizes(eventContext);
+            eventContext.refreshAllListSizes(eventContext);
           }
         );
       } else {
-        self.refreshAllListSizes(eventContext);
+        eventContext.refreshAllListSizes(eventContext);
       }
     },
 
