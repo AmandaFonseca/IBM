@@ -207,7 +207,6 @@
 
 		
 		<!-- ESTRUTURAS PARA APP SGZUsina: -->
-		<!--
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/doclinks" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/ms_aptoolauth" />
@@ -218,7 +217,6 @@
         <downloadOneRdf context="/oslc/shapes/ms_oslcsite" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcauthperson" />
         <downloadOneRdf context="/oslc/shapes/ms_oslctoolsiteauth" />
-		-->
 		<!-- ESTRUTURAS PARA APP SGZUsina: -->
 
 		
