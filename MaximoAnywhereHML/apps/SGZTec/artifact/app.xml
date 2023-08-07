@@ -348,6 +348,146 @@
 	
 		</view>
 
+				<!-- SGZMOBILE Labor Assignments list view -->
+		<view id="WorkExecution.LaborAssignmentsView" label="Labor Assignments">
+			<requiredResources id="WorkExecution.LaborAssignmentsView_requiredResources">
+				<requiredResource id="WorkExecution.LaborAssignmentsView_workOrder" name="workOrder">
+					<requiredAttribute id="WorkExecution.LaborAssignmentsView_workOrder_assignmentlist" name="assignmentlist"/>
+				</requiredResource>
+			</requiredResources>
+			<list attribute="assignmentlist" id="WorkExecution.LaborAssignmentsView_workOrder_assignmentlist_list" resource="workOrder" transitionTo="WorkExecution.LaborAssignmentDetailView">
+
+				<sortOptions id="WorkExecution.LaborAssignmentsView_workOrder_assignmentlist_list_sortOptions">
+					<sortOption id="WorkExecution.LaborAssignmentsView_sortOption_TaskIDLabor" label="Task ID, Labor">
+						<sortAttribute direction="asc" id="WorkExecution.LaborAssignmentsView_TaskIDLabor_sortAttribute_taskid" name="taskid"/>
+						<sortAttribute direction="asc" id="WorkExecution.LaborAssignmentsView_TaskIDLabor_sortAttribute_laborcodeandname" name="laborcodeandname"/>
+					</sortOption>
+				</sortOptions>
+
+				<listItemTemplate id="WorkExecution.LaborAssignmentsView_workOrder_assignmentlist_listItemTemplate_LaborAssignmentListItem" layout="LaborAssignmentListItem">
+					<listtext id="WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_taskid" layoutInsertAt="item1" resourceAttribute="taskid"/>
+					<listtext cssClass="bold textappearance-medium" id="WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_laborcodeandname" layoutInsertAt="item2" resourceAttribute="laborcodeandname"/>
+					<listtext id="WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_craft" layoutInsertAt="item3" resourceAttribute="craft"/>
+					<listtext id="WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_skilllevel" layoutInsertAt="item4" resourceAttribute="skilllevel"/>
+					<listtext id="WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_crew" layoutInsertAt="item5" resourceAttribute="crew"/>
+				</listItemTemplate>
+			</list>
+		</view>
+
+		
+		 <!-- SGZMobile Labor Assignments Details view-->
+		 <view id="WorkExecution.LaborAssignmentDetailView" label="Labor Assignment Details">
+			<requiredResources id="WorkExecution.LaborAssignmentDetailView_requiredResources">
+				<requiredResource id="WorkExecution.LaborAssignmentDetailView_workOrder" name="workOrder">
+					<requiredAttribute id="WorkExecution.LaborAssignmentDetailView_workOrder_assignmentlist" name="assignmentlist"/>
+				</requiredResource>
+			</requiredResources>
+		
+			<container attribute="assignmentlist" id="WorkExecution.LaborAssignmentDetailView_workOrder_container_0" resource="workOrder">
+				<group id="WorkExecution.LaborAssignmentDetailView_group_0">
+					<groupitem id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_0">
+						<text editable="false" id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_0_taskid_Task" label="Task" resourceAttribute="taskid"/>
+					</groupitem>
+					
+					 <!-- SGZ Mobile crew field -->
+					 <groupitem id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_4">
+						<text editable="false" id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_4_crew_Crew" label="Crew" resourceAttribute="crew"/>
+						<text editable="false" id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_4_crewdesc" resourceAttribute="crewdesc"/>
+					</groupitem>
+					<groupitem id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_5">
+						<text editable="false" id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_5_status_Status" label="Status" resourceAttribute="status"/>
+					</groupitem>
+					<groupitem id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_6">
+						<text editable="false" id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_6_scheduledate_ScheduledDate" label="Scheduled Date" resourceAttribute="scheduledate"/>
+					</groupitem>
+					<groupitem id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_7">
+						<text editable="false" id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_7_laborhours_Hours" label="Hours" resourceAttribute="laborhours"/>
+					</groupitem>
+					<groupitem id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_8">
+						<text editable="false" id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_8_vendor_Vendor" label="Vendor" resourceAttribute="vendor"/>
+					</groupitem>
+					<groupitem id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_9">
+						<text editable="false" id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_9_contractnum_Contract" label="Contract" resourceAttribute="contractnum"/>
+					</groupitem>
+				</group>
+				<group id="WorkExecution.LaborAssignmentDetailView_group_1">
+					<groupitem id="WorkExecution.LaborAssignmentDetailView_workOrder_groupitem_10">
+						<lastupdatetext id="WorkExecution.LaborAssignmentDetailView_lastupdatetext"/>
+					</groupitem>
+				</group>
+
+			</container>
+			
+			<eventHandlers id="WorkExecution.LaborAssignmentDetailView_eventHandlers">
+				<eventHandler class="application.handlers.LaborAssignmentHandler" event="show" id="WorkExecution.LaborAssignmentDetailView_eventHandlers_show_asyncLaborAssignmentDetailView" method="asyncLaborAssignmentDetailView"/>
+				<eventHandler class="application.handlers.LaborAssignmentHandler" event="cleanup" id="WorkExecution.LaborAssignmentDetailView_eventHandlers_cleanup_cleanupAssignmentDetailView" method="cleanupAssignmentDetailView"/>
+			</eventHandlers>
+		</view>
+
+
+		<!--SGZMOBILE Planned Tools view-->
+		<view id="WorkExecution.PlannedToolsView" label="Planned Tools">
+			<requiredResources id="WorkExecution.PlannedToolsView_requiredResources">
+				<requiredResource id="WorkExecution.PlannedToolsView_workOrder" name="workOrder">
+					<requiredAttribute id="WorkExecution.PlannedToolsView_workOrder_toollist" name="toollist"/>
+				</requiredResource>
+			</requiredResources>
+			<list attribute="toollist" id="WorkExecution.PlannedToolsView_workOrder_toollist_list" resource="workOrder" transitionTo="WorkExecution.PlannedToolsDetailView">
+
+				<sortOptions id="WorkExecution.PlannedToolsView_workOrder_toollist_list_sortOptions">
+					<sortOption id="WorkExecution.PlannedToolsView_sortOption_TaskIDTool" label="Task ID, Tool">
+						<sortAttribute direction="asc" id="WorkExecution.PlannedToolsView_TaskIDTool_sortAttribute_taskid" name="taskid"/>
+						<sortAttribute direction="asc" id="WorkExecution.PlannedToolsView_TaskIDTool_sortAttribute_toolanddescription" name="toolanddescription"/>
+					</sortOption>
+				</sortOptions>
+
+				<listItemTemplate id="WorkExecution.PlannedToolsView_workOrder_toollist_listItemTemplate_PlannedToolListItem" layout="PlannedToolListItem">
+					<listtext id="WorkExecution.PlannedToolsView_workOrder_PlannedToolListItem_taskid" layoutInsertAt="item1" resourceAttribute="taskid"/>
+					<listtext cssClass="bold textappearance-medium" id="WorkExecution.PlannedToolsView_workOrder_PlannedToolListItem_toolanddescription" layoutInsertAt="item2" resourceAttribute="toolanddescription"/>
+					<listtext id="WorkExecution.PlannedToolsView_workOrder_PlannedToolListItem_quantity" layoutInsertAt="item3" resourceAttribute="quantity"/>
+				</listItemTemplate>
+			</list>
+		</view>
+
+
+				<!-- SGZMOBILE Planned Tools Detail view -->
+		<view id="WorkExecution.PlannedToolsDetailView" label="Tool Details">
+			<requiredResources id="WorkExecution.PlannedToolsDetailView_requiredResources">
+				<requiredResource id="WorkExecution.PlannedToolsDetailView_workOrder" name="workOrder">
+					<requiredAttribute id="WorkExecution.PlannedToolsDetailView_workOrder_toollist" name="toollist"/>
+				</requiredResource>
+				<requiredResource id="WorkExecution.PlannedToolsDetailView_domainitemtype" name="domainitemtype"/>
+			</requiredResources>
+
+			<container attribute="toollist" id="WorkExecution.PlannedToolsDetailView_workOrder_container_0" resource="workOrder">
+				<group id="WorkExecution.PlannedToolsDetailView_group_0">
+					<groupitem id="WorkExecution.PlannedToolsDetailView_workOrder_groupitem_0">
+						<text editable="false" id="WorkExecution.PlannedToolsDetailView_workOrder_groupitem_0_taskid_Task" label="Task" resourceAttribute="taskid"/>
+					</groupitem>
+					<groupitem id="WorkExecution.PlannedToolsDetailView_workOrder_groupitem_WorkExecution.ToolView_0" transitionTo="WorkExecution.ToolView">
+						
+						<text editable="false" id="WorkExecution.PlannedToolsDetailView_workOrder_groupitem_WorkExecution.ToolView_0_toolanddescription_Tool" label="Tool" resourceAttribute="toolanddescription"/>
+					</groupitem>
+					<groupitem id="WorkExecution.PlannedToolsDetailView_workOrder_groupitem_1">
+						<text editable="false" id="WorkExecution.PlannedToolsDetailView_workOrder_groupitem_1_quantity_Quantity" label="Quantity" resourceAttribute="quantity"/>
+					</groupitem>
+					<groupitem id="WorkExecution.PlannedToolsDetailView_workOrder_groupitem_2">
+						<text editable="false" id="WorkExecution.PlannedToolsDetailView_workOrder_groupitem_2_hours_Hours" label="Hours" resourceAttribute="hours"/>
+					</groupitem>
+					
+				</group>
+				<group id="WorkExecution.PlannedToolsDetailView_group_1">
+					<groupitem id="WorkExecution.PlannedToolsDetailView_workOrder_groupitem_4">
+						<lastupdatetext id="WorkExecution.PlannedToolsDetailView_lastupdatetext"/>
+					</groupitem>
+				</group>
+
+			</container>
+			<eventHandlers id="WorkExecution.PlannedToolsDetailView_eventHandlers">
+				<eventHandler class="application.handlers.PlannedToolHandler" event="show" id="WorkExecution.PlannedToolsDetailView_eventHandlers_show_initPlannedToolDetailView" method="initPlannedToolDetailView"/>
+			</eventHandlers>
+		</view>
+
 		<view id="WorkExecution.FollowUpWorkOrderView" label="Detalhes do item de serviço" resource="workOrder" >
 			<requiredResources id="WorkExecution.0.WorkDetailView_requiredResources">
 				<requiredResource id="WorkExecution.0.WorkDetailView_workOrder" name="workOrder">
