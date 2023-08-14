@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 18:05:00
+// Build: 2023-08-14 17:06:19
 //----------------------------------------------------------------//
 define(   "generated/application/data/ApplicationStoresBuilder", 
       [
@@ -243,7 +243,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'classInstance' : AssetObject,
                }).
                setLocal( false ).
-               setSimpleFieldsSelectExpression('dcterms:identifier,spi:assetid,spi:orgid,spi:siteid,oslc:shortTitle,spi:ms_deadtree,spi:ms_wonum,spi:ms_rptversion,spi:ms_arboreason,spi:ms_loctype,spi:ms_roadasset,spi:ms_addressline,spi:ms_addressline2,spi:ms_staddrnumber,spi:ms_validate,spi:ms_latitudey,spi:ms_longitudex,spi:changedate,spi:status,spi:statusdate,spi:rolltoallchildren,spi:removefromactiveroutes,spi:removefromactivesp,spi:changepmstatus,spi:assettype,spi:itemnum,spi:itemtype,spi:itemsetid,spi:binnum,spi:calnum,spi:shiftnum,spi:serialnum,spi:isrunning,spi:priority,spi:description_longdescription,spi:classstructureid,spi:updownstatus{spi:changedate},spi:person{spi:ms_curlatitudey,spi:ms_curlongitudex,spi:ms_crbio,spi:ms_crea,spi:personid},spi:asset{spi:description,spi:ms_roadsegment}').
+               setSimpleFieldsSelectExpression('dcterms:identifier,spi:assetid,spi:orgid,spi:siteid,oslc:shortTitle,spi:ms_deadtree,spi:ms_wonum,spi:ms_rptversion,spi:ms_arboreason,spi:ms_loctype,spi:roadasset,spi:ms_addressline,spi:ms_addressline2,spi:ms_staddrnumber,spi:ms_validate,spi:ms_latitudey,spi:ms_longitudex,spi:changedate,spi:status,spi:statusdate,spi:rolltoallchildren,spi:removefromactiveroutes,spi:removefromactivesp,spi:changepmstatus,spi:assettype,spi:itemnum,spi:itemtype,spi:itemsetid,spi:binnum,spi:calnum,spi:shiftnum,spi:serialnum,spi:isrunning,spi:priority,spi:description_longdescription,spi:classstructureid,spi:updownstatus{spi:changedate},spi:person{spi:ms_curlatitudey,spi:ms_curlongitudex,spi:ms_crbio,spi:ms_crea,spi:personid},spi:roadasset{dcterms:title,spi:ms_roadsegment}').
                setSupportiveFieldsSelectExpression('spi:assetattachments{oslc_cm:attachmentSize,dcterms:title,spi:fileName,dcterms:description,dcterms:created,spi:urlType,spi:docType,spi:printthrulink,spi:contentLocation,spi:anywhererefid,spi:createby},spi:assetspec{spi:assetspecid,spi:classstructureid,spi:ms_required,spi:ms_mobile,spi:orgid,spi:changedate,spi:displaysequence,spi:changeby,spi:numvalue,spi:alnvalue,spi:tablevalue,spi:section,spi:linearassetspecid,spi:measureunitid,spi:anywhererefid,spi_wm:assetattr{spi_wm:assetattrid,spi_wm:domainid,spi_wm:description,spi_wm:datatype}},spi:ms_arbo{spi:ms_target,spi:ms_angle,spi:ms_arboid,spi:ms_assetnum,spi:ms_changeby,spi:ms_changedate,spi:ms_diameter,spi:ms_diameterbreast,spi:ms_diametercolon,spi:ms_direction,spi:ms_family,spi:ms_firstbranch,spi:ms_genre,spi:ms_inadequatesite,spi:ms_jammvegetation,spi:ms_length,spi:ms_liftingfloor,spi:ms_locpublic,spi:ms_loctree,spi:ms_perimeterbreast,spi:ms_perimetercolon,spi:ms_permeablearea,spi:ms_popularname,spi:ms_remarks,spi:ms_retreat,spi:ms_ridewidth,spi:ms_scientific,spi:ms_slope,spi:ms_species,spi:ms_speciesunident,spi:ms_treeheight,spi:ms_typebuild,spi:ms_width},spi:ms_arborpt{spi:ms_accbark,spi:ms_active,spi:ms_adequacy,spi:ms_annealing01,spi:ms_annealing02,spi:ms_ant01,spi:ms_ant02,spi:ms_ant03,spi:ms_ant04,spi:ms_apparentdamage01,spi:ms_apparentdamage02,spi:ms_apparentdamage03,spi:ms_apparentdamage04,spi:ms_arborptid,spi:ms_assetnum,spi:ms_badformation,spi:ms_buildings,spi:ms_busstop,spi:ms_changeby,spi:ms_changedate,spi:ms_cleaning,spi:ms_coilfolded,spi:ms_comments,spi:ms_corrective,spi:ms_crack,spi:ms_createdate,spi:ms_cropped,spi:ms_drills01,spi:ms_drills02,spi:ms_drills03,spi:ms_drills04,spi:ms_driving,spi:ms_dry,spi:ms_enddate,spi:ms_exposed,spi:ms_flower,spi:ms_fruits,spi:ms_fungi01,spi:ms_fungi02,spi:ms_fungi03,spi:ms_fungi04,spi:ms_gasnetwork,spi:ms_hollow01,spi:ms_hollow02,spi:ms_hollow03,spi:ms_hollow04,spi:ms_inadequatepruning,spi:ms_inspectionbox,spi:ms_interference01,spi:ms_interference02,spi:ms_lamppost,spi:ms_lifting,spi:ms_lighting,spi:ms_lightstraffic,spi:ms_mechinjury01,spi:ms_mechinjury02,spi:ms_mechinjury03,spi:ms_mechinjury04,spi:ms_monitoring,spi:ms_parasitesplants,spi:ms_physicalbarrier,spi:ms_planting01,spi:ms_postage,spi:ms_postwallbuilding,spi:ms_prioritylevel,spi:ms_sapoozing,spi:ms_senescence,spi:ms_seweragesystem,spi:ms_sheets,spi:ms_sitesuitability,spi:ms_suppression,spi:ms_telecommunic,spi:ms_termite01,spi:ms_termite02,spi:ms_termite03,spi:ms_termite04,spi:ms_tnetwork,spi:ms_todonothing,spi:ms_tranplante,spi:ms_transitplates,spi:ms_tvehicle,spi:ms_tvoltage,spi:ms_uncup,spi:ms_version,spi:ms_virus,spi:ms_wall,spi:ms_waternetwork,spi:ms_wonum}').
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -430,20 +430,31 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
-                  'dataType' : 'string',
-                  'usage' : 'upper',
+                  'dataType' : 'reference',
                   'name' : 'roadasset',
                   'index' : false,
                   'artifactId' : 'ms_roadasset',
-                  'maxSize' : 12,
                   'id' : 'aw4f40bca6',
                   'local' : false,
-                  'remoteName' : 'spi:ms_roadasset',
+                  'remoteName' : 'spi:roadasset',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'displayValueRemoteName' : 'dcterms:title',
+                  'dataType' : 'reference',
+                  'referenceResource' : 'asset',
+                  'name' : 'road_description',
+                  'index' : false,
+                  'artifactId' : 'road_description',
+                  'maxSize' : 100,
+                  'id' : 'aw35dfb171',
+                  'local' : false,
+                  'remoteName' : 'spi:roadasset',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
                   'displayValueRemoteName' : 'spi:ms_roadsegment',
-                  'dataType' : 'inline',
+                  'dataType' : 'reference',
                   'usage' : 'upper',
                   'referenceResource' : 'asset',
                   'name' : 'roadsegment',
@@ -452,20 +463,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 4,
                   'id' : 'awbfbbf6f0',
                   'local' : false,
-                  'remoteName' : 'spi:asset',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'spi:description',
-                  'dataType' : 'inline',
-                  'referenceResource' : 'asset',
-                  'name' : 'road_description',
-                  'index' : false,
-                  'artifactId' : 'description',
-                  'maxSize' : 100,
-                  'id' : 'aw6de44026',
-                  'local' : false,
-                  'remoteName' : 'spi:asset',
+                  'remoteName' : 'spi:roadasset',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -815,7 +813,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'selectExpression' : 'spi:ms_arbo{spi:ms_target,spi:ms_angle,spi:ms_arboid,spi:ms_assetnum,spi:ms_changeby,spi:ms_changedate,spi:ms_diameter,spi:ms_diameterbreast,spi:ms_diametercolon,spi:ms_direction,spi:ms_family,spi:ms_firstbranch,spi:ms_genre,spi:ms_inadequatesite,spi:ms_jammvegetation,spi:ms_length,spi:ms_liftingfloor,spi:ms_locpublic,spi:ms_loctree,spi:ms_perimeterbreast,spi:ms_perimetercolon,spi:ms_permeablearea,spi:ms_popularname,spi:ms_remarks,spi:ms_retreat,spi:ms_ridewidth,spi:ms_scientific,spi:ms_slope,spi:ms_species,spi:ms_speciesunident,spi:ms_treeheight,spi:ms_typebuild,spi:ms_width}',
                }).
                addField({
-                  'multiplicity' : 'zero-or-many',
+                  'multiplicity' : 'zero-or-one',
                   'dataType' : 'inline',
                   'referenceResource' : 'MSArboRpt',
                   'name' : 'MSArboRpt',
@@ -5913,12 +5911,15 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'remoteName' : 'spi:blindcount',
                }).
                addField({
+                  'multiplicity' : 'exactly-one',
                   'displayValueRemoteName' : 'spi:type',
                   'dataType' : 'string',
+                  'usage' : 'upper',
                   'referenceResource' : 'anywhereResVal',
                   'name' : 'type',
                   'index' : false,
                   'artifactId' : 'AnywhereResValType',
+                  'maxSize' : 80,
                   'id' : 'aw81e2aabe',
                   'local' : false,
                   'remoteName' : 'spi:resanywhereresource',

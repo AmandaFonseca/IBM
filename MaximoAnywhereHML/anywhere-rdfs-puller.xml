@@ -180,7 +180,7 @@
 
 		
 		<!-- ESTRUTURAS PARA APP SGZArbo: -->
-		<!--		
+		<!--
 		<downloadOneRdf context="/oslc/shapes/oslcmsarbo" />
 		<downloadOneRdf context="/oslc/shapes/msoslcsarbopec" />
 		<downloadOneRdf context="/oslc/shapes/msoslcsarbopec/numericdomain" />				
@@ -194,19 +194,23 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/classspec" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/person" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/Asset" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks/attachment" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks/attachment/meta" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcclassif" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/pluscassetstatus" />
     	<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/ms_arbo/ms_target" />	
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/asset" />
 		<downloadOneRdf context="/oslc/shapes/oslcmaxdomain/numericdomain" />
+		-->
+		<downloadOneRdf context="/oslc/shapes/oslcmsarbo" />
+
+		<!--<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/asset" />
+			<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/Asset" />
 		-->
 		<!-- FIM ESTRUTURAS PARA APP SGZArbo: -->
 
 		
 		<!-- ESTRUTURAS PARA APP SGZUsina: -->
+		<!-- 
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/doclinks" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/ms_aptoolauth" />
@@ -217,6 +221,7 @@
         <downloadOneRdf context="/oslc/shapes/ms_oslcsite" />
         <downloadOneRdf context="/oslc/shapes/ms_oslcauthperson" />
         <downloadOneRdf context="/oslc/shapes/ms_oslctoolsiteauth" />
+		-->
 		<!-- ESTRUTURAS PARA APP SGZUsina: -->
 
 		

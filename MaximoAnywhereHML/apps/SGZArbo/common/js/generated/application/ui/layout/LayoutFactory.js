@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 18:05:02
+// Build: 2023-08-14 17:06:22
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/LayoutFactory", 
       [
@@ -80,7 +80,7 @@ function(declare, LayoutUtil, DeviceEnv, small_Button1Item1, small_Button2, smal
 
 
          //
-         // AUTO-GENERATED FILE CREATED ON: 2023-07-04 18:05:02
+         // AUTO-GENERATED FILE CREATED ON: 2023-08-14 17:06:22
          //
 
          constructor : function(widget) {

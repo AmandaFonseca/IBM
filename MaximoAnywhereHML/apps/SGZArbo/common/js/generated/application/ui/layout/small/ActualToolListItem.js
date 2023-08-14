@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 18:05:01
+// Build: 2023-08-14 17:06:21
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/small/ActualToolListItem", 
       [
