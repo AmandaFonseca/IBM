@@ -2381,9 +2381,9 @@
 				<attribute describedByProperty="spi:person{spi:ms_crea}" id="person_ms_crea" name="crea"/>
 				<attribute describedByProperty="spi:person{spi:ms_crbio}" id="person_ms_crbio" name="crbio"/>
 
-				<attribute describedByProperty="spi:roadasset{spi:ms_roadasset}" id="ms_roadasset" name="roadasset"/>
-				<attribute describedByProperty="spi:roadasset{spi:ms_roadsegment}" id="ms_roadsegment" name="roadsegment"/>
-				<attribute describedByProperty="spi:roadasset{dcterms:title}" id="description" name="road_description"/>
+				<attribute describedByProperty="spi:ms_roadasset" id="ms_roadasset" name="roadasset"/>
+				<attribute describedByProperty="spi:asset{spi:ms_roadsegment}" id="ms_roadsegment" name="roadsegment"/>
+				<attribute describedByProperty="spi:asset{spi:description}" id="description" name="road_description"/>
 				
 				
 				<!-- ATRIBUTOS SGZARBO -->
