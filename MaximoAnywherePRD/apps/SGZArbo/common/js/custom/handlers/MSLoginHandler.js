@@ -1,4 +1,3 @@
-
 /*
  * Licensed Materials - Property of IBM
  * "Restricted Materials of IBM"
@@ -11,8 +10,6 @@
  * IBM Corp. 
  *
  */
-
-/* Inicio alteração Amanda Chamado 80537 - ATIVOS ABOREOS - FAMILIA / NOME POPULAR  03/11/22 -->*/
 
 define("custom/handlers/MSLoginHandler", 
 	   [ "dojo/_base/declare",
@@ -52,10 +49,10 @@ function(declare, ApplicationHandlerBase, AdditionalDataManager, SystemDataManag
 				url = "https://smgisgzhomolog.prefeitura.sp.gov.br/prs/resetPassword.jsp?reset=request";
 			}
 			window.open(url, '_system');
-		},	
-
+		},
 		
-		acesso_manuaisClicked:function(eventContext){	
+		
+		acesso_manuaisClicked:function(eventContext){		
 			let self = this;
 			let appId = self.application.appId;
 			var domain = self.ui.application.WL.StaticAppProps.WORKLIGHT_BASE_URL;

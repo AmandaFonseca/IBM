@@ -56,15 +56,15 @@
 				</action>
 				
 				<action id="SGZArbo.AssetListView_CreateAsset_action" image="/images/header_add.png" label="Create Asset" transitionTo="SGZArbo.NewAssetView"/>
-				<action id="AssetDataManager.AssetListView_Search_action" label="Search Tree" overflow="true" transitionTo="AssetDataManager.SearchAssetView"/>
+				<action id="AssetDataManager.AssetListView_Search_action" label="Pesquisar Árvore por Numeração" overflow="true" transitionTo="AssetDataManager.SearchAssetView"/>
+				<action id="AssetDataManager.AssetListView_Search_action_adrress" label="Pesquisar Árvore por Endereço" overflow="true" transitionTo="AssetDataManager.Adress.SearchAssetView"/>
+
 			</actions>
 			
 			<progressIndicator id="Asset.AssetListView_0"/>
 
 			<list displayPageSize="20" id="SGZArbo.AssetListView_Asset_list" queryBase="getMyAssets" recordLabel="Asset {0}" resolverClass="application.handlers.AssetListHandler" resolverFunction="resolveAssetIdLabel" resource="asset" transitionTo="SGZArbo.AssetDetailView">
-				
-				
-				
+
 				<eventHandlers id="SGZArbo.WorkItemsView_asset_list_eventHandlers">
 					<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="SGZArbo.AssetListView_asset_list_eventHandlers_render_keepWorkListResource" method="keepWorkListResource"/>
 				</eventHandlers>
@@ -93,9 +93,9 @@
 			<eventHandlers id="SGZArbo.AssetListView_eventHandlers">
 				<eventHandler class="application.handlers.AssetListScanHandler" event="show" id="SGZArbo.AssetListView_eventHandlers_render_registerAsScanListener" method="registerAsScanListener"/>
 				<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetListView_eventHandlers_render_showBusyList" method="showBusyList"/>
-				<!--<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="WorkExecution.WorkDetailView_CaptureGPS_action_eventHandlers_setCheckqueryBaseViewContext" method="setCheckqueryBaseViewContext"/>
-				<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_0b_eventHandlers_render_updatePersonGPSPosition" method="updatePersonGPSPosition"/>-->
-				
+				<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="WorkExecution.WorkDetailView_CaptureGPS_action_eventHandlers_setCheckqueryBaseViewContext" method="setCheckqueryBaseViewContext"/>
+				<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_0b_eventHandlers_render_updatePersonGPSPosition" method="updatePersonGPSPosition"/>					
+                <eventHandler class="custom.handlers.MSAssetDetailHandler" event="back" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_back" method="backSpec"/>
 			</eventHandlers>
 		</view>
 		
@@ -149,194 +149,255 @@
 				<eventHandler class="custom.handlers.MSAssetDetailHandler" event="cleanup" id="AssetDataManager.SearchAssetView_eventHandlers_cleanup_discardSummaryView" method="discardSummaryView"/>
 			</eventHandlers>
 		</view>
+
+		<!-- Search Asset view Adress -->
+		<view id="AssetDataManager.Adress.SearchAssetView" label="Search Tree">
+			<requiredResources id="AssetDataManager.Adress.SearchAssetView_requiredResources">
+				<requiredResource id="AssetDataManager.Adress.SearchAssetView_searchasset" name="searchAsset"/>
+				<requiredResource id="AssetDataManager.Adress.SearchAssetView_asset" name="asset"/>
+				<requiredResource id="AssetDataManager.Adress.SearchAssetView_domainAssetstatus" name="domainAssetStatus"/>
+				<requiredResource id="AssetDataManager.Adress.SearchAssetView_statusChangeResource" name="statusChangeResource"/>
+			</requiredResources>
+			<container id="AssetDataManager.Adress.SearchAssetView_searchAsset_container_0" resource="searchAsset">
+				<group id="AssetDataManager.Adress.SearchAssetView_group_0">
+					<groupitem id="AssetDataManager.Adress.SearchAssetView_searchAsset_groupitem_01">
+						<text editable="true" id="AssetDataManager.Adress.SearchAssetView_searchAsset_groupitem_01_assetnum_asset" label="Endereço" placeHolder="Tap to enter" resourceAttribute="ms_addressline"/>
+					</groupitem>
+					<groupitem id="AssetDataManager.Adress.SearchAssetView_searchAsset_groupitem_02">
+						<text editable="true" id="AssetDataManager.Adress.SearchAssetView_searchAsset_groupitem_02_assetnum_asset" label="Número" placeHolder="Tap to enter" resourceAttribute="ms_staddrnumber"/>
+					</groupitem>
+				</group>
+			</container>
+			<footer id="AssetDataManager.Adress.SearchAssetView_footer">
+				<button id="AssetDataManager.Adress.SearchAssetView_Clear_button" label="Clear">
+					<eventHandlers id="AssetDataManager.Adress.SearchAssetView_Clear_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="AssetDataManager.Adress.SearchAssetView_Clear_button_eventHandlers_click_clearSearchFields" method="clearSearchFields"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="AssetDataManager.Adress.SearchAssetView_Search_button" label="Search" primary="true">
+					<eventHandlers id="AssetDataManager.Adress.SearchAssetView_Search_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="AssetDataManager.Adress.SearchAssetView_Search_button_eventHandlers_click_setSearchQuery" method="setSearchQueryAdress"/>
+					</eventHandlers>
+				</button>
+			</footer>
+			<eventHandlers id="AssetDataManager.Adress.SearchAssetView_eventHandlers">
+				<eventHandler class="custom.handlers.MSAssetDetailHandler" event="initialize" id="AssetDataManager.Adress.SearchAssetView_eventHandlers_initialize_initSearchData" method="initSearchData"/>
+				<eventHandler class="custom.handlers.MSAssetDetailHandler" event="show" id="AssetDataManager.Adress.SearchAssetView_eventHandlers_show_showSearch" method="showSearch"/>
+				<eventHandler class="custom.handlers.MSAssetDetailHandler" event="hide" id="AssetDataManager.Adress.SearchAssetView_eventHandlers_hide_hideSearch" method="hideSearch"/>
+				<eventHandler class="custom.handlers.MSAssetDetailHandler" event="cleanup" id="AssetDataManager.Adress.SearchAssetView_eventHandlers_cleanup_discardSummaryView" method="discardSummaryView"/>
+			</eventHandlers>
+		</view>
 		
-<!-- Informações laudo-->
-		<view id="SGZArbo.Section.four.SpecificationsView.laudo" label="Características Dendométricas">
+	<!-- Informações laudo-->
+		<view id="SGZArbo.Section.four.SpecificationsView.laudo" label="Laudo">
 		     <requiredResources id="SGZArbo.Section.four.SpecificationsView.laudo_requiredResource">
 				<requiredResource id="SGZArbo.Section.four.SpecificationsView.laudo_asset" name="asset">
 					<requiredAttribute id="SGZArbo.Section.four.SpecificationsView.laudo_msarbo" name="MSArbo"/>
 				</requiredResource>
 			</requiredResources>
-				<container id="TechReportContainer2">
-						<group id="TechReportContainer2.group_0">
-							<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_1" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.One.TechReportView">
-								<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_1_Specifications" layoutInsertAt="item1" value="Raiz"/>	
-							</groupitem>
-								
-								<!-- CHAMADA SESSAO 03-->
-							<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_3" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Three.TechReportView">
-								<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_3_Specifications" layoutInsertAt="item1" value="Colo"/>
-							
-							</groupitem>
-								<!-- CHAMADA SESSAO 04-->
-							<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_4" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Four.TechReportView">
-								<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_4_Specifications" layoutInsertAt="item1" value="Tronco"/>
-							
-							</groupitem>
-							<!-- CHAMADA SESSAO 05-->
-							<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_5" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Five.TechReportView_INTERFERENCE">
-								<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_5_Specifications" layoutInsertAt="item1" value="Copa"/>
-								
-							</groupitem>								
-							<!-- CHAMADA SESSAO Observações-->
-						</group>
-						<eventHandlers id="SGZArbo.AssetTechReportView.TechReportContainer2_container_2_eventHandlers">
-							<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetTechReportView.TechReportContainer2_container_2_eventHandlers_render_hideShowContainer" method="hideTechReportContainer"/>
-						</eventHandlers>
-				</container>
+			<container id="TechReportContainer2">
+				<group id="TechReportContainer2.group_0">
+					<!--<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_1" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.One.TechReportView">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_1_Specifications" layoutInsertAt="item1" value="Raiz"/>	
+					</groupitem>-->
+
+					<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_1" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.One.Root">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_1_Specifications" layoutInsertAt="item1" value="Raiz"/>	
+					</groupitem>
+						
+						<!-- CHAMADA SESSAO 03-->
+					<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_3" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Three.TechReportView">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_3_Specifications" layoutInsertAt="item1" value="Colo"/>
+					
+					</groupitem>
+						<!-- CHAMADA SESSAO 04-->
+					<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_4" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Four.TechReportView">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_4_Specifications" layoutInsertAt="item1" value="Tronco"/>
+					
+					</groupitem>
+					<!-- CHAMADA SESSAO 05-->
+					<!--<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_5" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Five.TechReportView_INTERFERENCE">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_5_Specifications" layoutInsertAt="item1" value="Copa"/>
+						
+					</groupitem>	-->			
+
+					<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_5" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.One.Cup">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_5_Specifications" layoutInsertAt="item1" value="Copa"/>					
+					</groupitem>					
+
+					<!-- Inicio alteração Amanda Chamado 80537 - ATIVOS ABOREOS - FAMILIA / NOME POPULAR  03/11/22 -->
+					<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_7" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Seven.TechReportView">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_7_Specifications" layoutInsertAt="item1" value="Recomendações"/>
+					</groupitem>			
+					<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_8" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Obs.TechReportView">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_8_Specifications" layoutInsertAt="item1" value="Observações"/>
+					</groupitem>
+				</group>
+			</container>
+			<eventHandlers id="techReportViewEventHandlers" >
+				<eventHandler id="techReportViewEventHandlers.eventHandler.back" class="custom.handlers.MSAssetDetailHandler" method="techReportHandleBackButton" event="back" />
+				<eventHandler id="SGZArbo.AssetDetailView.eventHandlers.back.eventHandlerBack001" event="back" class="custom.handlers.MSAssetDetailHandler" method="backSpecDetails" />
+			</eventHandlers>
 		</view>		
+
+		<!--Amanda - 17/03/23 - Nova troca de  status-->
+		<view id="SGZArbo.EditStatusView.Two.Value" label="Change Status" resource="asset" showOverflow="false">
+			<requiredResources id="SGZArbo.AssetDetailView_motivo_requiredResources">
+				<requiredResource id="SGZArbo.AssetDetailView_motivo_asset" name="asset">
+					<requiredAttribute id="SGZArbo.AssetDetailView_motivo_asset_attachments" name="attachments" reload="true"/>
+					<requiredAttribute id="SGZArbo.AssetDetailView_motivo_asset_assetSpecs" name="assetSpec" reload="true"/>
+				</requiredResource>
+				<requiredResource id="SGZArbo.AssetDetailView_motivo_assetattrtypes" name="assetattrtypes"/>
+				<requiredResource id="SGZArbo.AssetDetailView_motivo_classstructure" name="classstructure"/>
+				<requiredResource id="SGZArbo.AssetDetailView_motivo_gpslocalstore" name="PlatformGeolocationLocalStore"/>
+				<requiredResource id="SGZArbo.EditStatusView_Change_Status_StatusChangeResource_change_status" name="statusChangeResource"/>
+				<requiredResource id="SGZArbo.EditStatusView_Change_Status_StatusdomainAssetstatus_change_status" name="domainAssetStatus"/>
+				<requiredResource id="SGZArbo.Section.Three.SpecificationsView_asset_motivo_" name="asset">
+					<requiredAttribute id="SGZArbo.Section.Three.SpecificationsView_msarbo_motivo_" name="MSArbo"/>
+				</requiredResource>			
+			</requiredResources>	
+
+			<container id="SGZArbo.EditStatusView_Change_StatusChange_Statusasset_container_0" resource="asset">
+				<group id="SGZArbo.EditStatusView_Change_StatusChange_Statusgroup_0">
+					<groupitem id="SGZArbo.EditStatusView_Change_StatusChange_Statusasset_groupitem_0">
+						<text editable="false" id="SGZArbo.EditStatusView_Change_StatusChange_Statusasset_groupitem_0_wonum_asset" label="Asset" resourceAttribute="assetnum"/>
+						<text editable="false" id="SGZArbo.EditStatusView_Change_StatusChange_Statusasset_groupitem_0_statusdesc_Status" label="Status" resourceAttribute="statusdesc"/>
+					</groupitem>
+				</group>
+			</container>
+			<container id="SGZArbo.EditStatusView_Change_StatusChange_StatusstatusChangeResource_container_0" resource="statusChangeResource">
+				<group id="SGZArbo.EditStatusView_Change_StatusChange_Statusgroup_1">
+					<groupitem id="SGZArbo.EditStatusView_Change_StatusChange_StatusstatusChangeResource_groupitem_1">
+						<text editable="false" id="SGZArbo.EditStatusView_Change_StatusChange_StatusstatusChangeResource_groupitem_1_statusdesc_NewStatus" label="New Status" lookup="SGZArbo.statusLookup_02" placeHolder="Select from list" required="true" resourceAttribute="statusdesc"/>
+					</groupitem>
+				</group>
+			</container>
+			<container id="SGZArbo.EditStatusView_asset_container_Change_Status_section" attribute="MSArbo">
+				<group id="Referencia_motivo_status_change">
+					<groupitem id="SGZArbo.AssetTechReportView_ms_arboreason_motivo">
+						<text editable="true" id="SGZArbo.AssetTechReportView_asset_groupitem_SGZArbo.ms_arboreason_motivo" label="Motivo da Baixa"  resourceAttribute="ms_arboreason" lookup="SGZArbo.motivosbaixaLookup" lookupAttribute="ms_arboreason">
+							<eventHandlers id="SGZArbo.AssetDetailView_motivo_container_0b_eventHandlers_motivo">
+								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_motivo_hideDeadButton_reason_one" method="showReasonButtonStatus"/>
+							</eventHandlers>
+						</text>
+						<text labelCss="loginLink" id="warning_reason_motivo" label="Informar um Motivo de Baixa resultará na Inativação deste Ativo Arbóreo. Deseja manter esta alteração?">
+							<eventHandlers id="SGZArbo.AssetDetailView_motivo_container_0b_eventHandlers_motivo_three">
+								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_motivo_hideDeadButton_reason_three" method="showReasonButtonStatus"/>
+							</eventHandlers>
+						</text>
+					</groupitem>
+				</group>			
+			</container>
+			<footer id="SGZArbo.EditStatusView_Change_StatusChange_Statusfooter">
+				<button id="SGZArbo.EditStatusView_Change_StatusChange_StatusCancel_button" label="Cancel" resource="asset">
+					<eventHandlers id="SGZArbo.EditStatusView_Change_StatusChange_StatusCancel_button_eventHandlers">
+						<eventHandler class="application.handlers.StatusChangeHandler" event="click" id="SGZArbo.EditStatusView_Change_StatusChange_StatusCancel_button_eventHandlers_click_discardStatusChange" method="discardStatusChange"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZArbo.EditStatusView_Change_StatusChange_StatusSave_button" label="Save" primary="true" resource="asset">
+					<eventHandlers id="SGZArbo.EditStatusView_Change_StatusChange_StatusSave_button_eventHandlers">
+						<eventHandler class="custom.handlers.MStatusChangeHandler" event="click" id="SGZArbo.EditStatusView_Change_StatusChange_StatusSave_button_eventHandlers_click_commitAssetStatusChange" method="commitAssetStatusChange"/>
+					</eventHandlers>
+				</button>
+			</footer>
+			<eventHandlers id="SGZArbo.EditStatusView_Change_StatusChange_StatuseventHandlers">
+				<eventHandler class="application.handlers.StatusChangeHandler" event="initialize" id="SGZArbo.EditStatusView_Change_StatusChange_StatuseventHandlers_initialize_initEditStatusView" method="initEditStatusView"/>
+				<eventHandler class="application.handlers.StatusChangeHandler" event="cleanup" id="SGZArbo.EditStatusView_Change_StatusChange_StatuseventHandlers_cleanup_cleanupEditStatusView" method="cleanupEditStatusView"/>
+			</eventHandlers>
+		</view>	
 		
 		<!--Asset Details view-->
-		<view allowDrillDown="true" id="SGZArbo.AssetDetailView" label="Asset Details" resource="asset">
+		<view id="SGZArbo.AssetDetailView" label="Asset Details" resource="asset">
 			<requiredResources id="SGZArbo.AssetDetailView_requiredResources">
 				<requiredResource id="SGZArbo.AssetDetailView_asset" name="asset">
 					<requiredAttribute id="SGZArbo.AssetDetailView_asset_attachments" name="attachments" reload="true"/>
 					<requiredAttribute id="SGZArbo.AssetDetailView_asset_assetSpecs" name="assetSpec" reload="true"/>
+					<requiredAttribute id="SGZArbo.AssetDetailView_asset_two_msarbo" name="MSArbo"/>
 				</requiredResource>
 				<requiredResource id="SGZArbo.AssetDetailView_assetattrtypes" name="assetattrtypes"/>
 				<requiredResource id="SGZArbo.AssetDetailView_classstructure" name="classstructure"/>
-				<requiredResource id="SGZArbo.AssetDetailView_gpslocalstore" name="PlatformGeolocationLocalStore"/>
-			
-			
-				<requiredResource id="SGZArbo.Section.Three.SpecificationsView_asset_two" name="asset">
-					<requiredAttribute id="SGZArbo.Section.Three.SpecificationsView_msarbo_two" name="MSArbo"/>
-				</requiredResource>
-			
+				<requiredResource id="SGZArbo.AssetDetailView_gpslocalstore" name="PlatformGeolocationLocalStore"/>				
 			</requiredResources>		
-			<actions id="SGZArbo.AssetDetailView_actions">
-									
-
-			</actions> 
+			
 			<container id="SGZArbo.AssetDetailView_SGZArbo_container_0" resource="asset">
 				<group id="SGZArbo.AssetDetailView_group_0">
+					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0" layout="Item1Button1" transitionTo="SGZArbo.EditStatusView.Two.Value">
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0_statusdesc_Status" label="Status" labelCss="editableLabel" layoutInsertAt="item1" resourceAttribute="statusdesc"/>
+						<eventHandlers id="changestatusvalidationhandlers">
+							<eventHandler id="changestatusvalidationhandlers_handler" class="custom.handlers.MSAssetDetailHandler" method="requiredFieldFull" event="click" />
+						</eventHandlers>
+					</groupitem>
+					<groupitem id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.asset" layout="SGZArboDetailsLayout">
+					    <text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.asset.num" required="false" label="Árvore" labelCss="editableLabel" layoutInsertAt="Árvore" resourceAttribute="assetnum"/>
+					</groupitem>
+					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0_roadasset" layout="Item1Button1">
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0_statusdesc_EditStatusView_0_roadasset" label="Ativo Viário" labelCss="editableLabel" layoutInsertAt="item1" resourceAttribute="roadasset"/>
+					</groupitem>
+					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0_road_description" layout="Item1Button1">
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0_statusdesc_road_description" label="Descrição" labelCss="editableLabel" layoutInsertAt="item1" resourceAttribute="road_description"/>
+					</groupitem>
+					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0_roadsegment" layout="Item1Button1">
+						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0_statusdesc_roadsegment" label="Segmento" labelCss="editableLabel" layoutInsertAt="item1" resourceAttribute="roadsegment"/>
+					</groupitem>					
 					<groupitem id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.endereco" layout="SGZArboDetailsLayout">
-					    <text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.logradouro" required="true" label="Logradouro" labelCss="editableLabel" layoutInsertAt="logradouro" resourceAttribute="ms_addressline"/>
+					    <text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.logradouro" required="true" label="Logradouro" labelCss="editableLabel" layoutInsertAt="item1" resourceAttribute="ms_addressline"/>
 					</groupitem>
 					<groupitem id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.enderecodetails" layout="SGZArboDetailsLayout">
-						<text editable="true" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.numero" label="Número" required="true" labelCss="editableLabel" layoutInsertAt="numero" resourceAttribute="ms_staddrnumber"/>
-						<!-- <text editable="true" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.ms_loctype" label="Tipo de Local" required="false" lookupAttribute="description" lookup="SGZArbo.classArboLookupTABLE" labelCss="editableLabel" layoutInsertAt="sub" resourceAttribute="ms_loctype"/> -->
-						<text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.ms_loctype" label="Tipo de Local" required="false" lookup="SGZArbo.classArboLookupTABLE" labelCss="editableLabel" layoutInsertAt="numero" resourceAttribute="ms_loctype">
-							<eventHandlers id="SGZArbo.AssetDetailView_container_0b_eventHandlers_location_type">
-								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideDeadButton_location_type" method="locationType"/>
-							</eventHandlers>
-						</text>
-
-						<text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.subprefeitura" label="Subprefeitura" labelCss="editableLabel" layoutInsertAt="sub" resourceAttribute="siteid"/>
-		
+						<text editable="true" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.numero" label="Número" required="true" labelCss="editableLabel" layoutInsertAt="item1" resourceAttribute="ms_staddrnumber"/>
+						<text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.subprefeitura" label="Subprefeitura" labelCss="editableLabel" layoutInsertAt="item1" resourceAttribute="siteid"/>
 					</groupitem>
-					
 					<groupitem id="SGZArbo.AssetTechReportView_referencia">
-							<textarea editable="true" id="SGZArbo.AssetTechReportView_asset_groupitem_SGZArbo.referencia" label="Referência"  resourceAttribute="ms_addressline2"/>
+						<textarea editable="true" id="SGZArbo.AssetTechReportView_asset_groupitem_SGZArbo.referencia" label="Referência"  resourceAttribute="ms_addressline2"/>
 					</groupitem>
 					
 					<groupitem id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.deadtree" layout="SGZArboDetailsLayout">
-						<button id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.deadtree_button" layoutInsertAt="logradouro" cssClass="mblPrimaryButton" label="Árvore Morta?">
+						<button id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.deadtree_button" label="Árvore Morta?" transitionTo="SGZArbo.defineDeadTreeView">
 							<eventHandlers id="SGZArbo.AssetDetailView_asset_Cancel_button_eventHandlers">
 								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideDeadButton" method="hideDeadButton"/>
-								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.AssetDetailView_asset_button_eventHandlers_click_setDeadTree" method="setDeadTree"/>
-								<!--<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideDeadButton_save_SetDead" method="saveSetDead"/>-->
 							</eventHandlers>
 						</button>	
 					</groupitem>
 					<groupitem id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.deadtreeindicator">
-						<text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.deadtreeindicator_text" label="Árvore Morta Selecionada." labelCss="indicateLabel" layoutInsertAt="logradouro" />
+						<text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.deadtreeindicator_text" label="Árvore Morta Selecionada." labelCss="indicateLabel" layoutInsertAt="item1" />
 							<eventHandlers id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.deadtreeindicator_eventHandlers">
 								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.deadtreeindicator_render_hideDeadButton" method="hideDeadIndicator"/>
 							</eventHandlers>
-							
 					</groupitem>
-					</group>
-				</container>	
-					<!-- CHAMADA SESSAO 01-->
-				<container id="SGZArbo.AssetDetailView_container_2">
+				</group>
+			</container>	
+				<!-- CHAMADA SESSAO 01-->
+			<container id="SGZArbo.AssetDetailView_container_2">
 				<group id="SGZArbo.AssetDetailView_container_2_group_1">
 					<groupitem id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_1" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.One.SpecificationsView">
 						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_1_Specifications" layoutInsertAt="item1" value="Condições do Entorno"/>
-
 					</groupitem>
+					
 						<!-- CHAMADA SESSAO 02 -->
 					<groupitem id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_2" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Two.SpecificationsView">
 						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_2_Specifications" layoutInsertAt="item1" value="Especificações da Árvore"/>
-
 					</groupitem>
 						<!-- CHAMADA SESSAO 03-->
 					<groupitem id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_3" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Three.SpecificationsView">
 						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_3_Specifications" layoutInsertAt="item1" value="Canteiro e Permeabilidade"/>
-
 					</groupitem>
 						<!-- CHAMADA SESSAO 04-->
 					<groupitem id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_4" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.four.SpecificationsView">
 						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_4_Specifications" layoutInsertAt="item1" value="Características Dendométricas"/>
 					</groupitem>
-					<!-- Inicio alteração Amanda Chamado 80537 - ATIVOS ABOREOS - FAMILIA / NOME POPULAR  03/11/22 -->
-					<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_7" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Seven.TechReportView">
-						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_7_Specifications" layoutInsertAt="item1" value="Recomendações">
-							<eventHandlers id="SGZArbo.AssetDetailView_container_0b_eventHandlers_SpecificationsView_7">
-								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideDeadButton_SpecificationsView_7" method="showReasonButton"/>
-							</eventHandlers>
-						</text>
-					</groupitem>				
-					<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_8" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Obs.TechReportView">
-						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_8_Specifications" layoutInsertAt="item1" value="Observações">
-						<eventHandlers id="SGZArbo.AssetDetailView_container_0b_eventHandlers_SpecificationsView_7_2">
-								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideDeadButton_SpecificationsView_7_2" method="showReasonButton"/>
-							</eventHandlers>
-						</text>
-					</groupitem>	
-					<!-- CHAMADA SESSAO Observações-->	
-				</group>
-					<!--<eventHandlers id="SGZArbo.AssetDetailView_container_2_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideShowContainer" method="hideSpecContainer"/>
-					</eventHandlers>-->
-					</container>
-					
-					
-					<!--CHAMADA SESSAO 01-->
-					<container id="TechReportContainer">
-						<group id="TechReportContainer.group_0">
-							<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_1" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.One.TechReportView">
-								<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_1_Specifications" layoutInsertAt="item1" value="Raiz"/>	
-							</groupitem>
-								
-								<!-- CHAMADA SESSAO 03-->
-							<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_3" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Three.TechReportView">
-								<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_3_Specifications" layoutInsertAt="item1" value="Colo"/>
-							
-							</groupitem>
-								<!-- CHAMADA SESSAO 04-->
-							<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_4" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Four.TechReportView">
-								<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_4_Specifications" layoutInsertAt="item1" value="Tronco"/>
-							
-							</groupitem>
-							<!-- CHAMADA SESSAO 05-->
-							<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_5" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Five.TechReportView_INTERFERENCE">
-								<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_5_Specifications" layoutInsertAt="item1" value="Copa"/>								
-							
-							</groupitem>							
-						</group>
-						<eventHandlers id="SGZArbo.AssetTechReportView_container_2_eventHandlers">
-							<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetTechReportView_container_2_eventHandlers_render_hideShowContainer" method="hideTechReportContainer"/>
-						</eventHandlers>
-					</container>
 
-				<!-- CHAMADA SESSAO Observações-->
-				<!--<container id="SGZArbo.AssetTechReportView_recomendacoeseobservacoes">
-					<group id="SGZArbo.AssetTechReportView_recomendacoeseobservacoes_gp">
-						<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_7" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Seven.TechReportView">
-							<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_7_Specifications" layoutInsertAt="item1" value="Recomendações"/>
-							
-						</groupitem>				
-						<groupitem id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_8" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Obs.TechReportView">
-							<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView_groupitem_WorkExecution.SpecificationsView_8_Specifications" layoutInsertAt="item1" value="Observações"/>
-						</groupitem>
-					</group>
-					<eventHandlers id="SGZArbo.AssetTechReportView_container_4_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetTechReportView_container_4_eventHandlers_render_hideShowContainer" method="hideTechReportObsContainer"/>
-					</eventHandlers>
-				</container>-->
-					
-					
-					<!-- CHAMADA SESSAO FOTOS-->
+					<groupitem id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_5" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.four.SpecificationsView.laudo">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetDetailView_groupitem_WorkExecution.SpecificationsView_5_Specifications" layoutInsertAt="item1" value="Laudo"/>
+						<eventHandlers id="SGZArbo.AssetTechReportView.TechReportContainer2_container_2_eventHandlers">
+							<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetTechReportView.TechReportContainer2_container_2_eventHandlers_render_hideShowContainer" method="hideTechReportContainer"/>
+						</eventHandlers>
+					</groupitem>					
+				</group>
+				<eventHandlers id="SGZArbo.AssetDetailView_container_2_eventHandlers">
+					<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideShowContainer" method="hideContainerReportContainer"/>
+				</eventHandlers>
+			</container>
+										
+				<!-- CHAMADA SESSAO FOTOS-->
 				<container id="container_fotos">
 				<group id="fotos">
 					<groupitem enableFeatureByProperty="attachments.enabled" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.AttachmentsView_0" layout="Item1Count1Button2" transitionTo="WorkExecution.AttachmentsView">
@@ -349,28 +410,6 @@
 					<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.WorkDetailView_eventHandlers_render_refreshAllListSizes" method="refreshAllListSizes"/>
 				</eventHandlers>
 				</container>
-				<container id="container_Referencia">
-				<group id="Referencia">
-					<!-- <groupitem id="SGZArbo.AssetTechReportView_referencia">
-							<textarea editable="true" id="SGZArbo.AssetTechReportView_asset_groupitem_SGZArbo.referencia" label="Referência"  resourceAttribute="ms_addressline2"/>
-					</groupitem> -->
-					
-					<groupitem id="SGZArbo.AssetTechReportView_ms_arboreason">
-						<text editable="true" id="SGZArbo.AssetTechReportView_asset_groupitem_SGZArbo.ms_arboreason" label="Motivo da Baixa"  resourceAttribute="ms_arboreason" lookup="SGZArbo.motivosbaixaLookup" lookupAttribute="ms_arboreason">
-							<eventHandlers id="SGZArbo.AssetDetailView_container_0b_eventHandlers_motivo">
-								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideDeadButton_motivo" method="showReasonButton"/>
-								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideDeadButton_reason" method="setReasonLow"/>
-							</eventHandlers>
-						</text>
-						<text labelCss="loginLink" id="warning_reason" label="Informar um Motivo de Baixa resultará na Inativação deste Ativo Arbóreo. Deseja manter esta alteração?">
-							<eventHandlers id="SGZArbo.AssetDetailView_container_0b_eventHandlers_motivo_three">
-								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.AssetDetailView_container_2_eventHandlers_render_hideDeadButton_reason_three" method="showReasonButton"/>
-							</eventHandlers>
-						</text>
-					</groupitem>
-
-				</group>
-			</container>
 			<container id="SGZArbo.AssetDetailView_SGZArbo_container_0b" resource="asset">
 				<errorIndicator id="SGZArbo.AssetDetailView_errorIndicator"/>
 				
@@ -387,6 +426,9 @@
 					</groupitem>
 				</group>
 			</container>			
+			<eventHandlers id="SGZArbo.AssetDetailView.eventHandlers.back">
+				<eventHandler id="SGZArbo.AssetDetailView.eventHandlers.back.eventHandler" event="back" class="custom.handlers.MSAssetDetailHandler" method="detailsHandleBackButton" />
+			</eventHandlers>																  
 		</view>
 
 		<!-- LAUDO TÉCNICO -->
@@ -482,7 +524,7 @@
 				</groupitem>
 				<groupitem id="SGZArbo.CreateAssetView_asset_groupitem_SGZArbo.enderecodetalhado" layout="SGZArboDetailsLayout">
 					    <text editable="true" id="SGZArbo.CreateAssetView_asset_groupitem_SGZArbo.numero" required="true" label="Número" labelCss="editableLabel" layoutInsertAt="numero" resourceAttribute="ms_staddrnumber"/>
-						<text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.ms_loctype01" label="Tipo de Local" required="false" lookupAttribute="description" lookup="SGZArbo.classArboLookupTABLE" labelCss="editableLabel" resourceAttribute="ms_loctype"/>
+						<!--<text editable="false" id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.ms_loctype01" label="Tipo de Local" required="false" lookupAttribute="description" lookup="SGZArbo.classArboLookupTABLE" labelCss="editableLabel" resourceAttribute="ms_loctype"/>-->
 					    <text editable="true" id="SGZArbo.CreateAssetView_asset_groupitem_SGZArbo.subprefeitura" label="Subprefeitura" labelCss="editableLabel" layoutInsertAt="sub" resourceAttribute="siteid" lookup="SGZArbo.AssetMove.SiteLookup"/>
 				</groupitem>
 				<groupitem id="SGZArbo.AssetDetailView_asset_groupitem_SGZArbo.latlong" layout="SGZArboDetailsLayout">
@@ -649,39 +691,45 @@
 			</eventHandlers>							 		    
 		</view>
 		
+
 		<!-- ESPECIFICAÇÕES SESSÃO 01 -->
-		<view id="SGZArbo.Section.One.SpecificationsView" label="Condições do Entorno" >
-		
+		<view id="SGZArbo.Section.One.SpecificationsView" label="Condições do Entorno">
 			<requiredResources id="SGZArbo.Section.One.SpecificationsView_requiredResource">
-				<requiredResource id="SGZArbo.Section.One.SpecificationsView_asset" name="asset">
-					<requiredAttribute id="SGZArbo.Section.One.SpecificationsView_msarbo" name="MSArbo"/>
+				<requiredResource id="SGZArbo.Section.One.SpecificationsView_asset_viewOne" name="asset" >
+					<requiredAttribute id="SGZArbo.Section.One.SpecificationsView_asset_viewOne_msarbo" name="MSArbo"/>
 				</requiredResource>
+				 <requiredResource id="SGZArbo.Section.One.SpecificationsView_mstarget" name="mstarget" />
 			</requiredResources>
 			
 			<container  id="SGZArbo.Section.One.SpecificationsView_container_0" resource="asset" attribute="MSArbo">
-				<group id="SGZArbo.Section.One.SpecificationsView_group_0">
-					<groupitem id="SGZArbo.Section.One.SpecificationsView_0">
-						<text editable="true" id="SGZArbo.Section.One.SpecificationsView_groupitem_0_ms_typebuild" resourceAttribute="ms_typebuild" label="Tipo de Edificação" lookup="SGZArbo.TypebuildLookup" lookupAttribute="ms_typebuild" />					    						 				  
+ 				<group id="SGZArbo.Section.One.SpecificationsView_group_0">
+					<groupitem id="SGZArbo.Section.One.SpecificationsView_0"  >
+						<text id="SGZArbo.Section.One.SpecificationsView_groupitem_0_ms_typebuild" resourceAttribute="ms_typebuild" label="Tipo de Edificação" lookup="SGZArbo.TypebuildLookup" lookupAttribute="ms_typebuild" />					    						 				   
 						<text editable="true" id="SGZArbo.Section.One.SpecificationsView_groupitem_1_ms_loctree" resourceAttribute="ms_loctree" label="Localização da Árvore" lookup="SGZArbo.MSloctreeLookup" lookupAttribute="ms_loctree" />    					    						 				  
-						<text editable="true" id="SGZArbo.Section.One.SpecificationsView_groupitem_2_ms_locpublic" resourceAttribute="ms_locpublic" label="Localização na Via Pública" lookup="SGZArbo.MSlocpublicLookup" lookupAttribute="ms_locpublic"/>    					    						 				  
-						<text editable="true" id="SGZArbo.Section.One.SpecificationsView_groupitem_3_ms_ridewidth" resourceAttribute="ms_ridewidth" label="Largura do Passeio (m)" enableNumericKeyboard="true" />    					    						 				  
+						
+						<text editable="true" id="SGZArbo.Section.One.SpecificationsView_groupitem_3_ms_ridewidth" resourceAttribute="ms_ridewidth" label="Largura do Passeio (m) *" enableNumericKeyboard="true" />    					    						 				  
 						<checkbox editable="true" id="SGZArbo.Section.One.SpecificationsView_groupitem_4_ms_retreat" resourceAttribute="ms_retreat" label="Recuo"/>    					    						 				  
 						<checkbox editable="true" id="SGZArbo.Section.One.SpecificationsView_groupitem_5_ms_liftingfloor" resourceAttribute="ms_liftingfloor" label="Levantamento do Pavimento"/>    					    						 				  
+						 <text editable="false" id="SGZArbo.Section.One.SpecificationsView_groupitem_5_ms_target" resourceAttribute="ms_target" label="Alvo" lookup="SGZArbo.targetAttributeLookup" lookupAttribute="ms_target"/>   						 				   
+						 
+ 						 <text editable="false" id="SGZArbo.Section.One.SpecificationsView_groupitem_5_ms_targetdesc_2" resourceAttribute="np_targetdesc" label="Descrição do alvo">
+							<eventHandlers id="SGZArbo.Section.One.SpecificationsView_groupitem_5_ms_targetdesc_2_eventHandlers">
+								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.Section.One.SpecificationsView_groupitem_5_ms_targetdesc_2_targetdesc" method="getTargetDesc"/>
+							</eventHandlers> 
+						</text> 
 					</groupitem>
 				</group>
-			</container>
-			
+			</container>			
 			<footer id="SGZArbo.Section.One.SpecificationsView_footer">
 				<button id="SGZArbo.Section.One.SpecificationsView_Cancel_button" label="Cancel">
-					<eventHandlers id="SGZArbo.Section.One.SpecificationsView_Cancel_button_eventHandlers">
+ 					<eventHandlers id="SGZArbo.Section.One.SpecificationsView_Cancel_button_eventHandlers">
 						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.SpecificationsView_Cancel_button_eventHandlers_click_cancel" method="discardView"/>
-					</eventHandlers>
+					</eventHandlers> 
 				</button>
-				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.One.SpecificationsView_Create_button" label="Done" primary="true" resourceAttribute="ms_arboid">
-					<eventHandlers id="SGZArbo.Section.One.SpecificationsView_Create_button_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.Section.One.SpecificationsView_Commit_button_eventHandlers_render_hidesaveSpecbt_um" method="hidesaveSpecbt"/>
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.SpecificationsView_Commit_button_eventHandlers_click_commit" method="commitSpecificationView"/>
-					</eventHandlers>
+				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.One.SpecificationsView_Create_button" label="Done">
+ 					<eventHandlers id="SGZArbo.Section.One.SpecificationsView_Create_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.SpecificationsView_Commit_button_eventHandlers_click_commit0" method="commitSpecOne"/>
+					</eventHandlers> 
 				</button>
 			</footer>
 		</view>
@@ -709,7 +757,7 @@
 							</eventHandlers>
 						</checkbox>
 						
-						<text editable="false" required="true" id="SGZArbo.Section.Two.SpecificationsView_groupitem_1_ms_popularname" label="Nome Popular (provável)" lookup="SGZArbo.mspopularnameLookup" lookupAttribute="ms_popular" placeHolder="Select from list" resourceAttribute="ms_popularname">	
+						<text editable="false" id="SGZArbo.Section.Two.SpecificationsView_groupitem_1_ms_popularname" label="Nome Popular (provável)*" lookup="SGZArbo.mspopularnameLookup" lookupAttribute="ms_popular" placeHolder="Select from list" resourceAttribute="ms_popularname">	
 							<eventHandlers id="SGZArbo.Section.Two.SpecificationsView_groupitem_0_ms_speciesunident_eventHandlers01">
 								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.Section.Two.SpecificationsView_groupitem_0_ms_speciesunident_eventHandlers_click_scientificPut_" method="scientificPut"/>
 							</eventHandlers>
@@ -720,7 +768,7 @@
 								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.Section.Two.SpecificationsView_groupitem_0_ms_speciesunident_eventHandlers_click_scientificPut02" method="scientificPut"/>
 							</eventHandlers>
 						</text>	
-						
+
 						
 						<text editable="false"  id="SGZArbo.Section.Two.SpecificationsView_groupitem_3_ms_family" label="Família" lookup="SGZArbo.msfamilyLookup" lookupAttribute="ms_family"  placeHolder="Select from list" resourceAttribute="ms_family" >
 							<eventHandlers id="SGZArbo.Section.Two.SpecificationsView_groupitem_0_ms_speciesunident_eventHandlers02">
@@ -733,6 +781,10 @@
 						
 						<text editable="false" id="SGZArbo.Section.Two.SpecificationsView_groupitem_5_ms_species" resourceAttribute="ms_species" label="Espécie"/>	 				  
 
+		
+						<textarea editable="true" id="SGZArbo.AssetTechReportView_asset_groupitem_SGZArbo.ms_remarks" label="Observações" resourceAttribute="ms_remarks"/>
+
+		
 					</groupitem>
 				</group>
 			</container>
@@ -750,10 +802,8 @@
 			   </button>		
 				<button cssClass="mblPrimaryButton" id="_SGZArbo.Section.Two.SpecificationsView_Create_button" label="Done" primary="true" resourceAttribute="ms_arboid">
 					<eventHandlers id="_SGZArbo.Section.Two.SpecificationsView_Create_button_eventHandlers">
-						<!-- <eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="_SGZArbo.Section.One.SpecificationsView_Commit_button_eventHandlers_render_hidesaveSpecbt_dois" method="setScientificName"/> -->
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="_SGZArbo.Section.Two.SpecificationsView_groupitem_0_ms_speciesunident_eventHandlers_click_requiredField" method="requiredField"/>
-						<!-- <eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="_SGZArbo.Section.One.SpecificationsView_Commit_button_eventHandlers_render_hidesaveSpecbt_dois" method="setScientificName"/> -->
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="_SGZArbo.Section.Two.SpecificationsView_Commit_button_eventHandlers_click_commit" method="commitSpecificationView"/>
+						<!-- <eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="_SGZArbo.Section.Two.SpecificationsView_groupitem_0_ms_speciesunident_eventHandlers_click_requiredField" method="requiredFieldFull"/> -->
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="_SGZArbo.Section.Two.SpecificationsView_Commit_button_eventHandlers_click_commit" method="commitSpecificationViewFamily"/>
 					</eventHandlers>
 				</button>
 			</footer>
@@ -793,13 +843,13 @@
 				</button>
 				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Three.SpecificationsView_Create_button" label="Done" primary="true" resourceAttribute="ms_arboid">
 					<eventHandlers id="SGZArbo.Section.Three.SpecificationsView_Create_button_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.Section.One.SpecificationsView_Commit_button_eventHandlers_render_hidesaveSpecbt_tres" method="hidesaveSpecbt"/>
 						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Three.SpecificationsView_Commit_button_eventHandlers_click_commit" method="commitSpecificationView"/>
 					</eventHandlers>
 				</button>
 			</footer>
 		</view>
 		
+		<!-- ESPECIFICAÇÕES SESSÃO 04 -->
 		<!-- ESPECIFICAÇÕES SESSÃO 04 -->
 		<view id="SGZArbo.Section.four.SpecificationsView" label="Características Dendométricas">
 		     <requiredResources id="SGZArbo.Section.four.SpecificationsView_requiredResource">
@@ -814,7 +864,7 @@
 					
 					
 					    <!-- Não alterar o ID  'SGZArbo.Section.four.SpecificationsView_DAP' uso ele no javascript-->
-						<text editable="true" required="true" id="SGZArbo.Section.four.SpecificationsView_DAP" resourceAttribute="ms_diameterbreast" label="Diâmetro à Altura do Peito (DAP) (m)" enableNumericKeyboard="true">
+						<text editable="true"  id="SGZArbo.Section.four.SpecificationsView_DAP" resourceAttribute="ms_diameterbreast" label="Diâmetro à Altura do Peito (DAP) (m) *" enableNumericKeyboard="true">
 							<eventHandlers id="SGZArbo.Section.four.SpecificationsView_Create_DAP0_eventHandlers">
 								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="changestate" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_keydownFunctionCalculator0" method="keydownFunctionCalculatorDAP"/>
 								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_keydownFunctionCalculator01" method="keydownFunctionCalculatorDAP"/>
@@ -823,7 +873,7 @@
 						</text>
 
 						<!-- Não alterar o ID  'SGZArbo.Section.four.SpecificationsView_PAP' uso ele no javascript-->
-						<text editable="true" required="true" id="SGZArbo.Section.four.SpecificationsView_PAP" resourceAttribute="ms_perimeterbreast" label="Perímetro a Altura do Peito (PAP) (m)" enableNumericKeyboard="true">
+						<text editable="true"  id="SGZArbo.Section.four.SpecificationsView_PAP" resourceAttribute="ms_perimeterbreast" label="Perímetro a Altura do Peito (PAP) (m) *" enableNumericKeyboard="true">
 							<eventHandlers id="SGZArbo.Section.four.SpecificationsView_Create_PAP0_eventHandlers">
 								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="changestate" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_keydownFunctionCalculator1" method="keydownFunctionCalculatorPAP"/>
 								<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_keydownFunctionCalculator012" method="keydownFunctionCalculatorPAP"/>
@@ -843,7 +893,7 @@
 						
 						<text editable="true" id="SGZArbo.Section.four.SpecificationsView_groupitem_7_ms_width" resourceAttribute="ms_perimetercolon" label="Perímetro do Colo (PC) (m)" enableNumericKeyboard="true" />
 						
-						<text editable="true" id="SGZArbo.Section.four.SpecificationsView_groupitem_1_ms_treeheight" resourceAttribute="ms_treeheight" label="Altura da árvore (m))" enableNumericKeyboard="true" />	 
+						<text editable="true" id="SGZArbo.Section.four.SpecificationsView_groupitem_1_ms_treeheight" resourceAttribute="ms_treeheight" label="Altura da árvore estimada (m) *" enableNumericKeyboard="true" />	 
 
 						
 						
@@ -859,16 +909,8 @@
 				</button>
 				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.four.SpecificationsView_Create_button" label="Done" primary="true" resourceAttribute="ms_arboid">
 					<eventHandlers id="SGZArbo.Section.four.SpecificationsView_Create_button_eventHandlers">
-						<!--<eventHandler class="custom.handlers.MSAssetDetailHandler" event="render" id="SGZArbo.Section.One.SpecificationsView_Commit_button_eventHandlers_render_hidesaveSpecbt_quatro" method="hidesaveSpecbt"/>-->
-						
-						<!--<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_commit.validateboth" method="requiredFieldDapBoth"/>-->
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_commit.requiredFieldTreeSpecification" method="requiredFieldDap"/>
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_commit.requiredFieldTreeSpecification_save" method="saveWOShowView"/>
-						
-						<!--<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_calcPap" method="calcPap"/>
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_calcDap" method="calcDap"/>-->
-						<!-- <eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_requiredFieldDap" method="requiredFieldDap"/> -->
-						<!-- <eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_requiredFieldPap" method="requiredFieldPap"/> -->
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.four.SpecificationsView_Commit_button_eventHandlers_click_commit.requiredFieldTreeSpecification_save" method="commitDendometricCharacteristics"/>
+						<!-- <eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.SpecificationsView_Commit_button_eventHandlers_click_commit_requiredField00" method="requiredFieldFull"/> -->
 					</eventHandlers>
 				</button>
 			</footer>
@@ -879,7 +921,7 @@
 		<!-- INICIO VIEWS DE ESPECIFICAÇÕES DO LAUDO TECNICO -->
 		
 		<!-- ESPECIFICAÇÕES LAUDO TECNICO SESSÃO 01 -->
-		<view id="SGZArbo.Section.One.TechReportView" label="Raiz">
+		<view id="SGZArbo.Section.One.TechReportView" label="Interferência">
 		     <requiredResources id="SGZArbo.Section.One.TechReportView_requiredResource">
 				<requiredResource id="SGZArbo.Section.One.TechReportView_asset" name="asset">
 					<requiredAttribute id="SGZArbo.Section.One.TechReportView_msarbo" name="MSArboRpt"/>
@@ -899,16 +941,68 @@
 			<footer id="SGZArbo.Section.One.TechReportView_footer">
 				<button id="SGZArbo.Section.One.TechReportView_Cancel_button" label="Não">
 					<eventHandlers id="SGZArbo.Section.One.TechReportView_Cancel_button_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.TechReportView_Cancel_button_eventHandlers_click_cancel" method="discardView"/>
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.TechReportView_Cancel_button_eventHandlers_click_cancel" method="commitTechReportViewSec01No"/>
 					</eventHandlers>
 				</button>
 				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.One.TechReportView_Sim_button" label="Sim" transitionTo="SGZArbo.Section.One.TechReportView_DETAILS">
 				</button>
 			</footer>
 		</view>
+
+		<!-- PERGUNTAS REFERENTES A RAIZ -->
+		<view id="SGZArbo.Section.One.Root" label="Raiz">
+		     <requiredResources id="SGZArbo.Section.One.TechReportView_Root_requiredResource">
+				<requiredResource id="SGZArbo.Section.One.TechReportView_Root_asset" name="asset">
+					<requiredAttribute id="SGZArbo.Section.One.TechReportView_Root__msarbo" name="MSArboRpt"/>
+				</requiredResource>
+			</requiredResources>
+			
+			<container id="SGZArbo.Section.One.TechReportView_container_Root" resource="asset" attribute="MSArboRpt">
+			   <group id="TechReportContainer._Diagnosis.group_0">
+					<!-- CHAMADA SESSAO QUESTAO INTERFERÊNCIA-->
+					<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_Interference" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.One.TechReportView">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_1_Interference" layoutInsertAt="item1" value="Interferência"/>	
+					</groupitem>
+							
+					<!-- CHAMADA SESSAO QUESTAO DIAGNÓSTICO-->
+					<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_Diagnosis" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.One.TechReportView_Diagnosis">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_3_Specifications_Diagnosis" layoutInsertAt="item1" value="Diagnóstico"/>
+					</groupitem>
+				</group>
+			</container>
+			<eventHandlers id="SGZArbo.Section.One.TechReportView_DETAILS_Create_button_Back002">
+				<eventHandler id="SGZArbo.AssetDetailView.eventHandlers.back.eventHandlerBack002" event="back" class="custom.handlers.MSAssetDetailHandler" method="backSpecLaudo" />
+			</eventHandlers>
+		</view>
+
+		<!-- ESPECIFICAÇÕES LAUDO TECNICO SESSÃO 01 DIAGNÓSTICO -->
+		<view id="SGZArbo.Section.One.TechReportView_Diagnosis" label="Diagnóstico">
+		     <requiredResources id="SGZArbo.Section.One.TechReportView_Diagnosis_requiredResource">
+				<requiredResource id="SGZArbo.Section.One.TechReportView_Diagnosis_asset" name="asset">
+					<requiredAttribute id="SGZArbo.Section.One.TechReportView_Diagnosis_msarbo" name="MSArboRpt"/>
+				</requiredResource>
+			</requiredResources>
+			
+			<container id="SGZArbo.Section.One.TechReportView_container_0_Diagnosis" resource="asset" attribute="MSArboRpt">
+				<group id="SGZArbo.Section.One.TechReportView_group_0_Diagnosis">
+					<groupitem id="SGZArbo.Section.One.TechReportView_0_Diagnosis"> 
+						<text editable="false" cssClass="relatedRecords" id="SGZArbo.Section.One.TechReportView_groupitem_2_ms__Diagnosis01" label="Existe dano aparente?"/>
+					</groupitem>
+				</group>
+			</container>
+			
+			<footer id="SGZArbo.Section.One.TechReportView_footer_Diagnosis">
+				<button id="SGZArbo.Section.One.TechReportView_Cancel_button_Diagnosis" label="Não">
+					<eventHandlers id="SGZArbo.Section.One.TechReportView_Cancel_button_eventHandlers_Diagnosis">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.TechReportView_Cancel_button_eventHandlers_click_Diagnosis_cancel" method="commitTechReportViewSec01DiagnosisNo"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.One.TechReportView_Sim_button_Diagnosis" label="Sim" transitionTo="SGZArbo.Section.One.TechReportView_DETAILS_DIAGNOSIS_DAMAGE">
+				</button>
+			</footer>
+		</view>
 		
-		<!-- DETALHES SESSÃO 1 LAUDO TECNICO -->
-		
+		<!-- DETALHES SESSÃO 1 LAUDO TECNICO (INTERFERÊNCIA) - Criado AMANDA -->
 		<view id="SGZArbo.Section.One.TechReportView_DETAILS" label="Selecione o Tipo Interferência">
 		     <requiredResources id="SGZArbo.Section.One.TechReportView_DETAILS_requiredResource">
 				<requiredResource id="SGZArbo.Section.One.TechReportView_DETAILS_asset" name="asset">
@@ -942,43 +1036,7 @@
 						<checkbox editable="true" id="SGZArbo.Section.One.TechReportView_DETAILS_groupitem_2_ms_interference06" resourceAttribute="rptms_seweragesystem" label="Rede de Esgoto?"/>
 					</groupitem>	
 					<groupitem id="SGZArbo.Section.One.TechReportView_DETAILS_7"> 
-						<checkbox editable="true" id="SGZArbo.Section.One.TechReportView_DETAILS_groupitem_2_ms_interference07" resourceAttribute="rptms_telecommunic" label="Telecomunicações??"/>
-					</groupitem>
-					
-										
-					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_0"> 
-						<text editable="false" cssClass="relatedRecords" id="SGZArbo.Section.Two.TechReportView_DETAILS__groupitem_2_ms_interference00" label="DIAGNÓSTICO:"/>
-					</groupitem>
-					
-					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_2">
-						<text editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_5_ms_fungi01" resourceAttribute="rptms_fungi01" label="Fungos" lookup="SGZArbo.MS_FUNGILookup" lookupAttribute="rptms_fungi01"/>
-					</groupitem>
-					
-					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_3">
-						<text editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_6_ms_termite01" resourceAttribute="rptms_termite01" label="Cupim da Raiz" lookup="SGZArbo.MS_TERMITELookup01" lookupAttribute="rptms_termite01"/>	 
-					</groupitem>
-					
-					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_4">
-						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_mechinjury01" resourceAttribute="rptms_mechinjury01" label="Injúria Mecânica?"/>
-					</groupitem>	
-					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_5">
-						
-						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_coilfolded" resourceAttribute="rptms_coilfolded" label="Dobrada/Enovelada?"/>
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_6">
-						
-						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_rptms_exposed" resourceAttribute="rptms_exposed" label="Exposto?"/>
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_7">
-						
-						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_drills01" resourceAttribute="rptms_drills01" label="Brocas?"/>
-						
-					</groupitem>	
-					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_8">
-						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_cropped" resourceAttribute="rptms_cropped" label="Cortada?"/>
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_9">
-						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_ant01" resourceAttribute="rptms_ant01" label="Formiga Carpinteira?"/>
+						<checkbox editable="true" id="SGZArbo.Section.One.TechReportView_DETAILS_groupitem_2_ms_interference07" resourceAttribute="rptms_telecommunic" label="Telecomunicações?"/>
 					</groupitem>
 				</group>
 	
@@ -987,7 +1045,7 @@
 			<footer id="SGZArbo.Section.One.TechReportView_DETAILS_footer">
 				<button id="SGZArbo.Section.One.TechReportView_DETAILS_Cancel_button" label="Cancel">
 					<eventHandlers id="SGZArbo.Section.One.TechReportView_DETAILS_Cancel_button_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.TechReportView_DETAILS_Cancel_button_eventHandlers_click_cancel" method="discardView"/>
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.TechReportView_DETAILS_Cancel_button_eventHandlers_click_cancel" method="commitTechReportViewSec01No"/>
 					</eventHandlers>
 				</button>
 				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.One.TechReportView_DETAILS_Create_button" label="Done">
@@ -997,7 +1055,65 @@
 				</button>
 			</footer>
 		</view>
-		
+			
+		<!-- DETALHES SESSÃO 1 LAUDO TECNICO (DIAGNÓSTICO) - Criado AMANDA -->
+		<view id="SGZArbo.Section.One.TechReportView_DETAILS_DIAGNOSIS_DAMAGE" label="Selecione o Tipo Dano">
+		     <requiredResources id="SGZArbo.Section.One.TechReportView_DETAILS_DIAGNOSIS_DAMAGE_requiredResource">
+				<requiredResource id="SGZArbo.Section.One.TechReportView_DETAILS_DIAGNOSIS_DAMAGE__asset" name="asset">
+					<requiredAttribute id="SGZArbo.Section.One.TechReportView_DETAILS_DIAGNOSIS_DAMAGE__msarbo" name="MSArboRpt"/>
+				</requiredResource>
+			</requiredResources>
+			
+			<container id="SGZArbo.Section.One.TechReportView_DETAILS_container_0_DIAGNOSIS_DAMAGE_" resource="asset" attribute="MSArboRpt">
+				<group id="SGZArbo.Section.One.TechReportView_DETAILS_group_0_DIAGNOSIS_DAMAGE_">					
+					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_0_DIAGNOSIS_DAMAGE"> 
+						<text editable="false" cssClass="relatedRecords" id="SGZArbo.Section.Two.TechReportView_DETAILS__groupitem_2_ms_interference00" label="Selecione o tipo de dano na raiz"/>
+					</groupitem>
+					
+					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_DIAGNOSIS_DAMAGE">
+						<text editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_5_ms_fungi01_DIAGNOSIS_DAMAGE" resourceAttribute="rptms_fungi01" label="Fungos" lookup="SGZArbo.MS_FUNGILookup" lookupAttribute="rptms_fungi01"/>
+					</groupitem>
+					
+					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_3_DIAGNOSIS_DAMAGE">
+						<text editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_6_ms_termite01_DIAGNOSIS_DAMAGE" resourceAttribute="rptms_termite01" label="Cupim da Raiz" lookup="SGZArbo.MS_TERMITELookup01" lookupAttribute="rptms_termite01"/>	 
+					</groupitem>
+					
+					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_4_DIAGNOSIS_DAMAGE">
+						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_mechinjury01_DIAGNOSIS_DAMAGE" resourceAttribute="rptms_mechinjury01" label="Injúria Mecânica?"/>
+					</groupitem>	
+					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_5_DIAGNOSIS_DAMAGE">
+						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_coilfolded_DIAGNOSIS_DAMAGE" resourceAttribute="rptms_coilfolded" label="Dobrada/Enovelada?"/>
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_6_DIAGNOSIS_DAMAGE">
+						
+						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_rptms_exposed_DIAGNOSIS_DAMAGE" resourceAttribute="rptms_exposed" label="Exposto?"/>
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_7_DIAGNOSIS_DAMAGE">
+						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_drills01_DIAGNOSIS_DAMAGE" resourceAttribute="rptms_drills01" label="Brocas?"/>
+					</groupitem>	
+					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_8_DIAGNOSIS_DAMAGE">
+						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_cropped_DIAGNOSIS_DAMAGE" resourceAttribute="rptms_cropped" label="Cortada?"/>
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Two.TechReportView_DETAILS_9_DIAGNOSIS_DAMAGE">
+						<checkbox editable="true" id="SGZArbo.Section.Two.TechReportView_groupitem_2_ms_ant01_DIAGNOSIS_DAMAGE" resourceAttribute="rptms_ant01" label="Formiga Carpinteira?"/>
+					</groupitem>
+				</group>
+	
+			</container>
+			
+			<footer id="SGZArbo.Section.One.TechReportView_DETAILS_footer_DIAGNOSIS_DAMAGE">
+				<button id="SGZArbo.Section.One.TechReportView_DETAILS_Cancel_button_DIAGNOSIS_DAMAGE" label="Cancel">
+					<eventHandlers id="SGZArbo.Section.One.TechReportView_DETAILS_Cancel_button_eventHandlers_DIAGNOSIS_DAMAGE">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.TechReportView_DETAILS_Cancel_button_eventHandlers_click_cancel_DIAGNOSIS_DAMAGE" method="commitTechReportViewSec01DiagnosisNo"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.One.TechReportView_DETAILS_Create_button_DIAGNOSIS_DAMAGE" label="Done">
+					<eventHandlers id="SGZArbo.Section.One.TechReportView_DETAILS_Create_button_eventHandlers_DIAGNOSIS_DAMAGE">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One.TechReportView_DETAILS_Commit_button_eventHandlers_click_commit_DIAGNOSIS_DAMAGE" method="commitTechReportViewSec02"/>
+					</eventHandlers>
+				</button>
+			</footer>
+		</view>
 
 		
 		
@@ -1022,12 +1138,15 @@
 			<footer id="SGZArbo.Section.Three.TechReportView_footer">
 				<button id="SGZArbo.Section.Three.TechReportView_Cancel_button" label="Não">
 					<eventHandlers id="SGZArbo.Section.Three.TechReportView_Cancel_button_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Three.TechReportView_Cancel_button_eventHandlers_click_cancel" method="discardView"/>
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Three.TechReportView_Cancel_button_eventHandlers_click_cancel" method="commitTechReportViewSec03No"/>
 					</eventHandlers>
 				</button>
 				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Three.TechReportView_Create_button" label="Sim" transitionTo="SGZArbo.Section.Three.TechReportView_DETAILS">
 				</button>
 			</footer>
+			<eventHandlers id="SGZArbo.Section.One.TechReportView_DETAILS_Create_button_Back003">
+				<eventHandler id="SGZArbo.AssetDetailView.eventHandlers.back.eventHandlerBack003" event="back" class="custom.handlers.MSAssetDetailHandler" method="backSpecLaudo" />
+			</eventHandlers>
 		</view>
 		<!-- DETALHES LAUDO TECNICO SESSÃO 03 -->
 			<view id="SGZArbo.Section.Three.TechReportView_DETAILS" label="Selecione o Tipo de Dano">
@@ -1052,11 +1171,11 @@
 						<text editable="true" id="SGZArbo.Section.Three.TechReportView_DETAILS_groupitem_6_ms_termite02" resourceAttribute="rptms_termite02" label="Cupim" lookup="SGZArbo.MS_TERMITELookup02" lookupAttribute="rptms_termite02"/>
 					</groupitem>
 					<groupitem id="SGZArbo.Section.Three.TechReportView_DETAILS_1"> 
-						<text editable="true" id="SGZArbo.Section.Three.TechReportView_DETAILS_groupitem_6_ms_hollow01" resourceAttribute="rptms_hollow01" label="Oco (%)" enableNumericKeyboard="true"/>
+						<text editable="true" id="SGZArbo.Section.Three.TechReportView_DETAILS_groupitem_6_ms_hollow01" resourceAttribute="rptms_hollow01" label="Fungos-Oco (%)" enableNumericKeyboard="true"/>
 					
 					</groupitem>
 					<groupitem id="SGZArbo.Section.Three.TechReportView_DETAILS_2"> 
-						<text editable="true" id="SGZArbo.Section.Three.TechReportView_DETAILS_groupitem_6_ms_hollow02" resourceAttribute="rptms_hollow02" label="Oco (%)" enableNumericKeyboard="true"/>	 
+						<text editable="true" id="SGZArbo.Section.Three.TechReportView_DETAILS_groupitem_6_ms_hollow02" resourceAttribute="rptms_hollow02" label="Cupim-Oco (%)" enableNumericKeyboard="true"/>	 
 					
 					</groupitem>
 					<groupitem id="SGZArbo.Section.Three.TechReportView_DETAILS_3"> 
@@ -1117,7 +1236,7 @@
 			<footer id="SGZArbo.Section.Four.TechReportView_footer">
 				<button id="SGZArbo.Section.Four.TechReportView_Cancel_button" label="Não">
 					<eventHandlers id="SGZArbo.Section.Four.TechReportView_Cancel_button_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Four.TechReportView_Cancel_button_eventHandlers_click_cancel" method="discardView"/>
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Four.TechReportView_Cancel_button_eventHandlers_click_cancel" method="commitTechReportViewSec04No"/>
 					</eventHandlers>
 				</button>
 				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Four.TechReportView_Create_button" label="Sim" transitionTo="SGZArbo.Section.Four.TechReportView_DETAILS">
@@ -1153,11 +1272,11 @@
 					</groupitem>
 					<groupitem id="SGZArbo.Section.Four.TechReportView_DETAILS_3"> 
 				
-						<text editable="true" id="SGZArbo.Section.Four.TechReportView_DETAILS_groupitem_6_ms_hollow03" resourceAttribute="rptms_hollow03" label="Oco (%)" enableNumericKeyboard="true"/>
+						<text editable="true" id="SGZArbo.Section.Four.TechReportView_DETAILS_groupitem_6_ms_hollow03" resourceAttribute="rptms_hollow03" label="Fungos-Oco (%)" enableNumericKeyboard="true"/>
 					
 					</groupitem>
 					<groupitem id="SGZArbo.Section.Four.TechReportView_DETAILS_4"> 
-						<text editable="true" id="SGZArbo.Section.Four.TechReportView_DETAILS_groupitem_6_ms_hollow04" resourceAttribute="rptms_hollow04" label="Oco (%)" enableNumericKeyboard="true"/>	
+						<text editable="true" id="SGZArbo.Section.Four.TechReportView_DETAILS_groupitem_6_ms_hollow04" resourceAttribute="rptms_hollow04" label="Cupim-Oco (%)" enableNumericKeyboard="true"/>	
 					</groupitem>
 					<groupitem id="SGZArbo.Section.Four.TechReportView_DETAILS_5"> 
 						<text editable="true" id="SGZArbo.Section.Four.TechReportView_DETAILS_groupitem_6_ms_dry" resourceAttribute="rptms_dry" label="Seco (%)" enableNumericKeyboard="true"/>	 
@@ -1200,10 +1319,8 @@
 			</footer>
 		</view>
 	
-		<!-- ESPECIFICAÇÕES LAUDO TECNICO SESSÃO 05 -->
-		
-		
-		<view id="SGZArbo.Section.Five.TechReportView_INTERFERENCE" label="Copa">
+		<!-- ESPECIFICAÇÕES LAUDO TECNICO SESSÃO 05 - Criado AMANDA  -->
+		<view id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_OBS_FENOLOGICA" label="Observações Fenológicas">
 		     <requiredResources id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_requiredResource">
 				<requiredResource id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_asset" name="asset">
 					<requiredAttribute id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_msarbo" name="MSArboRpt"/>
@@ -1213,38 +1330,119 @@
 			<container id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_container_1" resource="asset" attribute="MSArboRpt">
 				<group id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_group_1">
 					<groupitem id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_1"> 
-
 						<checkbox id="SGZArbo.Section.Five.TechReportView_groupitem_10_rptms_sheets" resourceAttribute="rptms_sheets" label="Folhas?"/>	 
-						
-
-						<checkbox  id="SGZArbo.Section.Five.TechReportView_groupitem_20_rptms_flower" resourceAttribute="rptms_flower" label="Flor?"/>	 
-
-						
-						<checkbox  id="SGZArbo.Section.Five.TechReportView_groupitem_30_rptms_fruits" resourceAttribute="rptms_fruits" label="Frutos?"/>	 
-						
-
-					
-						<text editable="false" cssClass="relatedRecords" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_groupitem_10_ms_fruits" label="Possui Interferência na Copa?" />	 
-						
 					</groupitem>
+					<groupitem id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_2"> 
+						<checkbox  id="SGZArbo.Section.Five.TechReportView_groupitem_20_rptms_flower" resourceAttribute="rptms_flower" label="Flor?"/>	 
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_3"> 
+						<checkbox  id="SGZArbo.Section.Five.TechReportView_groupitem_30_rptms_fruits" resourceAttribute="rptms_fruits" label="Frutos?"/>	 
+						<!--<text editable="false" cssClass="relatedRecords" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_groupitem_10_ms_fruits" label="Possui Interferência na Copa?" />	 -->
+					</groupitem>
+					<!--<text editable="false" cssClass="relatedRecords" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_groupitem_10_ms_fruits" label="Possui Interferência na Copa?" />-->	 
 				</group>
 			</container>
 			
 			<footer id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_footer">
-				<button id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_Cancel_button" label="Não">
+				<button id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_Cancel_button" label="Cancel">
 					<eventHandlers id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_Cancel_button_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_Cancel_button_eventHandlers_click_cancel" method="commitTechReportViewSec"/>
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_Cancel_button_eventHandlers_click_cancel" method="commitTechReportViewSecCup"/>
 					</eventHandlers>
 				</button>
-				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_yES_button" label="Sim" transitionTo="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS">
+				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_yES_button" label="Done">
 					<eventHandlers id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_Cancel_bYEP_eventHandlers">
 						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_yES_button_eventHandlers_click_yES" method="commitTechReportViewNext"/>
 					</eventHandlers>
 				</button>
 			</footer>
 		</view>
+
+		<!-- ESPECIFICAÇÕES LAUDO TECNICO SESSÃO QUESTOES -->	
+		<view id="SGZArbo.Section.One.Cup" label="Copa">
+		     <requiredResources id="SGZArbo.Section.One.TechReportView_Cup_requiredResource">
+				<requiredResource id="SGZArbo.Section.One.TechReportView_Cup_asset" name="asset">
+					<requiredAttribute id="SGZArbo.Section.One.TechReportView_Cup__msarbo" name="MSArboRpt"/>
+				</requiredResource>
+			</requiredResources>
+			
+			<container id="SGZArbo.Section.One.TechReportView_container_Cup" resource="asset" attribute="MSArboRpt">
+			   <group id="TechReportContainer._Cup.group_0_Cup">
+					<!-- CHAMADA SESSAO QUESTAO OBSERVAÇÃO FENOLÓGICAS-->
+					<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_Cup_OBSERVAÇÃO_FENOLOGICAS" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Five.TechReportView_INTERFERENCE_OBS_FENOLOGICA">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_1_Cup" layoutInsertAt="item1" value="Observações Fenológicas"/>	
+					</groupitem>				
+					<!-- CHAMADA SESSAO QUESTAO INTERFERÊNCIA-->
+					<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_Cup_INTERFERENCIA" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.One._CUPTechReportView_CUP">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_3_Specifications_Cup" layoutInsertAt="item1" value="Interferência"/>
+					</groupitem>
+					<!-- CHAMADA SESSAO QUESTAO DIAGNÓSTICO-->
+					<groupitem id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_Cup_DIAGNOSTICO" layout="Item1Count1Button2" transitionTo="SGZArbo.Section.Three._CUPTechReportView">
+						<text cssClass="relatedRecords" editable="false" id="SGZArbo.AssetTechReportView.TechReportContainer2_groupitem_WorkExecution.SpecificationsView_3_Specifications_Cup_Diagnoss" layoutInsertAt="item1" value="Diagnóstico"/>
+					</groupitem>
+				</group>
+			</container>
+			<eventHandlers id="SGZArbo.Section.One.TechReportView_DETAILS_Create_button_Back004">
+				<eventHandler id="SGZArbo.AssetDetailView.eventHandlers.back.eventHandlerBack004" event="back" class="custom.handlers.MSAssetDetailHandler" method="backSpecLaudo" />
+			</eventHandlers>	
+		</view>
+
+		<view id="SGZArbo.Section.One._CUPTechReportView_CUP" label="Interferência">
+			<requiredResources id="SGZArbo.Section.One._CUPTechReportView_requiredResource">
+				<requiredResource id="SGZArbo.Section.One._CUPTechReportView_asset" name="asset">
+					<requiredAttribute id="SGZArbo.Section.One._CUPTechReportView_msarbo" name="MSArboRpt"/>
+				</requiredResource>
+			</requiredResources>
+			
+			<container id="SGZArbo.Section.One._CUPTechReportView_container_0" resource="asset" attribute="MSArboRpt">
+				<group id="SGZArbo.Section.One._CUPTechReportView_group_0">
+					<groupitem id="SGZArbo.Section.One._CUPTechReportView_0"> 
+						
+						<text editable="false" cssClass="relatedRecords" id="SGZArbo.Section.One._CUPTechReportView_groupitem_2_ms_interference01" label="Existe interferência na raiz?"/>
+
+					</groupitem>
+				</group>
+			</container>
+			
+			<footer id="SGZArbo.Section.One._CUPTechReportView_footer">
+				<button id="SGZArbo.Section.One._CUPTechReportView_Cancel_button" label="Não">
+					<eventHandlers id="SGZArbo.Section.One._CUPTechReportView_Cancel_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.One._CUPTechReportView_Cancel_button_eventHandlers_click_cancel" method="commitTechReportViewSec05No"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.One._CUPTechReportView_Sim_button" label="Sim" transitionTo="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS">
+				</button>
+			</footer>
+		</view>
+
+		<view id="SGZArbo.Section.Three._CUPTechReportView" label="Diagnóstico">
+			<requiredResources id="SGZArbo.Section.Three._CUPTechReportView_requiredResource">
+				<requiredResource id="SGZArbo.Section.Three._CUPTechReportView_asset" name="asset">
+					<requiredAttribute id="SGZArbo.Section.Three._CUPTechReportView_msarbo" name="MSArboRpt"/>
+				</requiredResource>
+			</requiredResources>
 		
-		<view id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS" label="Copa">
+			<container id="SGZArbo.Section.Three._CUPTechReportView_container_0" resource="asset" attribute="MSArboRpt">
+				<group id="SGZArbo.Section.Three._CUPTechReportView_group_0">
+					<groupitem id="SGZArbo.Section.Three._CUPTechReportView_0"> 
+						
+						<text editable="false" cssClass="relatedRecords" id="SGZArbo.Section.Three._CUPTechReportView_groupitem_2_ms_apparentdamage04" label="Existe Dano Aparente no Colo da Àrvore?"/>
+
+					</groupitem>
+				</group>
+			</container>
+			
+			<footer id="SGZArbo.Section.Three._CUPTechReportView_footer">
+				<button id="SGZArbo.Section.Three._CUPTechReportView_Cancel_button" label="Não">
+					<eventHandlers id="SGZArbo.Section.Three._CUPTechReportView_Cancel_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Three._CUPTechReportView_Cancel_button_eventHandlers_click_cancel" method="commitTechReportViewSec06No"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Three._CUPTechReportView_Create_button" label="Sim" transitionTo="SGZArbo.Section.Five.TechReportView_CUP_DIAGNOSS_DETAILS">
+				</button>
+			</footer>
+		</view>
+		
+		<view id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS" label="Interferência">
 		     <requiredResources id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_requiredResource">
 				<requiredResource id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_asset" name="asset">
 					<requiredAttribute id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_msarbo" name="MSArboRpt"/>
@@ -1298,64 +1496,7 @@
 					
 						<checkbox editable="true" id="SGZArbo.Section.Five.TechReportView_groupitem_2_ms_tvehicle" resourceAttribute="rptms_tvehicle" label="Trânsito de veículos/Pedestres?"/>	 
 						
-					</groupitem>
-					
-					
-					
-					
-					
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_0"> 
-						
-						<text editable="true" cssClass="relatedRecords" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_apparentdamage02" label="Selecione o tipo de dano aparente:"/>
-					
-					</groupitem>
-					
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_1"> 
-						<text editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_5_ms_fungi04" resourceAttribute="rptms_fungi04" label="Fungos" lookup="SGZArbo.MS_FUNGILookup04" lookupAttribute="rptms_fungi04"/>
-					
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_2"> 
-						<text editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_6_ms_termite04" resourceAttribute="rptms_termite04" label="Cupim" lookup="SGZArbo.MS_TERMITELookup04" lookupAttribute="rptms_termite04"/>
-				
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_3"> 
-						<text editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_6_ms_uncup" resourceAttribute="rptms_uncup" label="Copa Desequilibrada" lookup="SGZArbo.msuncupLookup" lookupAttribute="rptms_uncup"/>
-					
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_4"> 
-						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_mechinjury04" resourceAttribute="rptms_mechinjury04" label="Injúria Mecânica?"/>
-					
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_5"> 			
-						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_virus" resourceAttribute="rptms_virus" label="Bacterioses/Viroses?"/>
-					
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_6"> 
-						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_inadequatepruning" resourceAttribute="rptms_inadequatepruning" label="Poda Inadequada?"/>
-					
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_7"> 
-						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_senescence" resourceAttribute="rptms_senescence" label="Senescência?"/>
-					
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_8"> 
-						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_parasitesplants" resourceAttribute="rptms_parasitesplants" label="Plantas Parasitas?"/>
-					
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_9"> 
-						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_drills03" resourceAttribute="rptms_drills04" label="Brocas?"/>
-					
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_10"> 
-						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_badformation" resourceAttribute="rptms_badformation" label="Má-formação?"/>
-					
-					</groupitem>
-					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_11"> 
-						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_ant04" resourceAttribute="rptms_ant04" label="Formiga Carpinteira?"/>
-
-					</groupitem>
-					
-					
+					</groupitem>		
 				</group>
 			</container>
 			
@@ -1365,8 +1506,8 @@
 						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Cancel_button_eventHandlers_click_cancel" method="discardView"/>
 					</eventHandlers>
 				</button>
-				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Create_button" label="Done" transitionTo="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS">
-					
+				<!--<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Create_button" label="Done" transitionTo="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS">-->
+				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Create_button" label="Done">					
 					<eventHandlers id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Done_button_eventHandlers">
 						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Done_button_eventHandlers_click_cancel" method="commitTechReportViewSec05"/>
 					</eventHandlers>
@@ -1376,7 +1517,85 @@
 		</view>
 		
 		
-		
+		<view id="SGZArbo.Section.Five.TechReportView_CUP_DIAGNOSS_DETAILS" label="Copa">
+		     <requiredResources id="SGZArbo.Section.Five.TechReportView_cup_diagnoss_DETAILS_requiredResource">
+				<requiredResource id="SGZArbo.Section.Five.TechReportView_cup_diagnoss_DETAILS_asset" name="asset">
+					<requiredAttribute id="SGZArbo.Section.Five.TechReportView_cup_diagnoss_DETAILS_msarbo" name="MSArboRpt"/>
+				</requiredResource>
+			</requiredResources>
+			
+			<container id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_container_1_cup_diagnoss" resource="asset" attribute="MSArboRpt">
+				<group id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_group_1_cup_diagnoss">					
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_0_cup_diagnoss"> 
+						
+						<text editable="true" cssClass="relatedRecords" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_apparentdamage02_cup_diagnoss" label="Selecione o tipo de dano aparente:"/>
+					
+					</groupitem>
+					
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_1_cup_diagnoss"> 
+						<text editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_5_ms_fungi04_cup_diagnoss" resourceAttribute="rptms_fungi04" label="Fungos" lookup="SGZArbo.MS_FUNGILookup04" lookupAttribute="rptms_fungi04"/>
+					
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_2_cup_diagnoss"> 
+						<text editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_6_ms_termite04_cup_diagnoss" resourceAttribute="rptms_termite04" label="Cupim" lookup="SGZArbo.MS_TERMITELookup04" lookupAttribute="rptms_termite04"/>
+				
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_3_cup_diagnoss"> 
+						<text editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_6_ms_uncup_cup_diagnoss" resourceAttribute="rptms_uncup" label="Copa Desequilibrada" lookup="SGZArbo.msuncupLookup" lookupAttribute="rptms_uncup"/>
+					
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_4_cup_diagnoss"> 
+						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_mechinjury04_cup_diagnoss" resourceAttribute="rptms_mechinjury04" label="Injúria Mecânica?"/>
+					
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_5_cup_diagnoss"> 			
+						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_virus_cup_diagnoss" resourceAttribute="rptms_virus" label="Bacterioses/Viroses?"/>
+					
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_6_cup_diagnoss"> 
+						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_inadequatepruning_cup_diagnoss" resourceAttribute="rptms_inadequatepruning" label="Poda Inadequada?"/>
+					
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_7_cup_diagnoss"> 
+						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_senescence_cup_diagnoss" resourceAttribute="rptms_senescence" label="Senescência?"/>
+					
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_8_cup_diagnoss"> 
+						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_parasitesplants_cup_diagnoss" resourceAttribute="rptms_parasitesplants" label="Plantas Parasitas?"/>
+					
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_9_cup_diagnoss"> 
+						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_drills03_cup_diagnoss" resourceAttribute="rptms_drills04" label="Brocas?"/>
+					
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_10_cup_diagnoss"> 
+						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_badformation_cup_diagnoss" resourceAttribute="rptms_badformation" label="Má-formação?"/>
+					
+					</groupitem>
+					<groupitem id="SGZArbo.Section.Six.TechReportView_DETAILS_11_cup_diagnoss"> 
+						<checkbox editable="true" id="SGZArbo.Section.Six.TechReportView_DETAILS_groupitem_2_ms_ant04_cup_diagnoss" resourceAttribute="rptms_ant04" label="Formiga Carpinteira?"/>
+
+					</groupitem>
+					
+					
+				</group>
+			</container>
+			
+			<footer id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_footer_cup_diagnoss">
+				<button id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Cancel_button_cup_diagnoss" label="Cancel">
+					<eventHandlers id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Cancel_button_eventHandlers_cup_diagnoss">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Cancel_button_eventHandlers_click_cancel_DIAGNOSS_DETAILS" method="discardView"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Create_button_cup_diagnoss" label="Done">
+					
+					<eventHandlers id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Done_button_eventHandlers_cup_diagnoss">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Five.TechReportView_INTERFERENCE_DETAILS_Done_button_eventHandlers_click_cancel_cup_diagnoss" method="commitTechReportViewSec06"/>
+					</eventHandlers>
+				
+				</button>
+			</footer>
+		</view>		
 		
 		
 		
@@ -1391,40 +1610,27 @@
 			<container id="SGZArbo.Section.Seven.TechReportView_container_0" resource="asset" attribute="MSArboRpt">
 				<group id="SGZArbo.Section.Seven.TechReportView_group_0">
 					<groupitem id="SGZArbo.Section.Seven.TechReportView_0"> 
-						
+
+					   <text editable="false" id="SGZArbo.Section.Seven.TechReportView_groupitem_5_1_3_rptms_PLANTIO_RECOMENDAÇÃO" label="RECOMENDAÇÃO"/>
 						
 						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_todonothing" resourceAttribute="rptms_todonothing" label="Nada a fazer?"/>
-						
+						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_ms_monitoring" resourceAttribute="rptms_monitoring" label="Monitoramento?"/>
+						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_sitesuitability" resourceAttribute="rptms_sitesuitability" label="Adequação do Canteiro?"/>
 						<text editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_5_rptms_prioritylevel" resourceAttribute="rptms_prioritylevel" label="Nível de Prioridade" lookup="SGZArbo.msprioritylevelLookup" lookupAttribute="rptms_prioritylevel"/>
 						
 						<text editable="false" id="SGZArbo.Section.Seven.TechReportView_groupitem_5_1_rptms_postage" label="PODA"/>
-						
 						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_cleaning" resourceAttribute="rptms_cleaning" label="Limpeza?"/>
-						
 						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_corrective" resourceAttribute="rptms_corrective" label="Corretiva?"/>
-						
 						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_lifting" resourceAttribute="rptms_lifting" label="Levantamento?"/>
-						
 						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_driving" resourceAttribute="rptms_driving" label="Condução?"/>
-						
-						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_adequacy" resourceAttribute="rptms_adequacy" label="Adequação?"/>
-						
-						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_sitesuitability" resourceAttribute="rptms_sitesuitability" label="Adequação do Canteiro?"/>
-						
+						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_adequacy" resourceAttribute="rptms_adequacy" label="Adequação?"/>						
 						
 						<text editable="false" id="SGZArbo.Section.Seven.TechReportView_groupitem_5_1_2_rptms_REMOCAO" label="REMOÇÃO"/>
-						
 						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_suppression" resourceAttribute="rptms_suppression" label="Supressão?"/>
-						
 						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_tranplante" resourceAttribute="rptms_tranplante" label="Transplante?"/>
-						
 						<text editable="false" id="SGZArbo.Section.Seven.TechReportView_groupitem_5_1_3_rptms_PLANTIO" label="PLANTIO"/>
-						
 						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_rptms_planting01" resourceAttribute="rptms_planting01" label="Plantio?"/>
-
 						<text editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_5_rptms_postage" resourceAttribute="rptms_postage" label="Porte" lookup="SGZArbo.mspostageLookup" lookupAttribute="rptms_postage"/>
-
-						<checkbox editable="true" id="SGZArbo.Section.Seven.TechReportView_groupitem_2_ms_monitoring" resourceAttribute="rptms_monitoring" label="Monitoramento?"/>
 						
 					</groupitem>
 				</group>
@@ -1438,7 +1644,7 @@
 				</button>
 				<button cssClass="mblPrimaryButton" id="SGZArbo.Section.Seven.TechReportView_Create_button" label="Done" primary="true" resourceAttribute="rptms_arboid">
 					<eventHandlers id="SGZArbo.Section.Seven.TechReportView_Create_button_eventHandlers">
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Seven.TechReportView_Commit_button_eventHandlers_click_commit" method="commitTechReportViewSec"/>
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.Section.Seven.TechReportView_Commit_button_eventHandlers_click_commit" method="commitTechReportViewSecRec"/>
 					</eventHandlers>
 				</button>
 			</footer>
@@ -1480,6 +1686,23 @@
 		
        
 		<!-- Asset Status lookup -->
+		<lookup id="SGZArbo.targetAttributeLookup" label="Alvo" >
+			<requiredResources id="SGZArbo.targetAttributeLookup_requiredResources">
+				<requiredResource id="SGZArbo.targetAttributeLookup_assetAttribute" name="mstarget"/>
+			</requiredResources>
+
+			<list id="SGZArbo.targetAttributeLookup_assetTarget_list" resource="mstarget" >
+				<listItemTemplate id="SGZArbo.targetAttributeLookup_assetTarget_listItemTemplate_Item1Desc1" layout="Item1Desc1" >
+					<listtext cssClass="bold textappearance-medium" id="SGZArbo.assetTargetLookup_targetAttribute_Item1Desc1_targetid" layoutInsertAt="item1" resourceAttribute="ms_targetid"/> 
+					<listtext cssClass="bold textappearance-medium" id="SGZArbo.assetTargetLookup_targetAttribute_Item1Desc1_target" layoutInsertAt="desc1" resourceAttribute="ms_target"/>
+					<!-- <listtext cssClass="bold textappearance-medium" id="SGZArbo.assetTargetLookup_targetAttribute_Item1Desc1_description" layoutInsertAt="desc1" resourceAttribute="ms_description"/> -->
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="SGZArbo.targetAttributeLookup_returnAttributes">
+				<returnAttribute id="SGZArbo.targetAttributeLookup_target" sourceAttribute="ms_target" targetAttribute="ms_target"/>
+			</returnAttributes>
+		</lookup>
+		
 		<lookup filterClass="application.handlers.StatusChangeHandler" filterMethod="filterAssetStatus" id="SGZArbo.statusLookup" label="Asset Status" resource="domainAssetStatus">
 			<requiredResources id="SGZArbo.statusLookup_requiredResources">
 				<requiredResource id="SGZArbo.statusLookup_domainassetstatus" name="domainAssetStatus"/>
@@ -1495,6 +1718,25 @@
 				<returnAttribute id="SGZArbo.statusLookup_value_status" sourceAttribute="value" targetAttribute="status"/>
 				<returnAttribute id="SGZArbo.statusLookup_description_statusdesc" sourceAttribute="description" targetAttribute="statusdesc"/>
 				<returnAttribute id="SGZArbo.statusLookup_maxvalue_maxvalue" sourceAttribute="maxvalue" targetAttribute="maxvalue"/>
+			</returnAttributes>
+		</lookup>
+
+		<!-- Amanda - 17/03/23 - New Asset Status lookup - Lookup filtrado -->
+		<lookup filterClass="custom.handlers.MSAssetDetailHandler" filterMethod="filterStatus" id="SGZArbo.statusLookup_02" label="Asset Status" resource="domainAssetStatus">
+			<requiredResources id="SGZArbo.statusLookup_02_requiredResources">
+				<requiredResource id="SGZArbo.statusLookup_02_domainassetstatus" name="domainAssetStatus"/>
+			</requiredResources>
+
+			<list id="SGZArbo.statusLookup_02_domainassetstatus_list" resource="domainAssetStatus">
+				<listItemTemplate id="SGZArbo.statusLookup_02_domainassetstatus_listItemTemplate_Item1Desc1" layout="Item1Desc1">
+					<listtext cssClass="bold textappearance-medium" id="SGZArbo.statusLookup_02_domainassetstatus_Item1Desc1_value" layoutInsertAt="item1" resourceAttribute="value"/>
+					<listtext cssClass="bold textappearance-medium" id="SGZArbo.statusLookup_02_domainassetstatus_Item1Desc1_description" layoutInsertAt="desc1" resourceAttribute="description"/>
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="SGZArbo.statusLookup_02_returnAttributes">
+				<returnAttribute id="SGZArbo.statusLookup_02_value_status" sourceAttribute="value" targetAttribute="status"/>
+				<returnAttribute id="SGZArbo.statusLookup_02_description_statusdesc" sourceAttribute="description" targetAttribute="statusdesc"/>
+				<returnAttribute id="SGZArbo.statusLookup_02_maxvalue_maxvalue" sourceAttribute="maxvalue" targetAttribute="maxvalue"/>
 			</returnAttributes>
 		</lookup>
 
@@ -1516,7 +1758,6 @@
 		</lookup>
 
 		
-
 		<!-- Shift Lookup -->
 		<lookup id="SGZArbo.shiftLookup" label="Shifts" resource="additionalshift">
 			<requiredResources id="SGZArbo.shiftLookup_requiredResources">
@@ -1651,22 +1892,56 @@
 			</container>
 			
 			<footer id="SGZArbo.defineDeadTreeView_footer">
-				<button id="SGZArbo.defineDeadTreeView_Yes_button" label="Sim">
-					<eventHandlers id="SGZArbo.defineDeadTreeViewYes_button_eventHandlers">
-						
-						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.defineDeadTreeDialog_Yes_button_eventHandlers" method="setDeadTreeY"/>
-
-					</eventHandlers>
-				</button>
-				<button cssClass="mblPrimaryButton" id="SGZArbo.defineDeadTreeDialog_No.SpecificationsView_Create_button" label="Não">
+				<button id="SGZArbo.defineDeadTreeDialog_No.SpecificationsView_Create_button" label="Não">
 					<eventHandlers id="SGZArbo.defineDeadTreeDialog_No_Create_button_eventHandlers">
 						
 						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.defineDeadTreeDialog_No_button_eventHandlers" method="setDeadTreeN"/>
 
 					</eventHandlers>
 				</button>
+				<!--<button cssClass="mblPrimaryButton" id="SGZArbo.defineDeadTreeView_Yes_button" label="Sim" transitionTo="SGZArbo.select.motivo.defineDeadReason"/>-->
+				<button id="SGZArbo.defineDeadTreeDialog_No.SpecificationsView_Create_buttonYes" label="Sim">
+					<eventHandlers id="SGZArbo.defineDeadTreeDialog_No_Create_button_eventHandlerSim">
+						
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.defineDeadTreeDialog_YES_button_eventHandlers" method="setDeadTree"/>
+
+					</eventHandlers>
+				</button>
 			</footer>
 		</view>
+
+		<view id="SGZArbo.select.motivo.defineDeadReason" resource="asset" label="Motivo da Baixa">
+			<requiredResources id="SGZArbo.select.motivo.defineDeadTreeView_requiredResources">
+				<requiredResource id="SGZArbo.select.motivo.defineDeadTreeView_workOrder" name="asset">
+					<requiredAttribute id="SGZArbo.Section.Three.SpecificationsView_msarbo_motivo_00" name="MSArbo"/>
+				</requiredResource>	
+				<requiredResource id="SGZArbo.EditStatusView_Change_Status_StatusChangeResource_change_motivo.defineDeadReasonstatus" name="statusChangeResource"/>
+			</requiredResources>
+		
+			
+			<container id="SGZArbo.select.motivo.defineDeadReason_Change_Status_section" attribute="MSArbo">
+				<group id="SGZArbo.select.motivo.defineDeadReason_Referencia_motivo_status_change">
+					<groupitem id="SGZArbo.select.motivo.defineDeadReason_ms_arboreason_motivo">
+						<text editable="true" id="SGZArbo.select.motivo.defineDeadReason_asset_groupitem_SGZArbo.ms_arboreason_motivo" label="Motivo da Baixa"  resourceAttribute="ms_arboreason" lookup="SGZArbo.motivosbaixaLookup" lookupAttribute="ms_arboreason"/>
+						<text labelCss="loginLink" id="SGZArbo.select.motivo.defineDeadReasonwarning_reason_motivo" label="Informar um Motivo de Baixa resultará na Inativação deste Ativo Arbóreo. Deseja manter esta alteração?"/>
+					</groupitem>
+				</group>			
+			</container>
+			
+			<footer id="SGZArbo.select.motivo.defineDeadTreeView_footer">
+				<button  id="SGZArbo.select.motivo.defineDeadTreeDialog_No.SpecificationsView_Create_button" label="Cancel"  resource="asset">
+					<eventHandlers id="SGZArbo.select.motivo.defineDeadTreeDialog_No_Create_button_eventHandlers">
+						<eventHandler class="application.handlers.StatusChangeHandler" event="click" id="SGZArbo.select.motivo.EditStatusView_Cancel_button_eventHandlers_click_discardStatusChange" method="discardStatusChange"/>
+					</eventHandlers>
+				</button>
+				<button cssClass="mblPrimaryButton" id="SGZArbo.select.motivo.defineDeadTreeView_Yes_button" label="Save">
+					<eventHandlers id="SGZArbo.select.motivo.defineDeadTreeViewYes_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSAssetDetailHandler" event="click" id="SGZArbo.select.motivo.defineDeadTreeDialog_Yes_button_eventHandlers" method="setDeadTreeY"/>
+					</eventHandlers>
+				</button>
+			</footer>
+		</view>
+
 		
 		<dialog id="WorkExecution.DownloadAttachmentLocal" resource="PlatformProgressResource">
 			<container cssClass="mblSimpleDialogText" id="WorkExecution.DownloadAttachmentLocal_container_0">
@@ -1700,8 +1975,7 @@
 			</returnAttributes>
 		</lookup>	
 		
-		
-		
+
 		
 		<!-- CLAUDIO MS_LOCTREE Domain Lookup -->
 		<lookup id="SGZArbo.motivosbaixaLookup" label="Motivo da Baixa" resource="motivosbaixa">			
@@ -1720,7 +1994,7 @@
 		</lookup>
 
 		
-		<!-- CLAUDIO ms_typebuild Domain Lookup -->
+		<!-- CLAUDIO typebuild Domain Lookup -->
 		<lookup id="SGZArbo.TypebuildLookup" label="Tipo de Edificação" resource="mstypebuild">			
 			<requiredResources id="SGZArbo.TypebuildLookup_requiredResources">
 				<requiredResource id="SGZArbo.TypebuildLookup_Typebuild" name="mstypebuild"/>
@@ -2087,9 +2361,10 @@
 	<data id="data">	
     
 	<!--Asset resource-->
-		<resource class="application.business.AssetObject" defaultOrderBy="assetnum asc" describedBy="http://open-services.net/ns/asset#ms_SgzArbo" hasManagedQuery="true" id="assetResource" name="asset" pageSize="40" providedBy="/oslc/sp/AssetManagement">
+		<resource class="application.business.AssetObject" defaultOrderBy="assetnum asc" describedBy="http://open-services.net/ns/asset#ms_SgzArbo" hasManagedQuery="true" id="assetResource" name="asset" pageSize="30" providedBy="/oslc/sp/AssetManagement">
 			<attributes id="asset_attributes">
 				<attribute describedByProperty="dcterms:identifier" id="asset_assetuid_dctermsidentifier" name="assetuid"/>
+				
 				<attribute describedByProperty="spi:assetid" id="asset_assetid_spiassetid" name="assetid"/>
 				<attribute describedByProperty="spi:orgid" id="asset_orgid_spiorgid" index="true" name="orgid"/>
 				<attribute describedByProperty="spi:siteid" id="asset_siteid_spisiteid" index="true" name="siteid"/>
@@ -2099,12 +2374,17 @@
 				<attribute describedByProperty="spi:ms_rptversion" id="asset_ms_rptversion" name="ms_rptversion"/>
 				<attribute describedByProperty="spi:ms_arboreason" id="asset_ms_ms_arboreason" name="ms_arboreason"/>
 				<attribute describedByProperty="spi:ms_loctype" id="asset_ms_ms_loctype" name="ms_loctype"/>
-				<!--
+
 				<attribute describedByProperty="spi:person{spi:personid}" id="person_personid" name="personid"/>
 				<attribute describedByProperty="spi:person{spi:ms_curlatitudey}" id="person_ms_curlatitudey" name="curlatitudey"/>
 				<attribute describedByProperty="spi:person{spi:ms_curlongitudex}" id="person_ms_curlongitudex" name="curlongitudex"/>
-				-->
+				<attribute describedByProperty="spi:person{spi:ms_crea}" id="person_ms_crea" name="crea"/>
+				<attribute describedByProperty="spi:person{spi:ms_crbio}" id="person_ms_crbio" name="crbio"/>
 
+				<attribute describedByProperty="spi:ms_roadasset" id="ms_roadasset" name="roadasset"/>
+				<attribute describedByProperty="spi:asset{spi:ms_roadsegment}" id="ms_roadsegment" name="roadsegment"/>
+				<attribute describedByProperty="spi:asset{spi:description}" id="description" name="road_description"/>
+				
 				
 				<!-- ATRIBUTOS SGZARBO -->
 				<attribute describedByProperty="spi:ms_addressline" id="asset_ms_addressline_spims_addressline" name="ms_addressline"/>
@@ -2122,8 +2402,9 @@
                 <!-- Attribute need for gps location on ASSET -->
                 <localAttribute dataType="boolean" id="serviceRequest_gpsLocation_boolean" name="gpsLocation"/>
 				
-				
 				<attribute describedByProperty="spi:status" id="asset_status_spistatus" index="true" name="status"/>
+				<attribute describedByProperty="spi:statusdate" id="asset_status_statusdate" name="statusdate"/>
+
 				<localAttribute dataType="string" id="asset_stausdesc_string" name="stausdesc"/>						
 				<attribute describedByProperty="spi:rolltoallchildren" id="asset_status_spirolltoallchildren" name="rolltoallchildren"/>
 				<attribute describedByProperty="spi:removefromactiveroutes" id="asset_status_spiremovefromactiveroutes" name="removefromactiveroutes"/>
@@ -2187,7 +2468,7 @@
 			<queryBases id="asset_queryBases">
 			    <!--<queryBase defaultForSearch="true" id="asset_queryBase_searchAllAssets" name="searchAllAssets" queryUri="/oslc/os/ms_oslcsgzarbo?savedQuery=Ativos_arboreos"/>
  	 			<queryBase id="asset_queryBase_getMyAssets" name="getMyAssets" queryUri="/oslc/os/ms_oslcsgzarbo?savedQuery=Ativos_arboreos"/>-->
- 	 			 <queryBase defaultForSearch="true" id="asset_queryBase_searchAllAssets" name="searchAllAssets" queryUri="/oslc/os/ms_oslcsgzarbo?savedQuery=Ativos_arboreos"/>
+ 	 			 <queryBase defaultForSearch="true" id="asset_queryBase_searchAllAssets" name="searchAllAssets" queryUri="/oslc/os/ms_oslcsgzarbo?savedQuery=MS_allTrees"/>
  	 			<queryBase id="asset_queryBase_getMyAssets" name="getMyAssets" queryUri="/oslc/os/ms_oslcsgzarbo?savedQuery=Ativos_arboreos"/>
 
 	 		</queryBases>			
@@ -2292,7 +2573,8 @@
 		<!--  RECURSO MS_ARBO	 -->
 		<resource id="MSArbo" name="MSArbo" >
 			<attributes id="MSArbo_attributes">
-
+				
+				<attribute describedByProperty="spi:ms_target" id="asset_ms_arbo_spims_arboms_target" name="ms_target" />
 				<attribute describedByProperty="spi:ms_angle" id="asset_ms_arbo_spims_arboms_angle" name="ms_angle" />
 				<attribute describedByProperty="spi:ms_arboid" id="asset_ms_arbo_spims_arboms_arboid" index="true" name="ms_arboid" />
 				<attribute describedByProperty="spi:ms_assetnum" id="asset_ms_arbo_spims_arboms_assetnum"  name="ms_assetnum" />
@@ -2315,6 +2597,7 @@
 				<attribute describedByProperty="spi:ms_perimetercolon" id="asset_ms_arbo_spims_arboms_perimetercolon"  name="ms_perimetercolon" />
 				<attribute describedByProperty="spi:ms_permeablearea" id="asset_ms_arbo_spims_arboms_permeablearea"  name="ms_permeablearea" />
 				<attribute describedByProperty="spi:ms_popularname" id="asset_ms_arbo_spims_arboms_popularname"  name="ms_popularname" />
+				<attribute describedByProperty="spi:ms_remarks" id="asset_ms_arbo_spims_arboms_ms_remarks"  name="ms_remarks" />
 				<attribute describedByProperty="spi:ms_retreat" id="asset_ms_arbo_spims_arboms_retreat"  name="ms_retreat" />
 				<attribute describedByProperty="spi:ms_ridewidth" id="asset_ms_arbo_spims_arboms_ridewidth"  name="ms_ridewidth" />
 				<attribute describedByProperty="spi:ms_scientific" id="asset_ms_arbo_spims_arboms_scientific"  name="ms_scientific" />
@@ -2324,10 +2607,20 @@
 				<attribute describedByProperty="spi:ms_treeheight" id="asset_ms_arbo_spims_arboms_treeheight"  name="ms_treeheight" />
 				<attribute describedByProperty="spi:ms_typebuild" id="asset_ms_arbo_spims_arboms_typebuild"  name="ms_typebuild" />
 				<attribute describedByProperty="spi:ms_width" id="asset_ms_arbo_spims_arboms_width"  name="ms_width" />
+				<localAttribute dataType="string" id="asset_ms_arbo_spims_arbo_np_targetdesc" name="np_targetdesc" persistent="true"/>		 
 			</attributes> 
 		</resource>
 		
-			
+		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#mstarget" id="mstarget" name="mstarget" pageSize="20" providedBy="/oslc/sp/SmarterPhysicalInfrastructure"> 
+			<attributes id="mstarget_attributes">
+				<attribute describedByProperty="spi:ms_description" id="mstarget_ms_description" name="ms_description"/>
+				<attribute describedByProperty="spi:ms_target" id="mstarget_ms_target" name="ms_target"/>
+				<attribute describedByProperty="dcterms:identifier" id="mstarget_ms_targetid" name="ms_targetid"/>
+			</attributes>
+			<queryBases id="mstarget_queryBases">
+ 	 			<queryBase id="mstarget_queryBase_gettarget" name="gettarget" queryUri="/oslc/os/ms_oslctarget"/>
+	 		</queryBases>									
+		</resource>
 
 		<!--  Asset Meters resource -->
 		<!-- <resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#AssetMeter" id="assetMeters" name="assetMeters" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">
@@ -2518,6 +2811,8 @@
 				<localAttribute dataType="string" id="searchAsset_statusdesc_string" name="status"/>
 				<localAttribute dataType="string" id="searchAsset_location_string" name="location"/>
 				<localAttribute dataType="string" id="searchAsset_priority_string" name="priority"/>
+				<localAttribute dataType="string" id="searchAsset_priority_ms_addressline" name="ms_addressline"/>
+				<localAttribute dataType="string" id="searchAsset_priority_ms_staddrnumber" name="ms_staddrnumber"/>
 			</attributes>
 			<whereClause id="searchAsset_whereClause"/>
 		</resource>	
@@ -2716,7 +3011,7 @@
 		</resource>
 		
 		<!-- Classstructure Resource -->
-		<resource additionalData="true" class="application.business.ClassStructureObject" describedBy="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure" id="classstructure" name="classstructure" pageSize="100" providedBy="/oslc/sp/WorkManagement">
+		<resource additionalData="true" class="application.business.ClassStructureObject" describedBy="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure" id="classstructure" isSystem="true" name="classstructure" pageSize="100" providedBy="/oslc/sp/WorkManagement">
 			<attributes id="classstructure_attributes">
 				<attribute describedByProperty="spi_wm:classstructureid" id="classstructure_classstructureid_spi_wmclassstructureid" index="true" key="1" name="classstructureid"/>
 				<attribute describedByProperty="spi_wm:description" id="classstructure_description_spi_wmdescription" name="description"/>

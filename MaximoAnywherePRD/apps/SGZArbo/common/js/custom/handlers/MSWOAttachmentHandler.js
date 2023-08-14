@@ -11,7 +11,6 @@
  *
  */
 
-/* Inicio alteração Amanda Chamado 80537 - ATIVOS ABOREOS - FAMILIA / NOME POPULAR  03/11/22 -->*/
 define("custom/handlers/MSWOAttachmentHandler", 
 	   [ "dojo/_base/declare",
 	     "dojo/_base/lang",

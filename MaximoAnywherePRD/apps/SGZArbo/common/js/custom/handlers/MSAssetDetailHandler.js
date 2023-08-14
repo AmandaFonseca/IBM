@@ -83,6 +83,10 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 				localStorage.setItem('check_especie_nao_identificada', classe);
 			}	
 		},
+
+		popularnameDomainFamily: function (eventContext) {
+			console.log(eventContext);
+		},
 		
 		control_final: function (eventContext) {
 			let asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo');
@@ -395,35 +399,45 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 
 				Logger.trace("Current GPS Position :: " + position.coords.longitude + " , " + position.coords.latitude );
 
-				var person = personSet.data[0];
-				Logger.error("position.coords.longitude " + position.coords.longitude);
-				Logger.error("position.coords.latitude " + position.coords.latitude);
-				localStorage.setItem("curlongitudex",position.coords.longitude);
-				localStorage.setItem("curlatitudey",position.coords.latitude);
-				
-				let nome;
+				//var person = personSet.data[0];
+
+				let person ;
 				try {
-					if (person.get('personid') == undefined || person.get('personid') == null) {
-						nome = UserManager.getCurrentUser();
+					if (personSet.getCurrentRecord()) {
+						person = personSet.getCurrentRecord();
+						Logger.error("position.coords.longitude " + position.coords.longitude);
+						Logger.error("position.coords.latitude " + position.coords.latitude);
+						localStorage.setItem("curlongitudex",position.coords.longitude);
+						localStorage.setItem("curlatitudey",position.coords.latitude);
+						
+						let nome;
+						try {
+							if (person.get('personid') == undefined || person.get('personid') == null) {
+								nome = UserManager.getCurrentUser();
+								person.set('personid',nome);
+								nome = person.get('personid');
+							}else{
+								nome = person.get('personid');
+							}
+						} catch (error) {
+							console.log(error);
+						}
+						let curlatitudey =localStorage.getItem("curlatitudey");
+						let curlongitudex =localStorage.getItem("curlongitudex");
+		
+						nome = nome.toLowerCase();
+						curlatitudey = parseFloat(curlatitudey);
+						curlongitudex = parseFloat(curlongitudex);
 						person.set('personid',nome);
-						nome = person.get('personid');
-					}else{
-						nome = person.get('personid');
+						person.set('personid',nome);
+						person.set('curlatitudey',curlatitudey);
+						person.set('curlongitudex',curlongitudex);
+						ModelService.save(personSet);
 					}
 				} catch (error) {
-					console.log(error);
+					console.log(error + 'Na função updatePersonGPSPosition');
 				}
-				let curlatitudey =localStorage.getItem("curlatitudey");
-				let curlongitudex =localStorage.getItem("curlongitudex");
-
-				nome = nome.toLowerCase();
-				curlatitudey = parseFloat(curlatitudey);
-				curlongitudex = parseFloat(curlongitudex);
-				person.set('personid',nome);
-				person.set('personid',nome);
-				person.set('curlatitudey',curlatitudey);
-				person.set('curlongitudex',curlongitudex);
-				ModelService.save(personSet);
+				
 				
 				this.application.hideBusy();
 			};
@@ -607,7 +621,6 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 				}
             );
 		},
-		
 		// FUNCOES GPS		
 		_hasAttachments: function(asset){
 			if (asset){
@@ -616,6 +629,7 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			}
 			return false;
 		},
+		
 		
 		hideShowContainer: function(eventContext){
 			eventContext.setDisplay(!eventContext.getCurrentRecord().isErrored());
@@ -657,7 +671,9 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 		
 		discardView: function(eventContext){
 			//cleanupEditAssetView method is invoked as callback of hideCurrentView
-			eventContext.ui.hideCurrentView(PlatformConstants.CLEANUP);
+			//eventContext.ui.hideCurrentView(PlatformConstants.CLEANUP);
+			eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+
 		},
 
 		// edit location view
@@ -750,8 +766,17 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			var filter = {};
 			var self = this;
 			
+
 			if (search.assetnum){
 			    filter.assetnum = search.assetnum;
+			    filteredItems++;
+			}
+			if (search.ms_addressline != null || search.ms_addressline != undefined) {
+				search.ms_addressline = search.ms_addressline.toLocaleUpperCase();
+				filteredItems++;
+			}
+			if (search.ms_staddrnumber){
+			    filter.ms_staddrnumber = search.ms_staddrnumber;
 			    filteredItems++;
 			}
 			if (search.location){
@@ -781,7 +806,56 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 				return;
 			}
 			
-			self.populateSearch(eventContext);
+			self.populateSearch(eventContext, search);
+		},
+
+		setSearchQueryAdress: function(eventContext){
+			var search = eventContext.application.getResource("searchAsset").getCurrentRecord();
+			var filteredItems = 0;			
+			var filter = {};
+			var self = this;
+			
+
+			if (search.assetnum){
+			    filter.assetnum = search.assetnum;
+			    filteredItems++;
+			}
+			if (search.ms_addressline != null || search.ms_addressline != undefined) {
+				search.ms_addressline = search.ms_addressline.toLocaleUpperCase();
+				filteredItems++;
+			}
+			if (search.ms_staddrnumber){
+			    filter.ms_staddrnumber = search.ms_staddrnumber;
+			    filteredItems++;
+			}
+			if (search.location){
+			    filter.location = search.location;
+			    filteredItems++;
+			}
+			if (search.description){
+			    filter.description = search.description;
+			    filteredItems++;
+			}
+			if (search.parent){
+			    filter.parent = search.parent;
+			    filteredItems++;
+			}
+			if (search.status){
+			    filter.status = search.status;
+			    filteredItems++;
+			}
+
+			if (search.priority){
+			    filter.priority = search.priority;
+			    filteredItems++;
+			}				
+
+			if(filteredItems == 0){
+				eventContext.ui.show('SGZArbo.RequiredSearchFieldMissing');
+				return;
+			}
+			
+			self.populateSearchAdress(eventContext, search);
 		},
 		
 		showBusyList: function(eventContext){
@@ -791,7 +865,7 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			}
 		},
 		
-		populateSearch: function(eventContext){
+		populateSearch: function(eventContext, search){	
 			var view = eventContext.application.ui.getViewFromId('SGZArbo.AssetListView');
 			eventContext.application.ui.performSearch = true;
 			if(eventContext.application.ui.performSearch){
@@ -827,6 +901,14 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 				    filter.assetnum = '%'+search.assetnum+'%';
 				    filteredItems++;
 				}
+				if (search.ms_addressline){
+				    filter.ms_addressline = '%'+search.ms_addressline+'%';
+				    filteredItems++;
+				}
+				if (search.ms_staddrnumber){
+				    filter.ms_staddrnumber = '%'+search.ms_staddrnumber+'%';
+				    filteredItems++;
+				}
 				if (search.description){
 					filter.description = '%'+search.description+'%';
 				    filteredItems++;
@@ -858,8 +940,9 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 					eventContext.application.hideBusy();
 					return;
 				}
-				
+				eventContext.application.showBusy();	
 				ModelService.all('asset',PlatformConstants.SEARCH_RESULT_QUERYBASE).then(function(searchResultSet){
+					eventContext.application.showBusy();	
 					ModelService.clearSearchResult(searchResultSet);			
 				});
 				
@@ -870,6 +953,7 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 					if (hasConnectivity){
 						//network fetch						
 						ModelService.filtered('asset', PlatformConstants.SEARCH_RESULT_QUERYBASE, filter, null, true, false, oslcQueryParameters, true).then(function(resultSet){
+							eventContext.application.showBusy();
 							resultSet.resourceID = 'asset';
 							eventContext.application.addResource(resultSet);
 							
@@ -878,8 +962,14 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 									resultSet.setCurrentIndex(0);
 									//eventContext.application.ui.getViewFromId('Inventory.ItemDetailView');
 									//eventContext.ui.show('SGZArbo.AssetDetailView');	
+									search.set('assetnum', null)
+									search.set('ms_addressline', null)
+									search.set('ms_staddrnumber', null)
 									eventContext.ui.show('SGZArbo.AssetListView');	
 								} else {
+									search.set('assetnum', null)
+									search.set('ms_addressline', null)
+									search.set('ms_staddrnumber', null)
 									resultSet.setCurrentIndex(0);
 									eventContext.ui.getViewFromId('SGZArbo.AssetListView').onlyChangeQueryBaseIndex(PlatformConstants.SEARCH_RESULT_QUERYBASE);
 									eventContext.ui.show('SGZArbo.AssetListView');
@@ -890,6 +980,7 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 								//offline fetch
 								
 								ModelService.filtered('asset', null, filter, null, false, false, oslcQueryParameters).then(function(assetSet){
+									eventContext.application.showBusy();	
 									deferred.resolve(assetSet);
 								});
 
@@ -909,12 +1000,18 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 											if(assetSet.count()==1){
 												assetSet.setCurrentIndex(0);
 												//eventContext.application.ui.getViewFromId('Inventory.ItemDetailView');
+												search.set('assetnum', null)
+												search.set('ms_addressline', null)
+												search.set('ms_staddrnumber', null)
 												eventContext.ui.show('SGZArbo.AssetDetailView');	
 											} else {
 												ModelService.save(assetSet).then(function(){
 													assetSet.setCurrentIndex(0);
 													 eventContext.ui.getViewFromId('SGZArbo.AssetListView').setQueryBaseIndexByQuery(PlatformConstants.SEARCH_RESULT_QUERYBASE).then(function(){
-														 eventContext.ui.show('SGZArbo.AssetListView');
+														search.set('assetnum', null)
+														search.set('ms_addressline', null)
+														search.set('ms_staddrnumber', null)
+														eventContext.ui.show('SGZArbo.AssetListView');
 													 });
 												});
 											}
@@ -990,10 +1087,51 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 							});					
 						});						
 					}						
-				});											
+				});		
 			}
 		},	
-		
+
+		populateSearchAdress: function(eventContext, search){
+			let lista = CommonHandler._getAdditionalResource(eventContext, 'asset');
+			search.ms_addressline = search.ms_addressline.toLocaleUpperCase();
+			search.ms_addressline =search.ms_addressline.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+            eventContext.application.showBusy();	
+			var abr = ['RUA','R ', 'R.','AVENIDA','Av', 'AC.','AC. ', 'PS. ','PS.', 'R. ','R.','RUA', 'RP.', 
+			'RP. ', 'RPJ.','RPJ. ', 'TV. ','TRAVESSA',  'VCP. ', 'VE. DEP ', 'VL.' , 'VIELA']
+
+			abr.forEach(element => {
+				if (search.ms_addressline.includes(element)){
+					let split = search.ms_addressline.split(element)[1];
+					split = split.trim();
+					search.ms_addressline = `${split}`					
+				}
+			});
+
+
+			if (search.ms_addressline && !search.ms_staddrnumber) {
+				CommonHandler._clearFilterForResource(eventContext, lista);
+				lista.filter('ms_addressline.includes($1)', search.ms_addressline);	
+				search.set('assetnum', null)
+				search.set('ms_addressline', null)
+				search.set('ms_staddrnumber', null)
+				eventContext.ui.show('SGZArbo.AssetListView');	
+				eventContext.ui.getCurrentViewControl().refresh();			
+
+			}
+
+			if (search.ms_addressline && search.ms_staddrnumber) {
+				CommonHandler._clearFilterForResource(eventContext, lista);
+				lista.filter('ms_addressline.includes($1)  && ms_staddrnumber.includes($2)', search.ms_addressline , search.ms_staddrnumber);		
+				search.set('assetnum', null)
+				search.set('ms_addressline', null)
+				search.set('ms_staddrnumber', null)
+				eventContext.ui.show('SGZArbo.AssetListView');	
+				eventContext.ui.getCurrentViewControl().refresh();
+			}
+
+			filter = {};
+		},	
+
 		_showSearchFailedMessageNoConnectivity: function(eventContext){
 			eventContext.application.showMessage(MessageService.createStaticMessage('downloadFailedNoConnectivity').getMessage());
 			if(eventContext.application.ui.getViewFromId('SGZArbo.AssetListView').lists[0].baseWidget){
@@ -1318,75 +1456,257 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 		}, */
 		
 		
-		
-		
-		commitTechReportViewSec : function(eventContext){
+		commitTechReportViewSecCup : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
-			//asset.set("rptms_interference01", true);
+			asset.set("rptms_interference02", 'Não');
 			
 				var self = this;
 			
 				ModelService.save(assetSet).then(function() {
 				
-				var viewID = eventContext.application.ui.viewHistory[eventContext.application.ui.viewHistory.length-2].id;				
-				self.ui.hideCurrentView();
+				 //eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+				 eventContext.ui.show("SGZArbo.Section.One.Cup");
 				}).
 				otherwise(function(err){
 					eventContext.ui.showMessage(err);						
 				});
 		},
+	
+		
+		
+		commitTechReportViewSec : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			asset.set("rptms_interference02", 'Não');
+			
+				var self = this;
+			
+				ModelService.save(assetSet).then(function() {
+				
+				 eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+				}).
+				otherwise(function(err){
+					eventContext.ui.showMessage(err);						
+				});
+		},
+
+		commitTechReportViewSecRec : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			asset.set("rptms_interference02", 'Não');
+			
+				var self = this;
+			
+				ModelService.save(assetSet).then(function() {
+				
+				 eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+				}).
+				otherwise(function(err){
+					eventContext.ui.showMessage(err);						
+				});
+		},
+		
 		
 		commitTechReportViewNext : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
 			//asset.set("rptms_interference01", true);
 			
-				var self = this;
+			var self = this;
+		
+			ModelService.save(assetSet).then(function() {
 			
-				ModelService.save(assetSet).then(function() {
-				
-				var viewID = eventContext.application.ui.viewHistory[eventContext.application.ui.viewHistory.length-2].id;
-				
+				//var viewID = eventContext.application.ui.viewHistory[eventContext.application.ui.viewHistory.length-2].id;
+			
 				//self.ui.show('');
-				}).
-				otherwise(function(err){
-					eventContext.ui.showMessage(err);						
-				});
+				//eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+				eventContext.ui.show("SGZArbo.Section.One.Cup");
+			}).
+			otherwise(function(err){
+				eventContext.ui.showMessage(err);						
+			});
 				
 				
 				
+		},
+		commitTechReportViewSec01No : function (eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			asset.set("rptms_interference01", 'Não');
+			var self = this;
+			ModelService.save(assetSet).then(function() {
+			//eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+			eventContext.ui.show("SGZArbo.Section.One.Root");
+			}).
+			otherwise(function(err){
+				eventContext.ui.showMessage(err);						
+			});
+			
+		},	
+		
+		commitTechReportViewSec01DiagnosisNo : function (eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			asset.set("rptms_apparentdamage04", 'Não');
+			var self = this;
+			ModelService.save(assetSet).then(function() {
+			//eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+			eventContext.ui.show("SGZArbo.Section.One.Root");
+			}).
+			otherwise(function(err){
+				eventContext.ui.showMessage(err);						
+			});
+			
+		},		
+		
+		
+		testeSave : function (eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var arbo = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo');
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo').getCurrentRecord();
+			
+			var self = this;
+			ModelService.save(assetSet).then(function() {
+				eventContext.ui.hideCurrentView();
+			}).
+			otherwise(function(err){
+				eventContext.ui.showMessage(err);						
+			});
+			
 		},
 		
 		commitTechReportViewSec01 : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
-			asset.set("rptms_interference01", true);
-			var self = this;
 			
-				ModelService.save(assetSet).then(function() {
-					
+			//Campos YORN
+			var rptms_physicalbarrier = asset.get('rptms_physicalbarrier');
+			var rptms_gasnetwork = asset.get('rptms_gasnetwork');
+			var rptms_inspectionbox = asset.get('rptms_inspectionbox');
+			var rptms_postwallbuilding = asset.get('rptms_postwallbuilding');
+			var rptms_waternetwork = asset.get('rptms_waternetwork');
+			var rptms_seweragesystem = asset.get('rptms_seweragesystem');
+			/*var rptms_telecommunic = asset.get('rptms_telecommunic');
+			var rptms_mechinjury01 = asset.get('rptms_mechinjury01');
+			var rptms_coilfolded = asset.get('rptms_coilfolded');
+			var rptms_exposed = asset.get('rptms_exposed');
+			var rptms_drills01 = asset.get('rptms_drills01');
+			var rptms_cropped = asset.get('rptms_cropped');
+			var rptms_ant01 = asset.get('rptms_ant01');*/
+			
+			/*var sumYORN = rptms_physicalbarrier + rptms_gasnetwork + rptms_inspectionbox + rptms_postwallbuilding +
+				rptms_waternetwork + rptms_seweragesystem + rptms_telecommunic + rptms_mechinjury01 + rptms_coilfolded +
+				rptms_exposed + rptms_drills01 + rptms_cropped + rptms_ant01;
+			*/
+			
+			var sumYORN = rptms_physicalbarrier + rptms_gasnetwork + rptms_inspectionbox + rptms_postwallbuilding +
+				rptms_waternetwork + rptms_seweragesystem;
 				
+			//CAMPOS ESCOLHA
+			//var rptms_fungi01 = asset.get('rptms_fungi01');
+			//var rptms_termite01 = asset.get('rptms_termite01');
+			
+			var sumChoice = 0;
+			
+			/*if (rptms_fungi01 != null || rptms_termite01 != null){
+				sumChoice = 1;
+			}*/
+			var sumAll = sumChoice + sumYORN;
+			if (sumAll == 0){
+				eventContext.ui.showMessage('Selecione ao menos uma opção de interferencia para continuar.');	
+			}
+			else{
+				asset.set("rptms_interference01", 'Sim');
+				var self = this;
+					ModelService.save(assetSet).then(function() {
+						eventContext.ui.show("SGZArbo.Section.One.Root");
+					//eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+					}).
+					otherwise(function(err){
+						eventContext.ui.showMessage(err);						
+					});
+			}	
+		},
+
+		commitTechReportViewSec02 : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			
+			//Campos YORN
+			/*var rptms_physicalbarrier = asset.get('rptms_physicalbarrier');
+			var rptms_gasnetwork = asset.get('rptms_gasnetwork');
+			var rptms_inspectionbox = asset.get('rptms_inspectionbox');
+			var rptms_postwallbuilding = asset.get('rptms_postwallbuilding');
+			var rptms_waternetwork = asset.get('rptms_waternetwork');
+			var rptms_seweragesystem = asset.get('rptms_seweragesystem');
+			var rptms_telecommunic = asset.get('rptms_telecommunic');*/
+			var rptms_mechinjury01 = asset.get('rptms_mechinjury01');
+			var rptms_coilfolded = asset.get('rptms_coilfolded');
+			var rptms_exposed = asset.get('rptms_exposed');
+			var rptms_drills01 = asset.get('rptms_drills01');
+			var rptms_cropped = asset.get('rptms_cropped');
+			var rptms_ant01 = asset.get('rptms_ant01');
+			
+			/*var sumYORN = rptms_physicalbarrier + rptms_gasnetwork + rptms_inspectionbox + rptms_postwallbuilding +
+				rptms_waternetwork + rptms_seweragesystem + rptms_telecommunic + rptms_mechinjury01 + rptms_coilfolded +
+				rptms_exposed + rptms_drills01 + rptms_cropped + rptms_ant01;
+				*/
+			
+			var sumYORN = rptms_telecommunic + rptms_mechinjury01 + rptms_coilfolded +
+				rptms_exposed + rptms_drills01 + rptms_cropped + rptms_ant01;	
 				
-				var viewID = eventContext.application.ui.viewHistory[eventContext.application.ui.viewHistory.length-2].id;				
-				self.ui.hideCurrentView();
-				}).
-				otherwise(function(err){
-					eventContext.ui.showMessage(err);						
-				});
-				
+			//CAMPOS ESCOLHA
+			var rptms_fungi01 = asset.get('rptms_fungi01');
+			var rptms_termite01 = asset.get('rptms_termite01');
+			
+			var sumChoice = 0;
+			
+			if (rptms_fungi01 != null || rptms_termite01 != null){
+				sumChoice = 1;
+			}
+			var sumAll = sumChoice + sumYORN;
+			if (sumAll == 0){
+				eventContext.ui.showMessage('Selecione ao menos uma opção de dano para continuar.');	
+			}
+			else{
+				asset.set("ptms_apparentdamage04", 'Sim');
+				var self = this;
+					ModelService.save(assetSet).then(function() {
+					 //eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+					}).
+					otherwise(function(err){
+						eventContext.ui.showMessage(err);						
+					});
+			}	
 		},
 		
 		commitTechReportViewSec02 : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
-			asset.set("rptms_apparentdamage04", true);
+			asset.set("rptms_apparentdamage04", 'Sim');
 			var self = this;
 			
 				ModelService.save(assetSet).then(function() {
 				
-				var viewID = eventContext.application.ui.viewHistory[eventContext.application.ui.viewHistory.length-2].id;				
-				self.ui.hideCurrentView();
+				 //eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+                    var viewHistory = eventContext.ui.viewHistory;
+                    var previousView = viewHistory[viewHistory.length-3];
+                    eventContext.ui.returnToView(previousView.id);					
+				}).
+				otherwise(function(err){
+					eventContext.ui.showMessage(err);						
+				});
+		},
+		
+		commitTechReportViewSec03No : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			asset.set("rptms_apparentdamage01", 'Não');
+			var self = this;
+				ModelService.save(assetSet).then(function() {
+				
+				eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
 				}).
 				otherwise(function(err){
 					eventContext.ui.showMessage(err);						
@@ -1396,29 +1716,129 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 		commitTechReportViewSec03 : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
-			asset.set("rptms_apparentdamage01", true);
+			
+			var self = this;
+			//CAMPOS SELECAO
+			var rptms_fungi02 = asset.get('rptms_fungi02');
+			var rptms_termite02 = asset.get('rptms_termite02');
+			
+			var sumChoice = 0;
+			
+			if (rptms_fungi02 != null || rptms_termite02 != null){
+				sumChoice = 1;
+			}
+			
+			//CAMPOS input
+			var rptms_hollow01 = asset.get('rptms_hollow01');
+			var rptms_hollow02 = asset.get('rptms_hollow02');
+			
+			var sumInput = 0;
+			
+			if (rptms_hollow01 != null || rptms_hollow02 != null){
+				sumInput = 1;
+			}
+			
+			//CAMPOS YORN
+			var rptms_mechinjury02 = asset.get('rptms_mechinjury02');
+			var rptms_annealing01 = asset.get('rptms_annealing01');
+			var rptms_drills02 = asset.get('rptms_drills02');
+			var rptms_ant02 = asset.get('rptms_ant02');
+			
+			var sumYORN = rptms_mechinjury02 + rptms_annealing01 + rptms_drills02 + rptms_ant02;
+			
+			var sumAll = sumChoice + sumYORN + sumInput;
+			if (sumAll == 0){
+				eventContext.ui.showMessage('Selecione ao menos uma opção de interferencia para continuar.');	
+			}
+			else{
+				asset.set("rptms_apparentdamage01", 'Sim');
+				ModelService.save(assetSet).then(function() {
+				
+				eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+				}).
+				otherwise(function(err){
+					eventContext.ui.showMessage(err);						
+				});
+			}
+		},
+		
+		commitTechReportViewSec04 : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			
+			//CAMPOS SELEÇÃO
+			var rptms_fungi03 = asset.get('rptms_fungi03');
+			var rptms_termite03 = asset.get('rptms_termite03');
+			var rptms_crack = asset.get('rptms_crack');
+			
+			var sumChoice = 0;
+			if (rptms_fungi03 != null || rptms_termite03 != null || rptms_crack != null){
+				sumChoice = 1;
+			}
+			
+			//CAMPOS input
+			var rptms_hollow03 = asset.get('rptms_hollow03');
+			var rptms_hollow04 = asset.get('rptms_hollow04');
+			var rptms_dry = asset.get('rptms_dry');
+			
+			var sumInput = 0
+			
+			if (rptms_hollow03 != null || rptms_hollow04 != null || rptms_dry != null){
+				sumInput = 1;
+			}
+				
+			//CAMPOS YORN
+			var rptms_mechinjury03 = asset.get('rptms_mechinjury03');
+			var rptms_ant03 = asset.get('rptms_ant03');
+			var rptms_annealing02 = asset.get('rptms_annealing02');
+			var rptms_sapoozing = asset.get('rptms_sapoozing');
+			var rptms_drills03 = asset.get('rptms_drills03');
+			var rptms_accbark = asset.get('rptms_accbark');
+			
+			var sumYORN = rptms_mechinjury03 + rptms_ant03 + rptms_annealing02 + rptms_sapoozing + rptms_drills03 + rptms_accbark;
+			
+			var sumAll = sumChoice + sumYORN + sumInput;
+			if (sumAll == 0){
+				eventContext.ui.showMessage('Selecione ao menos uma opção para continuar.');	
+			}
+				else{
+				asset.set("rptms_apparentdamage03", 'Sim');
+				var self = this;
+				
+					ModelService.save(assetSet).then(function() {
+					
+					eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+					}).
+					otherwise(function(err){
+						eventContext.ui.showMessage(err);						
+					});
+				}
+		},
+		commitTechReportViewSec04No : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			asset.set("rptms_apparentdamage03", 'Não');
 			var self = this;
 			
 				ModelService.save(assetSet).then(function() {
 				
-				var viewID = eventContext.application.ui.viewHistory[eventContext.application.ui.viewHistory.length-2].id;				
-				self.ui.hideCurrentView();
+				eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
 				}).
 				otherwise(function(err){
 					eventContext.ui.showMessage(err);						
 				});
 		},
 		
-		commitTechReportViewSec04 : function(eventContext){
+		commitTechReportViewSec05No : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
-			asset.set("rptms_apparentdamage03", true);
+			asset.set("rptms_interference02", 'Não');
 			var self = this;
 			
 				ModelService.save(assetSet).then(function() {
 				
-				var viewID = eventContext.application.ui.viewHistory[eventContext.application.ui.viewHistory.length-2].id;				
-				self.ui.hideCurrentView();
+					//eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+					eventContext.ui.show("SGZArbo.Section.One.Cup");
 				}).
 				otherwise(function(err){
 					eventContext.ui.showMessage(err);						
@@ -1428,35 +1848,147 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 		commitTechReportViewSec05 : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
-			asset.set("rptms_interference02", true);
-			var self = this;
 			
-				ModelService.save(assetSet).then(function() {
+			//CAMPOS YORN:
+			var rptms_busstop = asset.get("rptms_busstop");
+			var rptms_tnetwork = asset.get("rptms_tnetwork");
+			var rptms_buildings = asset.get("rptms_buildings");
+			var rptms_tvoltage = asset.get("rptms_tvoltage");
+			var rptms_lighting = asset.get("rptms_lighting");
+			var rptms_transitplates = asset.get("rptms_transitplates");
+			var rptms_wall = asset.get("rptms_wall");
+			var rptms_lightstraffic = asset.get("rptms_lightstraffic");
+			var rptms_lamppost = asset.get("rptms_lamppost");
+			var rptms_tvehicle = asset.get("rptms_tvehicle");
+
+			/*
+				var rptms_mechinjury04 = asset.get("rptms_mechinjury04");
+				var rptms_virus = asset.get("rptms_virus");
+				var rptms_inadequatepruning = asset.get("rptms_inadequatepruning");
+				var rptms_senescence = asset.get("rptms_senescence");
+				var rptms_parasitesplants = asset.get("rptms_parasitesplants");
+				var rptms_drills04 = asset.get("rptms_drills04");
+				var rptms_badformation = asset.get("rptms_badformation");
+				var rptms_ant04 = asset.get("rptms_ant04");
+			*/
+
+			/*var sumYORN = rptms_busstop + rptms_tnetwork + rptms_buildings + rptms_tvoltage +
+				rptms_lighting + rptms_transitplates + rptms_wall + rptms_lightstraffic + rptms_lamppost + rptms_tvehicle
+				+ rptms_mechinjury04 + rptms_virus + rptms_inadequatepruning + rptms_senescence + rptms_parasitesplants + rptms_drills04 + rptms_badformation + rptms_ant04	
+			*/
+			
+			var sumYORN = rptms_busstop + rptms_tnetwork + rptms_buildings + rptms_tvoltage +
+				rptms_lighting + rptms_transitplates + rptms_wall + rptms_lightstraffic + rptms_lamppost + rptms_tvehicle;
 				
-				var viewID = eventContext.application.ui.viewHistory[eventContext.application.ui.viewHistory.length-2].id;				
-				self.ui.hideCurrentView();
-				}).
-				otherwise(function(err){
-					eventContext.ui.showMessage(err);						
-				});
+			//CAMPOS SELEÇÃO
+			//var rptms_fungi04 = asset.get("rptms_fungi04");
+			//var rptms_termite04 = asset.get("rptms_termite04");
+			//var rptms_uncup = asset.get("rptms_uncup");
+			
+			var sumChoice = 0;
+			/*if (rptms_fungi04 != null || rptms_termite04 != null || rptms_uncup != null){
+				sumChoice = 1;
+			}*/
+			
+			var sumAll = sumYORN + sumChoice;
+			
+			if (sumAll == 0){
+				eventContext.ui.showMessage('Selecione ao menos uma opção de interferencia para continuar.');	
+			}
+			else{
+				asset.set("rptms_interference02", 'Sim');
+				var self = this;
+				
+					ModelService.save(assetSet).then(function() {
+					
+					//eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+					eventContext.ui.show("SGZArbo.Section.One.Cup");
+					}).
+					otherwise(function(err){
+						eventContext.ui.showMessage(err);						
+					});
+			}
+		},
+
+		commitTechReportViewSec06 : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			
+			//CAMPOS YORN:
+			var rptms_mechinjury04 = asset.get("rptms_mechinjury04");
+			var rptms_virus = asset.get("rptms_virus");
+			var rptms_inadequatepruning = asset.get("rptms_inadequatepruning");
+			var rptms_senescence = asset.get("rptms_senescence");
+			var rptms_parasitesplants = asset.get("rptms_parasitesplants");
+			var rptms_drills04 = asset.get("rptms_drills04");
+			var rptms_badformation = asset.get("rptms_badformation");
+			var rptms_ant04 = asset.get("rptms_ant04");
+			
+			var sumYORN = rptms_mechinjury04 + rptms_virus + rptms_inadequatepru+ rptms_senescence + rptms_parasitesplan + rptms_drills04 + rptms_badformation + rptms_ant04;
+
+			//CAMPOS SELEÇÃO
+			var rptms_fungi04 = asset.get("rptms_fungi04");
+			var rptms_termite04 = asset.get("rptms_termite04");
+			var rptms_uncup = asset.get("rptms_uncup");
+			
+			var sumChoice = 0;
+			if (rptms_fungi04 != null || rptms_termite04 != null || rptms_uncup != null){
+				sumChoice = 1;
+			}
+			
+			var sumAll = sumYORN + sumChoice;
+			
+			if (sumAll == 0){
+				eventContext.ui.showMessage('Selecione ao menos uma opção de dano para continuar.');	
+			}
+			else{
+				asset.set("rptms_interference02", 'Sim');
+				var self = this;
+				
+					ModelService.save(assetSet).then(function() {
+					
+					//eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+					eventContext.ui.show("SGZArbo.Section.One.Cup");
+					}).
+					otherwise(function(err){
+						eventContext.ui.showMessage(err);						
+					});
+			}
 		},
 		
 		commitTechReportViewSec06 : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
-			asset.set("rptms_apparentdamage02", true);
+			asset.set("rptms_apparentdamage02", "Sim");
 			var self = this;
 			
 				ModelService.save(assetSet).then(function() {
 				
-				var viewID = eventContext.application.ui.viewHistory[eventContext.application.ui.viewHistory.length-2].id;				
-				self.ui.hideCurrentView();
+				 //eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+				
+				eventContext.ui.show("SGZArbo.Section.One.Cup");
 				}).
 				otherwise(function(err){
 					eventContext.ui.showMessage(err);						
 				});
 		},
-		
+
+		commitTechReportViewSec06No : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArboRpt').getCurrentRecord();
+			asset.set("rptms_apparentdamage02", "Não");
+			var self = this;
+			
+				ModelService.save(assetSet).then(function() {
+				
+				//eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+				eventContext.ui.show("SGZArbo.Section.One.Cup");
+
+			}).
+				otherwise(function(err){
+					eventContext.ui.showMessage(err);						
+				});
+		},
 		
 		
 		requiredField : function(eventContext){
@@ -1473,10 +2005,53 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 				if (typeof popularname  === undefined || popularname  == null || 
 					popularname  == "" || popularname == false) {
 	
-					throw new PlatformRuntimeException("Favor Informar o Nome Popular");
+					throw new PlatformRuntimeException("É necessário informar o Nome popular.");
 					//return;
 	
 				}
+			}
+		},
+		
+		requiredFieldFull : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo');
+			var asset = assetSet.getCurrentRecord();
+			var speciesunident = asset.get("ms_speciesunident");
+			var popularname = asset.get("ms_popularname");
+			
+			Logger.error("Ativo Espécie: " + asset.get("ms_speciesunident"));
+			Logger.error("Popular: " + asset.get("ms_popularname")); 
+			Logger.error("Fanilia: " + asset.get("ms_family")); 
+			var diameterbreast = asset.get("ms_diameterbreast");
+			var treeheight = asset.get("ms_treeheight");
+			var ridewidth = asset.get("ms_ridewidth");
+
+			let msg = "Favor verificar os campos de preenchimento obrigatório: Nome Popular ou Espécie não identificada, DAP, PAP, Largura do Passeio e Altura da Árvore."
+			 
+			if (speciesunident == false || speciesunident == 0 || speciesunident == null) {
+				if (typeof popularname  === undefined || popularname  == null || 
+					popularname  == "" || popularname == false) {
+	
+					throw new PlatformRuntimeException(msg);
+					//return;
+	
+				}
+			}
+						
+			if (typeof diameterbreast === undefined || diameterbreast == null || diameterbreast == "") {
+					
+				throw new PlatformRuntimeException(msg);
+				//return;
+
+			}
+
+			if (typeof treeheight === undefined || treeheight == null || treeheight == ""){
+				throw new PlatformRuntimeException(msg);
+				//return;
+			}
+
+			if (typeof ridewidth === undefined || ridewidth == null || ridewidth == ""){
+				throw new PlatformRuntimeException(msg);
+				//return;
 			}
 			
 
@@ -1492,13 +2067,38 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			
 			if (typeof diameterbreast === undefined || diameterbreast == null || diameterbreast == "") {
 					
-				throw new PlatformRuntimeException("Favor Informar Valor DAP");
+				throw new PlatformRuntimeException("Favor Informar Valor DAP ou PAP");
 				//return;
 
 			}
 			
+			
 
 		},
+
+		requiredFieldTreeHeight: function(eventContext){			
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo');
+			var asset = assetSet.getCurrentRecord();
+			var treeheight = asset.get("ms_treeheight");
+						
+			if (typeof treeheight === undefined || treeheight == null || treeheight == ""){
+				throw new PlatformRuntimeException("A Altura da árvore estimada deve ser maior que 0.");
+				//return;
+			}
+
+		},
+
+
+		requiredFieldRidewidth : function(eventContext){
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo').getCurrentRecord();
+			var ridewidth = asset.get("ms_ridewidth");
+			if (typeof ridewidth === undefined || ridewidth == null || ridewidth == ""){
+				throw new PlatformRuntimeException("A Largura do passeio deve ser maior que 0");
+				//return;
+			}
+		},
+
+		
 		
 		requiredFieldDapBoth : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo');
@@ -1546,6 +2146,19 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			
 
 		},
+		
+		getTargetDesc : function(eventContext){
+				var assetSet = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo');
+				var targetSet = CommonHandler._getAdditionalResource(eventContext,'mstarget');
+				var asset = assetSet.getCurrentRecord();	
+				var arboTarget = asset.get("ms_target");
+				if (arboTarget != null || arboTarget != undefined){
+					var targetFind = targetSet.find("ms_target == $1", arboTarget);
+					var targetDesc = targetFind[0].get("ms_description");
+					asset.set("np_targetdesc", targetDesc);
+				}
+			
+		},
 
 
 		//---------- Funções de calculo automatico DAP e PAP -------------//
@@ -1556,7 +2169,6 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			
 			let elementofilhos = groupitem.children;
 			let self = this;
-
 			elementofilhos.forEach(element => {
 				let elemento = element;
 				var elementoId = elemento.artifactId;
@@ -1570,13 +2182,14 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			campodap.addEventListener("blur", function() { 
 				campopap.value = "";
 				var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
-			     self.calcPap(eventContext);
-				ModelService.save(assetSet).then(function() {					
+
+			    self.calcPap(eventContext);
+			/* 	ModelService.save(assetSet).then(function() {					
 					//eventContext.ui.hideCurrentView();
 				}).
 				otherwise(function(err){
 					eventContext.ui.showMessage(err);						
-				});
+				}); */
 			});
 		},
 		keydownFunctionCalculatorPAP:function(eventContext){
@@ -1587,6 +2200,7 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 
 			let elementofilhos = groupitem.children;
 			let self = this;
+
 			elementofilhos.forEach(element => {
 				let elemento = element;
 				var elementoId = elemento.artifactId;
@@ -1601,12 +2215,13 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 				campodap.value = "";
 				var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 				self.calcDap(eventContext);
-				ModelService.save(assetSet).then(function() {	
+
+/* 				ModelService.save(assetSet).then(function() {					
 					//eventContext.ui.hideCurrentView();
 				}).
 				otherwise(function(err){
 					eventContext.ui.showMessage(err);						
-				});
+				}); */
 			});
 
 		},
@@ -1648,24 +2263,22 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo').getCurrentRecord();
 			var perimeterbreast = assetSet.getPendingOrOriginalValue('ms_perimeterbreast');
+			var diamteerbreast = assetSet.getPendingOrOriginalValue('ms_diameterbreast');
 			var perimeterbreastRep = parseFloat(String(perimeterbreast).replace(",","."));
 			var perimeterbreastCalc = ((perimeterbreastRep)/3.1415);
 			//var perimeterbreastCalcRep = perimeterbreastCalc.replace(".",",");
 			
-			Logger.error("DAP: " + perimeterbreast); 
-			Logger.error("DAP2: " + perimeterbreastCalc); 
+
 			//Logger.error("Familia: " + asset.get("ms_family"));
 			
 			
 			if (perimeterbreast > 0) {
-				Logger.error("DAP: " + perimeterbreast);	
 				assetSet.set("ms_diameterbreast", perimeterbreastCalc);
 				
 			}
 			
 
 		},
-		
 		
 		//var numero1 = parseFloat(string1.replace(',', '.'));
 		//var numero2 = parseFloat(string2.replace(',', '.'));
@@ -1913,11 +2526,20 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			var currAsset = assetSet.getCurrentRecord();
 			var self = this;
 			var deadtree = currAsset.get("ms_deadtree");
-			var validate = currAsset.get("ms_validate");
+			let arboreason = currAsset.get("ms_arboreason");
+			//var validate = currAsset.get("ms_validate");
 			
-			if(deadtree == true || validate == true){
+			if(deadtree){
 				eventContext.setDisplay(false);
 				eventContext.setVisibility(false);
+			}	
+			if(arboreason == null){				
+				eventContext.setDisplay(false);
+				eventContext.setVisibility(false);
+			}	
+			if(deadtree != null  && arboreason !=null){				
+				eventContext.setDisplay(true);
+				eventContext.setVisibility(true);
 			}	
 		},
 		
@@ -1927,29 +2549,70 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			var self = this;
 			var deadtree = currAsset.get("ms_deadtree");
 			var validate = currAsset.get("ms_validate");
+			var crea = currAsset.get('crea');
+			var crbio = currAsset.get('crbio');
+			var arboSet = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo').getCurrentRecord();
+			var ms_ridewidth = arboSet.get("ms_ridewidth");
+			var ms_popularname = arboSet.get("ms_popularname");
+			var ms_speciesunident = arboSet.get("ms_speciesunident");
+			var ms_diameterbreast = arboSet.get("ms_diameterbreast");
+			var ms_perimeterbreast = arboSet.get("ms_perimeterbreast");
+			var ms_treeheight = arboSet.get("ms_treeheight");
+			
 
 			try {
-
+				
 				let queryBase;
-				if (localStorage.getItem('filtro')) {
+				/*if (localStorage.getItem('filtro')) {
 					queryBase =localStorage.getItem('filtro');
 					if (!queryBase.includes("ms_techreport")) {			
 						eventContext.setDisplay(false);
 						eventContext.setVisibility(false);	
 					}
-				}	
-				/*
-					if(deadtree == true || validate == false){
-						eventContext.setDisplay(false);
-						eventContext.setVisibility(false);
-					}	
-				*/
+				}	*/
+				
+				if ((crea == null || crea == undefined) && (crbio == null || crbio == undefined)){ 			
+					eventContext.setDisplay(false);
+					eventContext.setVisibility(false);
+				}
+
+/* 				if (crbio == null || crbio == undefined){
+					eventContext.setDisplay(false);
+					eventContext.setVisibility(false);
+				}
+				 */
+				if(validate == false){
+					eventContext.setDisplay(false);
+					eventContext.setVisibility(false);
+				}
+				
+				if ((ms_treeheight == null || ms_treeheight == undefined) || 
+					(ms_ridewidth == null || ms_ridewidth == undefined) || 
+					((ms_popularname == null || ms_popularname == undefined) && ms_speciesunident ==  false) || 
+					((ms_diameterbreast == null || ms_perimeterbreast ==  null) || (ms_diameterbreast == undefined || ms_perimeterbreast ==  undefined))){
+					eventContext.setDisplay(false);
+					eventContext.setVisibility(false);
+				}
+				
+
 			} catch (error) {
 				console.log(error);
 			}
 		
 		},
-		
+
+		hideContainerReportContainer : function(eventContext){
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var currAsset = assetSet.getCurrentRecord();
+			var deadtree = currAsset.get("ms_deadtree");
+			var isDeadTreeResponse = currAsset.getPendingOrOriginalValue("ms_deadtree_set");
+
+			/*if (!isDeadTreeResponse) {
+				eventContext.setDisplay(false);
+				eventContext.setVisibility(false);
+			}*/
+		},
+			
 		hideDeadIndicator : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var currAsset = assetSet.getCurrentRecord();
@@ -1980,13 +2643,42 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var currAsset = assetSet.getCurrentRecord();
 			var self = this;
-			var attachments = currAsset.get("attachmentssize");
-			
-			if (attachments == 0 || attachments.includes('--')) {
-				eventContext.ui.showMessage("Adicione uma foto para definir árvore morta.");
+			var attachments_size = currAsset.get("attachmentssize");
+			let attachments;
+			let attachmentsToday = 0;
+
+			if (eventContext.getResource().getCurrentRecord().get('attachments')) {
+				attachments = eventContext.getResource().getCurrentRecord().get('attachments');
+				let date =  new Date();
+				var day = date.getUTCDate();
+				var month = date.getUTCMonth() + 1; //months from 1-12
+				var year = date.getUTCFullYear();
+				var newdate = day + "/" + month + "/" + year;
+
+				attachments.data.forEach(element => {
+					datePhoto = element.get('creationDate');
+					datePhoto = new Date(datePhoto);
+					var dayPhoto = datePhoto.getUTCDate();
+					var monthPhoto = datePhoto.getUTCMonth() + 1; //months from 1-12
+					var yearPhoto = datePhoto.getUTCFullYear();
+					var newdatedatePhoto = dayPhoto + "/" + monthPhoto + "/" + yearPhoto;
+					if (newdatedatePhoto >= newdate ) {
+						attachmentsToday ++;
+					}
+				});
 			}
-			else{
+
+			if (attachments_size == null || attachments_size < 0 || attachments_size.includes('--')) {
+				eventContext.ui.showMessage("Adicione no mínimo duas fotos para definir árvore morta.");
+			}
+			if (attachments_size == 0 || attachments_size < 2) {
+				eventContext.ui.showMessage("Adicione no mínimo duas fotos para definir árvore morta.");
+			}
+			/*else{
 				eventContext.ui.show('SGZArbo.defineDeadTreeView');	
+			}*/
+			else{
+				eventContext.ui.show('SGZArbo.select.motivo.defineDeadReason');	
 			}
 			
 		},
@@ -2005,32 +2697,163 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 				eventContext.setVisibility(false);				
 			}	
 		},		
+
 		setDeadTreeY : function(eventContext){
+			if(!eventContext.viewControl.validate()){return;}
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			var asset = CommonHandler._getAdditionalResource(eventContext, 'asset.MSArbo').getCurrentRecord();
 			var currAsset = assetSet.getCurrentRecord();
+			var ms_deadtree =currAsset.get('ms_deadtree');
 			var self = this;
-			currAsset.set("ms_deadtree", true);
-			ModelService.saveAll(assetSet).then(function(){
-			       self.ui.hideCurrentView();
-			});	
-			
+			currAsset.set("ms_arboreason", currAsset.get("ms_arboreason"));
+			if (currAsset.get("ms_arboreason") != null && currAsset.get("ms_arboreason") > 0) {
+				currAsset.set("ms_deadtree", true);
+				currAsset.set("ms_deadtree_set", true);
+				ModelService.save(assetSet).then(function () {
+					//eventContext.ui.hideCurrentView();
+					eventContext.ui.show('SGZArbo.AssetDetailView');
+				}).otherwise(function (err) {
+					eventContext.ui.showMessage(err);						
+				});
+			}
 				
-			
+
 		},
 		
 		setDeadTreeN : function(eventContext){
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
 			var currAsset = assetSet.getCurrentRecord();
 			var self = this;
+			currAsset.set("ms_deadtree", false);
+			currAsset.set("ms_deadtree_set", true);
 			ModelService.saveAll(assetSet).then(function(){
 			       self.ui.hideCurrentView();
 			});			
 		},
 		
-		commitSpecificationView : function(eventContext){
+		commitSpecOne : function(eventContext){
 			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo').getCurrentRecord();
-			
-			
+			var assetSet = eventContext.application.getResource('asset');
+			let currAsset = assetSet.getCurrentRecord();
+			var arbo = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo');
+			var assetDeadtree = currAsset.get("ms_deadtree")
+			var isDeadTreeResponse = false;
+			try {
+				if (currAsset.get("ms_deadtree_set") == true || assetDeadtree == true) {
+					isDeadTreeResponse = true;
+				}else{
+					isDeadTreeResponse = false;
+				}				
+			} catch (error) {
+				console.log(error);
+			}
+			if (isDeadTreeResponse) {
+				ModelService.save(assetSet).then(function() {				
+					eventContext.ui.hideCurrentView();
+				}).
+				otherwise(function(err){
+					eventContext.ui.showMessage(err);						
+				});				
+			}else{
+				throw new PlatformRuntimeException("Favor responder se Árvore está morta");
+			}
+		},
+		
+		commitSpecificationView : function(eventContext){
+			if(!eventContext.viewControl.validate()){return;}
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo').getCurrentRecord();
+			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			let currAsset = assetSet.getCurrentRecord();
+
+			Logger.error("Ativo Espécie 1: " + asset.get("ms_speciesunident"));
+			Logger.error("Popular 1: " + asset.get("ms_popularname")); 
+			Logger.error("Fanilia 1: " + asset.get("ms_family")); 
+
+			var familia = asset.get("ms_family");
+			var popularname = asset.get("ms_popularname");
+			var popular = asset.get("ms_popular");
+		    var ms_scientific = asset.get("ms_scientific");
+			let deadtree = currAsset.get('ms_deadtree');
+			let ms_permeablearea = false;
+			let ms_inadequatesite = false;
+			let ms_jammvegetation = false;
+			let ms_diameter = 0;
+			let ms_length = 0;
+			let ms_width = 0;
+
+			var specsList = CommonHandler._getAdditionalResource(eventContext,"msarbospec");
+			Logger.error("Ativo: " + asset.get("ms_assetnum"));
+			Logger.error("Familia: " + asset.get("ms_popularname"));
+
+			var isDeadTreeResponse = false;
+			try {
+				if (currAsset.get("ms_deadtree_set") == true || deadtree) {
+					isDeadTreeResponse = true;
+				}else{
+					isDeadTreeResponse = false;
+				}				
+			} catch (error) {
+				console.log(error);
+			}
+
+			try {
+				if (asset.get('ms_permeablearea')) {
+					ms_permeablearea = asset.get('ms_permeablearea');
+				}
+				if (asset.get('ms_diameter')) {
+					ms_diameter = asset.get('ms_diameter');
+				}
+				if (ms_permeablearea && ms_diameter != null || ms_permeablearea && ms_diameter == 0) {
+					throw new PlatformRuntimeException("Favor informar um valor para o campo Diâmetro (m)");
+				}
+
+
+				if (asset.get('ms_inadequatesite')) {
+					ms_inadequatesite = asset.get('ms_inadequatesite');
+				}
+				if (asset.get('ms_length')) {
+					ms_length = asset.get('ms_length');
+				}
+				if (ms_inadequatesite && ms_inadequatesite != null || ms_inadequatesite && ms_length == 0) {
+					throw new PlatformRuntimeException("Favor informar um valor para o campo Comprimento (m)");
+				}
+
+
+				if (asset.get('ms_jammvegetation')) {
+					ms_jammvegetation = asset.get('ms_jammvegetation');
+				}
+				if (asset.get('ms_length')) {
+					ms_width = asset.get('ms_width');
+				}
+				if (ms_jammvegetation && ms_jammvegetation != null || ms_jammvegetation && ms_width == 0) {
+					throw new PlatformRuntimeException("Favor informar um valor para o campo Comprimento (m)");
+				}
+
+			} catch (error) {
+				console.log(error);
+			}
+
+
+			if (isDeadTreeResponse) {
+				asset.set("ms_popularname", asset.get("ms_popularname"));
+				asset.set("ms_scientific", asset.get("ms_popularname"));
+				asset.set("ms_family", asset.get("ms_family"));		
+				
+
+				ModelService.save(assetSet).then(function() {				
+					eventContext.ui.hideCurrentView();
+				}).
+				otherwise(function(err){
+					//eventContext.ui.showMessage(err);						
+				});				
+			}else{
+				throw new PlatformRuntimeException("Favor responder se Árvore está morta");
+			}
+		},
+
+
+		commitSpecificationViewFamily : function(eventContext){
+			var asset = CommonHandler._getAdditionalResource(eventContext,'asset.MSArbo').getCurrentRecord();
 			Logger.error("Ativo Espécie 1: " + asset.get("ms_speciesunident"));
 			Logger.error("Popular 1: " + asset.get("ms_popularname")); 
 			Logger.error("Fanilia 1: " + asset.get("ms_family")); 
@@ -2040,113 +2863,56 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			var popular = asset.get("ms_popular");
 		    var ms_scientific = asset.get("ms_scientific");
 
-
-
 			var specsList = CommonHandler._getAdditionalResource(eventContext,"msarbospec");
 			Logger.error("Ativo: " + asset.get("ms_assetnum"));
 			Logger.error("Familia: " + asset.get("ms_popularname"));
 
 			var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
+			let currAsset = assetSet.getCurrentRecord();
+			let deadtree = currAsset.get('ms_deadtree');
+			var isDeadTreeResponse = asset.get("ms_deadtree_set");
+
+			var isDeadTreeResponse = false;
+			try {
+				if (currAsset.get("ms_deadtree_set") == true || deadtree) {
+					isDeadTreeResponse = true;
+				}else{
+					isDeadTreeResponse = false;
+				}				
+			} catch (error) {
+				console.log(error);
+			}
+			if (isDeadTreeResponse) {
 				asset.set("ms_popularname", asset.get("ms_popularname"));
 				asset.set("ms_scientific", asset.get("ms_popularname"));
 				asset.set("ms_family", asset.get("ms_family"));
-
-			
 				ModelService.save(assetSet).then(function() {				
 					eventContext.ui.hideCurrentView();
 				}).
 				otherwise(function(err){
 					//eventContext.ui.showMessage(err);						
 				});
+			}else{
+				throw new PlatformRuntimeException("Favor responder se Árvore está morta");
+			}
+
+
 		},
 
-		commitNewSpecificationView : function(eventContext){
-			
-			var asset=eventContext.getCurrentRecord();
-			var recordSet = asset.getOwner();
-			
-			//
-			Logger.error("ms_assetnum" + asset.get("ms_assetnum"));
-			Logger.error("ms_assetnum" + asset.get("assetnum"));
-			
-			//
-			asset.openPriorityChangeTransaction();
-			asset.set('ms_assetnum', asset.get('assetnum'));
-			asset.closePriorityChangeTransaction();
-			
-			Logger.error("assetnum" + recordSet.get("ms_assetnum"));
-			Logger.error("assetnum" + recordSet.get("assetnum"));
-			var self = this;
-			ModelService.saveAll(asset).then(function(){
-			       self.ui.hideCurrentView();
-			});	
-			
-			
-			
-			/*var assetSet = CommonHandler._getAdditionalResource(eventContext,"asset");
-			var asset = assetSet.getCurrentRecord();	
-			
-			asset.openPriorityChangeTransaction();
-			asset.closePriorityChangeTransaction();
-			if (asset.isNew()){
-				eventContext.ui.hideCurrentView();
-			}
-			else{
-				ModelService.save(assetSet).then(function(){
-					eventContext.ui.hideCurrentView();
-				});
-				
-			}
-			
-			var deferred = new Deferred();
-					ModelService.save(asset).then(function(result){
-					deferred.resolve();
-					});
-					asset.closePriorityChangeTransaction();
-					eventContext.ui.hideCurrentView();
-					return ;
-					this.inherited(arguments);
-			*/
-			/*eventContext.application.showBusy();
-			try{
-				if(!eventContext.viewControl.validate()){
-					return;
-				}
-				//eventContext.getCurrentRecord().set("dontDiscard", true);
-				var currRec = CommonHandler._getAdditionalResource(eventContext,"asset").getCurrentRecord();
-				//AssetSpecificationObject.beforeSave(currRec,
-				//		eventContext.ui.application.getResource("assetattrtypes"));
-				
-				var assetSet =  CommonHandler._getAdditionalResource(eventContext,"asset");
-				var self=eventContext;
-				
-				if(!assetSet.getCurrentRecord().isNew()){
-					ModelService.save(assetSet).
-					then(function(){
-						Logger.error("ms_assetnum" + currRec.get("ms_assetnum"));
-						Logger.error("assetnum" + currRec.get("assetnum"));
-						ModelService.save(currRec);
-						self.ui.hideCurrentView();}).
-						otherwise(function(error){
-							switch (true) {				
-								case (error.error instanceof PlatformRuntimeException):						
-									self.application.showMessage(error.error.getMessage());
-								break;				
-							}
-						});
-				}
-				else{
-					eventContext.ui.hideCurrentView();
-				}
-			}catch(e){
-				throw e;
-			}*/
+		detailsHandleBackButton : function(eventContext){
+			eventContext.ui.show("SGZArbo.AssetListView");
 		},
-
-		saveWOShowView : function(eventContext) {
+		techReportHandleBackButton : function(eventContext){
+			eventContext.ui.show("SGZArbo.AssetDetailView");
+		},
+		
+		commitDendometricCharacteristics : function(eventContext) {
+			if(!eventContext.viewControl.validate()){return;}
 			var asset = CommonHandler._getAdditionalResource(eventContext, 'asset.MSArbo').getCurrentRecord();
 			var assetSet = CommonHandler._getAdditionalResource(eventContext, "asset");
 			var currAsset = assetSet.getCurrentRecord();
+			let deadtree = currAsset.get('ms_deadtree');
+
 			let diameterbreast = asset.get("ms_diameterbreast");
 			let perimeterbreast = asset.get("ms_perimeterbreast");
 			let slope = asset.get("ms_slope");
@@ -2155,26 +2921,45 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 
 			var self = this;
 
-			if(slope){
-				if ((direction == null || direction <= 0 || direction == undefined) || 
-				(angle == null || angle <= 0 || angle == undefined)){
-					//eventContext.ui.showMessage("Quando o campo 'Inclinação?' está marcado é necessário informar Direção e Ângulo (graus)");
-					throw new PlatformRuntimeException("Quando o campo 'Inclinação?' está marcado é necessário informar Direção e Ângulo (graus)");
-				}
+			var isDeadTreeResponse = false;
+			try {
+				if (currAsset.get("ms_deadtree_set") == true || deadtree) {
+					isDeadTreeResponse = true;
+				}else{
+					isDeadTreeResponse = false;
+				}				
+			} catch (error) {
+				console.log(error);
 			}
 
-			if ((diameterbreast != null || diameterbreast > 0 || diameterbreast != undefined)
-				||(perimeterbreast!= null || perimeterbreast > 0 || perimeterbreast != undefined)) {
-					ModelService.save(assetSet).then(function () {
-						eventContext.ui.hideCurrentView();
-						//eventContext.ui.showMessage("Caracteristicas Dendométricas Salvo.");
-						//eventContext.ui.show("SGZArbo.AssetListView");
-					}).otherwise(function (err) {
-						//eventContext.ui.showMessage(err);						
-					});
+			if (isDeadTreeResponse) {
+				if(slope){
+					if ((direction == null || direction <= 0 || direction == undefined) || 
+					(angle == null || angle <= 0 || angle == undefined)){
+						//eventContext.ui.showMessage("Quando o campo 'Inclinação?' está marcado é necessário informar Direção e Ângulo (graus)");
+						throw new PlatformRuntimeException("Quando o campo 'Inclinação?' está marcado é necessário informar Direção e Ângulo (graus)");
+					}
+				}
+	
+				if ((diameterbreast != null || diameterbreast > 0 || diameterbreast != undefined)
+					||(perimeterbreast!= null || perimeterbreast > 0 || perimeterbreast != undefined)) {
+	
+						ModelService.save(assetSet).then(function () {
+							eventContext.ui.hideCurrentView();
+							//eventContext.ui.showMessage("Caracteristicas Dendométricas Salvo.");
+							//eventContext.ui.show("SGZArbo.AssetListView");
+							eventContext.ui.hideCurrentView();
+						}).otherwise(function (err) {
+							//eventContext.ui.showMessage(err);						
+						});
+				}else{
+					self.requiredMandatoryFields(eventContext);
+				}
 			}else{
-				self.requiredMandatoryFields(eventContext);
+				throw new PlatformRuntimeException("Favor responder se Árvore está morta");
 			}
+
+
 
 		},
 		requiredMandatoryFields: function (eventContext) {
@@ -2239,22 +3024,28 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 
 
 
-		},			
+		},	
+
 		setReasonLow: function (eventContext) {
 			var asset = CommonHandler._getAdditionalResource(eventContext, 'asset.MSArbo').getCurrentRecord();
 			var assetSet = CommonHandler._getAdditionalResource(eventContext, "asset");
 			var currAsset = assetSet.getCurrentRecord();
-			asset.set("ms_arboreason", currAsset.get("ms_arboreason"));
-			if (currAsset.get("ms_arboreason") != null && currAsset.get("ms_arboreason") > 0) {
-				ModelService.save(assetSet).then(function () {
-					//eventContext.ui.hideCurrentView();
-					eventContext.ui.showMessage("Registro Salvo.");
-				}).otherwise(function (err) {
-					//eventContext.ui.showMessage(err);						
-				});
+			try {
+				if (asset) {					
+					asset.set("ms_arboreason", currAsset.get("ms_arboreason"));
+					if (currAsset.get("ms_arboreason") != null && currAsset.get("ms_arboreason") > 0) {
+						ModelService.save(assetSet).then(function () {
+							//eventContext.ui.hideCurrentView();
+						}).otherwise(function (err) {
+							//eventContext.ui.showMessage(err);						
+						});
+					}
+				}
+			} catch (error) {
+				console.log(error);
 			}
 		},
-		
+
 		requiredFieldTreeSpecification: function (eventContext) {
 			var assetSet = CommonHandler._getAdditionalResource(eventContext, 'asset.MSArbo');
 			var asset = assetSet.getCurrentRecord();
@@ -2274,6 +3065,75 @@ function(declare, arrayUtil, lang, topic, date, number, ApplicationHandlerBase, 
 			}
 
 
-		}
+		},
+
+		filterStatus: function (eventContext) {
+			let domainAssetStatus = CommonHandler._getAdditionalResource(eventContext, 'domainAssetStatus');
+			CommonHandler._clearFilterForResource(eventContext, domainAssetStatus);
+			domainAssetStatus.filter('description == $1 || description == $2', 'Ativo', 'Inativo');
+		},
+
+		showReasonButtonStatus: function (eventContext) {
+			var statusChange = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
+			var self = this;
+			let newStatus = statusChange.get("status");
+			
+			try {
+
+				if (newStatus != null) {
+					newStatus = newStatus.toLocaleUpperCase();					
+				}
+
+				if (newStatus == "INATIVO"){
+					eventContext.setDisplay(true);
+					eventContext.setVisibility(true);
+				}else{
+					eventContext.setDisplay(false);
+					eventContext.setVisibility(false);
+				}
+			} catch (error) {
+				console.log(error);
+			}
+			
+		},
+		setTreeAdress: function(eventContext){
+			var filteredItems = 0;			
+			var filter = {};
+			var self = this;
+			let search = CommonHandler._getAdditionalResource(eventContext, 'asset');
+			CommonHandler._clearFilterForResource(eventContext, search);
+			search.filter('ms_addressline == $1', );
+			if(filteredItems == 0){
+				eventContext.ui.show('SGZArbo.RequiredSearchFieldMissing');
+				return;
+			}
+			
+			self.populateSearch(eventContext);
+
+		},
+
+		/*_saveStatusChangeDate: function(eventContext){
+			let asset = CommonHandler._getAdditionalResource(eventContext, 'asset').getCurrentRecord();
+			asset.setDateValue("statusdate", this.application.getCurrentDateTime());
+			
+			var self = this;
+			ModelService.save(recordSet).then(function(){
+			    //self.ui.hideCurrentView();
+			});			
+			
+		},*/
+		backSpec:function(eventContext){
+			return false;
+		},
+		backSpecDetails:function(eventContext){
+			eventContext.ui.show("SGZArbo.AssetDetailView");
+		},
+		backSpecLaudo:function(eventContext){
+			eventContext.ui.show('SGZArbo.Section.four.SpecificationsView.laudo');
+		},
+
+		
+
+
 	});
 });

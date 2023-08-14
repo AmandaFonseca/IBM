@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Alteração Amanda Chamado 80537 - ATIVOS ABOREOS - FAMILIA / NOME POPULAR  26/10/22 ***18:08 ***  -->
 <app id="login" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Releng/codegen/src/main/java/resources/xsd/app.xsd">
 	<ui id="ui">
 	    <!-- This SSO Error dialog must be above the LoginView definition -->
@@ -102,7 +101,7 @@
 					</eventHandlers>
 				</link>
 				
-				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2111221400P"/>
+				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:120723141"/>
 								
 			</container>
 			<eventHandlers id="platform.LoginView_eventHandlers">
