@@ -1,4 +1,4 @@
-     [echo] 2023-08-14 17:06:11> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
+     [echo] 2023-08-15 16:56:33> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -100,7 +100,7 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-08-14 17:06:12> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-08-15 16:56:33> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
@@ -116,14 +116,14 @@ init:  duration 0 seconds
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-08-14 17:06:12> Java version was checked.
+     [echo] 2023-08-15 16:56:33> Java version was checked.
 verify-compatibility:  duration 0 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-system-verification.xml.
 [available] Found directory: build\managed
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-08-14 17:06:12> maximo anywhere platform is already installed.
+     [echo] 2023-08-15 16:56:33> maximo anywhere platform is already installed.
 verify-environment-compatibility:  duration 0 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
@@ -469,75 +469,75 @@ Complete build sequence is [-update-buildtimestamp, pull-rdfs-from-server, Appli
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-08-14 17:06:25> Updating C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo About Build Time Panel
+     [echo] 2023-08-15 16:56:46> Updating C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp About Build Time Panel
 [available] Found: version.txt
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
 Override ignored for property "core.build.datetime"
 Override ignored for property "base.build.datetime"
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\ar\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\ar\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\artifact.js' by line.
 [replaceregexp] File has changed; saving the updated file
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\cs\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\da\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\de\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\en-gb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\cs\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\da\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\de\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\en-gb\artifact.js' by line.
 [replaceregexp] File has changed; saving the updated file
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\en-us\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\en-us\artifact.js' by line.
 [replaceregexp] File has changed; saving the updated file
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\en\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\en\artifact.js' by line.
 [replaceregexp] File has changed; saving the updated file
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\es\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\fi\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\fr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\hr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\hu\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\it\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\ja\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\ko\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\nb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\nl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\pl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\pt\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\ru\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\sk\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\sl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\sv\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\zh-tw\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\application\translation\nls\zh\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\es\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\fi\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\fr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\hr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\hu\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\it\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\ja\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\ko\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\nb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\nl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\pl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\pt\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\ru\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\sk\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\sl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\sv\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\zh-tw\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\zh\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\artifact.js' by line.
 [replaceregexp] File has changed; saving the updated file
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\cs\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\da\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\de\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\en-gb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\en-us\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\cs\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\da\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\de\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\en-gb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\en-us\artifact.js' by line.
 [replaceregexp] File has changed; saving the updated file
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\en\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\en\artifact.js' by line.
 [replaceregexp] File has changed; saving the updated file
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\es\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\fi\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\fr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\hr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\hu\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\it\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\ja\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\ko\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\nb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\nl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\pl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\pt\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\ru\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\sk\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\sl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\sv\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\zh-tw\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo\common\js\generated\application\translation\nls\zh\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\es\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\fi\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\fr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\hr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\hu\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\it\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\ja\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\ko\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\nb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\nl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\pl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\pt\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\ru\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\sk\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\sl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\sv\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\zh-tw\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\zh\artifact.js' by line.
 -update-buildtimestamp:  duration 0 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-   [delete] Deleting: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZArbo.zip
-      [zip] Building zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZArbo.zip
+   [delete] Deleting: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.zip
+      [zip] Building zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.zip
       [zip] adding directory css/
       [zip] adding directory idx/
       [zip] adding directory idx/mobile/
@@ -565,11 +565,16 @@ Override ignored for property "base.build.datetime"
       [zip] adding directory idx/mobile/themes/oneui_ios/idx/images/
       [zip] adding directory images/
       [zip] adding directory images/mdpi/
+      [zip] adding directory images/mdpi/statusicons/
+      [zip] adding directory images/mdpi/statusicons/teste/
       [zip] adding directory img/
       [zip] adding directory js/
       [zip] adding directory js/application/
       [zip] adding directory js/application/business/
+      [zip] adding directory js/application/business/calibration/
+      [zip] adding directory js/application/business/util/
       [zip] adding directory js/application/handlers/
+      [zip] adding directory js/application/handlers/spatial/
       [zip] adding directory js/application/translation/
       [zip] adding directory js/application/translation/nls/
       [zip] adding directory js/application/translation/nls/ar/
@@ -598,6 +603,7 @@ Override ignored for property "base.build.datetime"
       [zip] adding directory js/application/translation/nls/zh/
       [zip] adding directory js/application/translation/nls/zh-tw/
       [zip] adding directory js/custom/
+      [zip] adding directory js/custom/business/
       [zip] adding directory js/custom/handlers/
       [zip] adding directory js/generated/
       [zip] adding directory js/generated/application/
@@ -631,12 +637,9 @@ Override ignored for property "base.build.datetime"
       [zip] adding directory js/generated/application/translation/nls/zh-tw/
       [zip] adding directory js/generated/application/ui/
       [zip] adding directory js/generated/application/ui/layout/
-      [zip] adding directory js/generated/application/ui/layout/large/
-      [zip] adding directory js/generated/application/ui/layout/medium/
       [zip] adding directory js/generated/application/ui/layout/small/
       [zip] adding directory js/generated/application/ui/layout/small/landscape/
       [zip] adding directory js/generated/application/ui/layout/small/portrait/
-      [zip] adding directory js/generated/application/ui/layout/xlarge/
       [zip] adding directory js/platform/
       [zip] adding directory js/platform/attachment/
       [zip] adding directory js/platform/auth/
@@ -993,88 +996,203 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/images/headerIcons.png
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/main.css
       [zip] adding entry idx/mobile/themes/oneui_ios/oneui_ios.css
-      [zip] adding entry images/mdpi/Logo_SGZArbo.svg
-      [zip] adding entry images/mdpi/Logo_SGZArbo_H.svg
-      [zip] adding entry images/mdpi/Logo_SGZ_Arbo.svg
+      [zip] adding entry images/mdpi/1.png
+      [zip] adding entry images/mdpi/1.svg
+      [zip] adding entry images/mdpi/Logo_SGZInsp_H.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_Insp.svg
       [zip] adding entry images/mdpi/Use-Current-Location.png
       [zip] adding entry images/mdpi/Use-Current-Location.svg
       [zip] adding entry images/mdpi/action_addCrewLabor_OFF.png
-      [zip] adding entry images/mdpi/action_addCrewLabor_OFF.svg
       [zip] adding entry images/mdpi/action_addCrewLabor_ON.png
       [zip] adding entry images/mdpi/action_applyApprovedStatus_OFF.png
       [zip] adding entry images/mdpi/action_applyCompleteStatus_OFF.png
       [zip] adding entry images/mdpi/action_download_on.png
-      [zip] adding entry images/mdpi/action_menu_downtime.png
+      [zip] adding entry images/mdpi/action_downtime_down.png
+      [zip] adding entry images/mdpi/action_downtime_off.png
+      [zip] adding entry images/mdpi/action_downtime_up.png
+      [zip] adding entry images/mdpi/action_downtime_updown.png
+      [zip] adding entry images/mdpi/action_downtime_updown.svg
+      [zip] adding entry images/mdpi/action_downtime_updown_nospliter.png
+      [zip] adding entry images/mdpi/action_getInfo_off.png
+      [zip] adding entry images/mdpi/action_getInfo_on.png
+      [zip] adding entry images/mdpi/action_getInfo_on.svg
       [zip] adding entry images/mdpi/action_meterReading_off.png
+      [zip] adding entry images/mdpi/action_meterReading_off.svg
       [zip] adding entry images/mdpi/action_meterReading_on.png
-      [zip] adding entry images/mdpi/action_move_asset.png
-      [zip] adding entry images/mdpi/action_move_asset.svg
       [zip] adding entry images/mdpi/action_timerRunning_OFF.png
       [zip] adding entry images/mdpi/action_timerRunning_OFF.svg
       [zip] adding entry images/mdpi/action_timerRunning_ON.png
       [zip] adding entry images/mdpi/action_timer_OFF.png
       [zip] adding entry images/mdpi/action_timer_OFF.svg
       [zip] adding entry images/mdpi/action_timer_ON.png
+      [zip] adding entry images/mdpi/action_wo_history.png
       [zip] adding entry images/mdpi/app_icon_main.svg
-      [zip] adding entry images/mdpi/button_move_asset.svg
+      [zip] adding entry images/mdpi/calibrationpoint_critical_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_none_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_normal_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_warning_status.png
       [zip] adding entry images/mdpi/download-ok.png
-      [zip] adding entry images/mdpi/header_add.png
+      [zip] adding entry images/mdpi/gmaps.png
+      [zip] adding entry images/mdpi/gmaps_icon.png
       [zip] adding entry images/mdpi/header_addCrewLabor_OFF.png
       [zip] adding entry images/mdpi/header_addCrewLabor_ON.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_back_OFF.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_back_OFF.svg
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_back_ON.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_noBack.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_noBack.svg
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_noBack_OFF.svg
+      [zip] adding entry images/mdpi/header_app_WorkExecution.png
+      [zip] adding entry images/mdpi/header_app_WorkExecution_back_OFF.png
+      [zip] adding entry images/mdpi/header_app_WorkExecution_back_OFF.svg
+      [zip] adding entry images/mdpi/header_app_WorkExecution_back_ON.png
+      [zip] adding entry images/mdpi/header_app_WorkExecution_noBack.png
+      [zip] adding entry images/mdpi/header_app_WorkExecution_noBack.svg
+      [zip] adding entry images/mdpi/header_app_WorkExecution_noBack_OFF.svg
       [zip] adding entry images/mdpi/header_attachment_off.png
       [zip] adding entry images/mdpi/header_attachment_on.png
       [zip] adding entry images/mdpi/header_camera_off.png
       [zip] adding entry images/mdpi/header_camera_off.svg
       [zip] adding entry images/mdpi/header_camera_on.png
       [zip] adding entry images/mdpi/header_createActuals_OFF.png
+      [zip] adding entry images/mdpi/header_createActuals_OFF.svg
       [zip] adding entry images/mdpi/header_createActuals_ON.png
       [zip] adding entry images/mdpi/header_createWO_OFF.png
+      [zip] adding entry images/mdpi/header_createWO_OFF.svg
       [zip] adding entry images/mdpi/header_createWO_ONbig.png
+      [zip] adding entry images/mdpi/header_mapView_OFF.svg
       [zip] adding entry images/mdpi/header_materialsAndTools_OFF.png
+      [zip] adding entry images/mdpi/header_materialsAndTools_OFF.svg
       [zip] adding entry images/mdpi/header_materialsAndTools_ON.png
+      [zip] adding entry images/mdpi/header_signature_OFF.png
+      [zip] adding entry images/mdpi/header_signature_ON.png
+      [zip] adding entry images/mdpi/header_signature_ON.svg
       [zip] adding entry images/mdpi/icon_download.png
       [zip] adding entry images/mdpi/map_current_location.png
+      [zip] adding entry images/mdpi/map_current_location.svg
+      [zip] adding entry images/mdpi/map_warning.png
       [zip] adding entry images/mdpi/map_wo_default.png
+      [zip] adding entry images/mdpi/map_wo_default.svg
       [zip] adding entry images/mdpi/map_wo_default_selected.png
+      [zip] adding entry images/mdpi/map_wo_default_selected.svg
       [zip] adding entry images/mdpi/msg_downloadComplete_small.png
       [zip] adding entry images/mdpi/msg_downloadComplete_small.svg
+      [zip] adding entry images/mdpi/old_Logo_SGZ_Insp.svg
       [zip] adding entry images/mdpi/spinner.gif
+      [zip] adding entry images/mdpi/status_error.svg
+      [zip] adding entry images/mdpi/statusicons/1.png
+      [zip] adding entry images/mdpi/statusicons/1.svg
+      [zip] adding entry images/mdpi/statusicons/2.png
+      [zip] adding entry images/mdpi/statusicons/2.svg
+      [zip] adding entry images/mdpi/statusicons/AGINSP_.png
+      [zip] adding entry images/mdpi/statusicons/AGINSP_.svg
+      [zip] adding entry images/mdpi/statusicons/AGINSP_OLD.png
+      [zip] adding entry images/mdpi/statusicons/AGINSP_oldv1.png
+      [zip] adding entry images/mdpi/statusicons/APPR.png
+      [zip] adding entry images/mdpi/statusicons/APPR.svg
+      [zip] adding entry images/mdpi/statusicons/APROVADO_oldv1.png
+      [zip] adding entry images/mdpi/statusicons/CAN.png
+      [zip] adding entry images/mdpi/statusicons/CAN.svg
+      [zip] adding entry images/mdpi/statusicons/CLOSE.png
+      [zip] adding entry images/mdpi/statusicons/CLOSE.svg
+      [zip] adding entry images/mdpi/statusicons/COMP.png
+      [zip] adding entry images/mdpi/statusicons/COMP.svg
+      [zip] adding entry images/mdpi/statusicons/HISTEDIT.png
+      [zip] adding entry images/mdpi/statusicons/HISTEDIT.svg
+      [zip] adding entry images/mdpi/statusicons/INPRG.png
+      [zip] adding entry images/mdpi/statusicons/INPRG.svg
+      [zip] adding entry images/mdpi/statusicons/PLANEJAR.png
+      [zip] adding entry images/mdpi/statusicons/PLANEJAR.svg
+      [zip] adding entry images/mdpi/statusicons/PRECANC.png
+      [zip] adding entry images/mdpi/statusicons/PRECANC.svg
+      [zip] adding entry images/mdpi/statusicons/PRECANC_OLD.png
+      [zip] adding entry images/mdpi/statusicons/WAPPR.png
+      [zip] adding entry images/mdpi/statusicons/WAPPR.svg
+      [zip] adding entry images/mdpi/statusicons/WMATL.png
+      [zip] adding entry images/mdpi/statusicons/WMATL.svg
+      [zip] adding entry images/mdpi/statusicons/WPCOND.png
+      [zip] adding entry images/mdpi/statusicons/WPCOND.svg
+      [zip] adding entry images/mdpi/statusicons/WSCH.png
+      [zip] adding entry images/mdpi/statusicons/WSCH.svg
+      [zip] adding entry images/mdpi/statusicons/teste/1.png
+      [zip] adding entry images/mdpi/statusicons/teste/1.svg
+      [zip] adding entry images/mdpi/statusicons/warning.png
+      [zip] adding entry images/mdpi/statusicons/warning.svg
+      [zip] adding entry images/mdpi/waze_icon.png
       [zip] adding entry images/mdpi/xsample.gif
       [zip] adding entry img/logo.png
       [zip] adding entry index.html
       [zip] adding entry js/Startup.js
       [zip] adding entry js/anywhere-worklight.js
+      [zip] adding entry js/application/business/ActualLaborObject.js
+      [zip] adding entry js/application/business/ActualMaterialObject.js
+      [zip] adding entry js/application/business/ActualToolObject.js
+      [zip] adding entry js/application/business/AppConfig.js
+      [zip] adding entry js/application/business/AssetFunctionObject.js
       [zip] adding entry js/application/business/AssetMeterObject.js
-      [zip] adding entry js/application/business/AssetObject.js
-      [zip] adding entry js/application/business/AssetSpecificationObject.js
-      [zip] adding entry js/application/business/AssetStatusHandler.js
-      [zip] adding entry js/application/business/AssetStatusObject.js
+      [zip] adding entry js/application/business/AssignmentObject.js
       [zip] adding entry js/application/business/AttachmentsObject.js
+      [zip] adding entry js/application/business/CalibrationPointObject.js
       [zip] adding entry js/application/business/ClassStructureObject.js
+      [zip] adding entry js/application/business/CrewLaborObject.js
+      [zip] adding entry js/application/business/CrewToolObject.js
+      [zip] adding entry js/application/business/DataSheetObject.js
       [zip] adding entry js/application/business/FieldUtil.js
       [zip] adding entry js/application/business/MaxDomainObject.js
       [zip] adding entry js/application/business/MaxVars.js
+      [zip] adding entry js/application/business/MultiAssetLocObject.js
+      [zip] adding entry js/application/business/PlannedMaterialObject.js
+      [zip] adding entry js/application/business/PlannedToolObject.js
       [zip] adding entry js/application/business/SynonymDomain.js
-      [zip] adding entry js/application/handlers/AssetDetailHandler.js
-      [zip] adding entry js/application/handlers/AssetListHandler.js
-      [zip] adding entry js/application/handlers/AssetListScanHandler.js
-      [zip] adding entry js/application/handlers/AssetMoveHandler.js
+      [zip] adding entry js/application/business/TaskObject.js
+      [zip] adding entry js/application/business/WOAssignEmergenceBusinessObject.js
+      [zip] adding entry js/application/business/WOChangeStatusObject.js
+      [zip] adding entry js/application/business/WoStatusObject.js
+      [zip] adding entry js/application/business/WorkLogObject.js
+      [zip] adding entry js/application/business/WorkOrderObject.js
+      [zip] adding entry js/application/business/WorkOrderObject_copia.js
+      [zip] adding entry js/application/business/WorkOrderStatusHandler.js
+      [zip] adding entry js/application/business/WorkOrderTimer.js
+      [zip] adding entry js/application/business/WpEditSettings.js
+      [zip] adding entry js/application/business/calibration/DataSheetCalculation.js
+      [zip] adding entry js/application/business/calibration/_NumberFormatterMixin.js
+      [zip] adding entry js/application/business/calibration/_StandardDeviationMixin.js
+      [zip] adding entry js/application/business/calibration/_SumToleranceTypesMixin.js
+      [zip] adding entry js/application/business/util/CrewUtil.js
+      [zip] adding entry js/application/business/util/DecimalCalculator.js
+      [zip] adding entry js/application/handlers/ActualLaborHandler.js
+      [zip] adding entry js/application/handlers/ActualMaterialHandler.js
+      [zip] adding entry js/application/handlers/ActualToolHandler.js
+      [zip] adding entry js/application/handlers/AddDatasheetHandler.js
+      [zip] adding entry js/application/handlers/AssetFunctionDetailsViewHandler.js
+      [zip] adding entry js/application/handlers/AssetFunctionHandler.js
+      [zip] adding entry js/application/handlers/CalibrationPointErrorsHandler.js
+      [zip] adding entry js/application/handlers/CalibrationPointHandler.js
       [zip] adding entry js/application/handlers/ClassificationFormHandler.js
-      [zip] adding entry js/application/handlers/ClassifyAssetHandler.js
+      [zip] adding entry js/application/handlers/ClassifyWorkOrderHandler.js
       [zip] adding entry js/application/handlers/CommonHandler.js
+      [zip] adding entry js/application/handlers/CopyPlansToActualsHandler.js
+      [zip] adding entry js/application/handlers/CreateNewCalibrationHandler.js
+      [zip] adding entry js/application/handlers/DataSheetDownloadManager.js
+      [zip] adding entry js/application/handlers/DataSheetHandler.js
       [zip] adding entry js/application/handlers/FailureCodeHandler.js
+      [zip] adding entry js/application/handlers/GPSTracker.js
+      [zip] adding entry js/application/handlers/LaborAssignmentHandler.js
+      [zip] adding entry js/application/handlers/MeterDownloadManager.js
       [zip] adding entry js/application/handlers/MeterReadingsHandler.js
       [zip] adding entry js/application/handlers/MetersListHandler.js
+      [zip] adding entry js/application/handlers/MultiAssetLocationHandler.js
+      [zip] adding entry js/application/handlers/PlannedMaterialHandler.js
+      [zip] adding entry js/application/handlers/PlannedToolHandler.js
+      [zip] adding entry js/application/handlers/ReportByCrewHandler.js
       [zip] adding entry js/application/handlers/ReportDowntimeHandler.js
       [zip] adding entry js/application/handlers/StatusChangeHandler.js
+      [zip] adding entry js/application/handlers/StopTimerHandler.js
+      [zip] adding entry js/application/handlers/TaskHandler.js
       [zip] adding entry js/application/handlers/WOAttachmentHandler.js
+      [zip] adding entry js/application/handlers/WOCreateQueryBaseHandler.js
+      [zip] adding entry js/application/handlers/WODetailHandler.js
+      [zip] adding entry js/application/handlers/WOExtDownloadHandler.js
+      [zip] adding entry js/application/handlers/WOGeolocationHandler.js
+      [zip] adding entry js/application/handlers/WOHistoryHandler.js
+      [zip] adding entry js/application/handlers/WOListHandler.js
+      [zip] adding entry js/application/handlers/WorkLogHandler.js
+      [zip] adding entry js/application/handlers/WorkOrderHistoryHandler.js
+      [zip] adding entry js/application/handlers/spatial/SketchToolHandler.js
       [zip] adding entry js/application/translation/nls/ar/artifact.js
       [zip] adding entry js/application/translation/nls/artifact.js
       [zip] adding entry js/application/translation/nls/cs/artifact.js
@@ -1101,11 +1219,13 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/application/translation/nls/sv/artifact.js
       [zip] adding entry js/application/translation/nls/zh-tw/artifact.js
       [zip] adding entry js/application/translation/nls/zh/artifact.js
-      [zip] adding entry js/custom/handlers/MSAssetDetailHandler.js
-      [zip] adding entry js/custom/handlers/MSAssetDetailHandler.zip
+      [zip] adding entry js/custom/business/MSAttachmentsObject.js
+      [zip] adding entry js/custom/handlers/MSAttachmentExtensionHandler.js
+      [zip] adding entry js/custom/handlers/MSClassifyWorkOrderHandler.js
       [zip] adding entry js/custom/handlers/MSLoginHandler.js
-      [zip] adding entry js/custom/handlers/MSWOAttachmentHandler.js
-      [zip] adding entry js/custom/handlers/MStatusChangeHandler.js
+      [zip] adding entry js/custom/handlers/MSStatusChangeHandler.js
+      [zip] adding entry js/custom/handlers/WODetailExtensionHandler.js
+      [zip] adding entry js/custom/handlers/WorkOrderStatusHandler.js
       [zip] adding entry js/generated/application/data/ApplicationStoresBuilder.js
       [zip] adding entry js/generated/application/pushNotification/PushNotificationSelfRegistrationGenerated.js
       [zip] adding entry js/generated/application/translation/nls/artifact.js
@@ -1136,24 +1256,40 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/generated/application/ui/ApplicationUIBuilder.js
       [zip] adding entry js/generated/application/ui/layout/LayoutConfig.js
       [zip] adding entry js/generated/application/ui/layout/LayoutFactory.js
-      [zip] adding entry js/generated/application/ui/layout/large/AssetMove.js
-      [zip] adding entry js/generated/application/ui/layout/large/ViewSpecs.js
-      [zip] adding entry js/generated/application/ui/layout/medium/AssetMove.js
-      [zip] adding entry js/generated/application/ui/layout/medium/ViewSpecs.js
       [zip] adding entry js/generated/application/ui/layout/small/ActualLaborListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/ActualMaterialListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/ActualToolListItem.js
-      [zip] adding entry js/generated/application/ui/layout/small/AssetMove.js
+      [zip] adding entry js/generated/application/ui/layout/small/AssetFunctionDetailsLayout.js
+      [zip] adding entry js/generated/application/ui/layout/small/AssetFunctionToleranceLayout.js
+      [zip] adding entry js/generated/application/ui/layout/small/AssetFunctions.js
       [zip] adding entry js/generated/application/ui/layout/small/AttachmentsListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/Button1Item1.js
       [zip] adding entry js/generated/application/ui/layout/small/Button2.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationDynamicCheck.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationItem3.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationItem3Justify.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationItem4.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsAnalog.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsAnalogRepeatable.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsAverageAnalog.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsAverageDiscrete.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsDiscrete.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsDiscreteRepeatable.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsFunction.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationRange.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationReadings.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationTolError.js
       [zip] adding entry js/generated/application/ui/layout/small/CenteredBottom2Buttons.js
       [zip] adding entry js/generated/application/ui/layout/small/ConnectionManagementLayout.js
       [zip] adding entry js/generated/application/ui/layout/small/CopyPlansListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/CrewLaborList.js
       [zip] adding entry js/generated/application/ui/layout/small/CrewToolList.js
+      [zip] adding entry js/generated/application/ui/layout/small/DataSheetList.js
+      [zip] adding entry js/generated/application/ui/layout/small/DataSheetStatus.js
       [zip] adding entry js/generated/application/ui/layout/small/DirectionsListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/FailureReportList.js
+      [zip] adding entry js/generated/application/ui/layout/small/FeatureAttributesList.js
+      [zip] adding entry js/generated/application/ui/layout/small/IdentifyFeaturesList.js
       [zip] adding entry js/generated/application/ui/layout/small/Item1Button1.js
       [zip] adding entry js/generated/application/ui/layout/small/Item1Button2list.js
       [zip] adding entry js/generated/application/ui/layout/small/Item1Count1Button1.js
@@ -1163,14 +1299,18 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/generated/application/ui/layout/small/Item2Desc2.js
       [zip] adding entry js/generated/application/ui/layout/small/Item2SideBySide.js
       [zip] adding entry js/generated/application/ui/layout/small/ItemLookup.js
+      [zip] adding entry js/generated/application/ui/layout/small/KeyValueFormLayout.js
       [zip] adding entry js/generated/application/ui/layout/small/LaborAssignmentListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/LaborCraftRateLookupItem.js
+      [zip] adding entry js/generated/application/ui/layout/small/LayersList.js
       [zip] adding entry js/generated/application/ui/layout/small/ListHeader.js
       [zip] adding entry js/generated/application/ui/layout/small/ListHeaderWithSearch.js
       [zip] adding entry js/generated/application/ui/layout/small/ListItem3Input1.js
       [zip] adding entry js/generated/application/ui/layout/small/ListItem5Button1.js
       [zip] adding entry js/generated/application/ui/layout/small/ListItem6Button1.js
       [zip] adding entry js/generated/application/ui/layout/small/MapEndPoint.js
+      [zip] adding entry js/generated/application/ui/layout/small/MapLoadOfflineAreaList.js
+      [zip] adding entry js/generated/application/ui/layout/small/MapOfflineAreaList.js
       [zip] adding entry js/generated/application/ui/layout/small/MaterialToolList.js
       [zip] adding entry js/generated/application/ui/layout/small/MeterList.js
       [zip] adding entry js/generated/application/ui/layout/small/MultiAssetListItem.js
@@ -1180,14 +1320,14 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/generated/application/ui/layout/small/Progress.js
       [zip] adding entry js/generated/application/ui/layout/small/ScanHeader.js
       [zip] adding entry js/generated/application/ui/layout/small/ServiceAddressLookup.js
-      [zip] adding entry js/generated/application/ui/layout/small/ViewSpecs.js
+      [zip] adding entry js/generated/application/ui/layout/small/SketchList.js
+      [zip] adding entry js/generated/application/ui/layout/small/VendorNameAddressListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/WorkListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/WorkLogListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/landscape/MapDetail.js
       [zip] adding entry js/generated/application/ui/layout/small/landscape/MapView.js
       [zip] adding entry js/generated/application/ui/layout/small/portrait/MapDetail.js
       [zip] adding entry js/generated/application/ui/layout/small/portrait/MapView.js
-      [zip] adding entry js/generated/application/ui/layout/xlarge/AssetMove.js
       [zip] adding entry js/initOptions.js
       [zip] adding entry js/jQuery.js
       [zip] adding entry js/main.js
@@ -1231,6 +1371,7 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/platform/geolocation/GeoLocationService.js
       [zip] adding entry js/platform/geolocation/GeoLocationServiceHelper.js
       [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.js
+      [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.zip
       [zip] adding entry js/platform/geolocation/GspVerifier.js
       [zip] adding entry js/platform/handlers/AdditionalDataDialogHandler.js
       [zip] adding entry js/platform/handlers/AttachmentHandler.js
@@ -2465,11 +2606,11 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry dojo/resources/blank.gif
       [zip] adding entry ol.js
       [zip] adding entry winstore-jscompat.js
--zip-app:  duration 2 seconds
+-zip-app:  duration 3 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-zip-all-apps:  duration 2 seconds
+zip-all-apps:  duration 3 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-all-gen:  duration 2 seconds
+all-gen:  duration 3 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
   [antcall] calling target(s) [all-deploy] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
@@ -2583,7 +2724,7 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-08-14 17:06:28> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-08-15 16:56:50> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
@@ -2657,15 +2798,15 @@ Override ignored for property "ant.file.basename"
 allApps:
 
 -process-app-artifact:
-     [echo] processing app C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZArbo
+     [echo] processing app C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp
 
 admin-loader:
      [java] authenticate() send request to get HttpSession cookie. 
      [java] 
-     [java] Get https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZArbo%22
+     [java] Get https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZInsp%22
      [java] authenticate() send request to get HttpSession cookie. 
      [java] 
-     [java] Get https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZArbo%22
+     [java] Get https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZInsp%22
      [java] App entry already exists on maximo.
      [echo] FORM authentication
      [exec] Note: Unnecessary use of -X or --request, POST is already inferred.
@@ -2686,30 +2827,30 @@ admin-loader:
      [exec] > 
      [exec] } [43 bytes data]
      [exec] HTTP/1.1 302 Found
-     [exec] Date: Mon, 14 Aug 2023 20:06:29 GMT
+     [exec] Date: Tue, 15 Aug 2023 19:56:51 GMT
      [exec] X-Powered-By: Servlet/3.1
      [exec] X-Frame-Options: SAMEORIGIN
      [exec] Location: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
      [exec] Content-Length: 0
-     [exec] Set-Cookie: LtpaToken2=JnliXt91odZshLEJLcTMqkkcF6oIpolOyvPxPH1ooiweiuTJ34ZCHw+ef18h9HW+AwPFd8pN/O6v+PQ0TZTCmlj06rpu8n2Y6lUeYtjuiDOR3J0BXhVoIqb5Uz428WROVwIjP0D5NWMLA569JQhRRYHDMyQgppyivEZ36f5/0T9py2bNUhbFBC/eS4QqCEF99lQFnUc7zhwim92+Nhg+Yv3Z2ry8VP8JQcT3en88iop0J5KIttoIHTWd+6QEoUhXCPkJbm3i3IG/JhedpEWyzQV5TqIR+0clFXlHX2Y7gXLbDaVGaunVAaPNGC503K6QLuFswI9ZCBOXCIOD0QMTLE/X8G9QKT23S3SGxuE/+KQV7/kw2owhRh4D9h2jeQBdPn7jfrA4STlkoUY4u5AG87Pfayl02t9cCVOEFWs3n3QCkJHyAcpRT4jWdeW7dLMPQUJaoy3ygK0RcMqKK9aZozDUk+G5fTg1pGK0IXHKMYi29AldS84IEIEU2mPp3022bqGZVgDoFgrvs5n1psTa3YVC5Jxc8uD3Xfy+nrjgcQIULWObqnbuVmZAWG/xzT09E+QznX01H5GT49a8lJSjrk7mvTfdWAhH16F1zelDJfiMvNkQc7LqZLOZacirJqzkGc16MsTY5YSPpSJF60GhRxbofBPUbG+KoCHhzyMa7mYVvH/DlKVO83c9QsuPFuWgznDGyEM82M387W+3Jhiyc4+c4bChqQtxIBcekakfzTmrd6ff3FJQHNA/1wBtAPyNvP5jIZGzDRfLLnWHij/IAg==; Path=/; HttpOnly
+     [exec] Set-Cookie: LtpaToken2=RSFW9j3j4HH7Fdxu6Klo7MQJTePYz5XzOfdAZRSdOr+viBz+Io+TLSr8gbwjdFWJ26xArap1kNQ3kAgpDD4bagGSsOgVCVXHqXz5veMVlouZF0edmP76ZxxjRekjhd7R+4eZF1zh7kX/zbuAX/EnN9Gcw32oVgK0UogLMri3QMcMdWvPGZdhCf459AkGi7hRAOL08YhZUHEcQFbfSVz9Mx2tLSfvNp0ZPGkiG3UYF1198q2RpFwpyL2smWAdCWKsMDm08SO9adAJhhb3rtkL0Uw79k7huVHVa< HTTP/1.1 302 Found
+     [exec] < Date: Tue, 15 Aug 2023 19:56:51 GMT
+     [exec] < X-Powered-By: Servlet/3.1
+     [exec] < X-Frame-Options: SAMEORIGIN
+     [exec] < L18O/bLSMTACRVxDhtfRzWs3E9ClQYfsqsVeBhBZOecS3EAryH2JMUdlDi+2vDc45uPB6g7S8v+opZVTis0NEh88LsIKzgmvvDCufbFhpNU9suRRLS5GOw5NGxJPJvIJGocation: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
+     [exec] < Content-Length: 0
+     [exec] * Added cookie LtpaToken2="RSFW9j3j4HH7Fdxu6Klo7MQJTePYz5XzOfdAZRSdOr+viBz+Io+TLSr8gbwjdFWJ26xArap1kNQ3kAgpDD4bagGSsOgVCVXHqXz5veMVlouZF0edmP76ZxxjRekjhd7R+4eZF1zh7kX2bval06QALsV0dTLqZpdnXhNiq7wRGqdrNMA/myEJDHmKagQ8nEed+VaCXwmFrcT19mG9yJJ2xMQTQltjtu3YL28X0XAS0rimaRGfrnJHtKRckGObTD5OZrJNnVVczKW/zbuAX/EnN9Gcw32oVgK0UogLMri3QMcMdWvPGZdhCf459AkGi7hRAOL08YhZUHEcQFbfSVz9Mx2tLSfvNp0ZPGkiG3UYF1198q2RpFwpyL2smWAdCWKsMDm08SO9adAJhhb3rtkL0Uw79k7huVHVa18O/bLSMTACRVxDhtfRzWs3E9ClQYfsqsVeBhBZOecS3EAryH2JMUdlDi+2vDc45uPB6g7S8v+opZVTis0NEh88LsIKzgmvvDCufbFhpNU9suRRLS5GOw5NGxJPJvIJG2bval06QALsV0dTLqZpdnXhNiq7wRGqdrNMA/myEJDHmKagQ8nEed+VaCXwmFrcT19mG9yJJ2xMQTQltjtu3YL28X0XAS0rimaRGfrnJHtVFXtMCg2+O9KREn4vKZjEflEIBxK4yZ3xl4EhxY/CBubvm6mYmwsLQAlnbOBYs4v3Bm069tWJGuuH10Z7z5dkI5aNif7zhGQVfO854ZuaBVCTQPH6c7i9UwMi3G0bvgEKRckGObTD5OZrJNnVVczKWVFXtMCg2+O9KREn4vKZjEflEIBxK4yZ3xl4EhxY/CBubvm6mYmwsLQAlnbOBYs4v3Bm069tWJGuuH10Z7z5dkI5aNif7zhGQVfO854ZuaBroE9d6cmWMqBMLhwSu87VPRDIFlRglRXwlDCAg6WqL6gbDHsgjR5rXxfX3nwzFmx6NDTvOqrCmJyx3s6hksGdFMwe0MIVerUClxRiIlQJOcZTGGmqkOMQ==; Path=/;VCTQPH6c7i9UwMi3G0bvgEroE9d6cmWMqBMLhwSu87VPRDIFlRglRXwlDCAg6WqL6gbDHsgjR5rXxfX3nwzFmx6NDTvOqrCmJyx3s6hksGdFMwe0MIVerUClxRiIlQJO HttpOnly
      [exec] Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] Content-Language: c.u-US
-     [exec] 
-     [exec] < HTTP/1.1 302 Found
-     [exec] < Date: Mon, 14 Aug 2023 20:06:29 GMT
-     [exec] < X-Powered-By: Servlet/3.1
-     [exec] < X-Frame-Options: SAMEORIGIN
-     [exec] < Location: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
-     [exec] < Content-Length: 0
-     [exec] * Added cookie LtpaToken2="JnliXt91odZshLEJLcTMqkkcF6oIpolOyvPxPH1ooiweiuTJ34ZCHw+ef18h9HW+AwPFd8pN/O6v+PQ0TZTCmlj06rpu8n2Y6lUeYtjuiDOR3J0BXhVoIqb5Uz428WROVwIjP0D5NWMLA569JQhRRYHDMyQgppyivEZ36f5/0T9py2bNUhbFBC/eS4QqCEF99lQFnUc7zhwim92+Nhg+Yv3Z2ry8VP8JQcT3en88iop0J5KIttoIHTWd+6QEoUhXCPkJbm3i3IG/JhedpEWyzQV5TqIR+0clFXlHX2Y7gXLbDaVGaunVAaPNGC503K6QLuFswI9ZCBOXCIOD0QMTLE/X8G9QKT23S3SGxuE/+KQV7/kw2owhRh4D9h2jeQBdPn7jfrA4STlkoUY4u5AG87Pfayl02t9cCVOEFWs3n3QCkJHyAcpRT4jWdeW7dLMPQUJaoy3ygK0RcMqKK9aZozDUk+G5fTg1pGK0IXHKMYi29AldS84IEIEU2mPp3022bqGZVgDoFgrvs5n1psTa3YVC5Jxc8uD3Xfy+nrjgcQIULWObqnbuVmZAWG/xzT09E+QznX01H5GT49a8lJSjrk7mvTfdWAhH16F1zelDJfiMvNkQc7LqZLOZacirJqzkGc16MsTY5YSPpSJF60GhRxbofBPUbG+KoCHhzyMa7mYVvH/DlKVO83c9QsuPFuWgznDGyEM82M387W+3Jhiyc4+c4bChqQtxIBcekakfzTmrd6ff3FJQHNA/1wBtAPyNvP5jIZGzDRfLLnWHij/IAg==" for domain hsmgimax.prefeitura.sp.gov.br, path /, expire 0
-     [exec] < Set-Cookie: LtpaToken2=JnliXt91odZshLEJLcTMqkkcF6oIpolOyvPxPH1ooiweiuTJ34ZCHw+ef18h9HW+AwPFd8pN/O6v+PQ0TZTCmlj06rpu8n2Y6lUeYtjuiDOR3J0BXhVoIqb5Uz428WROVwIjP0D5NWMLA569JQhRRYHDMyQgppyivEZ36f5/0T9py2bNUhbFBC/eS4QqCEF99lQFnUc7zhwim92+Nhg+Yv3Z2ry8VP8JQcT3en88iop0J5KIttoIHTWd+6QEoUhXCPkJbm3i3IG/JhedpEWyzQV5TqIR+0clFXlHX2Y7gXLbDaVGaunVAaPNGC503K6QLuFswI9ZCBOXCIOD0QMTLE/X8G9QKT23S3SGxuE/+KQV7/kw2owhRh4D9h2jeQBdPn7jfrA4STlkoUY4u5AG87Pfayl02t9cCVOEFWs3n3QCkJHyAcpRT4jWdeW7dLMPQUJaoy3ygK0RcMqKK9aZozDUk+G5fTg1pGK0IXHKMYi29AldS84IEIEU2mPp3022bqGZVgDoFgrvs5n1psTa3YVC5Jxc8uD3Xfy+nrjgcQIULWObqnbuVmZAWG/xzT09E+QznX01H5GT49a8lJSjrk7mvTfdWAhH16F1zelDJfiMvNkQc7LqZLOZacirJqzkGc16MsTY5YSPpSJF60GhRxbofBPUbG+KoCHhzyMa7mYVvH/DlKVO83c9QsuPFuWgznDGyEM82M387W+3Jhiyc4+c4bChqQtxIBcekakfzTmrd6ff3FJQHNA/1wBtAPyNvP5jIZGzDRfLLnWHij/IAg==; Path=/; HttpOnly
+     [exec] cZTGGmqkOMQ==" for domain hsmgimax.prefeitura.sp.gov.br, path /, expire 0
+     [exec] < Set-Cookie: LtpaToken2=RSFW9j3j4HH7Fdxu6Klo7MQJTePYz5XzOfdAZRSdOr+viBz+Io+TLSr8gbwjdFWJ26xArap1kNQ3kAgpDD4bagGSsOgVCVXHqXz5veMVlouZF0edmP76ZxxjRekjhd7R+4eZF1zh7kX/zbuAX/EnN9Gcw32o
+     [exec] VgK0UogLMri3QMcMdWvPGZdhCf459AkGi7hRAOL08YhZUHEcQFbfSVz9Mx2tLSfvNp0ZPGkiG3UYF1198q2RpFwpyL2smWAdCWKsMDm08SO9adAJhhb3rtkL0Uw79k7huVHVa18O/bLSMTACRVxDhtfRzWs3E9ClQYfsqsVeBhBZOecS3EAryH2JMUdlDi+2vDc45uPB6g7S8v+opZVTis0NEh88LsIKzgmvvDCufbFhpNU9suRRLS5GOw5NGxJPJvIJG2bval06QALsV0dTLqZpdnXhNiq7wRGqdrNMA/myEJDHmKagQ8nEed+VaCXwmFrcT19mG9yJJ2xMQTQltjtu3YL28X0XAS0rimaRGfrnJHtKRckGObTD5OZrJNnVVczKWVFXtMCg2+O9KREn4vKZjEflEIBxK4yZ3xl4EhxY/CBubvm6mYmwsLQAlnbOBYs4v3Bm069tWJGuuH10Z7z5dkI5aNif7zhGQVfO854ZuaBVCTQPH6c7i9UwMi3G0bvgEroE9d6cmWMqBMLhwSu87VPRDIFlRglRXwlDCAg6WqL6gbDHsgjR5rXxfX3nwzFmx6NDTvOqrCmJyx3s6hksGdFMwe0MIVerUClxRiIlQJOcZTGGmqkOMQ==; Path=/; HttpOnly
      [exec] < Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] < Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] < Content-Language: c.u-US
      [exec] < 
      [exec] 
-     [exec] 100    43    0     0  100    43      0    401 --:--:-- --:--:-- --:--:--   409* Connection #0 to host hsmgimax.prefeitura.sp.gov.br left intact
+     [exec] 100    43    0     0  100    43      0    566 --:--:-- --:--:-- --:--:--   573* Connection #0 to host hsmgimax.prefeitura.sp.gov.br left intact
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -2835,9 +2976,9 @@ Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
 Override ignored for property "si.adminmode"
 Override ignored for property "si.auth.sso.isLTPA"
-     [echo] Doing upload of SGZArbo.zip file to https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZArbo&appversion=7.6.4:
+     [echo] Doing upload of SGZInsp.zip file to https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZInsp&appversion=7.6.4:
      [echo] Authentication Type form
-     [echo]  https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZArbo&appversion=7.6.4: 
+     [echo]  https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZInsp&appversion=7.6.4: 
      [echo] FORM UPLOAD
      [exec] Current OS is Windows 10
      [exec] Executing 'curl' with arguments:
@@ -2849,25 +2990,25 @@ Override ignored for property "si.auth.sso.isLTPA"
 '-c'
 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/uploadcookie.txt'
 '-T'
-'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/bin/SGZArbo.zip'
-'https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZArbo&appversion=7.6.4:'
+'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/bin/SGZInsp.zip'
+'https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZInsp&appversion=7.6.4:'
 
 The ' characters around the executable and arguments are
 not part of the command.
      [exec]   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
      [exec]                                  Dload  Upload   Total   Spent    Left  Speed
      [exec] 
-     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 48 5022k    0     0   48 2448k      0  4595k  0:00:01 --:--:--  0:00:01 4601k100 5022k    0     0  100 5022k      0  2518k  0:00:01  0:00:01 --:--:-- 2519k100 5022k    0     0  100 5022k      0  1677k  0:00:02  0:00:02 --:--:-- 1677k100 5022k    0     0  100 5022k      0  1257k  0:00:03  0:00:03 --:--:-- 1257k100 5022k    0     0  100 5022k      0  1005k  0:00:04  0:00:04 --:--:-- 1005k
-     [exec] {"deployeddatetime":"2023-08-14 17:06:35.094"}
-     [exec] 100 5022k  100    47  100 5022k      8   954k  0:00:05  0:00:05 --:--:--  544k
- [loadfile] loading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZArbo.response into property curl.upload.result
- [loadfile] loaded 857 characters
+     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 60 5479k    0     0   60 3328k      0  5011k  0:00:01 --:--:--  0:00:01 5019k100 5479k    0     0  100 5479k      0  2745k  0:00:01  0:00:01 --:--:-- 2746k
+     [exec] {"deployeddatetime":"2023-08-15 16:56:54.588"}
+     [exec] 100 5479k  100    47  100 5479k     19  2228k  0:00:02  0:00:02 --:--:-- 2230k
+ [loadfile] loading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.response into property curl.upload.result
+ [loadfile] loaded 623 characters
      [echo] Checksum acquired
-     [echo] 2023-08-14 17:06:35.094
-      [zip] SGZArbo.checksum added as SGZArbo.checksum doesn't exist.
+     [echo] 2023-08-15 16:56:54.588
+      [zip] SGZInsp.checksum added as SGZInsp.checksum doesn't exist.
       [zip] No sources found.
-      [zip] Updating zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZArbo.zip
-      [zip] adding entry SGZArbo.checksum
+      [zip] Updating zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.zip
+      [zip] adding entry SGZInsp.checksum
       [zip] adding directory css/
       [zip] adding directory dijit/
       [zip] adding directory dijit/nls/
@@ -3085,11 +3226,16 @@ not part of the command.
       [zip] adding directory idx/mobile/themes/oneui_ios/idx/images/
       [zip] adding directory images/
       [zip] adding directory images/mdpi/
+      [zip] adding directory images/mdpi/statusicons/
+      [zip] adding directory images/mdpi/statusicons/teste/
       [zip] adding directory img/
       [zip] adding directory js/
       [zip] adding directory js/application/
       [zip] adding directory js/application/business/
+      [zip] adding directory js/application/business/calibration/
+      [zip] adding directory js/application/business/util/
       [zip] adding directory js/application/handlers/
+      [zip] adding directory js/application/handlers/spatial/
       [zip] adding directory js/application/translation/
       [zip] adding directory js/application/translation/nls/
       [zip] adding directory js/application/translation/nls/ar/
@@ -3118,6 +3264,7 @@ not part of the command.
       [zip] adding directory js/application/translation/nls/zh/
       [zip] adding directory js/application/translation/nls/zh-tw/
       [zip] adding directory js/custom/
+      [zip] adding directory js/custom/business/
       [zip] adding directory js/custom/handlers/
       [zip] adding directory js/generated/
       [zip] adding directory js/generated/application/
@@ -3151,12 +3298,9 @@ not part of the command.
       [zip] adding directory js/generated/application/translation/nls/zh-tw/
       [zip] adding directory js/generated/application/ui/
       [zip] adding directory js/generated/application/ui/layout/
-      [zip] adding directory js/generated/application/ui/layout/large/
-      [zip] adding directory js/generated/application/ui/layout/medium/
       [zip] adding directory js/generated/application/ui/layout/small/
       [zip] adding directory js/generated/application/ui/layout/small/landscape/
       [zip] adding directory js/generated/application/ui/layout/small/portrait/
-      [zip] adding directory js/generated/application/ui/layout/xlarge/
       [zip] adding directory js/platform/
       [zip] adding directory js/platform/attachment/
       [zip] adding directory js/platform/auth/
@@ -4127,88 +4271,203 @@ not part of the command.
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/images/headerIcons.png
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/main.css
       [zip] adding entry idx/mobile/themes/oneui_ios/oneui_ios.css
-      [zip] adding entry images/mdpi/Logo_SGZArbo.svg
-      [zip] adding entry images/mdpi/Logo_SGZArbo_H.svg
-      [zip] adding entry images/mdpi/Logo_SGZ_Arbo.svg
+      [zip] adding entry images/mdpi/1.png
+      [zip] adding entry images/mdpi/1.svg
+      [zip] adding entry images/mdpi/Logo_SGZInsp_H.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_Insp.svg
       [zip] adding entry images/mdpi/Use-Current-Location.png
       [zip] adding entry images/mdpi/Use-Current-Location.svg
       [zip] adding entry images/mdpi/action_addCrewLabor_OFF.png
-      [zip] adding entry images/mdpi/action_addCrewLabor_OFF.svg
       [zip] adding entry images/mdpi/action_addCrewLabor_ON.png
       [zip] adding entry images/mdpi/action_applyApprovedStatus_OFF.png
       [zip] adding entry images/mdpi/action_applyCompleteStatus_OFF.png
       [zip] adding entry images/mdpi/action_download_on.png
-      [zip] adding entry images/mdpi/action_menu_downtime.png
+      [zip] adding entry images/mdpi/action_downtime_down.png
+      [zip] adding entry images/mdpi/action_downtime_off.png
+      [zip] adding entry images/mdpi/action_downtime_up.png
+      [zip] adding entry images/mdpi/action_downtime_updown.png
+      [zip] adding entry images/mdpi/action_downtime_updown.svg
+      [zip] adding entry images/mdpi/action_downtime_updown_nospliter.png
+      [zip] adding entry images/mdpi/action_getInfo_off.png
+      [zip] adding entry images/mdpi/action_getInfo_on.png
+      [zip] adding entry images/mdpi/action_getInfo_on.svg
       [zip] adding entry images/mdpi/action_meterReading_off.png
+      [zip] adding entry images/mdpi/action_meterReading_off.svg
       [zip] adding entry images/mdpi/action_meterReading_on.png
-      [zip] adding entry images/mdpi/action_move_asset.png
-      [zip] adding entry images/mdpi/action_move_asset.svg
       [zip] adding entry images/mdpi/action_timerRunning_OFF.png
       [zip] adding entry images/mdpi/action_timerRunning_OFF.svg
       [zip] adding entry images/mdpi/action_timerRunning_ON.png
       [zip] adding entry images/mdpi/action_timer_OFF.png
       [zip] adding entry images/mdpi/action_timer_OFF.svg
       [zip] adding entry images/mdpi/action_timer_ON.png
+      [zip] adding entry images/mdpi/action_wo_history.png
       [zip] adding entry images/mdpi/app_icon_main.svg
-      [zip] adding entry images/mdpi/button_move_asset.svg
+      [zip] adding entry images/mdpi/calibrationpoint_critical_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_none_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_normal_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_warning_status.png
       [zip] adding entry images/mdpi/download-ok.png
-      [zip] adding entry images/mdpi/header_add.png
+      [zip] adding entry images/mdpi/gmaps.png
+      [zip] adding entry images/mdpi/gmaps_icon.png
       [zip] adding entry images/mdpi/header_addCrewLabor_OFF.png
       [zip] adding entry images/mdpi/header_addCrewLabor_ON.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_back_OFF.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_back_OFF.svg
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_back_ON.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_noBack.png
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_noBack.svg
-      [zip] adding entry images/mdpi/header_app_AssetDataManager_noBack_OFF.svg
+      [zip] adding entry images/mdpi/header_app_WorkExecution.png
+      [zip] adding entry images/mdpi/header_app_WorkExecution_back_OFF.png
+      [zip] adding entry images/mdpi/header_app_WorkExecution_back_OFF.svg
+      [zip] adding entry images/mdpi/header_app_WorkExecution_back_ON.png
+      [zip] adding entry images/mdpi/header_app_WorkExecution_noBack.png
+      [zip] adding entry images/mdpi/header_app_WorkExecution_noBack.svg
+      [zip] adding entry images/mdpi/header_app_WorkExecution_noBack_OFF.svg
       [zip] adding entry images/mdpi/header_attachment_off.png
       [zip] adding entry images/mdpi/header_attachment_on.png
       [zip] adding entry images/mdpi/header_camera_off.png
       [zip] adding entry images/mdpi/header_camera_off.svg
       [zip] adding entry images/mdpi/header_camera_on.png
       [zip] adding entry images/mdpi/header_createActuals_OFF.png
+      [zip] adding entry images/mdpi/header_createActuals_OFF.svg
       [zip] adding entry images/mdpi/header_createActuals_ON.png
       [zip] adding entry images/mdpi/header_createWO_OFF.png
+      [zip] adding entry images/mdpi/header_createWO_OFF.svg
       [zip] adding entry images/mdpi/header_createWO_ONbig.png
+      [zip] adding entry images/mdpi/header_mapView_OFF.svg
       [zip] adding entry images/mdpi/header_materialsAndTools_OFF.png
+      [zip] adding entry images/mdpi/header_materialsAndTools_OFF.svg
       [zip] adding entry images/mdpi/header_materialsAndTools_ON.png
+      [zip] adding entry images/mdpi/header_signature_OFF.png
+      [zip] adding entry images/mdpi/header_signature_ON.png
+      [zip] adding entry images/mdpi/header_signature_ON.svg
       [zip] adding entry images/mdpi/icon_download.png
       [zip] adding entry images/mdpi/map_current_location.png
+      [zip] adding entry images/mdpi/map_current_location.svg
+      [zip] adding entry images/mdpi/map_warning.png
       [zip] adding entry images/mdpi/map_wo_default.png
+      [zip] adding entry images/mdpi/map_wo_default.svg
       [zip] adding entry images/mdpi/map_wo_default_selected.png
+      [zip] adding entry images/mdpi/map_wo_default_selected.svg
       [zip] adding entry images/mdpi/msg_downloadComplete_small.png
       [zip] adding entry images/mdpi/msg_downloadComplete_small.svg
+      [zip] adding entry images/mdpi/old_Logo_SGZ_Insp.svg
       [zip] adding entry images/mdpi/spinner.gif
+      [zip] adding entry images/mdpi/status_error.svg
+      [zip] adding entry images/mdpi/statusicons/1.png
+      [zip] adding entry images/mdpi/statusicons/1.svg
+      [zip] adding entry images/mdpi/statusicons/2.png
+      [zip] adding entry images/mdpi/statusicons/2.svg
+      [zip] adding entry images/mdpi/statusicons/AGINSP_.png
+      [zip] adding entry images/mdpi/statusicons/AGINSP_.svg
+      [zip] adding entry images/mdpi/statusicons/AGINSP_OLD.png
+      [zip] adding entry images/mdpi/statusicons/AGINSP_oldv1.png
+      [zip] adding entry images/mdpi/statusicons/APPR.png
+      [zip] adding entry images/mdpi/statusicons/APPR.svg
+      [zip] adding entry images/mdpi/statusicons/APROVADO_oldv1.png
+      [zip] adding entry images/mdpi/statusicons/CAN.png
+      [zip] adding entry images/mdpi/statusicons/CAN.svg
+      [zip] adding entry images/mdpi/statusicons/CLOSE.png
+      [zip] adding entry images/mdpi/statusicons/CLOSE.svg
+      [zip] adding entry images/mdpi/statusicons/COMP.png
+      [zip] adding entry images/mdpi/statusicons/COMP.svg
+      [zip] adding entry images/mdpi/statusicons/HISTEDIT.png
+      [zip] adding entry images/mdpi/statusicons/HISTEDIT.svg
+      [zip] adding entry images/mdpi/statusicons/INPRG.png
+      [zip] adding entry images/mdpi/statusicons/INPRG.svg
+      [zip] adding entry images/mdpi/statusicons/PLANEJAR.png
+      [zip] adding entry images/mdpi/statusicons/PLANEJAR.svg
+      [zip] adding entry images/mdpi/statusicons/PRECANC.png
+      [zip] adding entry images/mdpi/statusicons/PRECANC.svg
+      [zip] adding entry images/mdpi/statusicons/PRECANC_OLD.png
+      [zip] adding entry images/mdpi/statusicons/WAPPR.png
+      [zip] adding entry images/mdpi/statusicons/WAPPR.svg
+      [zip] adding entry images/mdpi/statusicons/WMATL.png
+      [zip] adding entry images/mdpi/statusicons/WMATL.svg
+      [zip] adding entry images/mdpi/statusicons/WPCOND.png
+      [zip] adding entry images/mdpi/statusicons/WPCOND.svg
+      [zip] adding entry images/mdpi/statusicons/WSCH.png
+      [zip] adding entry images/mdpi/statusicons/WSCH.svg
+      [zip] adding entry images/mdpi/statusicons/teste/1.png
+      [zip] adding entry images/mdpi/statusicons/teste/1.svg
+      [zip] adding entry images/mdpi/statusicons/warning.png
+      [zip] adding entry images/mdpi/statusicons/warning.svg
+      [zip] adding entry images/mdpi/waze_icon.png
       [zip] adding entry images/mdpi/xsample.gif
       [zip] adding entry img/logo.png
       [zip] adding entry index.html
       [zip] adding entry js/Startup.js
       [zip] adding entry js/anywhere-worklight.js
+      [zip] adding entry js/application/business/ActualLaborObject.js
+      [zip] adding entry js/application/business/ActualMaterialObject.js
+      [zip] adding entry js/application/business/ActualToolObject.js
+      [zip] adding entry js/application/business/AppConfig.js
+      [zip] adding entry js/application/business/AssetFunctionObject.js
       [zip] adding entry js/application/business/AssetMeterObject.js
-      [zip] adding entry js/application/business/AssetObject.js
-      [zip] adding entry js/application/business/AssetSpecificationObject.js
-      [zip] adding entry js/application/business/AssetStatusHandler.js
-      [zip] adding entry js/application/business/AssetStatusObject.js
+      [zip] adding entry js/application/business/AssignmentObject.js
       [zip] adding entry js/application/business/AttachmentsObject.js
+      [zip] adding entry js/application/business/CalibrationPointObject.js
       [zip] adding entry js/application/business/ClassStructureObject.js
+      [zip] adding entry js/application/business/CrewLaborObject.js
+      [zip] adding entry js/application/business/CrewToolObject.js
+      [zip] adding entry js/application/business/DataSheetObject.js
       [zip] adding entry js/application/business/FieldUtil.js
       [zip] adding entry js/application/business/MaxDomainObject.js
       [zip] adding entry js/application/business/MaxVars.js
+      [zip] adding entry js/application/business/MultiAssetLocObject.js
+      [zip] adding entry js/application/business/PlannedMaterialObject.js
+      [zip] adding entry js/application/business/PlannedToolObject.js
       [zip] adding entry js/application/business/SynonymDomain.js
-      [zip] adding entry js/application/handlers/AssetDetailHandler.js
-      [zip] adding entry js/application/handlers/AssetListHandler.js
-      [zip] adding entry js/application/handlers/AssetListScanHandler.js
-      [zip] adding entry js/application/handlers/AssetMoveHandler.js
+      [zip] adding entry js/application/business/TaskObject.js
+      [zip] adding entry js/application/business/WOAssignEmergenceBusinessObject.js
+      [zip] adding entry js/application/business/WOChangeStatusObject.js
+      [zip] adding entry js/application/business/WoStatusObject.js
+      [zip] adding entry js/application/business/WorkLogObject.js
+      [zip] adding entry js/application/business/WorkOrderObject.js
+      [zip] adding entry js/application/business/WorkOrderObject_copia.js
+      [zip] adding entry js/application/business/WorkOrderStatusHandler.js
+      [zip] adding entry js/application/business/WorkOrderTimer.js
+      [zip] adding entry js/application/business/WpEditSettings.js
+      [zip] adding entry js/application/business/calibration/DataSheetCalculation.js
+      [zip] adding entry js/application/business/calibration/_NumberFormatterMixin.js
+      [zip] adding entry js/application/business/calibration/_StandardDeviationMixin.js
+      [zip] adding entry js/application/business/calibration/_SumToleranceTypesMixin.js
+      [zip] adding entry js/application/business/util/CrewUtil.js
+      [zip] adding entry js/application/business/util/DecimalCalculator.js
+      [zip] adding entry js/application/handlers/ActualLaborHandler.js
+      [zip] adding entry js/application/handlers/ActualMaterialHandler.js
+      [zip] adding entry js/application/handlers/ActualToolHandler.js
+      [zip] adding entry js/application/handlers/AddDatasheetHandler.js
+      [zip] adding entry js/application/handlers/AssetFunctionDetailsViewHandler.js
+      [zip] adding entry js/application/handlers/AssetFunctionHandler.js
+      [zip] adding entry js/application/handlers/CalibrationPointErrorsHandler.js
+      [zip] adding entry js/application/handlers/CalibrationPointHandler.js
       [zip] adding entry js/application/handlers/ClassificationFormHandler.js
-      [zip] adding entry js/application/handlers/ClassifyAssetHandler.js
+      [zip] adding entry js/application/handlers/ClassifyWorkOrderHandler.js
       [zip] adding entry js/application/handlers/CommonHandler.js
+      [zip] adding entry js/application/handlers/CopyPlansToActualsHandler.js
+      [zip] adding entry js/application/handlers/CreateNewCalibrationHandler.js
+      [zip] adding entry js/application/handlers/DataSheetDownloadManager.js
+      [zip] adding entry js/application/handlers/DataSheetHandler.js
       [zip] adding entry js/application/handlers/FailureCodeHandler.js
+      [zip] adding entry js/application/handlers/GPSTracker.js
+      [zip] adding entry js/application/handlers/LaborAssignmentHandler.js
+      [zip] adding entry js/application/handlers/MeterDownloadManager.js
       [zip] adding entry js/application/handlers/MeterReadingsHandler.js
       [zip] adding entry js/application/handlers/MetersListHandler.js
+      [zip] adding entry js/application/handlers/MultiAssetLocationHandler.js
+      [zip] adding entry js/application/handlers/PlannedMaterialHandler.js
+      [zip] adding entry js/application/handlers/PlannedToolHandler.js
+      [zip] adding entry js/application/handlers/ReportByCrewHandler.js
       [zip] adding entry js/application/handlers/ReportDowntimeHandler.js
       [zip] adding entry js/application/handlers/StatusChangeHandler.js
+      [zip] adding entry js/application/handlers/StopTimerHandler.js
+      [zip] adding entry js/application/handlers/TaskHandler.js
       [zip] adding entry js/application/handlers/WOAttachmentHandler.js
+      [zip] adding entry js/application/handlers/WOCreateQueryBaseHandler.js
+      [zip] adding entry js/application/handlers/WODetailHandler.js
+      [zip] adding entry js/application/handlers/WOExtDownloadHandler.js
+      [zip] adding entry js/application/handlers/WOGeolocationHandler.js
+      [zip] adding entry js/application/handlers/WOHistoryHandler.js
+      [zip] adding entry js/application/handlers/WOListHandler.js
+      [zip] adding entry js/application/handlers/WorkLogHandler.js
+      [zip] adding entry js/application/handlers/WorkOrderHistoryHandler.js
+      [zip] adding entry js/application/handlers/spatial/SketchToolHandler.js
       [zip] adding entry js/application/translation/nls/ar/artifact.js
       [zip] adding entry js/application/translation/nls/artifact.js
       [zip] adding entry js/application/translation/nls/cs/artifact.js
@@ -4235,11 +4494,13 @@ not part of the command.
       [zip] adding entry js/application/translation/nls/sv/artifact.js
       [zip] adding entry js/application/translation/nls/zh-tw/artifact.js
       [zip] adding entry js/application/translation/nls/zh/artifact.js
-      [zip] adding entry js/custom/handlers/MSAssetDetailHandler.js
-      [zip] adding entry js/custom/handlers/MSAssetDetailHandler.zip
+      [zip] adding entry js/custom/business/MSAttachmentsObject.js
+      [zip] adding entry js/custom/handlers/MSAttachmentExtensionHandler.js
+      [zip] adding entry js/custom/handlers/MSClassifyWorkOrderHandler.js
       [zip] adding entry js/custom/handlers/MSLoginHandler.js
-      [zip] adding entry js/custom/handlers/MSWOAttachmentHandler.js
-      [zip] adding entry js/custom/handlers/MStatusChangeHandler.js
+      [zip] adding entry js/custom/handlers/MSStatusChangeHandler.js
+      [zip] adding entry js/custom/handlers/WODetailExtensionHandler.js
+      [zip] adding entry js/custom/handlers/WorkOrderStatusHandler.js
       [zip] adding entry js/generated/application/data/ApplicationStoresBuilder.js
       [zip] adding entry js/generated/application/pushNotification/PushNotificationSelfRegistrationGenerated.js
       [zip] adding entry js/generated/application/translation/nls/artifact.js
@@ -4270,24 +4531,40 @@ not part of the command.
       [zip] adding entry js/generated/application/ui/ApplicationUIBuilder.js
       [zip] adding entry js/generated/application/ui/layout/LayoutConfig.js
       [zip] adding entry js/generated/application/ui/layout/LayoutFactory.js
-      [zip] adding entry js/generated/application/ui/layout/large/AssetMove.js
-      [zip] adding entry js/generated/application/ui/layout/large/ViewSpecs.js
-      [zip] adding entry js/generated/application/ui/layout/medium/AssetMove.js
-      [zip] adding entry js/generated/application/ui/layout/medium/ViewSpecs.js
       [zip] adding entry js/generated/application/ui/layout/small/ActualLaborListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/ActualMaterialListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/ActualToolListItem.js
-      [zip] adding entry js/generated/application/ui/layout/small/AssetMove.js
+      [zip] adding entry js/generated/application/ui/layout/small/AssetFunctionDetailsLayout.js
+      [zip] adding entry js/generated/application/ui/layout/small/AssetFunctionToleranceLayout.js
+      [zip] adding entry js/generated/application/ui/layout/small/AssetFunctions.js
       [zip] adding entry js/generated/application/ui/layout/small/AttachmentsListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/Button1Item1.js
       [zip] adding entry js/generated/application/ui/layout/small/Button2.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationDynamicCheck.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationItem3.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationItem3Justify.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationItem4.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsAnalog.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsAnalogRepeatable.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsAverageAnalog.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsAverageDiscrete.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsDiscrete.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsDiscreteRepeatable.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationPointsFunction.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationRange.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationReadings.js
+      [zip] adding entry js/generated/application/ui/layout/small/CalibrationTolError.js
       [zip] adding entry js/generated/application/ui/layout/small/CenteredBottom2Buttons.js
       [zip] adding entry js/generated/application/ui/layout/small/ConnectionManagementLayout.js
       [zip] adding entry js/generated/application/ui/layout/small/CopyPlansListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/CrewLaborList.js
       [zip] adding entry js/generated/application/ui/layout/small/CrewToolList.js
+      [zip] adding entry js/generated/application/ui/layout/small/DataSheetList.js
+      [zip] adding entry js/generated/application/ui/layout/small/DataSheetStatus.js
       [zip] adding entry js/generated/application/ui/layout/small/DirectionsListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/FailureReportList.js
+      [zip] adding entry js/generated/application/ui/layout/small/FeatureAttributesList.js
+      [zip] adding entry js/generated/application/ui/layout/small/IdentifyFeaturesList.js
       [zip] adding entry js/generated/application/ui/layout/small/Item1Button1.js
       [zip] adding entry js/generated/application/ui/layout/small/Item1Button2list.js
       [zip] adding entry js/generated/application/ui/layout/small/Item1Count1Button1.js
@@ -4297,14 +4574,18 @@ not part of the command.
       [zip] adding entry js/generated/application/ui/layout/small/Item2Desc2.js
       [zip] adding entry js/generated/application/ui/layout/small/Item2SideBySide.js
       [zip] adding entry js/generated/application/ui/layout/small/ItemLookup.js
+      [zip] adding entry js/generated/application/ui/layout/small/KeyValueFormLayout.js
       [zip] adding entry js/generated/application/ui/layout/small/LaborAssignmentListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/LaborCraftRateLookupItem.js
+      [zip] adding entry js/generated/application/ui/layout/small/LayersList.js
       [zip] adding entry js/generated/application/ui/layout/small/ListHeader.js
       [zip] adding entry js/generated/application/ui/layout/small/ListHeaderWithSearch.js
       [zip] adding entry js/generated/application/ui/layout/small/ListItem3Input1.js
       [zip] adding entry js/generated/application/ui/layout/small/ListItem5Button1.js
       [zip] adding entry js/generated/application/ui/layout/small/ListItem6Button1.js
       [zip] adding entry js/generated/application/ui/layout/small/MapEndPoint.js
+      [zip] adding entry js/generated/application/ui/layout/small/MapLoadOfflineAreaList.js
+      [zip] adding entry js/generated/application/ui/layout/small/MapOfflineAreaList.js
       [zip] adding entry js/generated/application/ui/layout/small/MaterialToolList.js
       [zip] adding entry js/generated/application/ui/layout/small/MeterList.js
       [zip] adding entry js/generated/application/ui/layout/small/MultiAssetListItem.js
@@ -4314,14 +4595,14 @@ not part of the command.
       [zip] adding entry js/generated/application/ui/layout/small/Progress.js
       [zip] adding entry js/generated/application/ui/layout/small/ScanHeader.js
       [zip] adding entry js/generated/application/ui/layout/small/ServiceAddressLookup.js
-      [zip] adding entry js/generated/application/ui/layout/small/ViewSpecs.js
+      [zip] adding entry js/generated/application/ui/layout/small/SketchList.js
+      [zip] adding entry js/generated/application/ui/layout/small/VendorNameAddressListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/WorkListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/WorkLogListItem.js
       [zip] adding entry js/generated/application/ui/layout/small/landscape/MapDetail.js
       [zip] adding entry js/generated/application/ui/layout/small/landscape/MapView.js
       [zip] adding entry js/generated/application/ui/layout/small/portrait/MapDetail.js
       [zip] adding entry js/generated/application/ui/layout/small/portrait/MapView.js
-      [zip] adding entry js/generated/application/ui/layout/xlarge/AssetMove.js
       [zip] adding entry js/initOptions.js
       [zip] adding entry js/jQuery.js
       [zip] adding entry js/main.js
@@ -4365,6 +4646,7 @@ not part of the command.
       [zip] adding entry js/platform/geolocation/GeoLocationService.js
       [zip] adding entry js/platform/geolocation/GeoLocationServiceHelper.js
       [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.js
+      [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.zip
       [zip] adding entry js/platform/geolocation/GspVerifier.js
       [zip] adding entry js/platform/handlers/AdditionalDataDialogHandler.js
       [zip] adding entry js/platform/handlers/AttachmentHandler.js
@@ -4795,13 +5077,13 @@ not part of the command.
       [zip] adding entry ol.js
       [zip] adding entry winstore-jscompat.js
       [zip] adding entry worklight.properties
-   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZArbo.checksum
-   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZArbo.response
--zip-app-upload:  duration 7 seconds
+   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.checksum
+   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.response
+-zip-app-upload:  duration 4 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-zip-upload-all-apps:  duration 7 seconds
+zip-upload-all-apps:  duration 4 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-all-deploy:  duration 7 seconds
+all-deploy:  duration 4 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
   [antcall] calling target(s) [show-support-page] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml

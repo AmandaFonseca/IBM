@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:12
+// Build: 2023-08-15 16:56:43
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[engbManual do Aplicativo]",
          "Privacy Policy" : "[engbPrivacy Policy]",
          "Connection Settings" : "[engbConnection Settings]",
-         "v7.6.4:0407232046H" : "[engbv7.6.4:0407232046H]",
+         "v7.6.4:2407231930H" : "[engbv7.6.4:2407231930H]",
          "My Assigned Work" : "[engbMy Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[engbInspeções Pendentes]",
          "Records with Errors" : "[engbRecords with Errors]",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "[engbTap to enter]",
          "Save" : "[engbSave]",
          "1. Servi\u00E7o foi executado?" : "[engb1. Serviço foi executado?]",
-         "Voltar para a Lista" : "[engbVoltar para a Lista]",
          "N\u00E3o" : "[engbNão]",
          "Sim" : "[engbSim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[engbConfirmacao da recusa de inspeção]",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "[engbClick Cancel to cancel the system download.]",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "[engbWhen running in a browser, a maximum of 200 records are downloaded per System.]",
          "cancel" : "[engbcancel]",
-         "Do you want to close the app?" : "[engbDo you want to close the app?]",
          "Do you want to log out of the app?" : "[engbDo you want to log out of the app?]",
          "Change Duration" : "[engbChange Duration]",
          "Do you want to stop downloading work list records?" : "[engbDo you want to stop downloading work list records?]",

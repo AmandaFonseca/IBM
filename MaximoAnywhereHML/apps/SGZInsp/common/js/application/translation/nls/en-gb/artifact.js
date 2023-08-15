@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:11
+// Build: 2023-08-15 16:56:43
 //----------------------------------------------------------------//
 define({
    root: {
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "Manual do Aplicativo",
          "Privacy Policy" : "Privacy Policy",
          "Connection Settings" : "Connection Settings",
-         "v7.6.4:0407232046H" : "v7.6.4:0407232046H",
+         "v7.6.4:2407231930H" : "v7.6.4:2407231930H",
          "My Assigned Work" : "My Assigned Work",
          "Inspe\u00E7\u00F5es Pendentes" : "Inspeções Pendentes",
          "Records with Errors" : "Records with Errors",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "Tap to enter",
          "Save" : "Save",
          "1. Servi\u00E7o foi executado?" : "1. Serviço foi executado?",
-         "Voltar para a Lista" : "Voltar para a Lista",
          "N\u00E3o" : "Não",
          "Sim" : "Sim",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "Confirmacao da recusa de inspeção",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "Click Cancel to cancel the system download.",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "When running in a browser, a maximum of 200 records are downloaded per System.",
          "cancel" : "cancel",
-         "Do you want to close the app?" : "Do you want to close the app?",
          "Do you want to log out of the app?" : "Do you want to log out of the app?",
          "Change Duration" : "Change Duration",
          "Do you want to stop downloading work list records?" : "Do you want to stop downloading work list records?",

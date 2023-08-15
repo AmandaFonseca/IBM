@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:13
+// Build: 2023-08-15 16:56:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[članak~Manual do Aplicativo]",
          "Privacy Policy" : "[članak~Privacy Policy]",
          "Connection Settings" : "[članak~Connection Settings]",
-         "v7.6.4:0407232046H" : "[članak~v7.6.4:0407232046H]",
+         "v7.6.4:2407231930H" : "[članak~v7.6.4:2407231930H]",
          "My Assigned Work" : "[članak~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[članak~Inspeções Pendentes]",
          "Records with Errors" : "[članak~Records with Errors]",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "[članak~Tap to enter]",
          "Save" : "[članak~Save]",
          "1. Servi\u00E7o foi executado?" : "[članak~1. Serviço foi executado?]",
-         "Voltar para a Lista" : "[članak~Voltar para a Lista]",
          "N\u00E3o" : "[članak~Não]",
          "Sim" : "[članak~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[članak~Confirmacao da recusa de inspeção]",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "[članak~Click Cancel to cancel the system download.]",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "[članak~When running in a browser, a maximum of 200 records are downloaded per System.]",
          "cancel" : "[članak~cancel]",
-         "Do you want to close the app?" : "[članak~Do you want to close the app?]",
          "Do you want to log out of the app?" : "[članak~Do you want to log out of the app?]",
          "Change Duration" : "[članak~Change Duration]",
          "Do you want to stop downloading work list records?" : "[članak~Do you want to stop downloading work list records?]",

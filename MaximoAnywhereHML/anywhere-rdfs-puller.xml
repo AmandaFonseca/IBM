@@ -200,8 +200,9 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/pluscassetstatus" />
     	<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/ms_arbo/ms_target" />	
 		<downloadOneRdf context="/oslc/shapes/oslcmaxdomain/numericdomain" />
-		-->
 		<downloadOneRdf context="/oslc/shapes/oslcmsarbo" />
+		-->
+		
 
 		<!--<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/asset" />
 			<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/Asset" />
@@ -224,8 +225,7 @@
 		-->
 		<!-- ESTRUTURAS PARA APP SGZUsina: -->
 
-		
-		
+		<downloadOneRdf context="/oslc/shapes/oslcwodetail/assignment" />
 		<!-- <downloadOneRdf context="/oslc/shapes/oslcasset" />
     	<downloadOneRdf context="/oslc/shapes/oslcasset/ms_arbo" />	
 		<downloadOneRdf context="/oslc/shapes/oslcasset/ms_arborpt" />		 

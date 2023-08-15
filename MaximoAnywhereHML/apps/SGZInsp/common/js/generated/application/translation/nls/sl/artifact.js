@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:13
+// Build: 2023-08-15 16:56:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[razložiti~Manual do Aplicativo]",
          "Privacy Policy" : "[razložiti~Privacy Policy]",
          "Connection Settings" : "[razložiti~Connection Settings]",
-         "v7.6.4:0407232046H" : "[razložiti~v7.6.4:0407232046H]",
+         "v7.6.4:2407231930H" : "[razložiti~v7.6.4:2407231930H]",
          "My Assigned Work" : "[razložiti~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[razložiti~Inspeções Pendentes]",
          "Records with Errors" : "[razložiti~Records with Errors]",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "[razložiti~Tap to enter]",
          "Save" : "[razložiti~Save]",
          "1. Servi\u00E7o foi executado?" : "[razložiti~1. Serviço foi executado?]",
-         "Voltar para a Lista" : "[razložiti~Voltar para a Lista]",
          "N\u00E3o" : "[razložiti~Não]",
          "Sim" : "[razložiti~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[razložiti~Confirmacao da recusa de inspeção]",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "[razložiti~Click Cancel to cancel the system download.]",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "[razložiti~When running in a browser, a maximum of 200 records are downloaded per System.]",
          "cancel" : "[razložiti~cancel]",
-         "Do you want to close the app?" : "[razložiti~Do you want to close the app?]",
          "Do you want to log out of the app?" : "[razložiti~Do you want to log out of the app?]",
          "Change Duration" : "[razložiti~Change Duration]",
          "Do you want to stop downloading work list records?" : "[razložiti~Do you want to stop downloading work list records?]",

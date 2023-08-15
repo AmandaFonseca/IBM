@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:12
+// Build: 2023-08-15 16:56:43
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中国的~Manual do Aplicativo]",
          "Privacy Policy" : "[中国的~Privacy Policy]",
          "Connection Settings" : "[中国的~Connection Settings]",
-         "v7.6.4:0407232046H" : "[中国的~v7.6.4:0407232046H]",
+         "v7.6.4:2407231930H" : "[中国的~v7.6.4:2407231930H]",
          "My Assigned Work" : "[中国的~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[中国的~Inspeções Pendentes]",
          "Records with Errors" : "[中国的~Records with Errors]",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "[中国的~Tap to enter]",
          "Save" : "[中国的~Save]",
          "1. Servi\u00E7o foi executado?" : "[中国的~1. Serviço foi executado?]",
-         "Voltar para a Lista" : "[中国的~Voltar para a Lista]",
          "N\u00E3o" : "[中国的~Não]",
          "Sim" : "[中国的~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[中国的~Confirmacao da recusa de inspeção]",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "[中国的~Click Cancel to cancel the system download.]",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "[中国的~When running in a browser, a maximum of 200 records are downloaded per System.]",
          "cancel" : "[中国的~cancel]",
-         "Do you want to close the app?" : "[中国的~Do you want to close the app?]",
          "Do you want to log out of the app?" : "[中国的~Do you want to log out of the app?]",
          "Change Duration" : "[中国的~Change Duration]",
          "Do you want to stop downloading work list records?" : "[中国的~Do you want to stop downloading work list records?]",

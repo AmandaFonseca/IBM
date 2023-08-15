@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:12
+// Build: 2023-08-15 16:56:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[ясяс~Manual do Aplicativo]",
          "Privacy Policy" : "[ясяс~Privacy Policy]",
          "Connection Settings" : "[ясяс~Connection Settings]",
-         "v7.6.4:0407232046H" : "[ясяс~v7.6.4:0407232046H]",
+         "v7.6.4:2407231930H" : "[ясяс~v7.6.4:2407231930H]",
          "My Assigned Work" : "[ясяс~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[ясяс~Inspeções Pendentes]",
          "Records with Errors" : "[ясяс~Records with Errors]",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "[ясяс~Tap to enter]",
          "Save" : "[ясяс~Save]",
          "1. Servi\u00E7o foi executado?" : "[ясяс~1. Serviço foi executado?]",
-         "Voltar para a Lista" : "[ясяс~Voltar para a Lista]",
          "N\u00E3o" : "[ясяс~Não]",
          "Sim" : "[ясяс~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[ясяс~Confirmacao da recusa de inspeção]",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "[ясяс~Click Cancel to cancel the system download.]",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "[ясяс~When running in a browser, a maximum of 200 records are downloaded per System.]",
          "cancel" : "[ясяс~cancel]",
-         "Do you want to close the app?" : "[ясяс~Do you want to close the app?]",
          "Do you want to log out of the app?" : "[ясяс~Do you want to log out of the app?]",
          "Change Duration" : "[ясяс~Change Duration]",
          "Do you want to stop downloading work list records?" : "[ясяс~Do you want to stop downloading work list records?]",

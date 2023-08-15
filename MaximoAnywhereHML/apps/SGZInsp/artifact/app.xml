@@ -53,6 +53,7 @@
 				<requiredResource id="WorkExecution.WorkItemsView_lbslocation" name="lbslocation"/>
 				<requiredResource id="WorkExecution.WorkItemsView_laborcrew" name="laborcrew"/>
 				<requiredResource id="WorkExecution.WorkItemsView_gpslocalstore" name="PlatformGeolocationLocalStore"/>
+				<requiredResource id="WorkExecution.EditStatusView_statusChangeResource000" name="statusChangeResource"/>
 			</requiredResources>
 
             <actions id="WorkExecution.WorkItemsView_actions">

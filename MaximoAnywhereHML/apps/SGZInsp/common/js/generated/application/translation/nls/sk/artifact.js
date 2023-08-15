@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:13
+// Build: 2023-08-15 16:56:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[spôsobených~Manual do Aplicativo]",
          "Privacy Policy" : "[spôsobených~Privacy Policy]",
          "Connection Settings" : "[spôsobených~Connection Settings]",
-         "v7.6.4:0407232046H" : "[spôsobených~v7.6.4:0407232046H]",
+         "v7.6.4:2407231930H" : "[spôsobených~v7.6.4:2407231930H]",
          "My Assigned Work" : "[spôsobených~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[spôsobených~Inspeções Pendentes]",
          "Records with Errors" : "[spôsobených~Records with Errors]",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "[spôsobených~Tap to enter]",
          "Save" : "[spôsobených~Save]",
          "1. Servi\u00E7o foi executado?" : "[spôsobených~1. Serviço foi executado?]",
-         "Voltar para a Lista" : "[spôsobených~Voltar para a Lista]",
          "N\u00E3o" : "[spôsobených~Não]",
          "Sim" : "[spôsobených~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[spôsobených~Confirmacao da recusa de inspeção]",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "[spôsobených~Click Cancel to cancel the system download.]",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "[spôsobených~When running in a browser, a maximum of 200 records are downloaded per System.]",
          "cancel" : "[spôsobených~cancel]",
-         "Do you want to close the app?" : "[spôsobených~Do you want to close the app?]",
          "Do you want to log out of the app?" : "[spôsobených~Do you want to log out of the app?]",
          "Change Duration" : "[spôsobených~Change Duration]",
          "Do you want to stop downloading work list records?" : "[spôsobených~Do you want to stop downloading work list records?]",

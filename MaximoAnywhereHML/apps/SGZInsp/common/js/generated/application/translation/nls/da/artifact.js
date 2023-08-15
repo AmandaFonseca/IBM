@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:13
+// Build: 2023-08-15 16:56:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[gæst faldt~Manual do Aplicativo]",
          "Privacy Policy" : "[gæst faldt~Privacy Policy]",
          "Connection Settings" : "[gæst faldt~Connection Settings]",
-         "v7.6.4:0407232046H" : "[gæst faldt~v7.6.4:0407232046H]",
+         "v7.6.4:2407231930H" : "[gæst faldt~v7.6.4:2407231930H]",
          "My Assigned Work" : "[gæst faldt~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[gæst faldt~Inspeções Pendentes]",
          "Records with Errors" : "[gæst faldt~Records with Errors]",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "[gæst faldt~Tap to enter]",
          "Save" : "[gæst faldt~Save]",
          "1. Servi\u00E7o foi executado?" : "[gæst faldt~1. Serviço foi executado?]",
-         "Voltar para a Lista" : "[gæst faldt~Voltar para a Lista]",
          "N\u00E3o" : "[gæst faldt~Não]",
          "Sim" : "[gæst faldt~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[gæst faldt~Confirmacao da recusa de inspeção]",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "[gæst faldt~Click Cancel to cancel the system download.]",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "[gæst faldt~When running in a browser, a maximum of 200 records are downloaded per System.]",
          "cancel" : "[gæst faldt~cancel]",
-         "Do you want to close the app?" : "[gæst faldt~Do you want to close the app?]",
          "Do you want to log out of the app?" : "[gæst faldt~Do you want to log out of the app?]",
          "Change Duration" : "[gæst faldt~Change Duration]",
          "Do you want to stop downloading work list records?" : "[gæst faldt~Do you want to stop downloading work list records?]",

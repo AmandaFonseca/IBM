@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:13
+// Build: 2023-08-15 16:56:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[også populært~Manual do Aplicativo]",
          "Privacy Policy" : "[også populært~Privacy Policy]",
          "Connection Settings" : "[også populært~Connection Settings]",
-         "v7.6.4:0407232046H" : "[også populært~v7.6.4:0407232046H]",
+         "v7.6.4:2407231930H" : "[også populært~v7.6.4:2407231930H]",
          "My Assigned Work" : "[også populært~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[også populært~Inspeções Pendentes]",
          "Records with Errors" : "[også populært~Records with Errors]",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "[også populært~Tap to enter]",
          "Save" : "[også populært~Save]",
          "1. Servi\u00E7o foi executado?" : "[også populært~1. Serviço foi executado?]",
-         "Voltar para a Lista" : "[også populært~Voltar para a Lista]",
          "N\u00E3o" : "[også populært~Não]",
          "Sim" : "[også populært~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[også populært~Confirmacao da recusa de inspeção]",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "[også populært~Click Cancel to cancel the system download.]",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "[også populært~When running in a browser, a maximum of 200 records are downloaded per System.]",
          "cancel" : "[også populært~cancel]",
-         "Do you want to close the app?" : "[også populært~Do you want to close the app?]",
          "Do you want to log out of the app?" : "[også populært~Do you want to log out of the app?]",
          "Change Duration" : "[også populært~Change Duration]",
          "Do you want to stop downloading work list records?" : "[også populært~Do you want to stop downloading work list records?]",

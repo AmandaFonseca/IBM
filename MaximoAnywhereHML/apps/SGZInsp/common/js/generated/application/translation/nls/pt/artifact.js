@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-07-04 20:57:12
+// Build: 2023-08-15 16:56:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[vagão do metrô~Manual do Aplicativo]",
          "Privacy Policy" : "[vagão do metrô~Privacy Policy]",
          "Connection Settings" : "[vagão do metrô~Connection Settings]",
-         "v7.6.4:0407232046H" : "[vagão do metrô~v7.6.4:0407232046H]",
+         "v7.6.4:2407231930H" : "[vagão do metrô~v7.6.4:2407231930H]",
          "My Assigned Work" : "[vagão do metrô~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[vagão do metrô~Inspeções Pendentes]",
          "Records with Errors" : "[vagão do metrô~Records with Errors]",
@@ -138,7 +138,6 @@ define({
          "Tap to enter" : "[vagão do metrô~Tap to enter]",
          "Save" : "[vagão do metrô~Save]",
          "1. Servi\u00E7o foi executado?" : "[vagão do metrô~1. Serviço foi executado?]",
-         "Voltar para a Lista" : "[vagão do metrô~Voltar para a Lista]",
          "N\u00E3o" : "[vagão do metrô~Não]",
          "Sim" : "[vagão do metrô~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[vagão do metrô~Confirmacao da recusa de inspeção]",
@@ -282,7 +281,6 @@ define({
          "Click Cancel to cancel the system download." : "[vagão do metrô~Click Cancel to cancel the system download.]",
          "When running in a browser, a maximum of 200 records are downloaded per System." : "[vagão do metrô~When running in a browser, a maximum of 200 records are downloaded per System.]",
          "cancel" : "[vagão do metrô~cancel]",
-         "Do you want to close the app?" : "[vagão do metrô~Do you want to close the app?]",
          "Do you want to log out of the app?" : "[vagão do metrô~Do you want to log out of the app?]",
          "Change Duration" : "[vagão do metrô~Change Duration]",
          "Do you want to stop downloading work list records?" : "[vagão do metrô~Do you want to stop downloading work list records?]",
