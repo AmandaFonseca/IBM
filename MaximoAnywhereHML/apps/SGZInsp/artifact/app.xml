@@ -384,6 +384,9 @@
 					</eventHandlers> 																		
 				</listItemTemplate>		
 			</list>
+			<eventHandlers id="WorkExecution.PD_WhyView_listItemTemplate_FailureReportList_eventHandlersxx">
+				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="classificationok_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusView_xx" method="backShowDialog"/>
+			</eventHandlers> 	
 		</view>
 		
 
@@ -826,7 +829,22 @@
 		</view>
 
 		
-		
+
+		<dialog id="WorkExecution.clearChange">
+			<container id="Platform.clearChange_container">
+				<text editable="false" id="Platform.clearChange_textField" value="Os dados do questinário não serão salvos, deseja voltar?"/>
+				<button id="Platform.clearChange_overwrite_button" label="Sim">
+					<eventHandlers id="Platform.clearChange_overwrite_handler">
+						<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="Platform.clearChange_overwrite_click" method="discardStatusChange"/>
+					</eventHandlers>
+				</button>				
+				<button id="Platform.clearChange_doNotAllow_button" label="Não">
+					<eventHandlers id="Platform.clearChange_doNotAllow_handler">
+						<eventHandler class="platform.handlers.DialogHandler" event="click" id="Platform.clearChange_closeDialog" method="closeDialog"/>
+					</eventHandlers>
+				</button>
+			</container>
+		</dialog>		
 
 		
 		<dialog id="MapView.ProgressDownloadOfflineMap" resource="PlatformProgressResource">

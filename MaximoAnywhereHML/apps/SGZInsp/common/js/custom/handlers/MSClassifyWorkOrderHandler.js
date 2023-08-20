@@ -440,7 +440,11 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 	// Handle Cancel button click on Change Status view
 	discardStatusChange: function(eventContext){	
 		this._clearWoStatusFilter();
-		this.ui.hideCurrentView(PlatformConstants.CLEANUP);		
+		this.ui.hideCurrentView(PlatformConstants.CLEANUP);
+		let self= this;
+		if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
+			self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
+		}
 	},
 	
 	resolveWonum : function(control) {
@@ -552,6 +556,9 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 	successCallback:function(eventContext) {
 		var self = this;
 		console.log("Registro foi salvo");
+		if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
+			self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
+		}
 		setTimeout(() => {
 		  this.ui.show("WorkExecution.WorkItemsView");
 		}, "500");

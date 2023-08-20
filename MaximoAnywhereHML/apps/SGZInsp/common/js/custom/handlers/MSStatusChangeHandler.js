@@ -224,7 +224,11 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		// Handle Cancel button click on Change Status view
 		discardStatusChange: function(eventContext){	
 			this._clearWoStatusFilter();
-			this.ui.hideCurrentView(PlatformConstants.CLEANUP);		
+			this.ui.hideCurrentView(PlatformConstants.CLEANUP);
+			let self= this;
+			if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
+				self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
+			}
 		},
 		
 		resolveWonum : function(control) {
@@ -388,10 +392,11 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		successCallback:function(eventContext) {
 			var self = this;
 			console.log("Registro foi salvo");
-			self.application.showBusy();
+			if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
+				self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
+			}
 			setTimeout(() => {
 			  this.ui.show("WorkExecution.WorkItemsView");
-				self.application.hideBusy();
 			}, "500");
 			//resolve();
 		},
@@ -1368,6 +1373,16 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			let previousViewName= previousView.toLocaleLowerCase();
 			if (previousViewName == 'workexecution.workitemsview') {
 				//eventContext.ui.returnToView(previousView);
+				return false;
+			}
+		},
+
+		backShowDialog: function(eventContext){
+			var previousView = eventContext.ui.getCurrentViewControl().id;
+			let previousViewName= previousView.toLocaleLowerCase();
+			if ((previousViewName == 'workexecution.pd_whyview')||(previousViewName =="workexecution.reinspecview")
+			||(previousViewName =="workexecution.questionsviewclass")) {
+				eventContext.ui.show("WorkExecution.clearChange");
 				return false;
 			}
 		},
