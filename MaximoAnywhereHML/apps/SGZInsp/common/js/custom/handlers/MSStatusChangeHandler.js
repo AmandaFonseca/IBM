@@ -1248,6 +1248,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 	  },
 
 	  planejado: function (eventContext, skipDynamicCheck) {
+		eventContext.application.showBusy();
 		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 		var attachments = eventContext.application.getResource("attachments");
 		var statusChange = eventContext.getResource().getCurrentRecord();

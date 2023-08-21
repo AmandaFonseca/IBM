@@ -1603,6 +1603,7 @@
 				<eventHandler class="application.handlers.StatusChangeHandler" event="initialize" id="classificationok_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusView" method="initEditStatusView"/>
 				<eventHandler class="application.handlers.StatusChangeHandler" event="cleanup" id="classificationok_xWorkExecution.EditStatusView_eventHandlers_cleanup_cleanupEditStatusView" method="cleanupEditStatusView"/>
 				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="classificationok_xWorkExecution.EditStatusView_eventHandlers_001_cleanupEditStatusView" method="redirectList"/>
+				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="classificationok_xWorkExecution.EditStatusView_eventHandlers_" method="backShowDialog"/>
 			</eventHandlers>
 		</view>
 		
