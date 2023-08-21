@@ -338,32 +338,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		},
 
 
-		initEditStatusViewCustomBackType01 : function(eventContext) {
-			var workOrder = eventContext.getCurrentRecord();
-			var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-			//var workOrder = recordSet;
-			statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
-			statusChange.setNullValue("status");
-			statusChange.setNullValue("statusdesc")
-			statusChange.setNullValue("memo");
-			//eventContext.ui.application.toolWarningShown = false;
-
-
-			try {
-			  if (statusChange.get('pd_inspector')) {statusChange.setNullValue("pd_inspector");}
-			  if (statusChange.get('pd_inspdate')) {statusChange.setNullValue("pd_inspdate");}
-			  if (statusChange.get('pd_inspquestion01')) {statusChange.setNullValue("pd_inspquestion01");}
-			  if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
-			  if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
-			  if (statusChange.get('pd_inspector04')) {statusChange.setNullValue("pd_inspector04");}
-			  if (statusChange.get('ms_inspdate04')) {statusChange.setNullValue("ms_inspdate04");}
-			  if (workOrder.get('pd_inspdate')) {workOrder.setNullValue("pd_inspdate");}
-			  if (workOrder.get('ms_inspector')) {workOrder.setNullValue("ms_inspector");}
-			  if (workOrder.get('pd_inspquestion01')) {workOrder.setNullValue("pd_inspquestion01");}
-			  if (workOrder.get('pd_inspquestion02')) {workOrder.setNullValue("pd_inspquestion02");}
-			  return true;
-			} catch (error) {console.log(error+' initEditStatusView')}        
-		},
 
 		initEditStatusViewCustomBackType02 : function(eventContext) {
 			var workOrder = eventContext.getCurrentRecord();
