@@ -51,6 +51,10 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 			eventContext.application.showBusy();
 			var woSet = eventContext.application.getResource('workOrder');
 			var wo = woSet.getCurrentRecord();
+			var classificationdesc = wo.get("classificationdesc");
+			var classificationpath = wo.get("classificationpath");
+		    wo.setPendingValue("classificationdesc", classificationdesc);		
+		    wo.setPendingValue("classificationpath", classificationpath);		
 			wo.set('classificationdesc', null);
 			wo.set('classificationpath', null);
 			//this.hideIfNull(eventContext);
@@ -189,6 +193,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		
     
 		saveClassify: function(eventContext) {
+			eventContext.application.showBusy();
 			Logger.trace("Saving off the current classification");
 			let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 			statusChangeResource.set("status", "PREPLAN");
@@ -439,8 +444,20 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 	
 	// Handle Cancel button click on Change Status view
 	discardStatusChange: function(eventContext){	
+		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 		this._clearWoStatusFilter();
-		this.ui.hideCurrentView(PlatformConstants.CLEANUP);		
+		let self= this;
+		var woSet = eventContext.application.getResource('workOrder');
+		var wo = woSet.getCurrentRecord();
+		//this.ui.hideCurrentView(PlatformConstants.CLEANUP);
+		if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
+			self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
+		}
+		if(statusChangeResource.get('status') != null){
+			this.ui.hideCurrentView(PlatformConstants.CLEANUP);
+		}else{
+			this.ui.hideCurrentView();	
+		}
 	},
 	
 	resolveWonum : function(control) {
@@ -552,6 +569,9 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 	successCallback:function(eventContext) {
 		var self = this;
 		console.log("Registro foi salvo");
+		if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
+			self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
+		}
 		setTimeout(() => {
 		  this.ui.show("WorkExecution.WorkItemsView");
 		}, "500");

@@ -41,16 +41,30 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 	/*--------------- INICIO Funções MSStatusChangeHandler -----------------------------------*/   
 
 
-		initEditStatusView : function(eventContext) {
-			var workOrder = eventContext.getCurrentRecord();
-			var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-			statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
-			statusChange.setNullValue("status");
-			statusChange.setNullValue("statusdesc")
-			statusChange.setNullValue("memo");
-			eventContext.ui.application.toolWarningShown = false;
-				
-		},
+	initEditStatusView : function(eventContext) {
+		let workOrder = CommonHandler._getAdditionalResource(eventContext,"workOrder").getCurrentRecord();
+		let statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
+		//var workOrder = recordSet;
+		
+		statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
+		statusChange.setNullValue("status");
+		statusChange.setNullValue("statusdesc")
+		statusChange.setNullValue("memo");
+		//eventContext.ui.application.toolWarningShown = false;
+		
+		try {
+			if (workOrder.get('pd_inspector')) {workOrder.setNullValue("pd_inspector");}
+			if (workOrder.get('pd_inspdate')) {workOrder.setNullValue("pd_inspdate");}
+			if (workOrder.get('pd_inspquestion01')) {workOrder.setNullValue("pd_inspquestion01");}
+
+			if (workOrder.get('pd_inspquestion02')) {workOrder.setNullValue("pd_inspquestion02");}
+			if (workOrder.get('pd_inspquestion03')) {workOrder.setNullValue("pd_inspquestion03");}
+			if (workOrder.get('pd_inspector04')) {workOrder.setNullValue("pd_inspector04");}
+			if (workOrder.get('ms_inspdate04')) {workOrder.setNullValue("ms_inspdate04");}
+		} catch (error) {
+			console.log(error+' initEditStatusView')}       
+			return true;
+	},
 		
 		cleanupEditStatusView : function(eventContext) {
 			this._clearWoStatusFilter();
@@ -223,8 +237,21 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		
 		// Handle Cancel button click on Change Status view
 		discardStatusChange: function(eventContext){	
+			let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 			this._clearWoStatusFilter();
-			this.ui.hideCurrentView(PlatformConstants.CLEANUP);		
+			let self= this;
+			var woSet = eventContext.application.getResource('workOrder');
+			var wo = woSet.getCurrentRecord();
+			//this.ui.hideCurrentView(PlatformConstants.CLEANUP);
+			if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
+				self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
+			}
+			if(statusChangeResource.get('status') != null){
+				this.ui.hideCurrentView(PlatformConstants.CLEANUP);
+			}else{
+				this.ui.hideCurrentView();	
+			}
+
 		},
 		
 		resolveWonum : function(control) {
@@ -334,32 +361,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		},
 
 
-		initEditStatusViewCustomBackType01 : function(eventContext) {
-			var workOrder = eventContext.getCurrentRecord();
-			var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-			//var workOrder = recordSet;
-			statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
-			statusChange.setNullValue("status");
-			statusChange.setNullValue("statusdesc")
-			statusChange.setNullValue("memo");
-			//eventContext.ui.application.toolWarningShown = false;
-
-
-			try {
-			  if (statusChange.get('pd_inspector')) {statusChange.setNullValue("pd_inspector");}
-			  if (statusChange.get('pd_inspdate')) {statusChange.setNullValue("pd_inspdate");}
-			  if (statusChange.get('pd_inspquestion01')) {statusChange.setNullValue("pd_inspquestion01");}
-			  if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
-			  if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
-			  if (statusChange.get('pd_inspector04')) {statusChange.setNullValue("pd_inspector04");}
-			  if (statusChange.get('ms_inspdate04')) {statusChange.setNullValue("ms_inspdate04");}
-			  if (workOrder.get('pd_inspdate')) {workOrder.setNullValue("pd_inspdate");}
-			  if (workOrder.get('ms_inspector')) {workOrder.setNullValue("ms_inspector");}
-			  if (workOrder.get('pd_inspquestion01')) {workOrder.setNullValue("pd_inspquestion01");}
-			  if (workOrder.get('pd_inspquestion02')) {workOrder.setNullValue("pd_inspquestion02");}
-			  return true;
-			} catch (error) {console.log(error+' initEditStatusView')}        
-		},
 
 		initEditStatusViewCustomBackType02 : function(eventContext) {
 			var workOrder = eventContext.getCurrentRecord();
@@ -388,10 +389,11 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		successCallback:function(eventContext) {
 			var self = this;
 			console.log("Registro foi salvo");
-			self.application.showBusy();
+			if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
+				self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
+			}
 			setTimeout(() => {
 			  this.ui.show("WorkExecution.WorkItemsView");
-				self.application.hideBusy();
 			}, "500");
 			//resolve();
 		},
@@ -1246,6 +1248,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 	  },
 
 	  planejado: function (eventContext, skipDynamicCheck) {
+		eventContext.application.showBusy();
 		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 		var attachments = eventContext.application.getResource("attachments");
 		var statusChange = eventContext.getResource().getCurrentRecord();
@@ -1370,6 +1373,24 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 				//eventContext.ui.returnToView(previousView);
 				return false;
 			}
+		},
+
+		backShowDialog: function(eventContext){
+			var previousView = eventContext.ui.getCurrentViewControl().id;
+			let previousViewName= previousView.toLocaleLowerCase();
+			if ((previousViewName == 'workexecution.pd_whyview')||(previousViewName =="workexecution.reinspecview")
+			||(previousViewName =="workexecution.questionsviewclass")||(previousViewName =='workexecution.classifyworkorderview')) {
+				eventContext.ui.show("WorkExecution.clearChange");
+				return false;
+			}
+			var woSet = eventContext.application.getResource('workOrder');
+			var wo = woSet.getCurrentRecord();
+
+			var classificationdesc = wo.getPendingOrOriginalValue("classificationdesc");
+			var classificationpath = wo.getPendingOrOriginalValue("classificationpath");
+
+			wo.set('classificationdesc',classificationdesc);
+			wo.set('classificationpath',classificationpath);
 		},
   
 
