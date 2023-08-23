@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:59
+// Build: 2023-08-23 10:10:40
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[spôsobených~Manual do Aplicativo]",
          "Privacy Policy" : "[spôsobených~Privacy Policy]",
          "Connection Settings" : "[spôsobených~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[spôsobených~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[spôsobených~v7.6.4:2308230918H]",
          "My Assigned Work" : "[spôsobených~My Assigned Work]",
          "Default List" : "[spôsobených~Default List]",
          "Records with Errors" : "[spôsobených~Records with Errors]",
          "Search Results" : "[spôsobených~Search Results]",
          "Synchronize Data" : "[spôsobených~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[spôsobených~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[spôsobených~Work Order {0}]",
          "Scheduled Start" : "[spôsobených~Scheduled Start]",
          "Status" : "[spôsobených~Status]",
          "Service Item" : "[spôsobených~Service Item]",
          "Change Status" : "[spôsobených~Change Status]",
-         "Service Item Details" : "[spôsobených~Service Item Details]",
-         "Inspection Item" : "[spôsobených~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[spôsobených~Subitem de Fiscalização]",
+         "Tap to enter" : "[spôsobených~Tap to enter]",
+         "Clear" : "[spôsobených~Clear]",
+         "Search" : "[spôsobených~Search]",
+         "Detalhes do item de servi\u00E7o" : "[spôsobených~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[spôsobených~Create Follow-Up Service Item]",
+         "Map" : "[spôsobených~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[spôsobených~Item de Fiscalização]",
          "Classification" : "[spôsobených~Classification]",
          "Days" : "[spôsobených~Days]",
          "Subprefeitura" : "[spôsobených~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[spôsobených~Approval date]",
          "Select" : "[spôsobených~Select]",
          "Comments" : "[spôsobených~Comments]",
+         "Crew" : "[spôsobených~Crew]",
+         "Planned Tools" : "[spôsobených~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[spôsobených~Item de Serviço Originante]",
          "Report" : "[spôsobených~Report]",
          "Attachments" : "[spôsobených~Attachments]",
+         "Labor Assignments" : "[spôsobených~Labor Assignments]",
+         "Task ID, Labor" : "[spôsobených~Task ID, Labor]",
+         "Labor Assignment Details" : "[spôsobených~Labor Assignment Details]",
+         "Task" : "[spôsobených~Task]",
+         "Scheduled Date" : "[spôsobených~Scheduled Date]",
+         "Hours" : "[spôsobených~Hours]",
+         "Vendor" : "[spôsobených~Vendor]",
+         "Contract" : "[spôsobených~Contract]",
+         "Task ID, Tool" : "[spôsobených~Task ID, Tool]",
+         "Tool Details" : "[spôsobených~Tool Details]",
+         "Tool" : "[spôsobených~Tool]",
+         "Quantity" : "[spôsobených~Quantity]",
+         "Take Photo" : "[spôsobených~Take Photo]",
+         "Latitude" : "[spôsobených~Latitude]",
+         "Longitude" : "[spôsobených~Longitude]",
+         "Scheduled Finish" : "[spôsobených~Scheduled Finish]",
+         "Classify Work Order" : "[spôsobených~Classify Work Order]",
+         "Cancel" : "[spôsobených~Cancel]",
+         "Create" : "[spôsobených~Create]",
          "Detalhes do Item de OS Originante" : "[spôsobených~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[spôsobených~Item de OS originante]",
          "Servi\u00E7o" : "[spôsobených~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[spôsobených~Categorias de Anexos]",
          "Categorias" : "[spôsobených~Categorias]",
          "Categorias de Anexos (Filho)" : "[spôsobených~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[spôsobených~Take Photo]",
          "Pick from Gallery" : "[spôsobených~Pick from Gallery]",
          "Attachments (Categorizado)" : "[spôsobených~Attachments (Categorizado)]",
          "Classify" : "[spôsobených~Classify]",
-         "Cancel" : "[spôsobených~Cancel]",
-         "Clear" : "[spôsobených~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[spôsobených~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[spôsobených~Data Inicial]",
          "Data Final" : "[spôsobených~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[spôsobených~Motivo]",
          "Save" : "[spôsobených~Save]",
          "Work Order" : "[spôsobených~Work Order]",
-         "Task" : "[spôsobených~Task]",
          "Work Order Status" : "[spôsobených~Work Order Status]",
          "Task Status" : "[spôsobených~Task Status]",
          "Select Work Type" : "[spôsobených~Select Work Type]",
          "Select Value" : "[spôsobených~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[spôsobených~Selecione a Classificação]",
+         "Equipes" : "[spôsobených~Equipes]",
          "Attachment Details" : "[spôsobených~Attachment Details]",
          "Name" : "[spôsobených~Name]",
-         "Tap to enter" : "[spôsobených~Tap to enter]",
          "Folder" : "[spôsobených~Folder]",
          "File Type" : "[spôsobených~File Type]",
          "File Size (KB)" : "[spôsobených~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[spôsobených~Invalid binding.]",
          "ClearChanges" : "[spôsobených~Undo Changes]",
          "Resend" : "[spôsobených~Resend Changes]",
-         "Search" : "[spôsobených~Search]",
          "Matches" : "[spôsobených~Matches]",
          "Contains" : "[spôsobených~Contains]",
          "listmismatch" : "[spôsobených~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:56
+// Build: 2023-08-23 10:10:39
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[中国的~Manual do Aplicativo]",
          "Privacy Policy" : "[中国的~Privacy Policy]",
          "Connection Settings" : "[中国的~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[中国的~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[中国的~v7.6.4:2308230918H]",
          "My Assigned Work" : "[中国的~My Assigned Work]",
          "Default List" : "[中国的~Default List]",
          "Records with Errors" : "[中国的~Records with Errors]",
          "Search Results" : "[中国的~Search Results]",
          "Synchronize Data" : "[中国的~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[中国的~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[中国的~Work Order {0}]",
          "Scheduled Start" : "[中国的~Scheduled Start]",
          "Status" : "[中国的~Status]",
          "Service Item" : "[中国的~Service Item]",
          "Change Status" : "[中国的~Change Status]",
-         "Service Item Details" : "[中国的~Service Item Details]",
-         "Inspection Item" : "[中国的~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[中国的~Subitem de Fiscalização]",
+         "Tap to enter" : "[中国的~Tap to enter]",
+         "Clear" : "[中国的~Clear]",
+         "Search" : "[中国的~Search]",
+         "Detalhes do item de servi\u00E7o" : "[中国的~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[中国的~Create Follow-Up Service Item]",
+         "Map" : "[中国的~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[中国的~Item de Fiscalização]",
          "Classification" : "[中国的~Classification]",
          "Days" : "[中国的~Days]",
          "Subprefeitura" : "[中国的~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[中国的~Approval date]",
          "Select" : "[中国的~Select]",
          "Comments" : "[中国的~Comments]",
+         "Crew" : "[中国的~Crew]",
+         "Planned Tools" : "[中国的~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[中国的~Item de Serviço Originante]",
          "Report" : "[中国的~Report]",
          "Attachments" : "[中国的~Attachments]",
+         "Labor Assignments" : "[中国的~Labor Assignments]",
+         "Task ID, Labor" : "[中国的~Task ID, Labor]",
+         "Labor Assignment Details" : "[中国的~Labor Assignment Details]",
+         "Task" : "[中国的~Task]",
+         "Scheduled Date" : "[中国的~Scheduled Date]",
+         "Hours" : "[中国的~Hours]",
+         "Vendor" : "[中国的~Vendor]",
+         "Contract" : "[中国的~Contract]",
+         "Task ID, Tool" : "[中国的~Task ID, Tool]",
+         "Tool Details" : "[中国的~Tool Details]",
+         "Tool" : "[中国的~Tool]",
+         "Quantity" : "[中国的~Quantity]",
+         "Take Photo" : "[中国的~Take Photo]",
+         "Latitude" : "[中国的~Latitude]",
+         "Longitude" : "[中国的~Longitude]",
+         "Scheduled Finish" : "[中国的~Scheduled Finish]",
+         "Classify Work Order" : "[中国的~Classify Work Order]",
+         "Cancel" : "[中国的~Cancel]",
+         "Create" : "[中国的~Create]",
          "Detalhes do Item de OS Originante" : "[中国的~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[中国的~Item de OS originante]",
          "Servi\u00E7o" : "[中国的~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[中国的~Categorias de Anexos]",
          "Categorias" : "[中国的~Categorias]",
          "Categorias de Anexos (Filho)" : "[中国的~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[中国的~Take Photo]",
          "Pick from Gallery" : "[中国的~Pick from Gallery]",
          "Attachments (Categorizado)" : "[中国的~Attachments (Categorizado)]",
          "Classify" : "[中国的~Classify]",
-         "Cancel" : "[中国的~Cancel]",
-         "Clear" : "[中国的~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[中国的~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[中国的~Data Inicial]",
          "Data Final" : "[中国的~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[中国的~Motivo]",
          "Save" : "[中国的~Save]",
          "Work Order" : "[中国的~Work Order]",
-         "Task" : "[中国的~Task]",
          "Work Order Status" : "[中国的~Work Order Status]",
          "Task Status" : "[中国的~Task Status]",
          "Select Work Type" : "[中国的~Select Work Type]",
          "Select Value" : "[中国的~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[中国的~Selecione a Classificação]",
+         "Equipes" : "[中国的~Equipes]",
          "Attachment Details" : "[中国的~Attachment Details]",
          "Name" : "[中国的~Name]",
-         "Tap to enter" : "[中国的~Tap to enter]",
          "Folder" : "[中国的~Folder]",
          "File Type" : "[中国的~File Type]",
          "File Size (KB)" : "[中国的~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[中国的~Invalid binding.]",
          "ClearChanges" : "[中国的~Undo Changes]",
          "Resend" : "[中国的~Resend Changes]",
-         "Search" : "[中国的~Search]",
          "Matches" : "[中国的~Matches]",
          "Contains" : "[中国的~Contains]",
          "listmismatch" : "[中国的~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

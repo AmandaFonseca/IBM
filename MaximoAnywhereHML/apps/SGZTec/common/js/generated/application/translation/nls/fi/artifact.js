@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:59
+// Build: 2023-08-23 10:10:40
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[pohjoispäässä~Manual do Aplicativo]",
          "Privacy Policy" : "[pohjoispäässä~Privacy Policy]",
          "Connection Settings" : "[pohjoispäässä~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[pohjoispäässä~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[pohjoispäässä~v7.6.4:2308230918H]",
          "My Assigned Work" : "[pohjoispäässä~My Assigned Work]",
          "Default List" : "[pohjoispäässä~Default List]",
          "Records with Errors" : "[pohjoispäässä~Records with Errors]",
          "Search Results" : "[pohjoispäässä~Search Results]",
          "Synchronize Data" : "[pohjoispäässä~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[pohjoispäässä~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[pohjoispäässä~Work Order {0}]",
          "Scheduled Start" : "[pohjoispäässä~Scheduled Start]",
          "Status" : "[pohjoispäässä~Status]",
          "Service Item" : "[pohjoispäässä~Service Item]",
          "Change Status" : "[pohjoispäässä~Change Status]",
-         "Service Item Details" : "[pohjoispäässä~Service Item Details]",
-         "Inspection Item" : "[pohjoispäässä~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[pohjoispäässä~Subitem de Fiscalização]",
+         "Tap to enter" : "[pohjoispäässä~Tap to enter]",
+         "Clear" : "[pohjoispäässä~Clear]",
+         "Search" : "[pohjoispäässä~Search]",
+         "Detalhes do item de servi\u00E7o" : "[pohjoispäässä~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[pohjoispäässä~Create Follow-Up Service Item]",
+         "Map" : "[pohjoispäässä~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[pohjoispäässä~Item de Fiscalização]",
          "Classification" : "[pohjoispäässä~Classification]",
          "Days" : "[pohjoispäässä~Days]",
          "Subprefeitura" : "[pohjoispäässä~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[pohjoispäässä~Approval date]",
          "Select" : "[pohjoispäässä~Select]",
          "Comments" : "[pohjoispäässä~Comments]",
+         "Crew" : "[pohjoispäässä~Crew]",
+         "Planned Tools" : "[pohjoispäässä~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[pohjoispäässä~Item de Serviço Originante]",
          "Report" : "[pohjoispäässä~Report]",
          "Attachments" : "[pohjoispäässä~Attachments]",
+         "Labor Assignments" : "[pohjoispäässä~Labor Assignments]",
+         "Task ID, Labor" : "[pohjoispäässä~Task ID, Labor]",
+         "Labor Assignment Details" : "[pohjoispäässä~Labor Assignment Details]",
+         "Task" : "[pohjoispäässä~Task]",
+         "Scheduled Date" : "[pohjoispäässä~Scheduled Date]",
+         "Hours" : "[pohjoispäässä~Hours]",
+         "Vendor" : "[pohjoispäässä~Vendor]",
+         "Contract" : "[pohjoispäässä~Contract]",
+         "Task ID, Tool" : "[pohjoispäässä~Task ID, Tool]",
+         "Tool Details" : "[pohjoispäässä~Tool Details]",
+         "Tool" : "[pohjoispäässä~Tool]",
+         "Quantity" : "[pohjoispäässä~Quantity]",
+         "Take Photo" : "[pohjoispäässä~Take Photo]",
+         "Latitude" : "[pohjoispäässä~Latitude]",
+         "Longitude" : "[pohjoispäässä~Longitude]",
+         "Scheduled Finish" : "[pohjoispäässä~Scheduled Finish]",
+         "Classify Work Order" : "[pohjoispäässä~Classify Work Order]",
+         "Cancel" : "[pohjoispäässä~Cancel]",
+         "Create" : "[pohjoispäässä~Create]",
          "Detalhes do Item de OS Originante" : "[pohjoispäässä~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[pohjoispäässä~Item de OS originante]",
          "Servi\u00E7o" : "[pohjoispäässä~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[pohjoispäässä~Categorias de Anexos]",
          "Categorias" : "[pohjoispäässä~Categorias]",
          "Categorias de Anexos (Filho)" : "[pohjoispäässä~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[pohjoispäässä~Take Photo]",
          "Pick from Gallery" : "[pohjoispäässä~Pick from Gallery]",
          "Attachments (Categorizado)" : "[pohjoispäässä~Attachments (Categorizado)]",
          "Classify" : "[pohjoispäässä~Classify]",
-         "Cancel" : "[pohjoispäässä~Cancel]",
-         "Clear" : "[pohjoispäässä~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[pohjoispäässä~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[pohjoispäässä~Data Inicial]",
          "Data Final" : "[pohjoispäässä~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[pohjoispäässä~Motivo]",
          "Save" : "[pohjoispäässä~Save]",
          "Work Order" : "[pohjoispäässä~Work Order]",
-         "Task" : "[pohjoispäässä~Task]",
          "Work Order Status" : "[pohjoispäässä~Work Order Status]",
          "Task Status" : "[pohjoispäässä~Task Status]",
          "Select Work Type" : "[pohjoispäässä~Select Work Type]",
          "Select Value" : "[pohjoispäässä~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[pohjoispäässä~Selecione a Classificação]",
+         "Equipes" : "[pohjoispäässä~Equipes]",
          "Attachment Details" : "[pohjoispäässä~Attachment Details]",
          "Name" : "[pohjoispäässä~Name]",
-         "Tap to enter" : "[pohjoispäässä~Tap to enter]",
          "Folder" : "[pohjoispäässä~Folder]",
          "File Type" : "[pohjoispäässä~File Type]",
          "File Size (KB)" : "[pohjoispäässä~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[pohjoispäässä~Invalid binding.]",
          "ClearChanges" : "[pohjoispäässä~Undo Changes]",
          "Resend" : "[pohjoispäässä~Resend Changes]",
-         "Search" : "[pohjoispäässä~Search]",
          "Matches" : "[pohjoispäässä~Matches]",
          "Contains" : "[pohjoispäässä~Contains]",
          "listmismatch" : "[pohjoispäässä~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

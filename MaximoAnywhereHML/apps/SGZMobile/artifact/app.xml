@@ -98,6 +98,8 @@
 				<eventHandlers id="WorkExecution.WorkItemsView_workOrder_list_eventHandlers">
 					<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_workOrder_list_eventHandlers_render_keepWorkListResource" method="keepWorkListResource"/>
 					<eventHandler class="application.handlers.DataSheetHandler" event="render" id="WorkExecution.WorkItemsView_workOrder_list_eventHandlers_render_checkDataSheetPushErrors" method="checkDataSheetPushErrors"/>
+																																													  
+
 				</eventHandlers>
 
 				<sortOptions id="WorkExecution.WorkItemsView_workOrder_list_sortOptions">
@@ -113,11 +115,15 @@
 				</sortOptions>
 
 				<listItemTemplate id="WorkExecution.WorkItemsView_workOrder_listItemTemplate_WorkListItem" layout="WorkListItem">
+									   
 					<listtext cssClass="bold textappearance-medium" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_classificationdesc" layoutInsertAt="item1" resourceAttribute="classificationdesc"/>
+										  
+
 					<listtext cssClass="bold textappearance-medium" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_wonum" layoutInsertAt="item1" resourceAttribute="wonum"/>
 					<listtext cssClass="bold textappearance-medium" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_ms_aging" layoutInsertAt="item4" resourceAttribute="ms_aging"/>
 					<listtext id="WorkExecution.WorkItemsView_workOrder_WorkListItem_starttime" layoutInsertAt="item2" resourceAttribute="starttime"/>
 					<image id="WorkExecution.WorkItemsView_workOrder_WorkListItem_statusimg" layoutInsertAt="item6" cssClass="statusDesc" image="statusicons/{:internalStatus}.png" cssAttributes="internalStatus" platform="false"/>
+					<image cssAttributes="internalStatus" cssClass="statusDesc" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_emergencyimg" image="statusicons/{:ms_emergency}.png" layoutInsertAt="item6" platform="false"/>
 					<listtext id="WorkExecution.WorkItemsView_workOrder_WorkListItem_statusdesc" layoutInsertAt="item6" cssClass="statusDesc" resourceAttribute="statusdesc" cssAttributes="status"/>	 
 					<!--<listtext cssClass="bold textappearance-medium" id="WorkExecution.WorkItemsView_workOrder_WorkListItem_longdescription" hideEmpty="true" layoutInsertAt="item3" resourceAttribute="longdescription"/>-->
 					<listtext id="WorkExecution.WorkItemsView_workOrder_WorkListItem_woserviceaddressaddressline2" hideEmpty="true" layoutInsertAt="item4" resourceAttribute="woserviceaddressline2"/>
@@ -142,6 +148,9 @@
 				<!-- <eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="Wotickets.Voltar_eventHandlers_initialize_open_hideTS_2122" method="ticket_Final"/> -->
 				<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_render" method="sync"/>
 
+									  
+																																													   
+										 
 
 			</eventHandlers>
 		</view>
@@ -278,11 +287,8 @@
 					</eventHandlers>
 				
 					
-					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0" layout="Item1Button1">
+					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0" layout="Item1Button1" transitionTo="WorkExecution.EditStatusView">
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.EditStatusView_0_statusdesc_Status" label="Status" labelCss="editableLabel" layoutInsertAt="item1" resourceAttribute="statusdesc"/>
-                        <eventHandlers id="workexecution.ValidateDateSpec">
-                            <eventHandler class="custom.handlers.WODetailExtensionHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_clic_ValidateDateSpec" method="ValidateDateSpec"/>
-                         </eventHandlers>
 					</groupitem>
 					
 					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_0">
@@ -356,7 +362,12 @@
 						label="Classification" resourceAttribute="classificationdesc"/>
 					</groupitem>
 					
-		
+					<groupitem id="ReadOnlyWorkExecution.WorkDetailView_groupitem_WorkExecution.EditSiteidView_team">
+						<text editable="false" id="ReadOnlyWorkExecution.WorkDetailView_groupitem_0_siteid_WorkOrder_team" label="Crew" resourceAttribute="amcrew" lookup="sgzMobile.amcrewLookup"/>
+						<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_ms_emergencial">
+							<eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_ms_emergencial" method="verifyEmergency"/>
+						</eventHandlers>
+					</groupitem>
 					<!-- SGZ Mobile add fields asset -->
 					<groupitem id="WorkExecution.WorkDetailView_workOrder_groupitem_WorkExecution.AssetWorkOrderView_0" transitionTo="WorkExecution.EditAssetView">
 						
@@ -383,8 +394,7 @@
 				</eventHandlers>
 			</list>
 			
-			
-	
+
 			
 			<!-- Specification Form END-->
 			<container id="WorkExecution.WorkDetailView_container_0">	
@@ -403,7 +413,6 @@
 					</groupitem>
 				</group>	
 					
-					
 				<group id="WorkExecution.WorkDetailView_group_1">
 					<!-- Editado por adramos em 01-06-2022 1543 inclusão de método click para verificar se o item possui categorias de anexos -->
 					<groupitem enableFeatureByProperty="attachments.enabled" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.AttachmentsView_0" layout="Item1Count1Button2">
@@ -414,6 +423,7 @@
 						</eventHandlers>						
 						<text cssClass="relatedRecords" editable="false" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.AttachmentsView_0_Attachments" layoutInsertAt="item1" value="Attachments"/>
 						<text editable="false" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.AttachmentsView_0_attachmentssize" layoutInsertAt="count1" resourceAttribute="attachmentssize" />
+	  
 					</groupitem>
 				</group>
 											
@@ -501,7 +511,7 @@
 					</eventHandlers>
 			</button>	
 			<eventHandlers id="WorkExecution.WODetailView.ValidateDateSpec">
-				<eventHandler class="custom.handlers.WODetailExtensionHandler" event="back" id="WorkExecution.WODetailView.ValidateDateSpec_back" method="ValidateDateSpecBack"/>
+				<eventHandler class="custom.handlers.WODetailExtensionHandler" event="back" id="WorkExecution.WODetailView.ValidateDateSpec_back" method="ValidateDateSpec"/>
 			</eventHandlers>
 		</view>
 		
@@ -806,10 +816,17 @@
 			</list>
 		</view>
 		
+																							  
+								
+																					  
+																																																															
+																																																				   
+				 
+			
+																						 
+																																																																	
+
 		<!-- Amanda ... Fim ...Define Attachments List view SGZMOBILE Recorte-->
-
-		
-
 		<!--Work Order Description view SGZMOBILE-->
 		<view id="WorkExecution.DescriptionView" label="Description" resource="workOrder">
 			<requiredResources id="WorkExecution.DescriptionView_requiredResources">
@@ -932,13 +949,11 @@
 				</group>
 
 			</container>
-			
 			<eventHandlers id="WorkExecution.LaborAssignmentDetailView_eventHandlers">
 				<eventHandler class="application.handlers.LaborAssignmentHandler" event="show" id="WorkExecution.LaborAssignmentDetailView_eventHandlers_show_asyncLaborAssignmentDetailView" method="asyncLaborAssignmentDetailView"/>
 				<eventHandler class="application.handlers.LaborAssignmentHandler" event="cleanup" id="WorkExecution.LaborAssignmentDetailView_eventHandlers_cleanup_cleanupAssignmentDetailView" method="cleanupAssignmentDetailView"/>
 			</eventHandlers>
 		</view>
-
 
 		<!--SGZMOBILE Planned Tools view-->
 		<view id="WorkExecution.PlannedToolsView" label="Planned Tools">
@@ -1090,8 +1105,6 @@
 						<text editable="true" id="WorkExecution.FollowUpWorkOrderView_groupitem_1_woserviceaddress_woserviceaddressstaddrnumber" label="Number" required="true" resourceAttribute="woservicetaddrnumber"/>	
 						<text editable="true" id="WorkExecution.FollowUpWorkOrderView_groupitem_1_woserviceaddress_woserviceaddressaddressline3" label="District" required="true" resourceAttribute="woserviceaddressline3"/> 
 						<text editable="true" id="WorkExecution.FollowUpWorkOrderView_groupitem_1_woserviceaddress_woserviceaddresspostalcode" label="Postal Code" resourceAttribute="woservicepostalcode"/>		
-                        <text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution_groupitem_0_siteid_WorkOrderlat" label="Latitude" resourceAttribute="latitudey"/>
-						<text editable="false" id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution_groupitem_0_siteid_WorkOrderlong" label="Longitude" resourceAttribute="longitudex"/>
 					</groupitem>
 					
 					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_5">
@@ -1168,6 +1181,7 @@
 				</button>
 			</footer>
 			<eventHandlers id="WorkExecution.FollowUpWorkOrderView_eventHandlers">
+	
 				<eventHandler class="custom.handlers.WODetailExtensionHandler" event="cleanup" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_cleanup_discardNewWorkOrderView" method="discardNewWorkOrderView"/>
 				<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>
 				<eventHandler class="application.handlers.ClassificationFormHandler" event="initialize" id="WorkExecution.FollowUpWorkOrderView_eventHandlers_initialize_initializeWOSpec2" method="initializeWOSpec"/> 		
@@ -1890,6 +1904,9 @@
 						<textarea editable="true" id="WorkExecution.EditStatusView_statusChangeResource_groupitem_3_memo_motivo11" label="Motivo" resourceAttribute="motivo"/>
 					</groupitem>
 				</group>
+				<!--<eventHandlers id="WorkExecution.EditStatusView_Save_button_eventHandlers_hide_Reason">
+					<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.EditStatusView_Save_button_eventHandlers_datachange_hide_Reason" method="hideReason"/>
+				</eventHandlers>-->
 			</container>
 
 			<footer id="WorkExecution.EditStatusView_footer">
@@ -1980,6 +1997,31 @@
 		<!-- LOOKUP SECTION -->
 		<!-- *********************** -->
 
+<lookup id="sgzMobile.amcrewLookup" label="Equipes" resource="msamcrew" filterClass="custom.handlers.WODetailExtensionHandler" filterMethod="selectTeamLookup">
+    <requiredResources id="sgzMobile.amcrewLookup_requiredResources">
+        <requiredResource id="sgzMobile.amcrewLookup_msamcrew" name="msamcrew"/>
+    </requiredResources>
+
+    <list id="sgzMobile.amcrewLookup_list" resource="msamcrew">
+        <searchAttributes id="sgzMobile.amcrewLookup_list_searchAttributes">
+            <searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_amcrew" name="amcrew"/>
+            <searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_description" name="displayname"/>
+        </searchAttributes>
+        <listItemTemplate id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1" layout="Item1Desc1" >
+			<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_list">
+				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_list" method="setLocaleCrew"/>
+			</eventHandlers>
+            <listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_amcrew" layoutInsertAt="item1" resourceAttribute="amcrew"/>
+            <listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_description" layoutInsertAt="desc1" resourceAttribute="displayname"/>
+        </listItemTemplate>
+    </list>
+    <returnAttributes id="sgzMobile.amcrewLookup_returnAttributes">
+        <returnAttribute id="sgzMobile.amcrewLookup_returnAttributes_amcrew_amcrew" sourceAttribute="amcrew" targetAttribute="amcrew"/>
+    </returnAttributes>
+	<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_hide_footer">
+		<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_hide_footer" method="hideFooterLookup"/>
+	</eventHandlers>
+</lookup>
 		
 		<lookup filterClass="custom.handlers.MSStatusChangeHandler" filterMethod="filterWOStatus" id="WorkExecution.statusLookup" label="Work Order Status" resource="domainwostatus">	
 			<requiredResources id="WorkExecution.statusLookup_requiredResources">
@@ -2166,6 +2208,8 @@
 				<!-- Campo MS_ORIGINAGREEASPH Item de OS que gerou OS de Concordância Asfáltica incluido em 30/05/22 12h15 adramos - solicitado por Marisa e Hugo via reunião -->
 				
 				<!--<attribute describedByProperty="spi_wm:ms_originagreeasph" id="workOrder_identifier_spi_wm_ms_originagreeasph" name="ms_originagreeasph"/>-->
+				<attribute describedByProperty="spi_wm:amcrew" id="workOrder_identifier_spi_wm_amcrew" name="amcrew"/>
+				<attribute describedByProperty="spi_wm:ms_emergency" id="workOrder_identifier_spi_wm_ms_emergency" name="ms_emergency"/>
 				<attribute describedByProperty="spi_wm:ms_photosessionid" id="workOrder_identifier_spi_wm_ms_photosessionid" name="ms_photosessionid"/>
 				<attribute describedByProperty="spi_wm:ms_psconfigid" id="workOrder_identifier_spi_wm_ms_ms_psconfigid" name="ms_psconfigid"/>
 				<attribute describedByProperty="spi_wm:ms_psversion" id="workOrder_identifier_spi_wm_ms_ms_psversion" name="ms_psversion"/>
@@ -2204,7 +2248,7 @@
 				<attribute describedByProperty="spi_wm:worktype" id="workOrder_worktype_spi_wmworktype" name="worktype"/>
 				<attribute describedByProperty="spi_wm:wopriority" id="workOrder_priority_spi_wmwopriority" index="true" name="priority"/> 
 				<attribute describedByProperty="spi_wm:classstructureid" id="workOrder_classstructureid_spi_wmclassstructureid" name="classstructureid"/>			
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:formattedaddress}" id="workOrder_woserviceaddress_spiwoserviceaddressspi_wmformattedaddress" name="woserviceaddress"/>
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:formattedaddress}" id="workOrder_woserviceaddress_spiwoserviceaddressspi_wmformattedaddress" name="woserviceaddress"/>
 				<attribute describedByProperty="spi:woserviceaddress{spi_wm:saddresscode}" id="workOrder_woserviceaddresscode_spiwoserviceaddressspi_wmsaddresscode" name="woserviceaddresscode"/>
 				<attribute describedByProperty="spi:woserviceaddress{spi_wm:description}" id="workOrder_woserviceaddressdesc_spiwoserviceaddressspi_wmdescription" name="woserviceaddressdesc"/> 
 				<!-- SGZ Mobile woserviceaddress -->
@@ -2379,6 +2423,7 @@
 		
 
 		<!-- Recurso para linhas de categorias para fotos (Categorias)  -->
+  
 		<resource  id="photosessionlineResource" name="photosessionlineResource"  pageSize="10">
 			<attributes id="photosessionlineResource_attributes">
 			    <attribute describedByProperty="spi_wm:ms_photosessionlineid" id="photosessionlineResource_value_dcterms_identifier" name="ms_photosessionlineid"/>
@@ -2775,6 +2820,20 @@
 		<!--****************************-->
 		<!-- DOMAINS Resources -->
 		<!--****************************-->
+		<!-- teste do domanios de troca de equipe-->
+<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#MS_SGZMOBILEAMCREWCON" id="msamcrew" name="msamcrew" pageSize="5000" providedBy="/oslc/sp/SmarterPhysicalInfrastructure"> 
+    <attributes id="msamcrew_attributes">
+        <attribute describedByProperty="spi:amcrew{oslc:shortTitle}" id="msamcrew_amcrew" name="amcrew"/>
+        <attribute describedByProperty="spi:amcrew{oslc:title}" id="msamcrew_description" name="description"/>
+        <attribute describedByProperty="spi:ms_active" id="msamcrew_ms_active" name="ms_active"/>
+        <attribute describedByProperty="spi:person{spi:displayname}" id="msamcrew_displayname" name="displayname"/>
+        <attribute describedByProperty="spi:ms_contractnum" id="msamcrew_ms_contractnum" name="ms_contractnum"/>
+		<attribute describedByProperty="oslc:identifier" id="msamcrew_ms_identifier" name="identifier"/>
+    </attributes>
+    <queryBases id="msamcrew_queryBases">
+			<queryBase id="msamcrew_queryBase_getamcrew" name="getamcrew" queryUri="/oslc/os/MS_SGZMOBILEAMCREW?savedQuery=MS_CREWCONTRACTSGZMOBILE"/>
+     </queryBases> 
+</resource>
 
 		<!-- Asset attr types domain -->
 		<resource describedBy="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#SynonymDomain" id="assetattrtypes" isSystem="true" name="assetattrtypes" pageSize="50" providedBy="/oslc/sp/SmarterPhysicalInfrastructure">

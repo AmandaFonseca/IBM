@@ -96,6 +96,39 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 			    }
 			},
 		
+    
+                                          
+                          
+                                   
+                 
+
+                                                                                               
+                                                                                              
+                                                     
+  
+
+                                                 
+                                    
+                                              
+                                                  
+                                                                 
+                                    
+   
+     
+
+                                                    
+                                    
+                                              
+                                                  
+                                                                 
+                                    
+   
+       
+       
+
+
+                                          
+                         
 		
 					
 				
@@ -496,7 +529,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					statusChange.setDateValue("changestatusdate",
 							this.application.getCurrentDateTime());
 				},
-                
+
 				validateAttachments: function(eventContext){
                             var AttachmentSet = CommonHandler._getAdditionalResource(eventContext,"workOrder.attachments");
                             CommonHandler._clearFilterForResource(eventContext,AttachmentSet);
@@ -526,10 +559,13 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 					var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
                     var psconfigid = currentWorkOrder.get("ms_psconfigid");
+     
 					//Validate if status date change is lesser than last WO status change date
 						if(currentWorkOrder.getAsDateOrNull('changestatusdate') > statusChange.getAsDateOrNull('changedate')){
 								throw new PlatformRuntimeException('statusDateinFuture',[this.resolveStatusDate(currentWorkOrder.getAsDateOrNull('changestatusdate'))]);								
+                   
 						}																						
+
                         if(statusChange.get("status") && statusChange.get("status") == "CONC"){
                             if (psconfigid == null || psconfigid == "" || typeof psconfigid === undefined){
                                 var j = 0;
@@ -579,14 +615,63 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
                         var countNum = 0;
                         var countAln = 0;
 						var concasf = 0;
-                        for (var i = 0; i < currentWorkOrder.workOrderSpec.count(); i++) {
-                            var currWorkOrderSpec = currentWorkOrder.workOrderSpec.getRecordAt(i);
-
+                        var nowDate = new Date();
+                        var spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
+                        var count = spec.count();
+                        
+                        for (var i = 0; i < count; i++) {
+                           // var currWorkOrderSpec = currentWorkOrder.workOrderSpec.getRecordAt(i);
+						   let currWorkOrderSpec = spec.getRecordAt(i)
                             var numValue = currWorkOrderSpec.get("numvalue");
                             var alnValue = currWorkOrderSpec.get("alnvalue");
+                            var specID = currWorkOrderSpec.get('assetattrid');
+                            var measureunitid = currWorkOrderSpec.get('measureunitid');
                             
                             var pdSpecReq = currWorkOrderSpec.get("pd_spec_required");
-								
+                            if (specID == 'CURA_CONC'){
+                                var cura_conc = alnValue;
+                            }
+                            if (specID == 'NEC_CONC'){
+                                //Verifica se é concordancia asfáltica
+                                var nec_conc = alnValue;
+                            }	
+                            if (nec_conc == 'Sim'){
+                                if  (cura_conc == null || cura_conc == undefined  || cura_conc == ""){
+                                 eventContext.ui.showMessage(MessageService.createStaticMessage("O campo 'Cura de concreto' precisa ser preenchido!").getMessage());
+                                }
+                                else{
+                                    var dateParts = cura_conc.split("/");
+                                    var newDate = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
+                                    var newDateFomatada = new Date(cura_conc);
+                                    let day = newDate.getMonth()+1;
+                                    let month = newDate.getDate();
+                                    let year = newDate.getFullYear();
+                                    //var isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
+                                    var isBoolean;
+                                    try {
+                                        isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
+                                        if (isBoolean == undefined || isBoolean == null || isBoolean == false) {
+                                            isBoolean = (newDateFomatada instanceof Date) && newDateFomatada !=null;
+                                        }
+                                    } catch (error) {
+                                        console.log(error);
+                                    }                                                    
+                                    
+                                    newDateFomatada = new Date('""'+day+"/"+month+"/"+year);
+                                    if (isBoolean) {
+                                        if(newDateFomatada < nowDate){
+                                            throw new PlatformRuntimeWarning("O campo 'Cura de concreto' precisa ser maior que a data atual!");
+                                            //eventContext.ui.showMessage(MessageService.createStaticMessage().getMessage());
+                                           
+                                        }
+                                    }
+                                    else{
+                                        throw new PlatformRuntimeWarning("Por favor, insira uma data valida!");
+                                        //eventContext.ui.showMessage(MessageService.createStaticMessage("Por favor, insira uma data valida!").getMessage());
+                                    }	
+                                }
+                            }
+                               
                                 if (alnValue == null || alnValue == "" || typeof alnValue === undefined){                            
                                     if(pdSpecReq == true) {
                                         if (numValue == null || numValue == "" || typeof numValue === undefined 
@@ -625,6 +710,8 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					 var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 					 var workOrder = workOrderSet.getCurrentRecord();
 					 var newStatus=statusChange.get("status");
+					 var emergency = workOrder.get("ms_emergency");
+
 						if (newStatus == "EMAND"){
 							 var fieldMetadataPlate= workOrder.getRuntimeFieldMetadata("ms_woplate");
 	                             fieldMetadataPlate.set('required', true);
@@ -655,19 +742,16 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 						
 						
 						var currMotivo = workOrder.get("motivo");                                         
-							if (newStatus == "NAOREALIZADA" && currMotivo == null){
-							 var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
-							 fieldMetadata.set('required', true);                                                        
+						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
+							var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
+							fieldMetadata.set('required', true);                                                        
 						}else if(newStatus !== "NAOREALIZADA"){
-							 var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
-							 fieldMetadata.set('required', false);
+								var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
+								fieldMetadata.set('required', false);
 						}
-							var currMotivo = workOrder.get("motivo");                                            
-							if (newStatus == "NAOREALIZADA" && currMotivo == null){
-							throw new PlatformRuntimeException("ms_invalidmsgnaorealizada");                    
-							
-							
-							} 
+						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
+						   throw new PlatformRuntimeException("ms_invalidmsgnaorealizada");                    
+						} 
 					
 					
 					this.inherited(arguments);	
@@ -716,7 +800,41 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 						});         
 				},
 			 */
-				saveWOShowView : function(eventContext) {
+			hideFooterLookup: function(eventContext){
+				//document.getElementById("sgzMobile.amcrewLookup_footer").innerHTML = '';
+				document.getElementById("sgzMobile.amcrewLookup_footer").setAttribute("style", "display:none")
+			},
+			hideReason: function(eventContext){
+				console.log(eventContext);
+				var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
+				let status = statusChange.get("status");
+				if (status) {
+					status = status.toLocaleUpperCase();
+				}
+				let workOrder = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+				let wo = workOrder.getCurrentRecord();
+				let amcrew = wo.get("ms_emergency");
+				if (amcrew && status == 'NAOREALIZADA') {
+					eventContext.setDisplay(false);
+					eventContext.setVisibility(false);	
+				}else{
+					eventContext.setDisplay(true);
+					eventContext.setVisibility(true);
+				}
+			},
+
+			setLocaleCrew: function(eventContext){
+				var workOrder = eventContext.application.getResource('workOrder');
+				var deferred = new Deferred();
+				ModelService.save(workOrder).then(function(result){
+					deferred.resolve();
+					eventContext.ui.show("WorkExecution.WorkItemsView");
+				}).otherwise(function(error){
+					deferred.reject(error);
+				});
+				
+			},
+			saveWOShowView : function(eventContext) {
 					var workOrder = eventContext.application.getResource('workOrder');
 					var deferred = new Deferred();
 					ModelService.save(workOrder).then(function(result){

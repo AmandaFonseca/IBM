@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:57
+// Build: 2023-08-23 10:10:39
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[können~Manual do Aplicativo]",
          "Privacy Policy" : "[können~Privacy Policy]",
          "Connection Settings" : "[können~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[können~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[können~v7.6.4:2308230918H]",
          "My Assigned Work" : "[können~My Assigned Work]",
          "Default List" : "[können~Default List]",
          "Records with Errors" : "[können~Records with Errors]",
          "Search Results" : "[können~Search Results]",
          "Synchronize Data" : "[können~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[können~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[können~Work Order {0}]",
          "Scheduled Start" : "[können~Scheduled Start]",
          "Status" : "[können~Status]",
          "Service Item" : "[können~Service Item]",
          "Change Status" : "[können~Change Status]",
-         "Service Item Details" : "[können~Service Item Details]",
-         "Inspection Item" : "[können~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[können~Subitem de Fiscalização]",
+         "Tap to enter" : "[können~Tap to enter]",
+         "Clear" : "[können~Clear]",
+         "Search" : "[können~Search]",
+         "Detalhes do item de servi\u00E7o" : "[können~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[können~Create Follow-Up Service Item]",
+         "Map" : "[können~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[können~Item de Fiscalização]",
          "Classification" : "[können~Classification]",
          "Days" : "[können~Days]",
          "Subprefeitura" : "[können~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[können~Approval date]",
          "Select" : "[können~Select]",
          "Comments" : "[können~Comments]",
+         "Crew" : "[können~Crew]",
+         "Planned Tools" : "[können~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[können~Item de Serviço Originante]",
          "Report" : "[können~Report]",
          "Attachments" : "[können~Attachments]",
+         "Labor Assignments" : "[können~Labor Assignments]",
+         "Task ID, Labor" : "[können~Task ID, Labor]",
+         "Labor Assignment Details" : "[können~Labor Assignment Details]",
+         "Task" : "[können~Task]",
+         "Scheduled Date" : "[können~Scheduled Date]",
+         "Hours" : "[können~Hours]",
+         "Vendor" : "[können~Vendor]",
+         "Contract" : "[können~Contract]",
+         "Task ID, Tool" : "[können~Task ID, Tool]",
+         "Tool Details" : "[können~Tool Details]",
+         "Tool" : "[können~Tool]",
+         "Quantity" : "[können~Quantity]",
+         "Take Photo" : "[können~Take Photo]",
+         "Latitude" : "[können~Latitude]",
+         "Longitude" : "[können~Longitude]",
+         "Scheduled Finish" : "[können~Scheduled Finish]",
+         "Classify Work Order" : "[können~Classify Work Order]",
+         "Cancel" : "[können~Cancel]",
+         "Create" : "[können~Create]",
          "Detalhes do Item de OS Originante" : "[können~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[können~Item de OS originante]",
          "Servi\u00E7o" : "[können~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[können~Categorias de Anexos]",
          "Categorias" : "[können~Categorias]",
          "Categorias de Anexos (Filho)" : "[können~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[können~Take Photo]",
          "Pick from Gallery" : "[können~Pick from Gallery]",
          "Attachments (Categorizado)" : "[können~Attachments (Categorizado)]",
          "Classify" : "[können~Classify]",
-         "Cancel" : "[können~Cancel]",
-         "Clear" : "[können~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[können~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[können~Data Inicial]",
          "Data Final" : "[können~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[können~Motivo]",
          "Save" : "[können~Save]",
          "Work Order" : "[können~Work Order]",
-         "Task" : "[können~Task]",
          "Work Order Status" : "[können~Work Order Status]",
          "Task Status" : "[können~Task Status]",
          "Select Work Type" : "[können~Select Work Type]",
          "Select Value" : "[können~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[können~Selecione a Classificação]",
+         "Equipes" : "[können~Equipes]",
          "Attachment Details" : "[können~Attachment Details]",
          "Name" : "[können~Name]",
-         "Tap to enter" : "[können~Tap to enter]",
          "Folder" : "[können~Folder]",
          "File Type" : "[können~File Type]",
          "File Size (KB)" : "[können~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[können~Invalid binding.]",
          "ClearChanges" : "[können~Undo Changes]",
          "Resend" : "[können~Resend Changes]",
-         "Search" : "[können~Search]",
          "Matches" : "[können~Matches]",
          "Contains" : "[können~Contains]",
          "listmismatch" : "[können~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

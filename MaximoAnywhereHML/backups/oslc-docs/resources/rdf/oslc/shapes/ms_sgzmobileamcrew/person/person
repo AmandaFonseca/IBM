@@ -3,21 +3,21 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:oslc="http://open-services.net/ns/core#"
     xmlns:spi="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#">
-  <oslc:ResourceShape rdf:about="https://smgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_sgzmobileamcrew/person">
+  <oslc:ResourceShape rdf:about="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_sgzmobileamcrew/person">
     <oslc:name>MS_SGZMOBILEAMCREWCON</oslc:name>
     <oslc:describes rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#Person"/>
     <oslc:property>
       <oslc:Property>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <spi:pkIndex>1</spi:pkIndex>
         <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#personid"/>
-        <oslc:defaultValue>&amp;AUTOKEY&amp;</oslc:defaultValue>
-        <oslc:name>personid</oslc:name>
+        <oslc:maxSize>30</oslc:maxSize>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
         >Membro</dcterms:title>
-        <oslc:maxSize>30</oslc:maxSize>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <spi:pkIndex>1</spi:pkIndex>
+        <oslc:defaultValue>&amp;AUTOKEY&amp;</oslc:defaultValue>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:name>personid</oslc:name>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
       </oslc:Property>
     </oslc:property>
     <oslc:property>

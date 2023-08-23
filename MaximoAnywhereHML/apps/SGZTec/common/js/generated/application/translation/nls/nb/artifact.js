@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:59
+// Build: 2023-08-23 10:10:40
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[også populært~Manual do Aplicativo]",
          "Privacy Policy" : "[også populært~Privacy Policy]",
          "Connection Settings" : "[også populært~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[også populært~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[også populært~v7.6.4:2308230918H]",
          "My Assigned Work" : "[også populært~My Assigned Work]",
          "Default List" : "[også populært~Default List]",
          "Records with Errors" : "[også populært~Records with Errors]",
          "Search Results" : "[også populært~Search Results]",
          "Synchronize Data" : "[også populært~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[også populært~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[også populært~Work Order {0}]",
          "Scheduled Start" : "[også populært~Scheduled Start]",
          "Status" : "[også populært~Status]",
          "Service Item" : "[også populært~Service Item]",
          "Change Status" : "[også populært~Change Status]",
-         "Service Item Details" : "[også populært~Service Item Details]",
-         "Inspection Item" : "[også populært~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[også populært~Subitem de Fiscalização]",
+         "Tap to enter" : "[også populært~Tap to enter]",
+         "Clear" : "[også populært~Clear]",
+         "Search" : "[også populært~Search]",
+         "Detalhes do item de servi\u00E7o" : "[også populært~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[også populært~Create Follow-Up Service Item]",
+         "Map" : "[også populært~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[også populært~Item de Fiscalização]",
          "Classification" : "[også populært~Classification]",
          "Days" : "[også populært~Days]",
          "Subprefeitura" : "[også populært~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[også populært~Approval date]",
          "Select" : "[også populært~Select]",
          "Comments" : "[også populært~Comments]",
+         "Crew" : "[også populært~Crew]",
+         "Planned Tools" : "[også populært~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[også populært~Item de Serviço Originante]",
          "Report" : "[også populært~Report]",
          "Attachments" : "[også populært~Attachments]",
+         "Labor Assignments" : "[også populært~Labor Assignments]",
+         "Task ID, Labor" : "[også populært~Task ID, Labor]",
+         "Labor Assignment Details" : "[også populært~Labor Assignment Details]",
+         "Task" : "[også populært~Task]",
+         "Scheduled Date" : "[også populært~Scheduled Date]",
+         "Hours" : "[også populært~Hours]",
+         "Vendor" : "[også populært~Vendor]",
+         "Contract" : "[også populært~Contract]",
+         "Task ID, Tool" : "[også populært~Task ID, Tool]",
+         "Tool Details" : "[også populært~Tool Details]",
+         "Tool" : "[også populært~Tool]",
+         "Quantity" : "[også populært~Quantity]",
+         "Take Photo" : "[også populært~Take Photo]",
+         "Latitude" : "[også populært~Latitude]",
+         "Longitude" : "[også populært~Longitude]",
+         "Scheduled Finish" : "[også populært~Scheduled Finish]",
+         "Classify Work Order" : "[også populært~Classify Work Order]",
+         "Cancel" : "[også populært~Cancel]",
+         "Create" : "[også populært~Create]",
          "Detalhes do Item de OS Originante" : "[også populært~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[også populært~Item de OS originante]",
          "Servi\u00E7o" : "[også populært~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[også populært~Categorias de Anexos]",
          "Categorias" : "[også populært~Categorias]",
          "Categorias de Anexos (Filho)" : "[også populært~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[også populært~Take Photo]",
          "Pick from Gallery" : "[også populært~Pick from Gallery]",
          "Attachments (Categorizado)" : "[også populært~Attachments (Categorizado)]",
          "Classify" : "[også populært~Classify]",
-         "Cancel" : "[også populært~Cancel]",
-         "Clear" : "[også populært~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[også populært~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[også populært~Data Inicial]",
          "Data Final" : "[også populært~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[også populært~Motivo]",
          "Save" : "[også populært~Save]",
          "Work Order" : "[også populært~Work Order]",
-         "Task" : "[også populært~Task]",
          "Work Order Status" : "[også populært~Work Order Status]",
          "Task Status" : "[også populært~Task Status]",
          "Select Work Type" : "[også populært~Select Work Type]",
          "Select Value" : "[også populært~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[også populært~Selecione a Classificação]",
+         "Equipes" : "[også populært~Equipes]",
          "Attachment Details" : "[også populært~Attachment Details]",
          "Name" : "[også populært~Name]",
-         "Tap to enter" : "[også populært~Tap to enter]",
          "Folder" : "[også populært~Folder]",
          "File Type" : "[også populært~File Type]",
          "File Size (KB)" : "[også populært~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[også populært~Invalid binding.]",
          "ClearChanges" : "[også populært~Undo Changes]",
          "Resend" : "[også populært~Resend Changes]",
-         "Search" : "[også populært~Search]",
          "Matches" : "[også populært~Matches]",
          "Contains" : "[også populært~Contains]",
          "listmismatch" : "[også populært~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

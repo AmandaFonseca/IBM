@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:57
+// Build: 2023-08-23 10:10:39
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[françaisé~Manual do Aplicativo]",
          "Privacy Policy" : "[françaisé~Privacy Policy]",
          "Connection Settings" : "[françaisé~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[françaisé~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[françaisé~v7.6.4:2308230918H]",
          "My Assigned Work" : "[françaisé~My Assigned Work]",
          "Default List" : "[françaisé~Default List]",
          "Records with Errors" : "[françaisé~Records with Errors]",
          "Search Results" : "[françaisé~Search Results]",
          "Synchronize Data" : "[françaisé~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[françaisé~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[françaisé~Work Order {0}]",
          "Scheduled Start" : "[françaisé~Scheduled Start]",
          "Status" : "[françaisé~Status]",
          "Service Item" : "[françaisé~Service Item]",
          "Change Status" : "[françaisé~Change Status]",
-         "Service Item Details" : "[françaisé~Service Item Details]",
-         "Inspection Item" : "[françaisé~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[françaisé~Subitem de Fiscalização]",
+         "Tap to enter" : "[françaisé~Tap to enter]",
+         "Clear" : "[françaisé~Clear]",
+         "Search" : "[françaisé~Search]",
+         "Detalhes do item de servi\u00E7o" : "[françaisé~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[françaisé~Create Follow-Up Service Item]",
+         "Map" : "[françaisé~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[françaisé~Item de Fiscalização]",
          "Classification" : "[françaisé~Classification]",
          "Days" : "[françaisé~Days]",
          "Subprefeitura" : "[françaisé~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[françaisé~Approval date]",
          "Select" : "[françaisé~Select]",
          "Comments" : "[françaisé~Comments]",
+         "Crew" : "[françaisé~Crew]",
+         "Planned Tools" : "[françaisé~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[françaisé~Item de Serviço Originante]",
          "Report" : "[françaisé~Report]",
          "Attachments" : "[françaisé~Attachments]",
+         "Labor Assignments" : "[françaisé~Labor Assignments]",
+         "Task ID, Labor" : "[françaisé~Task ID, Labor]",
+         "Labor Assignment Details" : "[françaisé~Labor Assignment Details]",
+         "Task" : "[françaisé~Task]",
+         "Scheduled Date" : "[françaisé~Scheduled Date]",
+         "Hours" : "[françaisé~Hours]",
+         "Vendor" : "[françaisé~Vendor]",
+         "Contract" : "[françaisé~Contract]",
+         "Task ID, Tool" : "[françaisé~Task ID, Tool]",
+         "Tool Details" : "[françaisé~Tool Details]",
+         "Tool" : "[françaisé~Tool]",
+         "Quantity" : "[françaisé~Quantity]",
+         "Take Photo" : "[françaisé~Take Photo]",
+         "Latitude" : "[françaisé~Latitude]",
+         "Longitude" : "[françaisé~Longitude]",
+         "Scheduled Finish" : "[françaisé~Scheduled Finish]",
+         "Classify Work Order" : "[françaisé~Classify Work Order]",
+         "Cancel" : "[françaisé~Cancel]",
+         "Create" : "[françaisé~Create]",
          "Detalhes do Item de OS Originante" : "[françaisé~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[françaisé~Item de OS originante]",
          "Servi\u00E7o" : "[françaisé~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[françaisé~Categorias de Anexos]",
          "Categorias" : "[françaisé~Categorias]",
          "Categorias de Anexos (Filho)" : "[françaisé~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[françaisé~Take Photo]",
          "Pick from Gallery" : "[françaisé~Pick from Gallery]",
          "Attachments (Categorizado)" : "[françaisé~Attachments (Categorizado)]",
          "Classify" : "[françaisé~Classify]",
-         "Cancel" : "[françaisé~Cancel]",
-         "Clear" : "[françaisé~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[françaisé~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[françaisé~Data Inicial]",
          "Data Final" : "[françaisé~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[françaisé~Motivo]",
          "Save" : "[françaisé~Save]",
          "Work Order" : "[françaisé~Work Order]",
-         "Task" : "[françaisé~Task]",
          "Work Order Status" : "[françaisé~Work Order Status]",
          "Task Status" : "[françaisé~Task Status]",
          "Select Work Type" : "[françaisé~Select Work Type]",
          "Select Value" : "[françaisé~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[françaisé~Selecione a Classificação]",
+         "Equipes" : "[françaisé~Equipes]",
          "Attachment Details" : "[françaisé~Attachment Details]",
          "Name" : "[françaisé~Name]",
-         "Tap to enter" : "[françaisé~Tap to enter]",
          "Folder" : "[françaisé~Folder]",
          "File Type" : "[françaisé~File Type]",
          "File Size (KB)" : "[françaisé~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[françaisé~Invalid binding.]",
          "ClearChanges" : "[françaisé~Undo Changes]",
          "Resend" : "[françaisé~Resend Changes]",
-         "Search" : "[françaisé~Search]",
          "Matches" : "[françaisé~Matches]",
          "Contains" : "[françaisé~Contains]",
          "listmismatch" : "[françaisé~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

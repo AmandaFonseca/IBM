@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:58
+// Build: 2023-08-23 10:10:39
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[島の第~Manual do Aplicativo]",
          "Privacy Policy" : "[島の第~Privacy Policy]",
          "Connection Settings" : "[島の第~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[島の第~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[島の第~v7.6.4:2308230918H]",
          "My Assigned Work" : "[島の第~My Assigned Work]",
          "Default List" : "[島の第~Default List]",
          "Records with Errors" : "[島の第~Records with Errors]",
          "Search Results" : "[島の第~Search Results]",
          "Synchronize Data" : "[島の第~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[島の第~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[島の第~Work Order {0}]",
          "Scheduled Start" : "[島の第~Scheduled Start]",
          "Status" : "[島の第~Status]",
          "Service Item" : "[島の第~Service Item]",
          "Change Status" : "[島の第~Change Status]",
-         "Service Item Details" : "[島の第~Service Item Details]",
-         "Inspection Item" : "[島の第~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[島の第~Subitem de Fiscalização]",
+         "Tap to enter" : "[島の第~Tap to enter]",
+         "Clear" : "[島の第~Clear]",
+         "Search" : "[島の第~Search]",
+         "Detalhes do item de servi\u00E7o" : "[島の第~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[島の第~Create Follow-Up Service Item]",
+         "Map" : "[島の第~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[島の第~Item de Fiscalização]",
          "Classification" : "[島の第~Classification]",
          "Days" : "[島の第~Days]",
          "Subprefeitura" : "[島の第~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[島の第~Approval date]",
          "Select" : "[島の第~Select]",
          "Comments" : "[島の第~Comments]",
+         "Crew" : "[島の第~Crew]",
+         "Planned Tools" : "[島の第~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[島の第~Item de Serviço Originante]",
          "Report" : "[島の第~Report]",
          "Attachments" : "[島の第~Attachments]",
+         "Labor Assignments" : "[島の第~Labor Assignments]",
+         "Task ID, Labor" : "[島の第~Task ID, Labor]",
+         "Labor Assignment Details" : "[島の第~Labor Assignment Details]",
+         "Task" : "[島の第~Task]",
+         "Scheduled Date" : "[島の第~Scheduled Date]",
+         "Hours" : "[島の第~Hours]",
+         "Vendor" : "[島の第~Vendor]",
+         "Contract" : "[島の第~Contract]",
+         "Task ID, Tool" : "[島の第~Task ID, Tool]",
+         "Tool Details" : "[島の第~Tool Details]",
+         "Tool" : "[島の第~Tool]",
+         "Quantity" : "[島の第~Quantity]",
+         "Take Photo" : "[島の第~Take Photo]",
+         "Latitude" : "[島の第~Latitude]",
+         "Longitude" : "[島の第~Longitude]",
+         "Scheduled Finish" : "[島の第~Scheduled Finish]",
+         "Classify Work Order" : "[島の第~Classify Work Order]",
+         "Cancel" : "[島の第~Cancel]",
+         "Create" : "[島の第~Create]",
          "Detalhes do Item de OS Originante" : "[島の第~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[島の第~Item de OS originante]",
          "Servi\u00E7o" : "[島の第~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[島の第~Categorias de Anexos]",
          "Categorias" : "[島の第~Categorias]",
          "Categorias de Anexos (Filho)" : "[島の第~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[島の第~Take Photo]",
          "Pick from Gallery" : "[島の第~Pick from Gallery]",
          "Attachments (Categorizado)" : "[島の第~Attachments (Categorizado)]",
          "Classify" : "[島の第~Classify]",
-         "Cancel" : "[島の第~Cancel]",
-         "Clear" : "[島の第~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[島の第~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[島の第~Data Inicial]",
          "Data Final" : "[島の第~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[島の第~Motivo]",
          "Save" : "[島の第~Save]",
          "Work Order" : "[島の第~Work Order]",
-         "Task" : "[島の第~Task]",
          "Work Order Status" : "[島の第~Work Order Status]",
          "Task Status" : "[島の第~Task Status]",
          "Select Work Type" : "[島の第~Select Work Type]",
          "Select Value" : "[島の第~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[島の第~Selecione a Classificação]",
+         "Equipes" : "[島の第~Equipes]",
          "Attachment Details" : "[島の第~Attachment Details]",
          "Name" : "[島の第~Name]",
-         "Tap to enter" : "[島の第~Tap to enter]",
          "Folder" : "[島の第~Folder]",
          "File Type" : "[島の第~File Type]",
          "File Size (KB)" : "[島の第~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[島の第~Invalid binding.]",
          "ClearChanges" : "[島の第~Undo Changes]",
          "Resend" : "[島の第~Resend Changes]",
-         "Search" : "[島の第~Search]",
          "Matches" : "[島の第~Matches]",
          "Contains" : "[島の第~Contains]",
          "listmismatch" : "[島の第~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

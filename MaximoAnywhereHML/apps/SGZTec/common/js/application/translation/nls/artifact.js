@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:56
+// Build: 2023-08-23 10:10:38
 //----------------------------------------------------------------//
 define({
    root: {
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "Manual do Aplicativo",
          "Privacy Policy" : "Privacy Policy",
          "Connection Settings" : "Connection Settings",
-         "v7.6.4:300820221611*H" : "v7.6.4:300820221611*H",
+         "v7.6.4:2308230918H" : "v7.6.4:2308230918H",
          "My Assigned Work" : "My Assigned Work",
          "Default List" : "Default List",
          "Records with Errors" : "Records with Errors",
          "Search Results" : "Search Results",
          "Synchronize Data" : "Synchronize Data",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "Buscar Subitem de Fiscalização",
          "Work Order {0}" : "Work Order {0}",
          "Scheduled Start" : "Scheduled Start",
          "Status" : "Status",
          "Service Item" : "Service Item",
          "Change Status" : "Change Status",
-         "Service Item Details" : "Service Item Details",
-         "Inspection Item" : "Inspection Item",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "Subitem de Fiscalização",
+         "Tap to enter" : "Tap to enter",
+         "Clear" : "Clear",
+         "Search" : "Search",
+         "Detalhes do item de servi\u00E7o" : "Detalhes do item de serviço",
+         "Create Follow-Up Service Item" : "Create Follow-Up Service Item",
+         "Map" : "Map",
+         "Item de Fiscaliza\u00E7\u00E3o" : "Item de Fiscalização",
          "Classification" : "Classification",
          "Days" : "Days",
          "Subprefeitura" : "Subprefeitura",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "Approval date",
          "Select" : "Select",
          "Comments" : "Comments",
+         "Crew" : "Crew",
+         "Planned Tools" : "Planned Tools",
          "Item de Servi\u00E7o Originante" : "Item de Serviço Originante",
          "Report" : "Report",
          "Attachments" : "Attachments",
+         "Labor Assignments" : "Labor Assignments",
+         "Task ID, Labor" : "Task ID, Labor",
+         "Labor Assignment Details" : "Labor Assignment Details",
+         "Task" : "Task",
+         "Scheduled Date" : "Scheduled Date",
+         "Hours" : "Hours",
+         "Vendor" : "Vendor",
+         "Contract" : "Contract",
+         "Task ID, Tool" : "Task ID, Tool",
+         "Tool Details" : "Tool Details",
+         "Tool" : "Tool",
+         "Quantity" : "Quantity",
+         "Take Photo" : "Take Photo",
+         "Latitude" : "Latitude",
+         "Longitude" : "Longitude",
+         "Scheduled Finish" : "Scheduled Finish",
+         "Classify Work Order" : "Classify Work Order",
+         "Cancel" : "Cancel",
+         "Create" : "Create",
          "Detalhes do Item de OS Originante" : "Detalhes do Item de OS Originante",
          "Item de OS originante" : "Item de OS originante",
          "Servi\u00E7o" : "Serviço",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "Categorias de Anexos",
          "Categorias" : "Categorias",
          "Categorias de Anexos (Filho)" : "Categorias de Anexos (Filho)",
-         "Take Photo" : "Take Photo",
          "Pick from Gallery" : "Pick from Gallery",
          "Attachments (Categorizado)" : "Attachments (Categorizado)",
          "Classify" : "Classify",
-         "Cancel" : "Cancel",
-         "Clear" : "Clear",
          "Descarga da Massa Asf\u00E1ltica" : "Descarga da Massa Asfáltica",
          "Data Inicial" : "Data Inicial",
          "Data Final" : "Data Final",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "Motivo",
          "Save" : "Save",
          "Work Order" : "Work Order",
-         "Task" : "Task",
          "Work Order Status" : "Work Order Status",
          "Task Status" : "Task Status",
          "Select Work Type" : "Select Work Type",
          "Select Value" : "Select Value",
          "Selecione a Classifica\u00E7\u00E3o" : "Selecione a Classificação",
+         "Equipes" : "Equipes",
          "Attachment Details" : "Attachment Details",
          "Name" : "Name",
-         "Tap to enter" : "Tap to enter",
          "Folder" : "Folder",
          "File Type" : "File Type",
          "File Size (KB)" : "File Size (KB)",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "Invalid binding.",
          "ClearChanges" : "Undo Changes",
          "Resend" : "Resend Changes",
-         "Search" : "Search",
          "Matches" : "Matches",
          "Contains" : "Contains",
          "listmismatch" : "The selected record was removed from the current work list. Refresh the work list to obtain the latest data.",

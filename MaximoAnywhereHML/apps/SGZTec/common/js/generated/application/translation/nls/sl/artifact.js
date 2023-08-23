@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:54:00
+// Build: 2023-08-23 10:10:40
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[razložiti~Manual do Aplicativo]",
          "Privacy Policy" : "[razložiti~Privacy Policy]",
          "Connection Settings" : "[razložiti~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[razložiti~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[razložiti~v7.6.4:2308230918H]",
          "My Assigned Work" : "[razložiti~My Assigned Work]",
          "Default List" : "[razložiti~Default List]",
          "Records with Errors" : "[razložiti~Records with Errors]",
          "Search Results" : "[razložiti~Search Results]",
          "Synchronize Data" : "[razložiti~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[razložiti~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[razložiti~Work Order {0}]",
          "Scheduled Start" : "[razložiti~Scheduled Start]",
          "Status" : "[razložiti~Status]",
          "Service Item" : "[razložiti~Service Item]",
          "Change Status" : "[razložiti~Change Status]",
-         "Service Item Details" : "[razložiti~Service Item Details]",
-         "Inspection Item" : "[razložiti~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[razložiti~Subitem de Fiscalização]",
+         "Tap to enter" : "[razložiti~Tap to enter]",
+         "Clear" : "[razložiti~Clear]",
+         "Search" : "[razložiti~Search]",
+         "Detalhes do item de servi\u00E7o" : "[razložiti~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[razložiti~Create Follow-Up Service Item]",
+         "Map" : "[razložiti~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[razložiti~Item de Fiscalização]",
          "Classification" : "[razložiti~Classification]",
          "Days" : "[razložiti~Days]",
          "Subprefeitura" : "[razložiti~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[razložiti~Approval date]",
          "Select" : "[razložiti~Select]",
          "Comments" : "[razložiti~Comments]",
+         "Crew" : "[razložiti~Crew]",
+         "Planned Tools" : "[razložiti~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[razložiti~Item de Serviço Originante]",
          "Report" : "[razložiti~Report]",
          "Attachments" : "[razložiti~Attachments]",
+         "Labor Assignments" : "[razložiti~Labor Assignments]",
+         "Task ID, Labor" : "[razložiti~Task ID, Labor]",
+         "Labor Assignment Details" : "[razložiti~Labor Assignment Details]",
+         "Task" : "[razložiti~Task]",
+         "Scheduled Date" : "[razložiti~Scheduled Date]",
+         "Hours" : "[razložiti~Hours]",
+         "Vendor" : "[razložiti~Vendor]",
+         "Contract" : "[razložiti~Contract]",
+         "Task ID, Tool" : "[razložiti~Task ID, Tool]",
+         "Tool Details" : "[razložiti~Tool Details]",
+         "Tool" : "[razložiti~Tool]",
+         "Quantity" : "[razložiti~Quantity]",
+         "Take Photo" : "[razložiti~Take Photo]",
+         "Latitude" : "[razložiti~Latitude]",
+         "Longitude" : "[razložiti~Longitude]",
+         "Scheduled Finish" : "[razložiti~Scheduled Finish]",
+         "Classify Work Order" : "[razložiti~Classify Work Order]",
+         "Cancel" : "[razložiti~Cancel]",
+         "Create" : "[razložiti~Create]",
          "Detalhes do Item de OS Originante" : "[razložiti~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[razložiti~Item de OS originante]",
          "Servi\u00E7o" : "[razložiti~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[razložiti~Categorias de Anexos]",
          "Categorias" : "[razložiti~Categorias]",
          "Categorias de Anexos (Filho)" : "[razložiti~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[razložiti~Take Photo]",
          "Pick from Gallery" : "[razložiti~Pick from Gallery]",
          "Attachments (Categorizado)" : "[razložiti~Attachments (Categorizado)]",
          "Classify" : "[razložiti~Classify]",
-         "Cancel" : "[razložiti~Cancel]",
-         "Clear" : "[razložiti~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[razložiti~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[razložiti~Data Inicial]",
          "Data Final" : "[razložiti~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[razložiti~Motivo]",
          "Save" : "[razložiti~Save]",
          "Work Order" : "[razložiti~Work Order]",
-         "Task" : "[razložiti~Task]",
          "Work Order Status" : "[razložiti~Work Order Status]",
          "Task Status" : "[razložiti~Task Status]",
          "Select Work Type" : "[razložiti~Select Work Type]",
          "Select Value" : "[razložiti~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[razložiti~Selecione a Classificação]",
+         "Equipes" : "[razložiti~Equipes]",
          "Attachment Details" : "[razložiti~Attachment Details]",
          "Name" : "[razložiti~Name]",
-         "Tap to enter" : "[razložiti~Tap to enter]",
          "Folder" : "[razložiti~Folder]",
          "File Type" : "[razložiti~File Type]",
          "File Size (KB)" : "[razložiti~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[razložiti~Invalid binding.]",
          "ClearChanges" : "[razložiti~Undo Changes]",
          "Resend" : "[razložiti~Resend Changes]",
-         "Search" : "[razložiti~Search]",
          "Matches" : "[razložiti~Matches]",
          "Contains" : "[razložiti~Contains]",
          "listmismatch" : "[razložiti~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

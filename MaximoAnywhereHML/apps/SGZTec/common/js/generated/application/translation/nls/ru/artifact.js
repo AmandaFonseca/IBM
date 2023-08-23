@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:58
+// Build: 2023-08-23 10:10:39
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[ясяс~Manual do Aplicativo]",
          "Privacy Policy" : "[ясяс~Privacy Policy]",
          "Connection Settings" : "[ясяс~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[ясяс~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[ясяс~v7.6.4:2308230918H]",
          "My Assigned Work" : "[ясяс~My Assigned Work]",
          "Default List" : "[ясяс~Default List]",
          "Records with Errors" : "[ясяс~Records with Errors]",
          "Search Results" : "[ясяс~Search Results]",
          "Synchronize Data" : "[ясяс~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[ясяс~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[ясяс~Work Order {0}]",
          "Scheduled Start" : "[ясяс~Scheduled Start]",
          "Status" : "[ясяс~Status]",
          "Service Item" : "[ясяс~Service Item]",
          "Change Status" : "[ясяс~Change Status]",
-         "Service Item Details" : "[ясяс~Service Item Details]",
-         "Inspection Item" : "[ясяс~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[ясяс~Subitem de Fiscalização]",
+         "Tap to enter" : "[ясяс~Tap to enter]",
+         "Clear" : "[ясяс~Clear]",
+         "Search" : "[ясяс~Search]",
+         "Detalhes do item de servi\u00E7o" : "[ясяс~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[ясяс~Create Follow-Up Service Item]",
+         "Map" : "[ясяс~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[ясяс~Item de Fiscalização]",
          "Classification" : "[ясяс~Classification]",
          "Days" : "[ясяс~Days]",
          "Subprefeitura" : "[ясяс~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[ясяс~Approval date]",
          "Select" : "[ясяс~Select]",
          "Comments" : "[ясяс~Comments]",
+         "Crew" : "[ясяс~Crew]",
+         "Planned Tools" : "[ясяс~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[ясяс~Item de Serviço Originante]",
          "Report" : "[ясяс~Report]",
          "Attachments" : "[ясяс~Attachments]",
+         "Labor Assignments" : "[ясяс~Labor Assignments]",
+         "Task ID, Labor" : "[ясяс~Task ID, Labor]",
+         "Labor Assignment Details" : "[ясяс~Labor Assignment Details]",
+         "Task" : "[ясяс~Task]",
+         "Scheduled Date" : "[ясяс~Scheduled Date]",
+         "Hours" : "[ясяс~Hours]",
+         "Vendor" : "[ясяс~Vendor]",
+         "Contract" : "[ясяс~Contract]",
+         "Task ID, Tool" : "[ясяс~Task ID, Tool]",
+         "Tool Details" : "[ясяс~Tool Details]",
+         "Tool" : "[ясяс~Tool]",
+         "Quantity" : "[ясяс~Quantity]",
+         "Take Photo" : "[ясяс~Take Photo]",
+         "Latitude" : "[ясяс~Latitude]",
+         "Longitude" : "[ясяс~Longitude]",
+         "Scheduled Finish" : "[ясяс~Scheduled Finish]",
+         "Classify Work Order" : "[ясяс~Classify Work Order]",
+         "Cancel" : "[ясяс~Cancel]",
+         "Create" : "[ясяс~Create]",
          "Detalhes do Item de OS Originante" : "[ясяс~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[ясяс~Item de OS originante]",
          "Servi\u00E7o" : "[ясяс~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[ясяс~Categorias de Anexos]",
          "Categorias" : "[ясяс~Categorias]",
          "Categorias de Anexos (Filho)" : "[ясяс~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[ясяс~Take Photo]",
          "Pick from Gallery" : "[ясяс~Pick from Gallery]",
          "Attachments (Categorizado)" : "[ясяс~Attachments (Categorizado)]",
          "Classify" : "[ясяс~Classify]",
-         "Cancel" : "[ясяс~Cancel]",
-         "Clear" : "[ясяс~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[ясяс~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[ясяс~Data Inicial]",
          "Data Final" : "[ясяс~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[ясяс~Motivo]",
          "Save" : "[ясяс~Save]",
          "Work Order" : "[ясяс~Work Order]",
-         "Task" : "[ясяс~Task]",
          "Work Order Status" : "[ясяс~Work Order Status]",
          "Task Status" : "[ясяс~Task Status]",
          "Select Work Type" : "[ясяс~Select Work Type]",
          "Select Value" : "[ясяс~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[ясяс~Selecione a Classificação]",
+         "Equipes" : "[ясяс~Equipes]",
          "Attachment Details" : "[ясяс~Attachment Details]",
          "Name" : "[ясяс~Name]",
-         "Tap to enter" : "[ясяс~Tap to enter]",
          "Folder" : "[ясяс~Folder]",
          "File Type" : "[ясяс~File Type]",
          "File Size (KB)" : "[ясяс~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[ясяс~Invalid binding.]",
          "ClearChanges" : "[ясяс~Undo Changes]",
          "Resend" : "[ясяс~Resend Changes]",
-         "Search" : "[ясяс~Search]",
          "Matches" : "[ясяс~Matches]",
          "Contains" : "[ясяс~Contains]",
          "listmismatch" : "[ясяс~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

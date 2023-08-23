@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:57
+// Build: 2023-08-23 10:10:39
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[quantitó~Manual do Aplicativo]",
          "Privacy Policy" : "[quantitó~Privacy Policy]",
          "Connection Settings" : "[quantitó~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[quantitó~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[quantitó~v7.6.4:2308230918H]",
          "My Assigned Work" : "[quantitó~My Assigned Work]",
          "Default List" : "[quantitó~Default List]",
          "Records with Errors" : "[quantitó~Records with Errors]",
          "Search Results" : "[quantitó~Search Results]",
          "Synchronize Data" : "[quantitó~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[quantitó~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[quantitó~Work Order {0}]",
          "Scheduled Start" : "[quantitó~Scheduled Start]",
          "Status" : "[quantitó~Status]",
          "Service Item" : "[quantitó~Service Item]",
          "Change Status" : "[quantitó~Change Status]",
-         "Service Item Details" : "[quantitó~Service Item Details]",
-         "Inspection Item" : "[quantitó~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[quantitó~Subitem de Fiscalização]",
+         "Tap to enter" : "[quantitó~Tap to enter]",
+         "Clear" : "[quantitó~Clear]",
+         "Search" : "[quantitó~Search]",
+         "Detalhes do item de servi\u00E7o" : "[quantitó~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[quantitó~Create Follow-Up Service Item]",
+         "Map" : "[quantitó~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[quantitó~Item de Fiscalização]",
          "Classification" : "[quantitó~Classification]",
          "Days" : "[quantitó~Days]",
          "Subprefeitura" : "[quantitó~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[quantitó~Approval date]",
          "Select" : "[quantitó~Select]",
          "Comments" : "[quantitó~Comments]",
+         "Crew" : "[quantitó~Crew]",
+         "Planned Tools" : "[quantitó~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[quantitó~Item de Serviço Originante]",
          "Report" : "[quantitó~Report]",
          "Attachments" : "[quantitó~Attachments]",
+         "Labor Assignments" : "[quantitó~Labor Assignments]",
+         "Task ID, Labor" : "[quantitó~Task ID, Labor]",
+         "Labor Assignment Details" : "[quantitó~Labor Assignment Details]",
+         "Task" : "[quantitó~Task]",
+         "Scheduled Date" : "[quantitó~Scheduled Date]",
+         "Hours" : "[quantitó~Hours]",
+         "Vendor" : "[quantitó~Vendor]",
+         "Contract" : "[quantitó~Contract]",
+         "Task ID, Tool" : "[quantitó~Task ID, Tool]",
+         "Tool Details" : "[quantitó~Tool Details]",
+         "Tool" : "[quantitó~Tool]",
+         "Quantity" : "[quantitó~Quantity]",
+         "Take Photo" : "[quantitó~Take Photo]",
+         "Latitude" : "[quantitó~Latitude]",
+         "Longitude" : "[quantitó~Longitude]",
+         "Scheduled Finish" : "[quantitó~Scheduled Finish]",
+         "Classify Work Order" : "[quantitó~Classify Work Order]",
+         "Cancel" : "[quantitó~Cancel]",
+         "Create" : "[quantitó~Create]",
          "Detalhes do Item de OS Originante" : "[quantitó~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[quantitó~Item de OS originante]",
          "Servi\u00E7o" : "[quantitó~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[quantitó~Categorias de Anexos]",
          "Categorias" : "[quantitó~Categorias]",
          "Categorias de Anexos (Filho)" : "[quantitó~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[quantitó~Take Photo]",
          "Pick from Gallery" : "[quantitó~Pick from Gallery]",
          "Attachments (Categorizado)" : "[quantitó~Attachments (Categorizado)]",
          "Classify" : "[quantitó~Classify]",
-         "Cancel" : "[quantitó~Cancel]",
-         "Clear" : "[quantitó~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[quantitó~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[quantitó~Data Inicial]",
          "Data Final" : "[quantitó~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[quantitó~Motivo]",
          "Save" : "[quantitó~Save]",
          "Work Order" : "[quantitó~Work Order]",
-         "Task" : "[quantitó~Task]",
          "Work Order Status" : "[quantitó~Work Order Status]",
          "Task Status" : "[quantitó~Task Status]",
          "Select Work Type" : "[quantitó~Select Work Type]",
          "Select Value" : "[quantitó~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[quantitó~Selecione a Classificação]",
+         "Equipes" : "[quantitó~Equipes]",
          "Attachment Details" : "[quantitó~Attachment Details]",
          "Name" : "[quantitó~Name]",
-         "Tap to enter" : "[quantitó~Tap to enter]",
          "Folder" : "[quantitó~Folder]",
          "File Type" : "[quantitó~File Type]",
          "File Size (KB)" : "[quantitó~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[quantitó~Invalid binding.]",
          "ClearChanges" : "[quantitó~Undo Changes]",
          "Resend" : "[quantitó~Resend Changes]",
-         "Search" : "[quantitó~Search]",
          "Matches" : "[quantitó~Matches]",
          "Contains" : "[quantitó~Contains]",
          "listmismatch" : "[quantitó~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:58
+// Build: 2023-08-23 10:10:39
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[gæst faldt~Manual do Aplicativo]",
          "Privacy Policy" : "[gæst faldt~Privacy Policy]",
          "Connection Settings" : "[gæst faldt~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[gæst faldt~v7.6.4:300820221611*H]",
+         "v7.6.4:2308230918H" : "[gæst faldt~v7.6.4:2308230918H]",
          "My Assigned Work" : "[gæst faldt~My Assigned Work]",
          "Default List" : "[gæst faldt~Default List]",
          "Records with Errors" : "[gæst faldt~Records with Errors]",
          "Search Results" : "[gæst faldt~Search Results]",
          "Synchronize Data" : "[gæst faldt~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[gæst faldt~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[gæst faldt~Work Order {0}]",
          "Scheduled Start" : "[gæst faldt~Scheduled Start]",
          "Status" : "[gæst faldt~Status]",
          "Service Item" : "[gæst faldt~Service Item]",
          "Change Status" : "[gæst faldt~Change Status]",
-         "Service Item Details" : "[gæst faldt~Service Item Details]",
-         "Inspection Item" : "[gæst faldt~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[gæst faldt~Subitem de Fiscalização]",
+         "Tap to enter" : "[gæst faldt~Tap to enter]",
+         "Clear" : "[gæst faldt~Clear]",
+         "Search" : "[gæst faldt~Search]",
+         "Detalhes do item de servi\u00E7o" : "[gæst faldt~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[gæst faldt~Create Follow-Up Service Item]",
+         "Map" : "[gæst faldt~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[gæst faldt~Item de Fiscalização]",
          "Classification" : "[gæst faldt~Classification]",
          "Days" : "[gæst faldt~Days]",
          "Subprefeitura" : "[gæst faldt~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[gæst faldt~Approval date]",
          "Select" : "[gæst faldt~Select]",
          "Comments" : "[gæst faldt~Comments]",
+         "Crew" : "[gæst faldt~Crew]",
+         "Planned Tools" : "[gæst faldt~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[gæst faldt~Item de Serviço Originante]",
          "Report" : "[gæst faldt~Report]",
          "Attachments" : "[gæst faldt~Attachments]",
+         "Labor Assignments" : "[gæst faldt~Labor Assignments]",
+         "Task ID, Labor" : "[gæst faldt~Task ID, Labor]",
+         "Labor Assignment Details" : "[gæst faldt~Labor Assignment Details]",
+         "Task" : "[gæst faldt~Task]",
+         "Scheduled Date" : "[gæst faldt~Scheduled Date]",
+         "Hours" : "[gæst faldt~Hours]",
+         "Vendor" : "[gæst faldt~Vendor]",
+         "Contract" : "[gæst faldt~Contract]",
+         "Task ID, Tool" : "[gæst faldt~Task ID, Tool]",
+         "Tool Details" : "[gæst faldt~Tool Details]",
+         "Tool" : "[gæst faldt~Tool]",
+         "Quantity" : "[gæst faldt~Quantity]",
+         "Take Photo" : "[gæst faldt~Take Photo]",
+         "Latitude" : "[gæst faldt~Latitude]",
+         "Longitude" : "[gæst faldt~Longitude]",
+         "Scheduled Finish" : "[gæst faldt~Scheduled Finish]",
+         "Classify Work Order" : "[gæst faldt~Classify Work Order]",
+         "Cancel" : "[gæst faldt~Cancel]",
+         "Create" : "[gæst faldt~Create]",
          "Detalhes do Item de OS Originante" : "[gæst faldt~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[gæst faldt~Item de OS originante]",
          "Servi\u00E7o" : "[gæst faldt~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[gæst faldt~Categorias de Anexos]",
          "Categorias" : "[gæst faldt~Categorias]",
          "Categorias de Anexos (Filho)" : "[gæst faldt~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[gæst faldt~Take Photo]",
          "Pick from Gallery" : "[gæst faldt~Pick from Gallery]",
          "Attachments (Categorizado)" : "[gæst faldt~Attachments (Categorizado)]",
          "Classify" : "[gæst faldt~Classify]",
-         "Cancel" : "[gæst faldt~Cancel]",
-         "Clear" : "[gæst faldt~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[gæst faldt~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[gæst faldt~Data Inicial]",
          "Data Final" : "[gæst faldt~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[gæst faldt~Motivo]",
          "Save" : "[gæst faldt~Save]",
          "Work Order" : "[gæst faldt~Work Order]",
-         "Task" : "[gæst faldt~Task]",
          "Work Order Status" : "[gæst faldt~Work Order Status]",
          "Task Status" : "[gæst faldt~Task Status]",
          "Select Work Type" : "[gæst faldt~Select Work Type]",
          "Select Value" : "[gæst faldt~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[gæst faldt~Selecione a Classificação]",
+         "Equipes" : "[gæst faldt~Equipes]",
          "Attachment Details" : "[gæst faldt~Attachment Details]",
          "Name" : "[gæst faldt~Name]",
-         "Tap to enter" : "[gæst faldt~Tap to enter]",
          "Folder" : "[gæst faldt~Folder]",
          "File Type" : "[gæst faldt~File Type]",
          "File Size (KB)" : "[gæst faldt~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[gæst faldt~Invalid binding.]",
          "ClearChanges" : "[gæst faldt~Undo Changes]",
          "Resend" : "[gæst faldt~Resend Changes]",
-         "Search" : "[gæst faldt~Search]",
          "Matches" : "[gæst faldt~Matches]",
          "Contains" : "[gæst faldt~Contains]",
          "listmismatch" : "[gæst faldt~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",
