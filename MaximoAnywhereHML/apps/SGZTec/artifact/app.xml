@@ -2511,6 +2511,7 @@
 				<attribute describedByProperty="spi:ms_active" id="msamcrew_ms_active" name="ms_active"/>
 				<attribute describedByProperty="spi:person{spi:displayname}" id="msamcrew_displayname" name="displayname"/>
 				<attribute describedByProperty="spi:ms_contractnum" id="msamcrew_ms_contractnum" name="ms_contractnum"/>
+				<attribute describedByProperty="spi:ms_siteid" id="msamcrew_ms_siteid" name="ms_siteid"/>
 				<attribute describedByProperty="oslc:identifier" id="msamcrew_ms_identifier" name="identifier"/>
 			</attributes>
 			<queryBases id="msamcrew_queryBases">

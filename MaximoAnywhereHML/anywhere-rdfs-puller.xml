@@ -95,6 +95,7 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/wptool" />		-->
 
+        <downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew" />
 		<!-- Estruturas para o app SGZArbo: 
 		<downloadOneRdf context="/oslc/shapes/oslcamcrew" />
 		<downloadOneRdf context="/oslc/shapes/oslcamcrew/amcrewlabor" />
