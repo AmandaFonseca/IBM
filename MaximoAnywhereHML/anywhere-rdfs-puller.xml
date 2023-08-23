@@ -69,8 +69,6 @@
 		<downloadOneRdf context="/oslc/sp/SmarterPhysicalInfrastructure" />
 		<downloadOneRdf context="/oslc/sp/FriendOfAFriend" />
 		
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/woserviceaddress" />
 		
 		<!-- ESTRUTURAS PARA APP SGZTec: 
 		
@@ -93,9 +91,11 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks/attachment" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks/attachment/meta" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/wptool" />		-->
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/wptool" />		
+		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew" />
+		-->
 
-        <downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew" />
+        
 		<!-- Estruturas para o app SGZArbo: 
 		<downloadOneRdf context="/oslc/shapes/oslcamcrew" />
 		<downloadOneRdf context="/oslc/shapes/oslcamcrew/amcrewlabor" />
