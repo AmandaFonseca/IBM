@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-23 10:10:38
+// Build: 2023-08-23 17:28:47
 //----------------------------------------------------------------//
 define({
    root: {
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "Manual do Aplicativo",
          "Privacy Policy" : "Privacy Policy",
          "Connection Settings" : "Connection Settings",
-         "v7.6.4:2308230918H" : "v7.6.4:2308230918H",
+         "v7.6.4:2308231400H" : "v7.6.4:2308231400H",
          "My Assigned Work" : "My Assigned Work",
          "Default List" : "Default List",
          "Records with Errors" : "Records with Errors",

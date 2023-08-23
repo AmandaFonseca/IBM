@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-23 10:10:35
+// Build: 2023-08-23 17:28:41
 //----------------------------------------------------------------//
 define(   "generated/application/data/ApplicationStoresBuilder", 
       [
@@ -3393,7 +3393,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxFetchDataLimit' : 0,
                }).
                setLocal( false ).
-               setSimpleFieldsSelectExpression('spi:ms_active,spi:ms_contractnum,oslc:identifier,spi:amcrew{oslc:title,oslc:shortTitle},spi:person{spi:displayname}').
+               setSimpleFieldsSelectExpression('spi:ms_active,spi:ms_contractnum,spi:ms_siteid,oslc:identifier,spi:amcrew{oslc:title,oslc:shortTitle},spi:person{spi:displayname}').
                setSupportiveFieldsSelectExpression('').
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -3456,6 +3456,18 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'id' : 'awa447579a',
                   'local' : false,
                   'remoteName' : 'spi:ms_contractnum',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'ms_siteid',
+                  'index' : false,
+                  'artifactId' : 'msamcrew_ms_siteid',
+                  'maxSize' : 8,
+                  'id' : 'aw7ff4dc4a',
+                  'local' : false,
+                  'remoteName' : 'spi:ms_siteid',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
