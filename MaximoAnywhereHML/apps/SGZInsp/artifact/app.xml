@@ -165,6 +165,7 @@
 				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
 				<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>
 				<!--<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_details" method="sync"/>-->
+				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="acc_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusViewx" method="initEditStatusViewCustomBackType02"/>
 			</eventHandlers>
 
 			<container id="WorkExecution.WorkDetailView_workOrder_container_0" resource="workOrder">
@@ -282,6 +283,7 @@
 					</groupitem>
 				</group>
 			</container>
+			
 		</view>
 		
 		<!-- SGZ PRODAM Define Work Order PDOBS View-->
