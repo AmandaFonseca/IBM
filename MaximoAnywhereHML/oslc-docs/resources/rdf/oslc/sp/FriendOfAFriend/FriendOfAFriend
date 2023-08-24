@@ -9,12 +9,6 @@
         <oslc:prefix>comp</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://purl.org/dc/terms/"/>
-        <oslc:prefix>dcterms</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
     <dcterms:publisher>
       <oslc:Publisher>
         <dcterms:title>tpae Oslc Provider</dcterms:title>
@@ -29,8 +23,8 @@
     </oslc:prefixDefinition>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://open-services.net/ns/core#"/>
-        <oslc:prefix>oslc</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <oslc:prefix>rdfs</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
     <oslc:prefixDefinition>
@@ -41,27 +35,32 @@
     </oslc:prefixDefinition>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://xmlns.com/foaf/0.1/"/>
-        <oslc:prefix>foaf</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://purl.org/dc/terms/"/>
+        <oslc:prefix>dcterms</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
-    <dcterms:title>FriendOfAFriend</dcterms:title>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#"/>
-        <oslc:prefix>spi_wm</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#"/>
+        <oslc:prefix>spi</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://open-services.net/ns/core#"/>
+        <oslc:prefix>oslc</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <oslc:prefix>foaf</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
         <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/registry#"/>
         <oslc:prefix>rr</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
-        <oslc:prefix>rdfs</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
     <oslc:service>
@@ -85,10 +84,11 @@
         <oslc:domain rdf:resource="http://xmlns.com/foaf/0.1/"/>
       </oslc:Service>
     </oslc:service>
+    <dcterms:title>FriendOfAFriend</dcterms:title>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#"/>
-        <oslc:prefix>spi</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#"/>
+        <oslc:prefix>spi_wm</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
     <dcterms:description>ServiceProvider for FriendOfAFriend</dcterms:description>

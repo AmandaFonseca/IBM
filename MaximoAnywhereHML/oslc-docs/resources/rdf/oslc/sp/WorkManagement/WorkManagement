@@ -4,22 +4,10 @@
     xmlns:oslc="http://open-services.net/ns/core#">
   <oslc:ServiceProvider rdf:about="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/sp/WorkManagement">
     <dcterms:description>ServiceProvider for WorkManagement</dcterms:description>
-    <dcterms:publisher>
-      <oslc:Publisher>
-        <dcterms:title>tpae Oslc Provider</dcterms:title>
-        <dcterms:identifier>tpae</dcterms:identifier>
-      </oslc:Publisher>
-    </dcterms:publisher>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#"/>
-        <oslc:prefix>spi</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://open-services.net/ns/idevice#"/>
-        <oslc:prefix>comp</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#"/>
+        <oslc:prefix>spi_wm</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
     <oslc:prefixDefinition>
@@ -28,8 +16,577 @@
         <oslc:prefix>oslc</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://purl.org/dc/terms/"/>
+        <oslc:prefix>dcterms</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://open-services.net/ns/idevice#"/>
+        <oslc:prefix>comp</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
     <oslc:service>
       <oslc:Service>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=OSConsultaEmergencial"/>
+            <dcterms:title>OSLC query capability O.S do tipo emergencial do site padrão do Usuário logado SGZMobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet"/>
+            <dcterms:title>OSLC query capability for WODataSheet</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp"/>
+            <dcterms:title>OSLC query capability for ms_SgzInsp</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcsgztec"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec"/>
+            <dcterms:title>OSLC creation factory for MS_SGZTec</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=pd_metercharacteristicsinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=pd_metercharacteristics"/>
+            <dcterms:title>OSLC query capability Consulta Padrão Anywhere</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=pd_anywherecraftrate"/>
+            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile"/>
+            <dcterms:title>OSLC query capability for ms_SgzMobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECPREOBRA"/>
+            <dcterms:title>OSLC query capability Pré-Obra</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECMATUTILIZADOSCAP30%2F45"/>
+            <dcterms:title>OSLC query capability Mat. Utilizados - Cap 30/45</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximo.worklist#mycompletedlist"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=myCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=physicalcountNB"/>
+            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximo.worklist#mycompletedlist"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=myCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_pdwhy"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcpdwhy"/>
+            <dcterms:title>OSLC query capability for ms_pdwhy</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=getAssetSpecificationDomains"/>
+            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=ms_ListaItensOSConc"/>
+            <dcterms:title>OSLC query capability Consulta para listar Itens de OS Concluídas(SGZMobile)</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp"/>
+            <dcterms:title>OSLC query capability for PLUSCWODSANYWNP</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=pd_metercharacteristicsinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=physicalcountNB"/>
+            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=getAssetSpecificationDomains"/>
+            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail"/>
+            <dcterms:title>OSLC query capability for WorkOrder</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=getAllInvbalances"/>
+            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#osconsultapadrao"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3AOSConsultaPadrao"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcassetattr"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr"/>
+            <dcterms:title>OSLC creation factory for Assetattribute</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_pdwhy"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcpdwhy"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcpdwhy"/>
+            <dcterms:title>OSLC creation factory for ms_pdwhy</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpec"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcclassspec"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspec"/>
+            <dcterms:title>OSLC creation factory for ClassSpec</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith"/>
+            <dcterms:title>OSLC query capability for ClassSpecUseWith</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECEXTRACAO"/>
+            <dcterms:title>OSLC query capability Extração</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_wotcorigrec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotcorigi?savedQuery=MS_ORIGITENS"/>
+            <dcterms:title>OSLC query capability Recupera itens originantes de controle tecnológico (SGZTec)</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=pd_anywherecraftrate"/>
+            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#getmyassignedwork"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3AgetMyAssignedWork"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximoanywhere/mobileAnywhereWOQuery"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=getWithComplexQuery&amp;sqp:location=%7Blocation%7D&amp;sqp:asset=%7Basset%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximoanywhere/mobileAnywhereWOQuery"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=getWithComplexQuery&amp;sqp:location=%7Blocation%7D&amp;sqp:asset=%7Basset%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte"/>
+            <dcterms:title>OSLC query capability for MS_SGZDESCARTE</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_WOTICKETS"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotickets?savedQuery=WOtickets_carregados"/>
+            <dcterms:title>OSLC query capability Tickets Carregados para SGZMobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte?savedQuery=ConsultaAguardandoSGZDescarte"/>
+            <dcterms:title>OSLC query capability Todos os Tickets Aguardando Descarte</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=getAllInvbalances"/>
+            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=pd_anywherecraftrate"/>
+            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=pd_anywherecraftrateinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=pd_anywherecraftrateinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=pd_metercharacteristicsinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=physicalcountNB"/>
+            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#osconsultainsp"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Aosconsultainsp"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_wotcorigrec"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcwotcorigi"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotcorigi"/>
+            <dcterms:title>OSLC creation factory for ms_wotcorigrec</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=pd_anywherecraftrateinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_timesheetsgzmob"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Ams_timesheetsgzmob"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=physicalcountNB"/>
+            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=ms_ControlTec"/>
+            <dcterms:title>OSLC query capability Todas as OSs de Controle Tecnológico</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=ms_anywhereattr"/>
+            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=pd_metercharacteristicsinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECPOSOBRA"/>
+            <dcterms:title>OSLC query capability Pós Obra</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_origattachment"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcorigattach"/>
+            <dcterms:title>OSLC query capability for ms_origattachment</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec"/>
+            <dcterms:title>OSLC query capability for MS_SGZTec</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECGRANULOMETRIACAP30%2F45"/>
+            <dcterms:title>OSLC query capability GRANULOMETRIA - Cap 30/45</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECMATUTILIZADOSAGREGADOS"/>
+            <dcterms:title>OSLC query capability Mat. Utilizados - Agregados</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximo.worklist#mynotcompletedlist"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=myNotCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=physicalcountNB"/>
+            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=physicalcount"/>
+            <dcterms:title>OSLC query capability Contagem Física Cega por Frequência</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximo.worklist#mynotcompletedlist"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=myNotCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_insplist02"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Ams_insplist02"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassstructure"/>
+            <dcterms:title>OSLC query capability for ClassStructure</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcsgzdescarte"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte"/>
+            <dcterms:title>OSLC creation factory for MS_SGZDESCARTE</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#pd_anywhereparent_tcassay"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassstructure?savedQuery=pd_anywhereparent_TCAssay"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcclassstructure"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassstructure"/>
+            <dcterms:title>OSLC creation factory for ClassStructure</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#osconsultadesignadas"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3AOSConsultaDesignadas"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECMATUTILIZADOSCBUQFXIV"/>
+            <dcterms:title>OSLC query capability Mat. Utilizados - CBUQ FX IV</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=getAllInvbalances"/>
+            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#my_reported_sr"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ServiceRequest"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcsrdetail?savedQuery=MY_REPORTED_SR"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECENSAIO"/>
+            <dcterms:title>OSLC query capability Ensaio</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_wotcorigrec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotcorigi"/>
+            <dcterms:title>OSLC query capability for ms_wotcorigrec</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=ms_anywhereattr"/>
+            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximo.worklist#mycompletedlist"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=myCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_anywhereattr"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspec?savedQuery=ms_anywhereattr"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_WOTICKETS"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotickets"/>
+            <dcterms:title>OSLC query capability for ms_WOTICKETS</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcmaxdomain"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain"/>
+            <dcterms:title>OSLC creation factory for MaxDomain</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
         <oslc:creationFactory>
           <oslc:CreationFactory>
             <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
@@ -42,40 +599,75 @@
         <oslc:creationFactory>
           <oslc:CreationFactory>
             <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcclassstructure"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassstructure"/>
-            <dcterms:title>OSLC creation factory for ClassStructure</dcterms:title>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcwodetail"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail"/>
+            <dcterms:title>OSLC creation factory for WorkOrder</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcclassspecusewith"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith"/>
+            <dcterms:title>OSLC creation factory for ClassSpecUseWith</dcterms:title>
           </oslc:CreationFactory>
         </oslc:creationFactory>
         <oslc:queryCapability>
           <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=ms_insplist03"/>
-            <dcterms:title>OSLC query capability Confirmação de Execução do Serviço</dcterms:title>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain"/>
+            <dcterms:title>OSLC query capability for MaxDomain</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
         <oslc:queryCapability>
           <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#workiown"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=ms_anywhereattr"/>
+            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=pd_anywherecraftrate"/>
+            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=getWorkOrderSpecificationDomains"/>
+            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=pd_anywherecraftrate"/>
+            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=pd_metercharacteristics"/>
+            <dcterms:title>OSLC query capability Consulta Padrão Anywhere</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=physicalcount"/>
+            <dcterms:title>OSLC query capability Contagem Física Cega por Frequência</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_insplist01"/>
             <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3AWORKIOWN"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#osconsultadesignadas"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3AOSConsultaDesignadas"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#pd_anywhereparent_tcassay"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassstructure?savedQuery=pd_anywhereparent_TCAssay"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Ams_insplist01"/>
             <dcterms:title>OSLC query capability </dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
@@ -90,49 +682,11 @@
         </oslc:creationFactory>
         <oslc:queryCapability>
           <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_origattachment"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcorigattach"/>
-            <dcterms:title>OSLC query capability for ms_origattachment</dcterms:title>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=physicalcount"/>
+            <dcterms:title>OSLC query capability Contagem Física Cega por Frequência</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=getAllInvbalances"/>
-            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=ms_anywhereattr"/>
-            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#getmyassignedwork"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3AgetMyAssignedWork"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte?savedQuery=ConsultaPadraoSGZDescarte"/>
-            <dcterms:title>OSLC query capability Todos os Tickets</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcpluscwodsanywnp"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp"/>
-            <dcterms:title>OSLC creation factory for PLUSCWODSANYWNP</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
         <oslc:queryCapability>
           <oslc:QueryCapability>
             <oslc:usage rdf:resource="http://maximo.worklist#mycompletedlist"/>
@@ -143,66 +697,15 @@
         </oslc:queryCapability>
         <oslc:queryCapability>
           <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=getAssetSpecificationDomains"/>
-            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=getWorkOrderSpecificationDomains"/>
-            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_WOTICKETS"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotickets"/>
-            <dcterms:title>OSLC query capability for ms_WOTICKETS</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_anywhereattr"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpec"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspec?savedQuery=ms_anywhereattr"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
             <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte?savedQuery=ms_sgzdescarte"/>
-            <dcterms:title>OSLC query capability Consulta padrão para app SGZDescarte</dcterms:title>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte?savedQuery=ConsultaPadraoSGZDescarte"/>
+            <dcterms:title>OSLC query capability Todos os Tickets</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
         <oslc:queryCapability>
           <oslc:QueryCapability>
             <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=pd_anywherecraftrateinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximo.worklist#mynotcompletedlist"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=myNotCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_WOTICKETS"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotickets?savedQuery=WOtickets_carregados"/>
-            <dcterms:title>OSLC query capability Tickets Carregados para SGZMobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=getAssetSpecificationDomains"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=getWorkOrderSpecificationDomains"/>
             <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
@@ -215,119 +718,16 @@
         </oslc:queryCapability>
         <oslc:queryCapability>
           <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpec"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspec"/>
-            <dcterms:title>OSLC query capability for ClassSpec</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpec"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcclassspec"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspec"/>
-            <dcterms:title>OSLC creation factory for ClassSpec</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=getAssetSpecificationDomains"/>
-            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECMATUTILIZADOSEMULSASF%C3%81LTICARR"/>
+            <dcterms:title>OSLC query capability Mat. Utilizados - Emuls. Asfáltica RR-2C</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
         <oslc:queryCapability>
           <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=pd_anywherecraftrateinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile"/>
-            <dcterms:title>OSLC query capability for ms_SgzMobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=getWorkOrderSpecificationDomains"/>
-            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=ms_ListaItensOSConc"/>
-            <dcterms:title>OSLC query capability Consulta para listar Itens de OS Concluídas(SGZMobile)</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=pd_anywherecraftrateinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=pd_anywherecraftrateinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=pd_metercharacteristics"/>
-            <dcterms:title>OSLC query capability Consulta Padrão Anywhere</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=getAllInvbalances"/>
-            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=physicalcountNB"/>
-            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#osconsultapadrao"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3AOSConsultaPadrao"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcmaxdomain"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain"/>
-            <dcterms:title>OSLC creation factory for MaxDomain</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=getAllInvbalances"/>
-            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=pd_anywherecraftrate"/>
-            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=ms_insplist03"/>
+            <dcterms:title>OSLC query capability Confirmação de Execução do Serviço</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
         <oslc:queryCapability>
@@ -339,391 +739,24 @@
         </oslc:queryCapability>
         <oslc:queryCapability>
           <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximo.worklist#mynotcompletedlist"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=myNotCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_insplist03"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Ams_insplist03"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_timesheetsgzmob"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Ams_timesheetsgzmob"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcsgztec"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec"/>
-            <dcterms:title>OSLC creation factory for MS_SGZTec</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet"/>
-            <dcterms:title>OSLC query capability for WODataSheet</dcterms:title>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=getAllInvbalances"/>
+            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
         <oslc:queryCapability>
           <oslc:QueryCapability>
             <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec"/>
-            <dcterms:title>OSLC query capability for MS_SGZTec</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=getWorkOrderSpecificationDomains"/>
-            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=pd_anywherecraftrateinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECGRANULOMETRIACAP50%2F70"/>
+            <dcterms:title>OSLC query capability GRANULOMETRIA - Cap 50/70</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
         <oslc:queryCapability>
           <oslc:QueryCapability>
             <oslc:usage rdf:resource="http://maximoanywhere/mobileAnywhereWOQuery"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=getWithComplexQuery&amp;sqp:location=%7Blocation%7D&amp;sqp:asset=%7Basset%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_wotcorigrec"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotcorigi"/>
-            <dcterms:title>OSLC query capability for ms_wotcorigrec</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#consultapadraosgzusina"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzUsina"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzusina?savedQuery=ConsultaPadraoSGZUsina"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=pd_metercharacteristics"/>
-            <dcterms:title>OSLC query capability Consulta Padrão Anywhere</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=physicalcountNB"/>
-            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=ms_anywhereattr"/>
-            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=physicalcount"/>
-            <dcterms:title>OSLC query capability Contagem Física Cega por Frequência</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=pd_anywherecraftrate"/>
-            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_pdwhy"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcpdwhy"/>
-            <dcterms:title>OSLC query capability for ms_pdwhy</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte?savedQuery=ConsultaAguardandoSGZDescarte"/>
-            <dcterms:title>OSLC query capability Todos os Tickets Aguardando Descarte</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_wotcorigrec"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotcorigi?savedQuery=MS_ORIGITENS"/>
-            <dcterms:title>OSLC query capability Recupera itens originantes de controle tecnológico (SGZTec)</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=pd_metercharacteristicsinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzUsina"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzusina"/>
-            <dcterms:title>OSLC query capability for ms_SgzUsina</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=ms_timesheetsgzmob"/>
-            <dcterms:title>OSLC query capability Medição Horas por Equipe</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=ms_anywhereattr"/>
-            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=physicalcount"/>
-            <dcterms:title>OSLC query capability Contagem Física Cega por Frequência</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith"/>
-            <dcterms:title>OSLC query capability for ClassSpecUseWith</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte"/>
-            <dcterms:title>OSLC query capability for MS_SGZDESCARTE</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=pd_metercharacteristicsinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximo.worklist#mynotcompletedlist"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=myNotCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=OSConsultaEmergencial"/>
-            <dcterms:title>OSLC query capability O.S do tipo emergencial do site padrão do Usuário logado SGZMobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#my_reported_sr"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ServiceRequest"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcsrdetail?savedQuery=MY_REPORTED_SR"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=pd_metercharacteristicsinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=pd_metercharacteristicsinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:domain rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#"/>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=physicalcount"/>
-            <dcterms:title>OSLC query capability Contagem Física Cega por Frequência</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximo.worklist#mynotcompletedlist"/>
             <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=myNotCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=getWithComplexQuery&amp;sqp:location=%7Blocation%7D&amp;sqp:asset=%7Basset%7D"/>
             <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcassetattr"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr"/>
-            <dcterms:title>OSLC creation factory for Assetattribute</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=getWorkOrderSpecificationDomains"/>
-            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximoanywhere/mobileAnywhereWOQuery"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=getWithComplexQuery&amp;sqp:location=%7Blocation%7D&amp;sqp:asset=%7Basset%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#myapprovals"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Amyapprovals"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=getWorkOrderSpecificationDomains"/>
-            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=pd_metercharacteristics"/>
-            <dcterms:title>OSLC query capability Consulta Padrão Anywhere</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximo.worklist#mycompletedlist"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=myCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximoanywhere/mobileAnywhereWOQuery"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=getWithComplexQuery&amp;sqp:location=%7Blocation%7D&amp;sqp:asset=%7Basset%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#osconsultainsp"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Aosconsultainsp"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_insplist02"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Ams_insplist02"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=getAssetSpecificationDomains"/>
-            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_WOTICKETS"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcwotickets"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotickets"/>
-            <dcterms:title>OSLC creation factory for ms_WOTICKETS</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=pd_anywherecraftrate"/>
-            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=pd_metercharacteristicsinsp"/>
-            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcwodetail"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail"/>
-            <dcterms:title>OSLC creation factory for WorkOrder</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_insplist01"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Ams_insplist01"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#pd_anywhereparent"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassstructure?savedQuery=ASSETCAT%3Apd_anywhereparent"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp"/>
-            <dcterms:title>OSLC query capability for ms_SgzInsp</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
         <oslc:creationFactory>
@@ -737,248 +770,16 @@
         </oslc:creationFactory>
         <oslc:queryCapability>
           <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=physicalcount"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=physicalcount"/>
             <dcterms:title>OSLC query capability Contagem Física Cega por Frequência</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ServiceRequest"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcsrdetail"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcsrdetail"/>
-            <dcterms:title>OSLC creation factory for ServiceRequest</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=pd_metercharacteristics"/>
-            <dcterms:title>OSLC query capability Consulta Padrão Anywhere</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximo.worklist#mycompletedlist"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=myCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximoanywhere/mobileAnywhereWOQuery"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=getWithComplexQuery&amp;sqp:location=%7Blocation%7D&amp;sqp:asset=%7Basset%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
         <oslc:queryCapability>
           <oslc:QueryCapability>
             <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=physicalcountNB"/>
-            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcwodatasheet"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet"/>
-            <dcterms:title>OSLC creation factory for WODataSheet</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcclassspecusewith"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith"/>
-            <dcterms:title>OSLC creation factory for ClassSpecUseWith</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassstructure"/>
-            <dcterms:title>OSLC query capability for ClassStructure</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=ms_insplist02"/>
-            <dcterms:title>OSLC query capability Confirmação de Existência do Serviço</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=OSConsultaPadrao"/>
-            <dcterms:title>OSLC query capability O.S do site padrão do Usuário logado SGZMobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=getAssetSpecificationDomains"/>
-            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_wotcorigrec"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcwotcorigi"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotcorigi"/>
-            <dcterms:title>OSLC creation factory for ms_wotcorigrec</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=physicalcountNB"/>
-            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=getMyAssignedWork"/>
-            <dcterms:title>OSLC query capability Consulta SGZMobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain"/>
-            <dcterms:title>OSLC query capability for MaxDomain</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=getAllInvbalances"/>
-            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=physicalcountNB"/>
-            <dcterms:title>OSLC query capability Contagem Física Não Cega por Frequência</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte?savedQuery=ConsultaNovoSGZDescarte"/>
-            <dcterms:title>OSLC query capability Todos os Tickets Novos</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=ms_insplist01"/>
-            <dcterms:title>OSLC query capability Todas as Inspeções</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcsgzdescarte"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte"/>
-            <dcterms:title>OSLC creation factory for MS_SGZDESCARTE</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:usage rdf:resource="http://maximo.worklist#mycompletedlist"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=myCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
-            <dcterms:title>OSLC query capability </dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp"/>
-            <dcterms:title>OSLC query capability for PLUSCWODSANYWNP</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=pd_anywherecraftrate"/>
-            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=physicalcount"/>
-            <dcterms:title>OSLC query capability Contagem Física Cega por Frequência</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:creationFactory>
-          <oslc:CreationFactory>
-            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_pdwhy"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcpdwhy"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcpdwhy"/>
-            <dcterms:title>OSLC creation factory for ms_pdwhy</dcterms:title>
-          </oslc:CreationFactory>
-        </oslc:creationFactory>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr"/>
-            <dcterms:title>OSLC query capability for Assetattribute</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=getAllInvbalances"/>
-            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=ms_anywhereattr"/>
-            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=ms_anywhereattr"/>
-            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=pd_anywherecraftrate"/>
-            <dcterms:title>OSLC query capability Categorias de Mão de Obra</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_pdwhy"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcpdwhy?savedQuery=sgzdescartewhy"/>
-            <dcterms:title>OSLC query capability Motivos para rejeite de descarte no app SGZAterro</dcterms:title>
-          </oslc:QueryCapability>
-        </oslc:queryCapability>
-        <oslc:queryCapability>
-          <oslc:QueryCapability>
-            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail"/>
-            <dcterms:title>OSLC query capability for WorkOrder</dcterms:title>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=pd_metercharacteristicsinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
         <oslc:creationFactory>
@@ -992,44 +793,308 @@
         </oslc:creationFactory>
         <oslc:queryCapability>
           <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximoanywhere/mobileAnywhereWOQuery"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=getWithComplexQuery&amp;sqp:location=%7Blocation%7D&amp;sqp:asset=%7Basset%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:domain rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#"/>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzUsina"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzusina"/>
+            <dcterms:title>OSLC query capability for ms_SgzUsina</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#myapprovals"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Amyapprovals"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#consultapadraosgzusina"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzUsina"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzusina?savedQuery=ConsultaPadraoSGZUsina"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#pd_anywhereparent"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassStructure"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassstructure?savedQuery=ASSETCAT%3Apd_anywhereparent"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcwodatasheet"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet"/>
+            <dcterms:title>OSLC creation factory for WODataSheet</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=MS_OSLCSGZTECMATUTILIZADOSCAP50%2F70"/>
+            <dcterms:title>OSLC query capability Mat. Utilizados - Cap 50/70</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_WOTICKETS"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcwotickets"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcwotickets"/>
+            <dcterms:title>OSLC creation factory for ms_WOTICKETS</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=ms_insplist01"/>
+            <dcterms:title>OSLC query capability Todas as Inspeções</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
             <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ServiceRequest"/>
             <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcsrdetail"/>
             <dcterms:title>OSLC query capability for ServiceRequest</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=getMyAssignedWork"/>
+            <dcterms:title>OSLC query capability Consulta SGZMobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte?savedQuery=ms_sgzdescarte"/>
+            <dcterms:title>OSLC query capability Consulta padrão para app SGZDescarte</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=getWorkOrderSpecificationDomains"/>
+            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_pdwhy"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcpdwhy?savedQuery=sgzdescartewhy"/>
+            <dcterms:title>OSLC query capability Motivos para rejeite de descarte no app SGZAterro</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=ms_timesheetsgzmob"/>
+            <dcterms:title>OSLC query capability Medição Horas por Equipe</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=getAllInvbalances"/>
+            <dcterms:title>OSLC query capability Obter Todos os Invbalances</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=physicalcount"/>
+            <dcterms:title>OSLC query capability Contagem Física Cega por Frequência</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspec"/>
+            <dcterms:title>OSLC query capability for ClassSpec</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=getWorkOrderSpecificationDomains"/>
+            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzMobile"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzmobile?savedQuery=OSConsultaPadrao"/>
+            <dcterms:title>OSLC query capability O.S do site padrão do Usuário logado SGZMobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=getAssetSpecificationDomains"/>
+            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcpluscwodsanywnp"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp"/>
+            <dcterms:title>OSLC creation factory for PLUSCWODSANYWNP</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#ms_insplist03"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3Ams_insplist03"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=getWorkOrderSpecificationDomains"/>
+            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=ms_anywhereattr"/>
+            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=getAssetSpecificationDomains"/>
+            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=ms_anywhereattr"/>
+            <dcterms:title>OSLC query capability Atributos mobile</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#PLUSCWODSANYWNP"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcpluscwodsanywnp?savedQuery=pd_anywherecraftrateinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://jazz.net/ns/ism/smarter_physical_infrastructure#workiown"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=WOTRACK%3AWORKIOWN"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximo.worklist#mynotcompletedlist"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WorkOrder"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodetail?savedQuery=myNotCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:usage rdf:resource="http://maximo.worklist#mynotcompletedlist"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZTec"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgztec?savedQuery=myNotCompletedList&amp;sqp:queryName=%7BqueryName%7D&amp;sqp:app=%7Bapp%7D&amp;sqp:owner=%7Bowner%7D"/>
+            <dcterms:title>OSLC query capability </dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MS_SGZDESCARTE"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzdescarte?savedQuery=ConsultaNovoSGZDescarte"/>
+            <dcterms:title>OSLC query capability Todos os Tickets Novos</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:creationFactory>
+          <oslc:CreationFactory>
+            <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ServiceRequest"/>
+            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcsrdetail"/>
+            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcsrdetail"/>
+            <dcterms:title>OSLC creation factory for ServiceRequest</dcterms:title>
+          </oslc:CreationFactory>
+        </oslc:creationFactory>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#MaxDomain"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcmaxdomain?savedQuery=getAssetSpecificationDomains"/>
+            <dcterms:title>OSLC query capability Retorna domínios usados em classificações</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_SgzInsp"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/ms_oslcsgzinsp?savedQuery=ms_insplist02"/>
+            <dcterms:title>OSLC query capability Confirmação de Existência do Serviço</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#WODataSheet"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcwodatasheet?savedQuery=pd_anywherecraftrateinsp"/>
+            <dcterms:title>OSLC query capability Retorna Falso</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr?savedQuery=pd_metercharacteristics"/>
+            <dcterms:title>OSLC query capability Consulta Padrão Anywhere</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ClassSpecUseWith"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcclassspecusewith?savedQuery=pd_metercharacteristics"/>
+            <dcterms:title>OSLC query capability Consulta Padrão Anywhere</dcterms:title>
+          </oslc:QueryCapability>
+        </oslc:queryCapability>
+        <oslc:queryCapability>
+          <oslc:QueryCapability>
+            <oslc:resourceType rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Assetattribute"/>
+            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcassetattr"/>
+            <dcterms:title>OSLC query capability for Assetattribute</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
       </oslc:Service>
     </oslc:service>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://open-services.net/ns/asset#"/>
-        <oslc:prefix>oslc_asset</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#"/>
+        <oslc:prefix>spi</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://purl.org/dc/terms/"/>
-        <oslc:prefix>dcterms</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#"/>
-        <oslc:prefix>spi_wm</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://xmlns.com/foaf/0.1/"/>
-        <oslc:prefix>foaf</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
-    <dcterms:title>WorkManagement</dcterms:title>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
-        <oslc:prefix>rdfs</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
+    <dcterms:publisher>
+      <oslc:Publisher>
+        <dcterms:title>tpae Oslc Provider</dcterms:title>
+        <dcterms:identifier>tpae</dcterms:identifier>
+      </oslc:Publisher>
+    </dcterms:publisher>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
         <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/registry#"/>
@@ -1038,8 +1103,27 @@
     </oslc:prefixDefinition>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <oslc:prefix>rdfs</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <dcterms:title>WorkManagement</dcterms:title>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <oslc:prefix>foaf</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
         <oslc:prefixBase rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
         <oslc:prefix>rdf</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://open-services.net/ns/asset#"/>
+        <oslc:prefix>oslc_asset</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
   </oslc:ServiceProvider>

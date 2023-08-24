@@ -117,6 +117,26 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzarbo/doclinks/attachment/meta" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcclassif" />
 		<downloadOneRdf context="/oslc/shapes/oslcnumericdomain" />-->
+
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />
+
+		<!-- ESTRUTURAS PARA APP SGZDescarte:
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/doclinks" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/doclinks/attachment" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/doclinks/attachment/meta" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_landfill" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_pe" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_waste" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/companies" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/alndomain" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_doclinks" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />
+		-->
+		<!-- FIM ESTRUTURAS PARA APP SGZDescarte -->
 		
 		<!-- Estruturas padrão Anywhere (Rode apenas uma vez e depois comente para tornar o puller mais rápido) 
 		<downloadOneRdf context="/oslc/shapes/oslcinventory" />

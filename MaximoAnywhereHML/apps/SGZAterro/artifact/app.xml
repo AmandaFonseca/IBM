@@ -456,7 +456,7 @@
 		<!-- Anexos sem categorias -->
 		<view id="sgzDescarte.AttachmentsView"  label="Attachments" showOverflow="true">
 			<requiredResources id="sgzDescarte.AttachmentsView_requiredResources">
-				<requiredResource id="sgzDescarte.AttachmentsView_sgzDescarte" name="sgzDescarte">
+				<requiredResource id="sgzDescarte.AttachmentsView_sgzDescarte" name="sgzDescarte" reload="true">
 					<requiredAttribute id="sgzDescarte.AttachmentsView_sgzDescarte_attachments" name="attachments" />
 					<requiredAttribute id="sgzDescarte.AttachmentsView_sgzDescarte_atcsessionlist" name="atcsessionlist" />
 					<requiredAttribute id="sgzDescarte.AttachmentsView_sgzDescarte_msdoclinkslist" name="msdoclinkslist" />
@@ -567,6 +567,31 @@
 				</listItemTemplate>
 			</list>
 
+		</view>
+		
+		<!-- RAJ SGZMOBILE Categorias de Anexos  (FILHOS) View Adicionado em 01-06-2022 1110 adramos -->
+		<view id="WorkExecution.AttachmentsChildCategory" label="Categorias de Anexos (Filho)">
+			<requiredResources id="WorkExecution.AttachmentsChildCategory_requiredResources">
+				<requiredResource id="WorkExecution.AttachmentsChildCategory_workOrder" name="sgzDescarte">
+					<requiredAttribute id="WorkExecution.AttachmentsChildCategory_attribute1" name="atcsessionlist"/>
+					<requiredAttribute id="WorkExecution.AttachmentsChildCategory_attribute2" name="attachments"/>
+					<requiredAttribute id="WorkExecution.AttachmentsChildCategory_attribute3" name="msdoclinkslist"/>
+				</requiredResource>
+			</requiredResources>
+            <eventHandlers id="WorkExecution.WODetailView.countAttachmentsSection">
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="show" id="WorkExecution.WODetailView.countAttachmentsSectionc_show" method="countAttachmentsSection"/>
+				<!--<eventHandler class="custom.handlers.MSSRDetailHandler" event="show" id="WorkExecution.WODetailView.hasChildSection_show" method="filterChildSection"/>-->
+			</eventHandlers>
+			<list id="WorkExecution.AttachmentsChildCategory_list" label="Categorias" resource="workOrder" attribute="atcsessionlist" showHeader="false" >
+				<listItemTemplate id="WorkExecution.AttachmentsChildCategory_listCategories" >
+					<listtext cssClass="bold textappearance-medium" id="WorkExecution.AttachmentsChildCategory_listCategories_description" resourceAttribute="ms_description"/> 
+					
+					<listtext cssClass="bold textappearance-medium" id="WorkExecution.AttachmentsChildCategory_listCategories_count" resourceAttribute="secCount"/> 
+                    <eventHandlers id="WorkExecution.FilteredAttachmentsView_render_eventHandlers">
+                        <eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="WorkExecution.FilteredAttachmentsView_workOrder_attachments_listItemTemplate_AttachmentsListItem_eventHandlers_render_FilterAttachments" method="filterAttachments"/>		
+                    </eventHandlers>
+				</listItemTemplate>
+			</list>
 		</view>
 	
 		<dialog id="SGZDescarte.ConfirmCancel">
@@ -791,7 +816,8 @@
 				<attribute describedByProperty="spi_wm:ms_psconfigid" id="sgzDescarte_identifier_spi_wm_ms_ms_psconfigid" name="ms_psconfigid"/>
 				<attribute describedByProperty="spi_wm:ms_psversion" id="sgzDescarte_identifier_spi_wm_ms_ms_psversion" name="ms_psversion"/>
 				<attribute describedByProperty="spi_wm:ms_photosessionid" id="sgzDescarte_identifier_spi_wm_ms_photosessionid" name="ms_photosessionid"/>
-				<attribute describedByProperty="spi_wm:ms_photosessionline" describedByResource="photosessionlineResource" id="sgzDescarte_atcsessionlist_spi_ms_photosessionline" name="atcsessionlist"/>
+				<!--<attribute describedByProperty="spi_wm:ms_photosessionline" describedByResource="photosessionlineResource" id="sgzDescarte_atcsessionlist_spi_ms_photosessionline" name="atcsessionlist"/>-->
+				<attribute describedByProperty="spi_wm:ms_psldescarte" describedByResource="photosessionlineResource" id="sgzDescarte_atcsessionlist_spi_ms_photosessionline" name="atcsessionlist"/>
 				<attribute describedByProperty="spi_wm:ms_doclinks" describedByResource="msDoclinksResource" id="sgzDescarte_msdoclinkslist_spi_ms_doclinks" name="msdoclinkslist"/>
 			</attributes>
 			
