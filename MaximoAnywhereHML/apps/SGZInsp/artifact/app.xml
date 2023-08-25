@@ -1546,7 +1546,6 @@
 				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="initialize" id="xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusView" method="initEditStatusView"/>
 				<eventHandler class="application.handlers.StatusChangeHandler" event="cleanup" id="xWorkExecution.EditStatusView_eventHandlers_cleanup_cleanupEditStatusView" method="cleanupEditStatusView"/>
 				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="xWorkExecution.EditStatusView_eventHandlers_cleanup_render" method="redirectList"/>
-				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="classificationok_xWorkExecution.EditStatusView_eventHandlers_initializex" method="initEditStatusView"/>
 			</eventHandlers>
 		</view>
 		

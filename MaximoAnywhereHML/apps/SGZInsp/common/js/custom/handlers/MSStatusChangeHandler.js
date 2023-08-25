@@ -372,12 +372,12 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			statusChange.setNullValue("memo");
 			//eventContext.ui.application.toolWarningShown = false;
 			try {
-			  if (statusChange.get('pd_inspector')) {statusChange.setNullValue("pd_inspector");}
-			  if (statusChange.get('pd_inspdate')) {statusChange.setNullValue("pd_inspdate");}
-			  if (statusChange.get('pd_inspquestion01')) {statusChange.setNullValue("pd_inspquestion01");}
-			  if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
-			  if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
-			  if (statusChange.get('pd_inspector04')) {statusChange.setNullValue("pd_inspector04");}
+			  if (workOrder.get('pd_inspector')) {workOrder.setNullValue("pd_inspector");}
+			  if (workOrder.get('pd_inspdate')) {workOrder.setNullValue("pd_inspdate");}
+			  if (workOrder.get('pd_inspquestion01')) {workOrder.setNullValue("pd_inspquestion01");}
+			  if (workOrder.get('pd_inspquestion02')) {workOrder.setNullValue("pd_inspquestion02");}
+			  if (workOrder.get('pd_inspquestion03')) {workOrder.setNullValue("pd_inspquestion03");}
+			  if (workOrder.get('pd_inspector04')) {workOrder.setNullValue("pd_inspector04");}
 			  if (workOrder.get('ms_inspdate04')) {workOrder.setNullValue("ms_inspdate04");}
 			  if (workOrder.get('ms_inspector04')) {workOrder.setNullValue("ms_inspector04");}
 			  if (workOrder.get('ms_inspquestion04')) {workOrder.setNullValue("ms_inspquestion04");}
@@ -386,14 +386,16 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		},
 
 
-		successCallback:function(eventContext) {
+		successCallback:function(eventContext,recordSet,statusChange) {
 			var self = this;
+			self.application.showBusy();
 			console.log("Registro foi salvo");
 			if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
 				self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
 			}
 			setTimeout(() => {
 			  this.ui.show("WorkExecution.WorkItemsView");
+			  self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 			}, "500");
 			//resolve();
 		},
@@ -434,7 +436,8 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			var ms_inspdate04 = workOrderCurrent.get("ms_inspdate04");
 			var ms_inspquestion04 = workOrderCurrent.get("ms_inspquestion04");
 			var ms_inspector04 = workOrderCurrent.get("ms_inspector04");
-	
+			var oldStatus = workOrderCurrent.get("status");
+			
 			var typeInsp;
 			if (workOrderCurrent.get("ms_insptype") == null || workOrderCurrent.get("ms_insptype") == ""|| workOrderCurrent.get("ms_insptype") == undefined) {
 				typeInsp = workOrderCurrent.get("ms_insptype");
@@ -461,15 +464,19 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 					&& (pd_inspdate != null) && (ms_inspector !=null)  && (pd_inspdate != "") && (ms_inspector !="")){
 						self.application.showBusy();
 						ModelService.save(recordSet).then(function(woSet){
+							self.application.showBusy();
 							var wo = woSet.getCurrentRecord();
-							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
-							self.initEditStatusViewCustom(recordSet,statusChange);
 							self.successCallback(woSet);
-							self.application.hideBusy();
 						}).otherwise(function (error) {
 							console.log('Erro ao salvar'+ error)
 							deferred.reject(error);
 						});
+					}else{
+						statusChange.set('status', oldStatus);
+						self.discardStatusChange(self);
+						self.initEditStatusViewCustom(recordSet,statusChange);
+						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
+						self.application.hideBusy();
 					}
 				}
 				if(newStatus == "PREPLAN"){
@@ -486,18 +493,22 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 						var woORtask = workOrderOrTask.getOwner();
 						if (EsigHandler.isEsigRequired(this, woORtask, 'status')){
 							workOrderOrTask.markAsModified('status');
-							EsigHandler.plugCancelCallback(this, this._statusChangeRollback, [workOrderOrTask, taskSet, previousValueSet]);
+							EsigHandler.plugCancelCallback(this, this._statusChangeRollbackk, [workOrderOrTask, taskSet, previousValueSet]);
 						}
 						ModelService.save(recordSet).then(function(woSet){
+							self.application.showBusy();
 							var wo = woSet.getCurrentRecord();
-							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
-							self.initEditStatusViewCustom(recordSet,statusChange);
-							self.successCallback(woSet);
-							self.application.hideBusy();
+							self.successCallback(woSet,recordSet,statusChange);
 						}).otherwise(function (error) {
 							console.log('Erro ao salvar'+ error)
 							deferred.reject(error);
 						});					
+					}else{
+						statusChange.set('status', oldStatus);
+						self.discardStatusChange(self);
+						self.initEditStatusViewCustom(recordSet,statusChange);
+						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
+						self.application.hideBusy();
 					}
 				}
 				if(newStatus == "PLANEJAR"){
@@ -517,15 +528,19 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 							EsigHandler.plugCancelCallback(this, this._statusChangeRollback, [workOrderOrTask, taskSet, previousValueSet]);
 						}
 						ModelService.save(recordSet).then(function(woSet){
+							self.application.showBusy();
 							var wo = woSet.getCurrentRecord();
-							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
-							self.initEditStatusViewCustom(recordSet,statusChange);
-							self.successCallback(woSet);
-							self.application.hideBusy();
+							self.successCallback(woSet,recordSet,statusChange);
 						}).otherwise(function (error) {
 							console.log('Erro ao salvar'+ error)
 							deferred.reject(error);
 						});					
+					}else{
+						statusChange.set('status', oldStatus);
+						self.discardStatusChange(self);
+						self.initEditStatusViewCustom(recordSet,statusChange);
+						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
+						self.application.hideBusy();
 					}
 				}
 				}
@@ -556,10 +571,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 							deferred.reject(error);
 						});				
 					}
-		
-				}else{
-					self.ui.hideCurrentView(PlatformConstants.CLEANUP);
-					self.application.hideBusy();
 				}
 			
 		},
@@ -1427,20 +1438,13 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 
 		backShowDialog: function(eventContext){
 			var previousView = eventContext.ui.getCurrentViewControl().id;
-			let previousViewName= previousView.toLocaleLowerCase();
+			let previousViewName= previousView.toLocaleLowerCase();	
 			if ((previousViewName == 'workexecution.pd_whyview')||(previousViewName =="workexecution.reinspecview")
 			||(previousViewName =="workexecution.questionsviewclass")||(previousViewName =='workexecution.classifyworkorderview')) {
 				eventContext.ui.show("WorkExecution.clearChange");
 				return false;
 			}
-			var woSet = eventContext.application.getResource('workOrder');
-			var wo = woSet.getCurrentRecord();
 
-			var classificationdesc = wo.getPendingOrOriginalValue("classificationdesc");
-			var classificationpath = wo.getPendingOrOriginalValue("classificationpath");
-
-			wo.set('classificationdesc',classificationdesc);
-			wo.set('classificationpath',classificationpath);
 		},
   
 
