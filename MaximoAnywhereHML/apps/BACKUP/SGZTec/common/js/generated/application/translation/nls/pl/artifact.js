@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:59
+// Build: 2023-08-23 17:28:48
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[Okrągłego~Manual do Aplicativo]",
          "Privacy Policy" : "[Okrągłego~Privacy Policy]",
          "Connection Settings" : "[Okrągłego~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[Okrągłego~v7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[Okrągłego~v7.6.4:2308231400H]",
          "My Assigned Work" : "[Okrągłego~My Assigned Work]",
          "Default List" : "[Okrągłego~Default List]",
          "Records with Errors" : "[Okrągłego~Records with Errors]",
          "Search Results" : "[Okrągłego~Search Results]",
          "Synchronize Data" : "[Okrągłego~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[Okrągłego~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[Okrągłego~Work Order {0}]",
          "Scheduled Start" : "[Okrągłego~Scheduled Start]",
          "Status" : "[Okrągłego~Status]",
          "Service Item" : "[Okrągłego~Service Item]",
          "Change Status" : "[Okrągłego~Change Status]",
-         "Service Item Details" : "[Okrągłego~Service Item Details]",
-         "Inspection Item" : "[Okrągłego~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[Okrągłego~Subitem de Fiscalização]",
+         "Tap to enter" : "[Okrągłego~Tap to enter]",
+         "Clear" : "[Okrągłego~Clear]",
+         "Search" : "[Okrągłego~Search]",
+         "Detalhes do item de servi\u00E7o" : "[Okrągłego~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[Okrągłego~Create Follow-Up Service Item]",
+         "Map" : "[Okrągłego~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[Okrągłego~Item de Fiscalização]",
          "Classification" : "[Okrągłego~Classification]",
          "Days" : "[Okrągłego~Days]",
          "Subprefeitura" : "[Okrągłego~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[Okrągłego~Approval date]",
          "Select" : "[Okrągłego~Select]",
          "Comments" : "[Okrągłego~Comments]",
+         "Crew" : "[Okrągłego~Crew]",
+         "Planned Tools" : "[Okrągłego~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[Okrągłego~Item de Serviço Originante]",
          "Report" : "[Okrągłego~Report]",
          "Attachments" : "[Okrągłego~Attachments]",
+         "Labor Assignments" : "[Okrągłego~Labor Assignments]",
+         "Task ID, Labor" : "[Okrągłego~Task ID, Labor]",
+         "Labor Assignment Details" : "[Okrągłego~Labor Assignment Details]",
+         "Task" : "[Okrągłego~Task]",
+         "Scheduled Date" : "[Okrągłego~Scheduled Date]",
+         "Hours" : "[Okrągłego~Hours]",
+         "Vendor" : "[Okrągłego~Vendor]",
+         "Contract" : "[Okrągłego~Contract]",
+         "Task ID, Tool" : "[Okrągłego~Task ID, Tool]",
+         "Tool Details" : "[Okrągłego~Tool Details]",
+         "Tool" : "[Okrągłego~Tool]",
+         "Quantity" : "[Okrągłego~Quantity]",
+         "Take Photo" : "[Okrągłego~Take Photo]",
+         "Latitude" : "[Okrągłego~Latitude]",
+         "Longitude" : "[Okrągłego~Longitude]",
+         "Scheduled Finish" : "[Okrągłego~Scheduled Finish]",
+         "Classify Work Order" : "[Okrągłego~Classify Work Order]",
+         "Cancel" : "[Okrągłego~Cancel]",
+         "Create" : "[Okrągłego~Create]",
          "Detalhes do Item de OS Originante" : "[Okrągłego~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[Okrągłego~Item de OS originante]",
          "Servi\u00E7o" : "[Okrągłego~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[Okrągłego~Categorias de Anexos]",
          "Categorias" : "[Okrągłego~Categorias]",
          "Categorias de Anexos (Filho)" : "[Okrągłego~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[Okrągłego~Take Photo]",
          "Pick from Gallery" : "[Okrągłego~Pick from Gallery]",
          "Attachments (Categorizado)" : "[Okrągłego~Attachments (Categorizado)]",
          "Classify" : "[Okrągłego~Classify]",
-         "Cancel" : "[Okrągłego~Cancel]",
-         "Clear" : "[Okrągłego~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[Okrągłego~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[Okrągłego~Data Inicial]",
          "Data Final" : "[Okrągłego~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[Okrągłego~Motivo]",
          "Save" : "[Okrągłego~Save]",
          "Work Order" : "[Okrągłego~Work Order]",
-         "Task" : "[Okrągłego~Task]",
          "Work Order Status" : "[Okrągłego~Work Order Status]",
          "Task Status" : "[Okrągłego~Task Status]",
          "Select Work Type" : "[Okrągłego~Select Work Type]",
          "Select Value" : "[Okrągłego~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[Okrągłego~Selecione a Classificação]",
+         "Equipes" : "[Okrągłego~Equipes]",
          "Attachment Details" : "[Okrągłego~Attachment Details]",
          "Name" : "[Okrągłego~Name]",
-         "Tap to enter" : "[Okrągłego~Tap to enter]",
          "Folder" : "[Okrągłego~Folder]",
          "File Type" : "[Okrągłego~File Type]",
          "File Size (KB)" : "[Okrągłego~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[Okrągłego~Invalid binding.]",
          "ClearChanges" : "[Okrągłego~Undo Changes]",
          "Resend" : "[Okrągłego~Resend Changes]",
-         "Search" : "[Okrągłego~Search]",
          "Matches" : "[Okrągłego~Matches]",
          "Contains" : "[Okrągłego~Contains]",
          "listmismatch" : "[Okrągłego~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

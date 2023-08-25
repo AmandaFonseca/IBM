@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:59
+// Build: 2023-08-23 17:28:49
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[trettioåriga~Manual do Aplicativo]",
          "Privacy Policy" : "[trettioåriga~Privacy Policy]",
          "Connection Settings" : "[trettioåriga~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[trettioåriga~v7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[trettioåriga~v7.6.4:2308231400H]",
          "My Assigned Work" : "[trettioåriga~My Assigned Work]",
          "Default List" : "[trettioåriga~Default List]",
          "Records with Errors" : "[trettioåriga~Records with Errors]",
          "Search Results" : "[trettioåriga~Search Results]",
          "Synchronize Data" : "[trettioåriga~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[trettioåriga~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[trettioåriga~Work Order {0}]",
          "Scheduled Start" : "[trettioåriga~Scheduled Start]",
          "Status" : "[trettioåriga~Status]",
          "Service Item" : "[trettioåriga~Service Item]",
          "Change Status" : "[trettioåriga~Change Status]",
-         "Service Item Details" : "[trettioåriga~Service Item Details]",
-         "Inspection Item" : "[trettioåriga~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[trettioåriga~Subitem de Fiscalização]",
+         "Tap to enter" : "[trettioåriga~Tap to enter]",
+         "Clear" : "[trettioåriga~Clear]",
+         "Search" : "[trettioåriga~Search]",
+         "Detalhes do item de servi\u00E7o" : "[trettioåriga~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[trettioåriga~Create Follow-Up Service Item]",
+         "Map" : "[trettioåriga~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[trettioåriga~Item de Fiscalização]",
          "Classification" : "[trettioåriga~Classification]",
          "Days" : "[trettioåriga~Days]",
          "Subprefeitura" : "[trettioåriga~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[trettioåriga~Approval date]",
          "Select" : "[trettioåriga~Select]",
          "Comments" : "[trettioåriga~Comments]",
+         "Crew" : "[trettioåriga~Crew]",
+         "Planned Tools" : "[trettioåriga~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[trettioåriga~Item de Serviço Originante]",
          "Report" : "[trettioåriga~Report]",
          "Attachments" : "[trettioåriga~Attachments]",
+         "Labor Assignments" : "[trettioåriga~Labor Assignments]",
+         "Task ID, Labor" : "[trettioåriga~Task ID, Labor]",
+         "Labor Assignment Details" : "[trettioåriga~Labor Assignment Details]",
+         "Task" : "[trettioåriga~Task]",
+         "Scheduled Date" : "[trettioåriga~Scheduled Date]",
+         "Hours" : "[trettioåriga~Hours]",
+         "Vendor" : "[trettioåriga~Vendor]",
+         "Contract" : "[trettioåriga~Contract]",
+         "Task ID, Tool" : "[trettioåriga~Task ID, Tool]",
+         "Tool Details" : "[trettioåriga~Tool Details]",
+         "Tool" : "[trettioåriga~Tool]",
+         "Quantity" : "[trettioåriga~Quantity]",
+         "Take Photo" : "[trettioåriga~Take Photo]",
+         "Latitude" : "[trettioåriga~Latitude]",
+         "Longitude" : "[trettioåriga~Longitude]",
+         "Scheduled Finish" : "[trettioåriga~Scheduled Finish]",
+         "Classify Work Order" : "[trettioåriga~Classify Work Order]",
+         "Cancel" : "[trettioåriga~Cancel]",
+         "Create" : "[trettioåriga~Create]",
          "Detalhes do Item de OS Originante" : "[trettioåriga~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[trettioåriga~Item de OS originante]",
          "Servi\u00E7o" : "[trettioåriga~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[trettioåriga~Categorias de Anexos]",
          "Categorias" : "[trettioåriga~Categorias]",
          "Categorias de Anexos (Filho)" : "[trettioåriga~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[trettioåriga~Take Photo]",
          "Pick from Gallery" : "[trettioåriga~Pick from Gallery]",
          "Attachments (Categorizado)" : "[trettioåriga~Attachments (Categorizado)]",
          "Classify" : "[trettioåriga~Classify]",
-         "Cancel" : "[trettioåriga~Cancel]",
-         "Clear" : "[trettioåriga~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[trettioåriga~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[trettioåriga~Data Inicial]",
          "Data Final" : "[trettioåriga~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[trettioåriga~Motivo]",
          "Save" : "[trettioåriga~Save]",
          "Work Order" : "[trettioåriga~Work Order]",
-         "Task" : "[trettioåriga~Task]",
          "Work Order Status" : "[trettioåriga~Work Order Status]",
          "Task Status" : "[trettioåriga~Task Status]",
          "Select Work Type" : "[trettioåriga~Select Work Type]",
          "Select Value" : "[trettioåriga~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[trettioåriga~Selecione a Classificação]",
+         "Equipes" : "[trettioåriga~Equipes]",
          "Attachment Details" : "[trettioåriga~Attachment Details]",
          "Name" : "[trettioåriga~Name]",
-         "Tap to enter" : "[trettioåriga~Tap to enter]",
          "Folder" : "[trettioåriga~Folder]",
          "File Type" : "[trettioåriga~File Type]",
          "File Size (KB)" : "[trettioåriga~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[trettioåriga~Invalid binding.]",
          "ClearChanges" : "[trettioåriga~Undo Changes]",
          "Resend" : "[trettioåriga~Resend Changes]",
-         "Search" : "[trettioåriga~Search]",
          "Matches" : "[trettioåriga~Matches]",
          "Contains" : "[trettioåriga~Contains]",
          "listmismatch" : "[trettioåriga~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

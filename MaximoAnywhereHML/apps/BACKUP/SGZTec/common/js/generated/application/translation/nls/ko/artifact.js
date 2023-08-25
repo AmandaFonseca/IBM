@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:58
+// Build: 2023-08-23 17:28:47
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[대학에~Manual do Aplicativo]",
          "Privacy Policy" : "[대학에~Privacy Policy]",
          "Connection Settings" : "[대학에~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[대학에~v7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[대학에~v7.6.4:2308231400H]",
          "My Assigned Work" : "[대학에~My Assigned Work]",
          "Default List" : "[대학에~Default List]",
          "Records with Errors" : "[대학에~Records with Errors]",
          "Search Results" : "[대학에~Search Results]",
          "Synchronize Data" : "[대학에~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[대학에~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[대학에~Work Order {0}]",
          "Scheduled Start" : "[대학에~Scheduled Start]",
          "Status" : "[대학에~Status]",
          "Service Item" : "[대학에~Service Item]",
          "Change Status" : "[대학에~Change Status]",
-         "Service Item Details" : "[대학에~Service Item Details]",
-         "Inspection Item" : "[대학에~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[대학에~Subitem de Fiscalização]",
+         "Tap to enter" : "[대학에~Tap to enter]",
+         "Clear" : "[대학에~Clear]",
+         "Search" : "[대학에~Search]",
+         "Detalhes do item de servi\u00E7o" : "[대학에~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[대학에~Create Follow-Up Service Item]",
+         "Map" : "[대학에~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[대학에~Item de Fiscalização]",
          "Classification" : "[대학에~Classification]",
          "Days" : "[대학에~Days]",
          "Subprefeitura" : "[대학에~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[대학에~Approval date]",
          "Select" : "[대학에~Select]",
          "Comments" : "[대학에~Comments]",
+         "Crew" : "[대학에~Crew]",
+         "Planned Tools" : "[대학에~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[대학에~Item de Serviço Originante]",
          "Report" : "[대학에~Report]",
          "Attachments" : "[대학에~Attachments]",
+         "Labor Assignments" : "[대학에~Labor Assignments]",
+         "Task ID, Labor" : "[대학에~Task ID, Labor]",
+         "Labor Assignment Details" : "[대학에~Labor Assignment Details]",
+         "Task" : "[대학에~Task]",
+         "Scheduled Date" : "[대학에~Scheduled Date]",
+         "Hours" : "[대학에~Hours]",
+         "Vendor" : "[대학에~Vendor]",
+         "Contract" : "[대학에~Contract]",
+         "Task ID, Tool" : "[대학에~Task ID, Tool]",
+         "Tool Details" : "[대학에~Tool Details]",
+         "Tool" : "[대학에~Tool]",
+         "Quantity" : "[대학에~Quantity]",
+         "Take Photo" : "[대학에~Take Photo]",
+         "Latitude" : "[대학에~Latitude]",
+         "Longitude" : "[대학에~Longitude]",
+         "Scheduled Finish" : "[대학에~Scheduled Finish]",
+         "Classify Work Order" : "[대학에~Classify Work Order]",
+         "Cancel" : "[대학에~Cancel]",
+         "Create" : "[대학에~Create]",
          "Detalhes do Item de OS Originante" : "[대학에~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[대학에~Item de OS originante]",
          "Servi\u00E7o" : "[대학에~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[대학에~Categorias de Anexos]",
          "Categorias" : "[대학에~Categorias]",
          "Categorias de Anexos (Filho)" : "[대학에~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[대학에~Take Photo]",
          "Pick from Gallery" : "[대학에~Pick from Gallery]",
          "Attachments (Categorizado)" : "[대학에~Attachments (Categorizado)]",
          "Classify" : "[대학에~Classify]",
-         "Cancel" : "[대학에~Cancel]",
-         "Clear" : "[대학에~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[대학에~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[대학에~Data Inicial]",
          "Data Final" : "[대학에~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[대학에~Motivo]",
          "Save" : "[대학에~Save]",
          "Work Order" : "[대학에~Work Order]",
-         "Task" : "[대학에~Task]",
          "Work Order Status" : "[대학에~Work Order Status]",
          "Task Status" : "[대학에~Task Status]",
          "Select Work Type" : "[대학에~Select Work Type]",
          "Select Value" : "[대학에~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[대학에~Selecione a Classificação]",
+         "Equipes" : "[대학에~Equipes]",
          "Attachment Details" : "[대학에~Attachment Details]",
          "Name" : "[대학에~Name]",
-         "Tap to enter" : "[대학에~Tap to enter]",
          "Folder" : "[대학에~Folder]",
          "File Type" : "[대학에~File Type]",
          "File Size (KB)" : "[대학에~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[대학에~Invalid binding.]",
          "ClearChanges" : "[대학에~Undo Changes]",
          "Resend" : "[대학에~Resend Changes]",
-         "Search" : "[대학에~Search]",
          "Matches" : "[대학에~Matches]",
          "Contains" : "[대학에~Contains]",
          "listmismatch" : "[대학에~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

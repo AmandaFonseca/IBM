@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:44
+// Build: 2023-08-23 17:28:41
 //----------------------------------------------------------------//
 define(   "generated/application/data/ApplicationStoresBuilder", 
       [
@@ -24,6 +24,7 @@ define(   "generated/application/data/ApplicationStoresBuilder",
          "platform/store/ResourceMetadata", 
          "platform/store/PersistenceManager", 
          "application/business/WorkOrderObject", 
+         "application/business/PlannedToolObject", 
          "application/business/ClassStructureObject", 
          "application/business/AttachmentsObject", 
          "application/business/TaskObject", 
@@ -34,7 +35,7 @@ define(   "generated/application/data/ApplicationStoresBuilder",
          "application/business/MaxDomainObject"
       ],
 
-function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, WorkOrderObject, ClassStructureObject, AttachmentsObject, TaskObject, ActualLaborObject, WoStatusObject, CrewLaborObject, CrewToolObject, MaxDomainObject) {
+function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, WorkOrderObject, PlannedToolObject, ClassStructureObject, AttachmentsObject, TaskObject, ActualLaborObject, WoStatusObject, CrewLaborObject, CrewToolObject, MaxDomainObject) {
       return declare("generated.application.data.ApplicationStoresBuilder", StoresBuilderBase, {
 
          _buildStoresAsync : function(promise) {
@@ -247,8 +248,20 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'classInstance' : WorkOrderObject,
                }).
                setLocal( false ).
-               setSimpleFieldsSelectExpression('spi_wm:ms_originagreeasph,spi_wm:ms_parentorigreasph,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_psversion,dcterms:identifier,dcterms:title,dcterms:description,spi_wm:pd_contractnum,spi_wm:woclass,spi_wm:ms_itemnum,oslc:shortTitle,dcterms:created,spi_wm:schedstart,spi_wm:schedfinish,spi_wm:actstart,spi_wm:actfinish,spi:status,spi_wm:worktype,spi_wm:classstructureid,spi_wm:pd_obs,spi_wm:ms_aging,spi_wm:ms_reason,spi_wm:parentchgsstatus,spi_wm:siteid,spi_wm:orgid,spi_wm:np_statusmemo,spi_wm:statusdate,spi_wm:istask,spi_wm:calculatedy,spi_wm:calculatedx,spi_wm:anywhereundo,spi_wm:parentwonumtec{dcterms:title,oslc:shortTitle},spi:woserviceaddress{spi_wm:latitudey,spi_wm:addressline2,spi_wm:longitudex,spi_wm:staddrnumber,spi_wm:addressline3,spi_wm:stateprovince,spi_wm:city,spi_wm:description,spi_wm:formattedaddress,spi_wm:saddresscode,spi_wm:postalcode}').
-               setSupportiveFieldsSelectExpression('spi_wm:ms_photosessionline{spi_wm:ms_photosessionlineid,spi_wm:ms_photosessionid,spi_wm:ms_parent,spi_wm:ms_required,spi_wm:ms_sequence,spi_wm:ms_description,spi_wm:ms_minqty},spi_wm:ms_doclinks{spi_wm:ms_anywhererefid,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_version},spi_wm:task{spi_wm:taskid,dcterms:title,spi_wm:description_longdescription,spi:status,spi_wm:schedstart,spi_wm:parent,spi_wm:istask,spi_wm:statusdate,spi_wm:np_statusmemo,spi_wm:siteid,oslc:shortTitle,spi_wm:parentchgsstatus},spi_wm:actuallabormob{dcterms:identifier,spi_wm:taskid,spi_wm:laborcode,foaf:name,spi_wm:craft,spi_wm:skilllevel,spi_wm:vendor,spi_wm:contractnum,spi_wm:revisionnum,spi_wm:amcrew,spi_wm:position,spi_wm:startdate,spi_wm:starttime,spi_wm:finishdate,spi_wm:finishtime,spi_wm:regularhrs,spi_wm:premiumpayhours,spi_wm:premiumpaycode,spi_wm:transtype,spi_wm:timerstatus,spi_wm:anywhererefid},spi:attachments{oslc_cm:attachmentSize,dcterms:title,spi:fileName,dcterms:description,dcterms:created,spi:urlType,spi:docType,spi:printthrulink,spi:contentLocation,spi:anywhererefid,spi:createby},spi_wm:workorderspec{spi_wm:pd_spec_required,spi_wm:workorderspecid,spi_wm:classstructureid,spi_wm:mandatory,spi_wm:refobjectname,spi_wm:orgid,spi_wm:changedate,spi_wm:displaysequence,spi_wm:changeby,spi_wm:refobjectid,spi_wm:numvalue,spi_wm:alnvalue,spi_wm:tablevalue,spi_wm:section,spi_wm:measureunitid,spi_wm:anywhererefid,spi_wm:classspec{spi_wm:domainid,spi_wm:classspecid{spi_wm:classspecid}},spi_wm:assetattr{spi_wm:assetattrid,spi_wm:description,spi_wm:datatype}},spi:assetspec{spi_wm:assetspecid,spi_wm:classstructureid,spi_wm:mandatory,spi_wm:orgid,spi_wm:changedate,spi_wm:displaysequence,spi_wm:changeby,spi_wm:numvalue,spi_wm:alnvalue,spi_wm:tablevalue,spi_wm:section,spi_wm:linearassetspecid,spi_wm:measureunitid,spi_wm:anywhererefid,spi_wm:assetattrspec{spi_wm:assetattrid,spi_wm:domainid,spi_wm:description,spi_wm:datatype}}').
+               setSimpleFieldsSelectExpression('spi_wm:amcrew,spi_wm:ms_originagreeasph,spi_wm:ms_parentorigreasph,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_psversion,dcterms:identifier,dcterms:title,dcterms:description,spi_wm:pd_contractnum,spi_wm:woclass,spi_wm:ms_itemnum,oslc:shortTitle,dcterms:created,spi_wm:schedstart,spi_wm:schedfinish,spi_wm:actstart,spi_wm:actfinish,spi:status,spi_wm:worktype,spi_wm:classstructureid,spi:woserviceaddresstec,spi_wm:pd_obs,spi_wm:ms_aging,spi_wm:ms_reason,spi_wm:parentchgsstatus,spi_wm:jpnum,spi_wm:siteid,spi_wm:orgid,spi_wm:np_statusmemo,spi_wm:statusdate,spi_wm:istask,spi_wm:calculatedy,spi_wm:calculatedx,spi_wm:anywhereundo,spi_wm:parentwonumtec{dcterms:title,spi_wm:jpnum,oslc:shortTitle},spi:woserviceaddresstec{spi_wm:addressline2,spi_wm:staddrnumber,spi_wm:addressline3,spi_wm:stateprovince,spi:formattedaddress,spi_wm:city,spi_wm:description,spi_wm:formattedaddress,spi_wm:saddresscode,spi_wm:postalcode}').
+               setSupportiveFieldsSelectExpression('spi_wm:ms_photosessionline{spi_wm:ms_photosessionlineid,spi_wm:ms_photosessionid,spi_wm:ms_parent,spi_wm:ms_required,spi_wm:ms_sequence,spi_wm:ms_description,spi_wm:ms_minqty},spi_wm:ms_doclinks{spi_wm:ms_anywhererefid,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_version},spi_wm:task{spi_wm:taskid,dcterms:title,spi_wm:description_longdescription,spi:status,spi_wm:schedstart,spi_wm:parent,spi_wm:istask,spi_wm:statusdate,spi_wm:np_statusmemo,spi_wm:siteid,oslc:shortTitle,spi_wm:parentchgsstatus},spi_wm:wptooltec{spi_wm:wpitemid,spi_wm:itemnum,spi_wm:taskid,spi_wm:description,spi_wm:description_longdescription,spi_wm:itemqty,spi_wm:hours,spi_wm:linetype,spi_wm:itemsetid},spi_wm:actuallabormob{dcterms:identifier,spi_wm:taskid,spi_wm:laborcode,foaf:name,spi_wm:craft,spi_wm:skilllevel,spi_wm:vendor,spi_wm:contractnum,spi_wm:revisionnum,spi_wm:amcrew,spi_wm:position,spi_wm:startdate,spi_wm:starttime,spi_wm:finishdate,spi_wm:finishtime,spi_wm:regularhrs,spi_wm:premiumpayhours,spi_wm:premiumpaycode,spi_wm:transtype,spi_wm:timerstatus,spi_wm:anywhererefid},spi:attachments{oslc_cm:attachmentSize,dcterms:title,spi:fileName,dcterms:description,dcterms:created,spi:urlType,spi:docType,spi:printthrulink,spi:contentLocation,spi:anywhererefid,spi:createby},spi_wm:workorderspec{spi_wm:pd_spec_required,spi_wm:workorderspecid,spi_wm:classstructureid,spi_wm:mandatory,spi_wm:refobjectname,spi_wm:orgid,spi_wm:changedate,spi_wm:displaysequence,spi_wm:changeby,spi_wm:refobjectid,spi_wm:numvalue,spi_wm:alnvalue,spi_wm:tablevalue,spi_wm:section,spi_wm:measureunitid,spi_wm:anywhererefid,spi_wm:classspec{spi_wm:domainid,spi_wm:classspecid{spi_wm:classspecid}},spi_wm:assetattr{spi_wm:assetattrid,spi_wm:description,spi_wm:datatype}},spi:assetspec{spi_wm:assetspecid,spi_wm:classstructureid,spi_wm:mandatory,spi_wm:orgid,spi_wm:changedate,spi_wm:displaysequence,spi_wm:changeby,spi_wm:numvalue,spi_wm:alnvalue,spi_wm:tablevalue,spi_wm:section,spi_wm:linearassetspecid,spi_wm:measureunitid,spi_wm:anywhererefid,spi_wm:assetattrspec{spi_wm:assetattrid,spi_wm:domainid,spi_wm:description,spi_wm:datatype}}').
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'amcrew',
+                  'index' : false,
+                  'artifactId' : 'workOrder_identifier_spi_wm_amcrew',
+                  'maxSize' : 8,
+                  'id' : 'awff3265cd',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:amcrew',
+               }).
                addField({
                   'multiplicity' : 'zero-or-one',
                   'dataType' : 'string',
@@ -510,6 +523,16 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
+                  'dataType' : 'inline',
+                  'name' : 'woserviceaddresstec',
+                  'index' : false,
+                  'artifactId' : 'workOrder_woserviceaddress_woserviceaddresstec',
+                  'id' : 'aw1a418df7',
+                  'local' : false,
+                  'remoteName' : 'spi:woserviceaddresstec',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
                   'displayValueRemoteName' : 'spi_wm:formattedaddress',
                   'dataType' : 'inline',
                   'referenceResource' : 'workOrder',
@@ -519,7 +542,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 150,
                   'id' : 'aw4b373dec',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -533,7 +556,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 12,
                   'id' : 'aw2fdc547d',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -546,7 +569,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 50,
                   'id' : 'aw2021f264',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -559,7 +582,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 255,
                   'id' : 'aw81b4de0b',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -572,7 +595,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 9,
                   'id' : 'aw4fe63752',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -585,7 +608,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 255,
                   'id' : 'aw7643f982',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -598,7 +621,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 12,
                   'id' : 'aw2642889e',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -612,7 +635,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 36,
                   'id' : 'aw8e5eade0',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -626,7 +649,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 25,
                   'id' : 'aw576c7432',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -691,11 +714,37 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'referenceResource' : 'workOrder',
                   'name' : 'parentwonumDesc',
                   'index' : false,
-                  'artifactId' : 'workOrder_parentwonumDesc_spi_wmparentwonumctermstitle',
+                  'artifactId' : 'workOrder_parentwonumDesc_spi_wmparentwonumparentwonumDesc',
                   'maxSize' : 255,
-                  'id' : 'aw36e68aa4',
+                  'id' : 'aw17934273',
                   'local' : false,
                   'remoteName' : 'spi_wm:parentwonumtec',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'displayValueRemoteName' : 'spi_wm:jpnum',
+                  'dataType' : 'reference',
+                  'usage' : 'upper',
+                  'referenceResource' : 'workOrder',
+                  'name' : 'parentJpnum',
+                  'index' : false,
+                  'artifactId' : 'workOrder_parentwonumDesc_spi_wmparentwonumparentJpnum',
+                  'maxSize' : 12,
+                  'id' : 'awe52d4613',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:parentwonumtec',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'msjpnum',
+                  'index' : false,
+                  'artifactId' : 'workOrder_jpnum_spi_wmJpnum',
+                  'maxSize' : 12,
+                  'id' : 'aw5cd2d9',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:jpnum',
                }).
                addField({
                   'multiplicity' : 'exactly-one',
@@ -765,6 +814,19 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'local' : false,
                   'remoteName' : 'spi_wm:task',
                   'selectExpression' : 'spi_wm:task{spi_wm:taskid,dcterms:title,spi_wm:description_longdescription,spi:status,spi_wm:schedstart,spi_wm:parent,spi_wm:istask,spi_wm:statusdate,spi_wm:np_statusmemo,spi_wm:siteid,oslc:shortTitle,spi_wm:parentchgsstatus}',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-many',
+                  'dataType' : 'inline',
+                  'referenceResource' : 'plannedToolResource',
+                  'name' : 'toollist',
+                  'index' : false,
+                  'artifactId' : 'workOrder_toollist_spi_wmwptool',
+                  'id' : 'aw48aaa59e',
+                  'describedByResource' : 'plannedToolResource',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:wptooltec',
+                  'selectExpression' : 'spi_wm:wptooltec{spi_wm:wpitemid,spi_wm:itemnum,spi_wm:taskid,spi_wm:description,spi_wm:description_longdescription,spi_wm:itemqty,spi_wm:hours,spi_wm:linetype,spi_wm:itemsetid}',
                }).
                addField({
                   'multiplicity' : 'zero-or-many',
@@ -842,7 +904,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'spi_wm:formattedaddress',
+                  'displayValueRemoteName' : 'spi:formattedaddress',
                   'dataType' : 'inline',
                   'referenceResource' : 'workOrder',
                   'name' : 'formattedaddress',
@@ -851,33 +913,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 150,
                   'id' : 'awd70f51b8',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'spi_wm:longitudex',
-                  'dataType' : 'inline',
-                  'referenceResource' : 'workOrder',
-                  'name' : 'WOSAlongitudex',
-                  'index' : false,
-                  'scale' : 10,
-                  'artifactId' : 'workOrder_woserviceaddressx_longitudex',
-                  'id' : 'aw771f9b7d',
-                  'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'spi_wm:latitudey',
-                  'dataType' : 'inline',
-                  'referenceResource' : 'workOrder',
-                  'name' : 'WOSAlatitudey',
-                  'index' : false,
-                  'scale' : 10,
-                  'artifactId' : 'workOrder_woserviceaddressy_latitudey',
-                  'id' : 'awa536442',
-                  'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'dataType' : 'dateTime',
@@ -1293,15 +1329,155 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'createMyAssignedWork', creationString:'\/oslc\/os\/ms_oslcsgztec' }
                ]).
                setQueryBases([
-                     {name:'searchAllWorkOrders', queryString:'\/oslc\/os\/ms_oslcsgztec?savedQuery=getWithComplexQuery', defaultForSearch: true, queryLabel:'' },
-                     {name:'getMyAssignedWork', queryString:'\/oslc\/os\/ms_oslcsgztec?savedQuery=ms_ControlTec', queryLabel:'' }
+                     {name:'getMyAssignedWork', queryString:'\/oslc\/os\/ms_oslcsgztec?savedQuery=ms_ControlTec', defaultForSearch: true, queryLabel:'' }
                ]);
             var resourcePromise004 = PersistenceManager.initCollection( resource004 );
 
 
             var resource005 = new ResourceMetadata({
+                  'pageSize' : 1000,
+                  'resourceName' : 'plannedToolResource',
+                  'isAttachment' : false,
+                  'isSystem' : false,
+                  'inMemory' : false,
+                  'artifactId' : 'plannedToolResource',
+                  'id' : 'aw9b225591',
+                  'additionalData' : false,
+                  'adapterName' : 'OSLCGenericAdapter',
+                  'maxFetchDataLimit' : 0,
+                  'classInstance' : PlannedToolObject,
+               }).
+               setLocal( false ).
+               setSimpleFieldsSelectExpression('spi_wm:wpitemid,spi_wm:itemnum,spi_wm:taskid,spi_wm:description,spi_wm:description_longdescription,spi_wm:itemqty,spi_wm:hours,spi_wm:linetype,spi_wm:itemsetid').
+               setSupportiveFieldsSelectExpression('').
+               addField({
+                  'multiplicity' : 'exactly-one',
+                  'dataType' : 'integer',
+                  'usage' : 'bigint',
+                  'name' : 'identifier',
+                  'index' : false,
+                  'artifactId' : 'plannedToolResource_wpitemid_spi_wmwpitemid',
+                  'id' : 'aw372b0fc',
+                  'local' : false,
+                  'pkIndex' : 1,
+                  'remoteName' : 'spi_wm:wpitemid',
+               }).
+               addField({
+                  'multiplicity' : 'exactly-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'tool',
+                  'index' : false,
+                  'artifactId' : 'plannedToolResource_tool_spi_wmitemnum',
+                  'maxSize' : 30,
+                  'id' : 'awefa1ba7e',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:itemnum',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'integer',
+                  'name' : 'taskid',
+                  'index' : false,
+                  'artifactId' : 'plannedToolResource_taskid_spi_wmtaskid',
+                  'id' : 'awbc7ff456',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:taskid',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'string',
+                  'name' : 'tooldesc',
+                  'index' : false,
+                  'artifactId' : 'plannedToolResource_tooldesc_spi_wmdescription',
+                  'maxSize' : 100,
+                  'id' : 'aw9de0a341',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:description',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'string',
+                  'usage' : 'longaln',
+                  'name' : 'toollongdesc',
+                  'index' : false,
+                  'artifactId' : 'plannedToolResource_toollongdesc_spi_wmdescription_longdescription',
+                  'maxSize' : 32000,
+                  'id' : 'aw7a468d19',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:description_longdescription',
+               }).
+               addField({
+                  'multiplicity' : 'exactly-one',
+                  'dataType' : 'double',
+                  'name' : 'quantity',
+                  'index' : false,
+                  'scale' : 2,
+                  'artifactId' : 'plannedToolResource_quantity_spi_wmitemqty',
+                  'id' : 'awfb97155a',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:itemqty',
+               }).
+               addField({
+                  'multiplicity' : 'exactly-one',
+                  'dataType' : 'double',
+                  'usage' : 'duration',
+                  'name' : 'hours',
+                  'index' : false,
+                  'scale' : 0,
+                  'artifactId' : 'plannedToolResource_hours_spi_wmhours',
+                  'id' : 'awf96027af',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:hours',
+               }).
+               addField({
+                  'multiplicity' : 'exactly-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'linetype',
+                  'index' : false,
+                  'artifactId' : 'plannedToolResource_linetype_spi_wmlinetype',
+                  'maxSize' : 15,
+                  'id' : 'aw2a3d365e',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:linetype',
+               }).
+               addField({
+                  'dataType' : 'string',
+                  'name' : 'toolanddescription',
+                  'index' : false,
+                  'artifactId' : 'plannedToolResource_toolanddescription_string',
+                  'id' : 'awfa513d6',
+                  'persistent' : true,
+                  'local' : true,
+               }).
+               addField({
+                  'dataType' : 'boolean',
+                  'name' : 'toolCB',
+                  'index' : false,
+                  'artifactId' : 'plannedToolResource_itemanddescription_boolean11',
+                  'id' : 'aw21d18867',
+                  'persistent' : true,
+                  'local' : true,
+               }).
+               addField({
+                  'multiplicity' : 'exactly-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'itemsetid',
+                  'index' : false,
+                  'artifactId' : 'plannedToolResource_itemsetid_spi_wmitemsetid',
+                  'maxSize' : 8,
+                  'id' : 'aw29a62c46',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:itemsetid',
+               });
+            var resourcePromise005 = PersistenceManager.initCollection( resource005 );
+
+
+            var resource006 = new ResourceMetadata({
                   'defaultOrderBy' : 'subitemtc desc',
-                  'pageSize' : 200,
+                  'pageSize' : 1000,
                   'resourceName' : 'wotcorigirec',
                   'isAttachment' : false,
                   'isSystem' : false,
@@ -1593,14 +1769,14 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'selectExpression' : 'spi:attachmentsorig{oslc_cm:attachmentSize,dcterms:title,spi:fileName,dcterms:description,dcterms:created,spi:urlType,spi:docType,spi:printthrulink,spi:contentLocation,spi:anywhererefid,spi:createby}',
                }).
                setQueryBases([
-                     {name:'getoslcwotcorig', queryString:'\/oslc\/os\/ms_oslcwotcorigi', queryLabel:'' }
+                     {name:'getoslcwotcorig', queryString:'\/oslc\/os\/ms_oslcwotcorigi?savedQuery=MS_ORIGITENS', queryLabel:'' }
                ]);
-            var resourcePromise005 = PersistenceManager.initCollection( resource005 );
+            var resourcePromise006 = PersistenceManager.initCollection( resource006 );
 
 
-            var resource006 = new ResourceMetadata({
+            var resource007 = new ResourceMetadata({
                   'defaultOrderBy' : 'wonum asc',
-                  'pageSize' : 200,
+                  'pageSize' : 1000,
                   'resourceName' : 'origattachment',
                   'isAttachment' : false,
                   'isSystem' : false,
@@ -1656,10 +1832,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'getOriginalAttach', queryString:'\/oslc\/os\/ms_oslcorigattach?savedQuery=ms_sgztecOrig', queryLabel:'' }
                ]);
-            var resourcePromise006 = PersistenceManager.initCollection( resource006 );
+            var resourcePromise007 = PersistenceManager.initCollection( resource007 );
 
 
-            var resource007 = new ResourceMetadata({
+            var resource008 = new ResourceMetadata({
                   'pageSize' : 20,
                   'resourceName' : 'photosessionlineResource',
                   'isAttachment' : false,
@@ -1760,10 +1936,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise007 = PersistenceManager.initCollection( resource007 );
+            var resourcePromise008 = PersistenceManager.initCollection( resource008 );
 
 
-            var resource008 = new ResourceMetadata({
+            var resource009 = new ResourceMetadata({
                   'pageSize' : 10,
                   'resourceName' : 'msDoclinksResource',
                   'isAttachment' : false,
@@ -1823,10 +1999,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'local' : false,
                   'remoteName' : 'spi_wm:ms_version',
                });
-            var resourcePromise008 = PersistenceManager.initCollection( resource008 );
+            var resourcePromise009 = PersistenceManager.initCollection( resource009 );
 
 
-            var resource009 = new ResourceMetadata({
+            var resource010 = new ResourceMetadata({
                   'pageSize' : 500,
                   'resourceName' : 'ancestorLoc',
                   'isAttachment' : false,
@@ -1917,10 +2093,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'getclassancestor', queryString:'\/oslc\/os\/ms_oslcancestor', queryLabel:'' }
                ]);
-            var resourcePromise009 = PersistenceManager.initCollection( resource009 );
+            var resourcePromise010 = PersistenceManager.initCollection( resource010 );
 
 
-            var resource010 = new ResourceMetadata({
+            var resource011 = new ResourceMetadata({
                   'pageSize' : 200,
                   'resourceName' : 'classstructure',
                   'isAttachment' : false,
@@ -2044,10 +2220,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'getclassstructure', queryString:'\/oslc\/os\/oslcclassstructure', queryLabel:'' }
                ]);
-            var resourcePromise010 = PersistenceManager.initCollection( resource010 );
+            var resourcePromise011 = PersistenceManager.initCollection( resource011 );
 
 
-            var resource011 = new ResourceMetadata({
+            var resource012 = new ResourceMetadata({
                   'pageSize' : 50,
                   'resourceName' : 'classSpec',
                   'isAttachment' : false,
@@ -2246,10 +2422,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getclasssspec', queryString:'\/oslc\/os\/oslcclassspec', queryLabel:'' }
                ]).
                setWhereClause('spi_wm%3Aclassspecusewith%7Bspi_wm%3Aobjectname%3D%22WORKORDER%22%7D');
-            var resourcePromise011 = PersistenceManager.initCollection( resource011 );
+            var resourcePromise012 = PersistenceManager.initCollection( resource012 );
 
 
-            var resource012 = new ResourceMetadata({
+            var resource013 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'attachments',
                   'isAttachment' : true,
@@ -2464,10 +2640,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise012 = PersistenceManager.initCollection( resource012 );
+            var resourcePromise013 = PersistenceManager.initCollection( resource013 );
 
 
-            var resource013 = new ResourceMetadata({
+            var resource014 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'attachmentsOrig',
                   'isAttachment' : true,
@@ -2681,10 +2857,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise013 = PersistenceManager.initCollection( resource013 );
+            var resourcePromise014 = PersistenceManager.initCollection( resource014 );
 
 
-            var resource014 = new ResourceMetadata({
+            var resource015 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -2708,10 +2884,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise014 = PersistenceManager.initCollection( resource014 );
+            var resourcePromise015 = PersistenceManager.initCollection( resource015 );
 
 
-            var resource015 = new ResourceMetadata({
+            var resource016 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'taskResource',
                   'isAttachment' : false,
@@ -2911,10 +3087,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise015 = PersistenceManager.initCollection( resource015 );
+            var resourcePromise016 = PersistenceManager.initCollection( resource016 );
 
 
-            var resource016 = new ResourceMetadata({
+            var resource017 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'actualLaborResource',
                   'isAttachment' : false,
@@ -3200,10 +3376,119 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'local' : false,
                   'remoteName' : 'spi_wm:anywhererefid',
                });
-            var resourcePromise016 = PersistenceManager.initCollection( resource016 );
+            var resourcePromise017 = PersistenceManager.initCollection( resource017 );
 
 
-            var resource017 = new ResourceMetadata({
+            var resource018 = new ResourceMetadata({
+                  'pageSize' : 5000,
+                  'resourceName' : 'msamcrew',
+                  'isAttachment' : false,
+                  'isSystem' : false,
+                  'urlBase' : 'https:\/\/hsmgimax.prefeitura.sp.gov.br:443\/maximo',
+                  'inMemory' : false,
+                  'artifactId' : 'msamcrew',
+                  'id' : 'awf94b5018',
+                  'additionalData' : false,
+                  'adapterName' : 'OSLCGenericAdapter',
+                  'maxFetchDataLimit' : 0,
+               }).
+               setLocal( false ).
+               setSimpleFieldsSelectExpression('spi:ms_active,spi:ms_contractnum,spi:ms_siteid,oslc:identifier,spi:amcrew{oslc:title,oslc:shortTitle},spi:person{spi:displayname}').
+               setSupportiveFieldsSelectExpression('').
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'displayValueRemoteName' : 'oslc:shortTitle',
+                  'dataType' : 'reference',
+                  'usage' : 'upper',
+                  'referenceResource' : 'msamcrew',
+                  'name' : 'amcrew',
+                  'index' : false,
+                  'artifactId' : 'msamcrew_amcrew',
+                  'maxSize' : 8,
+                  'id' : 'awce045ca6',
+                  'local' : false,
+                  'remoteName' : 'spi:amcrew',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'displayValueRemoteName' : 'oslc:title',
+                  'dataType' : 'reference',
+                  'referenceResource' : 'msamcrew',
+                  'name' : 'description',
+                  'index' : false,
+                  'artifactId' : 'msamcrew_description',
+                  'maxSize' : 254,
+                  'id' : 'aw1dfc3d68',
+                  'local' : false,
+                  'remoteName' : 'spi:amcrew',
+               }).
+               addField({
+                  'multiplicity' : 'exactly-one',
+                  'dataType' : 'boolean',
+                  'name' : 'ms_active',
+                  'index' : false,
+                  'artifactId' : 'msamcrew_ms_active',
+                  'id' : 'awc81da017',
+                  'local' : false,
+                  'remoteName' : 'spi:ms_active',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'displayValueRemoteName' : 'spi:displayname',
+                  'dataType' : 'inline',
+                  'referenceResource' : 'msamcrew',
+                  'name' : 'displayname',
+                  'index' : false,
+                  'artifactId' : 'msamcrew_displayname',
+                  'maxSize' : 255,
+                  'id' : 'awb705b1e8',
+                  'local' : false,
+                  'remoteName' : 'spi:person',
+               }).
+               addField({
+                  'multiplicity' : 'exactly-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'ms_contractnum',
+                  'index' : false,
+                  'artifactId' : 'msamcrew_ms_contractnum',
+                  'maxSize' : 8,
+                  'id' : 'awa447579a',
+                  'local' : false,
+                  'remoteName' : 'spi:ms_contractnum',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'ms_siteid',
+                  'index' : false,
+                  'artifactId' : 'msamcrew_ms_siteid',
+                  'maxSize' : 8,
+                  'id' : 'aw7ff4dc4a',
+                  'local' : false,
+                  'remoteName' : 'spi:ms_siteid',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'string',
+                  'usage' : 'bigint',
+                  'name' : 'identifier',
+                  'index' : false,
+                  'artifactId' : 'msamcrew_ms_identifier',
+                  'maxSize' : 19,
+                  'id' : 'aw2ad3724a',
+                  'local' : false,
+                  'pkIndex' : 1,
+                  'remoteName' : 'oslc:identifier',
+               }).
+               setQueryBases([
+                     {name:'getamcrew', queryString:'\/oslc\/os\/MS_SGZMOBILEAMCREW?savedQuery=MS_CREWCONTRACTSGZMOBILE', queryLabel:'' }
+               ]);
+            var resourcePromise018 = PersistenceManager.initCollection( resource018 );
+
+
+            var resource019 = new ResourceMetadata({
                   'refreshOnLogin' : 'true',
                   'pageSize' : 10,
                   'resourceName' : 'mylabor',
@@ -3294,10 +3579,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getlabor', queryString:'\/oslc\/os\/oslclabor', queryLabel:'' }
                ]).
                setWhereClause('spi%3Apersonid%3D%24%7Bpersonid%7D+and+spi%3Aorgid%3D%24%7Bdeforg%7D');
-            var resourcePromise017 = PersistenceManager.initCollection( resource017 );
+            var resourcePromise019 = PersistenceManager.initCollection( resource019 );
 
 
-            var resource018 = new ResourceMetadata({
+            var resource020 = new ResourceMetadata({
                   'refreshOnLogin' : 'true',
                   'pageSize' : 10,
                   'resourceName' : 'mylaborcraftrate',
@@ -3429,10 +3714,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getlaborcraftrate', queryString:'\/oslc\/os\/oslclaborcraftrate', queryLabel:'' }
                ]).
                setWhereClause('spi%3Alaborcode+in+%5B%24%7Bmylabor.laborcode%7D%5D+and+spi%3Adefaultcraft%3D1');
-            var resourcePromise018 = PersistenceManager.initCollection( resource018 );
+            var resourcePromise020 = PersistenceManager.initCollection( resource020 );
 
 
-            var resource019 = new ResourceMetadata({
+            var resource021 = new ResourceMetadata({
                   'pageSize' : 100,
                   'resourceName' : 'additionalworktype',
                   'isAttachment' : false,
@@ -3526,10 +3811,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'getworktype', queryString:'\/oslc\/os\/oslcworktype', queryLabel:'' }
                ]);
-            var resourcePromise019 = PersistenceManager.initCollection( resource019 );
+            var resourcePromise021 = PersistenceManager.initCollection( resource021 );
 
 
-            var resource020 = new ResourceMetadata({
+            var resource022 = new ResourceMetadata({
                   'pageSize' : 50,
                   'resourceName' : 'assetattrtypes',
                   'isAttachment' : false,
@@ -3645,10 +3930,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getassetattrtypes', queryString:'\/oslc\/os\/oslcsynonymdomain', queryLabel:'' }
                ]).
                setWhereClause('oslc%3AshortTitle%3D%22DATATYPE%22');
-            var resourcePromise020 = PersistenceManager.initCollection( resource020 );
+            var resourcePromise022 = PersistenceManager.initCollection( resource022 );
 
 
-            var resource021 = new ResourceMetadata({
+            var resource023 = new ResourceMetadata({
                   'pageSize' : 50,
                   'resourceName' : 'domainwostatus',
                   'isAttachment' : false,
@@ -3764,10 +4049,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getwostatus', queryString:'\/oslc\/os\/oslcsynonymdomain', queryLabel:'' }
                ]).
                setWhereClause('oslc%3AshortTitle%3D%22WOSTATUS%22+and+spi%3Avalue+in+%5B%22APROVADO%22%2C%22CONC%22%2C%22NAOREALIZADA%22%2C%22INPRG%22%2C%22EMAND%22%5D');
-            var resourcePromise021 = PersistenceManager.initCollection( resource021 );
+            var resourcePromise023 = PersistenceManager.initCollection( resource023 );
 
 
-            var resource022 = new ResourceMetadata({
+            var resource024 = new ResourceMetadata({
                   'pageSize' : 100,
                   'resourceName' : 'domainAssetstatus',
                   'isAttachment' : false,
@@ -3883,10 +4168,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getlocassetstatus', queryString:'\/oslc\/os\/oslcsynonymdomain', queryLabel:'' }
                ]).
                setWhereClause('oslc%3AshortTitle%3D%22LOCASSETSTATUS%22+and+spi%3Asiteid%21%3D%22*%22+and+spi%3Aorgid%21%3D%22*%22');
-            var resourcePromise022 = PersistenceManager.initCollection( resource022 );
+            var resourcePromise024 = PersistenceManager.initCollection( resource024 );
 
 
-            var resource023 = new ResourceMetadata({
+            var resource025 = new ResourceMetadata({
                   'pageSize' : 50,
                   'resourceName' : 'domainwoclass',
                   'isAttachment' : false,
@@ -4002,10 +4287,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getwoclass', queryString:'\/oslc\/os\/oslcsynonymdomain', queryLabel:'' }
                ]).
                setWhereClause('oslc%3AshortTitle%3D%22WOCLASS%22');
-            var resourcePromise023 = PersistenceManager.initCollection( resource023 );
+            var resourcePromise025 = PersistenceManager.initCollection( resource025 );
 
 
-            var resource024 = new ResourceMetadata({
+            var resource026 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'domainitemtype',
                   'isAttachment' : false,
@@ -4121,10 +4406,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getItemType', queryString:'\/oslc\/os\/oslcsynonymdomain', queryLabel:'' }
                ]).
                setWhereClause('oslc%3AshortTitle%3D%22ITEMTYPE%22');
-            var resourcePromise024 = PersistenceManager.initCollection( resource024 );
+            var resourcePromise026 = PersistenceManager.initCollection( resource026 );
 
 
-            var resource025 = new ResourceMetadata({
+            var resource027 = new ResourceMetadata({
                   'pageSize' : 50,
                   'resourceName' : 'domaintypes',
                   'isAttachment' : false,
@@ -4240,10 +4525,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getdomaintypes', queryString:'\/oslc\/os\/oslcsynonymdomain', queryLabel:'' }
                ]).
                setWhereClause('oslc%3AshortTitle%3D%22DOMTYPE%22');
-            var resourcePromise025 = PersistenceManager.initCollection( resource025 );
+            var resourcePromise027 = PersistenceManager.initCollection( resource027 );
 
 
-            var resource026 = new ResourceMetadata({
+            var resource028 = new ResourceMetadata({
                   'pageSize' : 50,
                   'resourceName' : 'domainworktype',
                   'isAttachment' : false,
@@ -4359,10 +4644,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getworktype', queryString:'\/oslc\/os\/oslcsynonymdomain', queryLabel:'' }
                ]).
                setWhereClause('oslc%3AshortTitle%3D%22WORKTYPE%22');
-            var resourcePromise026 = PersistenceManager.initCollection( resource026 );
+            var resourcePromise028 = PersistenceManager.initCollection( resource028 );
 
 
-            var resource027 = new ResourceMetadata({
+            var resource029 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -4414,10 +4699,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise027 = PersistenceManager.initCollection( resource027 );
+            var resourcePromise029 = PersistenceManager.initCollection( resource029 );
 
 
-            var resource028 = new ResourceMetadata({
+            var resource030 = new ResourceMetadata({
                   'refreshOnLogin' : 'true',
                   'pageSize' : 200,
                   'resourceName' : 'oslcmaxvars',
@@ -4486,10 +4771,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getmaxvarsinprglabtrans', queryString:'\/oslc\/os\/oslcmaxvars', queryLabel:'' }
                ]).
                setWhereClause('spi%3Avarname+in+%5B%22STARTTIMERINPRG%22%2C%22LABTRANSTOLERANCE%22%2C%22DOWNTIMEDFLTS%22%2C%22PLUSCMOBREADONLY%22%2C%22PLUSCAUTOSTATUS%22%2C%22PLUSCROTASSET%22%2C%22PLUSCPASTDUEVAL%22%2C%22PLUSCQUALTECH%22%2C%22PLUSCVALTOOL%22%5D');
-            var resourcePromise028 = PersistenceManager.initCollection( resource028 );
+            var resourcePromise030 = PersistenceManager.initCollection( resource030 );
 
 
-            var resource029 = new ResourceMetadata({
+            var resource031 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'wostatusResource',
                   'isAttachment' : false,
@@ -4615,10 +4900,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'getwostatus', queryString:'\/oslc\/os\/oslcwostatus', queryLabel:'' }
                ]);
-            var resourcePromise029 = PersistenceManager.initCollection( resource029 );
+            var resourcePromise031 = PersistenceManager.initCollection( resource031 );
 
 
-            var resource030 = new ResourceMetadata({
+            var resource032 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -4680,10 +4965,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise030 = PersistenceManager.initCollection( resource030 );
+            var resourcePromise032 = PersistenceManager.initCollection( resource032 );
 
 
-            var resource031 = new ResourceMetadata({
+            var resource033 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -4745,10 +5030,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise031 = PersistenceManager.initCollection( resource031 );
+            var resourcePromise033 = PersistenceManager.initCollection( resource033 );
 
 
-            var resource032 = new ResourceMetadata({
+            var resource034 = new ResourceMetadata({
                   'refreshOnLogin' : 'true',
                   'pageSize' : 10,
                   'resourceName' : 'laborcrew',
@@ -4797,7 +5082,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'name' : 'description',
                   'index' : false,
                   'artifactId' : 'laborcrew_description_dctermstitle',
-                  'maxSize' : 50,
+                  'maxSize' : 254,
                   'id' : 'awbd5bb63d',
                   'local' : false,
                   'remoteName' : 'dcterms:title',
@@ -4990,10 +5275,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getamcrew', queryString:'\/oslc\/os\/oslcamcrew', queryLabel:'' }
                ]).
                setWhereClause('spi%3Aworksite%3D%24%7Bworksite%7D+and+spi%3Aorgid%3D%24%7Borgid%7D+and+spi%3Avendor%3D%24%7Bvendor%7D');
-            var resourcePromise032 = PersistenceManager.initCollection( resource032 );
+            var resourcePromise034 = PersistenceManager.initCollection( resource034 );
 
 
-            var resource033 = new ResourceMetadata({
+            var resource035 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -5070,10 +5355,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise033 = PersistenceManager.initCollection( resource033 );
+            var resourcePromise035 = PersistenceManager.initCollection( resource035 );
 
 
-            var resource034 = new ResourceMetadata({
+            var resource036 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -5170,10 +5455,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise034 = PersistenceManager.initCollection( resource034 );
+            var resourcePromise036 = PersistenceManager.initCollection( resource036 );
 
 
-            var resource035 = new ResourceMetadata({
+            var resource037 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -5373,10 +5658,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise035 = PersistenceManager.initCollection( resource035 );
+            var resourcePromise037 = PersistenceManager.initCollection( resource037 );
 
 
-            var resource036 = new ResourceMetadata({
+            var resource038 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'laborCrewList',
                   'isAttachment' : false,
@@ -5498,10 +5783,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'pkIndex' : 4,
                   'remoteName' : 'spi:amcrewlaborid',
                });
-            var resourcePromise036 = PersistenceManager.initCollection( resource036 );
+            var resourcePromise038 = PersistenceManager.initCollection( resource038 );
 
 
-            var resource037 = new ResourceMetadata({
+            var resource039 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'toolCrewList',
                   'isAttachment' : false,
@@ -5587,10 +5872,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'pkIndex' : 4,
                   'remoteName' : 'spi:amcrewtoolid',
                });
-            var resourcePromise037 = PersistenceManager.initCollection( resource037 );
+            var resourcePromise039 = PersistenceManager.initCollection( resource039 );
 
 
-            var resource038 = new ResourceMetadata({
+            var resource040 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'userInfo',
                   'isAttachment' : false,
@@ -5805,10 +6090,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'currentUser', queryString:'\/oslc\/os\/oslcmaxuser?savedQuery=currentUser', queryLabel:'' }
                ]);
-            var resourcePromise038 = PersistenceManager.initCollection( resource038 );
+            var resourcePromise040 = PersistenceManager.initCollection( resource040 );
 
 
-            var resource039 = new ResourceMetadata({
+            var resource041 = new ResourceMetadata({
                   'refreshOnLogin' : 'true',
                   'pageSize' : 10,
                   'resourceName' : 'amtickets',
@@ -5909,10 +6194,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'getwotickets', queryString:'\/oslc\/os\/ms_oslcwotickets?savedQuery=WOtickets_carregados', queryLabel:'' }
                ]);
-            var resourcePromise039 = PersistenceManager.initCollection( resource039 );
+            var resourcePromise041 = PersistenceManager.initCollection( resource041 );
 
 
-            var resource040 = new ResourceMetadata({
+            var resource042 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'userRoles',
                   'isAttachment' : false,
@@ -5939,10 +6224,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'pkIndex' : 2,
                   'remoteName' : 'spi:groupname',
                });
-            var resourcePromise040 = PersistenceManager.initCollection( resource040 );
+            var resourcePromise042 = PersistenceManager.initCollection( resource042 );
 
 
-            var resource041 = new ResourceMetadata({
+            var resource043 = new ResourceMetadata({
                   'pageSize' : 50,
                   'resourceName' : 'appDocType',
                   'isAttachment' : false,
@@ -5997,10 +6282,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'getWODocTypes', queryString:'\/oslc\/os\/oslcappdoctype?oslc.where=spi:app=%22WOTRACK%22', queryLabel:'' }
                ]);
-            var resourcePromise041 = PersistenceManager.initCollection( resource041 );
+            var resourcePromise043 = PersistenceManager.initCollection( resource043 );
 
 
-            var resource042 = new ResourceMetadata({
+            var resource044 = new ResourceMetadata({
                   'pageSize' : 50,
                   'resourceName' : 'site',
                   'isAttachment' : false,
@@ -6045,10 +6330,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'getSite', queryString:'\/oslc\/os\/oslcsite', queryLabel:'' }
                ]);
-            var resourcePromise042 = PersistenceManager.initCollection( resource042 );
+            var resourcePromise044 = PersistenceManager.initCollection( resource044 );
 
 
-            var resource043 = new ResourceMetadata({
+            var resource045 = new ResourceMetadata({
                   'pageSize' : 20,
                   'resourceName' : 'maxdomain',
                   'isAttachment' : false,
@@ -6158,10 +6443,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getmaxdomain', queryString:'\/oslc\/os\/oslcmaxdomain?savedQuery=getWorkOrderSpecificationDomains', queryLabel:'' }
                ]).
                setWhereClause('spi_wm%3Adomaintype+in+%5B%22NUMERIC%22%2C%22ALN%22%2C%22TABLE%22%5D');
-            var resourcePromise043 = PersistenceManager.initCollection( resource043 );
+            var resourcePromise045 = PersistenceManager.initCollection( resource045 );
 
 
-            var resource044 = new ResourceMetadata({
+            var resource046 = new ResourceMetadata({
                   'pageSize' : 20,
                   'resourceName' : 'maxdomainAsset',
                   'isAttachment' : false,
@@ -6271,10 +6556,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getmaxdomainasset', queryString:'\/oslc\/os\/oslcmaxdomain?savedQuery=getAssetSpecificationDomains', queryLabel:'' }
                ]).
                setWhereClause('spi_wm%3Adomaintype+in+%5B%22NUMERIC%22%2C%22ALN%22%2C%22TABLE%22%5D');
-            var resourcePromise044 = PersistenceManager.initCollection( resource044 );
+            var resourcePromise046 = PersistenceManager.initCollection( resource046 );
 
 
-            var resource045 = new ResourceMetadata({
+            var resource047 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'numericDomainResource',
                   'isAttachment' : false,
@@ -6347,10 +6632,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise045 = PersistenceManager.initCollection( resource045 );
+            var resourcePromise047 = PersistenceManager.initCollection( resource047 );
 
 
-            var resource046 = new ResourceMetadata({
+            var resource048 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'alnDomainResource',
                   'isAttachment' : false,
@@ -6423,10 +6708,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise046 = PersistenceManager.initCollection( resource046 );
+            var resourcePromise048 = PersistenceManager.initCollection( resource048 );
 
 
-            var resource047 = new ResourceMetadata({
+            var resource049 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'workOrderSpecResource',
                   'isAttachment' : false,
@@ -6700,10 +6985,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise047 = PersistenceManager.initCollection( resource047 );
+            var resourcePromise049 = PersistenceManager.initCollection( resource049 );
 
 
-            var resource048 = new ResourceMetadata({
+            var resource050 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'assetSpecResource',
                   'isAttachment' : false,
@@ -6943,10 +7228,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise048 = PersistenceManager.initCollection( resource048 );
+            var resourcePromise050 = PersistenceManager.initCollection( resource050 );
 
 
-            var resource049 = new ResourceMetadata({
+            var resource051 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'asset',
                   'isAttachment' : false,
@@ -7063,10 +7348,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'assetResourceQB', queryString:'\/oslc\/os\/oslcasset', queryLabel:'' }
                ]);
-            var resourcePromise049 = PersistenceManager.initCollection( resource049 );
+            var resourcePromise051 = PersistenceManager.initCollection( resource051 );
 
 
-            var resource050 = new ResourceMetadata({
+            var resource052 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'assetMeters',
                   'isAttachment' : false,
@@ -7317,264 +7602,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'assetMeterResourceQB', queryString:'\/oslc\/os\/oslcassetmeter', defaultForSearch: true, queryLabel:'' }
                ]);
-            var resourcePromise050 = PersistenceManager.initCollection( resource050 );
+            var resourcePromise052 = PersistenceManager.initCollection( resource052 );
 
 
-            var resource051 = new ResourceMetadata({
-                  'pageSize' : 1000,
-                  'resourceName' : 'locationMeters',
-                  'isAttachment' : false,
-                  'isSystem' : false,
-                  'urlBase' : 'https:\/\/hsmgimax.prefeitura.sp.gov.br:443\/maximo',
-                  'inMemory' : false,
-                  'artifactId' : 'locationMeters',
-                  'id' : 'awd1f6ec67',
-                  'additionalData' : false,
-                  'adapterName' : 'OSLCGenericAdapter',
-                  'maxFetchDataLimit' : 0,
-               }).
-               setLocal( false ).
-               setSimpleFieldsSelectExpression('dcterms:identifier,spi:siteid,spi:active,spi:dorollover,spi:rollover,spi:isdelta,spi:inspector,spi:newreading,spi:newreadingdate,spi:readingtype,spi:lastreading,spi:lastreadingdate,spi:remarks,spi:meter{spi:domainid,dcterms:title,spi:metertype,oslc:shortTitle},spi:location{dcterms:title}').
-               setSupportiveFieldsSelectExpression('').
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'dataType' : 'string',
-                  'usage' : 'bigint',
-                  'name' : 'identifier',
-                  'index' : true,
-                  'artifactId' : 'locationMeters_identifier_dctermsidentifier',
-                  'maxSize' : 19,
-                  'id' : 'awfe6e7724',
-                  'local' : false,
-                  'remoteName' : 'dcterms:identifier',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'dcterms:title',
-                  'dataType' : 'reference',
-                  'referenceResource' : 'locationMeters',
-                  'name' : 'locationdesc',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_locationdesc_spilocationdctermstitle',
-                  'maxSize' : 100,
-                  'id' : 'aw4c12076d',
-                  'local' : false,
-                  'remoteName' : 'spi:location',
-               }).
-               addField({
-                  'multiplicity' : 'exactly-one',
-                  'dataType' : 'string',
-                  'usage' : 'upper',
-                  'name' : 'siteid',
-                  'index' : true,
-                  'artifactId' : 'locationMeters_siteid_spisiteid',
-                  'maxSize' : 8,
-                  'id' : 'aw8eb4b52b',
-                  'local' : false,
-                  'pkIndex' : 3,
-                  'remoteName' : 'spi:siteid',
-               }).
-               addField({
-                  'multiplicity' : 'exactly-one',
-                  'dataType' : 'boolean',
-                  'name' : 'active',
-                  'index' : true,
-                  'artifactId' : 'locationMeters_active_spiactive',
-                  'id' : 'aw1a6dbb2b',
-                  'local' : false,
-                  'remoteName' : 'spi:active',
-               }).
-               addField({
-                  'multiplicity' : 'exactly-one',
-                  'dataType' : 'boolean',
-                  'name' : 'dorollover',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_dorollover_spidorollover',
-                  'id' : 'awbdb1ff57',
-                  'local' : false,
-                  'remoteName' : 'spi:dorollover',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'dataType' : 'double',
-                  'name' : 'rollover',
-                  'index' : false,
-                  'scale' : 2,
-                  'artifactId' : 'locationMeters_rollover_spirollover',
-                  'id' : 'awfe67db74',
-                  'local' : false,
-                  'remoteName' : 'spi:rollover',
-               }).
-               addField({
-                  'multiplicity' : 'exactly-one',
-                  'dataType' : 'boolean',
-                  'name' : 'isdelta',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_isdelta_spiisdelta',
-                  'id' : 'aw218d8f4f',
-                  'local' : false,
-                  'remoteName' : 'spi:isdelta',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'dataType' : 'string',
-                  'usage' : 'upper',
-                  'name' : 'inspector',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_inspector_spiinspector',
-                  'maxSize' : 30,
-                  'id' : 'awe5c63804',
-                  'local' : false,
-                  'remoteName' : 'spi:inspector',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'dataType' : 'string',
-                  'name' : 'newreading',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_newreading_spinewreading',
-                  'maxSize' : 18,
-                  'id' : 'aw6091780a',
-                  'local' : false,
-                  'remoteName' : 'spi:newreading',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'dataType' : 'datetime',
-                  'name' : 'newreadingdate',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_newreadingdate_spinewreadingdate',
-                  'id' : 'awa514ccb0',
-                  'local' : false,
-                  'remoteName' : 'spi:newreadingdate',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'oslc:shortTitle',
-                  'dataType' : 'reference',
-                  'usage' : 'upper',
-                  'referenceResource' : 'locationMeters',
-                  'name' : 'metername',
-                  'index' : true,
-                  'artifactId' : 'locationMeters_metername_spimeteroslcshortTitle',
-                  'maxSize' : 10,
-                  'id' : 'awe7dfb8f7',
-                  'local' : false,
-                  'remoteName' : 'spi:meter',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'dcterms:title',
-                  'dataType' : 'reference',
-                  'referenceResource' : 'locationMeters',
-                  'name' : 'meterdesc',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_meterdesc_spimeterdctermstitle',
-                  'maxSize' : 100,
-                  'id' : 'aw16fade82',
-                  'local' : false,
-                  'remoteName' : 'spi:meter',
-               }).
-               addField({
-                  'multiplicity' : 'exactly-one',
-                  'displayValueRemoteName' : 'spi:metertype',
-                  'dataType' : 'reference',
-                  'usage' : 'upper',
-                  'referenceResource' : 'locationMeters',
-                  'name' : 'metertype',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_metertype_spimeterspimetertype',
-                  'maxSize' : 25,
-                  'id' : 'aw3aaefd31',
-                  'local' : false,
-                  'remoteName' : 'spi:meter',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'spi:domainid',
-                  'dataType' : 'reference',
-                  'usage' : 'upper',
-                  'referenceResource' : 'locationMeters',
-                  'name' : 'domainid',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_domainid_spimeterspidomainid',
-                  'maxSize' : 18,
-                  'id' : 'aw76a9e251',
-                  'local' : false,
-                  'remoteName' : 'spi:meter',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'dataType' : 'string',
-                  'usage' : 'upper',
-                  'name' : 'readingtype',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_readingtype_spireadingtype',
-                  'maxSize' : 10,
-                  'id' : 'awd1aec594',
-                  'local' : false,
-                  'remoteName' : 'spi:readingtype',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'dataType' : 'string',
-                  'name' : 'lastreading',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_lastreading_spilastreading',
-                  'maxSize' : 18,
-                  'id' : 'awaf6b969f',
-                  'local' : false,
-                  'remoteName' : 'spi:lastreading',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'dataType' : 'datetime',
-                  'name' : 'lastreadingdate',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_lastreadingdate_spilastreadingdate',
-                  'id' : 'awb07e105',
-                  'local' : false,
-                  'remoteName' : 'spi:lastreadingdate',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'dataType' : 'string',
-                  'name' : 'remarks',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_remarks_spiremarks',
-                  'maxSize' : 50,
-                  'id' : 'awd199a1a9',
-                  'local' : false,
-                  'remoteName' : 'spi:remarks',
-               }).
-               addField({
-                  'dataType' : 'string',
-                  'name' : 'localLastReading',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_localLastReading_string',
-                  'id' : 'aw4f8f3ec4',
-                  'persistent' : true,
-                  'local' : true,
-               }).
-               addField({
-                  'dataType' : 'dateTime',
-                  'name' : 'localLastReadingDate',
-                  'index' : false,
-                  'artifactId' : 'locationMeters_localLastReadingDate_dateTime',
-                  'id' : 'aw1d71a8da',
-                  'persistent' : true,
-                  'local' : true,
-               }).
-               setCreationFactories([
-                     {name:'locationMeterResourceCF', creationString:'\/oslc\/os\/oslclocationmeter' }
-               ]).
-               setQueryBases([
-                     {name:'locationMeterResourceQB', queryString:'\/oslc\/os\/oslclocationmeter', defaultForSearch: true, queryLabel:'' }
-               ]);
-            var resourcePromise051 = PersistenceManager.initCollection( resource051 );
-
-
-            var resource052 = new ResourceMetadata({
+            var resource053 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -7654,10 +7685,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise052 = PersistenceManager.initCollection( resource052 );
+            var resourcePromise053 = PersistenceManager.initCollection( resource053 );
 
 
-            var resource053 = new ResourceMetadata({
+            var resource054 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -7681,10 +7712,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise053 = PersistenceManager.initCollection( resource053 );
+            var resourcePromise054 = PersistenceManager.initCollection( resource054 );
 
 
-            var resource054 = new ResourceMetadata({
+            var resource055 = new ResourceMetadata({
                   'pageSize' : 200,
                   'resourceName' : 'anywherePropVal',
                   'isAttachment' : false,
@@ -7766,10 +7797,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'anywherepropvalQB', queryString:'\/oslc\/os\/oslcanywherepropval', defaultForSearch: true, queryLabel:'' }
                ]);
-            var resourcePromise054 = PersistenceManager.initCollection( resource054 );
+            var resourcePromise055 = PersistenceManager.initCollection( resource055 );
 
 
-            var resource055 = new ResourceMetadata({
+            var resource056 = new ResourceMetadata({
                   'pageSize' : 200,
                   'resourceName' : 'anywhereResourceSrc',
                   'isAttachment' : false,
@@ -7851,10 +7882,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'anywhereResourceQB', queryString:'\/oslc\/os\/oslcanywhereresrc', defaultForSearch: true, queryLabel:'' }
                ]);
-            var resourcePromise055 = PersistenceManager.initCollection( resource055 );
+            var resourcePromise056 = PersistenceManager.initCollection( resource056 );
 
 
-            var resource056 = new ResourceMetadata({
+            var resource057 = new ResourceMetadata({
                   'pageSize' : 200,
                   'resourceName' : 'anywhereResVal',
                   'isAttachment' : false,
@@ -7977,10 +8008,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'AnywhereResValQB', queryString:'\/oslc\/os\/oslcanywhereresrval', defaultForSearch: true, queryLabel:'' }
                ]);
-            var resourcePromise056 = PersistenceManager.initCollection( resource056 );
+            var resourcePromise057 = PersistenceManager.initCollection( resource057 );
 
 
-            var resource057 = new ResourceMetadata({
+            var resource058 = new ResourceMetadata({
                   'defaultOrderBy' : 'notificationId desc',
                   'pageSize' : 5,
                   'resourceName' : 'osusernotification',
@@ -8100,10 +8131,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'oslcosusernotificatiQB', queryString:'\/oslc\/os\/oslcosusernotificati', defaultForSearch: true, queryLabel:'' }
                ]).
                setWhereClause('spi%3Aeventforuser%3D%24%7Bpersonid%7D');
-            var resourcePromise057 = PersistenceManager.initCollection( resource057 );
+            var resourcePromise058 = PersistenceManager.initCollection( resource058 );
 
 
-            var resource058 = new ResourceMetadata({
+            var resource059 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -8137,10 +8168,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'key' : '1',
                   'local' : true,
                });
-            var resourcePromise058 = PersistenceManager.initCollection( resource058 );
+            var resourcePromise059 = PersistenceManager.initCollection( resource059 );
 
 
-            var resource059 = new ResourceMetadata({
+            var resource060 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -8181,10 +8212,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise059 = PersistenceManager.initCollection( resource059 );
+            var resourcePromise060 = PersistenceManager.initCollection( resource060 );
 
 
-            var resource060 = new ResourceMetadata({
+            var resource061 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -8216,10 +8247,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise060 = PersistenceManager.initCollection( resource060 );
+            var resourcePromise061 = PersistenceManager.initCollection( resource061 );
 
 
-            var resource061 = new ResourceMetadata({
+            var resource062 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -8278,10 +8309,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise061 = PersistenceManager.initCollection( resource061 );
+            var resourcePromise062 = PersistenceManager.initCollection( resource062 );
 
 
-            var resource062 = new ResourceMetadata({
+            var resource063 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -8448,10 +8479,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise062 = PersistenceManager.initCollection( resource062 );
+            var resourcePromise063 = PersistenceManager.initCollection( resource063 );
 
 
-            var resource063 = new ResourceMetadata({
+            var resource064 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -8573,10 +8604,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise063 = PersistenceManager.initCollection( resource063 );
+            var resourcePromise064 = PersistenceManager.initCollection( resource064 );
 
 
-            var resource064 = new ResourceMetadata({
+            var resource065 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -8610,10 +8641,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise064 = PersistenceManager.initCollection( resource064 );
+            var resourcePromise065 = PersistenceManager.initCollection( resource065 );
 
 
-            var resource065 = new ResourceMetadata({
+            var resource066 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -8674,10 +8705,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise065 = PersistenceManager.initCollection( resource065 );
+            var resourcePromise066 = PersistenceManager.initCollection( resource066 );
 
 
-            var resource066 = new ResourceMetadata({
+            var resource067 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -8710,10 +8741,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise066 = PersistenceManager.initCollection( resource066 );
+            var resourcePromise067 = PersistenceManager.initCollection( resource067 );
 
 
-            var resource067 = new ResourceMetadata({
+            var resource068 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -8745,10 +8776,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise067 = PersistenceManager.initCollection( resource067 );
+            var resourcePromise068 = PersistenceManager.initCollection( resource068 );
 
 
-            var resource068 = new ResourceMetadata({
+            var resource069 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -8837,10 +8868,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise068 = PersistenceManager.initCollection( resource068 );
+            var resourcePromise069 = PersistenceManager.initCollection( resource069 );
 
 
-            var resource069 = new ResourceMetadata({
+            var resource070 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -8944,10 +8975,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise069 = PersistenceManager.initCollection( resource069 );
+            var resourcePromise070 = PersistenceManager.initCollection( resource070 );
 
 
-            var resource070 = new ResourceMetadata({
+            var resource071 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -8981,10 +9012,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise070 = PersistenceManager.initCollection( resource070 );
+            var resourcePromise071 = PersistenceManager.initCollection( resource071 );
 
 
-            var resource071 = new ResourceMetadata({
+            var resource072 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : true,
                   'pageSize' : 1000,
@@ -9036,10 +9067,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise071 = PersistenceManager.initCollection( resource071 );
+            var resourcePromise072 = PersistenceManager.initCollection( resource072 );
 
 
-            var resource072 = new ResourceMetadata({
+            var resource073 = new ResourceMetadata({
                   'pageSize' : 1000,
                   'resourceName' : 'PlatformEsigAttributeResource',
                   'isAttachment' : false,
@@ -9078,10 +9109,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'PlatformEsigAttributeResource_query', queryString:'\/oslc\/os\/oslcesigattribute', queryLabel:'' }
                ]).
                setWhereClause('spi%3Aesigenabled%3D1');
-            var resourcePromise072 = PersistenceManager.initCollection( resource072 );
+            var resourcePromise073 = PersistenceManager.initCollection( resource073 );
 
 
-            var resource073 = new ResourceMetadata({
+            var resource074 = new ResourceMetadata({
                   'defaultOrderBy' : 'attemptdate desc',
                   'pageSize' : 1000,
                   'resourceName' : 'PlatformLoginTrackingResource',
@@ -9205,10 +9236,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'PlatformLoginTrackingResource_query', queryString:'\/oslc\/os\/oslclogintracking', queryLabel:'' }
                ]).
                setWhereClause('spi%3Aattemptdate%21%3D%22*%22');
-            var resourcePromise073 = PersistenceManager.initCollection( resource073 );
+            var resourcePromise074 = PersistenceManager.initCollection( resource074 );
 
 
-            var resource074 = new ResourceMetadata({
+            var resource075 = new ResourceMetadata({
                   'pageSize' : 100,
                   'resourceName' : 'attemptResultDomain',
                   'isAttachment' : false,
@@ -9325,10 +9356,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                      {name:'getAttemptResultDomain', queryString:'\/oslc\/os\/oslcsynonymdomain', queryLabel:'' }
                ]).
                setWhereClause('oslc%3AshortTitle%3D%22ATTEMPTRESULT%22');
-            var resourcePromise074 = PersistenceManager.initCollection( resource074 );
+            var resourcePromise075 = PersistenceManager.initCollection( resource075 );
 
 
-            var resource075 = new ResourceMetadata({
+            var resource076 = new ResourceMetadata({
                   'pageSize' : 100,
                   'resourceName' : 'lbslocation',
                   'isAttachment' : false,
@@ -9509,10 +9540,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                setQueryBases([
                      {name:'getLbslocation', queryString:'\/oslc\/os\/oslclbslocation', queryLabel:'' }
                ]);
-            var resourcePromise075 = PersistenceManager.initCollection( resource075 );
+            var resourcePromise076 = PersistenceManager.initCollection( resource076 );
 
 
-            var resource076 = new ResourceMetadata({
+            var resource077 = new ResourceMetadata({
                   'isSystem' : false,
                   'inMemory' : false,
                   'pageSize' : 1000,
@@ -9617,10 +9648,10 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'persistent' : true,
                   'local' : true,
                });
-            var resourcePromise076 = PersistenceManager.initCollection( resource076 );
+            var resourcePromise077 = PersistenceManager.initCollection( resource077 );
 
 
-            all([resourcePromise001, resourcePromise002, resourcePromise003, resourcePromise004, resourcePromise005, resourcePromise006, resourcePromise007, resourcePromise008, resourcePromise009, resourcePromise010, resourcePromise011, resourcePromise012, resourcePromise013, resourcePromise014, resourcePromise015, resourcePromise016, resourcePromise017, resourcePromise018, resourcePromise019, resourcePromise020, resourcePromise021, resourcePromise022, resourcePromise023, resourcePromise024, resourcePromise025, resourcePromise026, resourcePromise027, resourcePromise028, resourcePromise029, resourcePromise030, resourcePromise031, resourcePromise032, resourcePromise033, resourcePromise034, resourcePromise035, resourcePromise036, resourcePromise037, resourcePromise038, resourcePromise039, resourcePromise040, resourcePromise041, resourcePromise042, resourcePromise043, resourcePromise044, resourcePromise045, resourcePromise046, resourcePromise047, resourcePromise048, resourcePromise049, resourcePromise050, resourcePromise051, resourcePromise052, resourcePromise053, resourcePromise054, resourcePromise055, resourcePromise056, resourcePromise057, resourcePromise058, resourcePromise059, resourcePromise060, resourcePromise061, resourcePromise062, resourcePromise063, resourcePromise064, resourcePromise065, resourcePromise066, resourcePromise067, resourcePromise068, resourcePromise069, resourcePromise070, resourcePromise071, resourcePromise072, resourcePromise073, resourcePromise074, resourcePromise075, resourcePromise076]).then(function(results) {
+            all([resourcePromise001, resourcePromise002, resourcePromise003, resourcePromise004, resourcePromise005, resourcePromise006, resourcePromise007, resourcePromise008, resourcePromise009, resourcePromise010, resourcePromise011, resourcePromise012, resourcePromise013, resourcePromise014, resourcePromise015, resourcePromise016, resourcePromise017, resourcePromise018, resourcePromise019, resourcePromise020, resourcePromise021, resourcePromise022, resourcePromise023, resourcePromise024, resourcePromise025, resourcePromise026, resourcePromise027, resourcePromise028, resourcePromise029, resourcePromise030, resourcePromise031, resourcePromise032, resourcePromise033, resourcePromise034, resourcePromise035, resourcePromise036, resourcePromise037, resourcePromise038, resourcePromise039, resourcePromise040, resourcePromise041, resourcePromise042, resourcePromise043, resourcePromise044, resourcePromise045, resourcePromise046, resourcePromise047, resourcePromise048, resourcePromise049, resourcePromise050, resourcePromise051, resourcePromise052, resourcePromise053, resourcePromise054, resourcePromise055, resourcePromise056, resourcePromise057, resourcePromise058, resourcePromise059, resourcePromise060, resourcePromise061, resourcePromise062, resourcePromise063, resourcePromise064, resourcePromise065, resourcePromise066, resourcePromise067, resourcePromise068, resourcePromise069, resourcePromise070, resourcePromise071, resourcePromise072, resourcePromise073, resourcePromise074, resourcePromise075, resourcePromise076, resourcePromise077]).then(function(results) {
                  promise.resolve();
             }).
             otherwise(function(error) {

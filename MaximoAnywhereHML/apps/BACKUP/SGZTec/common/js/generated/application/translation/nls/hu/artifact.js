@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:54:00
+// Build: 2023-08-23 17:28:49
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[erÕsíteni~Manual do Aplicativo]",
          "Privacy Policy" : "[erÕsíteni~Privacy Policy]",
          "Connection Settings" : "[erÕsíteni~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[erÕsíteni~v7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[erÕsíteni~v7.6.4:2308231400H]",
          "My Assigned Work" : "[erÕsíteni~My Assigned Work]",
          "Default List" : "[erÕsíteni~Default List]",
          "Records with Errors" : "[erÕsíteni~Records with Errors]",
          "Search Results" : "[erÕsíteni~Search Results]",
          "Synchronize Data" : "[erÕsíteni~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[erÕsíteni~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[erÕsíteni~Work Order {0}]",
          "Scheduled Start" : "[erÕsíteni~Scheduled Start]",
          "Status" : "[erÕsíteni~Status]",
          "Service Item" : "[erÕsíteni~Service Item]",
          "Change Status" : "[erÕsíteni~Change Status]",
-         "Service Item Details" : "[erÕsíteni~Service Item Details]",
-         "Inspection Item" : "[erÕsíteni~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[erÕsíteni~Subitem de Fiscalização]",
+         "Tap to enter" : "[erÕsíteni~Tap to enter]",
+         "Clear" : "[erÕsíteni~Clear]",
+         "Search" : "[erÕsíteni~Search]",
+         "Detalhes do item de servi\u00E7o" : "[erÕsíteni~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[erÕsíteni~Create Follow-Up Service Item]",
+         "Map" : "[erÕsíteni~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[erÕsíteni~Item de Fiscalização]",
          "Classification" : "[erÕsíteni~Classification]",
          "Days" : "[erÕsíteni~Days]",
          "Subprefeitura" : "[erÕsíteni~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[erÕsíteni~Approval date]",
          "Select" : "[erÕsíteni~Select]",
          "Comments" : "[erÕsíteni~Comments]",
+         "Crew" : "[erÕsíteni~Crew]",
+         "Planned Tools" : "[erÕsíteni~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[erÕsíteni~Item de Serviço Originante]",
          "Report" : "[erÕsíteni~Report]",
          "Attachments" : "[erÕsíteni~Attachments]",
+         "Labor Assignments" : "[erÕsíteni~Labor Assignments]",
+         "Task ID, Labor" : "[erÕsíteni~Task ID, Labor]",
+         "Labor Assignment Details" : "[erÕsíteni~Labor Assignment Details]",
+         "Task" : "[erÕsíteni~Task]",
+         "Scheduled Date" : "[erÕsíteni~Scheduled Date]",
+         "Hours" : "[erÕsíteni~Hours]",
+         "Vendor" : "[erÕsíteni~Vendor]",
+         "Contract" : "[erÕsíteni~Contract]",
+         "Task ID, Tool" : "[erÕsíteni~Task ID, Tool]",
+         "Tool Details" : "[erÕsíteni~Tool Details]",
+         "Tool" : "[erÕsíteni~Tool]",
+         "Quantity" : "[erÕsíteni~Quantity]",
+         "Take Photo" : "[erÕsíteni~Take Photo]",
+         "Latitude" : "[erÕsíteni~Latitude]",
+         "Longitude" : "[erÕsíteni~Longitude]",
+         "Scheduled Finish" : "[erÕsíteni~Scheduled Finish]",
+         "Classify Work Order" : "[erÕsíteni~Classify Work Order]",
+         "Cancel" : "[erÕsíteni~Cancel]",
+         "Create" : "[erÕsíteni~Create]",
          "Detalhes do Item de OS Originante" : "[erÕsíteni~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[erÕsíteni~Item de OS originante]",
          "Servi\u00E7o" : "[erÕsíteni~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[erÕsíteni~Categorias de Anexos]",
          "Categorias" : "[erÕsíteni~Categorias]",
          "Categorias de Anexos (Filho)" : "[erÕsíteni~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[erÕsíteni~Take Photo]",
          "Pick from Gallery" : "[erÕsíteni~Pick from Gallery]",
          "Attachments (Categorizado)" : "[erÕsíteni~Attachments (Categorizado)]",
          "Classify" : "[erÕsíteni~Classify]",
-         "Cancel" : "[erÕsíteni~Cancel]",
-         "Clear" : "[erÕsíteni~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[erÕsíteni~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[erÕsíteni~Data Inicial]",
          "Data Final" : "[erÕsíteni~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[erÕsíteni~Motivo]",
          "Save" : "[erÕsíteni~Save]",
          "Work Order" : "[erÕsíteni~Work Order]",
-         "Task" : "[erÕsíteni~Task]",
          "Work Order Status" : "[erÕsíteni~Work Order Status]",
          "Task Status" : "[erÕsíteni~Task Status]",
          "Select Work Type" : "[erÕsíteni~Select Work Type]",
          "Select Value" : "[erÕsíteni~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[erÕsíteni~Selecione a Classificação]",
+         "Equipes" : "[erÕsíteni~Equipes]",
          "Attachment Details" : "[erÕsíteni~Attachment Details]",
          "Name" : "[erÕsíteni~Name]",
-         "Tap to enter" : "[erÕsíteni~Tap to enter]",
          "Folder" : "[erÕsíteni~Folder]",
          "File Type" : "[erÕsíteni~File Type]",
          "File Size (KB)" : "[erÕsíteni~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[erÕsíteni~Invalid binding.]",
          "ClearChanges" : "[erÕsíteni~Undo Changes]",
          "Resend" : "[erÕsíteni~Resend Changes]",
-         "Search" : "[erÕsíteni~Search]",
          "Matches" : "[erÕsíteni~Matches]",
          "Contains" : "[erÕsíteni~Contains]",
          "listmismatch" : "[erÕsíteni~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

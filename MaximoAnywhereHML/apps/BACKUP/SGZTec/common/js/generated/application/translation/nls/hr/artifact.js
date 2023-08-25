@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:54:00
+// Build: 2023-08-23 17:28:49
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[članak~Manual do Aplicativo]",
          "Privacy Policy" : "[članak~Privacy Policy]",
          "Connection Settings" : "[članak~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[članak~v7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[članak~v7.6.4:2308231400H]",
          "My Assigned Work" : "[članak~My Assigned Work]",
          "Default List" : "[članak~Default List]",
          "Records with Errors" : "[članak~Records with Errors]",
          "Search Results" : "[članak~Search Results]",
          "Synchronize Data" : "[članak~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[članak~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[članak~Work Order {0}]",
          "Scheduled Start" : "[članak~Scheduled Start]",
          "Status" : "[članak~Status]",
          "Service Item" : "[članak~Service Item]",
          "Change Status" : "[članak~Change Status]",
-         "Service Item Details" : "[članak~Service Item Details]",
-         "Inspection Item" : "[članak~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[članak~Subitem de Fiscalização]",
+         "Tap to enter" : "[članak~Tap to enter]",
+         "Clear" : "[članak~Clear]",
+         "Search" : "[članak~Search]",
+         "Detalhes do item de servi\u00E7o" : "[članak~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[članak~Create Follow-Up Service Item]",
+         "Map" : "[članak~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[članak~Item de Fiscalização]",
          "Classification" : "[članak~Classification]",
          "Days" : "[članak~Days]",
          "Subprefeitura" : "[članak~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[članak~Approval date]",
          "Select" : "[članak~Select]",
          "Comments" : "[članak~Comments]",
+         "Crew" : "[članak~Crew]",
+         "Planned Tools" : "[članak~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[članak~Item de Serviço Originante]",
          "Report" : "[članak~Report]",
          "Attachments" : "[članak~Attachments]",
+         "Labor Assignments" : "[članak~Labor Assignments]",
+         "Task ID, Labor" : "[članak~Task ID, Labor]",
+         "Labor Assignment Details" : "[članak~Labor Assignment Details]",
+         "Task" : "[članak~Task]",
+         "Scheduled Date" : "[članak~Scheduled Date]",
+         "Hours" : "[članak~Hours]",
+         "Vendor" : "[članak~Vendor]",
+         "Contract" : "[članak~Contract]",
+         "Task ID, Tool" : "[članak~Task ID, Tool]",
+         "Tool Details" : "[članak~Tool Details]",
+         "Tool" : "[članak~Tool]",
+         "Quantity" : "[članak~Quantity]",
+         "Take Photo" : "[članak~Take Photo]",
+         "Latitude" : "[članak~Latitude]",
+         "Longitude" : "[članak~Longitude]",
+         "Scheduled Finish" : "[članak~Scheduled Finish]",
+         "Classify Work Order" : "[članak~Classify Work Order]",
+         "Cancel" : "[članak~Cancel]",
+         "Create" : "[članak~Create]",
          "Detalhes do Item de OS Originante" : "[članak~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[članak~Item de OS originante]",
          "Servi\u00E7o" : "[članak~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[članak~Categorias de Anexos]",
          "Categorias" : "[članak~Categorias]",
          "Categorias de Anexos (Filho)" : "[članak~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[članak~Take Photo]",
          "Pick from Gallery" : "[članak~Pick from Gallery]",
          "Attachments (Categorizado)" : "[članak~Attachments (Categorizado)]",
          "Classify" : "[članak~Classify]",
-         "Cancel" : "[članak~Cancel]",
-         "Clear" : "[članak~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[članak~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[članak~Data Inicial]",
          "Data Final" : "[članak~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[članak~Motivo]",
          "Save" : "[članak~Save]",
          "Work Order" : "[članak~Work Order]",
-         "Task" : "[članak~Task]",
          "Work Order Status" : "[članak~Work Order Status]",
          "Task Status" : "[članak~Task Status]",
          "Select Work Type" : "[članak~Select Work Type]",
          "Select Value" : "[članak~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[članak~Selecione a Classificação]",
+         "Equipes" : "[članak~Equipes]",
          "Attachment Details" : "[članak~Attachment Details]",
          "Name" : "[članak~Name]",
-         "Tap to enter" : "[članak~Tap to enter]",
          "Folder" : "[članak~Folder]",
          "File Type" : "[članak~File Type]",
          "File Size (KB)" : "[članak~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[članak~Invalid binding.]",
          "ClearChanges" : "[članak~Undo Changes]",
          "Resend" : "[članak~Resend Changes]",
-         "Search" : "[članak~Search]",
          "Matches" : "[članak~Matches]",
          "Contains" : "[članak~Contains]",
          "listmismatch" : "[članak~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:57
+// Build: 2023-08-23 17:28:47
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[administración~Manual do Aplicativo]",
          "Privacy Policy" : "[administración~Privacy Policy]",
          "Connection Settings" : "[administración~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[administración~v7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[administración~v7.6.4:2308231400H]",
          "My Assigned Work" : "[administración~My Assigned Work]",
          "Default List" : "[administración~Default List]",
          "Records with Errors" : "[administración~Records with Errors]",
          "Search Results" : "[administración~Search Results]",
          "Synchronize Data" : "[administración~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[administración~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[administración~Work Order {0}]",
          "Scheduled Start" : "[administración~Scheduled Start]",
          "Status" : "[administración~Status]",
          "Service Item" : "[administración~Service Item]",
          "Change Status" : "[administración~Change Status]",
-         "Service Item Details" : "[administración~Service Item Details]",
-         "Inspection Item" : "[administración~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[administración~Subitem de Fiscalização]",
+         "Tap to enter" : "[administración~Tap to enter]",
+         "Clear" : "[administración~Clear]",
+         "Search" : "[administración~Search]",
+         "Detalhes do item de servi\u00E7o" : "[administración~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[administración~Create Follow-Up Service Item]",
+         "Map" : "[administración~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[administración~Item de Fiscalização]",
          "Classification" : "[administración~Classification]",
          "Days" : "[administración~Days]",
          "Subprefeitura" : "[administración~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[administración~Approval date]",
          "Select" : "[administración~Select]",
          "Comments" : "[administración~Comments]",
+         "Crew" : "[administración~Crew]",
+         "Planned Tools" : "[administración~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[administración~Item de Serviço Originante]",
          "Report" : "[administración~Report]",
          "Attachments" : "[administración~Attachments]",
+         "Labor Assignments" : "[administración~Labor Assignments]",
+         "Task ID, Labor" : "[administración~Task ID, Labor]",
+         "Labor Assignment Details" : "[administración~Labor Assignment Details]",
+         "Task" : "[administración~Task]",
+         "Scheduled Date" : "[administración~Scheduled Date]",
+         "Hours" : "[administración~Hours]",
+         "Vendor" : "[administración~Vendor]",
+         "Contract" : "[administración~Contract]",
+         "Task ID, Tool" : "[administración~Task ID, Tool]",
+         "Tool Details" : "[administración~Tool Details]",
+         "Tool" : "[administración~Tool]",
+         "Quantity" : "[administración~Quantity]",
+         "Take Photo" : "[administración~Take Photo]",
+         "Latitude" : "[administración~Latitude]",
+         "Longitude" : "[administración~Longitude]",
+         "Scheduled Finish" : "[administración~Scheduled Finish]",
+         "Classify Work Order" : "[administración~Classify Work Order]",
+         "Cancel" : "[administración~Cancel]",
+         "Create" : "[administración~Create]",
          "Detalhes do Item de OS Originante" : "[administración~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[administración~Item de OS originante]",
          "Servi\u00E7o" : "[administración~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[administración~Categorias de Anexos]",
          "Categorias" : "[administración~Categorias]",
          "Categorias de Anexos (Filho)" : "[administración~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[administración~Take Photo]",
          "Pick from Gallery" : "[administración~Pick from Gallery]",
          "Attachments (Categorizado)" : "[administración~Attachments (Categorizado)]",
          "Classify" : "[administración~Classify]",
-         "Cancel" : "[administración~Cancel]",
-         "Clear" : "[administración~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[administración~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[administración~Data Inicial]",
          "Data Final" : "[administración~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[administración~Motivo]",
          "Save" : "[administración~Save]",
          "Work Order" : "[administración~Work Order]",
-         "Task" : "[administración~Task]",
          "Work Order Status" : "[administración~Work Order Status]",
          "Task Status" : "[administración~Task Status]",
          "Select Work Type" : "[administración~Select Work Type]",
          "Select Value" : "[administración~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[administración~Selecione a Classificação]",
+         "Equipes" : "[administración~Equipes]",
          "Attachment Details" : "[administración~Attachment Details]",
          "Name" : "[administración~Name]",
-         "Tap to enter" : "[administración~Tap to enter]",
          "Folder" : "[administración~Folder]",
          "File Type" : "[administración~File Type]",
          "File Size (KB)" : "[administración~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[administración~Invalid binding.]",
          "ClearChanges" : "[administración~Undo Changes]",
          "Resend" : "[administración~Resend Changes]",
-         "Search" : "[administración~Search]",
          "Matches" : "[administración~Matches]",
          "Contains" : "[administración~Contains]",
          "listmismatch" : "[administración~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

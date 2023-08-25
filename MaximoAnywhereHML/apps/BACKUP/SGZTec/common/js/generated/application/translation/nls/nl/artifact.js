@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:59
+// Build: 2023-08-23 17:28:48
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[onbepaalde~Manual do Aplicativo]",
          "Privacy Policy" : "[onbepaalde~Privacy Policy]",
          "Connection Settings" : "[onbepaalde~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[onbepaalde~v7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[onbepaalde~v7.6.4:2308231400H]",
          "My Assigned Work" : "[onbepaalde~My Assigned Work]",
          "Default List" : "[onbepaalde~Default List]",
          "Records with Errors" : "[onbepaalde~Records with Errors]",
          "Search Results" : "[onbepaalde~Search Results]",
          "Synchronize Data" : "[onbepaalde~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[onbepaalde~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[onbepaalde~Work Order {0}]",
          "Scheduled Start" : "[onbepaalde~Scheduled Start]",
          "Status" : "[onbepaalde~Status]",
          "Service Item" : "[onbepaalde~Service Item]",
          "Change Status" : "[onbepaalde~Change Status]",
-         "Service Item Details" : "[onbepaalde~Service Item Details]",
-         "Inspection Item" : "[onbepaalde~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[onbepaalde~Subitem de Fiscalização]",
+         "Tap to enter" : "[onbepaalde~Tap to enter]",
+         "Clear" : "[onbepaalde~Clear]",
+         "Search" : "[onbepaalde~Search]",
+         "Detalhes do item de servi\u00E7o" : "[onbepaalde~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[onbepaalde~Create Follow-Up Service Item]",
+         "Map" : "[onbepaalde~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[onbepaalde~Item de Fiscalização]",
          "Classification" : "[onbepaalde~Classification]",
          "Days" : "[onbepaalde~Days]",
          "Subprefeitura" : "[onbepaalde~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[onbepaalde~Approval date]",
          "Select" : "[onbepaalde~Select]",
          "Comments" : "[onbepaalde~Comments]",
+         "Crew" : "[onbepaalde~Crew]",
+         "Planned Tools" : "[onbepaalde~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[onbepaalde~Item de Serviço Originante]",
          "Report" : "[onbepaalde~Report]",
          "Attachments" : "[onbepaalde~Attachments]",
+         "Labor Assignments" : "[onbepaalde~Labor Assignments]",
+         "Task ID, Labor" : "[onbepaalde~Task ID, Labor]",
+         "Labor Assignment Details" : "[onbepaalde~Labor Assignment Details]",
+         "Task" : "[onbepaalde~Task]",
+         "Scheduled Date" : "[onbepaalde~Scheduled Date]",
+         "Hours" : "[onbepaalde~Hours]",
+         "Vendor" : "[onbepaalde~Vendor]",
+         "Contract" : "[onbepaalde~Contract]",
+         "Task ID, Tool" : "[onbepaalde~Task ID, Tool]",
+         "Tool Details" : "[onbepaalde~Tool Details]",
+         "Tool" : "[onbepaalde~Tool]",
+         "Quantity" : "[onbepaalde~Quantity]",
+         "Take Photo" : "[onbepaalde~Take Photo]",
+         "Latitude" : "[onbepaalde~Latitude]",
+         "Longitude" : "[onbepaalde~Longitude]",
+         "Scheduled Finish" : "[onbepaalde~Scheduled Finish]",
+         "Classify Work Order" : "[onbepaalde~Classify Work Order]",
+         "Cancel" : "[onbepaalde~Cancel]",
+         "Create" : "[onbepaalde~Create]",
          "Detalhes do Item de OS Originante" : "[onbepaalde~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[onbepaalde~Item de OS originante]",
          "Servi\u00E7o" : "[onbepaalde~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[onbepaalde~Categorias de Anexos]",
          "Categorias" : "[onbepaalde~Categorias]",
          "Categorias de Anexos (Filho)" : "[onbepaalde~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[onbepaalde~Take Photo]",
          "Pick from Gallery" : "[onbepaalde~Pick from Gallery]",
          "Attachments (Categorizado)" : "[onbepaalde~Attachments (Categorizado)]",
          "Classify" : "[onbepaalde~Classify]",
-         "Cancel" : "[onbepaalde~Cancel]",
-         "Clear" : "[onbepaalde~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[onbepaalde~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[onbepaalde~Data Inicial]",
          "Data Final" : "[onbepaalde~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[onbepaalde~Motivo]",
          "Save" : "[onbepaalde~Save]",
          "Work Order" : "[onbepaalde~Work Order]",
-         "Task" : "[onbepaalde~Task]",
          "Work Order Status" : "[onbepaalde~Work Order Status]",
          "Task Status" : "[onbepaalde~Task Status]",
          "Select Work Type" : "[onbepaalde~Select Work Type]",
          "Select Value" : "[onbepaalde~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[onbepaalde~Selecione a Classificação]",
+         "Equipes" : "[onbepaalde~Equipes]",
          "Attachment Details" : "[onbepaalde~Attachment Details]",
          "Name" : "[onbepaalde~Name]",
-         "Tap to enter" : "[onbepaalde~Tap to enter]",
          "Folder" : "[onbepaalde~Folder]",
          "File Type" : "[onbepaalde~File Type]",
          "File Size (KB)" : "[onbepaalde~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[onbepaalde~Invalid binding.]",
          "ClearChanges" : "[onbepaalde~Undo Changes]",
          "Resend" : "[onbepaalde~Resend Changes]",
-         "Search" : "[onbepaalde~Search]",
          "Matches" : "[onbepaalde~Matches]",
          "Contains" : "[onbepaalde~Contains]",
          "listmismatch" : "[onbepaalde~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

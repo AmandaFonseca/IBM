@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:56
+// Build: 2023-08-23 17:28:47
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[engbManual do Aplicativo]",
          "Privacy Policy" : "[engbPrivacy Policy]",
          "Connection Settings" : "[engbConnection Settings]",
-         "v7.6.4:300820221611*H" : "[engbv7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[engbv7.6.4:2308231400H]",
          "My Assigned Work" : "[engbMy Assigned Work]",
          "Default List" : "[engbDefault List]",
          "Records with Errors" : "[engbRecords with Errors]",
          "Search Results" : "[engbSearch Results]",
          "Synchronize Data" : "[engbSynchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[engbBuscar Subitem de Fiscalização]",
          "Work Order {0}" : "[engbWork Order {0}]",
          "Scheduled Start" : "[engbScheduled Start]",
          "Status" : "[engbStatus]",
          "Service Item" : "[engbService Item]",
          "Change Status" : "[engbChange Status]",
-         "Service Item Details" : "[engbService Item Details]",
-         "Inspection Item" : "[engbInspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[engbSubitem de Fiscalização]",
+         "Tap to enter" : "[engbTap to enter]",
+         "Clear" : "[engbClear]",
+         "Search" : "[engbSearch]",
+         "Detalhes do item de servi\u00E7o" : "[engbDetalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[engbCreate Follow-Up Service Item]",
+         "Map" : "[engbMap]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[engbItem de Fiscalização]",
          "Classification" : "[engbClassification]",
          "Days" : "[engbDays]",
          "Subprefeitura" : "[engbSubprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[engbApproval date]",
          "Select" : "[engbSelect]",
          "Comments" : "[engbComments]",
+         "Crew" : "[engbCrew]",
+         "Planned Tools" : "[engbPlanned Tools]",
          "Item de Servi\u00E7o Originante" : "[engbItem de Serviço Originante]",
          "Report" : "[engbReport]",
          "Attachments" : "[engbAttachments]",
+         "Labor Assignments" : "[engbLabor Assignments]",
+         "Task ID, Labor" : "[engbTask ID, Labor]",
+         "Labor Assignment Details" : "[engbLabor Assignment Details]",
+         "Task" : "[engbTask]",
+         "Scheduled Date" : "[engbScheduled Date]",
+         "Hours" : "[engbHours]",
+         "Vendor" : "[engbVendor]",
+         "Contract" : "[engbContract]",
+         "Task ID, Tool" : "[engbTask ID, Tool]",
+         "Tool Details" : "[engbTool Details]",
+         "Tool" : "[engbTool]",
+         "Quantity" : "[engbQuantity]",
+         "Take Photo" : "[engbTake Photo]",
+         "Latitude" : "[engbLatitude]",
+         "Longitude" : "[engbLongitude]",
+         "Scheduled Finish" : "[engbScheduled Finish]",
+         "Classify Work Order" : "[engbClassify Work Order]",
+         "Cancel" : "[engbCancel]",
+         "Create" : "[engbCreate]",
          "Detalhes do Item de OS Originante" : "[engbDetalhes do Item de OS Originante]",
          "Item de OS originante" : "[engbItem de OS originante]",
          "Servi\u00E7o" : "[engbServiço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[engbCategorias de Anexos]",
          "Categorias" : "[engbCategorias]",
          "Categorias de Anexos (Filho)" : "[engbCategorias de Anexos (Filho)]",
-         "Take Photo" : "[engbTake Photo]",
          "Pick from Gallery" : "[engbPick from Gallery]",
          "Attachments (Categorizado)" : "[engbAttachments (Categorizado)]",
          "Classify" : "[engbClassify]",
-         "Cancel" : "[engbCancel]",
-         "Clear" : "[engbClear]",
          "Descarga da Massa Asf\u00E1ltica" : "[engbDescarga da Massa Asfáltica]",
          "Data Inicial" : "[engbData Inicial]",
          "Data Final" : "[engbData Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[engbMotivo]",
          "Save" : "[engbSave]",
          "Work Order" : "[engbWork Order]",
-         "Task" : "[engbTask]",
          "Work Order Status" : "[engbWork Order Status]",
          "Task Status" : "[engbTask Status]",
          "Select Work Type" : "[engbSelect Work Type]",
          "Select Value" : "[engbSelect Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[engbSelecione a Classificação]",
+         "Equipes" : "[engbEquipes]",
          "Attachment Details" : "[engbAttachment Details]",
          "Name" : "[engbName]",
-         "Tap to enter" : "[engbTap to enter]",
          "Folder" : "[engbFolder]",
          "File Type" : "[engbFile Type]",
          "File Size (KB)" : "[engbFile Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[engbInvalid binding.]",
          "ClearChanges" : "[engbUndo Changes]",
          "Resend" : "[engbResend Changes]",
-         "Search" : "[engbSearch]",
          "Matches" : "[engbMatches]",
          "Contains" : "[engbContains]",
          "listmismatch" : "[engbThe selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

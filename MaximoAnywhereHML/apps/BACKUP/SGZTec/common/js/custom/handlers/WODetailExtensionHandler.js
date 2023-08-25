@@ -53,6 +53,7 @@ define(
 						var newWorkOrder = eventContext.application.getResource('workOrder').createNewRecord();
 						
 						newWorkOrder.set('parentwonum', this.originalWorkOrder.get('parentwonum')); 
+						newWorkOrder.set('msjpnum', this.originalWorkOrder.get('parentJpnum')); 
 						newWorkOrder.set('woclass', 'ATIVIDADE');
 						newWorkOrder.set('origrecordid', this.originalWorkOrder.get('wonum')); 
 						newWorkOrder.set('origrecordclass', this.originalWorkOrder.get('woclass'));
@@ -86,47 +87,7 @@ define(
 						newWorkOrder.set('woserviceaddressline3', this.originalWorkOrder.get('woserviceaddressline3'));
 						newWorkOrder.set('woservicepostalcode', this.originalWorkOrder.get('woservicepostalcode'));
 						newWorkOrder.set('woservicecity', this.originalWorkOrder.get('woservicecity'));
-						newWorkOrder.set('woservicestateprovince', this.originalWorkOrder.get('woservicestateprovince'));
-					
-						this.originalWorkOrder.getModelDataSet('toollist', true).then(function(toollistSet){
-							newWorkOrder.getModelDataSet('toollist', true).then(function(newWorkOrderToollistSet) {
-								  for(var i=0; i<toollistSet.count();i++){
-									var newRec = newWorkOrderToollistSet.createNewRecord();
-									var currRec = toollistSet.getRecordAt(i);										
-									newRec.set('tool', currRec.get('tool'));
-									newRec.set('taskid', currRec.get('taskid'));
-									newRec.set('tooldesc', currRec.get('tooldesc'));
-									newRec.set('toolanddescription', currRec.get('toolanddescription'));
-									newRec.set('quantity', currRec.get('quantity'));
-									newRec.set('hours', currRec.get('hours'));
-									newRec.set('linetype', currRec.get('linetype'));
-									newRec.set('itemsetid', currRec.get('itemsetid'));
-								}
-							});
-						});
-						
-						this.originalWorkOrder.getModelDataSet('assignmentlist', true).then(function(assignmentlistSet){
-							newWorkOrder.getModelDataSet('assignmentlist', true).then(function(newWorkOrderAssignmentListSet) {
-								  for(var i=0; i<assignmentlistSet.count();i++){
-									var newRec = newWorkOrderAssignmentListSet.createNewRecord();
-									var currRec = assignmentlistSet.getRecordAt(i);
-									newRec.set('taskid', currRec.get('taskid'));
-									newRec.set('laborcode', currRec.get('laborcode'));
-									newRec.set('laborname', currRec.get('laborname'));
-									newRec.set('craft', currRec.get('craft'));
-									newRec.set('skilllevel', currRec.get('skilllevel'));
-									newRec.set('crew', currRec.get('crew'));
-									newRec.set('amcrewtype', currRec.get('amcrewtype'));
-									newRec.set('status', currRec.get('status'));
-									newRec.set('scheduledate', currRec.get('scheduledate'));
-									newRec.set('laborhours', currRec.get('laborhours'));
-									//newRec.set('vendor', currRec.get('vendor'));
-									newRec.set('contractnum', currRec.get('contractnum'));
-								}
-							});
-						});
-						
-									
+						newWorkOrder.set('woservicestateprovince', this.originalWorkOrder.get('woservicestateprovince'));									
 						newWorkOrder.set('siteid', this.originalWorkOrder.get("siteid"));
 						newWorkOrder.set('orgid', this.originalWorkOrder.get('orgid'));						
 						
@@ -679,6 +640,7 @@ define(
 						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
 						var currWO = workOrderSet.getCurrentRecord();
 						var classsify = currWO.get('classstructureid');
+						var parentJpnum = currWO.get('parentJpnum');
 						var self = this;
 						var classstructure = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,classstructure);
@@ -705,17 +667,17 @@ define(
 							
 						var iscClasssify = classstructure.find('classstructureid == $1', classsify);
 						var parentClass = iscClasssify[0].ancestor;
-						
+						var parentJpnum = currWO.get('msjpnum');
 						var ancestorLoc = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,ancestorLoc);
 						ancestorLoc.filter('ancestor == $1', parentClass);
 						ancestorLoc.filter('classstructureid != $1', parentClass);
 						classsify = classsify.toString();
-						if(classsify == '1570'){
+						if(parentJpnum == '1570'){
 							ancestorLoc.filter('classstructureid != $1', '1569');
 							ancestorLoc.filter('classstructureid != $1', '1575');
 						}
-						if(classsify == '1569'){
+						if(parentJpnum == '1569'){
 							ancestorLoc.filter('classstructureid != $1', '1570');
 							ancestorLoc.filter('classstructureid != $1', '1574');
 						}
@@ -1185,7 +1147,9 @@ define(
 						let siteid = wo.get("siteid");
 						var filter = [];		
 
-						msamcrew.filter('ms_contractnum == $1 && ms_active == $2', pd_contractnum, 1);
+						//msamcrew.filter('ms_contractnum == $1 && ms_active == $2', pd_contractnum, 1);
+						msamcrew.filter('ms_contractnum == $1 && ms_active == $2 && ms_siteid == $3', pd_contractnum, 1, null);
+
 					},
 
 					/*isOrigRec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)

@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:58
+// Build: 2023-08-23 17:28:48
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[vagão do metrô~Manual do Aplicativo]",
          "Privacy Policy" : "[vagão do metrô~Privacy Policy]",
          "Connection Settings" : "[vagão do metrô~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[vagão do metrô~v7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[vagão do metrô~v7.6.4:2308231400H]",
          "My Assigned Work" : "[vagão do metrô~My Assigned Work]",
          "Default List" : "[vagão do metrô~Default List]",
          "Records with Errors" : "[vagão do metrô~Records with Errors]",
          "Search Results" : "[vagão do metrô~Search Results]",
          "Synchronize Data" : "[vagão do metrô~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[vagão do metrô~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[vagão do metrô~Work Order {0}]",
          "Scheduled Start" : "[vagão do metrô~Scheduled Start]",
          "Status" : "[vagão do metrô~Status]",
          "Service Item" : "[vagão do metrô~Service Item]",
          "Change Status" : "[vagão do metrô~Change Status]",
-         "Service Item Details" : "[vagão do metrô~Service Item Details]",
-         "Inspection Item" : "[vagão do metrô~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[vagão do metrô~Subitem de Fiscalização]",
+         "Tap to enter" : "[vagão do metrô~Tap to enter]",
+         "Clear" : "[vagão do metrô~Clear]",
+         "Search" : "[vagão do metrô~Search]",
+         "Detalhes do item de servi\u00E7o" : "[vagão do metrô~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[vagão do metrô~Create Follow-Up Service Item]",
+         "Map" : "[vagão do metrô~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[vagão do metrô~Item de Fiscalização]",
          "Classification" : "[vagão do metrô~Classification]",
          "Days" : "[vagão do metrô~Days]",
          "Subprefeitura" : "[vagão do metrô~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[vagão do metrô~Approval date]",
          "Select" : "[vagão do metrô~Select]",
          "Comments" : "[vagão do metrô~Comments]",
+         "Crew" : "[vagão do metrô~Crew]",
+         "Planned Tools" : "[vagão do metrô~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[vagão do metrô~Item de Serviço Originante]",
          "Report" : "[vagão do metrô~Report]",
          "Attachments" : "[vagão do metrô~Attachments]",
+         "Labor Assignments" : "[vagão do metrô~Labor Assignments]",
+         "Task ID, Labor" : "[vagão do metrô~Task ID, Labor]",
+         "Labor Assignment Details" : "[vagão do metrô~Labor Assignment Details]",
+         "Task" : "[vagão do metrô~Task]",
+         "Scheduled Date" : "[vagão do metrô~Scheduled Date]",
+         "Hours" : "[vagão do metrô~Hours]",
+         "Vendor" : "[vagão do metrô~Vendor]",
+         "Contract" : "[vagão do metrô~Contract]",
+         "Task ID, Tool" : "[vagão do metrô~Task ID, Tool]",
+         "Tool Details" : "[vagão do metrô~Tool Details]",
+         "Tool" : "[vagão do metrô~Tool]",
+         "Quantity" : "[vagão do metrô~Quantity]",
+         "Take Photo" : "[vagão do metrô~Take Photo]",
+         "Latitude" : "[vagão do metrô~Latitude]",
+         "Longitude" : "[vagão do metrô~Longitude]",
+         "Scheduled Finish" : "[vagão do metrô~Scheduled Finish]",
+         "Classify Work Order" : "[vagão do metrô~Classify Work Order]",
+         "Cancel" : "[vagão do metrô~Cancel]",
+         "Create" : "[vagão do metrô~Create]",
          "Detalhes do Item de OS Originante" : "[vagão do metrô~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[vagão do metrô~Item de OS originante]",
          "Servi\u00E7o" : "[vagão do metrô~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[vagão do metrô~Categorias de Anexos]",
          "Categorias" : "[vagão do metrô~Categorias]",
          "Categorias de Anexos (Filho)" : "[vagão do metrô~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[vagão do metrô~Take Photo]",
          "Pick from Gallery" : "[vagão do metrô~Pick from Gallery]",
          "Attachments (Categorizado)" : "[vagão do metrô~Attachments (Categorizado)]",
          "Classify" : "[vagão do metrô~Classify]",
-         "Cancel" : "[vagão do metrô~Cancel]",
-         "Clear" : "[vagão do metrô~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[vagão do metrô~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[vagão do metrô~Data Inicial]",
          "Data Final" : "[vagão do metrô~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[vagão do metrô~Motivo]",
          "Save" : "[vagão do metrô~Save]",
          "Work Order" : "[vagão do metrô~Work Order]",
-         "Task" : "[vagão do metrô~Task]",
          "Work Order Status" : "[vagão do metrô~Work Order Status]",
          "Task Status" : "[vagão do metrô~Task Status]",
          "Select Work Type" : "[vagão do metrô~Select Work Type]",
          "Select Value" : "[vagão do metrô~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[vagão do metrô~Selecione a Classificação]",
+         "Equipes" : "[vagão do metrô~Equipes]",
          "Attachment Details" : "[vagão do metrô~Attachment Details]",
          "Name" : "[vagão do metrô~Name]",
-         "Tap to enter" : "[vagão do metrô~Tap to enter]",
          "Folder" : "[vagão do metrô~Folder]",
          "File Type" : "[vagão do metrô~File Type]",
          "File Size (KB)" : "[vagão do metrô~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[vagão do metrô~Invalid binding.]",
          "ClearChanges" : "[vagão do metrô~Undo Changes]",
          "Resend" : "[vagão do metrô~Resend Changes]",
-         "Search" : "[vagão do metrô~Search]",
          "Matches" : "[vagão do metrô~Matches]",
          "Contains" : "[vagão do metrô~Contains]",
          "listmismatch" : "[vagão do metrô~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

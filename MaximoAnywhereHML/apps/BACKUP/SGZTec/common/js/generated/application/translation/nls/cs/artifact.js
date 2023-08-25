@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:58
+// Build: 2023-08-23 17:28:48
 //----------------------------------------------------------------//
 define({
    
@@ -33,20 +33,26 @@ define({
          "Manual do Aplicativo" : "[českém~Manual do Aplicativo]",
          "Privacy Policy" : "[českém~Privacy Policy]",
          "Connection Settings" : "[českém~Connection Settings]",
-         "v7.6.4:300820221611*H" : "[českém~v7.6.4:300820221611*H]",
+         "v7.6.4:2308231400H" : "[českém~v7.6.4:2308231400H]",
          "My Assigned Work" : "[českém~My Assigned Work]",
          "Default List" : "[českém~Default List]",
          "Records with Errors" : "[českém~Records with Errors]",
          "Search Results" : "[českém~Search Results]",
          "Synchronize Data" : "[českém~Synchronize Data]",
+         "Buscar Subitem de Fiscaliza\u00E7\u00E3o" : "[českém~Buscar Subitem de Fiscalização]",
          "Work Order {0}" : "[českém~Work Order {0}]",
          "Scheduled Start" : "[českém~Scheduled Start]",
          "Status" : "[českém~Status]",
          "Service Item" : "[českém~Service Item]",
          "Change Status" : "[českém~Change Status]",
-         "Service Item Details" : "[českém~Service Item Details]",
-         "Inspection Item" : "[českém~Inspection Item]",
          "Subitem de Fiscaliza\u00E7\u00E3o" : "[českém~Subitem de Fiscalização]",
+         "Tap to enter" : "[českém~Tap to enter]",
+         "Clear" : "[českém~Clear]",
+         "Search" : "[českém~Search]",
+         "Detalhes do item de servi\u00E7o" : "[českém~Detalhes do item de serviço]",
+         "Create Follow-Up Service Item" : "[českém~Create Follow-Up Service Item]",
+         "Map" : "[českém~Map]",
+         "Item de Fiscaliza\u00E7\u00E3o" : "[českém~Item de Fiscalização]",
          "Classification" : "[českém~Classification]",
          "Days" : "[českém~Days]",
          "Subprefeitura" : "[českém~Subprefeitura]",
@@ -57,9 +63,30 @@ define({
          "Approval date" : "[českém~Approval date]",
          "Select" : "[českém~Select]",
          "Comments" : "[českém~Comments]",
+         "Crew" : "[českém~Crew]",
+         "Planned Tools" : "[českém~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[českém~Item de Serviço Originante]",
          "Report" : "[českém~Report]",
          "Attachments" : "[českém~Attachments]",
+         "Labor Assignments" : "[českém~Labor Assignments]",
+         "Task ID, Labor" : "[českém~Task ID, Labor]",
+         "Labor Assignment Details" : "[českém~Labor Assignment Details]",
+         "Task" : "[českém~Task]",
+         "Scheduled Date" : "[českém~Scheduled Date]",
+         "Hours" : "[českém~Hours]",
+         "Vendor" : "[českém~Vendor]",
+         "Contract" : "[českém~Contract]",
+         "Task ID, Tool" : "[českém~Task ID, Tool]",
+         "Tool Details" : "[českém~Tool Details]",
+         "Tool" : "[českém~Tool]",
+         "Quantity" : "[českém~Quantity]",
+         "Take Photo" : "[českém~Take Photo]",
+         "Latitude" : "[českém~Latitude]",
+         "Longitude" : "[českém~Longitude]",
+         "Scheduled Finish" : "[českém~Scheduled Finish]",
+         "Classify Work Order" : "[českém~Classify Work Order]",
+         "Cancel" : "[českém~Cancel]",
+         "Create" : "[českém~Create]",
          "Detalhes do Item de OS Originante" : "[českém~Detalhes do Item de OS Originante]",
          "Item de OS originante" : "[českém~Item de OS originante]",
          "Servi\u00E7o" : "[českém~Serviço]",
@@ -77,12 +104,9 @@ define({
          "Categorias de Anexos" : "[českém~Categorias de Anexos]",
          "Categorias" : "[českém~Categorias]",
          "Categorias de Anexos (Filho)" : "[českém~Categorias de Anexos (Filho)]",
-         "Take Photo" : "[českém~Take Photo]",
          "Pick from Gallery" : "[českém~Pick from Gallery]",
          "Attachments (Categorizado)" : "[českém~Attachments (Categorizado)]",
          "Classify" : "[českém~Classify]",
-         "Cancel" : "[českém~Cancel]",
-         "Clear" : "[českém~Clear]",
          "Descarga da Massa Asf\u00E1ltica" : "[českém~Descarga da Massa Asfáltica]",
          "Data Inicial" : "[českém~Data Inicial]",
          "Data Final" : "[českém~Data Final]",
@@ -121,15 +145,14 @@ define({
          "Motivo" : "[českém~Motivo]",
          "Save" : "[českém~Save]",
          "Work Order" : "[českém~Work Order]",
-         "Task" : "[českém~Task]",
          "Work Order Status" : "[českém~Work Order Status]",
          "Task Status" : "[českém~Task Status]",
          "Select Work Type" : "[českém~Select Work Type]",
          "Select Value" : "[českém~Select Value]",
          "Selecione a Classifica\u00E7\u00E3o" : "[českém~Selecione a Classificação]",
+         "Equipes" : "[českém~Equipes]",
          "Attachment Details" : "[českém~Attachment Details]",
          "Name" : "[českém~Name]",
-         "Tap to enter" : "[českém~Tap to enter]",
          "Folder" : "[českém~Folder]",
          "File Type" : "[českém~File Type]",
          "File Size (KB)" : "[českém~File Size (KB)]",
@@ -416,7 +439,6 @@ define({
          "InvalidBindingNoRecord" : "[českém~Invalid binding.]",
          "ClearChanges" : "[českém~Undo Changes]",
          "Resend" : "[českém~Resend Changes]",
-         "Search" : "[českém~Search]",
          "Matches" : "[českém~Matches]",
          "Contains" : "[českém~Contains]",
          "listmismatch" : "[českém~The selected record was removed from the current work list. Refresh the work list to obtain the latest data.]",

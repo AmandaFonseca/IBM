@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-01 10:53:56
+// Build: 2023-08-23 17:28:46
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/LayoutFactory", 
       [
@@ -100,7 +100,7 @@ function(declare, LayoutUtil, DeviceEnv, small_Button1Item1, small_Button2, smal
 
 
          //
-         // AUTO-GENERATED FILE CREATED ON: 2022-09-01 10:53:56
+         // AUTO-GENERATED FILE CREATED ON: 2023-08-23 17:28:46
          //
 
          constructor : function(widget) {
