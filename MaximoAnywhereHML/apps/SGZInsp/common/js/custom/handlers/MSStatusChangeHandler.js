@@ -562,14 +562,11 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 						}
 						ModelService.save(recordSet).then(function(woSet){
 							var wo = woSet.getCurrentRecord();
-							self.ui.hideCurrentView(PlatformConstants.CLEANUP);
-							self.initEditStatusViewCustom(recordSet,statusChange);
-							self.successCallback(woSet);
-							self.application.hideBusy();
+							self.successCallback(woSet,recordSet,statusChange);
 						}).otherwise(function (error) {
 							console.log('Erro ao salvar'+ error)
 							deferred.reject(error);
-						});				
+						});					
 					}
 				}
 			

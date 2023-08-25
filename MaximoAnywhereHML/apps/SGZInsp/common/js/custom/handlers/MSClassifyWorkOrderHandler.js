@@ -741,10 +741,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 					}
 					ModelService.save(recordSet).then(function(woSet){
 						var wo = woSet.getCurrentRecord();
-						self.ui.hideCurrentView(PlatformConstants.CLEANUP);
-						self.initEditStatusViewCustom(recordSet,statusChange);
-						self.successCallback(woSet);
-						self.application.hideBusy();
+						self.successCallback(woSet,recordSet,statusChange);
 					}).otherwise(function (error) {
 						console.log('Erro ao salvar'+ error)
 						deferred.reject(error);
@@ -1110,6 +1107,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 	},
 
 	savePDWhy: function(eventContext, skipDynamicCheck) {
+		eventContext.application.showBusy();
 		Logger.trace("Saving off the current reason");
 		var woSet = eventContext.application.getResource('workOrder');
 		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
@@ -1232,7 +1230,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		  statusChange.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
 		  statusChange.set("ms_inspector", myUser);
 		}
-  
+		eventContext.application.showBusy();
 		this.inherited(arguments);
 	  },
   
