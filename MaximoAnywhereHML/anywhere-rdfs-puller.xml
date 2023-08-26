@@ -70,8 +70,7 @@
 		<downloadOneRdf context="/oslc/sp/FriendOfAFriend" />
 		
 		
-		<!-- ESTRUTURAS PARA APP SGZTec: 
-		
+		<!-- ESTRUTURAS PARA APP SGZTec:-->
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/woserviceaddress" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec" />
@@ -93,7 +92,6 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/wptool" />		
 		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew" />
-		-->
 
         
 		<!-- Estruturas para o app SGZArbo: 
@@ -118,8 +116,6 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcclassif" />
 		<downloadOneRdf context="/oslc/shapes/oslcnumericdomain" />-->
 
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />
 
 		<!-- ESTRUTURAS PARA APP SGZDescarte:
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte" />
@@ -134,6 +130,8 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/companies" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/alndomain" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_doclinks" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />
 		-->
 		<!-- FIM ESTRUTURAS PARA APP SGZDescarte -->

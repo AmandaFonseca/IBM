@@ -65,12 +65,12 @@ remove-spatial-reference:
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-08-25 15:50:28> Removing spatial reference for SGZTec
+     [echo] 2023-08-26 12:33:40> Removing spatial reference for SGZTec
 [available] Found: apps\SGZTec\platform-artifacts\map\app.xml.backup
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-08-25 15:50:28>  Backup File Already present for SGZTec
+     [echo] 2023-08-26 12:33:40>  Backup File Already present for SGZTec
   [xmltask] Reading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/apps/SGZTec/platform-artifacts/map/app.xml
   [xmltask] Executing xmltask 1.16.1
   [xmltask] Processing C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/apps/SGZTec/platform-artifacts/map/app.xml into C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/apps/SGZTec/platform-artifacts/map/app.xml
@@ -85,5 +85,5 @@ Override ignored for property "TODAY"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-08-25 15:50:28> Removed Spatial Reference for SGZTec
+     [echo] 2023-08-26 12:33:40> Removed Spatial Reference for SGZTec
 remove-spatial-reference:  duration 0 seconds
