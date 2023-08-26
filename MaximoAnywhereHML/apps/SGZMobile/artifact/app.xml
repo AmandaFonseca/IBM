@@ -2248,7 +2248,7 @@
 				<attribute describedByProperty="spi_wm:worktype" id="workOrder_worktype_spi_wmworktype" name="worktype"/>
 				<attribute describedByProperty="spi_wm:wopriority" id="workOrder_priority_spi_wmwopriority" index="true" name="priority"/> 
 				<attribute describedByProperty="spi_wm:classstructureid" id="workOrder_classstructureid_spi_wmclassstructureid" name="classstructureid"/>			
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:formattedaddress}" id="workOrder_woserviceaddress_spiwoserviceaddressspi_wmformattedaddress" name="woserviceaddress"/>
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:formattedaddress}" id="workOrder_woserviceaddress_spiwoserviceaddressspi_wmformattedaddress" name="woserviceaddress"/>
 				<attribute describedByProperty="spi:woserviceaddress{spi_wm:saddresscode}" id="workOrder_woserviceaddresscode_spiwoserviceaddressspi_wmsaddresscode" name="woserviceaddresscode"/>
 				<attribute describedByProperty="spi:woserviceaddress{spi_wm:description}" id="workOrder_woserviceaddressdesc_spiwoserviceaddressspi_wmdescription" name="woserviceaddressdesc"/> 
 				<!-- SGZ Mobile woserviceaddress -->
