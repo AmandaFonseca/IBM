@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:44
+// Build: 2023-08-26 15:18:45
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[spôsobených~Manual do Aplicativo]",
          "Privacy Policy" : "[spôsobených~Privacy Policy]",
          "Connection Settings" : "[spôsobených~Connection Settings]",
-         "v7.6.4:22091645-H" : "[spôsobených~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[spôsobených~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[spôsobených~My Assigned Work]",
          "Default List" : "[spôsobených~Default List]",
          "Records with Errors" : "[spôsobených~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[spôsobených~Classification]",
          "Asset" : "[spôsobených~Asset]",
          "Descri\u00E7\u00E3o" : "[spôsobených~Descrição]",
+         "Crew" : "[spôsobených~Crew]",
          "Specifications" : "[spôsobených~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[spôsobených~Descarregar Massa Asfáltica]",
          "Attachments" : "[spôsobených~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[spôsobených~Task ID, Labor]",
          "Labor Assignment Details" : "[spôsobených~Labor Assignment Details]",
          "Task" : "[spôsobených~Task]",
-         "Crew" : "[spôsobených~Crew]",
          "Scheduled Date" : "[spôsobených~Scheduled Date]",
          "Hours" : "[spôsobených~Hours]",
          "Vendor" : "[spôsobených~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[spôsobených~Tool Details]",
          "Tool" : "[spôsobených~Tool]",
          "Quantity" : "[spôsobených~Quantity]",
-         "Latitude" : "[spôsobených~Latitude]",
-         "Longitude" : "[spôsobených~Longitude]",
          "Classify Work Order" : "[spôsobených~Classify Work Order]",
          "Cancel" : "[spôsobených~Cancel]",
          "Create" : "[spôsobených~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[spôsobených~Select from list]",
          "Motivo" : "[spôsobených~Motivo]",
          "Save" : "[spôsobených~Save]",
+         "Equipes" : "[spôsobených~Equipes]",
          "Work Order Status" : "[spôsobených~Work Order Status]",
          "Task Status" : "[spôsobených~Task Status]",
          "Select Work Type" : "[spôsobených~Select Work Type]",

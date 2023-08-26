@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:44
+// Build: 2023-08-26 15:18:45
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[trettioåriga~Manual do Aplicativo]",
          "Privacy Policy" : "[trettioåriga~Privacy Policy]",
          "Connection Settings" : "[trettioåriga~Connection Settings]",
-         "v7.6.4:22091645-H" : "[trettioåriga~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[trettioåriga~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[trettioåriga~My Assigned Work]",
          "Default List" : "[trettioåriga~Default List]",
          "Records with Errors" : "[trettioåriga~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[trettioåriga~Classification]",
          "Asset" : "[trettioåriga~Asset]",
          "Descri\u00E7\u00E3o" : "[trettioåriga~Descrição]",
+         "Crew" : "[trettioåriga~Crew]",
          "Specifications" : "[trettioåriga~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[trettioåriga~Descarregar Massa Asfáltica]",
          "Attachments" : "[trettioåriga~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[trettioåriga~Task ID, Labor]",
          "Labor Assignment Details" : "[trettioåriga~Labor Assignment Details]",
          "Task" : "[trettioåriga~Task]",
-         "Crew" : "[trettioåriga~Crew]",
          "Scheduled Date" : "[trettioåriga~Scheduled Date]",
          "Hours" : "[trettioåriga~Hours]",
          "Vendor" : "[trettioåriga~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[trettioåriga~Tool Details]",
          "Tool" : "[trettioåriga~Tool]",
          "Quantity" : "[trettioåriga~Quantity]",
-         "Latitude" : "[trettioåriga~Latitude]",
-         "Longitude" : "[trettioåriga~Longitude]",
          "Classify Work Order" : "[trettioåriga~Classify Work Order]",
          "Cancel" : "[trettioåriga~Cancel]",
          "Create" : "[trettioåriga~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[trettioåriga~Select from list]",
          "Motivo" : "[trettioåriga~Motivo]",
          "Save" : "[trettioåriga~Save]",
+         "Equipes" : "[trettioåriga~Equipes]",
          "Work Order Status" : "[trettioåriga~Work Order Status]",
          "Task Status" : "[trettioåriga~Task Status]",
          "Select Work Type" : "[trettioåriga~Select Work Type]",

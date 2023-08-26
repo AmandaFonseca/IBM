@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:43
+// Build: 2023-08-26 15:18:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[onbepaalde~Manual do Aplicativo]",
          "Privacy Policy" : "[onbepaalde~Privacy Policy]",
          "Connection Settings" : "[onbepaalde~Connection Settings]",
-         "v7.6.4:22091645-H" : "[onbepaalde~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[onbepaalde~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[onbepaalde~My Assigned Work]",
          "Default List" : "[onbepaalde~Default List]",
          "Records with Errors" : "[onbepaalde~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[onbepaalde~Classification]",
          "Asset" : "[onbepaalde~Asset]",
          "Descri\u00E7\u00E3o" : "[onbepaalde~Descrição]",
+         "Crew" : "[onbepaalde~Crew]",
          "Specifications" : "[onbepaalde~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[onbepaalde~Descarregar Massa Asfáltica]",
          "Attachments" : "[onbepaalde~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[onbepaalde~Task ID, Labor]",
          "Labor Assignment Details" : "[onbepaalde~Labor Assignment Details]",
          "Task" : "[onbepaalde~Task]",
-         "Crew" : "[onbepaalde~Crew]",
          "Scheduled Date" : "[onbepaalde~Scheduled Date]",
          "Hours" : "[onbepaalde~Hours]",
          "Vendor" : "[onbepaalde~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[onbepaalde~Tool Details]",
          "Tool" : "[onbepaalde~Tool]",
          "Quantity" : "[onbepaalde~Quantity]",
-         "Latitude" : "[onbepaalde~Latitude]",
-         "Longitude" : "[onbepaalde~Longitude]",
          "Classify Work Order" : "[onbepaalde~Classify Work Order]",
          "Cancel" : "[onbepaalde~Cancel]",
          "Create" : "[onbepaalde~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[onbepaalde~Select from list]",
          "Motivo" : "[onbepaalde~Motivo]",
          "Save" : "[onbepaalde~Save]",
+         "Equipes" : "[onbepaalde~Equipes]",
          "Work Order Status" : "[onbepaalde~Work Order Status]",
          "Task Status" : "[onbepaalde~Task Status]",
          "Select Work Type" : "[onbepaalde~Select Work Type]",

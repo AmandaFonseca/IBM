@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:44
+// Build: 2023-08-26 15:18:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[Okrągłego~Manual do Aplicativo]",
          "Privacy Policy" : "[Okrągłego~Privacy Policy]",
          "Connection Settings" : "[Okrągłego~Connection Settings]",
-         "v7.6.4:22091645-H" : "[Okrągłego~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[Okrągłego~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[Okrągłego~My Assigned Work]",
          "Default List" : "[Okrągłego~Default List]",
          "Records with Errors" : "[Okrągłego~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[Okrągłego~Classification]",
          "Asset" : "[Okrągłego~Asset]",
          "Descri\u00E7\u00E3o" : "[Okrągłego~Descrição]",
+         "Crew" : "[Okrągłego~Crew]",
          "Specifications" : "[Okrągłego~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[Okrągłego~Descarregar Massa Asfáltica]",
          "Attachments" : "[Okrągłego~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[Okrągłego~Task ID, Labor]",
          "Labor Assignment Details" : "[Okrągłego~Labor Assignment Details]",
          "Task" : "[Okrągłego~Task]",
-         "Crew" : "[Okrągłego~Crew]",
          "Scheduled Date" : "[Okrągłego~Scheduled Date]",
          "Hours" : "[Okrągłego~Hours]",
          "Vendor" : "[Okrągłego~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[Okrągłego~Tool Details]",
          "Tool" : "[Okrągłego~Tool]",
          "Quantity" : "[Okrągłego~Quantity]",
-         "Latitude" : "[Okrągłego~Latitude]",
-         "Longitude" : "[Okrągłego~Longitude]",
          "Classify Work Order" : "[Okrągłego~Classify Work Order]",
          "Cancel" : "[Okrągłego~Cancel]",
          "Create" : "[Okrągłego~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[Okrągłego~Select from list]",
          "Motivo" : "[Okrągłego~Motivo]",
          "Save" : "[Okrągłego~Save]",
+         "Equipes" : "[Okrągłego~Equipes]",
          "Work Order Status" : "[Okrągłego~Work Order Status]",
          "Task Status" : "[Okrągłego~Task Status]",
          "Select Work Type" : "[Okrągłego~Select Work Type]",

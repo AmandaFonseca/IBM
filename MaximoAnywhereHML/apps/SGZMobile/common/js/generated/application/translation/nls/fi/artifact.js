@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:44
+// Build: 2023-08-26 15:18:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[pohjoispäässä~Manual do Aplicativo]",
          "Privacy Policy" : "[pohjoispäässä~Privacy Policy]",
          "Connection Settings" : "[pohjoispäässä~Connection Settings]",
-         "v7.6.4:22091645-H" : "[pohjoispäässä~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[pohjoispäässä~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[pohjoispäässä~My Assigned Work]",
          "Default List" : "[pohjoispäässä~Default List]",
          "Records with Errors" : "[pohjoispäässä~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[pohjoispäässä~Classification]",
          "Asset" : "[pohjoispäässä~Asset]",
          "Descri\u00E7\u00E3o" : "[pohjoispäässä~Descrição]",
+         "Crew" : "[pohjoispäässä~Crew]",
          "Specifications" : "[pohjoispäässä~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[pohjoispäässä~Descarregar Massa Asfáltica]",
          "Attachments" : "[pohjoispäässä~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[pohjoispäässä~Task ID, Labor]",
          "Labor Assignment Details" : "[pohjoispäässä~Labor Assignment Details]",
          "Task" : "[pohjoispäässä~Task]",
-         "Crew" : "[pohjoispäässä~Crew]",
          "Scheduled Date" : "[pohjoispäässä~Scheduled Date]",
          "Hours" : "[pohjoispäässä~Hours]",
          "Vendor" : "[pohjoispäässä~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[pohjoispäässä~Tool Details]",
          "Tool" : "[pohjoispäässä~Tool]",
          "Quantity" : "[pohjoispäässä~Quantity]",
-         "Latitude" : "[pohjoispäässä~Latitude]",
-         "Longitude" : "[pohjoispäässä~Longitude]",
          "Classify Work Order" : "[pohjoispäässä~Classify Work Order]",
          "Cancel" : "[pohjoispäässä~Cancel]",
          "Create" : "[pohjoispäässä~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[pohjoispäässä~Select from list]",
          "Motivo" : "[pohjoispäässä~Motivo]",
          "Save" : "[pohjoispäässä~Save]",
+         "Equipes" : "[pohjoispäässä~Equipes]",
          "Work Order Status" : "[pohjoispäässä~Work Order Status]",
          "Task Status" : "[pohjoispäässä~Task Status]",
          "Select Work Type" : "[pohjoispäässä~Select Work Type]",

@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:41
+// Build: 2023-08-26 15:18:43
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[können~Manual do Aplicativo]",
          "Privacy Policy" : "[können~Privacy Policy]",
          "Connection Settings" : "[können~Connection Settings]",
-         "v7.6.4:22091645-H" : "[können~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[können~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[können~My Assigned Work]",
          "Default List" : "[können~Default List]",
          "Records with Errors" : "[können~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[können~Classification]",
          "Asset" : "[können~Asset]",
          "Descri\u00E7\u00E3o" : "[können~Descrição]",
+         "Crew" : "[können~Crew]",
          "Specifications" : "[können~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[können~Descarregar Massa Asfáltica]",
          "Attachments" : "[können~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[können~Task ID, Labor]",
          "Labor Assignment Details" : "[können~Labor Assignment Details]",
          "Task" : "[können~Task]",
-         "Crew" : "[können~Crew]",
          "Scheduled Date" : "[können~Scheduled Date]",
          "Hours" : "[können~Hours]",
          "Vendor" : "[können~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[können~Tool Details]",
          "Tool" : "[können~Tool]",
          "Quantity" : "[können~Quantity]",
-         "Latitude" : "[können~Latitude]",
-         "Longitude" : "[können~Longitude]",
          "Classify Work Order" : "[können~Classify Work Order]",
          "Cancel" : "[können~Cancel]",
          "Create" : "[können~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[können~Select from list]",
          "Motivo" : "[können~Motivo]",
          "Save" : "[können~Save]",
+         "Equipes" : "[können~Equipes]",
          "Work Order Status" : "[können~Work Order Status]",
          "Task Status" : "[können~Task Status]",
          "Select Work Type" : "[können~Select Work Type]",

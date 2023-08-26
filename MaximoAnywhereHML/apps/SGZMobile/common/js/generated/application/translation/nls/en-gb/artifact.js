@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:40
+// Build: 2023-08-26 15:18:43
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[engbManual do Aplicativo]",
          "Privacy Policy" : "[engbPrivacy Policy]",
          "Connection Settings" : "[engbConnection Settings]",
-         "v7.6.4:22091645-H" : "[engbv7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[engbv7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[engbMy Assigned Work]",
          "Default List" : "[engbDefault List]",
          "Records with Errors" : "[engbRecords with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[engbClassification]",
          "Asset" : "[engbAsset]",
          "Descri\u00E7\u00E3o" : "[engbDescrição]",
+         "Crew" : "[engbCrew]",
          "Specifications" : "[engbSpecifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[engbDescarregar Massa Asfáltica]",
          "Attachments" : "[engbAttachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[engbTask ID, Labor]",
          "Labor Assignment Details" : "[engbLabor Assignment Details]",
          "Task" : "[engbTask]",
-         "Crew" : "[engbCrew]",
          "Scheduled Date" : "[engbScheduled Date]",
          "Hours" : "[engbHours]",
          "Vendor" : "[engbVendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[engbTool Details]",
          "Tool" : "[engbTool]",
          "Quantity" : "[engbQuantity]",
-         "Latitude" : "[engbLatitude]",
-         "Longitude" : "[engbLongitude]",
          "Classify Work Order" : "[engbClassify Work Order]",
          "Cancel" : "[engbCancel]",
          "Create" : "[engbCreate]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[engbSelect from list]",
          "Motivo" : "[engbMotivo]",
          "Save" : "[engbSave]",
+         "Equipes" : "[engbEquipes]",
          "Work Order Status" : "[engbWork Order Status]",
          "Task Status" : "[engbTask Status]",
          "Select Work Type" : "[engbSelect Work Type]",

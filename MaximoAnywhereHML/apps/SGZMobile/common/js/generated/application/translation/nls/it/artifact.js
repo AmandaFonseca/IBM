@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:42
+// Build: 2023-08-26 15:18:43
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[quantitó~Manual do Aplicativo]",
          "Privacy Policy" : "[quantitó~Privacy Policy]",
          "Connection Settings" : "[quantitó~Connection Settings]",
-         "v7.6.4:22091645-H" : "[quantitó~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[quantitó~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[quantitó~My Assigned Work]",
          "Default List" : "[quantitó~Default List]",
          "Records with Errors" : "[quantitó~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[quantitó~Classification]",
          "Asset" : "[quantitó~Asset]",
          "Descri\u00E7\u00E3o" : "[quantitó~Descrição]",
+         "Crew" : "[quantitó~Crew]",
          "Specifications" : "[quantitó~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[quantitó~Descarregar Massa Asfáltica]",
          "Attachments" : "[quantitó~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[quantitó~Task ID, Labor]",
          "Labor Assignment Details" : "[quantitó~Labor Assignment Details]",
          "Task" : "[quantitó~Task]",
-         "Crew" : "[quantitó~Crew]",
          "Scheduled Date" : "[quantitó~Scheduled Date]",
          "Hours" : "[quantitó~Hours]",
          "Vendor" : "[quantitó~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[quantitó~Tool Details]",
          "Tool" : "[quantitó~Tool]",
          "Quantity" : "[quantitó~Quantity]",
-         "Latitude" : "[quantitó~Latitude]",
-         "Longitude" : "[quantitó~Longitude]",
          "Classify Work Order" : "[quantitó~Classify Work Order]",
          "Cancel" : "[quantitó~Cancel]",
          "Create" : "[quantitó~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[quantitó~Select from list]",
          "Motivo" : "[quantitó~Motivo]",
          "Save" : "[quantitó~Save]",
+         "Equipes" : "[quantitó~Equipes]",
          "Work Order Status" : "[quantitó~Work Order Status]",
          "Task Status" : "[quantitó~Task Status]",
          "Select Work Type" : "[quantitó~Select Work Type]",

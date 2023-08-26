@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:44
+// Build: 2023-08-26 15:18:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[også populært~Manual do Aplicativo]",
          "Privacy Policy" : "[også populært~Privacy Policy]",
          "Connection Settings" : "[også populært~Connection Settings]",
-         "v7.6.4:22091645-H" : "[også populært~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[også populært~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[også populært~My Assigned Work]",
          "Default List" : "[også populært~Default List]",
          "Records with Errors" : "[også populært~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[også populært~Classification]",
          "Asset" : "[også populært~Asset]",
          "Descri\u00E7\u00E3o" : "[også populært~Descrição]",
+         "Crew" : "[også populært~Crew]",
          "Specifications" : "[også populært~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[også populært~Descarregar Massa Asfáltica]",
          "Attachments" : "[også populært~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[også populært~Task ID, Labor]",
          "Labor Assignment Details" : "[også populært~Labor Assignment Details]",
          "Task" : "[også populært~Task]",
-         "Crew" : "[også populært~Crew]",
          "Scheduled Date" : "[også populært~Scheduled Date]",
          "Hours" : "[også populært~Hours]",
          "Vendor" : "[også populært~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[også populært~Tool Details]",
          "Tool" : "[også populært~Tool]",
          "Quantity" : "[også populært~Quantity]",
-         "Latitude" : "[også populært~Latitude]",
-         "Longitude" : "[også populært~Longitude]",
          "Classify Work Order" : "[også populært~Classify Work Order]",
          "Cancel" : "[også populært~Cancel]",
          "Create" : "[også populært~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[også populært~Select from list]",
          "Motivo" : "[også populært~Motivo]",
          "Save" : "[også populært~Save]",
+         "Equipes" : "[også populært~Equipes]",
          "Work Order Status" : "[også populært~Work Order Status]",
          "Task Status" : "[også populært~Task Status]",
          "Select Work Type" : "[også populært~Select Work Type]",

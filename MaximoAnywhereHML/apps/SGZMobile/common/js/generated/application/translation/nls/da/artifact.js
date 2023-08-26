@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:43
+// Build: 2023-08-26 15:18:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[gæst faldt~Manual do Aplicativo]",
          "Privacy Policy" : "[gæst faldt~Privacy Policy]",
          "Connection Settings" : "[gæst faldt~Connection Settings]",
-         "v7.6.4:22091645-H" : "[gæst faldt~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[gæst faldt~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[gæst faldt~My Assigned Work]",
          "Default List" : "[gæst faldt~Default List]",
          "Records with Errors" : "[gæst faldt~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[gæst faldt~Classification]",
          "Asset" : "[gæst faldt~Asset]",
          "Descri\u00E7\u00E3o" : "[gæst faldt~Descrição]",
+         "Crew" : "[gæst faldt~Crew]",
          "Specifications" : "[gæst faldt~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[gæst faldt~Descarregar Massa Asfáltica]",
          "Attachments" : "[gæst faldt~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[gæst faldt~Task ID, Labor]",
          "Labor Assignment Details" : "[gæst faldt~Labor Assignment Details]",
          "Task" : "[gæst faldt~Task]",
-         "Crew" : "[gæst faldt~Crew]",
          "Scheduled Date" : "[gæst faldt~Scheduled Date]",
          "Hours" : "[gæst faldt~Hours]",
          "Vendor" : "[gæst faldt~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[gæst faldt~Tool Details]",
          "Tool" : "[gæst faldt~Tool]",
          "Quantity" : "[gæst faldt~Quantity]",
-         "Latitude" : "[gæst faldt~Latitude]",
-         "Longitude" : "[gæst faldt~Longitude]",
          "Classify Work Order" : "[gæst faldt~Classify Work Order]",
          "Cancel" : "[gæst faldt~Cancel]",
          "Create" : "[gæst faldt~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[gæst faldt~Select from list]",
          "Motivo" : "[gæst faldt~Motivo]",
          "Save" : "[gæst faldt~Save]",
+         "Equipes" : "[gæst faldt~Equipes]",
          "Work Order Status" : "[gæst faldt~Work Order Status]",
          "Task Status" : "[gæst faldt~Task Status]",
          "Select Work Type" : "[gæst faldt~Select Work Type]",

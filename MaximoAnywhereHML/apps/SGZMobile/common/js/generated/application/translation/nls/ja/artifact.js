@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:42
+// Build: 2023-08-26 15:18:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[島の第~Manual do Aplicativo]",
          "Privacy Policy" : "[島の第~Privacy Policy]",
          "Connection Settings" : "[島の第~Connection Settings]",
-         "v7.6.4:22091645-H" : "[島の第~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[島の第~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[島の第~My Assigned Work]",
          "Default List" : "[島の第~Default List]",
          "Records with Errors" : "[島の第~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[島の第~Classification]",
          "Asset" : "[島の第~Asset]",
          "Descri\u00E7\u00E3o" : "[島の第~Descrição]",
+         "Crew" : "[島の第~Crew]",
          "Specifications" : "[島の第~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[島の第~Descarregar Massa Asfáltica]",
          "Attachments" : "[島の第~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[島の第~Task ID, Labor]",
          "Labor Assignment Details" : "[島の第~Labor Assignment Details]",
          "Task" : "[島の第~Task]",
-         "Crew" : "[島の第~Crew]",
          "Scheduled Date" : "[島の第~Scheduled Date]",
          "Hours" : "[島の第~Hours]",
          "Vendor" : "[島の第~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[島の第~Tool Details]",
          "Tool" : "[島の第~Tool]",
          "Quantity" : "[島の第~Quantity]",
-         "Latitude" : "[島の第~Latitude]",
-         "Longitude" : "[島の第~Longitude]",
          "Classify Work Order" : "[島の第~Classify Work Order]",
          "Cancel" : "[島の第~Cancel]",
          "Create" : "[島の第~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[島の第~Select from list]",
          "Motivo" : "[島の第~Motivo]",
          "Save" : "[島の第~Save]",
+         "Equipes" : "[島の第~Equipes]",
          "Work Order Status" : "[島の第~Work Order Status]",
          "Task Status" : "[島の第~Task Status]",
          "Select Work Type" : "[島の第~Select Work Type]",

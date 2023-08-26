@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:39
+// Build: 2023-08-26 15:18:43
 //----------------------------------------------------------------//
 define({
    root: {
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "Manual do Aplicativo",
          "Privacy Policy" : "Privacy Policy",
          "Connection Settings" : "Connection Settings",
-         "v7.6.4:22091645-H" : "v7.6.4:22091645-H",
+         "v7.6.4:v7.6.4:0706231800H" : "v7.6.4:v7.6.4:0706231800H",
          "My Assigned Work" : "My Assigned Work",
          "Default List" : "Default List",
          "Records with Errors" : "Records with Errors",
@@ -64,6 +64,7 @@ define({
          "Classification" : "Classification",
          "Asset" : "Asset",
          "Descri\u00E7\u00E3o" : "Descrição",
+         "Crew" : "Crew",
          "Specifications" : "Specifications",
          "Descarregar Massa Asf\u00E1ltica" : "Descarregar Massa Asfáltica",
          "Attachments" : "Attachments",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "Task ID, Labor",
          "Labor Assignment Details" : "Labor Assignment Details",
          "Task" : "Task",
-         "Crew" : "Crew",
          "Scheduled Date" : "Scheduled Date",
          "Hours" : "Hours",
          "Vendor" : "Vendor",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "Tool Details",
          "Tool" : "Tool",
          "Quantity" : "Quantity",
-         "Latitude" : "Latitude",
-         "Longitude" : "Longitude",
          "Classify Work Order" : "Classify Work Order",
          "Cancel" : "Cancel",
          "Create" : "Create",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "Select from list",
          "Motivo" : "Motivo",
          "Save" : "Save",
+         "Equipes" : "Equipes",
          "Work Order Status" : "Work Order Status",
          "Task Status" : "Task Status",
          "Select Work Type" : "Select Work Type",

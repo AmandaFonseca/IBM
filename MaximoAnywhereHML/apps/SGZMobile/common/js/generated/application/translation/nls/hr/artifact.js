@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:45
+// Build: 2023-08-26 15:18:45
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[članak~Manual do Aplicativo]",
          "Privacy Policy" : "[članak~Privacy Policy]",
          "Connection Settings" : "[članak~Connection Settings]",
-         "v7.6.4:22091645-H" : "[članak~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[članak~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[članak~My Assigned Work]",
          "Default List" : "[članak~Default List]",
          "Records with Errors" : "[članak~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[članak~Classification]",
          "Asset" : "[članak~Asset]",
          "Descri\u00E7\u00E3o" : "[članak~Descrição]",
+         "Crew" : "[članak~Crew]",
          "Specifications" : "[članak~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[članak~Descarregar Massa Asfáltica]",
          "Attachments" : "[članak~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[članak~Task ID, Labor]",
          "Labor Assignment Details" : "[članak~Labor Assignment Details]",
          "Task" : "[članak~Task]",
-         "Crew" : "[članak~Crew]",
          "Scheduled Date" : "[članak~Scheduled Date]",
          "Hours" : "[članak~Hours]",
          "Vendor" : "[članak~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[članak~Tool Details]",
          "Tool" : "[članak~Tool]",
          "Quantity" : "[članak~Quantity]",
-         "Latitude" : "[članak~Latitude]",
-         "Longitude" : "[članak~Longitude]",
          "Classify Work Order" : "[članak~Classify Work Order]",
          "Cancel" : "[članak~Cancel]",
          "Create" : "[članak~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[članak~Select from list]",
          "Motivo" : "[članak~Motivo]",
          "Save" : "[članak~Save]",
+         "Equipes" : "[članak~Equipes]",
          "Work Order Status" : "[članak~Work Order Status]",
          "Task Status" : "[članak~Task Status]",
          "Select Work Type" : "[članak~Select Work Type]",

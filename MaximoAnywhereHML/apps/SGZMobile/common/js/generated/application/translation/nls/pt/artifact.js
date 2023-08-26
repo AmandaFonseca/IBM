@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:43
+// Build: 2023-08-26 15:18:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[vagão do metrô~Manual do Aplicativo]",
          "Privacy Policy" : "[vagão do metrô~Privacy Policy]",
          "Connection Settings" : "[vagão do metrô~Connection Settings]",
-         "v7.6.4:22091645-H" : "[vagão do metrô~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[vagão do metrô~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[vagão do metrô~My Assigned Work]",
          "Default List" : "[vagão do metrô~Default List]",
          "Records with Errors" : "[vagão do metrô~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[vagão do metrô~Classification]",
          "Asset" : "[vagão do metrô~Asset]",
          "Descri\u00E7\u00E3o" : "[vagão do metrô~Descrição]",
+         "Crew" : "[vagão do metrô~Crew]",
          "Specifications" : "[vagão do metrô~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[vagão do metrô~Descarregar Massa Asfáltica]",
          "Attachments" : "[vagão do metrô~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[vagão do metrô~Task ID, Labor]",
          "Labor Assignment Details" : "[vagão do metrô~Labor Assignment Details]",
          "Task" : "[vagão do metrô~Task]",
-         "Crew" : "[vagão do metrô~Crew]",
          "Scheduled Date" : "[vagão do metrô~Scheduled Date]",
          "Hours" : "[vagão do metrô~Hours]",
          "Vendor" : "[vagão do metrô~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[vagão do metrô~Tool Details]",
          "Tool" : "[vagão do metrô~Tool]",
          "Quantity" : "[vagão do metrô~Quantity]",
-         "Latitude" : "[vagão do metrô~Latitude]",
-         "Longitude" : "[vagão do metrô~Longitude]",
          "Classify Work Order" : "[vagão do metrô~Classify Work Order]",
          "Cancel" : "[vagão do metrô~Cancel]",
          "Create" : "[vagão do metrô~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[vagão do metrô~Select from list]",
          "Motivo" : "[vagão do metrô~Motivo]",
          "Save" : "[vagão do metrô~Save]",
+         "Equipes" : "[vagão do metrô~Equipes]",
          "Work Order Status" : "[vagão do metrô~Work Order Status]",
          "Task Status" : "[vagão do metrô~Task Status]",
          "Select Work Type" : "[vagão do metrô~Select Work Type]",

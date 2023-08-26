@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:41
+// Build: 2023-08-26 15:18:43
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[françaisé~Manual do Aplicativo]",
          "Privacy Policy" : "[françaisé~Privacy Policy]",
          "Connection Settings" : "[françaisé~Connection Settings]",
-         "v7.6.4:22091645-H" : "[françaisé~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[françaisé~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[françaisé~My Assigned Work]",
          "Default List" : "[françaisé~Default List]",
          "Records with Errors" : "[françaisé~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[françaisé~Classification]",
          "Asset" : "[françaisé~Asset]",
          "Descri\u00E7\u00E3o" : "[françaisé~Descrição]",
+         "Crew" : "[françaisé~Crew]",
          "Specifications" : "[françaisé~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[françaisé~Descarregar Massa Asfáltica]",
          "Attachments" : "[françaisé~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[françaisé~Task ID, Labor]",
          "Labor Assignment Details" : "[françaisé~Labor Assignment Details]",
          "Task" : "[françaisé~Task]",
-         "Crew" : "[françaisé~Crew]",
          "Scheduled Date" : "[françaisé~Scheduled Date]",
          "Hours" : "[françaisé~Hours]",
          "Vendor" : "[françaisé~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[françaisé~Tool Details]",
          "Tool" : "[françaisé~Tool]",
          "Quantity" : "[françaisé~Quantity]",
-         "Latitude" : "[françaisé~Latitude]",
-         "Longitude" : "[françaisé~Longitude]",
          "Classify Work Order" : "[françaisé~Classify Work Order]",
          "Cancel" : "[françaisé~Cancel]",
          "Create" : "[françaisé~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[françaisé~Select from list]",
          "Motivo" : "[françaisé~Motivo]",
          "Save" : "[françaisé~Save]",
+         "Equipes" : "[françaisé~Equipes]",
          "Work Order Status" : "[françaisé~Work Order Status]",
          "Task Status" : "[françaisé~Task Status]",
          "Select Work Type" : "[françaisé~Select Work Type]",

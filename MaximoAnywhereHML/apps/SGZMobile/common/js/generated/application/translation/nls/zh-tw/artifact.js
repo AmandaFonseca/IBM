@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:41
+// Build: 2023-08-26 15:18:43
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中國的~Manual do Aplicativo]",
          "Privacy Policy" : "[中國的~Privacy Policy]",
          "Connection Settings" : "[中國的~Connection Settings]",
-         "v7.6.4:22091645-H" : "[中國的~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[中國的~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[中國的~My Assigned Work]",
          "Default List" : "[中國的~Default List]",
          "Records with Errors" : "[中國的~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[中國的~Classification]",
          "Asset" : "[中國的~Asset]",
          "Descri\u00E7\u00E3o" : "[中國的~Descrição]",
+         "Crew" : "[中國的~Crew]",
          "Specifications" : "[中國的~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[中國的~Descarregar Massa Asfáltica]",
          "Attachments" : "[中國的~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[中國的~Task ID, Labor]",
          "Labor Assignment Details" : "[中國的~Labor Assignment Details]",
          "Task" : "[中國的~Task]",
-         "Crew" : "[中國的~Crew]",
          "Scheduled Date" : "[中國的~Scheduled Date]",
          "Hours" : "[中國的~Hours]",
          "Vendor" : "[中國的~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[中國的~Tool Details]",
          "Tool" : "[中國的~Tool]",
          "Quantity" : "[中國的~Quantity]",
-         "Latitude" : "[中國的~Latitude]",
-         "Longitude" : "[中國的~Longitude]",
          "Classify Work Order" : "[中國的~Classify Work Order]",
          "Cancel" : "[中國的~Cancel]",
          "Create" : "[中國的~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[中國的~Select from list]",
          "Motivo" : "[中國的~Motivo]",
          "Save" : "[中國的~Save]",
+         "Equipes" : "[中國的~Equipes]",
          "Work Order Status" : "[中國的~Work Order Status]",
          "Task Status" : "[中國的~Task Status]",
          "Select Work Type" : "[中國的~Select Work Type]",

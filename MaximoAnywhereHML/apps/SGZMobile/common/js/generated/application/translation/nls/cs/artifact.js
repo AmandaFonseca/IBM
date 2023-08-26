@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:43
+// Build: 2023-08-26 15:18:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[českém~Manual do Aplicativo]",
          "Privacy Policy" : "[českém~Privacy Policy]",
          "Connection Settings" : "[českém~Connection Settings]",
-         "v7.6.4:22091645-H" : "[českém~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[českém~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[českém~My Assigned Work]",
          "Default List" : "[českém~Default List]",
          "Records with Errors" : "[českém~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[českém~Classification]",
          "Asset" : "[českém~Asset]",
          "Descri\u00E7\u00E3o" : "[českém~Descrição]",
+         "Crew" : "[českém~Crew]",
          "Specifications" : "[českém~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[českém~Descarregar Massa Asfáltica]",
          "Attachments" : "[českém~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[českém~Task ID, Labor]",
          "Labor Assignment Details" : "[českém~Labor Assignment Details]",
          "Task" : "[českém~Task]",
-         "Crew" : "[českém~Crew]",
          "Scheduled Date" : "[českém~Scheduled Date]",
          "Hours" : "[českém~Hours]",
          "Vendor" : "[českém~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[českém~Tool Details]",
          "Tool" : "[českém~Tool]",
          "Quantity" : "[českém~Quantity]",
-         "Latitude" : "[českém~Latitude]",
-         "Longitude" : "[českém~Longitude]",
          "Classify Work Order" : "[českém~Classify Work Order]",
          "Cancel" : "[českém~Cancel]",
          "Create" : "[českém~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[českém~Select from list]",
          "Motivo" : "[českém~Motivo]",
          "Save" : "[českém~Save]",
+         "Equipes" : "[českém~Equipes]",
          "Work Order Status" : "[českém~Work Order Status]",
          "Task Status" : "[českém~Task Status]",
          "Select Work Type" : "[českém~Select Work Type]",

@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:43
+// Build: 2023-08-26 15:18:44
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[ясяс~Manual do Aplicativo]",
          "Privacy Policy" : "[ясяс~Privacy Policy]",
          "Connection Settings" : "[ясяс~Connection Settings]",
-         "v7.6.4:22091645-H" : "[ясяс~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[ясяс~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[ясяс~My Assigned Work]",
          "Default List" : "[ясяс~Default List]",
          "Records with Errors" : "[ясяс~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[ясяс~Classification]",
          "Asset" : "[ясяс~Asset]",
          "Descri\u00E7\u00E3o" : "[ясяс~Descrição]",
+         "Crew" : "[ясяс~Crew]",
          "Specifications" : "[ясяс~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[ясяс~Descarregar Massa Asfáltica]",
          "Attachments" : "[ясяс~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[ясяс~Task ID, Labor]",
          "Labor Assignment Details" : "[ясяс~Labor Assignment Details]",
          "Task" : "[ясяс~Task]",
-         "Crew" : "[ясяс~Crew]",
          "Scheduled Date" : "[ясяс~Scheduled Date]",
          "Hours" : "[ясяс~Hours]",
          "Vendor" : "[ясяс~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[ясяс~Tool Details]",
          "Tool" : "[ясяс~Tool]",
          "Quantity" : "[ясяс~Quantity]",
-         "Latitude" : "[ясяс~Latitude]",
-         "Longitude" : "[ясяс~Longitude]",
          "Classify Work Order" : "[ясяс~Classify Work Order]",
          "Cancel" : "[ясяс~Cancel]",
          "Create" : "[ясяс~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[ясяс~Select from list]",
          "Motivo" : "[ясяс~Motivo]",
          "Save" : "[ясяс~Save]",
+         "Equipes" : "[ясяс~Equipes]",
          "Work Order Status" : "[ясяс~Work Order Status]",
          "Task Status" : "[ясяс~Task Status]",
          "Select Work Type" : "[ясяс~Select Work Type]",

@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:44
+// Build: 2023-08-26 15:18:45
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[razložiti~Manual do Aplicativo]",
          "Privacy Policy" : "[razložiti~Privacy Policy]",
          "Connection Settings" : "[razložiti~Connection Settings]",
-         "v7.6.4:22091645-H" : "[razložiti~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[razložiti~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[razložiti~My Assigned Work]",
          "Default List" : "[razložiti~Default List]",
          "Records with Errors" : "[razložiti~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[razložiti~Classification]",
          "Asset" : "[razložiti~Asset]",
          "Descri\u00E7\u00E3o" : "[razložiti~Descrição]",
+         "Crew" : "[razložiti~Crew]",
          "Specifications" : "[razložiti~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[razložiti~Descarregar Massa Asfáltica]",
          "Attachments" : "[razložiti~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[razložiti~Task ID, Labor]",
          "Labor Assignment Details" : "[razložiti~Labor Assignment Details]",
          "Task" : "[razložiti~Task]",
-         "Crew" : "[razložiti~Crew]",
          "Scheduled Date" : "[razložiti~Scheduled Date]",
          "Hours" : "[razložiti~Hours]",
          "Vendor" : "[razložiti~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[razložiti~Tool Details]",
          "Tool" : "[razložiti~Tool]",
          "Quantity" : "[razložiti~Quantity]",
-         "Latitude" : "[razložiti~Latitude]",
-         "Longitude" : "[razložiti~Longitude]",
          "Classify Work Order" : "[razložiti~Classify Work Order]",
          "Cancel" : "[razložiti~Cancel]",
          "Create" : "[razložiti~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[razložiti~Select from list]",
          "Motivo" : "[razložiti~Motivo]",
          "Save" : "[razložiti~Save]",
+         "Equipes" : "[razložiti~Equipes]",
          "Work Order Status" : "[razložiti~Work Order Status]",
          "Task Status" : "[razložiti~Task Status]",
          "Select Work Type" : "[razložiti~Select Work Type]",

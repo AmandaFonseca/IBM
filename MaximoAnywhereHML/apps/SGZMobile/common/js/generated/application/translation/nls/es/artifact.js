@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-09-22 16:46:42
+// Build: 2023-08-26 15:18:43
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[administración~Manual do Aplicativo]",
          "Privacy Policy" : "[administración~Privacy Policy]",
          "Connection Settings" : "[administración~Connection Settings]",
-         "v7.6.4:22091645-H" : "[administración~v7.6.4:22091645-H]",
+         "v7.6.4:v7.6.4:0706231800H" : "[administración~v7.6.4:v7.6.4:0706231800H]",
          "My Assigned Work" : "[administración~My Assigned Work]",
          "Default List" : "[administración~Default List]",
          "Records with Errors" : "[administración~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Classification" : "[administración~Classification]",
          "Asset" : "[administración~Asset]",
          "Descri\u00E7\u00E3o" : "[administración~Descrição]",
+         "Crew" : "[administración~Crew]",
          "Specifications" : "[administración~Specifications]",
          "Descarregar Massa Asf\u00E1ltica" : "[administración~Descarregar Massa Asfáltica]",
          "Attachments" : "[administración~Attachments]",
@@ -91,7 +92,6 @@ define({
          "Task ID, Labor" : "[administración~Task ID, Labor]",
          "Labor Assignment Details" : "[administración~Labor Assignment Details]",
          "Task" : "[administración~Task]",
-         "Crew" : "[administración~Crew]",
          "Scheduled Date" : "[administración~Scheduled Date]",
          "Hours" : "[administración~Hours]",
          "Vendor" : "[administración~Vendor]",
@@ -100,8 +100,6 @@ define({
          "Tool Details" : "[administración~Tool Details]",
          "Tool" : "[administración~Tool]",
          "Quantity" : "[administración~Quantity]",
-         "Latitude" : "[administración~Latitude]",
-         "Longitude" : "[administración~Longitude]",
          "Classify Work Order" : "[administración~Classify Work Order]",
          "Cancel" : "[administración~Cancel]",
          "Create" : "[administración~Create]",
@@ -147,6 +145,7 @@ define({
          "Select from list" : "[administración~Select from list]",
          "Motivo" : "[administración~Motivo]",
          "Save" : "[administración~Save]",
+         "Equipes" : "[administración~Equipes]",
          "Work Order Status" : "[administración~Work Order Status]",
          "Task Status" : "[administración~Task Status]",
          "Select Work Type" : "[administración~Select Work Type]",
