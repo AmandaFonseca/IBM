@@ -301,8 +301,11 @@
                     </groupitem>
 					<!-- Editado por adramos em 01-06-2022 1543 include de metodo click para verificar se o item possui categorias de anexos -->
 					<groupitem id="WorkExecution.WorkDetailView_groupitem_WorkExecution.WorkExecution.SpecificationVie" layout="Item1Count1Button2" transitionTo="WorkExecution.SpecificationView">
-                        <text editable="false" cssClass="relatedRecords" id="WorkExecution.WorkExecution.SpecificationView_0_Attachments" value="Report" layoutInsertAt="item1"/>
-                    </groupitem>
+                        <text editable="false" cssClass="relatedRecords" id="WorkExecution.WorkExecution.SpecificationView_0_Attachments" value="Report" layoutInsertAt="item1"/>          
+						<eventHandlers id="workexecution.hide_wo">
+							<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_WODetailsView" method="hide_WODetailsView"/>
+						</eventHandlers>
+					</groupitem>
                     
 					<groupitem enableFeatureByProperty="attachments.enabled" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.AttachmentsView_0" layout="Item1Count1Button2">
 					<!-- <groupitem enableFeatureByProperty="attachments.enabled" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.AttachmentsView_0" layout="Item1Count1Button2"> -->
