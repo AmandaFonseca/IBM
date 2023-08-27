@@ -543,7 +543,7 @@
 					
 					<!-- SGZ add field -->
 					<groupitem id="WorkExecution.FollowUpWorkOrderView_groupitem_WorkExecution.Pd_Obs_0">
-						<textarea editable="false" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.Pd_Obs_0_obs_pd_obs_new" label="Comments" resourceAttribute="pd_obs"/>
+						<textarea editable="true" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.Pd_Obs_0_obs_pd_obs_new" label="Comments" resourceAttribute="pd_obs"/>
 					</groupitem>
 					
 					<!-- SGZ Mobile add serviceaddress -->
