@@ -273,7 +273,7 @@
 						<text editable="false" id="WorkExecution.WorkDetailView_workOrder_groupitem_2_starttime_ScheduledStart" label="Approval date" placeHolder="Select" resourceAttribute="starttime" />						
 					</groupitem>
                     <groupitem id="WorkExecution.WorkDetailView_groupitem_WorkExecution.Pd_Obs_0" transitionTo="WorkExecution.PDOBSView">
-						<textarea editable="false" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.Pd_Obs_0_obs_pd_obs" label="Comments" resourceAttribute="pd_obs"/>
+						<textarea editable="true" id="WorkExecution.WorkDetailView_groupitem_WorkExecution.Pd_Obs_0_obs_pd_obs" label="Comments" resourceAttribute="pd_obs"/>
 					</groupitem>
 					<!-- SGZ Mobile add fields --> 
 					<groupitem id="ReadOnlyWorkExecution.WorkDetailView_groupitem_WorkExecution.EditSiteidView_team">
