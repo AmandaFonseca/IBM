@@ -248,6 +248,7 @@ define(
 					readOnlySpec : function(eventContext) {
 						var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
 						var Spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
+						var myUser = UserManager.getCurrentUser();
 						
 						if (currentWorkOrder != null && currentWorkOrder.workOrderSpec != null && Spec !== undefined){
 							for (var i = 0; i < Spec.count(); i++) {
@@ -1075,7 +1076,10 @@ define(
 					backSpec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 						var curWo = workOrderSet.getCurrentRecord();
-						ModelService.save(workOrderSet);
+						let status = curWo.get('status');
+						if (status == 'EMAND') {							
+							ModelService.save(workOrderSet);
+						}
 						var viewHistory = eventContext.ui.viewHistory;
 						var previousView = viewHistory[viewHistory.length-2];
 						eventContext.ui.returnToView(previousView.id);

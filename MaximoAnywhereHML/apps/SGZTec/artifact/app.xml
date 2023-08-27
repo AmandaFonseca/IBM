@@ -806,9 +806,9 @@
                 </eventHandlers>
 			</list>
             <eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_list_0_eventHandlers">
-                
                 <eventHandler class="custom.handlers.WODetailExtensionHandler" event="initialize" id="filterAttributes" method="filterAttributesItem"/>
                 <eventHandler event="back" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_back" class="custom.handlers.WODetailExtensionHandler" method="backSpec"/>
+				<eventHandler event="render" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_render" class="custom.handlers.WODetailExtensionHandler" method="handleConditionalReadOnlyMeasureunitid"/>
 			</eventHandlers>
 		</view>
         
