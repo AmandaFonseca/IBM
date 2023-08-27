@@ -960,6 +960,7 @@ define({
       "ms_semmedicao": "Favor informar uma Medição maior que 0 para Concluir a Ordem de Serviço",
       "ms_invalidstatusattachmentqtdcat" : "A seção de fotos {0} precisa de ao menos {1} foto(s) para alterar o status para Concluído.",
       "ms_invalidmsgnaorealizada": "Preencha o campo Motivo com a justificativa da não realização do serviço.",
+      "ms_invalidstatusattachmentqtd": "Favor adicionar no mínimo 3 (três) anexos.",
 });
 
 
