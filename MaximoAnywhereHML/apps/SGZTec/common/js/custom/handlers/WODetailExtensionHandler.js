@@ -89,7 +89,8 @@ define(
 						newWorkOrder.set('woservicecity', this.originalWorkOrder.get('woservicecity'));
 						newWorkOrder.set('woservicestateprovince', this.originalWorkOrder.get('woservicestateprovince'));									
 						newWorkOrder.set('siteid', this.originalWorkOrder.get("siteid"));
-						newWorkOrder.set('orgid', this.originalWorkOrder.get('orgid'));						
+						newWorkOrder.set('orgid', this.originalWorkOrder.get('orgid'));	
+						newWorkOrder.set('msjpnum',null);					
 						
 						//if (WL.StaticAppProps.APP_ID!="Inspection"){
 							if (this.originalWorkOrder.get('classstructureid') != null) {
