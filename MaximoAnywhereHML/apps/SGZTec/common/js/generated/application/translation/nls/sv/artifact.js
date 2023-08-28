@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:34
+// Build: 2023-08-28 17:31:08
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[trettioåriga~Manual do Aplicativo]",
          "Privacy Policy" : "[trettioåriga~Privacy Policy]",
          "Connection Settings" : "[trettioåriga~Connection Settings]",
-         "v7.6.4:25072301430H" : "[trettioåriga~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[trettioåriga~v7.6.4:2808230800H]",
          "My Assigned Work" : "[trettioåriga~My Assigned Work]",
          "Default List" : "[trettioåriga~Default List]",
          "Records with Errors" : "[trettioåriga~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[trettioåriga~Select]",
          "Comments" : "[trettioåriga~Comments]",
          "Crew" : "[trettioåriga~Crew]",
+         "Planned Tools" : "[trettioåriga~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[trettioåriga~Item de Serviço Originante]",
          "Report" : "[trettioåriga~Report]",
          "Attachments" : "[trettioåriga~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[trettioåriga~Hours]",
          "Vendor" : "[trettioåriga~Vendor]",
          "Contract" : "[trettioåriga~Contract]",
-         "Planned Tools" : "[trettioåriga~Planned Tools]",
          "Task ID, Tool" : "[trettioåriga~Task ID, Tool]",
          "Tool Details" : "[trettioåriga~Tool Details]",
          "Tool" : "[trettioåriga~Tool]",

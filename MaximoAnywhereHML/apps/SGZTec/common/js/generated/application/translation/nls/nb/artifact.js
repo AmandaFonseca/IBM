@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:34
+// Build: 2023-08-28 17:31:08
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[også populært~Manual do Aplicativo]",
          "Privacy Policy" : "[også populært~Privacy Policy]",
          "Connection Settings" : "[også populært~Connection Settings]",
-         "v7.6.4:25072301430H" : "[også populært~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[også populært~v7.6.4:2808230800H]",
          "My Assigned Work" : "[også populært~My Assigned Work]",
          "Default List" : "[også populært~Default List]",
          "Records with Errors" : "[også populært~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[også populært~Select]",
          "Comments" : "[også populært~Comments]",
          "Crew" : "[også populært~Crew]",
+         "Planned Tools" : "[også populært~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[også populært~Item de Serviço Originante]",
          "Report" : "[også populært~Report]",
          "Attachments" : "[også populært~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[også populært~Hours]",
          "Vendor" : "[også populært~Vendor]",
          "Contract" : "[også populært~Contract]",
-         "Planned Tools" : "[også populært~Planned Tools]",
          "Task ID, Tool" : "[også populært~Task ID, Tool]",
          "Tool Details" : "[også populært~Tool Details]",
          "Tool" : "[også populært~Tool]",

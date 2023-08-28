@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:34
+// Build: 2023-08-28 17:31:07
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[českém~Manual do Aplicativo]",
          "Privacy Policy" : "[českém~Privacy Policy]",
          "Connection Settings" : "[českém~Connection Settings]",
-         "v7.6.4:25072301430H" : "[českém~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[českém~v7.6.4:2808230800H]",
          "My Assigned Work" : "[českém~My Assigned Work]",
          "Default List" : "[českém~Default List]",
          "Records with Errors" : "[českém~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[českém~Select]",
          "Comments" : "[českém~Comments]",
          "Crew" : "[českém~Crew]",
+         "Planned Tools" : "[českém~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[českém~Item de Serviço Originante]",
          "Report" : "[českém~Report]",
          "Attachments" : "[českém~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[českém~Hours]",
          "Vendor" : "[českém~Vendor]",
          "Contract" : "[českém~Contract]",
-         "Planned Tools" : "[českém~Planned Tools]",
          "Task ID, Tool" : "[českém~Task ID, Tool]",
          "Tool Details" : "[českém~Tool Details]",
          "Tool" : "[českém~Tool]",

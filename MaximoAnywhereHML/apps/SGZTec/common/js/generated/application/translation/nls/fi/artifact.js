@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:34
+// Build: 2023-08-28 17:31:08
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[pohjoispäässä~Manual do Aplicativo]",
          "Privacy Policy" : "[pohjoispäässä~Privacy Policy]",
          "Connection Settings" : "[pohjoispäässä~Connection Settings]",
-         "v7.6.4:25072301430H" : "[pohjoispäässä~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[pohjoispäässä~v7.6.4:2808230800H]",
          "My Assigned Work" : "[pohjoispäässä~My Assigned Work]",
          "Default List" : "[pohjoispäässä~Default List]",
          "Records with Errors" : "[pohjoispäässä~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[pohjoispäässä~Select]",
          "Comments" : "[pohjoispäässä~Comments]",
          "Crew" : "[pohjoispäässä~Crew]",
+         "Planned Tools" : "[pohjoispäässä~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[pohjoispäässä~Item de Serviço Originante]",
          "Report" : "[pohjoispäässä~Report]",
          "Attachments" : "[pohjoispäässä~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[pohjoispäässä~Hours]",
          "Vendor" : "[pohjoispäässä~Vendor]",
          "Contract" : "[pohjoispäässä~Contract]",
-         "Planned Tools" : "[pohjoispäässä~Planned Tools]",
          "Task ID, Tool" : "[pohjoispäässä~Task ID, Tool]",
          "Tool Details" : "[pohjoispäässä~Tool Details]",
          "Tool" : "[pohjoispäässä~Tool]",

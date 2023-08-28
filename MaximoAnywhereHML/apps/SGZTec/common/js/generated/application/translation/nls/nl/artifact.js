@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:34
+// Build: 2023-08-28 17:31:07
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[onbepaalde~Manual do Aplicativo]",
          "Privacy Policy" : "[onbepaalde~Privacy Policy]",
          "Connection Settings" : "[onbepaalde~Connection Settings]",
-         "v7.6.4:25072301430H" : "[onbepaalde~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[onbepaalde~v7.6.4:2808230800H]",
          "My Assigned Work" : "[onbepaalde~My Assigned Work]",
          "Default List" : "[onbepaalde~Default List]",
          "Records with Errors" : "[onbepaalde~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[onbepaalde~Select]",
          "Comments" : "[onbepaalde~Comments]",
          "Crew" : "[onbepaalde~Crew]",
+         "Planned Tools" : "[onbepaalde~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[onbepaalde~Item de Serviço Originante]",
          "Report" : "[onbepaalde~Report]",
          "Attachments" : "[onbepaalde~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[onbepaalde~Hours]",
          "Vendor" : "[onbepaalde~Vendor]",
          "Contract" : "[onbepaalde~Contract]",
-         "Planned Tools" : "[onbepaalde~Planned Tools]",
          "Task ID, Tool" : "[onbepaalde~Task ID, Tool]",
          "Tool Details" : "[onbepaalde~Tool Details]",
          "Tool" : "[onbepaalde~Tool]",

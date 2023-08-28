@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:32
+// Build: 2023-08-28 17:31:07
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中国的~Manual do Aplicativo]",
          "Privacy Policy" : "[中国的~Privacy Policy]",
          "Connection Settings" : "[中国的~Connection Settings]",
-         "v7.6.4:25072301430H" : "[中国的~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[中国的~v7.6.4:2808230800H]",
          "My Assigned Work" : "[中国的~My Assigned Work]",
          "Default List" : "[中国的~Default List]",
          "Records with Errors" : "[中国的~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[中国的~Select]",
          "Comments" : "[中国的~Comments]",
          "Crew" : "[中国的~Crew]",
+         "Planned Tools" : "[中国的~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[中国的~Item de Serviço Originante]",
          "Report" : "[中国的~Report]",
          "Attachments" : "[中国的~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[中国的~Hours]",
          "Vendor" : "[中国的~Vendor]",
          "Contract" : "[中国的~Contract]",
-         "Planned Tools" : "[中国的~Planned Tools]",
          "Task ID, Tool" : "[中国的~Task ID, Tool]",
          "Tool Details" : "[中国的~Tool Details]",
          "Tool" : "[中国的~Tool]",

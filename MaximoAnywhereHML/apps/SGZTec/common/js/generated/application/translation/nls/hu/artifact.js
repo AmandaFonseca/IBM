@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:35
+// Build: 2023-08-28 17:31:08
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[erÕsíteni~Manual do Aplicativo]",
          "Privacy Policy" : "[erÕsíteni~Privacy Policy]",
          "Connection Settings" : "[erÕsíteni~Connection Settings]",
-         "v7.6.4:25072301430H" : "[erÕsíteni~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[erÕsíteni~v7.6.4:2808230800H]",
          "My Assigned Work" : "[erÕsíteni~My Assigned Work]",
          "Default List" : "[erÕsíteni~Default List]",
          "Records with Errors" : "[erÕsíteni~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[erÕsíteni~Select]",
          "Comments" : "[erÕsíteni~Comments]",
          "Crew" : "[erÕsíteni~Crew]",
+         "Planned Tools" : "[erÕsíteni~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[erÕsíteni~Item de Serviço Originante]",
          "Report" : "[erÕsíteni~Report]",
          "Attachments" : "[erÕsíteni~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[erÕsíteni~Hours]",
          "Vendor" : "[erÕsíteni~Vendor]",
          "Contract" : "[erÕsíteni~Contract]",
-         "Planned Tools" : "[erÕsíteni~Planned Tools]",
          "Task ID, Tool" : "[erÕsíteni~Task ID, Tool]",
          "Tool Details" : "[erÕsíteni~Tool Details]",
          "Tool" : "[erÕsíteni~Tool]",

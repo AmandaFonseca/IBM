@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:33
+// Build: 2023-08-28 17:31:07
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[gæst faldt~Manual do Aplicativo]",
          "Privacy Policy" : "[gæst faldt~Privacy Policy]",
          "Connection Settings" : "[gæst faldt~Connection Settings]",
-         "v7.6.4:25072301430H" : "[gæst faldt~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[gæst faldt~v7.6.4:2808230800H]",
          "My Assigned Work" : "[gæst faldt~My Assigned Work]",
          "Default List" : "[gæst faldt~Default List]",
          "Records with Errors" : "[gæst faldt~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[gæst faldt~Select]",
          "Comments" : "[gæst faldt~Comments]",
          "Crew" : "[gæst faldt~Crew]",
+         "Planned Tools" : "[gæst faldt~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[gæst faldt~Item de Serviço Originante]",
          "Report" : "[gæst faldt~Report]",
          "Attachments" : "[gæst faldt~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[gæst faldt~Hours]",
          "Vendor" : "[gæst faldt~Vendor]",
          "Contract" : "[gæst faldt~Contract]",
-         "Planned Tools" : "[gæst faldt~Planned Tools]",
          "Task ID, Tool" : "[gæst faldt~Task ID, Tool]",
          "Tool Details" : "[gæst faldt~Tool Details]",
          "Tool" : "[gæst faldt~Tool]",

@@ -764,8 +764,23 @@ define(
 						var AttachmentSet = CommonHandler._getAdditionalResource(eventContext,"workOrder.attachments");
 						CommonHandler._clearFilterForResource(eventContext,AttachmentSet);
 						var woCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource");
+						var curCatSet = woCategory.getCurrentRecord();
+						var curCat = curCatSet.get("ms_photosessionid");
+						var attCatSet = msDoclinksSet.find('ms_photosessionid == $1', curCat);
+						if (attCatSet.length != 0){
+										for(var j = 0 ; j < attCatSet.length; j++){ //Para cada registro da MS_DOCLINKS
+										   var anywhererefid = attCatSet[j].anywhererefid; //Recupera o anywhereRefId da tabela MS_DOCLINKS
+										   //if (AttachmentSet.count() > 0){
+											   var curAttachment = AttachmentSet.find('anywhereRefId == $1', anywhererefid); //Busca o registro atual na DOCLINKS
+											   if (curAttachment.length == 1){
+												  curAttachment[0].set("category", attCatSet[j].get("ms_photosessionid")); //Define sua categoria
+												  curAttachment[0].get("category");
+											   }
+										   //}
+										}
+									}
 						
-						if (woCategory.count() != 0) { //Recupera as categorias referentes a OS
+					   /*  if (woCategory.count() != 0) { //Recupera as categorias referentes a OS
 							for(var i = 0 ; i < woCategory.count(); i++){ //Para cada Categoria
 								category = woCategory.data[i].ms_photosessionid; //Identifica a categoria atual
 								var attCatSet = msDoclinksSet.find('ms_photosessionid == $1', category); //Busca os registros na MS_DOCLINKS dessa categoria
@@ -782,11 +797,9 @@ define(
 										}
 									}
 							}
-						}
+						} */
 						
-						
-						
-						var appAttachmentSet = eventContext.application.getResource('attachments');
+/*                          var appAttachmentSet = eventContext.application.getResource('attachments');
 						CommonHandler._clearFilterForResource(eventContext,appAttachmentSet);
 						var ActCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource").getCurrentRecord();
 						var section = ActCategory.get("ms_photosessionid");
@@ -796,8 +809,11 @@ define(
 							for(var j = 0 ; j < findNoCat.length; j++){
 							   findNoCat[j].set("category", section); //Define sua categoria
 							}
-						}
-						
+						}*/
+						var appAttachmentSet = eventContext.application.getResource('attachments');
+						CommonHandler._clearFilterForResource(eventContext,appAttachmentSet);
+						var ActCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource").getCurrentRecord();
+						var section = ActCategory.get("ms_photosessionid");
 						appAttachmentSet.filter('category == $1', section);
 						//var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
 						//eventContext.ui.getCurrentViewControl().refresh();

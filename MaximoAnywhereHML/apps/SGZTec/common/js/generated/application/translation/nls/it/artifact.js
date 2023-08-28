@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:33
+// Build: 2023-08-28 17:31:07
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[quantitó~Manual do Aplicativo]",
          "Privacy Policy" : "[quantitó~Privacy Policy]",
          "Connection Settings" : "[quantitó~Connection Settings]",
-         "v7.6.4:25072301430H" : "[quantitó~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[quantitó~v7.6.4:2808230800H]",
          "My Assigned Work" : "[quantitó~My Assigned Work]",
          "Default List" : "[quantitó~Default List]",
          "Records with Errors" : "[quantitó~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[quantitó~Select]",
          "Comments" : "[quantitó~Comments]",
          "Crew" : "[quantitó~Crew]",
+         "Planned Tools" : "[quantitó~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[quantitó~Item de Serviço Originante]",
          "Report" : "[quantitó~Report]",
          "Attachments" : "[quantitó~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[quantitó~Hours]",
          "Vendor" : "[quantitó~Vendor]",
          "Contract" : "[quantitó~Contract]",
-         "Planned Tools" : "[quantitó~Planned Tools]",
          "Task ID, Tool" : "[quantitó~Task ID, Tool]",
          "Tool Details" : "[quantitó~Tool Details]",
          "Tool" : "[quantitó~Tool]",

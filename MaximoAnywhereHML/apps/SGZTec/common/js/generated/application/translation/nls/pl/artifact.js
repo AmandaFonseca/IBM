@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:34
+// Build: 2023-08-28 17:31:08
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[Okrągłego~Manual do Aplicativo]",
          "Privacy Policy" : "[Okrągłego~Privacy Policy]",
          "Connection Settings" : "[Okrągłego~Connection Settings]",
-         "v7.6.4:25072301430H" : "[Okrągłego~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[Okrągłego~v7.6.4:2808230800H]",
          "My Assigned Work" : "[Okrągłego~My Assigned Work]",
          "Default List" : "[Okrągłego~Default List]",
          "Records with Errors" : "[Okrągłego~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[Okrągłego~Select]",
          "Comments" : "[Okrągłego~Comments]",
          "Crew" : "[Okrągłego~Crew]",
+         "Planned Tools" : "[Okrągłego~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[Okrągłego~Item de Serviço Originante]",
          "Report" : "[Okrągłego~Report]",
          "Attachments" : "[Okrągłego~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[Okrągłego~Hours]",
          "Vendor" : "[Okrągłego~Vendor]",
          "Contract" : "[Okrągłego~Contract]",
-         "Planned Tools" : "[Okrągłego~Planned Tools]",
          "Task ID, Tool" : "[Okrągłego~Task ID, Tool]",
          "Tool Details" : "[Okrągłego~Tool Details]",
          "Tool" : "[Okrągłego~Tool]",

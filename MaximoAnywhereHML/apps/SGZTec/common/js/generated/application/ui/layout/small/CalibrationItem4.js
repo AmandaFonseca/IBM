@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:29
+// Build: 2023-08-28 17:31:04
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/small/CalibrationItem4", 
       [

@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:26
+// Build: 2023-08-28 17:31:01
 //----------------------------------------------------------------//
 define(   "generated/application/data/ApplicationStoresBuilder", 
       [
@@ -250,8 +250,8 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'classInstance' : WorkOrderObject,
                }).
                setLocal( false ).
-               setSimpleFieldsSelectExpression('spi_wm:amcrew,spi_wm:ms_originagreeasph,spi_wm:ms_parentorigreasph,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_psversion,dcterms:identifier,dcterms:title,dcterms:description,spi_wm:pd_contractnum,spi_wm:woclass,spi_wm:ms_itemnum,oslc:shortTitle,dcterms:created,spi_wm:schedstart,spi_wm:schedfinish,spi_wm:actstart,spi_wm:actfinish,spi:status,spi_wm:worktype,spi_wm:classstructureid,spi_wm:pd_obs,spi_wm:ms_aging,spi_wm:ms_reason,spi_wm:parentchgsstatus,spi_wm:siteid,spi_wm:orgid,spi_wm:np_statusmemo,spi_wm:statusdate,spi_wm:istask,spi_wm:calculatedy,spi_wm:calculatedx,spi_wm:anywhereundo,spi_wm:parentwonumtec{dcterms:title,oslc:shortTitle},spi:woserviceaddress{spi_wm:latitudey,spi_wm:addressline2,spi_wm:longitudex,spi_wm:staddrnumber,spi_wm:addressline3,spi_wm:stateprovince,spi_wm:city,spi_wm:description,spi_wm:formattedaddress,spi_wm:saddresscode,spi_wm:postalcode}').
-               setSupportiveFieldsSelectExpression('spi_wm:ms_photosessionline{spi_wm:ms_photosessionlineid,spi_wm:ms_photosessionid,spi_wm:ms_parent,spi_wm:ms_required,spi_wm:ms_sequence,spi_wm:ms_description,spi_wm:ms_minqty},spi_wm:ms_doclinks{spi_wm:ms_anywhererefid,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_version},spi_wm:task{spi_wm:taskid,dcterms:title,spi_wm:description_longdescription,spi:status,spi_wm:schedstart,spi_wm:parent,spi_wm:istask,spi_wm:statusdate,spi_wm:np_statusmemo,spi_wm:siteid,oslc:shortTitle,spi_wm:parentchgsstatus},spi_wm:assignment{spi_wm:assignmentid,spi_wm:taskid,spi_wm:laborcode,spi_wm:laborname,spi_wm:craft,spi_wm:skilllevel,spi_wm:amcrew,spi_wm:amcrewtype,spi_wm:status,spi_wm:scheduledate,spi_wm:laborhrs,spi_wm:vendor,spi_wm:contractnum},spi_wm:wpmaterial{spi_wm:wpitemid,spi_wm:taskid,spi_wm:itemnum,spi_wm:description,spi_wm:description_longdescription,spi_wm:itemqty,spi_wm:linetype,spi_wm:directreq,spi_wm:itemsetid,spi_wm:storelocsite,spi_wm:requestnum},spi_wm:wptool{spi_wm:wpitemid,spi_wm:itemnum,spi_wm:taskid,spi_wm:description,spi_wm:description_longdescription,spi_wm:itemqty,spi_wm:hours,spi_wm:linetype,spi_wm:itemsetid},spi_wm:actuallabormob{dcterms:identifier,spi_wm:taskid,spi_wm:laborcode,foaf:name,spi_wm:craft,spi_wm:skilllevel,spi_wm:vendor,spi_wm:contractnum,spi_wm:revisionnum,spi_wm:amcrew,spi_wm:position,spi_wm:startdate,spi_wm:starttime,spi_wm:finishdate,spi_wm:finishtime,spi_wm:regularhrs,spi_wm:premiumpayhours,spi_wm:premiumpaycode,spi_wm:transtype,spi_wm:timerstatus,spi_wm:anywhererefid},spi:attachments{oslc_cm:attachmentSize,dcterms:title,spi:fileName,dcterms:description,dcterms:created,spi:urlType,spi:docType,spi:printthrulink,spi:contentLocation,spi:anywhererefid,spi:createby},spi_wm:workorderspec{spi_wm:pd_spec_required,spi_wm:workorderspecid,spi_wm:classstructureid,spi_wm:mandatory,spi_wm:refobjectname,spi_wm:orgid,spi_wm:changedate,spi_wm:displaysequence,spi_wm:changeby,spi_wm:refobjectid,spi_wm:numvalue,spi_wm:alnvalue,spi_wm:tablevalue,spi_wm:section,spi_wm:measureunitid,spi_wm:anywhererefid,spi_wm:classspec{spi_wm:domainid,spi_wm:classspecid{spi_wm:classspecid}},spi_wm:assetattr{spi_wm:assetattrid,spi_wm:description,spi_wm:datatype}},spi:assetspec{spi_wm:assetspecid,spi_wm:classstructureid,spi_wm:mandatory,spi_wm:orgid,spi_wm:changedate,spi_wm:displaysequence,spi_wm:changeby,spi_wm:numvalue,spi_wm:alnvalue,spi_wm:tablevalue,spi_wm:section,spi_wm:linearassetspecid,spi_wm:measureunitid,spi_wm:anywhererefid,spi_wm:assetattrspec{spi_wm:assetattrid,spi_wm:domainid,spi_wm:description,spi_wm:datatype}}').
+               setSimpleFieldsSelectExpression('spi_wm:amcrew,spi_wm:ms_originagreeasph,spi_wm:ms_parentorigreasph,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_psversion,dcterms:identifier,dcterms:title,dcterms:description,spi_wm:pd_contractnum,spi_wm:woclass,spi_wm:ms_itemnum,oslc:shortTitle,dcterms:created,spi_wm:schedstart,spi_wm:schedfinish,spi_wm:actstart,spi_wm:actfinish,spi:status,spi_wm:worktype,spi_wm:classstructureid,spi:woserviceaddresstec,spi_wm:pd_obs,spi_wm:ms_aging,spi_wm:ms_reason,spi_wm:parentchgsstatus,spi_wm:jpnum,spi_wm:siteid,spi_wm:orgid,spi_wm:np_statusmemo,spi_wm:statusdate,spi_wm:istask,spi_wm:calculatedy,spi_wm:calculatedx,spi_wm:anywhereundo,spi_wm:parentwonumtec{dcterms:title,spi_wm:jpnum,oslc:shortTitle},spi:woserviceaddresstec{spi_wm:addressline2,spi_wm:staddrnumber,spi_wm:addressline3,spi_wm:stateprovince,spi:formattedaddress,spi_wm:city,spi_wm:description,spi_wm:formattedaddress,spi_wm:saddresscode,spi_wm:postalcode}').
+               setSupportiveFieldsSelectExpression('spi_wm:ms_photosessionline{spi_wm:ms_photosessionlineid,spi_wm:ms_photosessionid,spi_wm:ms_parent,spi_wm:ms_required,spi_wm:ms_sequence,spi_wm:ms_description,spi_wm:ms_minqty},spi_wm:ms_doclinks{spi_wm:ms_anywhererefid,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_version},spi_wm:task{spi_wm:taskid,dcterms:title,spi_wm:description_longdescription,spi:status,spi_wm:schedstart,spi_wm:parent,spi_wm:istask,spi_wm:statusdate,spi_wm:np_statusmemo,spi_wm:siteid,oslc:shortTitle,spi_wm:parentchgsstatus},spi_wm:assignment{spi_wm:assignmentid,spi_wm:taskid,spi_wm:laborcode,spi_wm:laborname,spi_wm:craft,spi_wm:skilllevel,spi_wm:amcrew,spi_wm:amcrewtype,spi_wm:status,spi_wm:scheduledate,spi_wm:laborhrs,spi_wm:vendor,spi_wm:contractnum},spi_wm:wpmaterial{spi_wm:wpitemid,spi_wm:taskid,spi_wm:itemnum,spi_wm:description,spi_wm:description_longdescription,spi_wm:itemqty,spi_wm:linetype,spi_wm:directreq,spi_wm:itemsetid,spi_wm:storelocsite,spi_wm:requestnum},spi_wm:wptooltec{spi_wm:wpitemid,spi_wm:itemnum,spi_wm:taskid,spi_wm:description,spi_wm:description_longdescription,spi_wm:itemqty,spi_wm:hours,spi_wm:linetype,spi_wm:itemsetid},spi_wm:actuallabormob{dcterms:identifier,spi_wm:taskid,spi_wm:laborcode,foaf:name,spi_wm:craft,spi_wm:skilllevel,spi_wm:vendor,spi_wm:contractnum,spi_wm:revisionnum,spi_wm:amcrew,spi_wm:position,spi_wm:startdate,spi_wm:starttime,spi_wm:finishdate,spi_wm:finishtime,spi_wm:regularhrs,spi_wm:premiumpayhours,spi_wm:premiumpaycode,spi_wm:transtype,spi_wm:timerstatus,spi_wm:anywhererefid},spi:attachments{oslc_cm:attachmentSize,dcterms:title,spi:fileName,dcterms:description,dcterms:created,spi:urlType,spi:docType,spi:printthrulink,spi:contentLocation,spi:anywhererefid,spi:createby},spi_wm:workorderspec{spi_wm:pd_spec_required,spi_wm:workorderspecid,spi_wm:classstructureid,spi_wm:mandatory,spi_wm:refobjectname,spi_wm:orgid,spi_wm:changedate,spi_wm:displaysequence,spi_wm:changeby,spi_wm:refobjectid,spi_wm:numvalue,spi_wm:alnvalue,spi_wm:tablevalue,spi_wm:section,spi_wm:measureunitid,spi_wm:anywhererefid,spi_wm:classspec{spi_wm:domainid,spi_wm:classspecid{spi_wm:classspecid}},spi_wm:assetattr{spi_wm:assetattrid,spi_wm:description,spi_wm:datatype}},spi:assetspec{spi_wm:assetspecid,spi_wm:classstructureid,spi_wm:mandatory,spi_wm:orgid,spi_wm:changedate,spi_wm:displaysequence,spi_wm:changeby,spi_wm:numvalue,spi_wm:alnvalue,spi_wm:tablevalue,spi_wm:section,spi_wm:linearassetspecid,spi_wm:measureunitid,spi_wm:anywhererefid,spi_wm:assetattrspec{spi_wm:assetattrid,spi_wm:domainid,spi_wm:description,spi_wm:datatype}}').
                addField({
                   'multiplicity' : 'zero-or-one',
                   'dataType' : 'string',
@@ -525,6 +525,16 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
+                  'dataType' : 'inline',
+                  'name' : 'woserviceaddresstec',
+                  'index' : false,
+                  'artifactId' : 'workOrder_woserviceaddress_woserviceaddresstec',
+                  'id' : 'aw1a418df7',
+                  'local' : false,
+                  'remoteName' : 'spi:woserviceaddresstec',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
                   'displayValueRemoteName' : 'spi_wm:formattedaddress',
                   'dataType' : 'inline',
                   'referenceResource' : 'workOrder',
@@ -534,7 +544,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 150,
                   'id' : 'aw4b373dec',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -548,7 +558,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 12,
                   'id' : 'aw2fdc547d',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -561,7 +571,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 50,
                   'id' : 'aw2021f264',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -574,7 +584,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 255,
                   'id' : 'aw81b4de0b',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -587,7 +597,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 9,
                   'id' : 'aw4fe63752',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -600,7 +610,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 255,
                   'id' : 'aw7643f982',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -613,7 +623,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 12,
                   'id' : 'aw2642889e',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -627,7 +637,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 36,
                   'id' : 'aw8e5eade0',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -641,7 +651,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 25,
                   'id' : 'aw576c7432',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -706,11 +716,37 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'referenceResource' : 'workOrder',
                   'name' : 'parentwonumDesc',
                   'index' : false,
-                  'artifactId' : 'workOrder_parentwonumDesc_spi_wmparentwonumctermstitle',
+                  'artifactId' : 'workOrder_parentwonumDesc_spi_wmparentwonumparentwonumDesc',
                   'maxSize' : 255,
-                  'id' : 'aw36e68aa4',
+                  'id' : 'aw17934273',
                   'local' : false,
                   'remoteName' : 'spi_wm:parentwonumtec',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'displayValueRemoteName' : 'spi_wm:jpnum',
+                  'dataType' : 'reference',
+                  'usage' : 'upper',
+                  'referenceResource' : 'workOrder',
+                  'name' : 'parentJpnum',
+                  'index' : false,
+                  'artifactId' : 'workOrder_parentwonumDesc_spi_wmparentwonumparentJpnum',
+                  'maxSize' : 12,
+                  'id' : 'awe52d4613',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:parentwonumtec',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'msjpnum',
+                  'index' : false,
+                  'artifactId' : 'workOrder_jpnum_spi_wmJpnum',
+                  'maxSize' : 12,
+                  'id' : 'aw5cd2d9',
+                  'local' : false,
+                  'remoteName' : 'spi_wm:jpnum',
                }).
                addField({
                   'multiplicity' : 'exactly-one',
@@ -817,8 +853,8 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'id' : 'aw48aaa59e',
                   'describedByResource' : 'plannedToolResource',
                   'local' : false,
-                  'remoteName' : 'spi_wm:wptool',
-                  'selectExpression' : 'spi_wm:wptool{spi_wm:wpitemid,spi_wm:itemnum,spi_wm:taskid,spi_wm:description,spi_wm:description_longdescription,spi_wm:itemqty,spi_wm:hours,spi_wm:linetype,spi_wm:itemsetid}',
+                  'remoteName' : 'spi_wm:wptooltec',
+                  'selectExpression' : 'spi_wm:wptooltec{spi_wm:wpitemid,spi_wm:itemnum,spi_wm:taskid,spi_wm:description,spi_wm:description_longdescription,spi_wm:itemqty,spi_wm:hours,spi_wm:linetype,spi_wm:itemsetid}',
                }).
                addField({
                   'multiplicity' : 'zero-or-many',
@@ -896,7 +932,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                }).
                addField({
                   'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'spi_wm:formattedaddress',
+                  'displayValueRemoteName' : 'spi:formattedaddress',
                   'dataType' : 'inline',
                   'referenceResource' : 'workOrder',
                   'name' : 'formattedaddress',
@@ -905,33 +941,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 150,
                   'id' : 'awd70f51b8',
                   'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'spi_wm:longitudex',
-                  'dataType' : 'inline',
-                  'referenceResource' : 'workOrder',
-                  'name' : 'WOSAlongitudex',
-                  'index' : false,
-                  'scale' : 10,
-                  'artifactId' : 'workOrder_woserviceaddressx_longitudex',
-                  'id' : 'aw771f9b7d',
-                  'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
-               }).
-               addField({
-                  'multiplicity' : 'zero-or-one',
-                  'displayValueRemoteName' : 'spi_wm:latitudey',
-                  'dataType' : 'inline',
-                  'referenceResource' : 'workOrder',
-                  'name' : 'WOSAlatitudey',
-                  'index' : false,
-                  'scale' : 10,
-                  'artifactId' : 'workOrder_woserviceaddressy_latitudey',
-                  'id' : 'awa536442',
-                  'local' : false,
-                  'remoteName' : 'spi:woserviceaddress',
+                  'remoteName' : 'spi:woserviceaddresstec',
                }).
                addField({
                   'dataType' : 'dateTime',
@@ -3762,7 +3772,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxFetchDataLimit' : 0,
                }).
                setLocal( false ).
-               setSimpleFieldsSelectExpression('spi:ms_active,spi:ms_contractnum,oslc:identifier,spi:amcrew{oslc:title,oslc:shortTitle},spi:person{spi:displayname}').
+               setSimpleFieldsSelectExpression('spi:ms_active,spi:ms_contractnum,spi:ms_siteid,oslc:identifier,spi:amcrew{oslc:title,oslc:shortTitle},spi:person{spi:displayname}').
                setSupportiveFieldsSelectExpression('').
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -3825,6 +3835,18 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'id' : 'awa447579a',
                   'local' : false,
                   'remoteName' : 'spi:ms_contractnum',
+               }).
+               addField({
+                  'multiplicity' : 'zero-or-one',
+                  'dataType' : 'string',
+                  'usage' : 'upper',
+                  'name' : 'ms_siteid',
+                  'index' : false,
+                  'artifactId' : 'msamcrew_ms_siteid',
+                  'maxSize' : 8,
+                  'id' : 'aw7ff4dc4a',
+                  'local' : false,
+                  'remoteName' : 'spi:ms_siteid',
                }).
                addField({
                   'multiplicity' : 'zero-or-one',

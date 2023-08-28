@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:33
+// Build: 2023-08-28 17:31:07
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[대학에~Manual do Aplicativo]",
          "Privacy Policy" : "[대학에~Privacy Policy]",
          "Connection Settings" : "[대학에~Connection Settings]",
-         "v7.6.4:25072301430H" : "[대학에~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[대학에~v7.6.4:2808230800H]",
          "My Assigned Work" : "[대학에~My Assigned Work]",
          "Default List" : "[대학에~Default List]",
          "Records with Errors" : "[대학에~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[대학에~Select]",
          "Comments" : "[대학에~Comments]",
          "Crew" : "[대학에~Crew]",
+         "Planned Tools" : "[대학에~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[대학에~Item de Serviço Originante]",
          "Report" : "[대학에~Report]",
          "Attachments" : "[대학에~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[대학에~Hours]",
          "Vendor" : "[대학에~Vendor]",
          "Contract" : "[대학에~Contract]",
-         "Planned Tools" : "[대학에~Planned Tools]",
          "Task ID, Tool" : "[대학에~Task ID, Tool]",
          "Tool Details" : "[대학에~Tool Details]",
          "Tool" : "[대학에~Tool]",

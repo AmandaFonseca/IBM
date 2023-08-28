@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:33
+// Build: 2023-08-28 17:31:07
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[島の第~Manual do Aplicativo]",
          "Privacy Policy" : "[島の第~Privacy Policy]",
          "Connection Settings" : "[島の第~Connection Settings]",
-         "v7.6.4:25072301430H" : "[島の第~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[島の第~v7.6.4:2808230800H]",
          "My Assigned Work" : "[島の第~My Assigned Work]",
          "Default List" : "[島の第~Default List]",
          "Records with Errors" : "[島の第~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[島の第~Select]",
          "Comments" : "[島の第~Comments]",
          "Crew" : "[島の第~Crew]",
+         "Planned Tools" : "[島の第~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[島の第~Item de Serviço Originante]",
          "Report" : "[島の第~Report]",
          "Attachments" : "[島の第~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[島の第~Hours]",
          "Vendor" : "[島の第~Vendor]",
          "Contract" : "[島の第~Contract]",
-         "Planned Tools" : "[島の第~Planned Tools]",
          "Task ID, Tool" : "[島の第~Task ID, Tool]",
          "Tool Details" : "[島の第~Tool Details]",
          "Tool" : "[島の第~Tool]",

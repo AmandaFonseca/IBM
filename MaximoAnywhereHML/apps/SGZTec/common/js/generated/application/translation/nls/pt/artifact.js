@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-25 15:29:33
+// Build: 2023-08-28 17:31:07
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[vagão do metrô~Manual do Aplicativo]",
          "Privacy Policy" : "[vagão do metrô~Privacy Policy]",
          "Connection Settings" : "[vagão do metrô~Connection Settings]",
-         "v7.6.4:25072301430H" : "[vagão do metrô~v7.6.4:25072301430H]",
+         "v7.6.4:2808230800H" : "[vagão do metrô~v7.6.4:2808230800H]",
          "My Assigned Work" : "[vagão do metrô~My Assigned Work]",
          "Default List" : "[vagão do metrô~Default List]",
          "Records with Errors" : "[vagão do metrô~Records with Errors]",
@@ -64,6 +64,7 @@ define({
          "Select" : "[vagão do metrô~Select]",
          "Comments" : "[vagão do metrô~Comments]",
          "Crew" : "[vagão do metrô~Crew]",
+         "Planned Tools" : "[vagão do metrô~Planned Tools]",
          "Item de Servi\u00E7o Originante" : "[vagão do metrô~Item de Serviço Originante]",
          "Report" : "[vagão do metrô~Report]",
          "Attachments" : "[vagão do metrô~Attachments]",
@@ -75,7 +76,6 @@ define({
          "Hours" : "[vagão do metrô~Hours]",
          "Vendor" : "[vagão do metrô~Vendor]",
          "Contract" : "[vagão do metrô~Contract]",
-         "Planned Tools" : "[vagão do metrô~Planned Tools]",
          "Task ID, Tool" : "[vagão do metrô~Task ID, Tool]",
          "Tool Details" : "[vagão do metrô~Tool Details]",
          "Tool" : "[vagão do metrô~Tool]",
