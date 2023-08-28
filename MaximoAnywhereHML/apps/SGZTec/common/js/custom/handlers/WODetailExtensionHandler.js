@@ -53,7 +53,7 @@ define(
 						var newWorkOrder = eventContext.application.getResource('workOrder').createNewRecord();
 						
 						newWorkOrder.set('parentwonum', this.originalWorkOrder.get('parentwonum')); 
-						newWorkOrder.set('msjpnum', this.originalWorkOrder.get('parentJpnum')); 
+						//newWorkOrder.set('msjpnum', this.originalWorkOrder.get('parentJpnum')); 
 						newWorkOrder.set('woclass', 'ATIVIDADE');
 						newWorkOrder.set('origrecordid', this.originalWorkOrder.get('wonum')); 
 						newWorkOrder.set('origrecordclass', this.originalWorkOrder.get('woclass'));
