@@ -54,6 +54,7 @@ define(
 						
 						newWorkOrder.set('parentwonum', this.originalWorkOrder.get('parentwonum')); 
 						//newWorkOrder.set('msjpnum', this.originalWorkOrder.get('parentJpnum')); 
+						newWorkOrder.setPendingValue('msjpnum', this.originalWorkOrder.get('parentJpnum'))
 						newWorkOrder.set('woclass', 'ATIVIDADE');
 						newWorkOrder.set('origrecordid', this.originalWorkOrder.get('wonum')); 
 						newWorkOrder.set('origrecordclass', this.originalWorkOrder.get('woclass'));
@@ -90,7 +91,6 @@ define(
 						newWorkOrder.set('woservicestateprovince', this.originalWorkOrder.get('woservicestateprovince'));									
 						newWorkOrder.set('siteid', this.originalWorkOrder.get("siteid"));
 						newWorkOrder.set('orgid', this.originalWorkOrder.get('orgid'));	
-						newWorkOrder.set('msjpnum',null);					
 						
 						//if (WL.StaticAppProps.APP_ID!="Inspection"){
 							if (this.originalWorkOrder.get('classstructureid') != null) {
@@ -453,7 +453,7 @@ define(
 					
 					},
 					 */
-					
+
 					updateFollwupGPSPosition : function (workOrder) {
 
 						var onSuccessCallback = function (position) {
@@ -679,7 +679,8 @@ define(
 							
 						var iscClasssify = classstructure.find('classstructureid == $1', classsify);
 						var parentClass = iscClasssify[0].ancestor;
-						var parentJpnum = currWO.get('msjpnum');
+						//var parentJpnum = currWO.get('msjpnum');
+						var parentJpnum = currWO.getPendingOrOriginalValue("msjpnum");
 						var ancestorLoc = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,ancestorLoc);
 						ancestorLoc.filter('ancestor == $1', parentClass);
@@ -779,8 +780,7 @@ define(
 										   //}
 										}
 									}
-						
-					   /*  if (woCategory.count() != 0) { //Recupera as categorias referentes a OS
+						if (woCategory.count() != 0) { //Recupera as categorias referentes a OS
 							for(var i = 0 ; i < woCategory.count(); i++){ //Para cada Categoria
 								category = woCategory.data[i].ms_photosessionid; //Identifica a categoria atual
 								var attCatSet = msDoclinksSet.find('ms_photosessionid == $1', category); //Busca os registros na MS_DOCLINKS dessa categoria
@@ -797,23 +797,21 @@ define(
 										}
 									}
 							}
-						} */
+						}
 						
-/*                          var appAttachmentSet = eventContext.application.getResource('attachments');
+					var appAttachmentSet = eventContext.application.getResource('attachments');
 						CommonHandler._clearFilterForResource(eventContext,appAttachmentSet);
 						var ActCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource").getCurrentRecord();
 						var section = ActCategory.get("ms_photosessionid");
-						
+						//appAttachmentSet.filter('category == $1', section);
+
 						var findNoCat = appAttachmentSet.find('category == null');
 						if (findNoCat.length > 0){
 							for(var j = 0 ; j < findNoCat.length; j++){
 							   findNoCat[j].set("category", section); //Define sua categoria
 							}
-						}*/
-						var appAttachmentSet = eventContext.application.getResource('attachments');
-						CommonHandler._clearFilterForResource(eventContext,appAttachmentSet);
-						var ActCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource").getCurrentRecord();
-						var section = ActCategory.get("ms_photosessionid");
+						}
+						
 						appAttachmentSet.filter('category == $1', section);
 						//var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
 						//eventContext.ui.getCurrentViewControl().refresh();
