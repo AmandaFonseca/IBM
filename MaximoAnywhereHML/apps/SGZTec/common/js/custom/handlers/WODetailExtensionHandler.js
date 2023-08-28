@@ -248,12 +248,14 @@ define(
 					readOnlySpec : function(eventContext) {
 						var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
 						var Spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
-						var myUser = UserManager.getCurrentUser();
+						let classifications = ["E_PATOLOGIA","F_AFUND","G_TRINCA","H_REQ","I_OND","J_EXSUDACAO","K_ESC","L_DESAGRE","M_DEF_PLA","N_BUR_PAN"];
 						
 						if (currentWorkOrder != null && currentWorkOrder.workOrderSpec != null && Spec !== undefined){
 							for (var i = 0; i < Spec.count(); i++) {
 								var currWorkOrderSpec = Spec.getRecordAt(i);
 								var currSpec = currWorkOrderSpec.get('assetattrid');
+								let classification = currWorkOrderSpec.get('classstructureid');
+								let datatype = currWorkOrderSpec.get('datatype');
 								if (currSpec == 'C_AREA' || currSpec == 'CC_AREA' || currSpec == 'AREA' 
 									|| currSpec == 'CALCULO_ESPESSU' || currSpec == 'VOLUME' || currSpec == 'GRAU_COMPACT3' 
 									|| currSpec == 'GRAU_COMPACT3'  || currSpec == 'PERC_VAZIOS2' || currSpec == 'ESPESSURA' ){
@@ -263,6 +265,14 @@ define(
 									currWorkOrderSpec.getRuntimeFieldMetadata("numvalue").set("readonly", true);
 									currWorkOrderSpec.getRuntimeFieldMetadata("alnvalue").set("readonly", true);
 									currWorkOrderSpec._isReadOnly = true;
+								}
+								if (classification == "1508" && datatype == "ALN") {
+									let default_value = "Não";
+									classifications.forEach(element => {
+										if (currSpec == element && !currWorkOrderSpec.get('alnvalue')) {
+											currWorkOrderSpec.set('alnvalue', default_value);
+										}
+									});
 								}
 							
 							}
@@ -1075,9 +1085,22 @@ define(
 					},
 					backSpec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
+						var Spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
 						var curWo = workOrderSet.getCurrentRecord();
 						let status = curWo.get('status');
-						if (status == 'EMAND') {							
+						if (status == 'EMAND') {				
+							if (curWo != null && curWo.workOrderSpec != null && Spec !== undefined){
+								for (var i = 0; i < Spec.count(); i++) {
+									var currWorkOrderSpec = Spec.getRecordAt(i);
+									if (currWorkOrderSpec.get('alnvalue')) {
+										let alnvalue = currWorkOrderSpec.get('alnvalue');
+										alnvalue = alnvalue.toLocaleUpperCase();
+										if (alnvalue == "NÃO" || alnvalue == "SIM") {											
+											currWorkOrderSpec.set('alnvalue', alnvalue);
+										}
+									}				
+								}
+							}			
 							ModelService.save(workOrderSet);
 						}
 						var viewHistory = eventContext.ui.viewHistory;
