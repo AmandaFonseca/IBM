@@ -138,7 +138,7 @@
 			</list>
 			<eventHandlers id="WorkExecution.WorkItemsView_eventHandlers">
 				<eventHandler class="application.handlers.WODetailHandler" event="render" id="WorkExecution.WorkItemsView_eventHandlers_render_showBusyList" method="showBusyList"/>
-				<eventHandler class="application.handlers.WOGeolocationHandler" event="initialize" id="WorkExecution.WorkItemsView_eventHandlers_initialize_geolocation" method="initialize"/>				
+				<!--<eventHandler class="application.handlers.WOGeolocationHandler" event="initialize" id="WorkExecution.WorkItemsView_eventHandlers_initialize_geolocation" method="initialize"/>	-->			
 				<eventHandler class="application.handlers.WOListHandler" event="render" id="WorkExecution.WorkItemsView_eventHandlers_initialize_wolist" method="render"/>
 				<!-- <eventHandler class="custom.handlers.WODetailExtensionHandler" event="render" id="Wotickets.Voltar_eventHandlers_initialize_open_hideTS_2122" method="ticket_Final"/> -->
 				<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_render" method="sync"/>
