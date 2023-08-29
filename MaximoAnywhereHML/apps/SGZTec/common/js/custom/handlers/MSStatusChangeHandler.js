@@ -802,6 +802,10 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 
 			setLocaleCrew: function(eventContext){
 				var workOrder = eventContext.application.getResource('workOrder');
+				let wo = workOrder.getCurrentRecord();
+				let msamcrew = eventContext.application.getResource("msamcrew").getCurrentRecord();
+				let amcrew = msamcrew.get('amcrew');
+				wo.set('amcrew',amcrew)
 				var deferred = new Deferred();
 				ModelService.save(workOrder).then(function(result){
 					deferred.resolve();
