@@ -243,6 +243,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			var woSet = eventContext.application.getResource('workOrder');
 			var wo = woSet.getCurrentRecord();
 			//this.ui.hideCurrentView(PlatformConstants.CLEANUP);
+			statusChangeResource.set('status',null);
 			if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
 				self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
 			}
