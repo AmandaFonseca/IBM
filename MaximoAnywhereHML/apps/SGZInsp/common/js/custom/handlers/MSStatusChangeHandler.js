@@ -1133,13 +1133,14 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		var statusdate = workorder.get("changestatusdate");
 		var attachments_crecord = CommonHandler._getAdditionalResource(eventContext,"attachments");
 		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
+		statusChangeResource.set('attachmentssizetoday', null)
 		//attachments_crecord.filter("creationDate > $1", statusdate);
 		let attachmentssize = workorder.get("attachmentssize");
 		var ms_insptype = workorder.get("ms_insptype");
 		let status = workorder.get("status");
 		let attachments_crecord_size = 0;
 		let user = 0;
-		let attachmentssizetoday = 0;
+		let attachmentssizetoday = null;
 		var myUser = UserManager.getCurrentUser();
   
 		if (attachments_crecord.data.length) {
@@ -1449,75 +1450,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			}
 
 		},
-		showHideQuestionsViewReturn: function (eventContext) {
-			var workorder = eventContext.getResource().getCurrentRecord();
-			var statusdate = workorder.get("changestatusdate");
-			var attachments_crecord = CommonHandler._getAdditionalResource(eventContext,"attachments");
-			//attachments_crecord.filter("creationDate > $1", statusdate);
-			let attachmentssize = workorder.get("attachmentssize");
-			var ms_insptype = workorder.get("ms_insptype");
-			let status = workorder.get("status");
-			let attachments_crecord_size = 0;
-			let user = 0;
-			let attachmentssizetoday = 0;
-			let isAttachament = true;
-			if (attachments_crecord.data.length) {
-				attachments_crecord_size = attachments_crecord.data.length;
-			} 
-			if (attachmentssize == '--') {
-				workorder.set("attachmentssize", "0");
-				attachmentssize = workorder.get("attachmentssize");
-			}
-			if (typeof attachmentssize == 'string') {
-				attachmentssize = parseInt(attachmentssize);
-			}
-			let date =  new Date();
-			var dia = String(date.getDate()).padStart(2, '0');
-			var mes = String(date.getMonth() + 1).padStart(2, '0');
-			var ano = date.getFullYear();
-			var newdate  = dia + '/' + mes + '/' + ano;            
-			var partesData = newdate.split("/");
-			var data_newdate = new Date(partesData[2], partesData[1] - 1, partesData[0]);
-			let type= typeof attachments_crecord;
-			if (type == 'object') {
-				for (const key in attachments_crecord.data) {
-					if (Object.hasOwnProperty.call(attachments_crecord.data, key)) {
-						const element = attachments_crecord.data[key];
-						// let creationDate = element.get('creationDate');
-						let creationDate;
-						let datePhoto; 
-						user = element.get('createby');
-						try {
-							if (element.get('creationDate')) {
-								creationDate = element.get('creationDate');
-							datePhoto = new Date(creationDate);
-							}else{
-								datePhoto = new Date();
-							}
-						} catch (error) {
-							console.log('Erro função showHideQuestionsView()')
-						}
-						var dia = String(datePhoto.getDate()).padStart(2, '0');
-						var mes = String(datePhoto.getMonth() + 1).padStart(2, '0');
-						var ano = datePhoto.getFullYear();
-						var newdatedatePhoto  = dia + '/' + mes + '/' + ano;      
-						var partesData2 = newdatedatePhoto.split("/");
-						var data_newdatedatePhoto = new Date(partesData2[2], partesData2[1] - 1, partesData2[0]);
-						let dateStatus = new Date(statusdate); 
-						var dia = String(dateStatus.getDate()).padStart(2, '0');
-						var mes = String(dateStatus.getMonth() + 1).padStart(2, '0');
-						var ano = dateStatus.getFullYear();
-						var newdateStatus  = dia + '/' + mes + '/' + ano;            
-						var partesData3 = newdatedatePhoto.split("/");
-						var data_newdateStatus = new Date(partesData3[2], partesData3[1] - 1, partesData3[0]);
-						if(data_newdatedatePhoto >= data_newdate && data_newdatedatePhoto >= data_newdateStatus){
-							attachmentssizetoday ++;
-						}
-					}
-				}        
-			}
-			return attachmentssizetoday;
-		},
+
 
 	});
 });
