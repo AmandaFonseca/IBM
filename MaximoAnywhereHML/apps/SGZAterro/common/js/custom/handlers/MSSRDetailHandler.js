@@ -517,8 +517,8 @@ define("custom/handlers/MSSRDetailHandler", [
         }
         appAttachmentSet.filter('category == $1', section);
         var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
-        eventContext.ui.getCurrentViewControl().refresh();
-        eventContext.ui.getCurrentViewControl().refreshLists();
+        //eventContext.ui.getCurrentViewControl().refresh();
+        //eventContext.ui.getCurrentViewControl().refreshLists();
     },
     
     updateCurrentGPSPosition : function (eventContext) {

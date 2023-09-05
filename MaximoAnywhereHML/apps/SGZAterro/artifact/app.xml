@@ -521,21 +521,23 @@
 
 		</view>
 		<!-- Define Attachments List view -->
-		<view id="WorkExecution.FilteredAttachmentsView"  label="Attachments" showOverflow="true">
+		<view id="WorkExecution.FilteredAttachmentsView" label="Attachments (Categorizado)" showOverflow="true">
 			<requiredResources id="WorkExecution.FilteredAttachmentsView_requiredResources">
-				<requiredResource id="WorkExecution.FilteredAttachmentsView_sgzDescarte" name="sgzDescarte">
-					<requiredAttribute id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments" name="attachments" />
-					<requiredAttribute id="WorkExecution.FilteredAttachmentsView_sgzDescarte_atcsessionlist" name="atcsessionlist" />
-					<requiredAttribute id="WorkExecution.FilteredAttachmentsView_sgzDescarte_msdoclinkslist" name="msdoclinkslist" />
+				<requiredResource id="WorkExecution.FilteredAttachmentsView_workOrder" name="sgzDescarte">
+					<requiredAttribute id="WorkExecution.FilteredAttachmentsView_workOrder_attachments" name="attachments"/>
+					<requiredAttribute id="WorkExecution.FilteredAttachmentsView_workOrder_atcsessionlist" name="atcsessionlist"/>
+					<requiredAttribute id="WorkExecution.FilteredAttachmentsView_workOrder_msdoclinkslist" name="msdoclinkslist"/>
 				</requiredResource>
 			</requiredResources>
 			<actions id="WorkExecution.FilteredAttachmentsView_actions">
 				<action id="WorkExecution.FilteredAttachmentsView_TakePhoto_action" image="/images/header_camera_off.svg" label="Take Photo">
 					<eventHandlers id="WorkExecution.FilteredAttachmentsView_TakePhoto_action_eventHandlers">
-                        <eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
-                        <eventHandler class="application.handlers.SRAttachmentHandler" event="render" id="WorkExecution.FilteredAttachmentsView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
-                    </eventHandlers>
+                        
+							<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
+								<eventHandler class="application.handlers.WOAttachmentHandler" event="render" id="WorkExecution.FilteredAttachmentsView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
+							</eventHandlers>
 				</action>
+               
 				<action id="WorkExecution.FilteredAttachmentsView_PickfromGallery_action" image="header_add_OFF.svg" label="Pick from Gallery">
 					<eventHandlers id="WorkExecution.FilteredAttachmentsView_PickfromGallery_action_eventHandlers">
 						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_PickfromGallery_action_eventHandlers_click_launchGallery" method="launchGallery"/>
@@ -545,9 +547,9 @@
             <eventHandlers id="WorkExecution.FilteredAttachmentsView_Filter_eventHandlers">
 				<eventHandler class="custom.handlers.MSSRDetailHandler" event="show" id="WorkExecution.FilteredAttachmentsView_Filter_eventHandlers_render_filterAttachments" method="filterAttachments"/>
 			</eventHandlers>
-			<list attribute="attachments" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_list" resource="sgzDescarte">
+			<list attribute="attachments" id="WorkExecution.FilteredAttachmentsView_workOrder_attachments_list" resource="sgzDescarte">
 
-				<sortOptions id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_list_sortOptions">
+				<sortOptions id="WorkExecution.FilteredAttachmentsView_workOrder_attachments_list_sortOptions">
 					<sortOption id="WorkExecution.FilteredAttachmentsView_sortOption_CreatedDate" label="Created Date">
 						<sortAttribute direction="asc" id="WorkExecution.FilteredAttachmentsView_CreatedDate_sortAttribute_displayCreationDate" name="displayCreationDateISO"/>
 					</sortOption>
@@ -559,21 +561,21 @@
 					</sortOption>
 				</sortOptions>
 
-				<listItemTemplate id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_listItemTemplate_AttachmentsListItem" layout="AttachmentsListItem">
-					<listtext cssClass="attachmentLabel" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displayFileName" layoutInsertAt="item1" resourceAttribute="displayFileName"/>
-					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displayDescription" layoutInsertAt="item2" resourceAttribute="displayDescription"/>
-					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displayFileType" layoutInsertAt="item3" resourceAttribute="displayFileType"/>
-					<button border="false" cssClass="attachmentIcon" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button" image="/images/msg_downloadComplete_small.svg" layoutInsertAt="icon" resourceAttribute="anywhereAttachDownloaded">					    					    
-						<eventHandlers id="WorkExecution.FilteredAttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers">
-							<eventHandler class="application.handlers.SRAttachmentHandler" event="datachange" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers_datachange_displayLocal" method="displayLocal"/>
-							<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>
+				<listItemTemplate id="WorkExecution.FilteredAttachmentsView_workOrder_attachments_listItemTemplate_AttachmentsListItem" layout="AttachmentsListItem">
+					<listtext cssClass="attachmentLabel" id="WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displayFileName" layoutInsertAt="item1" resourceAttribute="displayFileName"/>
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displayDescription" layoutInsertAt="item2" resourceAttribute="displayDescription"/>
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displayFileType" layoutInsertAt="item3" resourceAttribute="displayFileType"/>
+					<button border="false" cssClass="attachmentIcon" id="WorkExecution.FilteredAttachmentsView_workOrder_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button" image="/images/msg_downloadComplete_small.svg" layoutInsertAt="icon" resourceAttribute="anywhereAttachDownloaded">					    					    
+						<eventHandlers id="WorkExecution.FilteredAttachmentsView_workOrder_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers">
+							<eventHandler class="application.handlers.WOAttachmentHandler" event="datachange" id="WorkExecution.FilteredAttachmentsView_workOrder_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers_datachange_displayLocal" method="displayLocal"/>
+							<eventHandler class="application.handlers.WOAttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_workOrder_anywhereAttachDownloaded_imagesmsg_downloadComplete_small.png_button_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>
 						</eventHandlers>
 					</button>					
-					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displaySize" layoutInsertAt="item4" resourceAttribute="displaySize"/>
-					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_createby" layoutInsertAt="item5" resourceAttribute="createby"/>			
-					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_AttachmentsListItem_displayCreationDate" layoutInsertAt="item6" resourceAttribute="displayCreationDate"/>										 
-					<eventHandlers id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_listItemTemplate_AttachmentsListItem_eventHandlers">				
-						<eventHandler class="application.handlers.SRAttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_sgzDescarte_attachments_listItemTemplate_AttachmentsListItem_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>						
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displaySize" layoutInsertAt="item4" resourceAttribute="displaySize"/>
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_createby" layoutInsertAt="item5" resourceAttribute="createby"/>			
+					<listtext cssClass="attachmentInfo" id="WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displayCreationDate" layoutInsertAt="item6" resourceAttribute="displayCreationDate"/>										 
+					<eventHandlers id="WorkExecution.FilteredAttachmentsView_workOrder_attachments_listItemTemplate_AttachmentsListItem_eventHandlers">				
+						<eventHandler class="application.handlers.WOAttachmentHandler" event="click" id="WorkExecution.FilteredAttachmentsView_workOrder_attachments_listItemTemplate_AttachmentsListItem_eventHandlers_click_handleThumbnailClick" method="handleThumbnailClick"/>						
 					</eventHandlers>
 				</listItemTemplate>
 			</list>
@@ -581,7 +583,7 @@
 		</view>
 		
 		<!-- RAJ SGZMOBILE Categorias de Anexos  (FILHOS) View Adicionado em 01-06-2022 1110 adramos -->
-		<view id="WorkExecution.AttachmentsChildCategory" label="Categorias de Anexos (Filho)">
+		<view id="WorkExecution.AttachmentsChildCategory" label="1- Categorias de Anexos (Filho)">
 			<requiredResources id="WorkExecution.AttachmentsChildCategory_requiredResources">
 				<requiredResource id="WorkExecution.AttachmentsChildCategory_workOrder" name="sgzDescarte">
 					<requiredAttribute id="WorkExecution.AttachmentsChildCategory_attribute1" name="atcsessionlist"/>
