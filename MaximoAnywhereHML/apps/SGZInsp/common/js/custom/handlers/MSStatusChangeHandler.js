@@ -1132,6 +1132,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		var workorder = eventContext.getResource().getCurrentRecord();
 		var statusdate = workorder.get("changestatusdate");
 		var attachments_crecord = CommonHandler._getAdditionalResource(eventContext,"attachments");
+		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 		//attachments_crecord.filter("creationDate > $1", statusdate);
 		let attachmentssize = workorder.get("attachmentssize");
 		var ms_insptype = workorder.get("ms_insptype");
@@ -1228,7 +1229,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			eventContext.setVisibility(false);
 		  }
 		}
-  
+		statusChangeResource.set('attachmentssizetoday',attachmentssizetoday);
 	  },
   
 	  redirectView: function (eventContext) {
@@ -1327,8 +1328,8 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  attachmentssize = parseInt(attachmentssize);
 		}      
 		let msg = "É necessário adicionar ao menos 2 fotos para continuar.";
-		attachmentssize = self.showHideQuestionsViewReturn(eventContext);
-		if (attachmentssize < 2 ) {
+
+		if (statusChangeResource.get("attachmentssizetoday") < 2 ) {
 			throw new PlatformRuntimeException(msg);
 		}
 		if (questao3 == null || questao3 == "" || questao3 == "Sim") {
@@ -1381,8 +1382,8 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  attachmentssize = parseInt(attachmentssize);
 		} 
 		let msg = "É necessário adicionar ao menos 2 fotos para continuar.";
-		attachmentssize = self.showHideQuestionsViewReturn(eventContext);
-		if (attachmentssize < 2 ) {
+
+		if (statusChangeWO.get("attachmentssizetoday") < 2 ) {
 			throw new PlatformRuntimeException(msg);
 		}	
   
