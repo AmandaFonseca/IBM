@@ -442,11 +442,22 @@
 			</requiredResources>
              <eventHandlers id="SGZDescarte.AttachmentsCategory.countAttachmentsSection">
 				<eventHandler class="custom.handlers.MSSRDetailHandler" event="show" id="SGZDescarte.AttachmentsCategory.countAttachmentsSectionc_show" method="countAttachmentsSection"/>
+				<eventHandler class="custom.handlers.MSSRDetailHandler" event="show" id="WorkExecution.AttachmentsCategory.filterParentSection_show" method="filterParentSection"/>
 			</eventHandlers>
 			<list id="SGZDescarte.AttachmentsCategory_list" label="Categorias" resource="sgzDescarte" attribute="atcsessionlist" showHeader="false">
 				<listItemTemplate id="SGZDescarte.AttachmentsCategory_listCategories" >
 					<listtext cssClass="bold textappearance-medium" id="SGZDescarte.AttachmentsCategory_listCategories_description" resourceAttribute="ms_description"/> 
 					<listtext cssClass="bold textappearance-medium" id="SGZDescarte.AttachmentsCategory_listCategories_count" resourceAttribute="secCount"/> 
+					<image id="WorkExecution.AttachmentsCategory_listCategories_count.icon.ok" cssClass="statusDesc" image="calibrationpoint_normal_status.png" platform="false">
+                        <eventHandlers id="WorkExecution.AttachmentsCategory_listCategories_count.icon.ok.eventhandlers">
+                            <eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="WorkExecution.AttachmentsCategory_listCategories_count.icon.ok.eventhandler" method="checkAttachmentsOK"/>
+                        </eventHandlers>
+                    </image>
+					<image id="WorkExecution.AttachmentsCategory_listCategories_count.icon.pending" cssClass="statusDesc" image="calibrationpoint_critical_status.png" platform="false">
+                        <eventHandlers id="WorkExecution.AttachmentsCategory_listCategories_count.icon.Nok.eventhandlers">
+                            <eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="WorkExecution.AttachmentsCategory_listCategories_count.icon.Nok.eventhandler" method="checkAttachmentsNOK"/>
+                        </eventHandlers>
+                    </image>					
 					<eventHandlers id="SGZDescarte.AttachmentsCategory_render_eventHandlers">
                         <eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="SGZDescarte.AttachmentsCategory_sgzDescarte_attachments_eventHandlers_render_hasChildSection" method="hasChildSection"/>		
                     </eventHandlers> 

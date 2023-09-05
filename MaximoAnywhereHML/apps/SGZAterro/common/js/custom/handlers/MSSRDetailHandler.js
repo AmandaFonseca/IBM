@@ -2917,5 +2917,133 @@ define("custom/handlers/MSSRDetailHandler", [
         eventContext.setDisplay(false);
       }
     },
+
+
+    filterParentSection: function(eventContext){//evento show na lista de categorias
+      var woCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource");
+      var ms_parent = woCategory.get('ms_parent');
+      CommonHandler._clearFilterForResource(eventContext,woCategory);
+      woCategory.filter("ms_parent == null");
+    },
+
+    checkAttachmentsOK: function(eventContext){
+      var msDoclinksSet = CommonHandler._getAdditionalResource(eventContext,"msDoclinksResource");
+      CommonHandler._clearFilterForResource(eventContext,msDoclinksSet);
+      var AttachmentSet = CommonHandler._getAdditionalResource(eventContext,"sgzDescarte.attachments");
+      CommonHandler._clearFilterForResource(eventContext,AttachmentSet);
+      var woCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource");
+      CommonHandler._clearFilterForResource(eventContext,woCategory);
+      var show = 1;
+      var curCat = woCategory.getCurrentRecord();
+      var photosessionid = curCat.get('ms_photosessionid');
+      var minqty = curCat.get('ms_minqty');
+      var ms_parent = curCat.get("ms_parent");
+      var ms_required = curCat.get("ms_required");
+      if (ms_parent == null || typeof ms_parent === undefined){
+        var childCat = woCategory.find('ms_parent == $1', photosessionid);
+        if (childCat.length > 0) {
+          for(var i = 0 ; i < childCat.length; i++){ 
+            childMinqty = childCat[i].get("ms_minqty");
+            childPhotoSessionId = childCat[i].get("ms_photosessionid");
+            var childActAtt = msDoclinksSet.find('ms_photosessionid == $1', childPhotoSessionId);
+            var childActAttCount = childActAtt.length;
+            if (childActAttCount < childMinqty ){
+              show = 0;
+            }
+            else{
+              var ActAtt = msDoclinksSet.find('ms_photosessionid == $1', childPhotoSessionId);
+              var ActAttCount = ActAtt.length;
+              if (childActAttCount < childMinqty){
+                show = 0;
+              }
+            }
+          }
+        }
+        else if (childCat.length == 0 && (ms_parent == null || typeof ms_parent === undefined)){
+          var ActAtt = msDoclinksSet.find('ms_photosessionid == $1', photosessionid);
+          var ActAttCount = ActAtt.length;
+          if (ActAttCount < minqty){
+            show = 0;
+          }
+        }
+      }
+      else if (ms_parent != null || typeof ms_parent !== undefined){
+          var ActAtt = msDoclinksSet.find('ms_photosessionid == $1', photosessionid);
+          var ActAttCount = ActAtt.length;
+          if (ActAttCount < minqty){
+            show = 0;
+          }
+      }
+      var hasChildren = woCategory.find('ms_parent == $1', photosessionid);
+      var hasChildrencount = hasChildren.length;
+      if (minqty == 0 && hasChildrencount == 0){
+        show = 0;
+      }
+      if (show == 0){
+        eventContext.setDisplay(false);
+        eventContext.setVisibility(false);
+      }
+    }, 
+    
+    checkAttachmentsNOK: function(eventContext){
+      var msDoclinksSet = CommonHandler._getAdditionalResource(eventContext,"msDoclinksResource");
+      CommonHandler._clearFilterForResource(eventContext,msDoclinksSet);
+      var AttachmentSet = CommonHandler._getAdditionalResource(eventContext,"sgzDescarte.attachments");
+      CommonHandler._clearFilterForResource(eventContext,AttachmentSet);
+      var woCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource");
+      CommonHandler._clearFilterForResource(eventContext,woCategory);
+      var show = 0;
+      var curCat = woCategory.getCurrentRecord();
+      var photosessionid = curCat.get('ms_photosessionid');
+      var minqty = curCat.get('ms_minqty');
+      var ms_parent = curCat.get("ms_parent");
+      var ms_required = curCat.get("ms_required");
+      if (ms_parent == null || typeof ms_parent === undefined){
+        var childCat = woCategory.find('ms_parent == $1', photosessionid);
+        if (childCat.length > 0) {
+          for(var i = 0 ; i < childCat.length; i++){ 
+            childMinqty = childCat[i].get("ms_minqty");
+            childPhotoSessionId = childCat[i].get("ms_photosessionid");
+            var childActAtt = msDoclinksSet.find('ms_photosessionid == $1', childPhotoSessionId);
+            var childActAttCount = childActAtt.length;
+            if (childActAttCount < childMinqty ){
+              show = 1;
+            }
+            else{
+              var ActAtt = msDoclinksSet.find('ms_photosessionid == $1', childPhotoSessionId);
+              var ActAttCount = ActAtt.length;
+              if (childActAttCount < childMinqty){
+                show = 1;
+              }
+            }
+          }
+        }
+        else if (childCat.length == 0 && (ms_parent == null || typeof ms_parent === undefined)){
+          var ActAtt = msDoclinksSet.find('ms_photosessionid == $1', photosessionid);
+          var ActAttCount = ActAtt.length;
+          if (ActAttCount < minqty){
+            show = 1;
+          }
+        }
+      }
+      else if (ms_parent != null || typeof ms_parent !== undefined){
+          var ActAtt = msDoclinksSet.find('ms_photosessionid == $1', photosessionid);
+          var ActAttCount = ActAtt.length;
+          if (ActAttCount < minqty){
+            show = 1;
+          }
+      }
+      var hasChildren = woCategory.find('ms_parent == $1', photosessionid);
+      var hasChildrencount = hasChildren.length;
+      if (minqty == 0 && hasChildrencount == 0){
+        show = 0;
+      }
+      if (show == 0){
+        eventContext.setDisplay(false);
+        eventContext.setVisibility(false);
+      }
+    }, 
+
+
   });
 });
