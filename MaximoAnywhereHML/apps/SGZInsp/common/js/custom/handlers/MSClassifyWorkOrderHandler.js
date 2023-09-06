@@ -277,6 +277,30 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
           if (statusChange.get('ms_inspdate04')) {statusChange.setNullValue("ms_inspdate04");}
         } catch (error) {console.log(error+' initEditStatusView')}        
       },
+
+
+	  initEditStatusView02 : function(eventContext) {
+		var workOrder = eventContext.getCurrentRecord();
+		var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
+		if (workOrder.get('status') != null && workOrder.get("ms_insptype") == '1' &&
+		 workOrder.get("pd_inspdate") == null && workOrder.get("pd_inspquestion01") == null) {
+			statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
+			statusChange.setNullValue("status");
+			statusChange.setNullValue("statusdesc")
+			statusChange.setNullValue("memo");
+			eventContext.ui.application.toolWarningShown = false;
+			try {
+			  if (workOrder.get('status')) {workOrder.set("status","AGINSP");}
+			  if (workOrder.get('pd_inspector')) {workOrder.setNullValue("pd_inspector");}
+			  if (workOrder.get('pd_inspdate')) {workOrder.setNullValue("pd_inspdate");}
+			  if (workOrder.get('pd_inspquestion02')) {workOrder.setNullValue("pd_inspquestion02");}
+			  if (workOrder.get('pd_inspquestion03')) {workOrder.setNullValue("pd_inspquestion03");}
+			  if (workOrder.get('pd_inspector04')) {workOrder.setNullValue("pd_inspector04");}
+			  if (workOrder.get('ms_inspdate04')) {workOrder.setNullValue("ms_inspdate04");}
+			} catch (error) {console.log(error+' initEditStatusView')}       			
+		}
+ 
+      },
 	
 	cleanupEditStatusView : function(eventContext) {
 		this._clearWoStatusFilter();

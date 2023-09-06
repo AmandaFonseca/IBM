@@ -102,9 +102,8 @@
 					</eventHandlers>
 				</link>
 				
-				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:50923231200H"/>
+				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:50923231200H-"/>
 
-								
 			</container>
 			<eventHandlers id="platform.LoginView_eventHandlers">
 				<eventHandler class="platform.handlers.LoginHandler" event="show" id="platform.LoginView_eventHandlers_show_initializeLogin" method="initializeLogin"/>

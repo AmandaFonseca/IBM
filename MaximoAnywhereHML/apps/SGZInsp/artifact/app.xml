@@ -264,6 +264,8 @@
 								<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="Reinspecview.escond_quest_functionHide" method="hideQuestAfterResponse"/>
 								<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="Reinspecview.escond_quest_showHide" method="showHideQuestionsView"/>
 								<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="Reinspecview.escond_quest_function" method="redirectView"/>
+								<eventHandler class="custom.handlers.MSClassifyWorkOrderHandler" event="render" id="Reinspecview.escond_quest_function_" method="initEditStatusView02"/>
+
 							 </eventHandlers>
 						    </text>
 					</groupitem>
