@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-10-04 12:04:40
+// Build: 2023-09-06 00:46:05
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[også populært~Manual do Aplicativo]",
          "Privacy Policy" : "[også populært~Privacy Policy]",
          "Connection Settings" : "[også populært~Connection Settings]",
-         "v7.6.4:0410221202P" : "[også populært~v7.6.4:0410221202P]",
+         "v7.6.4:0509232200P" : "[også populært~v7.6.4:0509232200P]",
          "My Assigned Work" : "[også populært~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[også populært~Inspeções Pendentes]",
          "Records with Errors" : "[også populært~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[også populært~Attachments]",
          "Cancel" : "[også populært~Cancel]",
          "Create" : "[også populært~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[også populært~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[også populært~Sim]",
+         "N\u00E3o" : "[også populært~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[også populært~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[også populært~Close]",
          "Overwrite" : "[også populært~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[også populært~Tap to enter]",
          "Save" : "[også populært~Save]",
          "1. Servi\u00E7o foi executado?" : "[også populært~1. Serviço foi executado?]",
-         "N\u00E3o" : "[også populært~Não]",
-         "Sim" : "[også populært~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[også populært~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[også populært~Recusar inspecao?]",
          "Voltar" : "[også populært~Voltar]",

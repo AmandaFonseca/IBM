@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-10-04 12:04:37
+// Build: 2023-09-06 00:46:04
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中国的~Manual do Aplicativo]",
          "Privacy Policy" : "[中国的~Privacy Policy]",
          "Connection Settings" : "[中国的~Connection Settings]",
-         "v7.6.4:0410221202P" : "[中国的~v7.6.4:0410221202P]",
+         "v7.6.4:0509232200P" : "[中国的~v7.6.4:0509232200P]",
          "My Assigned Work" : "[中国的~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[中国的~Inspeções Pendentes]",
          "Records with Errors" : "[中国的~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[中国的~Attachments]",
          "Cancel" : "[中国的~Cancel]",
          "Create" : "[中国的~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[中国的~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[中国的~Sim]",
+         "N\u00E3o" : "[中国的~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[中国的~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[中国的~Close]",
          "Overwrite" : "[中国的~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[中国的~Tap to enter]",
          "Save" : "[中国的~Save]",
          "1. Servi\u00E7o foi executado?" : "[中国的~1. Serviço foi executado?]",
-         "N\u00E3o" : "[中国的~Não]",
-         "Sim" : "[中国的~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[中国的~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[中国的~Recusar inspecao?]",
          "Voltar" : "[中国的~Voltar]",

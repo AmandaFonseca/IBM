@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-10-04 12:04:37
+// Build: 2023-09-06 00:46:04
 //----------------------------------------------------------------//
 define({
    root: {
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "Manual do Aplicativo",
          "Privacy Policy" : "Privacy Policy",
          "Connection Settings" : "Connection Settings",
-         "v7.6.4:0410221202P" : "v7.6.4:0410221202P",
+         "v7.6.4:0509232200P" : "v7.6.4:0509232200P",
          "My Assigned Work" : "My Assigned Work",
          "Inspe\u00E7\u00F5es Pendentes" : "Inspeções Pendentes",
          "Records with Errors" : "Records with Errors",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "Attachments",
          "Cancel" : "Cancel",
          "Create" : "Create",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "Os dados do questinário não serão salvos, deseja voltar?",
+         "Sim" : "Sim",
+         "N\u00E3o" : "Não",
          "This sketch already exists, would you like to overwrite it?" : "This sketch already exists, would you like to overwrite it?",
          "Close" : "Close",
          "Overwrite" : "Overwrite",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "Tap to enter",
          "Save" : "Save",
          "1. Servi\u00E7o foi executado?" : "1. Serviço foi executado?",
-         "N\u00E3o" : "Não",
-         "Sim" : "Sim",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "Confirmacao da recusa de inspeção",
          "Recusar inspecao?" : "Recusar inspecao?",
          "Voltar" : "Voltar",

@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-10-04 12:04:28
+// Build: 2023-09-06 00:45:58
 //----------------------------------------------------------------//
 define(   "generated/application/data/ApplicationStoresBuilder", 
       [
@@ -237,7 +237,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
 
             var resource004 = new ResourceMetadata({
                   'defaultOrderBy' : 'pd_seqinspec asc',
-                  'pageSize' : 10,
+                  'pageSize' : 30,
                   'resourceName' : 'workOrder',
                   'isAttachment' : false,
                   'isSystem' : false,
@@ -1608,7 +1608,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'pageSize' : 10,
                   'resourceName' : 'pdwhy',
                   'isAttachment' : false,
-                  'isSystem' : false,
+                  'isSystem' : true,
                   'urlBase' : 'https:\/\/smgimax.prefeitura.sp.gov.br:443\/maximo',
                   'inMemory' : false,
                   'hasManagedQuery' : 'true',
@@ -7300,7 +7300,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'pageSize' : 200,
                   'resourceName' : 'classstructure',
                   'isAttachment' : false,
-                  'isSystem' : false,
+                  'isSystem' : true,
                   'urlBase' : 'https:\/\/smgimax.prefeitura.sp.gov.br:443\/maximo',
                   'inMemory' : false,
                   'artifactId' : 'classstructure',

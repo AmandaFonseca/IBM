@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-10-04 12:04:39
+// Build: 2023-09-06 00:46:05
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[onbepaalde~Manual do Aplicativo]",
          "Privacy Policy" : "[onbepaalde~Privacy Policy]",
          "Connection Settings" : "[onbepaalde~Connection Settings]",
-         "v7.6.4:0410221202P" : "[onbepaalde~v7.6.4:0410221202P]",
+         "v7.6.4:0509232200P" : "[onbepaalde~v7.6.4:0509232200P]",
          "My Assigned Work" : "[onbepaalde~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[onbepaalde~Inspeções Pendentes]",
          "Records with Errors" : "[onbepaalde~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[onbepaalde~Attachments]",
          "Cancel" : "[onbepaalde~Cancel]",
          "Create" : "[onbepaalde~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[onbepaalde~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[onbepaalde~Sim]",
+         "N\u00E3o" : "[onbepaalde~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[onbepaalde~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[onbepaalde~Close]",
          "Overwrite" : "[onbepaalde~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[onbepaalde~Tap to enter]",
          "Save" : "[onbepaalde~Save]",
          "1. Servi\u00E7o foi executado?" : "[onbepaalde~1. Serviço foi executado?]",
-         "N\u00E3o" : "[onbepaalde~Não]",
-         "Sim" : "[onbepaalde~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[onbepaalde~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[onbepaalde~Recusar inspecao?]",
          "Voltar" : "[onbepaalde~Voltar]",

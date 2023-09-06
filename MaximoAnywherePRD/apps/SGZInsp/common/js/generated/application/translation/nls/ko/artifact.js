@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-10-04 12:04:38
+// Build: 2023-09-06 00:46:05
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[대학에~Manual do Aplicativo]",
          "Privacy Policy" : "[대학에~Privacy Policy]",
          "Connection Settings" : "[대학에~Connection Settings]",
-         "v7.6.4:0410221202P" : "[대학에~v7.6.4:0410221202P]",
+         "v7.6.4:0509232200P" : "[대학에~v7.6.4:0509232200P]",
          "My Assigned Work" : "[대학에~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[대학에~Inspeções Pendentes]",
          "Records with Errors" : "[대학에~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[대학에~Attachments]",
          "Cancel" : "[대학에~Cancel]",
          "Create" : "[대학에~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[대학에~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[대학에~Sim]",
+         "N\u00E3o" : "[대학에~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[대학에~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[대학에~Close]",
          "Overwrite" : "[대학에~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[대학에~Tap to enter]",
          "Save" : "[대학에~Save]",
          "1. Servi\u00E7o foi executado?" : "[대학에~1. Serviço foi executado?]",
-         "N\u00E3o" : "[대학에~Não]",
-         "Sim" : "[대학에~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[대학에~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[대학에~Recusar inspecao?]",
          "Voltar" : "[대학에~Voltar]",

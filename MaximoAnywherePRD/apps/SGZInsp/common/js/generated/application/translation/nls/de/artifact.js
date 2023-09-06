@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-10-04 12:04:38
+// Build: 2023-09-06 00:46:04
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[können~Manual do Aplicativo]",
          "Privacy Policy" : "[können~Privacy Policy]",
          "Connection Settings" : "[können~Connection Settings]",
-         "v7.6.4:0410221202P" : "[können~v7.6.4:0410221202P]",
+         "v7.6.4:0509232200P" : "[können~v7.6.4:0509232200P]",
          "My Assigned Work" : "[können~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[können~Inspeções Pendentes]",
          "Records with Errors" : "[können~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[können~Attachments]",
          "Cancel" : "[können~Cancel]",
          "Create" : "[können~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[können~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[können~Sim]",
+         "N\u00E3o" : "[können~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[können~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[können~Close]",
          "Overwrite" : "[können~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[können~Tap to enter]",
          "Save" : "[können~Save]",
          "1. Servi\u00E7o foi executado?" : "[können~1. Serviço foi executado?]",
-         "N\u00E3o" : "[können~Não]",
-         "Sim" : "[können~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[können~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[können~Recusar inspecao?]",
          "Voltar" : "[können~Voltar]",

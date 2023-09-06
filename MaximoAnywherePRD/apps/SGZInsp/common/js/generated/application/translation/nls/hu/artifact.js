@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-10-04 12:04:40
+// Build: 2023-09-06 00:46:06
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[erÕsíteni~Manual do Aplicativo]",
          "Privacy Policy" : "[erÕsíteni~Privacy Policy]",
          "Connection Settings" : "[erÕsíteni~Connection Settings]",
-         "v7.6.4:0410221202P" : "[erÕsíteni~v7.6.4:0410221202P]",
+         "v7.6.4:0509232200P" : "[erÕsíteni~v7.6.4:0509232200P]",
          "My Assigned Work" : "[erÕsíteni~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[erÕsíteni~Inspeções Pendentes]",
          "Records with Errors" : "[erÕsíteni~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[erÕsíteni~Attachments]",
          "Cancel" : "[erÕsíteni~Cancel]",
          "Create" : "[erÕsíteni~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[erÕsíteni~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[erÕsíteni~Sim]",
+         "N\u00E3o" : "[erÕsíteni~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[erÕsíteni~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[erÕsíteni~Close]",
          "Overwrite" : "[erÕsíteni~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[erÕsíteni~Tap to enter]",
          "Save" : "[erÕsíteni~Save]",
          "1. Servi\u00E7o foi executado?" : "[erÕsíteni~1. Serviço foi executado?]",
-         "N\u00E3o" : "[erÕsíteni~Não]",
-         "Sim" : "[erÕsíteni~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[erÕsíteni~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[erÕsíteni~Recusar inspecao?]",
          "Voltar" : "[erÕsíteni~Voltar]",

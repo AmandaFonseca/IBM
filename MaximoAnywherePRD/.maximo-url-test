@@ -44,7 +44,7 @@
 								<input type="hidden" name="mobile" id="mobile" value="false"/>
 								<input type="hidden" name="login" id="loginjsp" value="jsp"/>
 								<input type="hidden" name="localStorage" id="localStorage" value=""/>
-								<input type="hidden" name="loginstamp" id="loginstamp" value="1688521790181" />
+								<input type="hidden" name="loginstamp" id="loginstamp" value="1693972057241" />
 								
 								<div class="fieldlabel">
 									<label id="sgz_ui_login_userid_label">Nome do Usuário:</label>
