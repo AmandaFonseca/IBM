@@ -114,7 +114,7 @@
 			<eventHandlers id="WorkExecution.WorkItemsView_eventHandlers">
 				<eventHandler class="application.handlers.WODetailHandler" event="render" id="WorkExecution.WorkItemsView_eventHandlers_render_showBusyList" method="showBusyList"/>
 				<eventHandler class="application.handlers.WOGeolocationHandler" event="initialize" id="WorkExecution.WorkItemsView_eventHandlers_initialize_geolocation" method="initialize"/>				
-				<eventHandler class="application.handlers.WOListHandler" event="render" id="WorkExecution.WorkItemsView_eventHandlers_initialize_wolist" method="render"/>
+				<!--<eventHandler class="application.handlers.WOListHandler" event="render" id="WorkExecution.WorkItemsView_eventHandlers_initialize_wolist" method="render"/>-->
 				<eventHandler class="platform.handlers.WorkOfflineHandler" event="show" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_render_sync" method="sync"/>
                 <eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_back" method="backSpec"/>
 			</eventHandlers>
@@ -165,6 +165,7 @@
 				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
 				<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>
 				<!--<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_details" method="sync"/>-->
+				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="acc_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusViewx" method="initEditStatusViewCustomBackType02"/>
 			</eventHandlers>
 
 			<container id="WorkExecution.WorkDetailView_workOrder_container_0" resource="workOrder">
@@ -1392,7 +1393,6 @@
 		</footer>
 
 		<eventHandlers id="WorkExecution.Reinspecview_eventHandlers">
-			<eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="classificationok_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusView_1" method="initEditStatusViewCustomBackType02"/>
 			<eventHandler class="application.handlers.StatusChangeHandler" event="initialize" id="WorkExecution.Reinspecview_initialize_initEditStatusView" method="initEditStatusView"/>
 			<eventHandler class="application.handlers.StatusChangeHandler" event="cleanup" id="WorkExecution.Reinspecview_cleanup_cleanupEditStatusView" method="cleanupEditStatusView"/>
 			<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.Reinspecview_cleanup_cleanupEditStatusView003" method="redirectList"/>
@@ -1544,7 +1544,6 @@
 				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="initialize" id="xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusView" method="initEditStatusView"/>
 				<eventHandler class="application.handlers.StatusChangeHandler" event="cleanup" id="xWorkExecution.EditStatusView_eventHandlers_cleanup_cleanupEditStatusView" method="cleanupEditStatusView"/>
 				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="xWorkExecution.EditStatusView_eventHandlers_cleanup_render" method="redirectList"/>
-				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="classificationok_xWorkExecution.EditStatusView_eventHandlers_initializex" method="initEditStatusView"/>
 			</eventHandlers>
 		</view>
 		

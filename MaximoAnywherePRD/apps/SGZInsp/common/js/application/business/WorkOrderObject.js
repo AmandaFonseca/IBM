@@ -207,12 +207,14 @@ define("application/business/WorkOrderObject",
 		changeStatus: function(workOrder, newStatus, statusDate, memo, taskSet, esig){
 			Logger.trace("[WorkOrderObject] changeStatus ");
 			var currentStatus = workOrder.get("status");
+			var myUser = UserManager.getCurrentUser();
 			if(WorkOrderStatusHandler.getInstance().canPerformTransition(currentStatus, newStatus)){
 				workOrder.openPriorityChangeTransaction();
 				workOrder.set("status", newStatus);
 				workOrder.setDateValue("statusDate", statusDate);
 				workOrder.setDateValue("changestatusdate", statusDate);
 				workOrder.set("memo", memo);				
+				workOrder.set("ms_inspector", myUser);		
 				// if this is a Flow Controlled work order, just let Maximo handle the tasks status
 				if(taskSet && taskSet.data && taskSet.data.length>0 && !workOrder.get("flowcontrolled")){
 					this.changeStatusOfTasks(workOrder, newStatus, statusDate, memo, taskSet);
