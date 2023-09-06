@@ -455,78 +455,12 @@ define("custom/handlers/MSSRDetailHandler", [
       );
       CommonHandler._clearFilterForResource(eventContext, subpref);
 
-      let plate = currSR.getPendingOrOriginalValue('ms_plate');	
-
       var isValidSiteid = subpref.find("siteid == $1", site);
 
       if (isValidSiteid.length == 0) {
         eventContext.ui.showMessage("Subprefeitura Inválida");
         return;
       }
-	  var site = currSR.getPendingOrOriginalValue("ms_siteid");
-	
-      var toolsiteauth = CommonHandler._getAdditionalResource(eventContext,"toolsiteauth");
-      CommonHandler._clearFilterForResource(eventContext, toolsiteauth);
-	   
-      let idUsina = CommonHandler._getAdditionalResource(eventContext,"MSasphaltplant").getCurrentRecord().get('idusina');	
-		
-		
-	    var isSiteAuth = toolsiteauth.find('ms_plate == $1 && ms_asphaltplantid == $2', plate, idUsina);
-      if (isSiteAuth.length == 0) {
-				throw new PlatformRuntimeException("Veículo não Autorizado! Veículo não tem contrato aprovado");
-				return;
-			}
-      if(isSiteAuth.length == 1){
-        currSR.set('ms_siteid', isSiteAuth[0].ms_siteid);
-      }
-
-      //Novo
-      var MSaptoolauth = CommonHandler._getAdditionalResource(eventContext,'MSaptoolauth');
-      CommonHandler._clearFilterForResource(eventContext, MSaptoolauth);
-
-      var isSiteAuth = toolsiteauth.find('ms_plate == $1 && ms_asphaltplantid == $2', plate, idUsina);
-
-      let isValidPlate = toolsiteauth.find('ms_plate == $1 && ms_asphaltplantid == $2 && ms_siteid  == $3 && ms_status ==$4', plate, idUsina, site, "APROVADO");
-
-
-      let veiculos = [];
-      if (isValidPlate.length > 0 && typeof isValidPlate == 'object') {
-        for (let index = 0; index < [isValidPlate].length; index++) {
-          const item = isValidPlate[index];
-          veiculos.push(item);
-        }
-      }
-      var isValidPlateItemContract = toolsiteauth.find('ms_plate == $1 && ms_asphaltplantid == $2 &&  ms_siteid == $3 && ms_status ==$4', plate,idUsina, site, "APROVADO");
-
-      let veiculosConc = [];
-      if (isValidPlateItemContract.length > 0 && typeof isValidPlateItemContract == 'object') {
-        for (let index = 0; index < [isValidPlateItemContract].length; index++) {
-          const item = isValidPlateItemContract[index];
-          veiculosConc.push(item);
-        }
-      }
-
-      let msg = "Veículo divergente com Itens de contrato! Favor entre em contato com o administrador";
-
-    
-      for (let index = 0; index < veiculos.length; index++) {
-        const veiculo = veiculos[index].get('ms_itemnum');
-        for (let index = 0; index < veiculosConc.length; index++) {
-          const veiculoConcItem = veiculosConc[index].get('ms_itemnum');
-          if (veiculo != veiculoConcItem) {
-            eventContext.ui.showMessage(msg);
-            Logger.error("Placa Valida" + veiculo);
-            return;
-          }else{
-            currSR.set('ms_itemnum',veiculoConcItem);
-          }
-        }   
-      
-      }
-
-      return;
-
-
     },
 
     //sync validate validateSiteUsina
@@ -2153,17 +2087,15 @@ define("custom/handlers/MSSRDetailHandler", [
       var latitudey = latitudey + "";
       var longitudex = currSR.get('ms_longitudestr');
       var longitudex = longitudex + "";
-      var apidauth = currSR.get('ms_apidauth');	
+      //var apidauth = currSR.get('ms_apidauth');	
       var sumCarreg = (qtdMassa + qtdEmulsao);
       var rembal1Qtd = (rembal1 - (qtdMassa + qtdEmulsao));
-	    //NOVO PARAMETRO PARA ATENDER NOVAS VALIDAÇÕES
-      var contractnum =	currSR.get("ms_contractnum");
-		
-      if (msApidauth == null){
-        eventContext.ui.hideCurrentDialog();
-        eventContext.ui.showMessage("Favor informar selecionar uma Usina!");
-        return ;
-      }   
+  
+  if (msApidauth == null){
+  eventContext.ui.hideCurrentDialog();
+  eventContext.ui.showMessage("Favor informar selecionar uma Usina!");
+  return ;
+  }   
   
       //var dataAuth = this.application.getCurrentDateTime();
       //Logger.error("Ticket TST" + ticketIdTst);
@@ -2206,63 +2138,13 @@ define("custom/handlers/MSSRDetailHandler", [
   currSR.set('ms_status', "CARREG_INC");
   currSR.set('ms_authqty', qtdMassaAutPos);			
   currSR.setDateValue('ms_actualdate',this.application.getCurrentDateTime());			
-  //NOVO PARAMETRO PARA ATENDER NOVAS VALIDAÇÕES
-  currSR.set('ms_secondaryapid',currSR.get('ms_apidauth'))  
-  currSR.set('ms_contractnum',contractnum)  
-
   ModelService.save(currServiceRequestSet).then(function() {
       //eventContext.ui.show("SGZUsina.MyReportedSR");
-      Logger.error("SAVE 01");
+      Logger.error("SAVE ");
       //eventContext.ui.hideCurrentView();
-	  eventContext.TransferTicket(eventContext);
   }).otherwise(function(err){
       eventContext.ui.showMessage(err);						
   });		
-
-
-  },
-
-TransferTicket :function (eventContext) {
-	      var currServiceRequestSet = CommonHandler._getAdditionalResource(eventContext,"sgzUsina");
-      var currSR = currServiceRequestSet.getCurrentRecord();
-      
-      var ticketId = currSR.get('identifier');  
-      var ticketId = ticketId + "";
-      //var usinaDesc = currSR.get('usina');
-      var siteId = currSR.get('ms_siteid');
-      var status = currSR.get('ms_status');
-      //var msAsphalt = currSR.get('ms_asphaltplantid');
-      var msApidauth = currSR.get('ms_apidauth');
-      var dateExp = currSR.get('ms_expiredate');
-      //var contratada = currSR.get('contratada');
-      var obs = currSR.get('ms_remarks');
-      var qtdMassaAut = currSR.get('ms_authqty');
-      var qtdEmulsao = currSR.get('qtd_emulsao');
-      var qtdMassa = currSR.get('qtd_massa');
-      var msPlate = currSR.get('ms_plate');
-      msPlate = msPlate.trim();
-      var qtdMassaAutPos = (qtdMassaAut - (qtdMassa + qtdEmulsao));
-      
-      var pesoBruto = currSR.get('ms_grossweight');
-      var pesoTara = currSR.get('ms_tareweight');
-      
-      
-      var pesoLiquido = (pesoBruto - pesoTara);
-      
-      var msItemNum = currSR.get('ms_itemnum');
-      var usinaAut = currSR.get('ms_isauth');
-      var company = currSR.get('ms_company');
-      var isApauth = currSR.get('ms_isapauth');
-      var rembal1 = currSR.get('ms_rembal1');
-      var latitudey = currSR.get('ms_latitudestr');
-      var latitudey = latitudey + "";
-      var longitudex = currSR.get('ms_longitudestr');
-      var longitudex = longitudex + "";
-      var apidauth = currSR.get('ms_apidauth');	
-      var sumCarreg = (qtdMassa + qtdEmulsao);
-      var rembal1Qtd = (rembal1 - (qtdMassa + qtdEmulsao));
-	    //NOVO PARAMETRO PARA ATENDER NOVAS VALIDAÇÕES
-      var contractnum =	currSR.get("ms_contractnum");
   if ((msApidauth != null ||msApidauth != 0) && status == "AG_CARREG"){
           var newSR = eventContext.application.getResource('sgzUsina').createNewRecord();
           originalServiceRequest = null;
@@ -2302,18 +2184,15 @@ TransferTicket :function (eventContext) {
           newCurrSR.set('ms_apidauth', msApidauth);
           newCurrSR.set('ms_isapauth', true);
           newCurrSR.set('ms_rembal1', rembal1Qtd);
-	        //NOVO PARAMETRO PARA ATENDER NOVAS VALIDAÇÕES
-          newCurrSR.set('ms_secondaryapid',currSR.get('ms_apidauth'))  
-          newCurrSR.set('ms_contractnum',contractnum)  
           console.log(newCurrSR);
   
   
           
-          ModelService.save(newCurrSR).then(function() {
+          ModelService.save(serviceRequestSet).then(function() {
               Logger.error("SAVE ");
               //eventContext.ui.hideCurrentView();
               //eventContext.ui.show("SGZUsina.TransferCredEdit");
-              eventContext.ui.show("SGZUsina.MyReportedSR");
+              //eventContext.ui.show("SGZUsina.MyReportedSR");
              // eventContext.ui.returnToView("SGZUsina.ActionPanel");
             
           }).otherwise(function(err){
@@ -2327,8 +2206,10 @@ TransferTicket :function (eventContext) {
           eventContext.ui.showMessage("Só tickets com o status de 'Aguardando o carregamento' podem ser transferidos!");
           }   
 
-      }		
-	},  
+      }
+
+  },
+
     yesOnCancel: function (eventContext) {
       var serviceRequestSet = CommonHandler._getAdditionalResource(eventContext,"sgzUsina");
       var currSR = serviceRequestSet.getCurrentRecord();
@@ -2462,11 +2343,11 @@ TransferTicket :function (eventContext) {
         ModelService.multipleChildrenOf(serviceRequest, attributes).always(
           function () {
             loadingLists = false;
-            eventContext.refreshAllListSizes(eventContext);
+            self.refreshAllListSizes(eventContext);
           }
         );
       } else {
-        eventContext.refreshAllListSizes(eventContext);
+        self.refreshAllListSizes(eventContext);
       }
     },
 
@@ -2537,33 +2418,5 @@ TransferTicket :function (eventContext) {
         eventContext.setDisplay(false);
       }
     },
-
-    initMyReportedSRNovoSessionStorageInicial: function (eventContext) {
-      var idUsinaAtual;
-      var idUsinaAtualStorage;
-      //idUsinaAtualStorage = sessionStorage.idUsinaAtual;
-      idUsinaAtualStorage = sessionStorage.getItem("idUsinaAtual");
-      if((idUsinaAtualStorage == undefined)||(idUsinaAtualStorage == null)||(idUsinaAtualStorage == 0)){
-        var currServiceRequestSet = CommonHandler._getAdditionalResource(eventContext,"MSasphaltplant");
-        var currSR = currServiceRequestSet.getCurrentRecord();
-        idUsinaAtual = currSR.get('idusina');;
-        if((idUsinaAtual > 0)||(idUsinaAtual != null)||(idUsinaAtual != undefined)){
-          idUsinaAtual = currSR.get("idusina");
-        }
-        if((idUsinaAtual > 0)||(idUsinaAtual != null)||(idUsinaAtual != undefined)){
-          sessionStorage.setItem('idUsinaAtual', JSON.stringify(idUsinaAtual));
-        }
-      }else{
-        try {
-          idUsinaAtualStorage = JSON.parse(sessionStorage.idUsinaAtual);
-          idUsinaAtual = idUsinaAtualStorage;
-        } catch (error) {
-          console.log(error);
-          console.log("linha 1948 -- initMyReportedSRNovoSessionStorageInicial");          
-        }
-
-      }
-    },
-    
   });
 });

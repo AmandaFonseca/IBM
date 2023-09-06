@@ -20,7 +20,6 @@
    		<requiredResources id="SGZUsina.ActionPanel_errorResource">
    		    <requiredResource id="SGZUsina.ActionPanel_serviceRequest" name="sgzUsina" reload="true"/>
 			<requiredResource id="SGZUsina.ActionPanel_requiredResource_errorResource" name="errorResource"/>
-			<requiredResource id="ServiceRequest.CreateSR_MSasphaltplant.ActionPanel" name="MSasphaltplant"/>
 		</requiredResources>			
 		<progressIndicator id="SGZUsina.ActionPanel_0"/>
 		<actions id="SGZUsina.ActionPanel_actions">
@@ -37,7 +36,7 @@
 				<eventHandlers id="link_eventHandlers">
 					<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="link_eventHandlers_render_hideShowSelectLink" method="hideShowErrorLink"/>
 					<eventHandler class="custom.handlers.MSSRDetailHandler" event="click" id="link_eventHandlers_click" method="showErrorPage"/>
-					<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="link_eventHandlers_click_init" method="initMyReportedSRNovoSessionStorageInicial"/>
+					<eventHandler class="custom.handlers.MSSRDetailHandler" event="render" id="link_eventHandlers_click_init" method="initMyReportedSRNovoSessionStorage"/>
 				</eventHandlers>
 			</link>
 		</container>
@@ -1027,8 +1026,6 @@
 				<attribute describedByProperty="spi_wm:ms_netweight" id="serviceRequest_ms_netweight" name="ms_netweight"/>
 				<attribute describedByProperty="spi_wm:ms_contractnum" id="serviceRequest_ms_contractnum" name="ms_contractnum"/>
 				
-				<!--Novo campo Integração -->
-				<attribute describedByProperty="spi_wm:ms_secondaryapid" id="serviceRequest_ms_secondaryapid" name="ms_secondaryapid"/>
 
 						
 				<attribute describedByProperty="spi_wm:ms_latitudey" id="serviceRequest_mslatitudey_spi_wmcalculatedy" name="ms_latitudey"/>
