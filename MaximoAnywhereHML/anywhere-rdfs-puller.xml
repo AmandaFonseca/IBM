@@ -70,7 +70,7 @@
 		<downloadOneRdf context="/oslc/sp/FriendOfAFriend" />
 		
 		
-		<!-- ESTRUTURAS PARA APP SGZTec:-->
+		<!-- ESTRUTURAS PARA APP SGZTec:
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/woserviceaddress" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec" />
@@ -92,7 +92,7 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/wptool" />		
 		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew" />
-
+        -->
         
 		<!-- Estruturas para o app SGZArbo: 
 		<downloadOneRdf context="/oslc/shapes/oslcamcrew" />
@@ -135,6 +135,20 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />
 		-->
 		<!-- FIM ESTRUTURAS PARA APP SGZDescarte -->
+
+	    <!-- ESTRUTURAS PARA APP SGZUsina: -->
+		
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/doclinks" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/ms_aptoolauth" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/ms_asphaltplant" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslcsgzusina/companies" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslcaptoolauth" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslcasphaltplant" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslcsite" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslcauthperson" />
+        <downloadOneRdf context="/oslc/shapes/ms_oslctoolsiteauth" /> 
+		<!-- ESTRUTURAS PARA APP SGZUsina: -->
 		
 		<!-- Estruturas padrão Anywhere (Rode apenas uma vez e depois comente para tornar o puller mais rápido) 
 		<downloadOneRdf context="/oslc/shapes/oslcinventory" />

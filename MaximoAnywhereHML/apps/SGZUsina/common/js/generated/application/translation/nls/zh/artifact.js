@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:26:41
+// Build: 2023-09-06 12:01:48
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中国的~Manual do Aplicativo]",
          "Privacy Policy" : "[中国的~Privacy Policy]",
          "Connection Settings" : "[中国的~Connection Settings]",
-         "v7.6.4:1805231700H" : "[中国的~v7.6.4:1805231700H]",
+         "v7.6.4:2305231200H" : "[中国的~v7.6.4:2305231200H]",
          "Lista Padr\u00E3o" : "[中国的~Lista Padrão]",
          "Synchronize Data" : "[中国的~Synchronize Data]",
          "Generate new Service Order" : "[中国的~Generate new Service Order]",

@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:26:36
+// Build: 2023-09-06 12:01:45
 //----------------------------------------------------------------//
 define(   "generated/application/data/ApplicationStoresBuilder", 
       [
@@ -239,7 +239,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'classInstance' : ServiceRequestObject,
                }).
                setLocal( false ).
-               setSimpleFieldsSelectExpression('dcterms:identifier,spi_wm:ms_plate,spi_wm:ms_remarks,spi_wm:ms_itemnum,spi_wm:ms_company,spi_wm:ms_authqty,spi_wm:ms_changeby,spi_wm:ms_changedate,spi_wm:ms_rembal1,spi_wm:ms_rembal2,spi_wm:ms_enterby,spi_wm:ms_refdate,spi_wm:ms_asphaltmixqty,spi_wm:ms_emulsionqty,spi_wm:ms_expiredate,spi_wm:ms_authdate,spi_wm:ms_status,spi_wm:ms_actualdate,spi_wm:ms_siteid,spi_wm:ms_asphaltplantid,spi_wm:ms_apidauth,spi_wm:ms_isapauth,spi_wm:ms_amtkidauth,spi_wm:ms_tareweight,spi_wm:ms_grossweight,spi_wm:ms_netweight,spi_wm:ms_contractnum,spi_wm:ms_latitudey,spi_wm:ms_longitudex,spi_wm:ms_latitudestr,spi_wm:ms_longitudestr,spi_wm:ms_amtkidauthstr,spi_wm:ms_isauth,spi_wm:ms_asphaltplant{spi_wm:ms_active,dcterms:title},spi_wm:companies{dcterms:title,spi_wm:company}').
+               setSimpleFieldsSelectExpression('dcterms:identifier,spi_wm:ms_plate,spi_wm:ms_remarks,spi_wm:ms_itemnum,spi_wm:ms_company,spi_wm:ms_authqty,spi_wm:ms_changeby,spi_wm:ms_changedate,spi_wm:ms_rembal1,spi_wm:ms_rembal2,spi_wm:ms_enterby,spi_wm:ms_refdate,spi_wm:ms_asphaltmixqty,spi_wm:ms_emulsionqty,spi_wm:ms_expiredate,spi_wm:ms_authdate,spi_wm:ms_status,spi_wm:ms_actualdate,spi_wm:ms_siteid,spi_wm:ms_asphaltplantid,spi_wm:ms_apidauth,spi_wm:ms_isapauth,spi_wm:ms_amtkidauth,spi_wm:ms_tareweight,spi_wm:ms_grossweight,spi_wm:ms_netweight,spi_wm:ms_contractnum,spi_wm:ms_latitudey,spi_wm:ms_longitudex,spi_wm:ms_latitudestr,spi_wm:ms_longitudestr,spi_wm:ms_amtkidauthstr,spi_wm:ms_isauth,spi_wm:companiesusina{dcterms:title,spi_wm:company},spi_wm:ms_asphaltplant{spi_wm:ms_active,dcterms:title}').
                setSupportiveFieldsSelectExpression('spi:attachments{oslc_cm:attachmentSize,dcterms:title,spi:fileName,dcterms:description,dcterms:created,spi:urlType,spi:docType,spi:printthrulink,spi:contentLocation,spi:anywhererefid,spi:createby}').
                addField({
                   'multiplicity' : 'zero-or-one',
@@ -664,7 +664,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 150,
                   'id' : 'aw5cfc54ff',
                   'local' : false,
-                  'remoteName' : 'spi_wm:companies',
+                  'remoteName' : 'spi_wm:companiesusina',
                }).
                addField({
                   'multiplicity' : 'exactly-one',
@@ -678,7 +678,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'maxSize' : 25,
                   'id' : 'aw744a9688',
                   'local' : false,
-                  'remoteName' : 'spi_wm:companies',
+                  'remoteName' : 'spi_wm:companiesusina',
                }).
                addField({
                   'dataType' : 'string',

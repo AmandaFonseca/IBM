@@ -1052,8 +1052,8 @@
 				<localAttribute dataType="string" id="serviceRequest_sitedesc_string" name="sitedesc"/>
 				
 				<!--companies-->
-				<attribute describedByProperty="spi_wm:companies{dcterms:title}" id="serviceRequest_ms_itemnum_spi_wm_contratada" name="contratada"/>
-				<attribute describedByProperty="spi_wm:companies{spi_wm:company}" id="serviceRequest_ms_itemnum_spi_wm_company" name="company"/>
+				<attribute describedByProperty="spi_wm:companiesusina{dcterms:title}" id="serviceRequest_ms_itemnum_spi_wm_contratada" name="contratada"/>
+				<attribute describedByProperty="spi_wm:companiesusina{spi_wm:company}" id="serviceRequest_ms_itemnum_spi_wm_company" name="company"/>
 				<localAttribute dataType="string" id="serviceRequest_attachmentssize_string" name="attachmentssize" persistent="false"/>
 				
 				<!--DESENV-->

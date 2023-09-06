@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:26:35
+// Build: 2023-09-06 12:01:45
 //----------------------------------------------------------------//
 define(   "generated/application/ui/ApplicationUIBuilder", 
       [
@@ -468,7 +468,7 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'labelCss' : 'loginLink',
                'artifactId' : 'PrivacyPolicy_versao',
                'id' : 'aw17552e2f',
-               'label' : MessageService.createStaticMessage('v7.6.4:1805231700H'),
+               'label' : MessageService.createStaticMessage('v7.6.4:2305231200H'),
             });
             container007.addChild( text012 );
 
