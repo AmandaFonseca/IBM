@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:44
+// Build: 2023-09-06 08:47:22
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[članak~Manual do Aplicativo]",
          "Privacy Policy" : "[članak~Privacy Policy]",
          "Connection Settings" : "[članak~Connection Settings]",
-         "v7.6.4:2407231930H" : "[članak~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[članak~v7.6.4:05923231200H]",
          "My Assigned Work" : "[članak~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[članak~Inspeções Pendentes]",
          "Records with Errors" : "[članak~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[članak~Attachments]",
          "Cancel" : "[članak~Cancel]",
          "Create" : "[članak~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[članak~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[članak~Sim]",
+         "N\u00E3o" : "[članak~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[članak~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[članak~Close]",
          "Overwrite" : "[članak~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[članak~Tap to enter]",
          "Save" : "[članak~Save]",
          "1. Servi\u00E7o foi executado?" : "[članak~1. Serviço foi executado?]",
-         "N\u00E3o" : "[članak~Não]",
-         "Sim" : "[članak~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[članak~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[članak~Recusar inspecao?]",
          "Voltar" : "[članak~Voltar]",

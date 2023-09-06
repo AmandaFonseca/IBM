@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-06-01 17:01:45
+// Build: 2023-09-06 08:48:03
 //----------------------------------------------------------------//
 define(   "generated/application/data/ApplicationStoresBuilder", 
       [
@@ -238,7 +238,7 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                }).
                setLocal( false ).
                setSimpleFieldsSelectExpression('spi_wm:ms_emergency,dcterms:identifier,spi_wm:ms_actualdate,spi_wm:ms_exitdate,spi_wm:ms_authdate,spi_wm:ms_whynum,spi_wm:ms_authqty,spi_wm:ms_status,spi_wm:ms_changeby,spi_wm:ms_changedate,spi_wm:ms_company,spi_wm:ms_contractnum,spi_wm:ms_enterby,spi_wm:ms_expiredate,spi_wm:ms_formattedaddress,spi_wm:ms_grossweight,spi_wm:ms_historyflag,spi_wm:ms_isauth,spi_wm:ms_itemnum,spi_wm:ms_latitudestr,spi_wm:ms_latitudey,spi_wm:ms_lfdesc,spi_wm:ms_lfidauth,spi_wm:ms_longitudestr,spi_wm:ms_longitudex,spi_wm:ms_netweight,spi_wm:ms_pecode,spi_wm:ms_plate,spi_wm:ms_refdate,spi_wm:ms_remarks,spi_wm:ms_sdtkidauth,spi_wm:ms_sdtkidauthstr,spi_wm:ms_siteid,spi_wm:ms_tareweight,spi_wm:ms_type,spi_wm:ms_wasteid,spi_wm:ms_weightreading,spi_wm:ms_psconfigid,spi_wm:ms_psversion,spi_wm:ms_photosessionid,spi_wm:ms_landfill{spi_wm:ms_description,spi_wm:ms_landfillid},spi_wm:companies{spi_wm:name},spi_wm:status{spi_wm:description},spi_wm:ms_pe{spi_wm:ms_description},spi_wm:ms_waste{spi_wm:ms_pperequirement,spi_wm:ms_description}').
-               setSupportiveFieldsSelectExpression('spi:attachments{oslc_cm:attachmentSize,dcterms:title,spi:fileName,dcterms:description,dcterms:created,spi:urlType,spi:docType,spi:printthrulink,spi:contentLocation,spi:anywhererefid,spi:createby},spi_wm:ms_photosessionline{spi_wm:ms_photosessionlineid,spi_wm:ms_photosessionid,spi_wm:ms_parent,spi_wm:ms_required,spi_wm:ms_sequence,spi_wm:ms_description,spi_wm:ms_minqty},spi_wm:ms_doclinks{spi_wm:ms_anywhererefid,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_version}').
+               setSupportiveFieldsSelectExpression('spi:attachments{oslc_cm:attachmentSize,dcterms:title,spi:fileName,dcterms:description,dcterms:created,spi:urlType,spi:docType,spi:printthrulink,spi:contentLocation,spi:anywhererefid,spi:createby},spi_wm:ms_psldescarte{spi_wm:ms_photosessionlineid,spi_wm:ms_photosessionid,spi_wm:ms_parent,spi_wm:ms_required,spi_wm:ms_sequence,spi_wm:ms_description,spi_wm:ms_minqty},spi_wm:ms_doclinks{spi_wm:ms_anywhererefid,spi_wm:ms_photosessionid,spi_wm:ms_psconfigid,spi_wm:ms_version}').
                addField({
                   'multiplicity' : 'exactly-one',
                   'dataType' : 'boolean',
@@ -801,8 +801,8 @@ function(declare, all, StoresBuilderBase, ResourceMetadata, PersistenceManager, 
                   'id' : 'aw87dfc222',
                   'describedByResource' : 'photosessionlineResource',
                   'local' : false,
-                  'remoteName' : 'spi_wm:ms_photosessionline',
-                  'selectExpression' : 'spi_wm:ms_photosessionline{spi_wm:ms_photosessionlineid,spi_wm:ms_photosessionid,spi_wm:ms_parent,spi_wm:ms_required,spi_wm:ms_sequence,spi_wm:ms_description,spi_wm:ms_minqty}',
+                  'remoteName' : 'spi_wm:ms_psldescarte',
+                  'selectExpression' : 'spi_wm:ms_psldescarte{spi_wm:ms_photosessionlineid,spi_wm:ms_photosessionid,spi_wm:ms_parent,spi_wm:ms_required,spi_wm:ms_sequence,spi_wm:ms_description,spi_wm:ms_minqty}',
                }).
                addField({
                   'multiplicity' : 'zero-or-many',

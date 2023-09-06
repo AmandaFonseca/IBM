@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-24 12:37:53
+// Build: 2023-09-06 08:47:15
 //----------------------------------------------------------------//
 define(   "generated/application/ui/ApplicationUIBuilder", 
       [
@@ -55,6 +55,7 @@ define(   "generated/application/ui/ApplicationUIBuilder",
          "custom/handlers/MSStatusChangeHandler", 
          "application/handlers/WODetailHandler", 
          "application/handlers/WOGeolocationHandler", 
+         "custom/handlers/MSClassifyWorkOrderHandler", 
          "platform/handlers/AttachmentHandler", 
          "application/handlers/WOAttachmentHandler", 
          "application/handlers/ClassificationFormHandler", 
@@ -65,7 +66,6 @@ define(   "generated/application/ui/ApplicationUIBuilder",
          "platform/ui/control/SortOptions", 
          "platform/ui/control/SortOption", 
          "platform/ui/control/SortAttribute", 
-         "custom/handlers/MSClassifyWorkOrderHandler", 
          "application/handlers/StatusChangeHandler", 
          "application/handlers/MetersListHandler", 
          "application/handlers/LaborAssignmentHandler", 
@@ -102,7 +102,7 @@ define(   "generated/application/ui/ApplicationUIBuilder",
          "platform/signature/handler/SignatureHandler"
       ],
 
-function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManager, AdditionalDataUIManager, MessageService, Application, UserInterface, Dialog, Container, Text, Button, SSOHandler, LoginHandler, View, Image, MSLoginHandler, _ApplicationHandlerBase, Queries, Query, WOListHandler, Actions, Action, WOExtDownloadHandler, WorkOfflineHandler, ProgressIndicator, List, FindByScan, DataSheetHandler, ListItemTemplate, ListText, MSStatusChangeHandler, WODetailHandler, WOGeolocationHandler, AttachmentHandler, WOAttachmentHandler, ClassificationFormHandler, ErrorIndicator, Group, GroupItem, LastUpdateText, SortOptions, SortOption, SortAttribute, MSClassifyWorkOrderHandler, StatusChangeHandler, MetersListHandler, LaborAssignmentHandler, CheckBox, PlannedMaterialHandler, TextArea, Footer, WODetailExtensionHandler, DialogHandler, SketchToolHandler, WOCreateQueryBaseHandler, ActualLaborHandler, ClassifyWorkOrderHandler, IdentifyToolHandler, Lookup, ReturnAttributes, ReturnAttribute, SearchAttributes, SearchAttribute, PseudoOfflineModeHandler, CreateQueryBaseHandler, ErrorActions, LookupHandler, PushNotificationDialogHandler, DateTimePicker, SettingsHandler, ChangePasswordHandler, AdditionalDataDialogHandler, RadioButton, LoggerReportHandler, TimeTrackHandler, DurationPicker, EsigHandler, SignatureHandler) {
+function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManager, AdditionalDataUIManager, MessageService, Application, UserInterface, Dialog, Container, Text, Button, SSOHandler, LoginHandler, View, Image, MSLoginHandler, _ApplicationHandlerBase, Queries, Query, WOListHandler, Actions, Action, WOExtDownloadHandler, WorkOfflineHandler, ProgressIndicator, List, FindByScan, DataSheetHandler, ListItemTemplate, ListText, MSStatusChangeHandler, WODetailHandler, WOGeolocationHandler, MSClassifyWorkOrderHandler, AttachmentHandler, WOAttachmentHandler, ClassificationFormHandler, ErrorIndicator, Group, GroupItem, LastUpdateText, SortOptions, SortOption, SortAttribute, StatusChangeHandler, MetersListHandler, LaborAssignmentHandler, CheckBox, PlannedMaterialHandler, TextArea, Footer, WODetailExtensionHandler, DialogHandler, SketchToolHandler, WOCreateQueryBaseHandler, ActualLaborHandler, ClassifyWorkOrderHandler, IdentifyToolHandler, Lookup, ReturnAttributes, ReturnAttribute, SearchAttributes, SearchAttribute, PseudoOfflineModeHandler, CreateQueryBaseHandler, ErrorActions, LookupHandler, PushNotificationDialogHandler, DateTimePicker, SettingsHandler, ChangePasswordHandler, AdditionalDataDialogHandler, RadioButton, LoggerReportHandler, TimeTrackHandler, DurationPicker, EsigHandler, SignatureHandler) {
       return declare("generated.application.ui.ApplicationUIBuilder", BuilderBase, {
 
          build : function() {
@@ -491,7 +491,7 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'labelCss' : 'loginLink',
                'artifactId' : 'PrivacyPolicy_versao',
                'id' : 'aw17552e2f',
-               'label' : MessageService.createStaticMessage('v7.6.4:240823H'),
+               'label' : MessageService.createStaticMessage('v7.6.4:05923231200H'),
             });
             container007.addChild( text012 );
 
@@ -909,13 +909,6 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                      'class' : 'application.handlers.WOGeolocationHandler',
                },
                {
-                     'method' : 'render',
-                     'artifactId' : 'WorkExecution.WorkItemsView_eventHandlers_initialize_wolist',
-                     'id' : 'aw327ee0fd',
-                     'event' : 'render',
-                     'class' : 'application.handlers.WOListHandler',
-               },
-               {
                      'method' : 'sync',
                      'artifactId' : 'WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_render_sync',
                      'id' : 'aw820605c7',
@@ -928,6 +921,13 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                      'id' : 'awc251b758',
                      'event' : 'back',
                      'class' : 'custom.handlers.MSStatusChangeHandler',
+               },
+               {
+                     'method' : 'initEditStatusView02',
+                     'artifactId' : 'Reinspecview.escond_quest_function_',
+                     'id' : 'aw59ba0ec9',
+                     'event' : 'render',
+                     'class' : 'custom.handlers.MSClassifyWorkOrderHandler',
                }
             ];
             view002.eventHandlers = eventHandlers015;
@@ -1103,6 +1103,13 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                      'id' : 'aw9eba0a38',
                      'event' : 'show',
                      'class' : 'application.handlers.ClassificationFormHandler',
+               },
+               {
+                     'method' : 'initEditStatusViewCustomBackType02',
+                     'artifactId' : 'acc_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusViewx',
+                     'id' : 'awdb90f5a4',
+                     'event' : 'render',
+                     'class' : 'custom.handlers.MSStatusChangeHandler',
                }
             ];
             view003.eventHandlers = eventHandlers017;
@@ -5710,13 +5717,6 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
 
             var eventHandlers095 = [
                {
-                     'method' : 'initEditStatusViewCustomBackType02',
-                     'artifactId' : 'classificationok_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusView_1',
-                     'id' : 'awa19c7d79',
-                     'event' : 'back',
-                     'class' : 'custom.handlers.MSStatusChangeHandler',
-               },
-               {
                      'method' : 'initEditStatusView',
                      'artifactId' : 'WorkExecution.Reinspecview_initialize_initEditStatusView',
                      'id' : 'awf369383',
@@ -6301,13 +6301,6 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                      'artifactId' : 'xWorkExecution.EditStatusView_eventHandlers_cleanup_render',
                      'id' : 'aw757ba544',
                      'event' : 'render',
-                     'class' : 'custom.handlers.MSStatusChangeHandler',
-               },
-               {
-                     'method' : 'initEditStatusView',
-                     'artifactId' : 'classificationok_xWorkExecution.EditStatusView_eventHandlers_initializex',
-                     'id' : 'aw2686b74',
-                     'event' : 'back',
                      'class' : 'custom.handlers.MSStatusChangeHandler',
                }
             ];

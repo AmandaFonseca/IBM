@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:43
+// Build: 2023-09-06 08:47:21
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中國的~Manual do Aplicativo]",
          "Privacy Policy" : "[中國的~Privacy Policy]",
          "Connection Settings" : "[中國的~Connection Settings]",
-         "v7.6.4:2407231930H" : "[中國的~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[中國的~v7.6.4:05923231200H]",
          "My Assigned Work" : "[中國的~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[中國的~Inspeções Pendentes]",
          "Records with Errors" : "[中國的~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[中國的~Attachments]",
          "Cancel" : "[中國的~Cancel]",
          "Create" : "[中國的~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[中國的~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[中國的~Sim]",
+         "N\u00E3o" : "[中國的~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[中國的~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[中國的~Close]",
          "Overwrite" : "[中國的~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[中國的~Tap to enter]",
          "Save" : "[中國的~Save]",
          "1. Servi\u00E7o foi executado?" : "[中國的~1. Serviço foi executado?]",
-         "N\u00E3o" : "[中國的~Não]",
-         "Sim" : "[中國的~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[中國的~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[中國的~Recusar inspecao?]",
          "Voltar" : "[中國的~Voltar]",

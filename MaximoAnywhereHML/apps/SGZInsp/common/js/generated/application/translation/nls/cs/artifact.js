@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:44
+// Build: 2023-09-06 08:47:22
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[českém~Manual do Aplicativo]",
          "Privacy Policy" : "[českém~Privacy Policy]",
          "Connection Settings" : "[českém~Connection Settings]",
-         "v7.6.4:2407231930H" : "[českém~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[českém~v7.6.4:05923231200H]",
          "My Assigned Work" : "[českém~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[českém~Inspeções Pendentes]",
          "Records with Errors" : "[českém~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[českém~Attachments]",
          "Cancel" : "[českém~Cancel]",
          "Create" : "[českém~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[českém~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[českém~Sim]",
+         "N\u00E3o" : "[českém~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[českém~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[českém~Close]",
          "Overwrite" : "[českém~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[českém~Tap to enter]",
          "Save" : "[českém~Save]",
          "1. Servi\u00E7o foi executado?" : "[českém~1. Serviço foi executado?]",
-         "N\u00E3o" : "[českém~Não]",
-         "Sim" : "[českém~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[českém~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[českém~Recusar inspecao?]",
          "Voltar" : "[českém~Voltar]",

@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:44
+// Build: 2023-09-06 08:47:22
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[Okrągłego~Manual do Aplicativo]",
          "Privacy Policy" : "[Okrągłego~Privacy Policy]",
          "Connection Settings" : "[Okrągłego~Connection Settings]",
-         "v7.6.4:2407231930H" : "[Okrągłego~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[Okrągłego~v7.6.4:05923231200H]",
          "My Assigned Work" : "[Okrągłego~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[Okrągłego~Inspeções Pendentes]",
          "Records with Errors" : "[Okrągłego~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[Okrągłego~Attachments]",
          "Cancel" : "[Okrągłego~Cancel]",
          "Create" : "[Okrągłego~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[Okrągłego~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[Okrągłego~Sim]",
+         "N\u00E3o" : "[Okrągłego~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[Okrągłego~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[Okrągłego~Close]",
          "Overwrite" : "[Okrągłego~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[Okrągłego~Tap to enter]",
          "Save" : "[Okrągłego~Save]",
          "1. Servi\u00E7o foi executado?" : "[Okrągłego~1. Serviço foi executado?]",
-         "N\u00E3o" : "[Okrągłego~Não]",
-         "Sim" : "[Okrągłego~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[Okrągłego~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[Okrągłego~Recusar inspecao?]",
          "Voltar" : "[Okrągłego~Voltar]",

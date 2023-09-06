@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:43
+// Build: 2023-09-06 08:47:21
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[françaisé~Manual do Aplicativo]",
          "Privacy Policy" : "[françaisé~Privacy Policy]",
          "Connection Settings" : "[françaisé~Connection Settings]",
-         "v7.6.4:2407231930H" : "[françaisé~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[françaisé~v7.6.4:05923231200H]",
          "My Assigned Work" : "[françaisé~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[françaisé~Inspeções Pendentes]",
          "Records with Errors" : "[françaisé~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[françaisé~Attachments]",
          "Cancel" : "[françaisé~Cancel]",
          "Create" : "[françaisé~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[françaisé~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[françaisé~Sim]",
+         "N\u00E3o" : "[françaisé~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[françaisé~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[françaisé~Close]",
          "Overwrite" : "[françaisé~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[françaisé~Tap to enter]",
          "Save" : "[françaisé~Save]",
          "1. Servi\u00E7o foi executado?" : "[françaisé~1. Serviço foi executado?]",
-         "N\u00E3o" : "[françaisé~Não]",
-         "Sim" : "[françaisé~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[françaisé~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[françaisé~Recusar inspecao?]",
          "Voltar" : "[françaisé~Voltar]",

@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:44
+// Build: 2023-09-06 08:47:22
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[razložiti~Manual do Aplicativo]",
          "Privacy Policy" : "[razložiti~Privacy Policy]",
          "Connection Settings" : "[razložiti~Connection Settings]",
-         "v7.6.4:2407231930H" : "[razložiti~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[razložiti~v7.6.4:05923231200H]",
          "My Assigned Work" : "[razložiti~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[razložiti~Inspeções Pendentes]",
          "Records with Errors" : "[razložiti~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[razložiti~Attachments]",
          "Cancel" : "[razložiti~Cancel]",
          "Create" : "[razložiti~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[razložiti~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[razložiti~Sim]",
+         "N\u00E3o" : "[razložiti~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[razložiti~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[razložiti~Close]",
          "Overwrite" : "[razložiti~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[razložiti~Tap to enter]",
          "Save" : "[razložiti~Save]",
          "1. Servi\u00E7o foi executado?" : "[razložiti~1. Serviço foi executado?]",
-         "N\u00E3o" : "[razložiti~Não]",
-         "Sim" : "[razložiti~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[razložiti~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[razložiti~Recusar inspecao?]",
          "Voltar" : "[razložiti~Voltar]",

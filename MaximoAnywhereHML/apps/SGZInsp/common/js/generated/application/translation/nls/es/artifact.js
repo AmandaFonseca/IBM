@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:43
+// Build: 2023-09-06 08:47:21
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[administración~Manual do Aplicativo]",
          "Privacy Policy" : "[administración~Privacy Policy]",
          "Connection Settings" : "[administración~Connection Settings]",
-         "v7.6.4:2407231930H" : "[administración~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[administración~v7.6.4:05923231200H]",
          "My Assigned Work" : "[administración~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[administración~Inspeções Pendentes]",
          "Records with Errors" : "[administración~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[administración~Attachments]",
          "Cancel" : "[administración~Cancel]",
          "Create" : "[administración~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[administración~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[administración~Sim]",
+         "N\u00E3o" : "[administración~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[administración~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[administración~Close]",
          "Overwrite" : "[administración~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[administración~Tap to enter]",
          "Save" : "[administración~Save]",
          "1. Servi\u00E7o foi executado?" : "[administración~1. Serviço foi executado?]",
-         "N\u00E3o" : "[administración~Não]",
-         "Sim" : "[administración~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[administración~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[administración~Recusar inspecao?]",
          "Voltar" : "[administración~Voltar]",

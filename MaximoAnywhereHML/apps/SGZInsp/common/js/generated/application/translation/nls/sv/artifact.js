@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:44
+// Build: 2023-09-06 08:47:22
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[trettioåriga~Manual do Aplicativo]",
          "Privacy Policy" : "[trettioåriga~Privacy Policy]",
          "Connection Settings" : "[trettioåriga~Connection Settings]",
-         "v7.6.4:2407231930H" : "[trettioåriga~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[trettioåriga~v7.6.4:05923231200H]",
          "My Assigned Work" : "[trettioåriga~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[trettioåriga~Inspeções Pendentes]",
          "Records with Errors" : "[trettioåriga~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[trettioåriga~Attachments]",
          "Cancel" : "[trettioåriga~Cancel]",
          "Create" : "[trettioåriga~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[trettioåriga~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[trettioåriga~Sim]",
+         "N\u00E3o" : "[trettioåriga~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[trettioåriga~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[trettioåriga~Close]",
          "Overwrite" : "[trettioåriga~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[trettioåriga~Tap to enter]",
          "Save" : "[trettioåriga~Save]",
          "1. Servi\u00E7o foi executado?" : "[trettioåriga~1. Serviço foi executado?]",
-         "N\u00E3o" : "[trettioåriga~Não]",
-         "Sim" : "[trettioåriga~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[trettioåriga~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[trettioåriga~Recusar inspecao?]",
          "Voltar" : "[trettioåriga~Voltar]",

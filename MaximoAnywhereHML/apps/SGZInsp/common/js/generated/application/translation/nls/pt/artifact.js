@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:44
+// Build: 2023-09-06 08:47:22
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[vagão do metrô~Manual do Aplicativo]",
          "Privacy Policy" : "[vagão do metrô~Privacy Policy]",
          "Connection Settings" : "[vagão do metrô~Connection Settings]",
-         "v7.6.4:2407231930H" : "[vagão do metrô~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[vagão do metrô~v7.6.4:05923231200H]",
          "My Assigned Work" : "[vagão do metrô~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[vagão do metrô~Inspeções Pendentes]",
          "Records with Errors" : "[vagão do metrô~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[vagão do metrô~Attachments]",
          "Cancel" : "[vagão do metrô~Cancel]",
          "Create" : "[vagão do metrô~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[vagão do metrô~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[vagão do metrô~Sim]",
+         "N\u00E3o" : "[vagão do metrô~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[vagão do metrô~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[vagão do metrô~Close]",
          "Overwrite" : "[vagão do metrô~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[vagão do metrô~Tap to enter]",
          "Save" : "[vagão do metrô~Save]",
          "1. Servi\u00E7o foi executado?" : "[vagão do metrô~1. Serviço foi executado?]",
-         "N\u00E3o" : "[vagão do metrô~Não]",
-         "Sim" : "[vagão do metrô~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[vagão do metrô~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[vagão do metrô~Recusar inspecao?]",
          "Voltar" : "[vagão do metrô~Voltar]",

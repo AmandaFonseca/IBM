@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:44
+// Build: 2023-09-06 08:47:22
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[gæst faldt~Manual do Aplicativo]",
          "Privacy Policy" : "[gæst faldt~Privacy Policy]",
          "Connection Settings" : "[gæst faldt~Connection Settings]",
-         "v7.6.4:2407231930H" : "[gæst faldt~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[gæst faldt~v7.6.4:05923231200H]",
          "My Assigned Work" : "[gæst faldt~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[gæst faldt~Inspeções Pendentes]",
          "Records with Errors" : "[gæst faldt~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[gæst faldt~Attachments]",
          "Cancel" : "[gæst faldt~Cancel]",
          "Create" : "[gæst faldt~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[gæst faldt~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[gæst faldt~Sim]",
+         "N\u00E3o" : "[gæst faldt~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[gæst faldt~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[gæst faldt~Close]",
          "Overwrite" : "[gæst faldt~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[gæst faldt~Tap to enter]",
          "Save" : "[gæst faldt~Save]",
          "1. Servi\u00E7o foi executado?" : "[gæst faldt~1. Serviço foi executado?]",
-         "N\u00E3o" : "[gæst faldt~Não]",
-         "Sim" : "[gæst faldt~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[gæst faldt~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[gæst faldt~Recusar inspecao?]",
          "Voltar" : "[gæst faldt~Voltar]",

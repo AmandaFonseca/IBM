@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:43
+// Build: 2023-09-06 08:47:21
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[engbManual do Aplicativo]",
          "Privacy Policy" : "[engbPrivacy Policy]",
          "Connection Settings" : "[engbConnection Settings]",
-         "v7.6.4:2407231930H" : "[engbv7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[engbv7.6.4:05923231200H]",
          "My Assigned Work" : "[engbMy Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[engbInspeções Pendentes]",
          "Records with Errors" : "[engbRecords with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[engbAttachments]",
          "Cancel" : "[engbCancel]",
          "Create" : "[engbCreate]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[engbOs dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[engbSim]",
+         "N\u00E3o" : "[engbNão]",
          "This sketch already exists, would you like to overwrite it?" : "[engbThis sketch already exists, would you like to overwrite it?]",
          "Close" : "[engbClose]",
          "Overwrite" : "[engbOverwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[engbTap to enter]",
          "Save" : "[engbSave]",
          "1. Servi\u00E7o foi executado?" : "[engb1. Serviço foi executado?]",
-         "N\u00E3o" : "[engbNão]",
-         "Sim" : "[engbSim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[engbConfirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[engbRecusar inspecao?]",
          "Voltar" : "[engbVoltar]",

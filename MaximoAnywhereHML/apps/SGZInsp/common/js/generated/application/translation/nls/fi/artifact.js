@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-15 16:56:44
+// Build: 2023-09-06 08:47:22
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[pohjoispäässä~Manual do Aplicativo]",
          "Privacy Policy" : "[pohjoispäässä~Privacy Policy]",
          "Connection Settings" : "[pohjoispäässä~Connection Settings]",
-         "v7.6.4:2407231930H" : "[pohjoispäässä~v7.6.4:2407231930H]",
+         "v7.6.4:05923231200H" : "[pohjoispäässä~v7.6.4:05923231200H]",
          "My Assigned Work" : "[pohjoispäässä~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[pohjoispäässä~Inspeções Pendentes]",
          "Records with Errors" : "[pohjoispäässä~Records with Errors]",
@@ -103,6 +103,9 @@ define({
          "Attachments" : "[pohjoispäässä~Attachments]",
          "Cancel" : "[pohjoispäässä~Cancel]",
          "Create" : "[pohjoispäässä~Create]",
+         "Os dados do questin\u00E1rio n\u00E3o ser\u00E3o salvos, deseja voltar?" : "[pohjoispäässä~Os dados do questinário não serão salvos, deseja voltar?]",
+         "Sim" : "[pohjoispäässä~Sim]",
+         "N\u00E3o" : "[pohjoispäässä~Não]",
          "This sketch already exists, would you like to overwrite it?" : "[pohjoispäässä~This sketch already exists, would you like to overwrite it?]",
          "Close" : "[pohjoispäässä~Close]",
          "Overwrite" : "[pohjoispäässä~Overwrite]",
@@ -138,8 +141,6 @@ define({
          "Tap to enter" : "[pohjoispäässä~Tap to enter]",
          "Save" : "[pohjoispäässä~Save]",
          "1. Servi\u00E7o foi executado?" : "[pohjoispäässä~1. Serviço foi executado?]",
-         "N\u00E3o" : "[pohjoispäässä~Não]",
-         "Sim" : "[pohjoispäässä~Sim]",
          "Confirmacao da recusa de inspe\u00E7\u00E3o" : "[pohjoispäässä~Confirmacao da recusa de inspeção]",
          "Recusar inspecao?" : "[pohjoispäässä~Recusar inspecao?]",
          "Voltar" : "[pohjoispäässä~Voltar]",

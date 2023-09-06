@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-06-01 17:01:50
+// Build: 2023-09-06 08:48:13
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[erÕsíteni~Manual do Aplicativo]",
          "Privacy Policy" : "[erÕsíteni~Privacy Policy]",
          "Connection Settings" : "[erÕsíteni~Connection Settings]",
-         "v7.6.4:0106231633H" : "[erÕsíteni~v7.6.4:0106231633H]",
+         "v7.6.4:2408231600H" : "[erÕsíteni~v7.6.4:2408231600H]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[erÕsíteni~Informações do Veículo]",
          "Synchronize Data" : "[erÕsíteni~Synchronize Data]",
          "Validar Placa" : "[erÕsíteni~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[erÕsíteni~Categorias de Anexos]",
          "Categorias" : "[erÕsíteni~Categorias]",
          "Attachments" : "[erÕsíteni~Attachments]",
+         "Attachments (Categorizado)" : "[erÕsíteni~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[erÕsíteni~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[erÕsíteni~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[erÕsíteni~Yes]",
          "No" : "[erÕsíteni~No]",
