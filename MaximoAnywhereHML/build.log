@@ -1,4 +1,4 @@
-     [echo] 2023-09-06 08:48:40> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
+     [echo] 2023-09-06 08:51:44> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -100,7 +100,7 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 08:48:40> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-09-06 08:51:45> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
@@ -116,14 +116,14 @@ init:  duration 0 seconds
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 08:48:41> Java version was checked.
+     [echo] 2023-09-06 08:51:46> Java version was checked.
 verify-compatibility:  duration 0 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-system-verification.xml.
 [available] Found directory: build\managed
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 08:48:41> maximo anywhere platform is already installed.
+     [echo] 2023-09-06 08:51:46> maximo anywhere platform is already installed.
 verify-environment-compatibility:  duration 0 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
@@ -469,7 +469,7 @@ Complete build sequence is [-update-buildtimestamp, pull-rdfs-from-server, Appli
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 08:48:43> Updating C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZAterro About Build Time Panel
+     [echo] 2023-09-06 08:51:47> Updating C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZAterro About Build Time Panel
 [available] Found: version.txt
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
@@ -2480,11 +2480,11 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry dojo/resources/blank.gif
       [zip] adding entry ol.js
       [zip] adding entry winstore-jscompat.js
--zip-app:  duration 1 second
+-zip-app:  duration 3 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-zip-all-apps:  duration 1 second
+zip-all-apps:  duration 3 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-all-gen:  duration 1 second
+all-gen:  duration 3 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
   [antcall] calling target(s) [all-deploy] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
@@ -2598,7 +2598,7 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 08:48:44> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-09-06 08:51:51> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
@@ -2700,31 +2700,31 @@ admin-loader:
      [exec] > Content-Length: 43
      [exec] > 
      [exec] } [43 bytes data]
-     [exec] < HTTP/1.1 302 Found
-     [exec] < Date: Wed, 06 Sep 2023 11:48:43 GMT
-     [exec] < X-Powered-By: Servlet/3.1
-     [exec] < X-Frame-Options: SAMEORIGIN
-     [exec] < LHTTP/1.1 302 Found
-     [exec] Date: Wed, 06 Sep 2023 11:48:43 GMT
+     [exec] HTTP/1.1 302 Found
+     [exec] Date: Wed, 06 Sep 2023 11:51:51 GMT
      [exec] X-Powered-By: Servlet/3.1
      [exec] X-Frame-Options: SAMEORIGIN
-     [exec] Location: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
+     [exec] Location: https< HTTP/1.1 302 Found
+     [exec] < Date: Wed, 06 Sep 2023 11:51:51 GMT
+     [exec] < X-Powered-By: Servlet/3.1
+     [exec] < X-Frame-Options: SAMEORIGIN
+     [exec] < L://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
      [exec] Content-Length: 0
-     [exec] Set-Cookie: LtpaToken2=u2UbMvh4G8g2cSfHYbnb3XR4pJMzCXV7NAWOx8wl89CmjkEk/qG8h4LMwGOYEJ910Z2TSmkTJS7W8oi9cBNKx74HJ1YUDNyWYKzseiwBVTLYA99GUcqciTgb+IFDDK2kZM84b3RRazqjj5qNr8xwW6wRDTeqw1sECocation: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
+     [exec] Set-Cookie: LtpaToken2=3UMe1uqDh2I58KA7x2om6IlWIoXFSTDi9ocation: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
      [exec] < Content-Length: 0
-     [exec] * Added cookie LtpaToken2="u2UbMvh4G8gRsyYOv4bvkpcdSG4Gvt1/Sl9ZRcwotD/vgMWN941S4WjmMNEuXCO3k/DHkVSexxDgqIrosv/74NnzbqKEnMv4A5B/2FwOGpoHcinCPc+9X9KSjP5StS/xugSc5RIT5Kh2cSfHYbnb3XR4pJMzCXV7NAWOx8wl89CmjkEk/qG8h4LMwGOYEJ910Z2TSmkTJS7W8oi9cBNKx74HJ1YUDNyWYKzseiwBVTLYA99GUcqciTgb+IFDDK2kZM84b3RRazqjj5qNr8xwW6wRDTeqw1sECRsyYOv4bvkpcdSG4Gvt1/Sl9ZRcwotD/vgMWN941S4WjmMNEuXCO3k/DHkVSexxDgqIrosv/74NnzbqKEnMv4A5B/2FwOGpoHcinCPc+9X989EketHGv88t833EhM0CHSYeJBxeGDP7hr4B1kpbm+ern2KdCSaao9cC/QE2fPWdngLzCY46LNEfdYCYPU0rz+nY6pRaR4Cm9KREVK9Pjwcd/0G4h7gIK6jiOSWUUyl9KSjP5StS/xugSc5RIT5Kh989EketHGv88t833EhM0CHSYeJBxeGDP7hr4B1kpbm+ern2KdCSaao9cC/QE2fPWdngLzCY46LNEfdYCYPU0rz+nY6pRaR4Cm9KREVK9PjzU8JUkToLJkn95Sl2Ul2zIzJyu3St77CzB/RRiXqEWYojjzakadWUAD865hvoQ3iaDSmrWIAPCe2CKW6IE7CuVTFg1UYAQBincxtbvJqvb63Iyg0syD+j9PxJIzBU2NTwcd/0G4h7gIK6jiOSWUUylzU8JUkToLJkn95Sl2Ul2zIzJyu3St77CzB/RRiXqEWYojjzakadWUAD865hvoQ3iaDSmrWIAPCe2CKW6IE7CuVTFg1UYAQBincxtbvJqvb3bANpjcE3KoY2RSB/v5/NalerUUt3krLSUhVhb9DLuymDGEXP20Ky/+kB88euDHqQ5BuzLRS5JZTNnOsF+IMqSoDCDv/+lM+wmhVJksqLtlbLzCCIwogNXSFbBYzX0RH63Iyg0syD+j9PxJIzBU2NT3bANpjcE3KoY2RSB/v5/NalerUUt3krLSUhVhb9DLuymDGEXP20Ky/+kB88euDHqQ5BuzLRS5JZTNnOsF+IMqSoDCDv/+lM+wmhVJksqLtEGYc9+uxesIXWU5yriD4qXZPMm2uSYxGPzKql5F4ynJAehNMNNppl1YpRopJwzXrkyGd8XIRyw3az997jtjnmEaGXRdrsANO+SKI9VrhjTDrb+GE9zZzw==; Path=/;lbLzCCIwogNXSFbBYzX0RHEGYc9+uxesIXWU5yriD4qXZPMm2uSYxGPzKql5F4ynJAehNMNNppl1YpRopJwzXrkyGd8XIRyw3az997jtjnmEaGXRdrsANO+SKI9VrhjT HttpOnly
+     [exec] * Added cookie LtpaToken2="3UMe1uqDh2I7OTqusjGJO5EO0ixp8tWqvPCV8awi2d2PJ6xyjb9ZB0UojxFE7W4HjWVVjDLNlBpDaT+xOlXQguhfE4BYRngNOTPxvJ/n/5EnXY5WW2q3w8OvJAiYRFgojU1T04xvABf58KA7x2om6IlWIoXFSTDi97OTqusjGJO5EO0ixp8tWqvPCV8awi2d2PJ6xyjb9ZB0UojxFE7W4HjWVVjDLNlBpDaT+xOlXQguhfE4BYRngNOTPxvJ/n/5EnXY5WW2q3wnMFo9ImqMdam+1cFXnP4NvbKbmNhb6fQiNDKahLT+Dejzga2WlUMmqqo6mb4dAYL6vBw8J57Hw+NNVJyNL1qGG8m0zlc3XlEUw5HHtH0hjL3//VwGI7KZiqHso0d//mR8OvJAiYRFgojU1T04xvABfnMFo9ImqMdam+1cFXnP4NvbKbmNhb6fQiNDKahLT+Dejzga2WlUMmqqo6mb4dAYL6vBw8J57Hw+NNVJyNL1qGG8m0zlc3XlEUw5HHtH0hjIXTqyfPnMDO2CPzfVXfRguCEevDTu4Sju2AsXUPlMWBzi4IQcneGwzhGcj7eEmS/VVWaywEO4UdvcfhFwz2z/rQoUGeV5KbY0nZw0srcREEJbciJSoaDaEk13NOrmNuEmXgeNCHY0yuPB4q+sIy0MHl21TF7PcuEPlod/5COvq8U7ww/bFqQQlALJQD3o+SpeTADo0N+d1+5AJV9tUg8sAFxnn9F1JJKtknYWiFk15VwtguGxto/tu1sM4i/X+e1L3//VwGI7KZiqHso0d//mRIXTqyfPnMDO2CPzfVXfRguCEevDTu4Sju2AsXUPlMWBzi4IQcneGwzhGcj7eEmS/VVWaywEO4UdvcfhFwz2z/rQoUGeV5KbY0nZw0srcREtxrJV8jnHsJ3GkZgcopR69xNARtMs/1PPTvQWdI1ivBCDT8cDUxx4MuZN2mGY0Un52E3WdR400dOXRIIyllktVcajdze2PvVlytKnG4aivJBAfp47H1nwPFu90pQ1zyuEJbciJSoaDaEk13NOrmNuEmXgeNCHY0yuPB4q+sIy0MHl21TF7PcuEPlod/5COvq8U7ww/bFqQQlALJQD3o+SpeTADo0N+d1+5AJV9tUg8sAFxnn9F1JJKtknYWiFk15zGIxVkuFCNqnaIZRR3xizu8aJ37JZGNvjyDgGyyPW2MLaZCC/XT9sulPt8CYdlYJuwQXmv/vaoaSeDg33up//sd2OJMtlqBycVnJomm2PSBbBU8GK9f4A==; Path=/;VwtguGxto/tu1sM4i/X+e1txrJV8jnHsJ3GkZgcopR69xNARtMs/1PPTvQWdI1ivBCDT8cDUxx4MuZN2mGY0Un52E3WdR400dOXRIIyllktVcajdze2PvVlytKnG4aiv HttpOnly
      [exec] Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] Content-Language: c.u-US
-     [exec] Drb+GE9zZzw==" for domain hsmgimax.prefeitura.sp.gov.br, path /, expire 0
-     [exec] < Set-Cookie: LtpaToken2=u2UbMvh4G8g2cSfHYbnb3XR4pJMz
-     [exec] CXV7NAWOx8wl89CmjkEk/qG8h4LMwGOYEJ910Z2TSmkTJS7W8oi9cBNKx74HJ1YUDNyWYKzseiwBVTLYA99GUcqciTgb+IFDDK2kZM84b3RRazqjj5qNr8xwW6wRDTeqw1sECRsyYOv4bvkpcdSG4Gvt1/Sl9ZRcwotD/vgMWN941S4WjmMNEuXCO3k/DHkVSexxDgqIrosv/74NnzbqKEnMv4A5B/2FwOGpoHcinCPc+9X9KSjP5StS/xugSc5RIT5Kh989EketHGv88t833EhM0CHSYeJBxeGDP7hr4B1kpbm+ern2KdCSaao9cC/QE2fPWdngLzCY46LNEfdYCYPU0rz+nY6pRaR4Cm9KREVK9Pjwcd/0G4h7gIK6jiOSWUUylzU8JUkToLJkn95Sl2Ul2zIzJyu3St77CzB/RRiXqEWYojjzakadWUAD865hvoQ3iaDSmrWIAPCe2CKW6IE7CuVTFg1UYAQBincxtbvJqvb63Iyg0syD+j9PxJIzBU2NT3bANpjcE3KoY2RSB/v5/NalerUUt3krLSUhVhb9DLuymDGEXP20Ky/+kB88euDHqQ5BuzLRS5JZTNnOsF+IMqSoDCDv/+lM+wmhVJksqLtlbLzCCIwogNXSFbBYzX0RHEGYc9+uxesIXWU5yriD4qXZPMm2uSYxGPzKql5F4ynJAehNMNNppl1YpRopJwzXrkyGd8XIRyw3az997jtjnmEaGXRdrsANO+SKI9VrhjTDrb+GE9zZzw==; Path=/; HttpOnly
+     [exec] JBAfp47H1nwPFu90pQ1zyuzGIxVkuFCNqnaIZRR3xizu8aJ37JZGNvjyDgGyyPW2MLaZCC/XT9sulPt8CYdlYJuwQXmv/vaoaSeDg33up//sd2OJMtlqBycVnJomm2PS
+     [exec] BbBU8GK9f4A==" for domain hsmgimax.prefeitura.sp.gov.br, path /, expire 0
+     [exec] < Set-Cookie: LtpaToken2=3UMe1uqDh2I58KA7x2om6IlWIoXFSTDi97OTqusjGJO5EO0ixp8tWqvPCV8awi2d2PJ6xyjb9ZB0UojxFE7W4HjWVVjDLNlBpDaT+xOlXQguhfE4BYRngNOTPxvJ/n/5EnXY5WW2q3w8OvJAiYRFgojU1T04xvABfnMFo9ImqMdam+1cFXnP4NvbKbmNhb6fQiNDKahLT+Dejzga2WlUMmqqo6mb4dAYL6vBw8J57Hw+NNVJyNL1qGG8m0zlc3XlEUw5HHtH0hjL3//VwGI7KZiqHso0d//mRIXTqyfPnMDO2CPzfVXfRguCEevDTu4Sju2AsXUPlMWBzi4IQcneGwzhGcj7eEmS/VVWaywEO4UdvcfhFwz2z/rQoUGeV5KbY0nZw0srcREEJbciJSoaDaEk13NOrmNuEmXgeNCHY0yuPB4q+sIy0MHl21TF7PcuEPlod/5COvq8U7ww/bFqQQlALJQD3o+SpeTADo0N+d1+5AJV9tUg8sAFxnn9F1JJKtknYWiFk15VwtguGxto/tu1sM4i/X+e1txrJV8jnHsJ3GkZgcopR69xNARtMs/1PPTvQWdI1ivBCDT8cDUxx4MuZN2mGY0Un52E3WdR400dOXRIIyllktVcajdze2PvVlytKnG4aivJBAfp47H1nwPFu90pQ1zyuzGIxVkuFCNqnaIZRR3xizu8aJ37JZGNvjyDgGyyPW2MLaZCC/XT9sulPt8CYdlYJuwQXmv/vaoaSeDg33up//sd2OJMtlqBycVnJomm2PSBbBU8GK9f4A==; Path=/; HttpOnly
      [exec] < Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] < Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] < Content-Language: c.u-US
      [exec] < 
      [exec] 
-     [exec] 100    43    0     0  100    43      0    376 --:--:-- --:--:-- --:--:--   383* Connection #0 to host hsmgimax.prefeitura.sp.gov.br left intact
+     [exec] 100    43    0     0  100    43      0    421 --:--:-- --:--:-- --:--:--   430* Connection #0 to host hsmgimax.prefeitura.sp.gov.br left intact
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -2872,13 +2872,13 @@ not part of the command.
      [exec]   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
      [exec]                                  Dload  Upload   Total   Spent    Left  Speed
      [exec] 
-     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 65 5394k    0     0   65 3552k      0  4182k  0:00:01 --:--:--  0:00:01 4183k
-     [exec] {"deployeddatetime":"2023-09-06 08:48:45.328"}
-     [exec] 100 5394k  100    47  100 5394k     26  3085k  0:00:01  0:00:01 --:--:-- 3089k
+     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 48 5394k    0     0   48 2640k      0  4876k  0:00:01 --:--:--  0:00:01 4888k
+     [exec] {"deployeddatetime":"2023-09-06 08:51:53.777"}
+     [exec] 100 5394k  100    47  100 5394k     25  2939k  0:00:01  0:00:01 --:--:-- 2942k100 5394k  100    47  100 5394k     25  2938k  0:00:01  0:00:01 --:--:-- 2941k
  [loadfile] loading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZAterro.response into property curl.upload.result
- [loadfile] loaded 545 characters
+ [loadfile] loaded 623 characters
      [echo] Checksum acquired
-     [echo] 2023-09-06 08:48:45.328
+     [echo] 2023-09-06 08:51:53.777
       [zip] SGZAterro.checksum added as SGZAterro.checksum doesn't exist.
       [zip] No sources found.
       [zip] Updating zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZAterro.zip
@@ -4834,11 +4834,11 @@ not part of the command.
       [zip] adding entry worklight.properties
    [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZAterro.checksum
    [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZAterro.response
--zip-app-upload:  duration 3 seconds
+-zip-app-upload:  duration 5 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-zip-upload-all-apps:  duration 3 seconds
+zip-upload-all-apps:  duration 5 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-all-deploy:  duration 3 seconds
+all-deploy:  duration 5 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
   [antcall] calling target(s) [show-support-page] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
