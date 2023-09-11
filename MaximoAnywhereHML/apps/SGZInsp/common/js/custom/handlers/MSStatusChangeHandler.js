@@ -367,21 +367,21 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			var workOrder = eventContext.getCurrentRecord();
 			var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 			//var workOrder = recordSet;
-			statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
+			statusChange.setDateValue("changedate", null);
 			statusChange.setNullValue("status");
 			statusChange.setNullValue("statusdesc")
 			statusChange.setNullValue("memo");
 			//eventContext.ui.application.toolWarningShown = false;
 			try {
-			  if (workOrder.get('pd_inspector')) {workOrder.setNullValue("pd_inspector");}
-			  if (workOrder.get('pd_inspdate')) {workOrder.setNullValue("pd_inspdate");}
-			  if (workOrder.get('pd_inspquestion01')) {workOrder.setNullValue("pd_inspquestion01");}
-			  if (workOrder.get('pd_inspquestion02')) {workOrder.setNullValue("pd_inspquestion02");}
-			  if (workOrder.get('pd_inspquestion03')) {workOrder.setNullValue("pd_inspquestion03");}
-			  if (workOrder.get('pd_inspector04')) {workOrder.setNullValue("pd_inspector04");}
-			  if (workOrder.get('ms_inspdate04')) {workOrder.setNullValue("ms_inspdate04");}
-			  if (workOrder.get('ms_inspector04')) {workOrder.setNullValue("ms_inspector04");}
-			  if (workOrder.get('ms_inspquestion04')) {workOrder.setNullValue("ms_inspquestion04");}
+			  if (statusChange.get('pd_inspector')) {statusChange.setNullValue("pd_inspector");}
+			  if (statusChange.get('pd_inspdate')) {statusChange.setNullValue("pd_inspdate");}
+			  if (statusChange.get('pd_inspquestion01')) {statusChange.setNullValue("pd_inspquestion01");}
+			  if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
+			  if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
+			  if (statusChange.get('pd_inspector04')) {statusChange.setNullValue("pd_inspector04");}
+			  if (statusChange.get('ms_inspdate04')) {statusChange.setNullValue("ms_inspdate04");}
+			  if (statusChange.get('ms_inspector04')) {statusChange.setNullValue("ms_inspector04");}
+			  if (statusChange.get('ms_inspquestion04')) {statusChange.setNullValue("ms_inspquestion04");}
 			  return true;
 			} catch (error) {console.log(error+' initEditStatusView')}        
 		},
@@ -397,6 +397,8 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			setTimeout(() => {
 			  this.ui.show("WorkExecution.WorkItemsView");
 			  self.ui.hideCurrentView(PlatformConstants.CLEANUP);
+			  statusChange.setNullValue('status');
+			  statusChange.setNullValue('attachmentssizetoday');
 			}, "500");
 			//resolve();
 		},
@@ -1131,7 +1133,19 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 	  showHideQuestionsView: function (eventContext) {
 		var workorder = eventContext.getResource().getCurrentRecord();
 		var statusdate = workorder.get("changestatusdate");
-		var attachments_crecord = CommonHandler._getAdditionalResource(eventContext,"attachments");
+		//var attachments_crecord = CommonHandler._getAdditionalResource(eventContext,"attachments");
+		
+		var attachments_crecord;
+		try {
+			if (workorder.get('attachments')) {
+			   attachments_crecord = workorder.get('attachments');
+			}else{
+				attachments_crecord = null;
+			}
+		} catch (error) {
+			console.log(error);
+		}
+
 		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 		statusChangeResource.set('attachmentssizetoday', null)
 		//attachments_crecord.filter("creationDate > $1", statusdate);
@@ -1142,6 +1156,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		let user = 0;
 		let attachmentssizetoday = null;
 		var myUser = UserManager.getCurrentUser();
+		myUser = myUser.toLocaleLowerCase();
   
 		if (attachments_crecord.data.length) {
 		  attachments_crecord_size = attachments_crecord.data.length;
@@ -1174,7 +1189,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 				let creationDate;
 				let datePhoto; 
 			  	user = element.get('createby');
-  
+				user = user.toLocaleLowerCase();  
 				try {
 					if (element.get('creationDate')) {
 						creationDate = element.get('creationDate');
@@ -1206,8 +1221,9 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 				attachmentssizetoday ++;
 			  }*/
   
-			  if(data_newdatedatePhoto >= data_newdate && data_newdatedatePhoto >= data_newdateStatus){
+			  if(data_newdatedatePhoto >= data_newdate && data_newdatedatePhoto >= data_newdateStatus && user == myUser){
 				  attachmentssizetoday ++;
+				  statusChangeResource.set('attachmentssizetoday',attachmentssizetoday);
 			  }
   
 				 
@@ -1230,7 +1246,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			eventContext.setVisibility(false);
 		  }
 		}
-		statusChangeResource.set('attachmentssizetoday',attachmentssizetoday);
 	  },
   
 	  redirectView: function (eventContext) {

@@ -605,6 +605,8 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		setTimeout(() => {
 		  this.ui.show("WorkExecution.WorkItemsView");
 		  self.ui.hideCurrentView(PlatformConstants.CLEANUP);
+		  statusChange.setNullValue('status');
+		  statusChange.setNullValue('attachmentssizetoday');
 		}, "500");
 		//resolve();
 	},
