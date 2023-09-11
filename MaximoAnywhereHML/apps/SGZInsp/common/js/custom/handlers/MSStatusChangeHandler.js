@@ -1353,14 +1353,14 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  statusChange.set("pd_inspquestion02", "Sim");
 		  statusChangeResource.set("status", "PLANEJAR");
 		  statusChange.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
-		  statusChange.set("ms_inspector", myUser);
+		  statusChange.set("pd_inspector", myUser); 
 		  self.commitWOStatusChange(eventContext);
 		} else {
 		  statusChange.set("pd_inspquestion01", "Sim");
 		  statusChange.set("pd_inspquestion02", "Não");
 		  statusChangeResource.set("status", "PREPLAN");
 		  statusChange.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
-		  statusChange.set("ms_inspector", myUser);
+		  statusChange.set("pd_inspector", myUser);
 		  self.commitWOStatusChange(eventContext);
 		}
   

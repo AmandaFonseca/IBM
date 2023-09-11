@@ -211,7 +211,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 			wo.set('pd_inspquestion02', "Não");
 			wo.set('pd_inspquestion03', this.currentClass);
 			wo.setDateValue("pd_inspdate", this.application.getCurrentDateTime());
-			wo.set("ms_inspector", myUser);
+			wo.set("pd_inspector", myUser);
 			self.preplan(eventContext);
 			WorkOrderObject.updateSpecifications(wo).then(function(){
 				self.commitWOStatusChange(eventContext);
@@ -1155,7 +1155,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		wo.set('ms_inspwhy', this.currentClass);
 		wo.set('pdwhy_description', this.currentClassDesc);
 		wo.setDateValue("pd_inspdate", this.application.getCurrentDateTime());
-		wo.set("ms_inspector", myUser);
+		wo.set("pd_inspector", myUser);
 		WorkOrderObject.updateSpecifications(wo).then(function(){
 			self.commitWOStatusChange(eventContext, skipDynamicCheck);
 			//eventContext.ui.hideCurrentView(PlatformConstants.CLEANUP);
