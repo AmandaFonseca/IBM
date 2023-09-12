@@ -247,11 +247,34 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
 				self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
 			}
-			if(statusChangeResource.get('status') != null){
-				this.ui.hideCurrentView(PlatformConstants.CLEANUP);
-			}else{
-				this.ui.hideCurrentView();	
-			}
+			if(statusChangeResource.get('status') == null){
+				var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
+				statusChange.setDateValue("changedate", null);
+				statusChange.setNullValue("status");
+				statusChange.setNullValue("statusdesc")
+				statusChange.setNullValue("memo");
+			
+				try {
+					if (wo.getPendingOrOriginalValue("pd_inspquestion01")) {
+						wo.setNullValue("pd_inspdate");
+						wo.setNullValue("pd_inspector");
+						wo.setNullValue("pd_inspquestion01");
+					}
+					if (wo.getPendingOrOriginalValue("pd_inspquestion02")) {
+						wo.setNullValue("pd_inspquestion02");
+						wo.setNullValue("pd_inspquestion03");
+						wo.setNullValue("ms_inspwhy");
+					}
+					if(wo.getPendingOrOriginalValue("ms_inspquestion04")){
+						wo.setNullValue("ms_inspquestion04");
+						wo.setNullValue("ms_inspdate04");
+						wo.setNullValue("ms_inspector04");
+					}
+					this.ui.hideCurrentView(PlatformConstants.CLEANUP);
+				  } catch (error) {console.log(error+' initEditStatusView')}        
+			  	}else{
+					this.ui.hideCurrentView();	
+				}
 
 		},
 		
@@ -346,7 +369,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			//var workOrder = eventContext.getCurrentRecord();
 			//var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 			var workOrder = recordSet;
-			statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
+			statusChange.setDateValue("changedate", null);
 			statusChange.setNullValue("status");
 			statusChange.setNullValue("statusdesc")
 			statusChange.setNullValue("memo");
@@ -356,8 +379,9 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			  if (statusChange.get('pd_inspdate')) {statusChange.setNullValue("pd_inspdate");}
 			  if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
 			  if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
-			  if (statusChange.get('pd_inspector04')) {statusChange.setNullValue("pd_inspector04");}
+			  if (statusChange.get('ms_inspector04')) {statusChange.setNullValue("ms_inspector04");}
 			  if (statusChange.get('ms_inspdate04')) {statusChange.setNullValue("ms_inspdate04");}
+			  if (statusChange.get('ms_inspquestion04')) {statusChange.setNullValue("ms_inspquestion04");}
 			} catch (error) {console.log(error+' initEditStatusView')}        
 		},
 
@@ -378,27 +402,27 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			  if (statusChange.get('pd_inspquestion01')) {statusChange.setNullValue("pd_inspquestion01");}
 			  if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
 			  if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
-			  if (statusChange.get('pd_inspector04')) {statusChange.setNullValue("pd_inspector04");}
-			  if (statusChange.get('ms_inspdate04')) {statusChange.setNullValue("ms_inspdate04");}
 			  if (statusChange.get('ms_inspector04')) {statusChange.setNullValue("ms_inspector04");}
+			  if (statusChange.get('ms_inspdate04')) {statusChange.setNullValue("ms_inspdate04");}
 			  if (statusChange.get('ms_inspquestion04')) {statusChange.setNullValue("ms_inspquestion04");}
 			  return true;
 			} catch (error) {console.log(error+' initEditStatusView')}        
 		},
 
 
-		successCallback:function(eventContext,recordSet,statusChange) {
+		successCallback:function(recordSet,statusChange) {
 			var self = this;
 			self.application.showBusy();
 			console.log("Registro foi salvo");
 			if(self.ui.getCurrentViewControl("WorkExecution.clearChange")){
 				self.ui.getCurrentViewControl("WorkExecution.clearChange").application.ui.hideCurrentDialog();
 			}
+			statusChange.setNullValue('status');
+			statusChange.setNullValue('attachmentssizetoday');
+			self.initEditStatusViewCustom(recordSet,statusChange);
+			self.ui.hideCurrentView(PlatformConstants.CLEANUP);
 			setTimeout(() => {
 			  this.ui.show("WorkExecution.WorkItemsView");
-			  self.ui.hideCurrentView(PlatformConstants.CLEANUP);
-			  statusChange.setNullValue('status');
-			  statusChange.setNullValue('attachmentssizetoday');
 			}, "500");
 			//resolve();
 		},
@@ -434,7 +458,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			var pd_inspquestion03 = workOrderCurrent.get('pd_inspquestion03');
 			var ms_inspwhy = workOrderCurrent.get('ms_inspwhy');
 			var pd_inspdate = workOrderCurrent.get("pd_inspdate");
-			var ms_inspector = workOrderCurrent.get("ms_inspector");
+			var pd_inspector = workOrderCurrent.get("pd_inspector");
 	
 			var ms_inspdate04 = workOrderCurrent.get("ms_inspdate04");
 			var ms_inspquestion04 = workOrderCurrent.get("ms_inspquestion04");
@@ -464,12 +488,12 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 						EsigHandler.plugCancelCallback(this, this._statusChangeRollback, [workOrderOrTask, taskSet, previousValueSet]);
 					}
 					if ((pd_inspquestion01 == "Não") && (pd_inspquestion02 == null) && (pd_inspquestion03 == null) &&(ms_inspwhy !=null)
-					&& (pd_inspdate != null) && (ms_inspector !=null)  && (pd_inspdate != "") && (ms_inspector !="")){
+					&& (pd_inspdate != null) && (pd_inspector !=null)  && (pd_inspdate != "")){
 						self.application.showBusy();
 						ModelService.save(recordSet).then(function(woSet){
 							self.application.showBusy();
 							var wo = woSet.getCurrentRecord();
-							self.successCallback(woSet);
+							self.successCallback(recordSet,statusChange);
 						}).otherwise(function (error) {
 							console.log('Erro ao salvar'+ error)
 							deferred.reject(error);
@@ -484,7 +508,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 				}
 				if(newStatus == "PREPLAN"){
 					if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Não") && (pd_inspquestion03 != null) 
-					&& (pd_inspdate != null) && (ms_inspector !=null)  && (pd_inspdate != "") && (ms_inspector !="")){
+					&& (pd_inspdate != null) && (pd_inspector !=null)  && (pd_inspdate != "")){
 						self.application.showBusy();
 						if (taskId){ //If the parameter is a Task
 							WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
@@ -501,7 +525,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 						ModelService.save(recordSet).then(function(woSet){
 							self.application.showBusy();
 							var wo = woSet.getCurrentRecord();
-							self.successCallback(woSet,recordSet,statusChange);
+							self.successCallback(recordSet,statusChange);
 						}).otherwise(function (error) {
 							console.log('Erro ao salvar'+ error)
 							deferred.reject(error);
@@ -516,7 +540,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 				}
 				if(newStatus == "PLANEJAR"){
 					if ((pd_inspquestion01 == "Sim") && (pd_inspquestion02 == "Sim") && (pd_inspquestion03 == null) 
-					&& (pd_inspdate != null) && (ms_inspector !=null) && (pd_inspdate != "") && (ms_inspector !="")){
+					&& (pd_inspdate != null) && (pd_inspector !=null) && (pd_inspdate != "")){
 						self.application.showBusy();
 						if (taskId){ //If the parameter is a Task
 							WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
@@ -533,7 +557,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 						ModelService.save(recordSet).then(function(woSet){
 							self.application.showBusy();
 							var wo = woSet.getCurrentRecord();
-							self.successCallback(woSet,recordSet,statusChange);
+							self.successCallback(recordSet,statusChange);
 						}).otherwise(function (error) {
 							console.log('Erro ao salvar'+ error)
 							deferred.reject(error);
@@ -565,7 +589,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 						}
 						ModelService.save(recordSet).then(function(woSet){
 							var wo = woSet.getCurrentRecord();
-							self.successCallback(woSet,recordSet,statusChange);
+							self.successCallback(recordSet,statusChange);
 						}).otherwise(function (error) {
 							console.log('Erro ao salvar'+ error)
 							deferred.reject(error);
@@ -905,13 +929,14 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		},
 
 	/*--------------- FIM Funções MSStatusChangeHandler -----------------------------------*/     
+
 	  yes_questions01: function (eventContext) {
 		var currWO = eventContext.getResource().getCurrentRecord();
 		var myUser = UserManager.getCurrentUser();  
 		currWO.set("pd_inspquestion01", "Sim");
-		//currWO.setPendingValue("pd_inspquestion01", "Sim");
 		currWO.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
-		currWO.set("ms_inspector", myUser);
+		currWO.set("pd_inspector", myUser);
+		currWO.setPendingValue("pd_inspquestion01", currWO.get("pd_inspquestion01"));
 		eventContext.ui.show("WorkExecution.QuestionsViewClass");
 		this.inherited(arguments);
 	  },
@@ -927,7 +952,9 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  currWO.set("pd_inspquestion02", "Não");
 		}
         currWO.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
-		currWO.set("ms_inspector", myUser);
+		currWO.set("pd_inspector", myUser);
+		currWO.setPendingValue("pd_inspquestion02", currWO.get("pd_inspquestion02"));
+		this.setterPendingValue(currWO);
 		this.inherited(arguments);
 	  },
 
@@ -995,7 +1022,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		let workOrderCurrent = eventContext.getResource().getCurrentRecord();
 		var pd_inspquestion01 = workOrderCurrent.get('pd_inspquestion01');
 		var pd_inspdate = workOrderCurrent.get("pd_inspdate");
-		var ms_inspector = workOrderCurrent.get("ms_inspector");
+		var pd_inspector = workOrderCurrent.get("pd_inspector");
 
 		var ms_inspdate04 = workOrderCurrent.get("ms_inspdate04");
 		var ms_inspquestion04 = workOrderCurrent.get("ms_inspquestion04");
@@ -1032,29 +1059,33 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
   
 
 	  no_questions02: function (eventContext) {
-		var statusChange = eventContext.getResource().getCurrentRecord();
+		var currWO = eventContext.getResource().getCurrentRecord();
 		var myUser = UserManager.getCurrentUser();
-		statusChange.set("pd_inspquestion02", "Não");
-		statusChange.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
-		statusChange.set("ms_inspector", myUser);
+		currWO.set("pd_inspquestion02", "Não");
+		currWO.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
+		currWO.set("pd_inspector", myUser);
+		currWO.setPendingValue("pd_inspquestion02", currWO.get("pd_inspquestion02"));
 		this.inherited(arguments);
 	  },
   
 	  no_questions04: function (eventContext) {
-		var statusChange = eventContext.getResource().getCurrentRecord();
+		var currWO = eventContext.getResource().getCurrentRecord();
 		var myUser = UserManager.getCurrentUser();
-		statusChange.set("ms_inspquestion04", "Não");
-		statusChange.setDateValue("ms_inspdate04",this.application.getCurrentDateTime());
-		statusChange.set("ms_inspector04", myUser);
+		currWO.set("ms_inspquestion04", "Não");
+		currWO.setDateValue("ms_inspdate04",this.application.getCurrentDateTime());
+		currWO.set("ms_inspector04", myUser);
+		currWO.setPendingValue("ms_inspquestion04", currWO.get("ms_inspquestion04"));
 		this.inherited(arguments);
+
 	  },
   
 	  yes_questions04: function (eventContext) {
-		var statusChange = eventContext.getResource().getCurrentRecord();
+		var currWO = eventContext.getResource().getCurrentRecord();
 		var myUser = UserManager.getCurrentUser();
-		statusChange.set("ms_inspquestion04", "Sim");
-		statusChange.setDateValue("ms_inspdate04",this.application.getCurrentDateTime());
-		statusChange.set("ms_inspector04", myUser);
+		currWO.set("ms_inspquestion04", "Sim");
+		currWO.setDateValue("ms_inspdate04",this.application.getCurrentDateTime());
+		currWO.set("ms_inspector04", myUser);
+		currWO.setPendingValue("ms_inspquestion04", currWO.get("ms_inspquestion04"));
 		this.inherited(arguments);
 	  },
   
@@ -1063,7 +1094,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		statusChange.set("ms_acceptinsp", "1");
 		ms_acceptinsp = statusChange.get("ms_acceptinsp");
 		var workOrder = eventContext.application.getResource("workOrder");
-		var deferred = new Deferred();
 		ModelService.save(workOrder).then(function (result) {
 		  deferred.resolve();
 		});
@@ -1120,7 +1150,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		statusChange.set("ms_acceptinsp", "2");
 		ms_acceptinsp = statusChange.get("ms_acceptinsp");
 		var workOrder = eventContext.application.getResource("workOrder");
-		var deferred = new Deferred();
 		ModelService.save(workOrder).then(function (result) {
 		  deferred.resolve();
 		});
