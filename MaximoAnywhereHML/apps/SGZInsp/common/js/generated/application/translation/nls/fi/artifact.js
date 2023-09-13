@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 08:47:22
+// Build: 2023-09-12 23:28:48
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[pohjoispäässä~Manual do Aplicativo]",
          "Privacy Policy" : "[pohjoispäässä~Privacy Policy]",
          "Connection Settings" : "[pohjoispäässä~Connection Settings]",
-         "v7.6.4:05923231200H" : "[pohjoispäässä~v7.6.4:05923231200H]",
+         "v7.6.4:1109231700H" : "[pohjoispäässä~v7.6.4:1109231700H]",
          "My Assigned Work" : "[pohjoispäässä~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[pohjoispäässä~Inspeções Pendentes]",
          "Records with Errors" : "[pohjoispäässä~Records with Errors]",

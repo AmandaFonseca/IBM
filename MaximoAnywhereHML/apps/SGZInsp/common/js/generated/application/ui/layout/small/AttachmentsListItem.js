@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 08:47:18
+// Build: 2023-09-12 23:28:44
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/small/AttachmentsListItem", 
       [
