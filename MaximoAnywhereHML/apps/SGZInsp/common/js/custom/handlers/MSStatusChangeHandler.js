@@ -957,7 +957,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
         currWO.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
 		currWO.set("pd_inspector", myUser);
 		currWO.setPendingValue("pd_inspquestion02", currWO.get("pd_inspquestion02"));
-		this.setterPendingValue(currWO);
 		this.inherited(arguments);
 	  },
 
