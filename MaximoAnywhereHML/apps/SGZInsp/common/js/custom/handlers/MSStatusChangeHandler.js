@@ -46,7 +46,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		let statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 		//var workOrder = recordSet;
 		
-		statusChange.setDateValue("changedate", null);
+		statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
 		statusChange.setNullValue("status");
 		statusChange.setNullValue("statusdesc")
 		statusChange.setNullValue("memo");
@@ -54,7 +54,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		
 		try {
 			if (workOrder.get('pd_inspector')) {workOrder.setNullValue("pd_inspector");}
-			if (workOrder.get('pd_inspdate')) {workOrder.setDateValue("pd_inspdate",null);}
+			if (workOrder.get('pd_inspdate')) {workOrder.setNullValue("pd_inspdate");}
 			if (workOrder.get('pd_inspquestion01')) {workOrder.setNullValue("pd_inspquestion01");}
 
 			if (workOrder.get('pd_inspquestion02')) {workOrder.setNullValue("pd_inspquestion02");}
@@ -256,7 +256,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			
 				try {
 					if (wo.getPendingOrOriginalValue("pd_inspquestion01")) {
-						wo.setDateValue("pd_inspdate",null);
+						wo.setNullValue("pd_inspdate");
 						wo.setNullValue("pd_inspector");
 						wo.setNullValue("pd_inspquestion01");
 					}
@@ -376,7 +376,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			//eventContext.ui.application.toolWarningShown = false;
 			try {
 			  if (statusChange.get('pd_inspector')) {statusChange.setNullValue("pd_inspector");}
-			  if (statusChange.get('pd_inspdate')) {statusChange.setDateValue("pd_inspdate",null);}
+			  if (statusChange.get('pd_inspdate')) {statusChange.setNullValue("pd_inspdate");}
 			  if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
 			  if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
 			  if (statusChange.get('ms_inspector04')) {statusChange.setNullValue("ms_inspector04");}
@@ -398,7 +398,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			//eventContext.ui.application.toolWarningShown = false;
 			try {
 			  if (statusChange.get('pd_inspector')) {statusChange.setNullValue("pd_inspector");}
-			  if (statusChange.get('pd_inspdate')) {statusChange.setDateValue("pd_inspdate",null);}
+			  if (statusChange.get('pd_inspdate')) {statusChange.setNullValue("pd_inspdate");}
 			  if (statusChange.get('pd_inspquestion01')) {statusChange.setNullValue("pd_inspquestion01");}
 			  if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
 			  if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
@@ -472,7 +472,8 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			}else{
 				typeInsp = workOrderCurrent.get("ms_insptype");
 			}
-	
+
+			
 			if (typeInsp == "1") {
 				Logger.error("Eh uma confirmação de existencia");
 				if(newStatus == "PRECANC"){

@@ -261,14 +261,14 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 	initEditStatusView : function(eventContext) {
 		var workOrder = eventContext.getCurrentRecord();
 		var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-		statusChange.setDateValue("changedate", null);
+		statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
 		statusChange.setNullValue("status");
 		statusChange.setNullValue("statusdesc")
 		statusChange.setNullValue("memo");
 		eventContext.ui.application.toolWarningShown = false;
         try {
           if (statusChange.get('pd_inspector')) {statusChange.setNullValue("pd_inspector");}
-          if (statusChange.get('pd_inspdate')) {statusChange.setDateValue("pd_inspdate",null);}
+          if (statusChange.get('pd_inspdate')) {statusChange.setNullValue("pd_inspdate");}
           if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
           if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
           if (statusChange.get('pd_inspector04')) {statusChange.setNullValue("pd_inspector04");}
@@ -281,28 +281,22 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		//var workOrder = eventContext.getCurrentRecord();
 		var workOrderSet = eventContext.application.getResource("workOrder");
         var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-		let invalid = [];
 		if (workOrderSet.data.length >= 0) {
 			for (const element in workOrderSet.data) {
 				let workOrder = workOrderSet.data[element];
+				
 				let wonum = workOrder.get('wonum');
-				let status = workOrder.get('status');
-				if (status == 'PRECANC'||status == 'PLANEJAR'|| status == 'PREPLAN'){
-					if (workOrder.get("ms_insptype") == '1' && workOrder.get("pd_inspdate") == null && workOrder.get("pd_inspquestion01") == null) {
-						invalid.push(wonum);
-					}
+				if (workOrder.get('status') != null && workOrder.get("ms_insptype") != '1' &&
+		 		workOrder.get("pd_inspdate") != null && workOrder.get("pd_inspquestion01") != null) {
+					workOrderSet.filter("wonum",wonum);
 				}
 				this.mobileMaximoSpatial = workOrderSet.mobileMaximoSpatial;
 				if (this.mobileMaximoSpatial != null && this.mobileMaximoSpatial.sketchTool != null) {
 					this.mobileMaximoSpatial.sketchTool.clearSketches();				
 				}
-			}
+				ModelService.save(workOrderSet);
+			};
 		}
-		for (const element of invalid) {
-			workOrderSet.find('wonum !=', element);
-			console.log(workOrderSet);
-		}
-		ModelService.save(workOrderSet);
  
       },
 	  
@@ -585,7 +579,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		//eventContext.ui.application.toolWarningShown = false;
 		try {
 		  if (statusChange.get('pd_inspector')) {statusChange.setNullValue("pd_inspector");}
-		  if (statusChange.get('pd_inspdate')) {statusChange.setDateValue("pd_inspdate",null);}
+		  if (statusChange.get('pd_inspdate')) {statusChange.setNullValue("pd_inspdate");}
 		  if (statusChange.get('pd_inspquestion01')) {statusChange.setNullValue("pd_inspquestion01");}
 		  if (statusChange.get('pd_inspquestion02')) {statusChange.setNullValue("pd_inspquestion02");}
 		  if (statusChange.get('pd_inspquestion03')) {statusChange.setNullValue("pd_inspquestion03");}
