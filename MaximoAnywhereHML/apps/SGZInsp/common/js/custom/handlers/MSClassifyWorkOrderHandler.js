@@ -555,6 +555,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		statusChange.setNullValue('status');
 		statusChange.setNullValue('attachmentssizetoday');
 		setTimeout(() => {
+		  self.application.hideBusy();
 		  this.ui.show("WorkExecution.WorkItemsView");
 		}, "500");
 		//resolve();
@@ -596,7 +597,6 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		var ms_inspdate04 = workOrderCurrent.get("ms_inspdate04");
 		var ms_inspquestion04 = workOrderCurrent.get("ms_inspquestion04");
 		var ms_inspector04 = workOrderCurrent.get("ms_inspector04");
-		var oldStatus = workOrderCurrent.get("status");
 
 		var typeInsp;
 		var deferred = new Deferred();
@@ -693,12 +693,11 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 					}).otherwise(function (error) {
 						console.log('Erro ao salvar'+ error)
 						deferred.reject(error);
-						statusChange.setNullValue('status');
-						this.ui.hideCurrentView(PlatformConstants.CLEANUP);s				
 					});				
 				}
 	
 			}
+			self.application.hideBusy();
 		
 	},
 	

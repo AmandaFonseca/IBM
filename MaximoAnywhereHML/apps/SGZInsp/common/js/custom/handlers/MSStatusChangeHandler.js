@@ -350,6 +350,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			statusChange.setNullValue('status');
 			statusChange.setNullValue('attachmentssizetoday');
 			setTimeout(() => {
+			  self.application.hideBusy();
 			  this.ui.show("WorkExecution.WorkItemsView");
 			}, "500");
 			//resolve();
@@ -371,7 +372,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			var newStatus=statusChange.get("status");
 			var memo = statusChange.get("memo");
 			var statusDate = statusChange.getAsDateOrNull("changedate");
-			var oldStatus = workOrderCurrent.get("status");
+
 			
 			var taskId = workOrderOrTask.get("taskid");
 			var taskSet = null;
@@ -459,6 +460,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 						});					
 					}
 				}
+				self.application.hideBusy();
 			
 		},
 		
@@ -1129,6 +1131,9 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			eventContext.setDisplay(false);
 			eventContext.setVisibility(false);
 		  }
+		}else{
+			eventContext.setDisplay(true);
+			eventContext.setVisibility(true);			
 		}
 	  },
   
