@@ -117,8 +117,6 @@
 				<!--<eventHandler class="application.handlers.WOListHandler" event="render" id="WorkExecution.WorkItemsView_eventHandlers_initialize_wolist" method="render"/>-->
 				<eventHandler class="platform.handlers.WorkOfflineHandler" event="show" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_render_sync" method="sync"/>
                 <eventHandler class="custom.handlers.MSStatusChangeHandler" event="back" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_back" method="backSpec"/>
-				<eventHandler class="custom.handlers.MSClassifyWorkOrderHandler" event="render" id="Reinspecview.escond_quest_function_" method="initEditStatusView02"/>
-
 			</eventHandlers>
 		</view>
         <!-- Alterado em 28/08/2019 - OS Motociclista -->
@@ -167,7 +165,6 @@
 				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
 				<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>
 				<!--<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_details" method="sync"/>-->
-				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="acc_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusViewx" method="initEditStatusViewCustomBackType02"/>
 			</eventHandlers>
 
 			<container id="WorkExecution.WorkDetailView_workOrder_container_0" resource="workOrder">
