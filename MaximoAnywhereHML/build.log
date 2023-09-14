@@ -1,4 +1,4 @@
-     [echo] 2023-09-12 23:28:33> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
+     [echo] 2023-09-14 10:22:59> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -100,7 +100,7 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-12 23:28:34> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-09-14 10:22:59> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
@@ -116,14 +116,14 @@ init:  duration 0 seconds
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-12 23:28:34> Java version was checked.
+     [echo] 2023-09-14 10:23:00> Java version was checked.
 verify-compatibility:  duration 0 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-system-verification.xml.
 [available] Found directory: build\managed
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-12 23:28:34> maximo anywhere platform is already installed.
+     [echo] 2023-09-14 10:23:00> maximo anywhere platform is already installed.
 verify-environment-compatibility:  duration 0 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
@@ -469,7 +469,7 @@ Complete build sequence is [-update-buildtimestamp, pull-rdfs-from-server, Appli
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-12 23:28:50> Updating C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp About Build Time Panel
+     [echo] 2023-09-14 10:23:02> Updating C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp About Build Time Panel
 [available] Found: version.txt
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
@@ -478,16 +478,12 @@ Override ignored for property "core.build.datetime"
 Override ignored for property "base.build.datetime"
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\ar\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\artifact.js' by line.
-[replaceregexp] File has changed; saving the updated file
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\cs\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\da\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\de\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\en-gb\artifact.js' by line.
-[replaceregexp] File has changed; saving the updated file
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\en-us\artifact.js' by line.
-[replaceregexp] File has changed; saving the updated file
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\en\artifact.js' by line.
-[replaceregexp] File has changed; saving the updated file
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\es\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\fi\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\fr\artifact.js' by line.
@@ -507,15 +503,12 @@ Override ignored for property "base.build.datetime"
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\zh-tw\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\application\translation\nls\zh\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\artifact.js' by line.
-[replaceregexp] File has changed; saving the updated file
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\cs\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\da\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\de\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\en-gb\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\en-us\artifact.js' by line.
-[replaceregexp] File has changed; saving the updated file
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\en\artifact.js' by line.
-[replaceregexp] File has changed; saving the updated file
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\es\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\fi\artifact.js' by line.
 [replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZInsp\common\js\generated\application\translation\nls\fr\artifact.js' by line.
@@ -2606,11 +2599,11 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry dojo/resources/blank.gif
       [zip] adding entry ol.js
       [zip] adding entry winstore-jscompat.js
--zip-app:  duration 3 seconds
+-zip-app:  duration 1 second
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-zip-all-apps:  duration 3 seconds
+zip-all-apps:  duration 1 second
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-all-gen:  duration 3 seconds
+all-gen:  duration 1 second
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
   [antcall] calling target(s) [all-deploy] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
@@ -2724,7 +2717,7 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-12 23:28:54> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-09-14 10:23:03> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
@@ -2816,41 +2809,42 @@ admin-loader:
      [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 35.198.61.197:443...* Connected to hsmgimax.prefeitura.sp.gov.br (35.198.61.197) port 443 (#0)
      [exec] * schannel: disabled automatic use of client certificate
      [exec] * ALPN: offers http/1.1
-     [exec] HTTP/1.1 302 Found
-     [exec] Date: Wed, 13 Sep 2023 02:28:51 GMT
+     [exec] 
+     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+     [exec] HTTP/1.1 302 FoundDate: Thu, 14 Sep 2023 13:23:01 GMT
      [exec] X-Powered-By: Servlet/3.1
      [exec] X-Frame-Options: SAMEORIGIN
-     [exec] Location: https* ALPN: server did not agree on a protocol. Uses default.
-     [exec] * using HTTP/1.x
-     [exec] > POST /maximo/oslc/login/j_security_check?j_userna://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
+     [exec] Location: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
      [exec] Content-Length: 0
-     [exec] Set-Cookie: LtpaToken2=cabCd5d9YrtdSE4Z41vk0lD2Amo+ig69Sp3XGXiu8gnXN+ZuOEUm4Csz/g9/vLaeCEkX0xgWmnXSaE6Oqpt14lIYkN2UEqUB9jPkW5SCm4jlklMepT/+1n33WrZbpx7UbbVyeZwN5/6Az1Zuyv69OV3TcZpzogUxipSLOTxc29+EqQtEeFgyhvhMLwN6SUlQU9/aux8LFX4feBcqWEgo5w8IsA/XO7qfmSfilQ7ba+Atiggc3WYPWplVUPs5TTJ0tRtiYoc6+g+t/KxFploW6O6AtZoebwqWyme=maxadmin&j_password=P@ssword01 HTTP/1.1
-     [exec] > Host: hsmgimax.prefeitura.sp.gov.br
-     [exec] > User-Agent: curl/8.0.1
-     [exec] > Accept: */*
-     [exec] hM41ZfKjlRpEIHRguXy7zjbzvB3fJrCDteb5s8beXqz0fVYcrasCTYuwRDPtrTMAuDoH0Xo7ghwwY+0iOvhNPCF8jmxUJpWdFoaMzuhIBkIoBria1LZ28lyxbfwC13ri> Content-Type: multipart/form-data
-     [exec] > Content-Length: 43
-     [exec] > 
-     [exec] } [43 bytes data]
-     [exec] < HTTP/1.1 302 Found
-     [exec] < Date: Wed, 13 Sep 2023 02:28:51 GMT
-     [exec] < X-Powered-By: Servlet/3.1
-     [exec] < X-Frame-Options: SAMEORIGIN
-     [exec] < Location: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
-     [exec] < Content-Length: 0
-     [exec] * Added cookie LtpaToken2="cabCd5d9YrtdSE4Z41vk0lD2Amo+ig69Sp3XGXiu8gnXN+ZuOEUm4CXxE4L5GkcdyiDTWrEoV6j+SnZUyzizZnomZToVrGtbUvjFAD+si086I7a3AyWNnTE7dfX4iQ/nV+22PFL+Y/lKikh6tFyL9ocj9VC45j/aPD2a4BiKmugG2nC/AFPCQ/AC6JN4vcesaEgK8ANjaVyPehBHcZPSLZJmkaxngmUMf4eD9aF6PetKsx3+YNrcF+2FZbDi4JtzIbj4BBuDhuQqk89u4p33p0sEMV0oKL/mkpgWvVyfd+eBjWiRWItGPHsz/g9/vLaeCEkX0xgWmnXSaE6Oqpt14lIYkN2UEqUB9jPkW5SCm4jlklMepT/+1n33WrZbpx7UbbVyeZwN5/6Az1Zuyv69OV3TcZpzogUxipSLOTxc29+EqQtEeFgyhvUozdxfv1Mmf80ycDBWQidAONENMt8CF+pms9jfyN6riCftQupgMc0BVHWvJCpwGBeZaLU/s7qu0Z6uebjK1HVjBpkfdLkcF7YsW5EJZxbSxuN9RbzcrPA==; Path=/;hMLwN6SUlQU9/aux8LFX4feBcqWEgo5w8IsA/XO7qfmSfilQ7ba+Atiggc3WYPWplVUPs5TTJ0tRtiYoc6+g+t/KxFploW6O6AtZoebwqWyhM41ZfKjlRpEIHRguXy7z HttpOnly
+     [exec] Set-Cookie: LtpaToken2=hvW3Hp9CuooO9/qynDaz0mg4ptDRSR/Y7pRh5gyCZPR++5pRPTInKb4jy3MjHIXzdr4OZ5wA417qKAHRlSdAfPCeRhnIs1fm+8SzX34S+Ub3XusMWHypzU+yyc8xClZKFUIM1ySru8r/hssbyinnn3zKp86yz/PPpaaddsUY7LtvPJ4TmfDr4MxFVwL3jTtiLxU3iPnpqZU/96xOwNbxrtUki0zoCkQr33XX/b2WXFYfi0JDZ+SWwZVrIBH7tW8iCOObLMANEGu/F1pO9gKoPZEAzo37H44GdoPTquXIbU77XH3Bc6WBSqYYnZu2a8CszFd60E4D+ga7KhHFpTdivyqTHu/2z10FvoI5uM/42KMtnJIDAoS9iAy0LsCIf8VPhzXxJqCz9DgsBXEtaiAOX1T+hD6F3KCRtr1oKoS3j1BrGunTCIzFGNOy9HEvQ74my7cLoS8C4mpO0p+ISM56yRyfe3nMVxiXu043Y9ghZRVnf9NebuBxEdXPvNQXYcroPzq+RRQFXctHXWHf24VpV9NQWeAXppiqpg4eCQWrlZSoeao2R3lGxDXaCilCp5KsrSWYh1MY8duy9P80yzaYh1wnqo4Xp/BR8qk7x10Fc2kLBidHy5uyKd4lCo9KSn92zv72gv9lEJBRiPwyuNZi+vxtqkGb7Cgr9udjSow7Cyk0IsXln2TkOQD0Qds8Wao8XlzZ5/sEoS042vQT7IrhYwa37CbqiRqXPHyDiRIae5aCyYTHxRV6Y34JFVxk34RkFI7KpRARqX9qBAnrYvj9tw==; Path=/; HttpOnly
      [exec] Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] Content-Language: c.u-US
      [exec] 
-     [exec] jbzvB3fJrCDteb5s8beXqz0fVYcrasCTYuwRDPtrTMAuDoH0Xo7ghwwY+0iOvhNPCF8jmxUJpWdFoaMzuhIBkIoBria1LZ28lyxbfwC13riXxE4L5GkcdyiDTWrEoV6j+SnZUyzizZnomZToVrGtbUvjFAD+si086I7a3AyWNnTE7dfX4iQ/nV+22PFL+Y/lKikh6tFyL9ocj9VC45j/aPD2a4BiKmugG2nC/AFPCQ/AC6JN4vcesaEgK8ANjaVyPehBHcZPSLZJmkaxngmUMf4eD9aF6PetKsx3+YNrcF+2FZbDi4JtzIbj4BBuDhuQqk89u4p33p0sEMV0oKL/mkpgWvVyfd+eBjWiRWItGPHUozdxfv1Mmf80ycDBWQidAONENMt8CF+pms9jfyN6riCftQupgMc0BVHWvJCpwGBeZaLU/s7qu0Z6uebjK1HVjBpkfdLkcF7YsW5EJZxbSxuN9RbzcrPA==" for domain hsmgimax.prefeitura.sp.gov.br, path /, expire 0
-     [exec] < Set-Cookie: LtpaToken2=cabCd5d9YrtdSE4Z41vk0lD2Amo+ig69Sp3XGXiu8gnXN+ZuOEUm4Csz/g9/vLaeCEkX0xgWmnXSaE6Oqpt14lIYkN2UEqUB9jPkW5SCm4jlklMepT/+1n33WrZbpx7UbbVyeZwN5/6Az1Zuyv69OV3TcZpzogUxipSLOTxc29+EqQtEeFgyhvhMLwN6SUlQU9/aux8LFX4feBcqWEgo5w8IsA/XO7qfmSfilQ7ba+Atiggc3WYPWplVUPs5TTJ0tRtiYoc6+g+t/KxFploW6O6AtZoebwqWyhM41ZfKjlRpEIHRguXy7zjbzvB3fJrCDteb5s8beXqz0fVYcrasCTYuwRDPtrTMAuDoH0Xo7ghwwY+0iOvhNPCF8jmxUJpWdFoaMzuhIBkIoBria1LZ28lyxbfwC13riXxE4L5GkcdyiDTWrEoV6j+SnZUyzizZnomZToVrGtbUvjFAD+si086I7a3AyWNnTE7dfX4iQ/nV+22PFL+Y/lKikh6tFyL9ocj9VC45j/aPD2a4BiKmugG2nC/AFPCQ/AC6JN4vcesaEgK8ANjaVyPehBHcZPSLZJmkaxngmUMf4eD9aF6PetKsx3+YNrcF+2FZbDi4JtzIbj4BBuDhuQqk89u4p33p0sEMV0oKL/mkpgWvVyfd+eBjWiRWItGPHUozdxfv1Mmf80ycDBWQidAONENMt8CF+pms9jfyN6riCftQupgMc0BVHWvJCpwGBeZaLU/s7qu0Z6uebjK1HVjBpkfdLkcF7YsW5EJZxbSxuN9RbzcrPA==; Path=/; HttpOnly
+     [exec] * ALPN: server did not agree on a protocol. Uses default.
+     [exec] * using HTTP/1.x
+     [exec] > POST /maximo/oslc/login/j_security_check?j_username=maxadmin&j_password=P@ssword01 HTTP/1.1
+     [exec] > Host: hsmgimax.prefeitura.sp.gov.br
+     [exec] > User-Agent: curl/8.0.1
+     [exec] > Accept: */*
+     [exec] > Content-Type: multipart/form-data
+     [exec] > Content-Length: 43
+     [exec] > 
+     [exec] } [43 bytes data]
+     [exec] < HTTP/1.1 302 Found
+     [exec] < Date: Thu, 14 Sep 2023 13:23:01 GMT
+     [exec] < X-Powered-By: Servlet/3.1
+     [exec] < X-Frame-Options: SAMEORIGIN
+     [exec] < Location: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
+     [exec] < Content-Length: 0
+     [exec] * Added cookie LtpaToken2="hvW3Hp9CuooO9/qynDaz0mg4ptDRSR/Y7pRh5gyCZPR++5pRPTInKb4jy3MjHIXzdr4OZ5wA417qKAHRlSdAfPCeRhnIs1fm+8SzX34S+Ub3XusMWHypzU+yyc8xClZKFUIM1ySru8r/hssbyinnn3zKp86yz/PPpaaddsUY7LtvPJ4TmfDr4MxFVwL3jTtiLxU3iPnpqZU/96xOwNbxrtUki0zoCkQr33XX/b2WXFYfi0JDZ+SWwZVrIBH7tW8iCOObLMANEGu/F1pO9gKoPZEAzo37H44GdoPTquXIbU77XH3Bc6WBSqYYnZu2a8CszFd60E4D+ga7KhHFpTdivyqTHu/2z10FvoI5uM/42KMtnJIDAoS9iAy0LsCIf8VPhzXxJqCz9DgsBXEtaiAOX1T+hD6F3KCRtr1oKoS3j1BrGunTCIzFGNOy9HEvQ74my7cLoS8C4mpO0p+ISM56yRyfe3nMVxiXu043Y9ghZRVnf9NebuBxEdXPvNQXYcroPzq+RRQFXctHXWHf24VpV9NQWeAXppiqpg4eCQWrlZSoeao2R3lGxDXaCilCp5KsrSWYh1MY8duy9P80yzaYh1wnqo4Xp/BR8qk7x10Fc2kLBidHy5uyKd4lCo9KSn92zv72gv9lEJBRiPwyuNZi+vxtqkGb7Cgr9udjSow7Cyk0IsXln2TkOQD0Qds8Wao8XlzZ5/sEoS042vQT7IrhYwa37CbqiRqXPHyDiRIae5aCyYTHxRV6Y34JFVxk34RkFI7KpRARqX9qBAnrYvj9tw==" for domain hsmgimax.prefeitura.sp.gov.br, path /, expire 0
+     [exec] < Set-Cookie: LtpaToken2=hvW3Hp9CuooO9/qynDaz0mg4ptDRSR/Y7pRh5gyCZPR++5pRPTInKb4jy3MjHIXzdr4OZ5wA417qKAHRlSdAfPCeRhnIs1fm+8SzX34S+Ub3XusMWHypzU+yyc8xClZKFUIM1ySru8r/hssbyinnn3zKp86yz/PPpaaddsUY7LtvPJ4TmfDr4MxFVwL3jTtiLxU3iPnpqZU/96xOwNbxrtUki0zoCkQr33XX/b2WXFYfi0JDZ+SWwZVrIBH7tW8iCOObLMANEGu/F1pO9gKoPZEAzo37H44GdoPTquXIbU77XH3Bc6WBSqYYnZu2a8CszFd60E4D+ga7KhHFpTdivyqTHu/2z10FvoI5uM/42KMtnJIDAoS9iAy0LsCIf8VPhzXxJqCz9DgsBXEtaiAOX1T+hD6F3KCRtr1oKoS3j1BrGunTCIzFGNOy9HEvQ74my7cLoS8C4mpO0p+ISM56yRyfe3nMVxiXu043Y9ghZRVnf9NebuBxEdXPvNQXYcroPzq+RRQFXctHXWHf24VpV9NQWeAXppiqpg4eCQWrlZSoeao2R3lGxDXaCilCp5KsrSWYh1MY8duy9P80yzaYh1wnqo4Xp/BR8qk7x10Fc2kLBidHy5uyKd4lCo9KSn92zv72gv9lEJBRiPwyuNZi+vxtqkGb7Cgr9udjSow7Cyk0IsXln2TkOQD0Qds8Wao8XlzZ5/sEoS042vQT7IrhYwa37CbqiRqXPHyDiRIae5aCyYTHxRV6Y34JFVxk34RkFI7KpRARqX9qBAnrYvj9tw==; Path=/; HttpOnly
      [exec] < Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] < Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] < Content-Language: c.u-US
      [exec] < 
      [exec] 
-     [exec] 100    43    0     0  100    43      0    345 --:--:-- --:--:-- --:--:--   349* Connection #0 to host hsmgimax.prefeitura.sp.gov.br left intact
+     [exec] 100    43    0     0  100    43      0    332 --:--:-- --:--:-- --:--:--   335* Connection #0 to host hsmgimax.prefeitura.sp.gov.br left intact
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -2998,13 +2992,13 @@ not part of the command.
      [exec]   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
      [exec]                                  Dload  Upload   Total   Spent    Left  Speed
      [exec] 
-     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 93 5482k    0     0   93 5136k      0  6658k --:--:-- --:--:-- --:--:-- 6661k100 5482k    0     0  100 5482k      0  2995k  0:00:01  0:00:01 --:--:-- 2996k100 5482k    0     0  100 5482k      0  1929k  0:00:02  0:00:02 --:--:-- 1929k100 5482k    0     0  100 5482k      0  1423k  0:00:03  0:00:03 --:--:-- 1423k100 5482k    0     0  100 5482k      0  1126k  0:00:04  0:00:04 --:--:-- 1126k100 5482k    0     0  100 5482k      0   932k  0:00:05  0:00:05 --:--:-- 69548100 5482k    0     0  100 5482k      0   797k  0:00:06  0:00:06 --:--:--     0
-     [exec] {"deployeddatetime":"2023-09-12 23:28:59.399"}
-     [exec] 100 5482k  100    47  100 5482k      6   754k  0:00:07  0:00:07 --:--:--    10
+     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  6 5482k    0     0    6  336k      0  1948k  0:00:02 --:--:--  0:00:02 1953k100 5482k    0     0  100 5482k      0  2554k  0:00:02  0:00:02 --:--:-- 2556k
+     [exec] {"deployeddatetime":"2023-09-14 10:23:04.364"}
+     [exec] 100 5482k  100    47  100 5482k     17  2007k  0:00:02  0:00:02 --:--:-- 2007k100 5482k  100    47  100 5482k     17  2007k  0:00:02  0:00:02 --:--:-- 2007k
  [loadfile] loading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.response into property curl.upload.result
- [loadfile] loaded 1013 characters
+ [loadfile] loaded 701 characters
      [echo] Checksum acquired
-     [echo] 2023-09-12 23:28:59.399
+     [echo] 2023-09-14 10:23:04.364
       [zip] SGZInsp.checksum added as SGZInsp.checksum doesn't exist.
       [zip] No sources found.
       [zip] Updating zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.zip
@@ -5079,11 +5073,11 @@ not part of the command.
       [zip] adding entry worklight.properties
    [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.checksum
    [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZInsp.response
--zip-app-upload:  duration 9 seconds
+-zip-app-upload:  duration 4 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-zip-upload-all-apps:  duration 9 seconds
+zip-upload-all-apps:  duration 4 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-all-deploy:  duration 9 seconds
+all-deploy:  duration 4 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
   [antcall] calling target(s) [show-support-page] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
