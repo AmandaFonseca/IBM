@@ -46,7 +46,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		let statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 		//var workOrder = recordSet;
 		
-		statusChange.setDateValue("changedate", null);
+		statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
 		statusChange.setNullValue("status");
 		statusChange.setNullValue("statusdesc")
 		statusChange.setNullValue("memo");
@@ -249,7 +249,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			}
 			if(statusChangeResource.get('status') == null){
 				var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-				statusChange.setDateValue("changedate", null);
+				statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
 				statusChange.setNullValue("status");
 				statusChange.setNullValue("statusdesc")
 				statusChange.setNullValue("memo");
@@ -369,7 +369,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			//var workOrder = eventContext.getCurrentRecord();
 			//var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 			var workOrder = recordSet;
-			statusChange.setDateValue("changedate", null);
+			statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
 			statusChange.setNullValue("status");
 			statusChange.setNullValue("statusdesc")
 			statusChange.setNullValue("memo");
@@ -391,7 +391,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			var workOrder = eventContext.getCurrentRecord();
 			var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 			//var workOrder = recordSet;
-			statusChange.setDateValue("changedate", null);
+			statusChange.setDateValue("changedate", this.application.getCurrentDateTime());
 			statusChange.setNullValue("status");
 			statusChange.setNullValue("statusdesc")
 			statusChange.setNullValue("memo");
