@@ -213,7 +213,7 @@ define("application/business/WorkOrderObject",
 				workOrder.set("status", newStatus);
 				workOrder.setDateValue("statusDate", statusDate);
 				workOrder.setDateValue("changestatusdate", statusDate);
-				workOrder.set("memo", memo);		
+				workOrder.set("memo", memo);				
 				workOrder.set("ms_inspector", myUser);		
 				// if this is a Flow Controlled work order, just let Maximo handle the tasks status
 				if(taskSet && taskSet.data && taskSet.data.length>0 && !workOrder.get("flowcontrolled")){
