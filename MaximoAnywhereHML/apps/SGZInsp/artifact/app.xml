@@ -125,7 +125,7 @@
 		<!--Work Order Details view Changed to Service Order Details-->
 		<view id="WorkExecution.WorkDetailView" label="Service Order Details" resource="workOrder">
 			<requiredResources id="WorkExecution.WorkDetailView_requiredResources">
-				<requiredResource id="WorkExecution.WorkDetailView_workOrder" name="workOrder">
+				<requiredResource id="WorkExecution.WorkDetailView_workOrder" name="workOrder" reload="true">
 					<requiredAttribute id="WorkExecution.WorkDetailView_workOrder_attachments" name="attachments"/>
 					<requiredAttribute id="WorkExecution.WorkDetailView_workOrder_workOrderSpec" name="workOrderSpec"/>
 				</requiredResource>
