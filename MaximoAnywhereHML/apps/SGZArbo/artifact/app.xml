@@ -2383,7 +2383,7 @@
 
 				<attribute describedByProperty="spi:roadasset" id="ms_roadasset" name="roadasset"/>
 				<attribute describedByProperty="spi:roadasset{dcterms:title}" id="road_description" name="road_description"/>
-				<attribute describedByProperty="spi:roadasset{spi:ms_roadsegment}" id="ms_roadsegment" name="roadsegment"/>
+ 				<attribute describedByProperty="spi:roadasset{spi:ms_roadsegment}" id="ms_roadsegment" name="roadsegment"/>
 				
 				
 				<!-- ATRIBUTOS SGZARBO -->
@@ -2422,7 +2422,7 @@
 				<attribute describedByProperty="spi:serialnum" id="asset_spiserialnum_serialnum" name="serialnum"/>
 				
 				<attribute describedByProperty="spi:isrunning" id="asset_isrunning_spiisrunning" name="isrunning"/>
-				<attribute describedByProperty="spi:updownstatus{spi:changedate}" id="additionalasset_updownstatusdate_spiupdownstatusspichangedate" name="updownstatusdate"/>
+				<attribute describedByProperty="spi:updownstatusarbo{spi:changedate}" id="additionalasset_updownstatusdate_spiupdownstatusspichangedate" name="updownstatusdate"/>
 				<attribute describedByProperty="spi:priority" id="asset_priority_spipriority" name="priority"/>
 				<attribute describedByProperty="spi:description_longdescription" id="asset_assetlongdesc_spidescription_longdescription" name="assetlongdesc"/>
 				
@@ -2430,9 +2430,9 @@
 				<attribute describedByProperty="spi:assetattachments" describedByResource="attachments" id="asset_attachments_spiassetattachments" name="attachments"/>
 				<attribute describedByProperty="spi:classstructureid" id="asset_classstructureid_spiclassstructureid" name="classstructureid"/>
 				<!-- Complex attributes -->
-				<attribute describedByProperty="spi:assetspec" describedByResource="assetSpecResource" id="asset_assetSpec_spi_assetspec" name="assetSpec"/>	
-				<attribute describedByProperty="spi:ms_arbo" describedByResource="MSArbo" id="asset_assetSpec_spi_MSArbo" name="MSArbo"/>	
-				<attribute describedByProperty="spi:ms_arborpt" describedByResource="MSArboRpt" id="asset_assetSpec_spi_MSArboRpt" name="MSArboRpt"/>	
+				<attribute describedByProperty="spi:assetspecarbo" describedByResource="assetSpecResource" id="asset_assetSpec_spi_assetspec" name="assetSpec"/>	
+				<attribute describedByProperty="spi:msarbo" describedByResource="MSArbo" id="asset_assetSpec_spi_MSArbo" name="MSArbo"/>	
+				<attribute describedByProperty="spi:msarborpt" describedByResource="MSArboRpt" id="asset_assetSpec_spi_MSArboRpt" name="MSArboRpt"/>	
 				
 				
 				
@@ -2573,7 +2573,6 @@
 		<!--  RECURSO MS_ARBO	 -->
 		<resource id="MSArbo" name="MSArbo" >
 			<attributes id="MSArbo_attributes">
-				
 				<attribute describedByProperty="spi:ms_target" id="asset_ms_arbo_spims_arboms_target" name="ms_target" />
 				<attribute describedByProperty="spi:ms_angle" id="asset_ms_arbo_spims_arboms_angle" name="ms_angle" />
 				<attribute describedByProperty="spi:ms_arboid" id="asset_ms_arbo_spims_arboms_arboid" index="true" name="ms_arboid" />
