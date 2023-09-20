@@ -39,7 +39,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 /**@memberOf custom.handlers.MSStatusChangeHandler */
 
 	/*--------------- INICIO Funções MSStatusChangeHandler -----------------------------------*/   
-		
+
 		cleanupEditStatusView : function(eventContext) {
 			this._clearWoStatusFilter();
 		},
@@ -339,7 +339,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			}
 		},
 
-
 		successCallback:function(recordSet,statusChange) {
 			var self = this;
 			self.application.showBusy();
@@ -371,7 +370,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			var newStatus=statusChange.get("status");
 			var memo = statusChange.get("memo");
 			var statusDate = statusChange.getAsDateOrNull("changedate");
-
+			
 			var taskId = workOrderOrTask.get("taskid");
 			var taskSet = null;
 	
@@ -392,6 +391,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			var ms_inspdate04 = workOrderCurrent.get("ms_inspdate04");
 			var ms_inspquestion04 = workOrderCurrent.get("ms_inspquestion04");
 			var ms_inspector04 = workOrderCurrent.get("ms_inspector04");
+			
 			var typeInsp;
 			if (workOrderCurrent.get("ms_insptype") == null || workOrderCurrent.get("ms_insptype") == ""|| workOrderCurrent.get("ms_insptype") == undefined) {
 				typeInsp = workOrderCurrent.get("ms_insptype");
@@ -794,6 +794,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		var currWO = eventContext.getResource().getCurrentRecord();
 		var myUser = UserManager.getCurrentUser();  
 		currWO.set("pd_inspquestion01", "Sim");
+		//currWO.setPendingValue("pd_inspquestion01", "Sim");
 		currWO.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
 		currWO.set("pd_inspector", myUser);
 		currWO.setPendingValue("pd_inspquestion01", currWO.get("pd_inspquestion01"));
@@ -865,17 +866,15 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 	  
 	  cleanButton: function (eventContext) {
 		var statusChangeWO = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-		var currWO = eventContext.getResource().getCurrentRecord();
-		if (currWO.get('ms_insptype') == '1') {
-			if (
-				statusChangeWO.get("status") == "PLANEJAR" ||
-				statusChangeWO.get("status") == "PREPLAN" ||
-				statusChangeWO.get("status") == "PRECANC"
-			  ) {
-				eventContext.setDisplay(false);
-				eventContext.setVisibility(false);
-			}			
+		if (
+		  statusChangeWO.get("status") == "PLANEJAR" ||
+		  statusChangeWO.get("status") == "PREPLAN" ||
+		  statusChangeWO.get("status") == "PRECANC"
+		) {
+		  eventContext.setDisplay(false);
+		  eventContext.setVisibility(false);
 		}
+  
 		this.inherited(arguments);
 	  },
 
@@ -938,7 +937,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		currWO.set("ms_inspector04", myUser);
 		currWO.setPendingValue("ms_inspquestion04", currWO.get("ms_inspquestion04"));
 		this.inherited(arguments);
-
 	  },
   
 	  yes_questions04: function (eventContext) {
@@ -956,6 +954,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		statusChange.set("ms_acceptinsp", "1");
 		ms_acceptinsp = statusChange.get("ms_acceptinsp");
 		var workOrder = eventContext.application.getResource("workOrder");
+		var deferred = new Deferred();
 		ModelService.save(workOrder).then(function (result) {
 		  deferred.resolve();
 		});
@@ -1026,7 +1025,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		var workorder = eventContext.getResource().getCurrentRecord();
 		var statusdate = workorder.get("changestatusdate");
 		//var attachments_crecord = CommonHandler._getAdditionalResource(eventContext,"attachments");
-		
 		var attachments_crecord;
 		try {
 			if (workorder.get('attachments')) {
@@ -1037,7 +1035,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		} catch (error) {
 			console.log(error);
 		}
-
 		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 		statusChangeResource.set('attachmentssizetoday', null);
 		//attachments_crecord.filter("creationDate > $1", statusdate);
@@ -1108,11 +1105,14 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
   
 			  var partesData3 = newdatedatePhoto.split("/");
 			  var data_newdateStatus = new Date(partesData3[2], partesData3[1] - 1, partesData3[0]);
-  
 			  if(data_newdatedatePhoto >= data_newdate && data_newdatedatePhoto >= data_newdateStatus && user == myUser){
 				  attachmentssizetoday ++;
 				  statusChangeResource.set('attachmentssizetoday',attachmentssizetoday);
-			  }
+			
+			}
+  
+				 
+				
 			}
 		  }        
 		}
@@ -1152,7 +1152,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  eventContext.ui.show("WorkExecution.QuestionsView");
 		}
 	  },
-  
   
 	  verifyattachments: function (eventContext) {
 		var attachments = eventContext.application.getResource("attachments");
@@ -1207,6 +1206,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  eventContext.setVisibility(false);
 		}
 	  },
+
 	  planejado: function (eventContext, skipDynamicCheck) {
 		eventContext.application.showBusy();
 		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
@@ -1311,6 +1311,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  nodeChildTextElement.textContent = `${longdescriptionSimple} ...`;
 		}
 	  },
+  
 	  backToList: function (eventContext) {
 		eventContext.ui.show("WorkExecution.WorkItemsView");
 	  },

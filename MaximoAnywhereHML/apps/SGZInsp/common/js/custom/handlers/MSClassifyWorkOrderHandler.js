@@ -516,7 +516,6 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		}
 	},
 
-
 	successCallback:function(recordSet,statusChange) {
 		var self = this;
 		self.application.showBusy();
@@ -641,7 +640,6 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 					this.ui.hideCurrentView(PlatformConstants.CLEANUP);		
 				}
 			}
-
 			}
 			if (typeInsp == "2") {
 				if ((ms_inspdate04 != null ) && (ms_inspquestion04  != null ) && (ms_inspector04 != null)
@@ -1137,6 +1135,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 
 	preplan: function (eventContext) {
 		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
+		statusChangeResource.setDateValue("changedate", this.application.getCurrentDateTime());
 		var statusChange = eventContext.getResource().getCurrentRecord();
 		var attachments = eventContext.application.getResource("attachments");
 		var statusdate = statusChange.get("changestatusdate");
