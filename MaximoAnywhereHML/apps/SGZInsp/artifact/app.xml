@@ -38,7 +38,7 @@
 				</query>
 			</queries>
 			<requiredResources id="WorkExecution.WorkItemsView_requiredResources">
-				<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder">
+				<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder" reload="true">
 					<requiredAttribute id="WorkExecution.WorkItemsView_attribute1" name="tasklist"/>
 				</requiredResource>
 				<requiredResource id="WorkExecution.WorkItemsView_oslcmaxvars" name="oslcmaxvars"/>
@@ -321,6 +321,7 @@
 				 <action id="WorkExecution.AttachmentsView_PickfromGallery_action" image="header_add_OFF.svg" label="Pick from Gallery">
 					<eventHandlers id="WorkExecution.AttachmentsView_PickfromGallery_action_eventHandlers">
 						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.AttachmentsView_PickfromGallery_action_eventHandlers_click_launchGallery" method="launchGallery"/>
+						<eventHandler class="application.handlers.StatusChangeHandler" event="render" id="WorkExecution.Reinspecview_initialize_initEditStatusViewx0x" method="initEditStatusView"/>
 					</eventHandlers>
 				</action>
 			</actions>
