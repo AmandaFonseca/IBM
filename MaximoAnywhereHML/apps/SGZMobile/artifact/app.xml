@@ -154,7 +154,7 @@
 
 			</eventHandlers>
 		</view>
-		
+
 		<!--SGZMOBILE Work Order Details view Changed to Service Item Details-->
 		<view id="WorkExecution.WorkDetailView" label="Service Item Details" resource="workOrder">
 			
@@ -385,6 +385,7 @@
 			<list attribute="workOrderSpec" collapsible="true" displayPageSize="25" hideEmpty="true" id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_list" label="Specifications" mixinclass="SpecificationStoreList" resource="workOrder">
 				<listItemTemplate id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_listItemTemplate">
 					<listtext cssClass="specLayoutRight editableLabel" id="WorkExecution.WorkDetailView_workOrder_description" resourceAttribute="localdescriptionunit"/>
+					<listtext cssClass="ms_qty editableLabel" id="WorkExecution.WorkDetailView_workOrder_ms_qty" resourceAttribute="ms_qty"/>
 				</listItemTemplate>
 				
 				<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_list_0_eventHandlers">
@@ -3329,6 +3330,9 @@
 		<!-- WorkorderSpec resource -->
 		<resource id="workOrderSpecResource" name="workOrderSpecResource">
 		    <attributes id="workOrderSpecResource_attributes">
+			<!--Novo atributo Amanda 21/09-->
+				<attribute describedByProperty="spi_wm:ms_qty" id="workOrderSpecResourceqty_required_spi_wmwty_required" name="ms_qty"/>
+			<!--Novo atributo Amanda 21/09-->
 		        <attribute describedByProperty="spi_wm:pd_spec_required" id="workOrderSpecResource_pd_spec_required_spi_wmwpd_spec_required" name="pd_spec_required"/>
 		        <attribute describedByProperty="spi_wm:workorderspecid" id="workOrderSpecResource_workorderspecid_spi_wmworkorderspecid" key="1" name="workorderspecid"/>
 		        <attribute describedByProperty="spi_wm:classstructureid" id="workOrderSpecResource_classstructureid_spi_wmclassstructureid" name="classstructureid"/>

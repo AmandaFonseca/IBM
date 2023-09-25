@@ -139,29 +139,48 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 				//INICIO DAS FUN��ES DO TIME SHEET
 				
 				hide_WODetailsView : function(eventContext) {
-							//Logger.error("IN�CIO DO M�TODO hide_WODetailsView");
-							var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
-							var currWO = workOrderSet.getCurrentRecord();
-							var myUser = null
-							var myUser = UserManager.getCurrentUser();
-							currWO.setDateValue("ms_tsworkdate", this.application.getCurrentDateTime());
-							currWO.set("ms_tslaborcode", myUser);
-							//curWO.set("pd_editmed", false);
-							//currWO.setDateValue("ms_tsworkdate",this.application.getCurrentDateTime());
-							//Logger.error("WORKTYPE: " + currWO.get("worktype"));
-							if(currWO.get("worktype") == "TS" || currWO.get("status") == "CONC") {
-								//Logger.error("ESCONDENDO CAMPOS DA WORKODER");
-								
-								eventContext.setDisplay(false);
-								eventContext.setVisibility(false);
-								
-								//eventContext.ui.show("WorkExecution.TimeSheetMainView");
-								//eventContext.application.hideBusy();
-		
-							}
-							//Logger.error("FIM DO M�TODO hide_WODetailsView");
-						},
+					//Logger.error("IN�CIO DO M�TODO hide_WODetailsView");
+					var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+					var currWO = workOrderSet.getCurrentRecord();
+					var myUser = null
+					var myUser = UserManager.getCurrentUser();
+					currWO.setDateValue("ms_tsworkdate", this.application.getCurrentDateTime());
+					currWO.set("ms_tslaborcode", myUser);
+					//curWO.set("pd_editmed", false);
+					//currWO.setDateValue("ms_tsworkdate",this.application.getCurrentDateTime());
+					//Logger.error("WORKTYPE: " + currWO.get("worktype"));
+					if(currWO.get("worktype") == "TS" || currWO.get("status") == "CONC") {
+						//Logger.error("ESCONDENDO CAMPOS DA WORKODER");
 						
+						eventContext.setDisplay(false);
+						eventContext.setVisibility(false);
+						
+						//eventContext.ui.show("WorkExecution.TimeSheetMainView");
+						//eventContext.application.hideBusy();
+
+					}
+					//Logger.error("FIM DO M�TODO hide_WODetailsView");
+					let auxs = document.querySelectorAll('.ms_qty');
+					auxs.forEach(element => {
+					   const p = document.createElement("input");
+					   const div = document.createElement("div");
+					   div.setAttribute('class', 'specQty');
+					   const span = document.createElement("span");
+                       span.innerHTML = 'Quantidade de Hidrantes';
+						div.setAttribute('class', 'WL_ listText specLayoutRight editableLabel');
+						  p.value = element.innerHTML; 
+						  p.setAttribute('style',"padding-left: 0 !important; display: block");
+						  if (element.innerHTML) {
+						  p.value = element.innerHTML; 
+						  div.appendChild(p);
+						  div.appendChild(span);
+						  element.replaceWith(div);
+					   }
+					   
+					});
+
+
+				},
 				ReadOnlyWODetailsView : function(eventContext) {
 							//Logger.error("IN�CIO DO M�TODO hide_WODetailsView");
 							var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
