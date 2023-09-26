@@ -382,14 +382,14 @@
 				</group>
 			</container>
 			<!-- Specification Form BEGIN -->
-			<list attribute="workOrderSpec" collapsible="true" displayPageSize="25" hideEmpty="true" id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_list" label="Specifications" mixinclass="SpecificationStoreList" resource="workOrder">
+			<list cssClass="listTextFull" attribute="workOrderSpec" collapsible="true" displayPageSize="25" hideEmpty="true" id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_list" label="Specifications" mixinclass="SpecificationStoreList" resource="workOrder">
 				<listItemTemplate id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_listItemTemplate">
 					<listtext cssClass="specLayoutRight editableLabel" id="WorkExecution.WorkDetailView_workOrder_description" resourceAttribute="localdescriptionunit"/>
 					<listtext cssClass="ms_qty editableLabel" id="WorkExecution.WorkDetailView_workOrder_ms_qty" resourceAttribute="ms_qty"/>
 				</listItemTemplate>
 				
 				<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_list_0_eventHandlers">
-					<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_WODetailsView2" method="hide_WODetailsView"/>
+					<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_WODetailsView2" method="hide_WODetailsView02"/>
 					<eventHandler event="render" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_render" class="custom.handlers.WODetailExtensionHandler" method="handleConditionalReadOnlyMeasureunitid"/>
 					<eventHandler event="render" id="WorkExecution.WorkDetailView_workOrder_measureunitid_0_eventHandlers_render_readOnlySpec" class="custom.handlers.WODetailExtensionHandler" method="readOnlySpec"/>
 				</eventHandlers>

@@ -160,24 +160,88 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 
 					}
 					//Logger.error("FIM DO M�TODO hide_WODetailsView");
-					let auxs = document.querySelectorAll('.ms_qty');
-					auxs.forEach(element => {
-					   const p = document.createElement("input");
-					   const div = document.createElement("div");
-					   div.setAttribute('class', 'specQty');
-					   const span = document.createElement("span");
-                       span.innerHTML = 'Quantidade de Hidrantes';
-						div.setAttribute('class', 'WL_ listText specLayoutRight editableLabel');
-						  p.value = element.innerHTML; 
-						  p.setAttribute('style',"padding-left: 0 !important; display: block");
-						  if (element.innerHTML) {
-						  p.value = element.innerHTML; 
-						  div.appendChild(p);
-						  div.appendChild(span);
-						  element.replaceWith(div);
-					   }
-					   
-					});
+					var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+					var Spec = eventContext.application.getResource("workOrder.workOrderSpec");
+					var currWO = workOrderSet.getCurrentRecord();
+					console.log(eventContext);
+					let classification = Spec.data[0].get('classstructureid');
+					if (classification =='1292') {
+						let ul =  document.querySelector('.mblEdgeToEdgeList.list');
+						let li = ul.querySelectorAll('li');
+						
+					}	
+
+
+				},
+				hide_WODetailsView02 : function(eventContext) {
+					//Logger.error("IN�CIO DO M�TODO hide_WODetailsView");
+					var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+					var currWO = workOrderSet.getCurrentRecord();
+					var myUser = null
+					var myUser = UserManager.getCurrentUser();
+					currWO.setDateValue("ms_tsworkdate", this.application.getCurrentDateTime());
+					currWO.set("ms_tslaborcode", myUser);
+					//curWO.set("pd_editmed", false);
+					//currWO.setDateValue("ms_tsworkdate",this.application.getCurrentDateTime());
+					//Logger.error("WORKTYPE: " + currWO.get("worktype"));
+					if(currWO.get("worktype") == "TS" || currWO.get("status") == "CONC") {
+						//Logger.error("ESCONDENDO CAMPOS DA WORKODER");
+						
+						eventContext.setDisplay(false);
+						eventContext.setVisibility(false);
+						
+						//eventContext.ui.show("WorkExecution.TimeSheetMainView");
+						//eventContext.application.hideBusy();
+
+					}
+					//Logger.error("FIM DO M�TODO hide_WODetailsView");
+					var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+					var Spec = eventContext.application.getResource("workOrder.workOrderSpec");
+					var currWO = workOrderSet.getCurrentRecord();
+					console.log(eventContext);
+					let classification = Spec.data[0].get('classstructureid');
+					if (classification =='1292') {
+						let ul =  document.querySelector('.mblEdgeToEdgeList.list');
+						let li = ul.querySelectorAll('li');
+						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+						var Spec = eventContext.application.getResource("workOrder.workOrderSpec");
+						var currWO = workOrderSet.getCurrentRecord();
+						console.log(eventContext);
+						let classification = Spec.data[0].get('classstructureid');
+						if (classification =='1292') {
+							let ul =  document.querySelector('.mblEdgeToEdgeList.list');
+							let li = ul.querySelectorAll('li');
+							li.forEach(element => {
+								let childs = element.childNodes;
+								let ms_qty  = childs[1].querySelector('.ms_qty');
+								let resp = childs[2].querySelector('input').value;
+								if(resp.innerHTML != "Sim"){
+									let valor = ms_qty.innerHTML; 
+									let valorPreviousElementSibling =  ms_qty.previousElementSibling.textContent
+									const p = document.createElement("input");
+									p.setAttribute('type', 'number');
+									p.setAttribute('placeholder', 'Dê um toque para inserir');
+									p.setAttribute('name', 'specNumber');
+									p.setAttribute('class', 'mblTextBox WL_ editableText editableTextNoButton specNumber');
+									const div = document.createElement("div");
+									const span = document.createElement("span");
+									span.setAttribute('class','novoelmento');
+									div.setAttribute('class', 'WL_ listText specLayoutRight editableLabel specQty');
+									p.value = valor; 
+									p.innerHTML = valor;
+									span.innerHTML = 'Quant. de Hidrantes ('+valorPreviousElementSibling+')';
+									element.lastElementChild.appendChild(ms_qty);							
+									div.appendChild(p);
+									div.appendChild(span);
+									//ms_qty.replaceWith(div);
+									console.log(ms_qty);
+								}
+								 
+		
+							});
+						}	
+					}	
+
 
 
 				},
