@@ -1062,13 +1062,15 @@ define(
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 						var curWo = workOrderSet.getCurrentRecord();
 						var subItem = curWo.get('identifier');
+						var classstructureid = curWo.get('classstructureid');
 						var Spec = eventContext.application.getResource("workOrder.workOrderSpec");	
 						CommonHandler._clearFilterForResource(eventContext,Spec);
-						Spec.filter("refobjectid == $1", subItem);
-						 var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
+						Spec.filter("refobjectid == $1 && classstructureid == $2", subItem, classstructureid);
+						var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
 						eventContext.ui.getCurrentViewControl(viewId).refreshLists();
 						eventContext.ui.getCurrentViewControl(viewId).refresh(); 
 					},
+					
 					filterAttributesOrigItem: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (render)
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 						var wotcorigirecSet = CommonHandler._getAdditionalResource(this,"wotcorigirec");
