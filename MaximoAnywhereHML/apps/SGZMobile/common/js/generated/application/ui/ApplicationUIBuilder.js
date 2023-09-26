@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-26 15:18:37
+// Build: 2023-09-26 17:08:43
 //----------------------------------------------------------------//
 define(   "generated/application/ui/ApplicationUIBuilder", 
       [
@@ -489,7 +489,7 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'labelCss' : 'loginLink',
                'artifactId' : 'PrivacyPolicy_versao',
                'id' : 'aw17552e2f',
-               'label' : MessageService.createStaticMessage('v7.6.4:v7.6.4:0706231800H'),
+               'label' : MessageService.createStaticMessage('v7.6.4:v7.6.4:'),
             });
             container007.addChild( text012 );
 
@@ -1845,9 +1845,18 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
             listItemTemplate002.addChild( listtext010 );
 
 
+            var listtext011 = new ListText({
+               'resourceAttribute' : 'ms_qty',
+               'cssClass' : 'ms_qty editableLabel',
+               'artifactId' : 'WorkExecution.WorkDetailView_workOrder_ms_qty',
+               'id' : 'aw8d551cfd',
+            });
+            listItemTemplate002.addChild( listtext011 );
+
+
             var eventHandlers026 = [
                {
-                     'method' : 'hide_WODetailsView',
+                     'method' : 'hide_WODetailsView02',
                      'artifactId' : 'WorkExecution.WorkDetailView_eventHandlers_initialize_open_WODetailsView2',
                      'id' : 'awa62195e',
                      'event' : 'render',
@@ -1870,6 +1879,7 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
             ];
 
             var list002 = new List({
+               'cssClass' : 'listTextFull',
                'resource' : 'workOrder',
                'listItemTemplate' : listItemTemplate002,
                'artifactId' : 'WorkExecution.WorkDetailView_workOrder_workOrderSpec_list',
@@ -2399,22 +2409,22 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw62514bc9',
             });
 
-            var listtext011 = new ListText({
+            var listtext012 = new ListText({
                'resourceAttribute' : 'ms_description',
                'cssClass' : 'bold textappearance-medium',
                'artifactId' : 'WorkExecution.AttachmentsCategory_listCategories_description',
                'id' : 'aw2f7ecaa6',
             });
-            listItemTemplate003.addChild( listtext011 );
+            listItemTemplate003.addChild( listtext012 );
 
 
-            var listtext012 = new ListText({
+            var listtext013 = new ListText({
                'resourceAttribute' : 'secCount',
                'cssClass' : 'bold textappearance-medium',
                'artifactId' : 'WorkExecution.AttachmentsCategory_listCategories_count',
                'id' : 'aw2ec7f953',
             });
-            listItemTemplate003.addChild( listtext012 );
+            listItemTemplate003.addChild( listtext013 );
 
 
             var image005 = new Image({
@@ -2532,22 +2542,22 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awc485e87d',
             });
 
-            var listtext013 = new ListText({
+            var listtext014 = new ListText({
                'resourceAttribute' : 'ms_description',
                'cssClass' : 'bold textappearance-medium',
                'artifactId' : 'WorkExecution.AttachmentsChildCategory_listCategories_description',
                'id' : 'awf14da021',
             });
-            listItemTemplate004.addChild( listtext013 );
+            listItemTemplate004.addChild( listtext014 );
 
 
-            var listtext014 = new ListText({
+            var listtext015 = new ListText({
                'resourceAttribute' : 'secCount',
                'cssClass' : 'bold textappearance-medium',
                'artifactId' : 'WorkExecution.AttachmentsChildCategory_listCategories_count',
                'id' : 'awecd8426a',
             });
-            listItemTemplate004.addChild( listtext014 );
+            listItemTemplate004.addChild( listtext015 );
 
             var eventHandlers041 = [
                {
@@ -2773,34 +2783,34 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw5f9af042',
             });
 
-            var listtext015 = new ListText({
+            var listtext016 = new ListText({
                'resourceAttribute' : 'displayFileName',
                'cssClass' : 'attachmentLabel',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayFileName',
                'id' : 'aw2a7f24e9',
             });
-            listItemTemplate005.addChild( listtext015 );
+            listItemTemplate005.addChild( listtext016 );
 
 
-            var listtext016 = new ListText({
+            var listtext017 = new ListText({
                'resourceAttribute' : 'displayDescription',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item2',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayDescription',
                'id' : 'aw634a876e',
             });
-            listItemTemplate005.addChild( listtext016 );
+            listItemTemplate005.addChild( listtext017 );
 
 
-            var listtext017 = new ListText({
+            var listtext018 = new ListText({
                'resourceAttribute' : 'displayFileType',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item3',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayFileType',
                'id' : 'awf8820dc6',
             });
-            listItemTemplate005.addChild( listtext017 );
+            listItemTemplate005.addChild( listtext018 );
 
 
             var button007 = new Button({
@@ -2832,34 +2842,34 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
             listItemTemplate005.addChild( button007 );
 
 
-            var listtext018 = new ListText({
+            var listtext019 = new ListText({
                'resourceAttribute' : 'displaySize',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item4',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displaySize',
                'id' : 'aw4edf9732',
             });
-            listItemTemplate005.addChild( listtext018 );
+            listItemTemplate005.addChild( listtext019 );
 
 
-            var listtext019 = new ListText({
+            var listtext020 = new ListText({
                'resourceAttribute' : 'createby',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item5',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_createby',
                'id' : 'awfea18ec7',
             });
-            listItemTemplate005.addChild( listtext019 );
+            listItemTemplate005.addChild( listtext020 );
 
 
-            var listtext020 = new ListText({
+            var listtext021 = new ListText({
                'resourceAttribute' : 'displayCreationDate',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item6',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayCreationDate',
                'id' : 'aw44f40bb4',
             });
-            listItemTemplate005.addChild( listtext020 );
+            listItemTemplate005.addChild( listtext021 );
 
             var eventHandlers045 = [
                {
@@ -3047,34 +3057,34 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw8f8b37ba',
             });
 
-            var listtext021 = new ListText({
+            var listtext022 = new ListText({
                'resourceAttribute' : 'displayFileName',
                'cssClass' : 'attachmentLabel',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displayFileName',
                'id' : 'awfebd1172',
             });
-            listItemTemplate006.addChild( listtext021 );
+            listItemTemplate006.addChild( listtext022 );
 
 
-            var listtext022 = new ListText({
+            var listtext023 = new ListText({
                'resourceAttribute' : 'displayDescription',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item2',
                'artifactId' : 'WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displayDescription',
                'id' : 'aw4557b181',
             });
-            listItemTemplate006.addChild( listtext022 );
+            listItemTemplate006.addChild( listtext023 );
 
 
-            var listtext023 = new ListText({
+            var listtext024 = new ListText({
                'resourceAttribute' : 'displayFileType',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item3',
                'artifactId' : 'WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displayFileType',
                'id' : 'aw2c40385d',
             });
-            listItemTemplate006.addChild( listtext023 );
+            listItemTemplate006.addChild( listtext024 );
 
 
             var button008 = new Button({
@@ -3106,34 +3116,34 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
             listItemTemplate006.addChild( button008 );
 
 
-            var listtext024 = new ListText({
+            var listtext025 = new ListText({
                'resourceAttribute' : 'displaySize',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item4',
                'artifactId' : 'WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displaySize',
                'id' : 'aw64b43dac',
             });
-            listItemTemplate006.addChild( listtext024 );
+            listItemTemplate006.addChild( listtext025 );
 
 
-            var listtext025 = new ListText({
+            var listtext026 = new ListText({
                'resourceAttribute' : 'createby',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item5',
                'artifactId' : 'WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_createby',
                'id' : 'awd7901339',
             });
-            listItemTemplate006.addChild( listtext025 );
+            listItemTemplate006.addChild( listtext026 );
 
 
-            var listtext026 = new ListText({
+            var listtext027 = new ListText({
                'resourceAttribute' : 'displayCreationDate',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item6',
                'artifactId' : 'WorkExecution.FilteredAttachmentsView_workOrder_AttachmentsListItem_displayCreationDate',
                'id' : 'aw7467e96b',
             });
-            listItemTemplate006.addChild( listtext026 );
+            listItemTemplate006.addChild( listtext027 );
 
             var eventHandlers050 = [
                {
@@ -3304,34 +3314,34 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw9006b5d1',
             });
 
-            var listtext027 = new ListText({
+            var listtext028 = new ListText({
                'resourceAttribute' : 'displayFileName',
                'cssClass' : 'attachmentLabel',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayFileName_Recorte',
                'id' : 'aw4f168cd3',
             });
-            listItemTemplate007.addChild( listtext027 );
+            listItemTemplate007.addChild( listtext028 );
 
 
-            var listtext028 = new ListText({
+            var listtext029 = new ListText({
                'resourceAttribute' : 'displayDescription',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item2',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayDescription_Recorte',
                'id' : 'aw61ff65c5',
             });
-            listItemTemplate007.addChild( listtext028 );
+            listItemTemplate007.addChild( listtext029 );
 
 
-            var listtext029 = new ListText({
+            var listtext030 = new ListText({
                'resourceAttribute' : 'displayFileType',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item3',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayFileType_Recorte',
                'id' : 'aw6f5ca698',
             });
-            listItemTemplate007.addChild( listtext029 );
+            listItemTemplate007.addChild( listtext030 );
 
 
             var button009 = new Button({
@@ -3363,34 +3373,34 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
             listItemTemplate007.addChild( button009 );
 
 
-            var listtext030 = new ListText({
+            var listtext031 = new ListText({
                'resourceAttribute' : 'displaySize',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item4',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displaySize_Recorte',
                'id' : 'aw705273c7',
             });
-            listItemTemplate007.addChild( listtext030 );
+            listItemTemplate007.addChild( listtext031 );
 
 
-            var listtext031 = new ListText({
+            var listtext032 = new ListText({
                'resourceAttribute' : 'createby',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item5',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_createby_Recorte',
                'id' : 'aw1470d451',
             });
-            listItemTemplate007.addChild( listtext031 );
+            listItemTemplate007.addChild( listtext032 );
 
 
-            var listtext032 = new ListText({
+            var listtext033 = new ListText({
                'resourceAttribute' : 'displayCreationDate',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item6',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayCreationDate_Recorte',
                'id' : 'aweab50e86',
             });
-            listItemTemplate007.addChild( listtext032 );
+            listItemTemplate007.addChild( listtext033 );
 
             var eventHandlers054 = [
                {
@@ -3561,34 +3571,34 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awda066e1e',
             });
 
-            var listtext033 = new ListText({
+            var listtext034 = new ListText({
                'resourceAttribute' : 'displayFileName',
                'cssClass' : 'attachmentLabel',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayFileName_Demarcacao',
                'id' : 'awcab12771',
             });
-            listItemTemplate008.addChild( listtext033 );
+            listItemTemplate008.addChild( listtext034 );
 
 
-            var listtext034 = new ListText({
+            var listtext035 = new ListText({
                'resourceAttribute' : 'displayDescription',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item2',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayDescription_Demarcacao',
                'id' : 'aw8470eae4',
             });
-            listItemTemplate008.addChild( listtext034 );
+            listItemTemplate008.addChild( listtext035 );
 
 
-            var listtext035 = new ListText({
+            var listtext036 = new ListText({
                'resourceAttribute' : 'displayFileType',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item3',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayFileType_Demarcacao',
                'id' : 'aw4f1c21d6',
             });
-            listItemTemplate008.addChild( listtext035 );
+            listItemTemplate008.addChild( listtext036 );
 
 
             var button010 = new Button({
@@ -3620,34 +3630,34 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
             listItemTemplate008.addChild( button010 );
 
 
-            var listtext036 = new ListText({
+            var listtext037 = new ListText({
                'resourceAttribute' : 'displaySize',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item4',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displaySize_Demarcacao',
                'id' : 'aw330b5419',
             });
-            listItemTemplate008.addChild( listtext036 );
+            listItemTemplate008.addChild( listtext037 );
 
 
-            var listtext037 = new ListText({
+            var listtext038 = new ListText({
                'resourceAttribute' : 'createby',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item5',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_createby_Demarcacao',
                'id' : 'awfeb3fbf5',
             });
-            listItemTemplate008.addChild( listtext037 );
+            listItemTemplate008.addChild( listtext038 );
 
 
-            var listtext038 = new ListText({
+            var listtext039 = new ListText({
                'resourceAttribute' : 'displayCreationDate',
                'cssClass' : 'attachmentInfo',
                'layoutInsertAt' : 'item6',
                'artifactId' : 'WorkExecution.AttachmentsView_workOrder_AttachmentsListItem_displayCreationDate_Demarcacao',
                'id' : 'awe6acc314',
             });
-            listItemTemplate008.addChild( listtext038 );
+            listItemTemplate008.addChild( listtext039 );
 
             var eventHandlers058 = [
                {
@@ -3841,13 +3851,13 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw74fdd83d',
             });
 
-            var listtext039 = new ListText({
+            var listtext040 = new ListText({
                'resourceAttribute' : 'localdescriptionunitspec',
                'cssClass' : 'specLayoutRight editableLabel',
                'artifactId' : 'WorkExecution.WorkDetailView_workOrder_assetSpec_description',
                'id' : 'aw7da84ef',
             });
-            listItemTemplate009.addChild( listtext039 );
+            listItemTemplate009.addChild( listtext040 );
 
 
             var eventHandlers059 = [
@@ -3950,50 +3960,50 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awce161be0',
             });
 
-            var listtext040 = new ListText({
+            var listtext041 = new ListText({
                'resourceAttribute' : 'taskid',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_taskid',
                'id' : 'aw86d9105d',
             });
-            listItemTemplate010.addChild( listtext040 );
+            listItemTemplate010.addChild( listtext041 );
 
 
-            var listtext041 = new ListText({
+            var listtext042 = new ListText({
                'resourceAttribute' : 'laborcodeandname',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item2',
                'artifactId' : 'WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_laborcodeandname',
                'id' : 'awbe37a74a',
             });
-            listItemTemplate010.addChild( listtext041 );
+            listItemTemplate010.addChild( listtext042 );
 
 
-            var listtext042 = new ListText({
+            var listtext043 = new ListText({
                'resourceAttribute' : 'craft',
                'layoutInsertAt' : 'item3',
                'artifactId' : 'WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_craft',
                'id' : 'aw5cce2ffb',
             });
-            listItemTemplate010.addChild( listtext042 );
+            listItemTemplate010.addChild( listtext043 );
 
 
-            var listtext043 = new ListText({
+            var listtext044 = new ListText({
                'resourceAttribute' : 'skilllevel',
                'layoutInsertAt' : 'item4',
                'artifactId' : 'WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_skilllevel',
                'id' : 'aw6fbd0aea',
             });
-            listItemTemplate010.addChild( listtext043 );
+            listItemTemplate010.addChild( listtext044 );
 
 
-            var listtext044 = new ListText({
+            var listtext045 = new ListText({
                'resourceAttribute' : 'crew',
                'layoutInsertAt' : 'item5',
                'artifactId' : 'WorkExecution.LaborAssignmentsView_workOrder_LaborAssignmentListItem_crew',
                'id' : 'aw7cf36a1f',
             });
-            listItemTemplate010.addChild( listtext044 );
+            listItemTemplate010.addChild( listtext045 );
 
 
 
@@ -4286,32 +4296,32 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw27ebc814',
             });
 
-            var listtext045 = new ListText({
+            var listtext046 = new ListText({
                'resourceAttribute' : 'taskid',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.PlannedToolsView_workOrder_PlannedToolListItem_taskid',
                'id' : 'aw173ee2d0',
             });
-            listItemTemplate011.addChild( listtext045 );
+            listItemTemplate011.addChild( listtext046 );
 
 
-            var listtext046 = new ListText({
+            var listtext047 = new ListText({
                'resourceAttribute' : 'toolanddescription',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item2',
                'artifactId' : 'WorkExecution.PlannedToolsView_workOrder_PlannedToolListItem_toolanddescription',
                'id' : 'aw59bab0a1',
             });
-            listItemTemplate011.addChild( listtext046 );
+            listItemTemplate011.addChild( listtext047 );
 
 
-            var listtext047 = new ListText({
+            var listtext048 = new ListText({
                'resourceAttribute' : 'quantity',
                'layoutInsertAt' : 'item3',
                'artifactId' : 'WorkExecution.PlannedToolsView_workOrder_PlannedToolListItem_quantity',
                'id' : 'aw1b4bb0a8',
             });
-            listItemTemplate011.addChild( listtext047 );
+            listItemTemplate011.addChild( listtext048 );
 
 
 
@@ -5158,13 +5168,13 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw631107f1',
             });
 
-            var listtext048 = new ListText({
+            var listtext049 = new ListText({
                'resourceAttribute' : 'fulldesc',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.ClassifyWorkOrderView_classstructure_FailureReportList_fulldesc',
                'id' : 'awdbee2be9',
             });
-            listItemTemplate012.addChild( listtext048 );
+            listItemTemplate012.addChild( listtext049 );
 
             var eventHandlers067 = [
                {
@@ -7081,43 +7091,43 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw44f8b6d',
             });
 
-            var listtext049 = new ListText({
+            var listtext050 = new ListText({
                'resourceAttribute' : 'itemdisplay',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.MaterialsTools_materialSummary_MaterialToolList_itemdisplay',
                'id' : 'aw213176d3',
             });
-            listItemTemplate013.addChild( listtext049 );
+            listItemTemplate013.addChild( listtext050 );
 
 
-            var listtext050 = new ListText({
+            var listtext051 = new ListText({
                'resourceAttribute' : 'descdisplay',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item2',
                'artifactId' : 'WorkExecution.MaterialsTools_materialSummary_MaterialToolList_descdisplay',
                'id' : 'awe899f8cb',
             });
-            listItemTemplate013.addChild( listtext050 );
+            listItemTemplate013.addChild( listtext051 );
 
 
-            var listtext051 = new ListText({
+            var listtext052 = new ListText({
                'resourceAttribute' : 'storeroomdisplay',
                'cssClass' : 'bold textappearance-small',
                'layoutInsertAt' : 'item3',
                'artifactId' : 'WorkExecution.MaterialsTools_materialSummary_MaterialToolList_storeroomdisplay',
                'id' : 'awb8a3ef6b',
             });
-            listItemTemplate013.addChild( listtext051 );
+            listItemTemplate013.addChild( listtext052 );
 
 
-            var listtext052 = new ListText({
+            var listtext053 = new ListText({
                'resourceAttribute' : 'quantitydisplay',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item4',
                'artifactId' : 'WorkExecution.MaterialsTools_materialSummary_MaterialToolList_quantitydisplay',
                'id' : 'aw5137a799',
             });
-            listItemTemplate013.addChild( listtext052 );
+            listItemTemplate013.addChild( listtext053 );
 
 
             var checkbox001 = new CheckBox({
@@ -7148,43 +7158,43 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw9397976a',
             });
 
-            var listtext053 = new ListText({
+            var listtext054 = new ListText({
                'resourceAttribute' : 'tooldisplay',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.MaterialsTools_toolSummary_MaterialToolList_tooldisplay',
                'id' : 'awec874c87',
             });
-            listItemTemplate014.addChild( listtext053 );
+            listItemTemplate014.addChild( listtext054 );
 
 
-            var listtext054 = new ListText({
+            var listtext055 = new ListText({
                'resourceAttribute' : 'descdisplay',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item2',
                'artifactId' : 'WorkExecution.MaterialsTools_toolSummary_MaterialToolList_descdisplay',
                'id' : 'awc687bb4c',
             });
-            listItemTemplate014.addChild( listtext054 );
+            listItemTemplate014.addChild( listtext055 );
 
 
-            var listtext055 = new ListText({
+            var listtext056 = new ListText({
                'resourceAttribute' : 'storeroomdisplay',
                'cssClass' : 'bold textappearance-small',
                'layoutInsertAt' : 'item3',
                'artifactId' : 'WorkExecution.MaterialsTools_toolSummary_MaterialToolList_storeroomdisplay',
                'id' : 'aw2f7bf36c',
             });
-            listItemTemplate014.addChild( listtext055 );
+            listItemTemplate014.addChild( listtext056 );
 
 
-            var listtext056 = new ListText({
+            var listtext057 = new ListText({
                'resourceAttribute' : 'quantitydisplay',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item4',
                'artifactId' : 'WorkExecution.MaterialsTools_toolSummary_MaterialToolList_quantitydisplay',
                'id' : 'aw5bf22892',
             });
-            listItemTemplate014.addChild( listtext056 );
+            listItemTemplate014.addChild( listtext057 );
 
 
             var checkbox002 = new CheckBox({
@@ -7786,24 +7796,24 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
             ];
             listItemTemplate015.eventHandlers = eventHandlers127;
 
-            var listtext057 = new ListText({
+            var listtext058 = new ListText({
                'resourceAttribute' : 'amcrew',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_amcrew',
                'id' : 'aw33063989',
             });
-            listItemTemplate015.addChild( listtext057 );
+            listItemTemplate015.addChild( listtext058 );
 
 
-            var listtext058 = new ListText({
+            var listtext059 = new ListText({
                'resourceAttribute' : 'displayname',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'desc1',
                'artifactId' : 'sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_description',
                'id' : 'awf003c912',
             });
-            listItemTemplate015.addChild( listtext058 );
+            listItemTemplate015.addChild( listtext059 );
 
 
 
@@ -7877,14 +7887,14 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awb92cb1d4',
             });
 
-            var listtext059 = new ListText({
+            var listtext060 = new ListText({
                'resourceAttribute' : 'description',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'desc1',
                'artifactId' : 'WorkExecution.statusLookup_domainwostatus_Item1Desc1_description',
                'id' : 'aw8c250aab',
             });
-            listItemTemplate016.addChild( listtext059 );
+            listItemTemplate016.addChild( listtext060 );
 
 
 
@@ -7960,14 +7970,14 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awff4de7d5',
             });
 
-            var listtext060 = new ListText({
+            var listtext061 = new ListText({
                'resourceAttribute' : 'description',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'desc1',
                'artifactId' : 'WorkExecution.taskStatusLookup_domainwostatus_Item1Desc1_description',
                'id' : 'aw91b8b6c4',
             });
-            listItemTemplate017.addChild( listtext060 );
+            listItemTemplate017.addChild( listtext061 );
 
 
 
@@ -8055,24 +8065,24 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw9ad8b28d',
             });
 
-            var listtext061 = new ListText({
+            var listtext062 = new ListText({
                'resourceAttribute' : 'worktype',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.WorkTypeLookup_additionalworktype_Item1Desc1_worktype',
                'id' : 'awa5e9e346',
             });
-            listItemTemplate018.addChild( listtext061 );
+            listItemTemplate018.addChild( listtext062 );
 
 
-            var listtext062 = new ListText({
+            var listtext063 = new ListText({
                'resourceAttribute' : 'wtypedesc',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'desc1',
                'artifactId' : 'WorkExecution.WorkTypeLookup_additionalworktype_Item1Desc1_wtypedesc',
                'id' : 'aw2ae2bcca',
             });
-            listItemTemplate018.addChild( listtext062 );
+            listItemTemplate018.addChild( listtext063 );
 
 
 
@@ -8107,13 +8117,13 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awa86cf2be',
             });
 
-            var listtext063 = new ListText({
+            var listtext064 = new ListText({
                'resourceAttribute' : 'doctype',
                'cssClass' : 'bold textappearance-medium',
                'artifactId' : 'WorkExecution.appDocTypeLookup_appDocType_doctype',
                'id' : 'aw6b7c2bc2',
             });
-            listItemTemplate019.addChild( listtext063 );
+            listItemTemplate019.addChild( listtext064 );
 
 
 
@@ -8173,24 +8183,24 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awc665d9a2',
             });
 
-            var listtext064 = new ListText({
+            var listtext065 = new ListText({
                'resourceAttribute' : 'value',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'Inspection.alnDomainLookup_maxdomain_Item1Desc1_value',
                'id' : 'awe68b3f5',
             });
-            listItemTemplate020.addChild( listtext064 );
+            listItemTemplate020.addChild( listtext065 );
 
 
-            var listtext065 = new ListText({
+            var listtext066 = new ListText({
                'resourceAttribute' : 'description',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'desc1',
                'artifactId' : 'Inspection.alnDomainLookup_maxdomain_Item1Desc1_description',
                'id' : 'awfe4e2119',
             });
-            listItemTemplate020.addChild( listtext065 );
+            listItemTemplate020.addChild( listtext066 );
 
 
 
@@ -8252,24 +8262,24 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw8c88751b',
             });
 
-            var listtext066 = new ListText({
+            var listtext067 = new ListText({
                'resourceAttribute' : 'value',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'Inspection.NumericLookup_maxdomain_Item1Desc1_value',
                'id' : 'aw27135f32',
             });
-            listItemTemplate021.addChild( listtext066 );
+            listItemTemplate021.addChild( listtext067 );
 
 
-            var listtext067 = new ListText({
+            var listtext068 = new ListText({
                'resourceAttribute' : 'description',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'desc1',
                'artifactId' : 'Inspection.NumericLookup_maxdomain_Item1Desc1_description',
                'id' : 'aw94257f39',
             });
-            listItemTemplate021.addChild( listtext067 );
+            listItemTemplate021.addChild( listtext068 );
 
 
 
@@ -8316,24 +8326,24 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awc3de90bb',
             });
 
-            var listtext068 = new ListText({
+            var listtext069 = new ListText({
                'resourceAttribute' : 'value',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.SetPointActionLookup_Item1Desc1_value',
                'id' : 'aw8b631a0c',
             });
-            listItemTemplate022.addChild( listtext068 );
+            listItemTemplate022.addChild( listtext069 );
 
 
-            var listtext069 = new ListText({
+            var listtext070 = new ListText({
                'resourceAttribute' : 'description',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'desc1',
                'artifactId' : 'WorkExecution.SetPointActionLookup_Item1Desc1_description',
                'id' : 'aw811bca45',
             });
-            listItemTemplate022.addChild( listtext069 );
+            listItemTemplate022.addChild( listtext070 );
 
 
 
@@ -8386,14 +8396,14 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awf210f929',
             });
 
-            var listtext070 = new ListText({
+            var listtext071 = new ListText({
                'resourceAttribute' : 'ms_woticketid',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'Wotickets.Wotickets_Item1Desc1_ms_amticketid',
                'id' : 'aw3297df9e',
             });
-            listItemTemplate023.addChild( listtext070 );
+            listItemTemplate023.addChild( listtext071 );
 
 
 
@@ -8446,24 +8456,24 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awf6a27977',
             });
 
-            var listtext071 = new ListText({
+            var listtext072 = new ListText({
                'resourceAttribute' : 'classstructureid',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'WorkExecution.classifyLookup_classstructureid',
                'id' : 'aw9c3e4b8',
             });
-            listItemTemplate024.addChild( listtext071 );
+            listItemTemplate024.addChild( listtext072 );
 
 
-            var listtext072 = new ListText({
+            var listtext073 = new ListText({
                'resourceAttribute' : 'classificationid',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'desc1',
                'artifactId' : 'WorkExecution.classifyLookup_classificationid',
                'id' : 'aw6e29c62b',
             });
-            listItemTemplate024.addChild( listtext072 );
+            listItemTemplate024.addChild( listtext073 );
 
 
 
@@ -8768,14 +8778,14 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aweb3659e3',
             });
 
-            var listtext073 = new ListText({
+            var listtext074 = new ListText({
                'resourceAttribute' : 'folderName',
                'cssClass' : 'bold textappearance-medium',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'PlatformAttachmentIn.CategoryLookup_PlatformAttachmentCategoryResource_Item2Desc2_folderName',
                'id' : 'aw48fc196b',
             });
-            listItemTemplate025.addChild( listtext073 );
+            listItemTemplate025.addChild( listtext074 );
 
 
 
@@ -9024,31 +9034,31 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'aw718eb447',
             });
 
-            var listtext074 = new ListText({
+            var listtext075 = new ListText({
                'resourceAttribute' : 'uiDate',
                'layoutInsertAt' : 'date1',
                'artifactId' : 'Platform.Notifications_uiDate',
                'id' : 'aw56b07378',
             });
-            listItemTemplate026.addChild( listtext074 );
+            listItemTemplate026.addChild( listtext075 );
 
 
-            var listtext075 = new ListText({
+            var listtext076 = new ListText({
                'resourceAttribute' : 'itemnum',
                'layoutInsertAt' : 'item1',
                'artifactId' : 'Platform.Notifications_itemnum',
                'id' : 'aw4dbbd111',
             });
-            listItemTemplate026.addChild( listtext075 );
+            listItemTemplate026.addChild( listtext076 );
 
 
-            var listtext076 = new ListText({
+            var listtext077 = new ListText({
                'resourceAttribute' : 'itemDesc',
                'layoutInsertAt' : 'item2',
                'artifactId' : 'Platform.Notifications_itemDesc',
                'id' : 'aw6bac97b9',
             });
-            listItemTemplate026.addChild( listtext076 );
+            listItemTemplate026.addChild( listtext077 );
 
             var eventHandlers141 = [
                {
@@ -10542,12 +10552,12 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'id' : 'awefd72fd8',
             });
 
-            var listtext077 = new ListText({
+            var listtext078 = new ListText({
                'resourceAttribute' : 'label',
                'artifactId' : 'Platform.ListLongPressDialog_PlatformLongPressResource_label',
                'id' : 'awe2e495b2',
             });
-            listItemTemplate027.addChild( listtext077 );
+            listItemTemplate027.addChild( listtext078 );
 
 
 

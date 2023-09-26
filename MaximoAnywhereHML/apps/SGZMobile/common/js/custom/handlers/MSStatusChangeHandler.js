@@ -200,46 +200,13 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					var currWO = workOrderSet.getCurrentRecord();
 					console.log(eventContext);
 					let classification = Spec.data[0].get('classstructureid');
+					let ul = document.querySelector('.listTextFull');
+					let li = ul.querySelectorAll('li');
+
 					if (classification =='1292') {
-						let ul =  document.querySelector('.mblEdgeToEdgeList.list');
-						let li = ul.querySelectorAll('li');
-						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
-						var Spec = eventContext.application.getResource("workOrder.workOrderSpec");
-						var currWO = workOrderSet.getCurrentRecord();
-						console.log(eventContext);
-						let classification = Spec.data[0].get('classstructureid');
-						if (classification =='1292') {
-							let ul =  document.querySelector('.mblEdgeToEdgeList.list');
-							let li = ul.querySelectorAll('li');
-							li.forEach(element => {
-								let childs = element.childNodes;
-								let ms_qty  = childs[1].querySelector('.ms_qty');
-								let resp = childs[2].querySelector('input').value;
-								if(resp.innerHTML != "Sim"){
-									let valor = ms_qty.innerHTML; 
-									let valorPreviousElementSibling =  ms_qty.previousElementSibling.textContent
-									const p = document.createElement("input");
-									p.setAttribute('type', 'number');
-									p.setAttribute('placeholder', 'Dê um toque para inserir');
-									p.setAttribute('name', 'specNumber');
-									p.setAttribute('class', 'mblTextBox WL_ editableText editableTextNoButton specNumber');
-									const div = document.createElement("div");
-									const span = document.createElement("span");
-									span.setAttribute('class','novoelmento');
-									div.setAttribute('class', 'WL_ listText specLayoutRight editableLabel specQty');
-									p.value = valor; 
-									p.innerHTML = valor;
-									span.innerHTML = 'Quant. de Hidrantes ('+valorPreviousElementSibling+')';
-									element.lastElementChild.appendChild(ms_qty);							
-									div.appendChild(p);
-									div.appendChild(span);
-									//ms_qty.replaceWith(div);
-									console.log(ms_qty);
-								}
-								 
-		
-							});
-						}	
+						li.forEach(element => {
+							console.log(element);
+						});
 					}	
 
 
