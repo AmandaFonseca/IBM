@@ -1175,8 +1175,8 @@ define(
 						let siteid = wo.get("siteid");
 						var filter = [];		
 
-						//msamcrew.filter('ms_contractnum == $1 && ms_active == $2', pd_contractnum, 1);
-						msamcrew.filter('ms_contractnum == $1 && ms_active == $2 && ms_siteid == $3', pd_contractnum, 1, null);
+						msamcrew.filter('ms_contractnum == $1 && ms_active == $2', pd_contractnum, 1);
+						//msamcrew.filter('ms_contractnum == $1 && ms_active == $2 && ms_siteid == $3', pd_contractnum, 1, null);
 
 					},
 
