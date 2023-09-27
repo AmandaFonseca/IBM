@@ -219,7 +219,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								div.appendChild(p);
 								div.appendChild(span);
 								console.log(div);
-								element.replaceWith(div);
+								element.appendChild(div);
 								
 							}
 							cont ++;
