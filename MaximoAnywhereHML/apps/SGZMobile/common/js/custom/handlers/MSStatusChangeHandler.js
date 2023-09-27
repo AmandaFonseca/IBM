@@ -196,30 +196,36 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 							let elemento02 = childs[2];
 							let resp = elemento02.querySelector('input').value;
 							if(resp == "Sim"){
-								const p = document.createElement("input");
-								p.setAttribute('type', 'number');
-								p.setAttribute('name', `awdaa91392_List_${label}tbcontrol_Text`);
-								p.setAttribute('class', 'mblTextBox WL_ editableText editableTextNoButton');
-								p.setAttribute('tabindex', cont);
-								p.setAttribute('placeholder', 'Dê um toque para inserir');
-								p.setAttribute('aria-label', 'Dê um toque para inserir');
-								p.setAttribute('autocapitalize', 'offr');
-								p.setAttribute('value', Spec.data[cont].ms_qty); 
-								p.setAttribute('style', 'display: inline; padding: 2px 10px !important;'); 
-
-
-
-
 								const div = document.createElement("div");
+								div.setAttribute('class', 'mblListItemLabel');
+								div.setAttribute('style', 'display: inline;');
+
+								const div01 = document.createElement("div");
+								const input = document.createElement("input");
+								
+								div01.setAttribute('class', 'dijitContentPane WL_ leafControl');
+								div01.setAttribute('id', `awdaa91392_List_${label}_tbcontrol_Text`);
+								div01.setAttribute('widgetid', `awdaa91392_List_${label}_tbcontrol_Text`);
+								input.setAttribute('type', 'number');
+								input.setAttribute('name', `awdaa91392_List_${label}tbcontrol_Text`);
+								input.setAttribute('class', 'mblTextBox WL_ editableText editableTextNoButton');
+								input.setAttribute('tabindex', cont);
+								input.setAttribute('placeholder', 'Dê um toque para inserir');
+								input.setAttribute('aria-label', 'Dê um toque para inserir');
+								input.setAttribute('autocapitalize', 'off');
+								input.setAttribute('value', Spec.data[cont].ms_qty); 
+								input.setAttribute('style', 'display: inline; padding: 2px 10px !important;'); 
+								input.innerHTML = Spec.data[cont].ms_qty; 
+
 								const span = document.createElement("span");
-								span.setAttribute('class','novoelmento');
-								div.setAttribute('class', 'WL_ listText  editableLabel');
-								p.innerHTML = Spec.data[cont].ms_qty; 
-								span.innerHTML = 'Quant. de Hidrantes ('+Spec.data[cont].description+')';								
-								div.appendChild(p);
-								div.appendChild(span);
-								console.log(div);
+								span.setAttribute('class','WL_ listText specLayoutRight editableLabel');
+								span.setAttribute('style','float:left;padding-top:5px;');
+								span.innerHTML = 'Quant. de Hidrantes ('+Spec.data[cont].description+')';
+
+								div01.appendChild(span);
+								div01.appendChild(input);
 								element.appendChild(div);
+								element.appendChild(div01);
 								
 							}
 							cont ++;
