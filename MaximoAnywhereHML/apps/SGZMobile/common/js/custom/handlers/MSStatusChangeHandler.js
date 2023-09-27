@@ -203,7 +203,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								const div01 = document.createElement("div");
 								const input = document.createElement("input");
 								
-								div01.setAttribute('class', 'dijitContentPane WL_ leafControl');
+								div01.setAttribute('class', 'WL_ leafControl');
 								div01.setAttribute('id', `awdaa91392_List_${label}_tbcontrol_Text`);
 								div01.setAttribute('widgetid', `awdaa91392_List_${label}_tbcontrol_Text`);
 								input.setAttribute('type', 'number');
@@ -224,8 +224,8 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 
 								div01.appendChild(span);
 								div01.appendChild(input);
-								element.appendChild(div);
-								element.appendChild(div01);
+								element.lastElementChild.appendChild(div01);
+								element.lastElementChild.appendChild(div)
 								
 							}
 							cont ++;

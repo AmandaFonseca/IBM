@@ -265,7 +265,9 @@ define(
 							
 							}
 						}
-						eventContext.refresh();
+						if(wostatus != "EMAND"){
+							eventContext.refresh();
+						}
 					},
 					
 					ValidateDateSpec : function(eventContext) {
@@ -578,8 +580,9 @@ define(
 								currWorkOrderSpec.getRuntimeFieldMetadata("alnvalue").set("readonly", wostatus != "EMAND");									
 							}
 						}
-						
-						eventContext.refresh();
+						if(wostatus != "EMAND"){
+							eventContext.refresh();
+						}
 						
 					},
 					
