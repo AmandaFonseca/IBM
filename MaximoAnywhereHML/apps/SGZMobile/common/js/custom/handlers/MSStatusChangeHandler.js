@@ -195,7 +195,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 							let label = childs[1].textContent;
 							let elemento02 = childs[2];
 							let resp = elemento02.querySelector('input').value;
-							if(resp == "Sim"){
+							if(Spec.data[cont].domainid == "MS_YESORNO"){
 								const div = document.createElement("div");
 								div.setAttribute('class', 'mblListItemLabel');
 								div.setAttribute('style', 'display: inline;');
@@ -214,12 +214,12 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								input.setAttribute('aria-label', 'Dê um toque para inserir');
 								input.setAttribute('autocapitalize', 'off');
 								input.setAttribute('value', Spec.data[cont].ms_qty); 
-								input.setAttribute('style', 'display: inline; padding: 2px 10px !important;'); 
+								input.setAttribute('style', 'display: inline; padding: 2px 10px !important;padding-top:0.5em;padding-bottom:0.5em'); 
 								input.innerHTML = Spec.data[cont].ms_qty; 
 
 								const span = document.createElement("span");
 								span.setAttribute('class','WL_ listText specLayoutRight editableLabel');
-								span.setAttribute('style','float:left;padding-top:5px;');
+								span.setAttribute('style','float:left;padding-top:1em;');
 								span.innerHTML = 'Quant. de Hidrantes ('+Spec.data[cont].description+')';
 
 								div01.appendChild(span);
