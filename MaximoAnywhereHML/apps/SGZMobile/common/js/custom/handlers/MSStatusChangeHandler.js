@@ -18,7 +18,8 @@ define("custom/handlers/MSStatusChangeHandler",
 
 function(declare, ApplicationHandlerBase, StatusChangeHandler,
 		WorkOrderStatusHandler,PlatformRuntimeException,PlatformRuntimeWarning,CommonHandler,ModelService,Logger,PlatformConstants,UserManager,AttachmentHandler,MessageService,Deferred, GeoLocationTrackingService) {
-	return declare([ ApplicationHandlerBase, StatusChangeHandler ],
+			var listSizeArray = [];
+			return declare([ ApplicationHandlerBase, StatusChangeHandler ],
 			{
 
 				dummyMethod : function(eventContext) {
@@ -173,45 +174,126 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 
 
 				},
+
 				hide_WODetailsView02 : function(eventContext) {
-					//Logger.error("IN�CIO DO M�TODO hide_WODetailsView");
-					var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
-					var currWO = workOrderSet.getCurrentRecord();
-					var myUser = null
-					var myUser = UserManager.getCurrentUser();
-					currWO.setDateValue("ms_tsworkdate", this.application.getCurrentDateTime());
-					currWO.set("ms_tslaborcode", myUser);
-					//curWO.set("pd_editmed", false);
-					//currWO.setDateValue("ms_tsworkdate",this.application.getCurrentDateTime());
-					//Logger.error("WORKTYPE: " + currWO.get("worktype"));
-					if(currWO.get("worktype") == "TS" || currWO.get("status") == "CONC") {
-						//Logger.error("ESCONDENDO CAMPOS DA WORKODER");
-						
-						eventContext.setDisplay(false);
-						eventContext.setVisibility(false);
-						
-						//eventContext.ui.show("WorkExecution.TimeSheetMainView");
-						//eventContext.application.hideBusy();
-
-					}
-					//Logger.error("FIM DO M�TODO hide_WODetailsView");
-					var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+					Logger.error("###### inicio ValidateDateSpec");
+					var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
 					var Spec = eventContext.application.getResource("workOrder.workOrderSpec");
-					var currWO = workOrderSet.getCurrentRecord();
-					console.log(eventContext);
-					let classification = Spec.data[0].get('classstructureid');
-					let ul = document.querySelector('.listTextFull');
-					let li = ul.querySelectorAll('li');
+					var currentWorkOrderCount;
+					var concordanciaAsfaltica = 0;
+					var validate = 1;
+					let emergency;
+					let self = eventContext;
+					const list = {
+                        index: null, ms_qty: null
+					};
+					try {
+						currentWorkOrderCount = Spec.count();
+						if ((currentWorkOrder.get("worktype") == "TS") || emergency == true){
+							return true;
+						}
+						if (Spec.count()){
+							if (currentWorkOrder != null && currentWorkOrder.workOrderSpec != null){
+								for (var i = 0; i < currentWorkOrderCount; i++) {
+										var currWorkOrderSpec = Spec.getRecordAt(i);
+										var specID = currWorkOrderSpec.get('assetattrid');
+										var alnValue = currWorkOrderSpec.get('alnvalue');
+									    var ms_qty = currWorkOrderSpec.get('ms_qty');
+									    list.index = i;
+									    list.ms_qty = ms_qty;
+										listSizeArray.push(list);
+									}
+								}
+								/*if (nec_conc == 'Sim' && (cura_conc == null || cura_conc == undefined  || cura_conc == "")){
+									 eventContext.ui.showMessage(MessageService.createStaticMessage("O campo 'Cura de concreto' precisa ser preenchido!").getMessage());
+									 validate = 0;
+								}*/
+								for (var i = 0; i < currentWorkOrderCount; i++) {
+									//var currWorkOrderSpec = Spec.getRecordAt(i);
+									var currWorkOrderSpec = Spec.getRecordAt(i);
+									var measureunitid = currWorkOrderSpec.get('measureunitid');
+									var strData = currWorkOrderSpec.get('alnvalue');
+									var alnValue = currWorkOrderSpec.get('alnvalue');
+									var specID = currWorkOrderSpec.get('assetattrid');
 
-					if (classification =='1292') {
-						li.forEach(element => {
-							console.log(element);
-						});
-					}	
-
-
-
+									
+									/*if (strData != null && strData != undefined) {
+										if(strData.includes("/")){
+											let d = strData; 
+											let anoSimples = d.split("/");
+											anoSimples = anoSimples[anoSimples.length - 1];
+											let count = anoSimples.length;
+											let newdate;
+											if(count == 2){
+												newdate  = (anoSimples < 90) ? '20' + anoSimples : '19' + anoSimples;
+											}
+											if (newdate!= null && newdate != undefined) {
+												let novaData = d.split("/");
+												newdate = novaData[0]+'/'+novaData[1]+'/'+newdate;
+												strData = newdate;
+												currWorkOrderSpec.set('alnvalue', strData);
+											}
+										}		
+									}*/
+									/*											
+									var nowDate = new Date();
+									
+									if (measureunitid == "DATA"){
+										//var newDate = new Date(strData);
+										if(strData != null && strData != undefined && strData != ""){
+											var dateParts = strData.split("/");
+											// month is 0-based, that's why we need dataParts[1] - 1
+											var newDate = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
+											var newDateFomatada = new Date(strData);
+											let day = newDate.getMonth()+1;
+											let month = newDate.getDate();
+											let year = newDate.getFullYear();
+											//var isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
+											var isBoolean;
+											try {
+												isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
+												if (isBoolean == undefined || isBoolean == null || isBoolean == false) {
+													isBoolean = (newDateFomatada instanceof Date) && newDateFomatada !=null;
+												}
+											} catch (error) {
+												console.log(error);
+											}
+											newDateFomatada = new Date('""'+day+"/"+month+"/"+year);
+											//newDateFomatada = newDate.toLocaleDateString();
+											
+											//nowDate = nowDate.toLocaleDateString();
+										   
+											
+												if (isBoolean) {
+													if(newDateFomatada < nowDate){
+														eventContext.ui.showMessage(MessageService.createStaticMessage("O campo 'Cura de concreto' precisa ser maior que a data atual!").getMessage());
+														validate = 0;
+													   
+													}
+												}
+												else{
+													eventContext.ui.showMessage(MessageService.createStaticMessage("Por favor, insira uma data valida!").getMessage());
+													validate = 0;
+												}	
+											
+										}
+									}
+									
+								}*/
+							}
+							if (validate == 1){
+								eventContext.ui.hideCurrentView(PlatformConstants.CLEANUP);	
+								//self.getMyViewControl(eventContext).refreshLists();
+								//self.getMyViewControl(eventContext).refresh();
+							}                                        
+							Logger.error("###### fim ValidateDateSpec");		
+							console.log(listSizeArray);						
+						}
+					} catch (error) {
+						console.log(error);
+					}
 				},
+
 				ReadOnlyWODetailsView : function(eventContext) {
 							//Logger.error("IN�CIO DO M�TODO hide_WODetailsView");
 							var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");

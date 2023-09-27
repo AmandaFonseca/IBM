@@ -385,7 +385,7 @@
 			<list cssClass="listTextFull" attribute="workOrderSpec" collapsible="true" displayPageSize="25" hideEmpty="true" id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_list" label="Specifications" mixinclass="SpecificationStoreList" resource="workOrder">
 				<listItemTemplate id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_listItemTemplate">
 					<listtext cssClass="specLayoutRight editableLabel" id="WorkExecution.WorkDetailView_workOrder_description" resourceAttribute="localdescriptionunit"/>
-					<listtext cssClass="ms_qty editableLabel" id="WorkExecution.WorkDetailView_workOrder_ms_qty" resourceAttribute="ms_qty"/>
+					<!-- <listtext cssClass="ms_qty editableLabel" id="WorkExecution.WorkDetailView_workOrder_ms_qty" resourceAttribute="ms_qty"/>-->
 				</listItemTemplate>
 				
 				<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_list_0_eventHandlers">
