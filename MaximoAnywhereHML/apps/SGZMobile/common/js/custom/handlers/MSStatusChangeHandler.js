@@ -166,7 +166,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 				},
 
 				hide_WODetailsView02 : function(eventContext) {
-					Logger.error("###### inicio ValidateDateSpec");
+					Logger.error("###### inicio hide_WODetailsView02");
 					var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
 					var Spec = eventContext.application.getResource("workOrder.workOrderSpec");
 					var currentWorkOrderCount;
@@ -225,7 +225,8 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								div01.appendChild(span);
 								div01.appendChild(input);
 								element.lastElementChild.appendChild(div01);
-								element.lastElementChild.appendChild(div)
+								element.lastElementChild.appendChild(div);
+								element.querySelector('.dijitContentPane').querySelector('.ms_qty').remove();
 								
 							}
 							cont ++;
