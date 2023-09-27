@@ -161,16 +161,6 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 
 					}
 					//Logger.error("FIM DO M�TODO hide_WODetailsView");
-					var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
-					var Spec = eventContext.application.getResource("workOrder.workOrderSpec");
-					var currWO = workOrderSet.getCurrentRecord();
-					console.log(eventContext);
-					let classification = Spec.data[0].get('classstructureid');
-					if (classification =='1292') {
-						let ul =  document.querySelector('.mblEdgeToEdgeList.list');
-						let li = ul.querySelectorAll('li');
-						
-					}	
 
 
 				},
@@ -185,12 +175,57 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					let emergency;
 					let self = eventContext;
 					listSizeArray = [];
+					let cont= 0;
 					for (var prop in Spec.data) {
 					  // ctrl+shift+k (para abrir o console no mozilla firefox)
 					  let a = {'alnvalue': Spec.data[prop].get('alnvalue'),'ms_qty': Spec.data[prop].get('ms_qty')};	
 					  listSizeArray.push(a);
 					 //console.log("obj." + prop + " = " + Spec.data[prop].get('alnvalue'));
 					  
+					}
+					var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+					var currWO = workOrderSet.getCurrentRecord();
+					var Spec = eventContext.application.getResource("workOrder.workOrderSpec");
+					let classification = Spec.data[0].get('classstructureid');
+					if (classification =='1292') {
+						let ul =  document.querySelector('.listTextFull');
+						let li = ul.querySelectorAll('li');
+						li.forEach(element => {
+							let childs = element.childNodes;
+							let label = childs[1].textContent;
+							let elemento02 = childs[2];
+							let resp = elemento02.querySelector('input').value;
+							if(resp == "Sim"){
+								const p = document.createElement("input");
+								p.setAttribute('type', 'number');
+								p.setAttribute('name', `awdaa91392_List_${label}tbcontrol_Text`);
+								p.setAttribute('class', 'mblTextBox WL_ editableText editableTextNoButton');
+								p.setAttribute('tabindex', cont);
+								p.setAttribute('placeholder', 'Dê um toque para inserir');
+								p.setAttribute('aria-label', 'Dê um toque para inserir');
+								p.setAttribute('autocapitalize', 'offr');
+								p.setAttribute('value', Spec.data[cont].ms_qty); 
+								p.setAttribute('style', 'display: inline; padding: 2px 10px !important;'); 
+
+
+
+
+								const div = document.createElement("div");
+								const span = document.createElement("span");
+								span.setAttribute('class','novoelmento');
+								div.setAttribute('class', 'WL_ listText  editableLabel');
+								p.innerHTML = Spec.data[cont].ms_qty; 
+								span.innerHTML = 'Quant. de Hidrantes ('+Spec.data[cont].description+')';								
+								div.appendChild(p);
+								div.appendChild(span);
+								console.log(div);
+								element.replaceWith(div);
+								
+							}
+							cont ++;
+							console.log(label);
+							console.log(resp);
+						});
 					}
 				},
 
