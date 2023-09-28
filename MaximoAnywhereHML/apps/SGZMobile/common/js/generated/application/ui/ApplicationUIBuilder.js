@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 18:54:51
+// Build: 2023-09-28 20:31:14
 //----------------------------------------------------------------//
 define(   "generated/application/ui/ApplicationUIBuilder", 
       [
@@ -489,7 +489,7 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'labelCss' : 'loginLink',
                'artifactId' : 'PrivacyPolicy_versao',
                'id' : 'aw17552e2f',
-               'label' : MessageService.createStaticMessage('v7.6.4:v7.6.4:0809231700H'),
+               'label' : MessageService.createStaticMessage('v7.6.4:v7.6.4:2809232000H'),
             });
             container007.addChild( text012 );
 
@@ -7256,8 +7256,8 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                   'id' : 'awfe209b1',
                },
                'whylist' : {
-                  'artifactId' : 'SGZDescarte.whylookup.requiredResource.whylist',
-                  'id' : 'aw50fbc0f4',
+                  'artifactId' : 'WorkExecution.PD_WhyView_ms_pdwhy',
+                  'id' : 'awa5f9c16b',
                },
             };
             view022.addRequiredResources( requiredResources022 );
@@ -7442,7 +7442,6 @@ function(declare, all, BuilderBase, window, array, ioQuery, AdditionalDataManage
                'artifactId' : 'WorkExecution.reasonView.group.groupitem.text_1',
                'id' : 'aw10cac428',
                'label' : MessageService.createStaticMessage('C\u00F3digo Motivo'),
-               'required' : true,
             });
             groupitem081.addChild( text133 );
 

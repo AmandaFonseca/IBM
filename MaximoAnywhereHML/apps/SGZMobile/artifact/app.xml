@@ -1905,7 +1905,7 @@
 						<textarea editable="true" id="WorkExecution.EditStatusView_statusChangeResource_groupitem_3_memo_motivo11" label="Motivo" resourceAttribute="motivo"/>
 					</groupitem>
 					<groupitem id="WorkExecution.reasonView.group.groupitem_1">
-						<text required="true" editable="false" id="WorkExecution.reasonView.group.groupitem.text_1" layoutInsertAt="item1" label="Motivo" resourceAttribute="pd_whynum" lookup="WorkExecution.whylookup"/>
+						<text editable="false" id="WorkExecution.reasonView.group.groupitem.text_1" layoutInsertAt="item1" label="Código Motivo" resourceAttribute="pd_whynum" lookup="WorkExecution.whylookup"/>
 					</groupitem>
 				</group>
 				<!--<eventHandlers id="WorkExecution.EditStatusView_Save_button_eventHandlers_hide_Reason">

@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 18:38:03
+// Build: 2023-09-28 20:31:19
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中國的~Manual do Aplicativo]",
          "Privacy Policy" : "[中國的~Privacy Policy]",
          "Connection Settings" : "[中國的~Connection Settings]",
-         "v7.6.4:v7.6.4:0809231700H" : "[中國的~v7.6.4:v7.6.4:0809231700H]",
+         "v7.6.4:v7.6.4:2809232000H" : "[中國的~v7.6.4:v7.6.4:2809232000H]",
          "My Assigned Work" : "[中國的~My Assigned Work]",
          "Default List" : "[中國的~Default List]",
          "Records with Errors" : "[中國的~Records with Errors]",
