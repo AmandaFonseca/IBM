@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-26 15:18:43
+// Build: 2023-09-28 18:38:03
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中國的~Manual do Aplicativo]",
          "Privacy Policy" : "[中國的~Privacy Policy]",
          "Connection Settings" : "[中國的~Connection Settings]",
-         "v7.6.4:v7.6.4:0706231800H" : "[中國的~v7.6.4:v7.6.4:0706231800H]",
+         "v7.6.4:v7.6.4:0809231700H" : "[中國的~v7.6.4:v7.6.4:0809231700H]",
          "My Assigned Work" : "[中國的~My Assigned Work]",
          "Default List" : "[中國的~Default List]",
          "Records with Errors" : "[中國的~Records with Errors]",
@@ -144,6 +144,7 @@ define({
          "New Status" : "[中國的~New Status]",
          "Select from list" : "[中國的~Select from list]",
          "Motivo" : "[中國的~Motivo]",
+         "C\u00F3digo Motivo" : "[中國的~Código Motivo]",
          "Save" : "[中國的~Save]",
          "Equipes" : "[中國的~Equipes]",
          "Work Order Status" : "[中國的~Work Order Status]",
@@ -152,6 +153,7 @@ define({
          "Select Value" : "[中國的~Select Value]",
          "Selecionar Ticket" : "[中國的~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[中國的~Selecione a Classificação]",
+         "Selecione o motivo" : "[中國的~Selecione o motivo]",
          "Attachment Details" : "[中國的~Attachment Details]",
          "Name" : "[中國的~Name]",
          "Folder" : "[中國的~Folder]",

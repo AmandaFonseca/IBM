@@ -4,21 +4,18 @@
     xmlns:oslc="http://open-services.net/ns/core#"
     xmlns:spi="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#">
   <oslc:ResourceShape rdf:about="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_sgzmobileamcrew">
-    <oslc:name>MS_SGZMOBILEAMCREWCON</oslc:name>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>supervisor</oslc:name>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>ms_siteid</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#supervisor"/>
-        <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
-        <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
-        <oslc:valueShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcperson"/>
-        <oslc:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_siteid"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>8</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Encarregado</dcterms:title>
+        >Subprefeitura</dcterms:title>
       </oslc:Property>
     </oslc:property>
-    <oslc:describes rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#MS_SGZMOBILEAMCREWCON"/>
     <oslc:property>
       <oslc:Property>
         <oslc:name>person</oslc:name>
@@ -28,6 +25,19 @@
         <oslc:representation rdf:resource="http://open-services.net/ns/core#Inline"/>
         <oslc:valueShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_sgzmobileamcrew/person"/>
         <oslc:range rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#Person"/>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:name>MS_SGZMOBILEAMCREWCON</oslc:name>
+    <oslc:describes rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#MS_SGZMOBILEAMCREWCON"/>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_active</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_active"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>true</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Ativo</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -57,13 +67,15 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_active</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_active"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>true</oslc:defaultValue>
+        <oslc:name>supervisor</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#supervisor"/>
+        <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+        <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
+        <oslc:valueShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcperson"/>
+        <oslc:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Ativo</dcterms:title>
+        >Encarregado</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -77,18 +89,6 @@
         <oslc:maxSize>19</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
         >Id do Registro</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_siteid</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_siteid"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>8</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Subprefeitura</dcterms:title>
       </oslc:Property>
     </oslc:property>
   </oslc:ResourceShape>

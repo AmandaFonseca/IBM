@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-26 15:18:44
+// Build: 2023-09-28 18:38:04
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[vagão do metrô~Manual do Aplicativo]",
          "Privacy Policy" : "[vagão do metrô~Privacy Policy]",
          "Connection Settings" : "[vagão do metrô~Connection Settings]",
-         "v7.6.4:v7.6.4:0706231800H" : "[vagão do metrô~v7.6.4:v7.6.4:0706231800H]",
+         "v7.6.4:v7.6.4:0809231700H" : "[vagão do metrô~v7.6.4:v7.6.4:0809231700H]",
          "My Assigned Work" : "[vagão do metrô~My Assigned Work]",
          "Default List" : "[vagão do metrô~Default List]",
          "Records with Errors" : "[vagão do metrô~Records with Errors]",
@@ -144,6 +144,7 @@ define({
          "New Status" : "[vagão do metrô~New Status]",
          "Select from list" : "[vagão do metrô~Select from list]",
          "Motivo" : "[vagão do metrô~Motivo]",
+         "C\u00F3digo Motivo" : "[vagão do metrô~Código Motivo]",
          "Save" : "[vagão do metrô~Save]",
          "Equipes" : "[vagão do metrô~Equipes]",
          "Work Order Status" : "[vagão do metrô~Work Order Status]",
@@ -152,6 +153,7 @@ define({
          "Select Value" : "[vagão do metrô~Select Value]",
          "Selecionar Ticket" : "[vagão do metrô~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[vagão do metrô~Selecione a Classificação]",
+         "Selecione o motivo" : "[vagão do metrô~Selecione o motivo]",
          "Attachment Details" : "[vagão do metrô~Attachment Details]",
          "Name" : "[vagão do metrô~Name]",
          "Folder" : "[vagão do metrô~Folder]",

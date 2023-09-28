@@ -559,6 +559,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 					var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
                     var psconfigid = currentWorkOrder.get("ms_psconfigid");
+
      
 					//Validate if status date change is lesser than last WO status change date
 						if(currentWorkOrder.getAsDateOrNull('changestatusdate') > statusChange.getAsDateOrNull('changedate')){
@@ -708,6 +709,8 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					
 					 var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 					 var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
+					 var selectedRecord = CommonHandler._getAdditionalResource(eventContext,"pdwhy").getCurrentRecord();
+
 					 var workOrder = workOrderSet.getCurrentRecord();
 					 var newStatus=statusChange.get("status");
 					 var emergency = workOrder.get("ms_emergency");
@@ -738,11 +741,15 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								
 								
 								}  */
-								
-						
+						let currentClass;
+						let currentClassDesc;		
+						if (selectedRecord) {
+							selectedRecord.get('pd_whynum');
+							//selectedRecord.get('pd_description');
+						}
 						
 						var currMotivo = workOrder.get("motivo");                                         
-						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
+						if ((newStatus == "NAOREALIZADA" && currMotivo == null && !emergency)){
 							var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
 							fieldMetadata.set('required', true);                                                        
 						}else if(newStatus !== "NAOREALIZADA"){
@@ -751,6 +758,17 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 						}
 						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
 						   throw new PlatformRuntimeException("ms_invalidmsgnaorealizada");                    
+						} 
+
+						if (newStatus == "NAOREALIZADA" && currentClass == null && !emergency){
+							var fieldMetadata = selectedRecord.getRuntimeFieldMetadata("currentClass");
+							fieldMetadata.set('required', true);                                                        
+						}else if(newStatus !== "NAOREALIZADA"){
+								var fieldMetadata = selectedRecord.getRuntimeFieldMetadata("currentClass");
+								fieldMetadata.set('required', false);
+						}
+						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
+						   throw new PlatformRuntimeException("ms_invalidmsgnaorealizadaCod");                    
 						} 
 					
 					
@@ -834,6 +852,40 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 				});
 				
 			},
+			openPDWhy : function(eventContext) {
+				eventContext.application.showBusy();
+				this.topPage = false;
+				var filter="";
+				var woSet = eventContext.application.getResource('workOrder');
+				var wo = woSet.getCurrentRecord();
+				var selectedRecord = CommonHandler._getAdditionalResource(eventContext,"pdwhy").getCurrentRecord();
+				
+				if (selectedRecord) {
+					this.currentClass = selectedRecord.get('pd_whynum');
+					this.currentClassDesc = selectedRecord.get('pd_description');
+		
+					this.savePDWhy(eventContext);				
+					return;
+				}
+			},
+			savePDWhy: function(eventContext, skipDynamicCheck) {
+				eventContext.application.showBusy();
+				Logger.trace("Saving off the current reason");
+				var woSet = eventContext.application.getResource('workOrder');
+				var wo = woSet.getCurrentRecord();
+				let self = this;
+	
+		
+				wo.set('ms_inspwhy', this.currentClass);
+				wo.set('pdwhy_description', this.currentClassDesc);
+				WorkOrderObject.updateSpecifications(wo).then(function(){
+					self.commitWOStatusChange(eventContext, skipDynamicCheck);
+					//eventContext.ui.hideCurrentView(PlatformConstants.CLEANUP);
+				}).otherwise(function(e){
+					eventContext.application.hideBusy();
+				});
+			  this.inherited(arguments);	 			
+			},  
 			saveWOShowView : function(eventContext) {
 					var workOrder = eventContext.application.getResource('workOrder');
 					var deferred = new Deferred();
@@ -845,4 +897,6 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 				}
 
 			});
+
+			
 });

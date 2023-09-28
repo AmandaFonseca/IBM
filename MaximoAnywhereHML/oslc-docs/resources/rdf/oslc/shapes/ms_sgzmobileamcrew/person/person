@@ -9,15 +9,15 @@
     <oslc:property>
       <oslc:Property>
         <spi:pkIndex>1</spi:pkIndex>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#personid"/>
-        <oslc:maxSize>30</oslc:maxSize>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:defaultValue>&amp;AUTOKEY&amp;</oslc:defaultValue>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
         >Membro</dcterms:title>
-        <oslc:defaultValue>&amp;AUTOKEY&amp;</oslc:defaultValue>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <oslc:name>personid</oslc:name>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:maxSize>30</oslc:maxSize>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#personid"/>
       </oslc:Property>
     </oslc:property>
     <oslc:property>

@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-26 15:18:43
+// Build: 2023-09-28 18:38:03
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中国的~Manual do Aplicativo]",
          "Privacy Policy" : "[中国的~Privacy Policy]",
          "Connection Settings" : "[中国的~Connection Settings]",
-         "v7.6.4:v7.6.4:0706231800H" : "[中国的~v7.6.4:v7.6.4:0706231800H]",
+         "v7.6.4:v7.6.4:0809231700H" : "[中国的~v7.6.4:v7.6.4:0809231700H]",
          "My Assigned Work" : "[中国的~My Assigned Work]",
          "Default List" : "[中国的~Default List]",
          "Records with Errors" : "[中国的~Records with Errors]",
@@ -144,6 +144,7 @@ define({
          "New Status" : "[中国的~New Status]",
          "Select from list" : "[中国的~Select from list]",
          "Motivo" : "[中国的~Motivo]",
+         "C\u00F3digo Motivo" : "[中国的~Código Motivo]",
          "Save" : "[中国的~Save]",
          "Equipes" : "[中国的~Equipes]",
          "Work Order Status" : "[中国的~Work Order Status]",
@@ -152,6 +153,7 @@ define({
          "Select Value" : "[中国的~Select Value]",
          "Selecionar Ticket" : "[中国的~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[中国的~Selecione a Classificação]",
+         "Selecione o motivo" : "[中国的~Selecione o motivo]",
          "Attachment Details" : "[中国的~Attachment Details]",
          "Name" : "[中国的~Name]",
          "Folder" : "[中国的~Folder]",

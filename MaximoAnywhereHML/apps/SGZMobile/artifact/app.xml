@@ -1900,8 +1900,11 @@
 			
 			<container id="WorkExecution.EditStatusView_workOrder_container_01">
 				<group id="WorkExecution.EditStatusView_group_011">
-					<groupitem id="WorkExecution.EditStatusView_workOrder_groupitem_011">
+					<!--<groupitem id="WorkExecution.EditStatusView_workOrder_groupitem_011">
 						<textarea editable="true" id="WorkExecution.EditStatusView_statusChangeResource_groupitem_3_memo_motivo11" label="Motivo" resourceAttribute="motivo"/>
+					</groupitem>-->
+					<groupitem id="WorkExecution.reasonView.group.groupitem_1">
+						<text required="true" editable="false" id="WorkExecution.reasonView.group.groupitem.text_1" layoutInsertAt="item1" label="Motivo" resourceAttribute="motivo" lookup="WorkExecution.whylookup"/>
 					</groupitem>
 				</group>
 				<!--<eventHandlers id="WorkExecution.EditStatusView_Save_button_eventHandlers_hide_Reason">
@@ -1997,31 +2000,31 @@
 		<!-- LOOKUP SECTION -->
 		<!-- *********************** -->
 
-<lookup id="sgzMobile.amcrewLookup" label="Equipes" resource="msamcrew" filterClass="custom.handlers.WODetailExtensionHandler" filterMethod="selectTeamLookup">
-    <requiredResources id="sgzMobile.amcrewLookup_requiredResources">
-        <requiredResource id="sgzMobile.amcrewLookup_msamcrew" name="msamcrew"/>
-    </requiredResources>
+		<lookup id="sgzMobile.amcrewLookup" label="Equipes" resource="msamcrew" filterClass="custom.handlers.WODetailExtensionHandler" filterMethod="selectTeamLookup">
+			<requiredResources id="sgzMobile.amcrewLookup_requiredResources">
+				<requiredResource id="sgzMobile.amcrewLookup_msamcrew" name="msamcrew"/>
+			</requiredResources>
 
-    <list id="sgzMobile.amcrewLookup_list" resource="msamcrew">
-        <searchAttributes id="sgzMobile.amcrewLookup_list_searchAttributes">
-            <searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_amcrew" name="amcrew"/>
-            <searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_description" name="displayname"/>
-        </searchAttributes>
-        <listItemTemplate id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1" layout="Item1Desc1" >
-			<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_list">
-				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_list" method="setLocaleCrew"/>
+			<list id="sgzMobile.amcrewLookup_list" resource="msamcrew">
+				<searchAttributes id="sgzMobile.amcrewLookup_list_searchAttributes">
+					<searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_amcrew" name="amcrew"/>
+					<searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_description" name="displayname"/>
+				</searchAttributes>
+				<listItemTemplate id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1" layout="Item1Desc1" >
+					<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_list">
+						<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_list" method="setLocaleCrew"/>
+					</eventHandlers>
+					<listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_amcrew" layoutInsertAt="item1" resourceAttribute="amcrew"/>
+					<listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_description" layoutInsertAt="desc1" resourceAttribute="displayname"/>
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="sgzMobile.amcrewLookup_returnAttributes">
+				<returnAttribute id="sgzMobile.amcrewLookup_returnAttributes_amcrew_amcrew" sourceAttribute="amcrew" targetAttribute="amcrew"/>
+			</returnAttributes>
+			<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_hide_footer">
+				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_hide_footer" method="hideFooterLookup"/>
 			</eventHandlers>
-            <listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_amcrew" layoutInsertAt="item1" resourceAttribute="amcrew"/>
-            <listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_description" layoutInsertAt="desc1" resourceAttribute="displayname"/>
-        </listItemTemplate>
-    </list>
-    <returnAttributes id="sgzMobile.amcrewLookup_returnAttributes">
-        <returnAttribute id="sgzMobile.amcrewLookup_returnAttributes_amcrew_amcrew" sourceAttribute="amcrew" targetAttribute="amcrew"/>
-    </returnAttributes>
-	<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_hide_footer">
-		<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_hide_footer" method="hideFooterLookup"/>
-	</eventHandlers>
-</lookup>
+		</lookup>
 		
 		<lookup filterClass="custom.handlers.MSStatusChangeHandler" filterMethod="filterWOStatus" id="WorkExecution.statusLookup" label="Work Order Status" resource="domainwostatus">	
 			<requiredResources id="WorkExecution.statusLookup_requiredResources">
@@ -2194,8 +2197,22 @@
 			</returnAttributes>
 		</lookup>
 		
-		
-	
+		<lookup id="WorkExecution.whylookup" label="Selecione o motivo" resource="whylist">
+			<requiredResources id="WorkExecution.whylookup_requiredResources">
+				<requiredResource id="WorkExecution.whylookup.requiredResource.whylist" name="whylist"/>
+			</requiredResources>
+			<list id="WorkExecution.whylookup.list" resource="whylist">
+				<listItemTemplate id="WorkExecution.whylookup.listItemTemplate">
+					<listtext cssClass="bold textappearance-medium" id="WorkExecution.whylookup.listtext.description" resourceAttribute="description"/>
+				</listItemTemplate>
+			</list>
+			<returnAttributes id="WorkExecution.whylookup.returnAttributes">
+			
+				<returnAttribute id="WorkExecution.whylookup.returnAttributes.pd_whynum.ms_whynum" sourceAttribute="pd_whynum" targetAttribute="motivo"/>
+			</returnAttributes>
+		</lookup>		
+
+
 	</ui>
 
 	<!--DATA DEFINITION SECTION-->
@@ -2420,7 +2437,17 @@
 				</conditions> -->
 		</resource>
 		
-		
+
+		<resource describedBy="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_pdwhy" id="whylist" name="whylist" pageSize="50" providedBy="/oslc/sp/WorkManagement">
+			<attributes id="whylist_attributes">
+				<attribute describedByProperty="spi_wm:pd_whynum" id="whylist_pd_whynum_spipd_whynum" index="true" name="pd_whynum"/> 
+				<attribute describedByProperty="spi_wm:description" id="whylist_description_spidescription" index="true" name="description"/>
+			</attributes>
+			<queryBases id="whylist_queryBases">
+				<queryBase id="ms_oslcpdwhy_queryBase_getms_ms_oslcpdwhy" name="getms_oslcpdwhy" queryUri="/oslc/os/ms_oslcpdwhy"/>
+	 		</queryBases>
+	 		<whereClause clause="spi_wm:pd_active=1 and spi_wm:ms_objectname='WORKORDER' and spi_wm:pd_whytype='PRECANC'"  id="ms_oslcpdwhy_whereClause"/>
+		</resource>			
 
 		<!-- Recurso para linhas de categorias para fotos (Categorias)  -->
   

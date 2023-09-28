@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-08-26 15:18:45
+// Build: 2023-09-28 18:38:05
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[erÕsíteni~Manual do Aplicativo]",
          "Privacy Policy" : "[erÕsíteni~Privacy Policy]",
          "Connection Settings" : "[erÕsíteni~Connection Settings]",
-         "v7.6.4:v7.6.4:0706231800H" : "[erÕsíteni~v7.6.4:v7.6.4:0706231800H]",
+         "v7.6.4:v7.6.4:0809231700H" : "[erÕsíteni~v7.6.4:v7.6.4:0809231700H]",
          "My Assigned Work" : "[erÕsíteni~My Assigned Work]",
          "Default List" : "[erÕsíteni~Default List]",
          "Records with Errors" : "[erÕsíteni~Records with Errors]",
@@ -144,6 +144,7 @@ define({
          "New Status" : "[erÕsíteni~New Status]",
          "Select from list" : "[erÕsíteni~Select from list]",
          "Motivo" : "[erÕsíteni~Motivo]",
+         "C\u00F3digo Motivo" : "[erÕsíteni~Código Motivo]",
          "Save" : "[erÕsíteni~Save]",
          "Equipes" : "[erÕsíteni~Equipes]",
          "Work Order Status" : "[erÕsíteni~Work Order Status]",
@@ -152,6 +153,7 @@ define({
          "Select Value" : "[erÕsíteni~Select Value]",
          "Selecionar Ticket" : "[erÕsíteni~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[erÕsíteni~Selecione a Classificação]",
+         "Selecione o motivo" : "[erÕsíteni~Selecione o motivo]",
          "Attachment Details" : "[erÕsíteni~Attachment Details]",
          "Name" : "[erÕsíteni~Name]",
          "Folder" : "[erÕsíteni~Folder]",
