@@ -709,7 +709,6 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					
 					 var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 					 var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
-					 var selectedRecord = CommonHandler._getAdditionalResource(eventContext,"pdwhy").getCurrentRecord();
 
 					 var workOrder = workOrderSet.getCurrentRecord();
 					 var newStatus=statusChange.get("status");
@@ -741,12 +740,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								
 								
 								}  */
-						let currentClass;
-						let currentClassDesc;		
-						if (selectedRecord) {
-							selectedRecord.get('pd_whynum');
-							//selectedRecord.get('pd_description');
-						}
+
 						
 						var currMotivo = workOrder.get("motivo");                                         
 						if ((newStatus == "NAOREALIZADA" && currMotivo == null && !emergency)){
@@ -760,16 +754,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 						   throw new PlatformRuntimeException("ms_invalidmsgnaorealizada");                    
 						} 
 
-						if (newStatus == "NAOREALIZADA" && currentClass == null && !emergency){
-							var fieldMetadata = selectedRecord.getRuntimeFieldMetadata("currentClass");
-							fieldMetadata.set('required', true);                                                        
-						}else if(newStatus !== "NAOREALIZADA"){
-								var fieldMetadata = selectedRecord.getRuntimeFieldMetadata("currentClass");
-								fieldMetadata.set('required', false);
-						}
-						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
-						   throw new PlatformRuntimeException("ms_invalidmsgnaorealizadaCod");                    
-						} 
+
 					
 					
 					this.inherited(arguments);	
@@ -858,7 +843,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 				var filter="";
 				var woSet = eventContext.application.getResource('workOrder');
 				var wo = woSet.getCurrentRecord();
-				var selectedRecord = CommonHandler._getAdditionalResource(eventContext,"pdwhy").getCurrentRecord();
+				var selectedRecord = CommonHandler._getAdditionalResource(eventContext,"whylist").getCurrentRecord();
 				
 				if (selectedRecord) {
 					this.currentClass = selectedRecord.get('pd_whynum');
@@ -876,7 +861,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 				let self = this;
 	
 		
-				wo.set('ms_inspwhy', this.currentClass);
+				//wo.set('ms_inspwhy', this.currentClass);
 				wo.set('pdwhy_description', this.currentClassDesc);
 				WorkOrderObject.updateSpecifications(wo).then(function(){
 					self.commitWOStatusChange(eventContext, skipDynamicCheck);

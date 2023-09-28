@@ -1849,6 +1849,7 @@
 				</requiredResource>
 				<requiredResource id="WorkExecution.EditStatusView_statusChangeResource" name="statusChangeResource"/>
 				<requiredResource id="WorkExecution.EditStatusView_domainworktype" name="domainworktype"/>
+			    <requiredResource id="WorkExecution.PD_WhyView_ms_pdwhy" name="whylist"/>
 			</requiredResources>
 
 			<container id="WorkExecution.EditStatusView_workOrder_container_0" resource="workOrder">
@@ -1900,11 +1901,11 @@
 			
 			<container id="WorkExecution.EditStatusView_workOrder_container_01">
 				<group id="WorkExecution.EditStatusView_group_011">
-					<!--<groupitem id="WorkExecution.EditStatusView_workOrder_groupitem_011">
+					<groupitem id="WorkExecution.EditStatusView_workOrder_groupitem_011">
 						<textarea editable="true" id="WorkExecution.EditStatusView_statusChangeResource_groupitem_3_memo_motivo11" label="Motivo" resourceAttribute="motivo"/>
-					</groupitem>-->
+					</groupitem>
 					<groupitem id="WorkExecution.reasonView.group.groupitem_1">
-						<text required="true" editable="false" id="WorkExecution.reasonView.group.groupitem.text_1" layoutInsertAt="item1" label="Motivo" resourceAttribute="motivo" lookup="WorkExecution.whylookup"/>
+						<text required="true" editable="false" id="WorkExecution.reasonView.group.groupitem.text_1" layoutInsertAt="item1" label="Motivo" resourceAttribute="pd_whynum" lookup="WorkExecution.whylookup"/>
 					</groupitem>
 				</group>
 				<!--<eventHandlers id="WorkExecution.EditStatusView_Save_button_eventHandlers_hide_Reason">
@@ -2204,15 +2205,20 @@
 			<list id="WorkExecution.whylookup.list" resource="whylist">
 				<listItemTemplate id="WorkExecution.whylookup.listItemTemplate">
 					<listtext cssClass="bold textappearance-medium" id="WorkExecution.whylookup.listtext.description" resourceAttribute="description"/>
+					<eventHandlers id="WorkExecution.PD_WhyView_listItemTemplate_FailureReportList_eventHandlers">
+						<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="WorkExecution.PD_WhyView_listItemTemplate_FailureReportList_eventHandlers_click_openPDWhy" method="openPDWhy"/>
+					</eventHandlers> 
+				
 				</listItemTemplate>
 			</list>
 			<returnAttributes id="WorkExecution.whylookup.returnAttributes">
-			
-				<returnAttribute id="WorkExecution.whylookup.returnAttributes.pd_whynum.ms_whynum" sourceAttribute="pd_whynum" targetAttribute="motivo"/>
+				<returnAttribute id="WorkExecution.whylookup.returnAttributes.pd_whynum.ms_whynum" sourceAttribute="pd_whynum" targetAttribute="pd_whynum"/>
 			</returnAttributes>
 		</lookup>		
+	
 
 
+	
 	</ui>
 
 	<!--DATA DEFINITION SECTION-->
@@ -2279,6 +2285,7 @@
 				
 				<!-- SGZ Mobile attributes-->
 				<attribute describedByProperty="spi_wm:ms_reason" id="workOrder_spi_ms_reason" name="motivo"/>																			
+				<attribute describedByProperty="spi_wm:pd_whynum" id="workOrder_spi_ms_pd_whynum" name="pd_whynum"/>																			
 				<attribute describedByProperty="spi_wm:pd_obs" id="workOrder_spi_pd_obs" name="pd_obs"/>
 				<attribute describedByProperty="spi_wm:ms_aging" id="workOrder_spi_ms_aging" name="ms_aging"/>
 				<attribute describedByProperty="spi_wm:newchildclass" id="workOrder_spi_newchildclass" name="newchildclass"/>
@@ -2446,7 +2453,7 @@
 			<queryBases id="whylist_queryBases">
 				<queryBase id="ms_oslcpdwhy_queryBase_getms_ms_oslcpdwhy" name="getms_oslcpdwhy" queryUri="/oslc/os/ms_oslcpdwhy"/>
 	 		</queryBases>
-	 		<whereClause clause="spi_wm:pd_active=1 and spi_wm:ms_objectname='WORKORDER' and spi_wm:pd_whytype='PRECANC'"  id="ms_oslcpdwhy_whereClause"/>
+	 		<whereClause clause="spi_wm:pd_active=1 and spi_wm:ms_objectname='WORKORDER' and spi_wm:pd_whytype='NAOREALIZADA'"  id="ms_oslcpdwhy_whereClause"/>
 		</resource>			
 
 		<!-- Recurso para linhas de categorias para fotos (Categorias)  -->
