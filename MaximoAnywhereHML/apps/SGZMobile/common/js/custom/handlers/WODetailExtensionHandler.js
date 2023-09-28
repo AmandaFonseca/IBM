@@ -244,6 +244,7 @@ define(
 					readOnlySpec : function(eventContext) {
 						var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
 						var Spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
+						var wostatus = currentWorkOrder.get("status");
 						
 						let emergency;
 						if (currentWorkOrder.get('ms_emergency')) {
@@ -294,6 +295,8 @@ define(
 											var currWorkOrderSpec = Spec.getRecordAt(i);
 											var specID = currWorkOrderSpec.get('assetattrid');
 											var alnValue = currWorkOrderSpec.get('alnvalue');
+											var ms_qty = currWorkOrderSpec.get('ms_qty');
+											console.log(ms_qty);
 											
 											if (specID == 'CURA_CONC'){
 												var cura_conc = alnValue;
@@ -301,7 +304,11 @@ define(
 											if (specID == 'NEC_CONC'){
 											//Verifica se é concordancia asfáltica
 											var nec_conc = alnValue;
-										}
+										   }
+										   if (alnValue == 'Sim' && ms_qty == undefined){
+											eventContext.ui.showMessage(MessageService.createStaticMessage("Para inserir o valor 'Sim' necessário informar uma Quantidade de Hidrantes para essa medição.").getMessage());
+											validate = 0;  
+										   }
 									}
 									if (nec_conc == 'Sim' && (cura_conc == null || cura_conc == undefined  || cura_conc == "")){
 										 eventContext.ui.showMessage(MessageService.createStaticMessage("O campo 'Cura de concreto' precisa ser preenchido!").getMessage());

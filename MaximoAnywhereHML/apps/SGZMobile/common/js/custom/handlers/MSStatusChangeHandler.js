@@ -204,11 +204,10 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								const input = document.createElement("input");
 								
 								div01.setAttribute('class', 'WL_ leafControl');
-								div01.setAttribute('id', `awdaa91392_List_${label}_tbcontrol_Text`);
-								div01.setAttribute('widgetid', `awdaa91392_List_${label}_tbcontrol_Text`);
+								div01.setAttribute('id', `listname_${Spec.data[cont].assetattrid}`);
+								div01.setAttribute('widgetid', `listname_${Spec.data[cont].assetattrid}`);
 								input.setAttribute('type', 'number');
-								input.setAttribute('name', `awdaa91392_List_${label}tbcontrol_Text`);
-								input.setAttribute('class', 'mblTextBox WL_ editableText editableTextNoButton');
+								input.setAttribute('class', 'mblTextBox WL_ editableText editableTextNoButton input_ms_qty');
 								input.setAttribute('tabindex', cont);
 								input.setAttribute('placeholder', 'Dê um toque para inserir');
 								input.setAttribute('aria-label', 'Dê um toque para inserir');
@@ -226,14 +225,41 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								div01.appendChild(input);
 								element.lastElementChild.appendChild(div01);
 								element.lastElementChild.appendChild(div);
-								element.querySelector('.dijitContentPane').querySelector('.ms_qty').remove();
+								//element.querySelector('.dijitContentPane').querySelector('.ms_qty').remove();
 								
 							}
 							cont ++;
-							console.log(label);
-							console.log(resp);
+
 						});
 					}
+                    let inputs = document.querySelectorAll('.input_ms_qty');
+					inputs.forEach(element => {
+						element.addEventListener("blur", function() { 
+							let classification = Spec.data[0].get('classstructureid');
+							let resposta = element.parentElement.parentElement.querySelector('input').value;
+							let id_parent = element.parentElement.getAttribute('id');
+							id_parent = id_parent.split('listname_')[1];
+							let valor = element.value;
+
+							if(classification =='1292' && resposta == 'Sim' ){
+								for (prop in Spec.data) {
+									let assetattrid = Spec.data[prop].get('assetattrid')
+									if(assetattrid.includes(id_parent)){
+										valor = Number(valor);
+										Spec.data[prop].set('ms_qty', valor);
+										ModelService.save(workOrderSet).then(function() {					
+											//eventContext.ui.hideCurrentView();
+											console.log(Spec);
+										}).otherwise(function(err){
+											eventContext.ui.showMessage(err);						
+										}); 
+									}
+									
+								}
+							}
+
+						});
+				   });
 				},
 
 				ReadOnlyWODetailsView : function(eventContext) {
