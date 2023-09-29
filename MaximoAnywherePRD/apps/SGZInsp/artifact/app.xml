@@ -167,7 +167,7 @@
 				<!--<eventHandler class="application.handlers.MetersListHandler" event="initialize" id="WorkExecution.WorkDetailView_eventHandlers_initialize_initializeMeters" method="initializeMeters"/>-->
 				<eventHandler class="application.handlers.ClassificationFormHandler" event="show" id="WorkExecution.WorkDetailView_eventHandlers_show_showWOSpecSorted" method="showWOSpecSorted"/>
 				<!--<eventHandler class="platform.handlers.WorkOfflineHandler" event="render" id="WorkExecution.WorkItemsView_SynchronizeData_action_eventHandlers_click_sync_details" method="sync"/>-->
-				<eventHandler class="application.handlers.StatusChangeHandler" event="initialize" id="dec_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusViewx" method="initEditStatusView"/>
+				<eventHandler class="application.handlers.StatusChangeHandler" event="initialize" id="_xWorkExecution.EditStatusView_eventHandlers_initialize_initEditStatusVie__" method="initEditStatusView"/>
 			</eventHandlers>
 
 			<container id="WorkExecution.WorkDetailView_workOrder_container_0" resource="workOrder">
@@ -314,9 +314,9 @@
 			<actions id="WorkExecution.AttachmentsView_actions">
 				<action id="WorkExecution.AttachmentsView_TakePhoto_action" image="/images/header_camera_off.svg" label="Take Photo">
 					<eventHandlers id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers">
-						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
-						<eventHandler class="application.handlers.WOAttachmentHandler" event="render" id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
-					</eventHandlers>
+								<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
+								<eventHandler class="application.handlers.WOAttachmentHandler" event="render" id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
+							</eventHandlers>
 				</action>
 				 <action id="WorkExecution.AttachmentsView_PickfromGallery_action" image="header_add_OFF.svg" label="Pick from Gallery">
 					<eventHandlers id="WorkExecution.AttachmentsView_PickfromGallery_action_eventHandlers">
