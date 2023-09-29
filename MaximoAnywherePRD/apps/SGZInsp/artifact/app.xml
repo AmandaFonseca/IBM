@@ -38,7 +38,7 @@
 				</query>
 			</queries>
 			<requiredResources id="WorkExecution.WorkItemsView_requiredResources">
-				<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder">
+				<requiredResource id="WorkExecution.WorkItemsView_workOrder" name="workOrder" reload="true">
 					<requiredAttribute id="WorkExecution.WorkItemsView_attribute1" name="tasklist"/>
 				</requiredResource>
 				<requiredResource id="WorkExecution.WorkItemsView_oslcmaxvars" name="oslcmaxvars"/>
@@ -314,13 +314,14 @@
 			<actions id="WorkExecution.AttachmentsView_actions">
 				<action id="WorkExecution.AttachmentsView_TakePhoto_action" image="/images/header_camera_off.svg" label="Take Photo">
 					<eventHandlers id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers">
-								<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
-								<eventHandler class="application.handlers.WOAttachmentHandler" event="render" id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
-							</eventHandlers>
+						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers_click_launchCameraForPhoto" method="launchCameraForPhoto"/>
+						<eventHandler class="application.handlers.WOAttachmentHandler" event="render" id="WorkExecution.AttachmentsView_TakePhoto_action_eventHandlers_render_initCategory" method="initCategory"/>
+					</eventHandlers>
 				</action>
 				 <action id="WorkExecution.AttachmentsView_PickfromGallery_action" image="header_add_OFF.svg" label="Pick from Gallery">
 					<eventHandlers id="WorkExecution.AttachmentsView_PickfromGallery_action_eventHandlers">
 						<eventHandler class="platform.handlers.AttachmentHandler" event="click" id="WorkExecution.AttachmentsView_PickfromGallery_action_eventHandlers_click_launchGallery" method="launchGallery"/>
+						<eventHandler class="application.handlers.StatusChangeHandler" event="render" id="WorkExecution.Reinspecview_initialize_initEditStatusViewx0x" method="initEditStatusView"/>
 					</eventHandlers>
 				</action>
 			</actions>

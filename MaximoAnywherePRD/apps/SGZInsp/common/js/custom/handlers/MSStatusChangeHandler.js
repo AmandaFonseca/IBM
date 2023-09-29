@@ -1228,17 +1228,24 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		if (typeof attachmentssize == 'string') {
 		  attachmentssize = parseInt(attachmentssize);
 		}      
+
+		if (attachments.data.length > 0) {
+			statusChangeResource.set("attachmentssizetoday", attachments.data.length);
+		}
 		let msg = "É necessário adicionar ao menos 2 fotos para continuar.";
 
 		if (statusChangeResource.get("attachmentssizetoday") < 2 ) {
 			throw new PlatformRuntimeException(msg);
 		}
+    
+
 		if (questao3 == null || questao3 == "" || questao3 == "Sim") {
 		  statusChange.set("pd_inspquestion01", "Sim");
 		  statusChange.set("pd_inspquestion02", "Sim");
 		  statusChangeResource.set("status", "PLANEJAR");
 		  statusChange.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
 		  statusChange.set("pd_inspector", myUser); 
+		  self.application.showBusy();
 		  self.commitWOStatusChange(eventContext);
 		} else {
 		  statusChange.set("pd_inspquestion01", "Sim");
@@ -1246,6 +1253,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  statusChangeResource.set("status", "PREPLAN");
 		  statusChange.setDateValue("pd_inspdate",this.application.getCurrentDateTime());
 		  statusChange.set("pd_inspector", myUser);
+		  self.application.showBusy();
 		  self.commitWOStatusChange(eventContext);
 		}
   
