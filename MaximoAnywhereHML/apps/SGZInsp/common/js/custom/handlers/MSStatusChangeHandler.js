@@ -1234,9 +1234,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		}
 		let msg = "É necessário adicionar ao menos 2 fotos para continuar.";
 
-		if (statusChangeResource.get("attachmentssizetoday") < 2 ) {
-			throw new PlatformRuntimeException(msg);
-		}
+
     
 		var workorder = eventContext.getResource().getCurrentRecord();
 		var attachments_crecord02;
@@ -1246,7 +1244,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			}else{
 				attachments_crecord02 = 0;
 			}
-			if (attachments_crecord02.length < 2 ) {
+			if (attachments_crecord02.length < 2 && statusChangeResource.get("attachmentssizetoday") ) {
 				throw new PlatformRuntimeException(msg);
 			}
 		} catch (error) {
