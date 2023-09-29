@@ -1238,6 +1238,20 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			throw new PlatformRuntimeException(msg);
 		}
     
+		var workorder = eventContext.getResource().getCurrentRecord();
+		var attachments_crecord02;
+		try {
+			if (workorder.get('attachments')) {
+				attachments_crecord02 = workorder.get('attachments');
+			}else{
+				attachments_crecord02 = 0;
+			}
+			if (attachments_crecord02.length < 2 ) {
+				throw new PlatformRuntimeException(msg);
+			}
+		} catch (error) {
+			console.log(error);
+		}
 
 		if (questao3 == null || questao3 == "" || questao3 == "Sim") {
 		  statusChange.set("pd_inspquestion01", "Sim");
