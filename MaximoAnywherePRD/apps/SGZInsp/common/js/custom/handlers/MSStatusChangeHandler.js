@@ -391,14 +391,28 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			var ms_inspdate04 = workOrderCurrent.get("ms_inspdate04");
 			var ms_inspquestion04 = workOrderCurrent.get("ms_inspquestion04");
 			var ms_inspector04 = workOrderCurrent.get("ms_inspector04");
-			
+            let msg = "É necessário adicionar ao menos 2 fotos para continuar.";
+
+			try {
+				if (statusChange.get('attachmentssizetoday') < 2 ) {
+					self.application.showMessage(msg);	
+					return false;
+				}
+				if (statusChange.get('attachments') < 2 ){
+					self.application.showMessage(msg);
+					return false;
+				 }	
+			} catch (error) {
+				console.log(error);
+			}
+				
 			var typeInsp;
 			if (workOrderCurrent.get("ms_insptype") == null || workOrderCurrent.get("ms_insptype") == ""|| workOrderCurrent.get("ms_insptype") == undefined) {
 				typeInsp = workOrderCurrent.get("ms_insptype");
 			}else{
 				typeInsp = workOrderCurrent.get("ms_insptype");
 			}
-	
+
 			if (typeInsp == "1") {
 				Logger.error("Eh uma confirmação de existencia");
 				if(newStatus == "PLANEJAR"){
@@ -1024,19 +1038,23 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 	  showHideQuestionsView: function (eventContext) {
 		var workorder = eventContext.getResource().getCurrentRecord();
 		var statusdate = workorder.get("changestatusdate");
-		//var attachments_crecord = CommonHandler._getAdditionalResource(eventContext,"attachments");
+	    var attachments_crecord01 = CommonHandler._getAdditionalResource(eventContext,"attachments");
 		var attachments_crecord;
+		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
+		statusChangeResource.set('attachmentssizetoday', null);
 		try {
 			if (workorder.get('attachments')) {
 			   attachments_crecord = workorder.get('attachments');
 			}else{
-				attachments_crecord = null;
+				if (attachments_crecord01.data.length > 0) {
+					attachments_crecord = attachments_crecord01;
+				}else{
+					attachments_crecord = null;
+				}
 			}
 		} catch (error) {
 			console.log(error);
 		}
-		let statusChangeResource = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
-		statusChangeResource.set('attachmentssizetoday', null);
 		//attachments_crecord.filter("creationDate > $1", statusdate);
 		let attachmentssize = workorder.get("attachmentssize");
 		var ms_insptype = workorder.get("ms_insptype");
@@ -1069,6 +1087,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		var newdate  = dia + '/' + mes + '/' + ano;            
 		var partesData = newdate.split("/");
 		var data_newdate = new Date(partesData[2], partesData[1] - 1, partesData[0]);
+		let aux = [];
   
 		let type= typeof attachments_crecord;
 		if (type == 'object') {
@@ -1108,6 +1127,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			  if(data_newdatedatePhoto >= data_newdate && data_newdatedatePhoto >= data_newdateStatus && user == myUser){
 				  attachmentssizetoday ++;
 				  statusChangeResource.set('attachmentssizetoday',attachmentssizetoday);
+				  aux.push(attachments_crecord.data[key]);
 			
 			}
   
@@ -1117,9 +1137,9 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  }        
 		}
   
-	  //alert(attachmentssizetoday);
-		
-  
+        statusChangeResource.set('attachments',aux);
+		 console.log(aux); 
+		    
 		if ((attachmentssizetoday < 2 && ms_insptype == "1" && status == "AGINSP" )){
 		  eventContext.setDisplay(false);
 		  eventContext.setVisibility(false);

@@ -1494,6 +1494,7 @@
 			<requiredResources id="xWorkExecution.EditStatusView_requiredResources">
 				<requiredResource id="xWorkExecution.EditStatusView_workOrder" name="workOrder">
 					<requiredAttribute id="xWorkExecution.EditStatusView_workOrder_tasklist" name="tasklist"/>
+					<requiredAttribute id="WorkExecution.WorkDetailView_workOrder_attachments_" name="attachments" reload="true"/>
 				</requiredResource>
 				<requiredResource id="WorkExecution.PD_WhyView_ms_pdwhy_0" name="pdwhy"/>
 				<requiredResource id="xWorkExecution.EditStatusView_statusChangeResource" name="statusChangeResource"/>
