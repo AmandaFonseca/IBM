@@ -363,9 +363,9 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		_saveStatusChange: function(workOrderOrTask){
 			var statusChange = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 			var previousValueSet = {
-					status: workOrderOrTask.get('status'),
-					statusDate: workOrderOrTask.getAsDateOrNull('statusDate'),
-					memo: workOrderOrTask.get('memo')
+				status: workOrderOrTask.get('status'),
+				statusDate: workOrderOrTask.getAsDateOrNull('statusDate'),
+				memo: workOrderOrTask.get('memo')
 			};
 			var newStatus=statusChange.get("status");
 			var memo = statusChange.get("memo");
@@ -401,7 +401,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 				if (statusChange.get('attachments') < 2 ){
 					self.application.showMessage(msg);
 					return false;
-				 }	
+				}	
 			} catch (error) {
 				console.log(error);
 			}
@@ -412,7 +412,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			}else{
 				typeInsp = workOrderCurrent.get("ms_insptype");
 			}
-
+            let aux;
 			if (typeInsp == "1") {
 				Logger.error("Eh uma confirmação de existencia");
 				if(newStatus == "PLANEJAR"){
@@ -420,10 +420,16 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 					&& (pd_inspdate != null) && (pd_inspector !=null) && (pd_inspdate != "")){
 						self.application.showBusy();
 						if (taskId){ //If the parameter is a Task
-							WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+							aux = WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+						    if(!aux){
+							 throw new PlatformRuntimeException(msg);  
+						   }
 						} else {
 							taskSet = CommonHandler._getAdditionalResource(this,"workOrder.tasklist");
-							WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+							aux = WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+						   if(!aux){
+							 throw new PlatformRuntimeException(msg);  
+						   }
 						}				
 						var EsigHandler = this.application["platform.handlers.EsigHandler"];
 						var woORtask = workOrderOrTask.getOwner();
@@ -431,6 +437,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 							workOrderOrTask.markAsModified('status');
 							EsigHandler.plugCancelCallback(this, this._statusChangeRollback, [workOrderOrTask, taskSet, previousValueSet]);
 						}
+						console.log(aux)
 						ModelService.save(recordSet).then(function(woSet){
 							self.application.showBusy();
 							var wo = woSet.getCurrentRecord();
@@ -450,10 +457,16 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 					&& (ms_inspquestion04  != "" ) && (ms_inspector04 != "")){
 						self.application.showBusy();
 						if (taskId){ //If the parameter is a Task
-							WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+							aux = WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+							if(!aux){
+								throw new PlatformRuntimeException(msg);  
+							}
 						} else {
 							taskSet = CommonHandler._getAdditionalResource(this,"workOrder.tasklist");
-							WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+							aux = WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+							if(!aux){
+								throw new PlatformRuntimeException(msg);  
+						    }
 						}				
 						var EsigHandler = this.application["platform.handlers.EsigHandler"];
 						var woORtask = workOrderOrTask.getOwner();

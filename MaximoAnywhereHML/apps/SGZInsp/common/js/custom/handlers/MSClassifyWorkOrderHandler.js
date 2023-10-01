@@ -540,9 +540,9 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 	_saveStatusChange: function(workOrderOrTask){
 		var statusChange = CommonHandler._getAdditionalResource(this,"statusChangeResource").getCurrentRecord();
 		var previousValueSet = {
-				status: workOrderOrTask.get('status'),
-				statusDate: workOrderOrTask.getAsDateOrNull('statusDate'),
-				memo: workOrderOrTask.get('memo')
+			status: workOrderOrTask.get('status'),
+			statusDate: workOrderOrTask.getAsDateOrNull('statusDate'),
+			memo: workOrderOrTask.get('memo')
 		};
 		var newStatus=statusChange.get("status");
 		var memo = statusChange.get("memo");
@@ -568,6 +568,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		var ms_inspdate04 = workOrderCurrent.get("ms_inspdate04");
 		var ms_inspquestion04 = workOrderCurrent.get("ms_inspquestion04");
 		var ms_inspector04 = workOrderCurrent.get("ms_inspector04");
+		let msg = "É necessário adicionar ao menos 2 fotos para continuar.";
 
 		var typeInsp;
 		var deferred = new Deferred();
@@ -576,6 +577,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		}else{
 			typeInsp = workOrderCurrent.get("ms_insptype");
 		}
+		let aux;
 		if (typeInsp == "1") {
 			Logger.error("Eh uma confirmação de existencia");
 			if(newStatus == "PRECANC"){
@@ -583,10 +585,16 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 				if ((pd_inspquestion01 == "Não") && (pd_inspquestion02 == null) && (pd_inspquestion03 == null) &&(ms_inspwhy !=null)
 				&& (pd_inspdate != null) && (pd_inspector !=null)  && (pd_inspdate != "")){
 					if (taskId){ //If the parameter is a Task
-						WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+						aux = WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+						if(!aux){
+							throw new PlatformRuntimeException(msg);  
+						}
 					} else {
 						taskSet = CommonHandler._getAdditionalResource(this,"workOrder.tasklist");
-						WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+						aux = WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+						if(!aux){
+							throw new PlatformRuntimeException(msg);  
+						}
 					}			
 					var EsigHandler = this.application["platform.handlers.EsigHandler"];
 					var woORtask = workOrderOrTask.getOwner();
@@ -614,10 +622,16 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 				&& (pd_inspdate != null) && (pd_inspector !=null)  && (pd_inspdate != "")){
 					self.application.showBusy();
 					if (taskId){ //If the parameter is a Task
-						WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+						aux = WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+						if(!aux){
+							throw new PlatformRuntimeException(msg);  
+						}
 					} else {
 						taskSet = CommonHandler._getAdditionalResource(this,"workOrder.tasklist");
-						WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+						aux = WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+						if(!aux){
+							throw new PlatformRuntimeException(msg);  
+						}
 					}			
 					var EsigHandler = this.application["platform.handlers.EsigHandler"];
 					var woORtask = workOrderOrTask.getOwner();
@@ -646,10 +660,16 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 				&& (ms_inspquestion04  != "" ) && (ms_inspector04 != "")){
 					self.application.showBusy();
 					if (taskId){ //If the parameter is a Task
-						WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+						aux = WorkOrderObject.taskChangeStatus(workOrderOrTask, newStatus, statusDate, memo);
+						if(!aux){
+							throw new PlatformRuntimeException(msg);  
+						}
 					} else {
 						taskSet = CommonHandler._getAdditionalResource(this,"workOrder.tasklist");
-						WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+						aux = WorkOrderObject.changeStatus(workOrderOrTask, newStatus, statusDate, memo, taskSet);
+						if(!aux){
+							throw new PlatformRuntimeException(msg);  
+						}
 					}				
 					var EsigHandler = this.application["platform.handlers.EsigHandler"];
 					var woORtask = workOrderOrTask.getOwner();
