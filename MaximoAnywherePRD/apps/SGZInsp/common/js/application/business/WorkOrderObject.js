@@ -208,6 +208,8 @@ define("application/business/WorkOrderObject",
 			Logger.trace("[WorkOrderObject] changeStatus ");
 			var currentStatus = workOrder.get("status");
 			var myUser = UserManager.getCurrentUser();
+		let self = this;
+		if (workOrder.get('attachments') != null) {
 			if(WorkOrderStatusHandler.getInstance().canPerformTransition(currentStatus, newStatus)){
 				workOrder.openPriorityChangeTransaction();
 				workOrder.set("status", newStatus);
@@ -225,6 +227,11 @@ define("application/business/WorkOrderObject",
 			else{			
 				Logger.trace("[WorkOrderObject] changeStatus status can not be changed");
 				throw new PlatformRuntimeException('invalidstatustransition',[currentStatus, newStatus]);
+				    return false;
+				}
+				return true;
+			}else{
+				return false;
 			}
 			Logger.trace("[WorkOrderObject] changeStatus status changed");
 		},
@@ -242,29 +249,36 @@ define("application/business/WorkOrderObject",
 				}
 			});
 		},
-		
+
 		taskChangeStatus: function(task, newStatus, statusDate, memo, esig){
 			Logger.trace("[WorkOrderObject] taskChangeStatus");
 			var taskId = task.get("taskid");
 			var currentStatus = task.get("status");
+			let self = this;
 
-			if(WorkOrderStatusHandler.getInstance().canPerformTransition(currentStatus, newStatus)){
-				if (task.getParent() && !esig) {
-					task.getParent().openPriorityChangeTransaction();
+			if (workOrder.get('attachments') != null) {
+				if(WorkOrderStatusHandler.getInstance().canPerformTransition(currentStatus, newStatus)){
+					if (task.getParent() && !esig) {
+						task.getParent().openPriorityChangeTransaction();
+					}
+					task.set('offlinestatus', newStatus);
+					task.set("status", newStatus);
+					task.setDateValue("statusDate", statusDate);
+					task.setDateValue("changestatusdate", statusDate);
+					task.set("memo", memo);				
+					if (task.getParent() && !esig) {
+						task.getParent().closePriorityChangeTransaction();
+					   return true;
+					}
 				}
-				task.set('offlinestatus', newStatus);
-				task.set("status", newStatus);
-				task.setDateValue("statusDate", statusDate);
-				task.setDateValue("changestatusdate", statusDate);
-				task.set("memo", memo);				
-				if (task.getParent() && !esig) {
-					task.getParent().closePriorityChangeTransaction();
+				else{		
+					Logger.trace("[WorkOrderObject] taskChangeStatus status can not be changed");
+					 throw new PlatformRuntimeException('invalidstatustransition',[currentStatus, newStatus]);
+				     return false;
 				}
-			}
-			else{		
-				Logger.trace("[WorkOrderObject] taskChangeStatus status can not be changed");
-				 throw new PlatformRuntimeException('invalidstatustransition',[currentStatus, newStatus]);
-			}
+			}else{
+				return false;
+			}	
 			Logger.trace("[WorkOrderObject] taskChangeStatus status changed");
 		},
 
