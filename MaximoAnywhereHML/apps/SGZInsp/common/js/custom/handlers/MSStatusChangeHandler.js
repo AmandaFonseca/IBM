@@ -1299,8 +1299,6 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			statusChangeResource.set("attachmentssizetoday", attachments.data.length);
 		}
 		let msg = "É necessário adicionar ao menos 2 fotos para continuar.";
-
-
     
 		var workorder = eventContext.getResource().getCurrentRecord();
 		var attachments_crecord02;
@@ -1379,6 +1377,7 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 		  statusChangeWO.set("status", "PLANEJAR");
 		  statusChange.setDateValue("ms_inspdate04",this.application.getCurrentDateTime());
 		  statusChange.set("ms_inspector04", myUser);
+		  self.application.showBusy();
 		  self.commitWOStatusChange(eventContext);
 		//}
   
@@ -1437,6 +1436,14 @@ function(declare, ModelService, array, ApplicationHandlerBase, WorkOrderObject, 
 			}
 
 		},
+		showBusyFunction: function(eventContext){
+			let self = this;
+			self.application.showBusy();
+		},
+		hideBusyFunction: function(eventContext){
+			let self = this;
+			self.application.hideBusy();
+		}
 
 
 	});

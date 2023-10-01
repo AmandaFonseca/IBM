@@ -214,6 +214,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 			wo.set("pd_inspector", myUser);
 			self.preplan(eventContext);
 			WorkOrderObject.updateSpecifications(wo).then(function(){
+				self.application.showBusy();
 				self.commitWOStatusChange(eventContext);
 				//eventContext.ui.hideCurrentView(PlatformConstants.CLEANUP);
 			}).otherwise(function(e){
@@ -1096,6 +1097,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		wo.setDateValue("pd_inspdate", this.application.getCurrentDateTime());
 		wo.set("pd_inspector", myUser);
 		WorkOrderObject.updateSpecifications(wo).then(function(){
+			self.application.showBusy();
 			self.commitWOStatusChange(eventContext, skipDynamicCheck);
 			//eventContext.ui.hideCurrentView(PlatformConstants.CLEANUP);
 		}).otherwise(function(e){
@@ -1162,6 +1164,7 @@ function(arrayUtil, declare, Deferred, all, Logger, ModelService, CommonHandler,
 		var myUser = UserManager.getCurrentUser();
 		wo.set("ms_inspector04", myUser);
 		WorkOrderObject.updateSpecifications(wo).then(function(){
+			self.application.showBusy();
 			self.commitWOStatusChange(eventContext);				
 			//eventContext.ui.hideCurrentView(PlatformConstants.CLEANUP);
 		}).otherwise(function(e){
