@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 12:01:50
+// Build: 2023-10-06 17:56:26
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[erÕsíteni~Error retrieving the user name from the device]",
          "System Data Download Error" : "[erÕsíteni~System Data Download Error]",
          "Error downloading System Data" : "[erÕsíteni~Error downloading System Data]",
-         "Username" : "[erÕsíteni~Username]",
-         "Password" : "[erÕsíteni~Password]",
-         "Esqueceu a Senha?" : "[erÕsíteni~Esqueceu a Senha?]",
-         "Sign In" : "[erÕsíteni~Sign In]",
-         "Manual do Aplicativo" : "[erÕsíteni~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[erÕsíteni~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[erÕsíteni~Instaladores]",
          "Privacy Policy" : "[erÕsíteni~Privacy Policy]",
-         "Connection Settings" : "[erÕsíteni~Connection Settings]",
-         "v7.6.4:2305231200H" : "[erÕsíteni~v7.6.4:2305231200H]",
          "Lista Padr\u00E3o" : "[erÕsíteni~Lista Padrão]",
          "Synchronize Data" : "[erÕsíteni~Synchronize Data]",
          "Generate new Service Order" : "[erÕsíteni~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[erÕsíteni~Electronic Signature Authentication]",
          "User Name" : "[erÕsíteni~User Name]",
          "User name" : "[erÕsíteni~User name]",
+         "Password" : "[erÕsíteni~Password]",
          "Reason for Change" : "[erÕsíteni~Reason for Change]",
          "Capture Real Signature" : "[erÕsíteni~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[erÕsíteni~Service Request]",

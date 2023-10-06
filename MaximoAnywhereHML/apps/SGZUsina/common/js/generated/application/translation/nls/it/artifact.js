@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 12:01:49
+// Build: 2023-10-06 17:56:25
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[quantitó~Error retrieving the user name from the device]",
          "System Data Download Error" : "[quantitó~System Data Download Error]",
          "Error downloading System Data" : "[quantitó~Error downloading System Data]",
-         "Username" : "[quantitó~Username]",
-         "Password" : "[quantitó~Password]",
-         "Esqueceu a Senha?" : "[quantitó~Esqueceu a Senha?]",
-         "Sign In" : "[quantitó~Sign In]",
-         "Manual do Aplicativo" : "[quantitó~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[quantitó~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[quantitó~Instaladores]",
          "Privacy Policy" : "[quantitó~Privacy Policy]",
-         "Connection Settings" : "[quantitó~Connection Settings]",
-         "v7.6.4:2305231200H" : "[quantitó~v7.6.4:2305231200H]",
          "Lista Padr\u00E3o" : "[quantitó~Lista Padrão]",
          "Synchronize Data" : "[quantitó~Synchronize Data]",
          "Generate new Service Order" : "[quantitó~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[quantitó~Electronic Signature Authentication]",
          "User Name" : "[quantitó~User Name]",
          "User name" : "[quantitó~User name]",
+         "Password" : "[quantitó~Password]",
          "Reason for Change" : "[quantitó~Reason for Change]",
          "Capture Real Signature" : "[quantitó~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[quantitó~Service Request]",

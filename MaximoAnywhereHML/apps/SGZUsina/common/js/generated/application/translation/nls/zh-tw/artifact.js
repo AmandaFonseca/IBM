@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 12:01:48
+// Build: 2023-10-06 17:56:24
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[中國的~Error retrieving the user name from the device]",
          "System Data Download Error" : "[中國的~System Data Download Error]",
          "Error downloading System Data" : "[中國的~Error downloading System Data]",
-         "Username" : "[中國的~Username]",
-         "Password" : "[中國的~Password]",
-         "Esqueceu a Senha?" : "[中國的~Esqueceu a Senha?]",
-         "Sign In" : "[中國的~Sign In]",
-         "Manual do Aplicativo" : "[中國的~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[中國的~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[中國的~Instaladores]",
          "Privacy Policy" : "[中國的~Privacy Policy]",
-         "Connection Settings" : "[中國的~Connection Settings]",
-         "v7.6.4:2305231200H" : "[中國的~v7.6.4:2305231200H]",
          "Lista Padr\u00E3o" : "[中國的~Lista Padrão]",
          "Synchronize Data" : "[中國的~Synchronize Data]",
          "Generate new Service Order" : "[中國的~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[中國的~Electronic Signature Authentication]",
          "User Name" : "[中國的~User Name]",
          "User name" : "[中國的~User name]",
+         "Password" : "[中國的~Password]",
          "Reason for Change" : "[中國的~Reason for Change]",
          "Capture Real Signature" : "[中國的~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[中國的~Service Request]",

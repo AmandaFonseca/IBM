@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 12:01:48
+// Build: 2023-10-06 17:56:24
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[françaisé~Error retrieving the user name from the device]",
          "System Data Download Error" : "[françaisé~System Data Download Error]",
          "Error downloading System Data" : "[françaisé~Error downloading System Data]",
-         "Username" : "[françaisé~Username]",
-         "Password" : "[françaisé~Password]",
-         "Esqueceu a Senha?" : "[françaisé~Esqueceu a Senha?]",
-         "Sign In" : "[françaisé~Sign In]",
-         "Manual do Aplicativo" : "[françaisé~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[françaisé~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[françaisé~Instaladores]",
          "Privacy Policy" : "[françaisé~Privacy Policy]",
-         "Connection Settings" : "[françaisé~Connection Settings]",
-         "v7.6.4:2305231200H" : "[françaisé~v7.6.4:2305231200H]",
          "Lista Padr\u00E3o" : "[françaisé~Lista Padrão]",
          "Synchronize Data" : "[françaisé~Synchronize Data]",
          "Generate new Service Order" : "[françaisé~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[françaisé~Electronic Signature Authentication]",
          "User Name" : "[françaisé~User Name]",
          "User name" : "[françaisé~User name]",
+         "Password" : "[françaisé~Password]",
          "Reason for Change" : "[françaisé~Reason for Change]",
          "Capture Real Signature" : "[françaisé~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[françaisé~Service Request]",

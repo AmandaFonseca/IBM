@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 12:01:45
+// Build: 2023-10-06 17:56:21
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/small/Item1Button2list", 
       [

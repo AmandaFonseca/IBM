@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-12 23:28:47
+// Build: 2023-10-06 18:00:15
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[島の第~Error retrieving the user name from the device]",
          "System Data Download Error" : "[島の第~System Data Download Error]",
          "Error downloading System Data" : "[島の第~Error downloading System Data]",
-         "Username" : "[島の第~Username]",
-         "Password" : "[島の第~Password]",
-         "Esqueceu a Senha?" : "[島の第~Esqueceu a Senha?]",
-         "Sign In" : "[島の第~Sign In]",
-         "Manual do Aplicativo" : "[島の第~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[島の第~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[島の第~Instaladores]",
          "Privacy Policy" : "[島の第~Privacy Policy]",
-         "Connection Settings" : "[島の第~Connection Settings]",
-         "v7.6.4:1109231700H" : "[島の第~v7.6.4:1109231700H]",
          "My Assigned Work" : "[島の第~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[島の第~Inspeções Pendentes]",
          "Records with Errors" : "[島の第~Records with Errors]",
@@ -293,6 +288,7 @@ define({
          "Electronic Signature Authentication" : "[島の第~Electronic Signature Authentication]",
          "User Name" : "[島の第~User Name]",
          "User name" : "[島の第~User name]",
+         "Password" : "[島の第~Password]",
          "Reason for Change" : "[島の第~Reason for Change]",
          "Capture Real Signature" : "[島の第~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[島の第~Work Order]",

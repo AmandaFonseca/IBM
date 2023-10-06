@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 12:01:49
+// Build: 2023-10-06 17:56:25
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[gæst faldt~Error retrieving the user name from the device]",
          "System Data Download Error" : "[gæst faldt~System Data Download Error]",
          "Error downloading System Data" : "[gæst faldt~Error downloading System Data]",
-         "Username" : "[gæst faldt~Username]",
-         "Password" : "[gæst faldt~Password]",
-         "Esqueceu a Senha?" : "[gæst faldt~Esqueceu a Senha?]",
-         "Sign In" : "[gæst faldt~Sign In]",
-         "Manual do Aplicativo" : "[gæst faldt~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[gæst faldt~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[gæst faldt~Instaladores]",
          "Privacy Policy" : "[gæst faldt~Privacy Policy]",
-         "Connection Settings" : "[gæst faldt~Connection Settings]",
-         "v7.6.4:2305231200H" : "[gæst faldt~v7.6.4:2305231200H]",
          "Lista Padr\u00E3o" : "[gæst faldt~Lista Padrão]",
          "Synchronize Data" : "[gæst faldt~Synchronize Data]",
          "Generate new Service Order" : "[gæst faldt~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[gæst faldt~Electronic Signature Authentication]",
          "User Name" : "[gæst faldt~User Name]",
          "User name" : "[gæst faldt~User name]",
+         "Password" : "[gæst faldt~Password]",
          "Reason for Change" : "[gæst faldt~Reason for Change]",
          "Capture Real Signature" : "[gæst faldt~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[gæst faldt~Service Request]",

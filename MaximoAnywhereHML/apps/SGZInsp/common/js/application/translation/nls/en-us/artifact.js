@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-12 23:28:46
+// Build: 2023-10-06 18:00:15
 //----------------------------------------------------------------//
 define({
    root: {
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "Error retrieving the user name from the device",
          "System Data Download Error" : "System Data Download Error",
          "Error downloading System Data" : "Error downloading System Data",
-         "Username" : "Username",
-         "Password" : "Password",
-         "Esqueceu a Senha?" : "Esqueceu a Senha?",
-         "Sign In" : "Sign In",
-         "Manual do Aplicativo" : "Manual do Aplicativo",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo",
+         "Instaladores" : "Instaladores",
          "Privacy Policy" : "Privacy Policy",
-         "Connection Settings" : "Connection Settings",
-         "v7.6.4:1109231700H" : "v7.6.4:1109231700H",
          "My Assigned Work" : "My Assigned Work",
          "Inspe\u00E7\u00F5es Pendentes" : "Inspeções Pendentes",
          "Records with Errors" : "Records with Errors",
@@ -293,6 +288,7 @@ define({
          "Electronic Signature Authentication" : "Electronic Signature Authentication",
          "User Name" : "User Name",
          "User name" : "User name",
+         "Password" : "Password",
          "Reason for Change" : "Reason for Change",
          "Capture Real Signature" : "Capture Real Signature",
          "primaryResourceSingleLabel" : "Work Order",

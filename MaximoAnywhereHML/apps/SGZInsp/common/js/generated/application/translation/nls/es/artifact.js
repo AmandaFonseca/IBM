@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-12 23:28:47
+// Build: 2023-10-06 18:00:15
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[administración~Error retrieving the user name from the device]",
          "System Data Download Error" : "[administración~System Data Download Error]",
          "Error downloading System Data" : "[administración~Error downloading System Data]",
-         "Username" : "[administración~Username]",
-         "Password" : "[administración~Password]",
-         "Esqueceu a Senha?" : "[administración~Esqueceu a Senha?]",
-         "Sign In" : "[administración~Sign In]",
-         "Manual do Aplicativo" : "[administración~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[administración~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[administración~Instaladores]",
          "Privacy Policy" : "[administración~Privacy Policy]",
-         "Connection Settings" : "[administración~Connection Settings]",
-         "v7.6.4:1109231700H" : "[administración~v7.6.4:1109231700H]",
          "My Assigned Work" : "[administración~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[administración~Inspeções Pendentes]",
          "Records with Errors" : "[administración~Records with Errors]",
@@ -293,6 +288,7 @@ define({
          "Electronic Signature Authentication" : "[administración~Electronic Signature Authentication]",
          "User Name" : "[administración~User Name]",
          "User name" : "[administración~User name]",
+         "Password" : "[administración~Password]",
          "Reason for Change" : "[administración~Reason for Change]",
          "Capture Real Signature" : "[administración~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[administración~Work Order]",

@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 12:01:49
+// Build: 2023-10-06 17:56:25
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[českém~Error retrieving the user name from the device]",
          "System Data Download Error" : "[českém~System Data Download Error]",
          "Error downloading System Data" : "[českém~Error downloading System Data]",
-         "Username" : "[českém~Username]",
-         "Password" : "[českém~Password]",
-         "Esqueceu a Senha?" : "[českém~Esqueceu a Senha?]",
-         "Sign In" : "[českém~Sign In]",
-         "Manual do Aplicativo" : "[českém~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[českém~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[českém~Instaladores]",
          "Privacy Policy" : "[českém~Privacy Policy]",
-         "Connection Settings" : "[českém~Connection Settings]",
-         "v7.6.4:2305231200H" : "[českém~v7.6.4:2305231200H]",
          "Lista Padr\u00E3o" : "[českém~Lista Padrão]",
          "Synchronize Data" : "[českém~Synchronize Data]",
          "Generate new Service Order" : "[českém~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[českém~Electronic Signature Authentication]",
          "User Name" : "[českém~User Name]",
          "User name" : "[českém~User name]",
+         "Password" : "[českém~Password]",
          "Reason for Change" : "[českém~Reason for Change]",
          "Capture Real Signature" : "[českém~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[českém~Service Request]",

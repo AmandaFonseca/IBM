@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-12 23:28:48
+// Build: 2023-10-06 18:00:16
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[erÕsíteni~Error retrieving the user name from the device]",
          "System Data Download Error" : "[erÕsíteni~System Data Download Error]",
          "Error downloading System Data" : "[erÕsíteni~Error downloading System Data]",
-         "Username" : "[erÕsíteni~Username]",
-         "Password" : "[erÕsíteni~Password]",
-         "Esqueceu a Senha?" : "[erÕsíteni~Esqueceu a Senha?]",
-         "Sign In" : "[erÕsíteni~Sign In]",
-         "Manual do Aplicativo" : "[erÕsíteni~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[erÕsíteni~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[erÕsíteni~Instaladores]",
          "Privacy Policy" : "[erÕsíteni~Privacy Policy]",
-         "Connection Settings" : "[erÕsíteni~Connection Settings]",
-         "v7.6.4:1109231700H" : "[erÕsíteni~v7.6.4:1109231700H]",
          "My Assigned Work" : "[erÕsíteni~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[erÕsíteni~Inspeções Pendentes]",
          "Records with Errors" : "[erÕsíteni~Records with Errors]",
@@ -293,6 +288,7 @@ define({
          "Electronic Signature Authentication" : "[erÕsíteni~Electronic Signature Authentication]",
          "User Name" : "[erÕsíteni~User Name]",
          "User name" : "[erÕsíteni~User name]",
+         "Password" : "[erÕsíteni~Password]",
          "Reason for Change" : "[erÕsíteni~Reason for Change]",
          "Capture Real Signature" : "[erÕsíteni~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[erÕsíteni~Work Order]",

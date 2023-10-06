@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-12 23:28:48
+// Build: 2023-10-06 18:00:16
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[også populært~Error retrieving the user name from the device]",
          "System Data Download Error" : "[også populært~System Data Download Error]",
          "Error downloading System Data" : "[også populært~Error downloading System Data]",
-         "Username" : "[også populært~Username]",
-         "Password" : "[også populært~Password]",
-         "Esqueceu a Senha?" : "[også populært~Esqueceu a Senha?]",
-         "Sign In" : "[også populært~Sign In]",
-         "Manual do Aplicativo" : "[også populært~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[også populært~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[også populært~Instaladores]",
          "Privacy Policy" : "[også populært~Privacy Policy]",
-         "Connection Settings" : "[også populært~Connection Settings]",
-         "v7.6.4:1109231700H" : "[også populært~v7.6.4:1109231700H]",
          "My Assigned Work" : "[også populært~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[også populært~Inspeções Pendentes]",
          "Records with Errors" : "[også populært~Records with Errors]",
@@ -293,6 +288,7 @@ define({
          "Electronic Signature Authentication" : "[også populært~Electronic Signature Authentication]",
          "User Name" : "[også populært~User Name]",
          "User name" : "[også populært~User name]",
+         "Password" : "[også populært~Password]",
          "Reason for Change" : "[også populært~Reason for Change]",
          "Capture Real Signature" : "[også populært~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[også populært~Work Order]",

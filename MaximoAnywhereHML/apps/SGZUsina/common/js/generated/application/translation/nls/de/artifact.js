@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 12:01:48
+// Build: 2023-10-06 17:56:25
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[können~Error retrieving the user name from the device]",
          "System Data Download Error" : "[können~System Data Download Error]",
          "Error downloading System Data" : "[können~Error downloading System Data]",
-         "Username" : "[können~Username]",
-         "Password" : "[können~Password]",
-         "Esqueceu a Senha?" : "[können~Esqueceu a Senha?]",
-         "Sign In" : "[können~Sign In]",
-         "Manual do Aplicativo" : "[können~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[können~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[können~Instaladores]",
          "Privacy Policy" : "[können~Privacy Policy]",
-         "Connection Settings" : "[können~Connection Settings]",
-         "v7.6.4:2305231200H" : "[können~v7.6.4:2305231200H]",
          "Lista Padr\u00E3o" : "[können~Lista Padrão]",
          "Synchronize Data" : "[können~Synchronize Data]",
          "Generate new Service Order" : "[können~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[können~Electronic Signature Authentication]",
          "User Name" : "[können~User Name]",
          "User name" : "[können~User name]",
+         "Password" : "[können~Password]",
          "Reason for Change" : "[können~Reason for Change]",
          "Capture Real Signature" : "[können~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[können~Service Request]",

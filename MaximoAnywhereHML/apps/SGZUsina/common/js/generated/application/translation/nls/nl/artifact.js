@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 12:01:49
+// Build: 2023-10-06 17:56:25
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[onbepaalde~Error retrieving the user name from the device]",
          "System Data Download Error" : "[onbepaalde~System Data Download Error]",
          "Error downloading System Data" : "[onbepaalde~Error downloading System Data]",
-         "Username" : "[onbepaalde~Username]",
-         "Password" : "[onbepaalde~Password]",
-         "Esqueceu a Senha?" : "[onbepaalde~Esqueceu a Senha?]",
-         "Sign In" : "[onbepaalde~Sign In]",
-         "Manual do Aplicativo" : "[onbepaalde~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[onbepaalde~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[onbepaalde~Instaladores]",
          "Privacy Policy" : "[onbepaalde~Privacy Policy]",
-         "Connection Settings" : "[onbepaalde~Connection Settings]",
-         "v7.6.4:2305231200H" : "[onbepaalde~v7.6.4:2305231200H]",
          "Lista Padr\u00E3o" : "[onbepaalde~Lista Padrão]",
          "Synchronize Data" : "[onbepaalde~Synchronize Data]",
          "Generate new Service Order" : "[onbepaalde~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[onbepaalde~Electronic Signature Authentication]",
          "User Name" : "[onbepaalde~User Name]",
          "User name" : "[onbepaalde~User name]",
+         "Password" : "[onbepaalde~Password]",
          "Reason for Change" : "[onbepaalde~Reason for Change]",
          "Capture Real Signature" : "[onbepaalde~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[onbepaalde~Service Request]",

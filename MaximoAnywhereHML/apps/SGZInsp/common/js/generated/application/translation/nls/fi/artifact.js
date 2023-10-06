@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-12 23:28:48
+// Build: 2023-10-06 18:00:16
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[pohjoispäässä~Error retrieving the user name from the device]",
          "System Data Download Error" : "[pohjoispäässä~System Data Download Error]",
          "Error downloading System Data" : "[pohjoispäässä~Error downloading System Data]",
-         "Username" : "[pohjoispäässä~Username]",
-         "Password" : "[pohjoispäässä~Password]",
-         "Esqueceu a Senha?" : "[pohjoispäässä~Esqueceu a Senha?]",
-         "Sign In" : "[pohjoispäässä~Sign In]",
-         "Manual do Aplicativo" : "[pohjoispäässä~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[pohjoispäässä~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[pohjoispäässä~Instaladores]",
          "Privacy Policy" : "[pohjoispäässä~Privacy Policy]",
-         "Connection Settings" : "[pohjoispäässä~Connection Settings]",
-         "v7.6.4:1109231700H" : "[pohjoispäässä~v7.6.4:1109231700H]",
          "My Assigned Work" : "[pohjoispäässä~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[pohjoispäässä~Inspeções Pendentes]",
          "Records with Errors" : "[pohjoispäässä~Records with Errors]",
@@ -293,6 +288,7 @@ define({
          "Electronic Signature Authentication" : "[pohjoispäässä~Electronic Signature Authentication]",
          "User Name" : "[pohjoispäässä~User Name]",
          "User name" : "[pohjoispäässä~User name]",
+         "Password" : "[pohjoispäässä~Password]",
          "Reason for Change" : "[pohjoispäässä~Reason for Change]",
          "Capture Real Signature" : "[pohjoispäässä~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[pohjoispäässä~Work Order]",
