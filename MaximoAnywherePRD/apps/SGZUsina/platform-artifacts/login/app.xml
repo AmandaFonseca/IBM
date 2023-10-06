@@ -56,44 +56,46 @@
 				<!--<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/app_icon_main.svg" cssClass="productLogo"/>-->
 				<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_Usina.svg"/>
 				<!-- <image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_H_Usina.svg"/> -->
- 				<!--<text cssClass="productName" editable="false" id="platform.LoginView_container_0_appName" resourceAttribute="appName"/>--> 
-				<text cssClass="errorMsg" editable="false" id="platform.LoginView_container_0_errorMsg" resourceAttribute="errorMsg"/>
-				 <!-- If you want device-side SSO comment out this view -->	
-				 <!-- Comment out the username and password to enable device-side SSO -->
-				 
+ 				<!--<text cssClass="productName" editable="false" id="platform.LoginView_container_0_appName" resourceAttribute="appName"/>
+				<text cssClass="errorMsg" editable="false" id="platform.LoginView_container_0_errorMsg" resourceAttribute="errorMsg"/>--> 
+				<!-- If you want device-side SSO comment out this view -->	
+				<!-- Comment out the username and password to enable device-side SSO -->
+				 <!-- 
 				<text border="true" cssClass="loginUsername" editable="true" id="platform.LoginView_container_0_username" placeHolder="Username" resourceAttribute="username"/>
 				<text border="true" cssClass="loginPassword" editable="true" id="platform.LoginView_container_0_password" placeHolder="Password" resourceAttribute="password" type="password"/>
-				
-				<!-- Esqueceu Senha -->
+				-->
+				<!-- Esqueceu Senha 
 				<text labelCss="loginLink" id="esqueci_senha_link" label="Esqueceu a Senha?">
 					<eventHandlers id="esqueci_senha_link_eventHandlers">
 						<eventHandler class="custom.handlers.MSLoginHandler" event="click" id="esqueci_senha_link_eventHandlers_click" method="resetLinkClicked"/>
 					</eventHandlers>
 				</text>
-
+				-->
+				<!-- 
 				<button cssClass="loginBtn" id="platform.LoginView_LogIn_button" label="Sign In" primary="true">
 					<eventHandlers id="platform.LoginView_LogIn_button_eventHandlers">
 						<eventHandler class="platform.handlers.LoginHandler" event="click" id="platform.LoginView_LogIn_button_eventHandlers_click_loginClickHandler" method="loginClickHandler"/>
 					</eventHandlers>
 				</button>
+				-->
 				
-				<!-- Manuais -->
+				<!-- Manuais
 				<text labelCss="loginLink" id="manuais_link" label="Manual do Aplicativo">
 					<eventHandlers id="manuais_link_eventHandlers">
 						<eventHandler class="custom.handlers.MSLoginHandler" event="click" id="manuais_link_eventHandlers_click" method="acesso_manuaisClicked"/>
 					</eventHandlers>
 				</text>
 				<image id="platform.LoginView_image_1" image="IBMLogo.svg" cssClass="IBMLogo"/>
-
-				<!-- Privacy Policy -->
+				-->
+				<!-- Privacy Policy
 				<text labelCss="loginLink" id="PrivacyPolicy_link" label="Privacy Policy">
 					<eventHandlers id="PrivacyPolicy_link_eventHandlers">
 						<eventHandler class="platform.handlers.LoginHandler" event="click" id="PrivacyPolicy_link_eventHandlers_click" method="privacyPolicyLinkClicked"/>
 					</eventHandlers>
 				</text>
+				-->
 				
-				
-				<!-- end of the comment block to enable device-side SSO -->
+				<!-- end of the comment block to enable device-side SSO 
 				<link enableFeatureByProperty="connection.settings.enabled" id="ConnectionSettings_link" label="Connection Settings">
 					<eventHandlers id="ConnectionSettings_link_eventHandlers">
 						<eventHandler class="platform.handlers.LoginHandler" event="click" id="ConnectionSettings_link_eventHandlers_click_showWLSettingsPage" method="showWLSettingsPage"/>
@@ -102,8 +104,25 @@
 				</link>
 				
 				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2305231200P"/>
-								
+				-->
+				<text  editable="false" id="platform.LoginView_container_0_errorMsg" label="Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo"/>
+				<button cssClass="loginBtn" id="platform.LoginView_LogIn_button" label="Instaladores" primary="true">
+					<eventHandlers id="platform.LoginView_LogIn_button_eventHandlers">
+						<eventHandler class="custom.handlers.MSLoginHandler" event="click" id="platform.LoginView_LogIn_button_eventHandlers_click_redirecionaUserLink" method="redirecionaUserLink"/>
+					</eventHandlers>
+				</button>								
 			</container>
+			<container cssClass="loginForm" id="platform.LoginView_container_01">
+				<image id="platform.LoginView_image_1" image="IBMLogo.svg" cssClass="IBMLogo"/>
+
+				<!-- Privacy Policy -->
+				<text labelCss="loginLink" id="PrivacyPolicy_link" label="Privacy Policy">
+					<eventHandlers id="PrivacyPolicy_link_eventHandlers">
+						<eventHandler class="platform.handlers.LoginHandler" event="click" id="PrivacyPolicy_link_eventHandlers_click" method="privacyPolicyLinkClicked"/>
+					</eventHandlers>
+				</text>
+			</container>
+
 			<eventHandlers id="platform.LoginView_eventHandlers">
 				<eventHandler class="platform.handlers.LoginHandler" event="show" id="platform.LoginView_eventHandlers_show_initializeLogin" method="initializeLogin"/>
 				<eventHandler class="platform.handlers._ApplicationHandlerBase" event="initialize" id="platform.LoginView_eventHandlers_initialize_changeQueryBase" method="changeQueryBase"/>

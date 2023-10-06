@@ -57,6 +57,17 @@ function(declare, ApplicationHandlerBase, AdditionalDataManager, SystemDataManag
 			var domain = self.ui.application.WL.StaticAppProps.WORKLIGHT_BASE_URL;
 			var url = `${domain}/webclient/login/manuais.jsp?app=${appId}`;
 			window.open(url, '_system');
+		},
+		
+		redirecionaUserLink:function(eventContext){
+			let self = this;
+			let appId = self.application.appId;
+			var domain = self.ui.application.WL.StaticAppProps.WORKLIGHT_BASE_URL;
+			var url = `${domain}/APK`;
+			if (url.includes('maximo')) {
+				url = url.replace('/maximo','')
+			}
+			window.open(url, '_system');
 		}
 	});
 });
