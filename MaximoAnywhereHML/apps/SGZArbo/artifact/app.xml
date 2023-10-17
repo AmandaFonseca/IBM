@@ -2431,8 +2431,8 @@
 				<attribute describedByProperty="spi:classstructureid" id="asset_classstructureid_spiclassstructureid" name="classstructureid"/>
 				<!-- Complex attributes -->
 				<attribute describedByProperty="spi:assetspecarbo" describedByResource="assetSpecResource" id="asset_assetSpec_spi_assetspec" name="assetSpec"/>	
-				<attribute describedByProperty="spi:msarbo" describedByResource="MSArbo" id="asset_assetSpec_spi_MSArbo" name="MSArbo"/>	
-				<attribute describedByProperty="spi:msarborpt" describedByResource="MSArboRpt" id="asset_assetSpec_spi_MSArboRpt" name="MSArboRpt"/>	
+				<attribute describedByProperty="spi:msarbomob" describedByResource="MSArbo" id="asset_assetSpec_spi_MSArbo" name="MSArbo"/>	
+				<attribute describedByProperty="spi:msarborptmob" describedByResource="MSArboRpt" id="asset_assetSpec_spi_MSArboRpt" name="MSArboRpt"/>	
 				
 				
 				
