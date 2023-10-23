@@ -182,60 +182,58 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 				},
 				
 				escondeCampoFim : function(eventContext) {
-							//Logger.error("IN�CIO DO M�TODO HIDE_TIMESHEETFIELDS");
-							var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
-							var currWO = workOrderSet.getCurrentRecord();
-							let obj = eventContext
-                            objetoMethod[0] = obj;
-							
-							var ticket = currWO.get('ms_amticketid');
-							var dataInic = currWO.get('ms_startdate');
-							var dataFim = currWO.get('ms_finishdate');
-							console.log("TICKET INICIO 2 " + ticket);
-							console.log("DATA INICIO 2 " + dataInic);
-							console.log("DATA FIM " + dataFim);
-							
-							if(dataInic == null){
-								eventContext.setDisplay(false);
-								eventContext.setDisplay(false);
-							}else if(dataInic != null && dataFim != null){
-								eventContext.setDisplay(false);
-								eventContext.setDisplay(false);
-							}else {
-								eventContext.setDisplay(true);
-								eventContext.setDisplay(true);
-							}
-							
-															
+					//Logger.error("INICIO DO METODO HIDE_TIMESHEETFIELDS");
+					var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+					var currWO = workOrderSet.getCurrentRecord();
+					let obj = eventContext
+                    objetoMethod[0] = obj;
+					
+					var ticket = currWO.get('ms_amticketid');
+					var dataInic = currWO.get('ms_startdate');
+					var dataFim = currWO.get('ms_finishdate');
+					console.log("TICKET INICIO 2 " + ticket);
+					console.log("DATA INICIO 2 " + dataInic);
+					console.log("DATA FIM " + dataFim);
+					
+					if(dataInic == null){
+						eventContext.setDisplay(false);
+						eventContext.setDisplay(false);
+					}else if(dataInic != null && dataFim != null){
+						eventContext.setDisplay(false);
+						eventContext.setDisplay(false);
+					}else {
+						eventContext.setDisplay(true);
+						eventContext.setDisplay(true);
+					}
 
 				},
 				
 			
 				
-					handleBackButtonClick: function(eventContext){
-						var actualAsset=eventContext.getCurrentRecord();
-							//Logger.error("IN�CIO DO M�TODO handleBackButtonClick");
-							var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
-							var currWO = workOrderSet.getCurrentRecord();
-							if(currWO.get("worktype") != "TS" || (currWO.get("worktype") == null)) {
-								//Logger.error("SEM A��O | OS N�O � DE TIMESHEET");
+				handleBackButtonClick: function(eventContext){
+					var actualAsset=eventContext.getCurrentRecord();
+						//Logger.error("INICIO DO METODO handleBackButtonClick");
+						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
+						var currWO = workOrderSet.getCurrentRecord();
+						if(currWO.get("worktype") != "TS" || (currWO.get("worktype") == null)) {
+							//Logger.error("SEM ACAO | OS NAO E DE TIMESHEET");
+						}
+						else{
+							if(!actualAsset.get("dontDiscard")){
+								actualAsset.deleteLocal();
+								this._saveTransaction;
 							}
-							else{
-								if(!actualAsset.get("dontDiscard")){
-									actualAsset.deleteLocal();
-									this._saveTransaction;
-								}
-							}
-					},
-					
-					InicJornada: function(eventContext){
-						this.AttachmentHandler.launchCameraForPhoto();
-					},
-					
-					cancel: function(eventContext){
-						//Logger.error("IN�CIO DO M�TODO cancel");
-						this.ui.hideCurrentView(PlatformConstants.CLEANUP);
-					},
+						}
+				},
+				
+				InicJornada: function(eventContext){
+					this.AttachmentHandler.launchCameraForPhoto();
+				},
+				
+				cancel: function(eventContext){
+					//Logger.error("INICIO DO METODO cancel");
+					this.ui.hideCurrentView(PlatformConstants.CLEANUP);
+				},
 					
 					save_ini: function (eventContext){
 						//Logger.error("IN�CIO DO M�TODO SAVE");
@@ -469,6 +467,10 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 							
 					},
 					
+					resolveStatusDate : function(statusdate) {
+						var userLocale = this.application.getUserLocale();
+						return [ FormatterService.toDisplayableValue(statusdate, "datetime", userLocale) ];
+					},
 			
 						
 					_saveTransaction: function(){
@@ -522,6 +524,14 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 					var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
                     var psconfigid = currentWorkOrder.get("ms_psconfigid");
+
+					let ms_invalidstatusattachmentqtdcat = "A seção de fotos {0} precisa de ao menos {1} foto(s) para alterar o status para Concluído.";
+     
+					//Validate if status date change is lesser than last WO status change date
+						if(currentWorkOrder.getAsDateOrNull('changestatusdate') > statusChange.getAsDateOrNull('changedate')){
+								throw new PlatformRuntimeException('statusDateinFuture',[this.resolveStatusDate(currentWorkOrder.getAsDateOrNull('changestatusdate'))]);								
+                   
+						}																						
                         if(statusChange.get("status") && statusChange.get("status") == "CONC"){
                             if (psconfigid == null || psconfigid == "" || typeof psconfigid === undefined){
                                 var j = 0;
@@ -559,7 +569,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
                                         var SectionDoclinksCount = SectionDoclinks.length;
                                         
                                         if (SectionDoclinksCount < minqty){
-                                            throw new PlatformRuntimeException("ms_invalidstatusattachmentqtdcat", [sectionDesc,minqty]);
+                                            throw new PlatformRuntimeException(ms_invalidstatusattachmentqtdcat, [sectionDesc,minqty]);
                                         }
                                     }
                             }
@@ -571,44 +581,100 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
                         var countNum = 0;
                         var countAln = 0;
 						var concasf = 0;
-						var currWorkOrderSpecList = currentWorkOrder.workOrderSpec;
-						CommonHandler._clearFilterForResource(eventContext,currWorkOrderSpecList);
-						currWorkOrderSpecList.filter("refobjectid == $1", currentWorkOrder.get('identifier'));
+                        /*for (var i = 0; i < currentWorkOrder.workOrderSpec.count(); i++) {
+                            var currWorkOrderSpec = currentWorkOrder.workOrderSpec.getRecordAt(i);
+*/						
+                        var nowDate = new Date();
+                        var spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
+                        var count = spec.count();
+                        var myUser = UserManager.getCurrentUser();
 
-                        for (var i = 0; i < currWorkOrderSpecList.count(); i++) {
-                            var currWorkOrderSpec = currWorkOrderSpecList.getRecordAt(i);
-
+                        for (var i = 0; i < count; i++) {
+                           // var currWorkOrderSpec = currentWorkOrder.workOrderSpec.getRecordAt(i);
+						   let currWorkOrderSpec = spec.getRecordAt(i)
                             var numValue = currWorkOrderSpec.get("numvalue");
                             var alnValue = currWorkOrderSpec.get("alnvalue");
+                            var specID = currWorkOrderSpec.get('assetattrid');
+                            var measureunitid = currWorkOrderSpec.get('measureunitid');
+                            var changeby = currWorkOrderSpec.get('changeby');
+
+							if (changeby != null || changeby != undefined  || changeby != "") {
+								if (changeby == myUser) {
+									var pdSpecReq = currWorkOrderSpec.get("pd_spec_required");
+									if (specID == 'CURA_CONC'){
+										var cura_conc = alnValue;
+									}
+									if (specID == 'NEC_CONC'){
+										//Verifica se é concordancia asfáltica
+										var nec_conc = alnValue;
+									}	
+									if (nec_conc == 'Sim'){
+										if  (cura_conc == null || cura_conc == undefined  || cura_conc == ""){
+										 eventContext.ui.showMessage(MessageService.createStaticMessage("O campo 'Cura de concreto' precisa ser preenchido!").getMessage());
+										}
+										else{
+											var dateParts = cura_conc.split("/");
+											var newDate = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
+											var newDateFomatada = new Date(cura_conc);
+											let day = newDate.getMonth()+1;
+											let month = newDate.getDate();
+											let year = newDate.getFullYear();
+											//var isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
+											var isBoolean;
+											try {
+												isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
+												if (isBoolean == undefined || isBoolean == null || isBoolean == false) {
+													isBoolean = (newDateFomatada instanceof Date) && newDateFomatada !=null;
+												}
+											} catch (error) {
+												console.log(error);
+											}                                                    
+											
+											newDateFomatada = new Date('""'+day+"/"+month+"/"+year);
+											if (isBoolean) {
+												if(newDateFomatada < nowDate){
+													throw new PlatformRuntimeWarning("O campo 'Cura de concreto' precisa ser maior que a data atual!");
+													//eventContext.ui.showMessage(MessageService.createStaticMessage().getMessage());
+												   
+												}
+											}
+											else{
+												throw new PlatformRuntimeWarning("Por favor, insira uma data valida!");
+												//eventContext.ui.showMessage(MessageService.createStaticMessage("Por favor, insira uma data valida!").getMessage());
+											}	
+										}
+									}
+									   
+									if (alnValue == null || alnValue == "" || typeof alnValue === undefined){                            
+										if(pdSpecReq == true) {
+											if (numValue == null || numValue == "" || typeof numValue === undefined 
+											|| numValue == 0){
+												console.log("ms_semmedicao" + numValue);
+												throw new PlatformRuntimeException("ms_semmedicao");
+												return ;
+											}
+										}        
+										if(numValue == null || numValue == "" || typeof numValue === undefined) {
+										}else {
+											countNum++;
+										}
+									}
+									if (numValue == null || numValue == "" || typeof numValue === undefined){                            
+										if(pdSpecReq == true) {
+											if (alnValue == null || alnValue == "" || typeof alnValue === undefined){
+												throw new PlatformRuntimeException("ms_semmedicao");
+												return ;
+											}
+										}        
+										if(alnValue == null || alnValue == "" || typeof alnValue === undefined) {
+										}else {
+											countAln++;
+										}
+									}									
+								}
+							}
                             
-                            var pdSpecReq = currWorkOrderSpec.get("pd_spec_required");
-								
-                                if (alnValue == null || alnValue == "" || typeof alnValue === undefined){                            
-                                    if(pdSpecReq == true) {
-                                        if (numValue == null || numValue == "" || typeof numValue === undefined 
-                                        || numValue == 0){
-                                            console.log("ms_semmedicao" + numValue);
-                                            throw new PlatformRuntimeException("ms_semmedicao");
-                                            return ;
-                                        }
-                                    }        
-                                    if(numValue == null || numValue == "" || typeof numValue === undefined) {
-                                    }else {
-                                        countNum++;
-                                    }
-                                }
-                                if (numValue == null || numValue == "" || typeof numValue === undefined){                            
-                                    if(pdSpecReq == true) {
-                                        if (alnValue == null || alnValue == "" || typeof alnValue === undefined){
-                                            throw new PlatformRuntimeException("ms_semmedicao");
-                                            return ;
-                                        }
-                                    }        
-                                    if(alnValue == null || alnValue == "" || typeof alnValue === undefined) {
-                                    }else {
-                                        countAln++;
-                                    }
-                                }
+
                         }
                         if ((countNum == 0 || numValue == 0) && countAln == 0) {
                             throw new PlatformRuntimeException("ms_semmedicao");
@@ -617,18 +683,20 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
                 }
 		
 					
-					 /* var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
+					var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 					 var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 					 var workOrder = workOrderSet.getCurrentRecord();
 					 var newStatus=statusChange.get("status");
-						if (newStatus == "EMAND"){
+					 var emergency = workOrder.get("ms_emergency");
+
+					/* 	if (newStatus == "EMAND"){
 							 var fieldMetadataPlate= workOrder.getRuntimeFieldMetadata("ms_woplate");
 	                             fieldMetadataPlate.set('required', true);
 						}else if (newStatus != "EMAND"){
 							 var fieldMetadataPlate= workOrder.getRuntimeFieldMetadata("ms_woplate");
 	                             fieldMetadataPlate.set('required', false);
 						}
- */
+					*/
 
 
 						  
@@ -646,34 +714,25 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								throw new PlatformRuntimeException("ms_invalidmsgnaorealizada");                    
 								
 								
-								} 
-					
-					this.inherited(arguments); */
-					 var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
-					 var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
-					 var workOrder = workOrderSet.getCurrentRecord();
-					 var newStatus=statusChange.get("status");
-					
-					var currMotivo = workOrder.get("motivo");                                         
-							if (newStatus == "NAOREALIZADA" && currMotivo == null){
-							 var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
-							 fieldMetadata.set('required', true);                                                        
+								}  */
+								
+						
+						
+						var currMotivo = workOrder.get("motivo");                                         
+						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
+							var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
+							fieldMetadata.set('required', true);                                                        
 						}else if(newStatus !== "NAOREALIZADA"){
-							 var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
-							 fieldMetadata.set('required', false);
+								var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
+								fieldMetadata.set('required', false);
 						}
-							var currMotivo = workOrder.get("motivo");                                            
-							if (newStatus == "NAOREALIZADA" && currMotivo == null){
-							throw new PlatformRuntimeException("ms_invalidmsgnaorealizada");                    
-							
-							
-							} 
+						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
+						   throw new PlatformRuntimeException("ms_invalidmsgnaorealizada");                    
+						} 
 					
 					
-					this.inherited(arguments);
+					this.inherited(arguments);	
 				},
-				
-				
 						
 				blockFields : function(eventContext) {
 					
@@ -689,7 +748,7 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					}
 				},
 				
-				limitCharacters : function(eventContext) {
+				/* limitCharacters : function(eventContext) {
                 let campo = eventContext;
                 let elementoId = campo.artifactId;
                 let limite = 49;
@@ -717,8 +776,46 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 							}
 						});         
 				},
-			
-				saveWOShowView : function(eventContext) {
+			 */
+			hideFooterLookup: function(eventContext){
+				//document.getElementById("sgzMobile.amcrewLookup_footer").innerHTML = '';
+				document.getElementById("sgzMobile.amcrewLookup_footer").setAttribute("style", "display:none")
+			},
+			hideReason: function(eventContext){
+				console.log(eventContext);
+				var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
+				let status = statusChange.get("status");
+				if (status) {
+					status = status.toLocaleUpperCase();
+				}
+				let workOrder = CommonHandler._getAdditionalResource(eventContext,"workOrder");
+				let wo = workOrder.getCurrentRecord();
+				let amcrew = wo.get("ms_emergency");
+				if (amcrew && status == 'NAOREALIZADA') {
+					eventContext.setDisplay(false);
+					eventContext.setVisibility(false);	
+				}else{
+					eventContext.setDisplay(true);
+					eventContext.setVisibility(true);
+				}
+			},
+
+			setLocaleCrew: function(eventContext){
+				var workOrder = eventContext.application.getResource('workOrder');
+				let wo = workOrder.getCurrentRecord();
+				let msamcrew = eventContext.application.getResource("msamcrew").getCurrentRecord();
+				let amcrew = msamcrew.get('amcrew');
+				wo.set('amcrew',amcrew)
+				var deferred = new Deferred();
+				ModelService.save(workOrder).then(function(result){
+					deferred.resolve();
+					eventContext.ui.show("WorkExecution.WorkItemsView");
+				}).otherwise(function(error){
+					deferred.reject(error);
+				});
+				
+			},
+			saveWOShowView : function(eventContext) {
 					var workOrder = eventContext.application.getResource('workOrder');
 					var deferred = new Deferred();
 					ModelService.save(workOrder).then(function(result){

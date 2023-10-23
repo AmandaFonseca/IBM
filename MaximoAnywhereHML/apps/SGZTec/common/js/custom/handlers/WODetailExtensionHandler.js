@@ -1062,13 +1062,15 @@ define(
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 						var curWo = workOrderSet.getCurrentRecord();
 						var subItem = curWo.get('identifier');
+						var classstructureid = curWo.get('classstructureid');
 						var Spec = eventContext.application.getResource("workOrder.workOrderSpec");	
 						CommonHandler._clearFilterForResource(eventContext,Spec);
-						Spec.filter("refobjectid == $1", subItem);
-						 var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
+						Spec.filter("refobjectid == $1 && classstructureid == $2", subItem, classstructureid);
+						var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
 						eventContext.ui.getCurrentViewControl(viewId).refreshLists();
 						eventContext.ui.getCurrentViewControl(viewId).refresh(); 
 					},
+					
 					filterAttributesOrigItem: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (render)
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 						var wotcorigirecSet = CommonHandler._getAdditionalResource(this,"wotcorigirec");
@@ -1173,8 +1175,8 @@ define(
 						let siteid = wo.get("siteid");
 						var filter = [];		
 
-						//msamcrew.filter('ms_contractnum == $1 && ms_active == $2', pd_contractnum, 1);
-						msamcrew.filter('ms_contractnum == $1 && ms_active == $2 && ms_siteid == $3', pd_contractnum, 1, null);
+						msamcrew.filter('ms_contractnum == $1 && ms_active == $2', pd_contractnum, 1);
+						//msamcrew.filter('ms_contractnum == $1 && ms_active == $2 && ms_siteid == $3', pd_contractnum, 1, null);
 
 					},
 
