@@ -53,6 +53,8 @@ define(
 						var newWorkOrder = eventContext.application.getResource('workOrder').createNewRecord();
 						
 						newWorkOrder.set('parentwonum', this.originalWorkOrder.get('parentwonum')); 
+						//newWorkOrder.set('msjpnum', this.originalWorkOrder.get('parentJpnum')); 
+						newWorkOrder.setPendingValue('msjpnum', this.originalWorkOrder.get('parentJpnum'))
 						newWorkOrder.set('woclass', 'ATIVIDADE');
 						newWorkOrder.set('origrecordid', this.originalWorkOrder.get('wonum')); 
 						newWorkOrder.set('origrecordclass', this.originalWorkOrder.get('woclass'));
@@ -86,49 +88,9 @@ define(
 						newWorkOrder.set('woserviceaddressline3', this.originalWorkOrder.get('woserviceaddressline3'));
 						newWorkOrder.set('woservicepostalcode', this.originalWorkOrder.get('woservicepostalcode'));
 						newWorkOrder.set('woservicecity', this.originalWorkOrder.get('woservicecity'));
-						newWorkOrder.set('woservicestateprovince', this.originalWorkOrder.get('woservicestateprovince'));
-					
-						this.originalWorkOrder.getModelDataSet('toollist', true).then(function(toollistSet){
-							newWorkOrder.getModelDataSet('toollist', true).then(function(newWorkOrderToollistSet) {
-								  for(var i=0; i<toollistSet.count();i++){
-									var newRec = newWorkOrderToollistSet.createNewRecord();
-									var currRec = toollistSet.getRecordAt(i);										
-									newRec.set('tool', currRec.get('tool'));
-									newRec.set('taskid', currRec.get('taskid'));
-									newRec.set('tooldesc', currRec.get('tooldesc'));
-									newRec.set('toolanddescription', currRec.get('toolanddescription'));
-									newRec.set('quantity', currRec.get('quantity'));
-									newRec.set('hours', currRec.get('hours'));
-									newRec.set('linetype', currRec.get('linetype'));
-									newRec.set('itemsetid', currRec.get('itemsetid'));
-								}
-							});
-						});
-						
-						this.originalWorkOrder.getModelDataSet('assignmentlist', true).then(function(assignmentlistSet){
-							newWorkOrder.getModelDataSet('assignmentlist', true).then(function(newWorkOrderAssignmentListSet) {
-								  for(var i=0; i<assignmentlistSet.count();i++){
-									var newRec = newWorkOrderAssignmentListSet.createNewRecord();
-									var currRec = assignmentlistSet.getRecordAt(i);
-									newRec.set('taskid', currRec.get('taskid'));
-									newRec.set('laborcode', currRec.get('laborcode'));
-									newRec.set('laborname', currRec.get('laborname'));
-									newRec.set('craft', currRec.get('craft'));
-									newRec.set('skilllevel', currRec.get('skilllevel'));
-									newRec.set('crew', currRec.get('crew'));
-									newRec.set('amcrewtype', currRec.get('amcrewtype'));
-									newRec.set('status', currRec.get('status'));
-									newRec.set('scheduledate', currRec.get('scheduledate'));
-									newRec.set('laborhours', currRec.get('laborhours'));
-									//newRec.set('vendor', currRec.get('vendor'));
-									newRec.set('contractnum', currRec.get('contractnum'));
-								}
-							});
-						});
-						
-									
+						newWorkOrder.set('woservicestateprovince', this.originalWorkOrder.get('woservicestateprovince'));									
 						newWorkOrder.set('siteid', this.originalWorkOrder.get("siteid"));
-						newWorkOrder.set('orgid', this.originalWorkOrder.get('orgid'));						
+						newWorkOrder.set('orgid', this.originalWorkOrder.get('orgid'));	
 						
 						//if (WL.StaticAppProps.APP_ID!="Inspection"){
 							if (this.originalWorkOrder.get('classstructureid') != null) {
@@ -287,11 +249,14 @@ define(
 					readOnlySpec : function(eventContext) {
 						var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
 						var Spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
+						let classifications = ["E_PATOLOGIA","F_AFUND","G_TRINCA","H_REQ","I_OND","J_EXSUDACAO","K_ESC","L_DESAGRE","M_DEF_PLA","N_BUR_PAN"];
 						
 						if (currentWorkOrder != null && currentWorkOrder.workOrderSpec != null && Spec !== undefined){
 							for (var i = 0; i < Spec.count(); i++) {
 								var currWorkOrderSpec = Spec.getRecordAt(i);
 								var currSpec = currWorkOrderSpec.get('assetattrid');
+								let classification = currWorkOrderSpec.get('classstructureid');
+								let datatype = currWorkOrderSpec.get('datatype');
 								if (currSpec == 'C_AREA' || currSpec == 'CC_AREA' || currSpec == 'AREA' 
 									|| currSpec == 'CALCULO_ESPESSU' || currSpec == 'VOLUME' || currSpec == 'GRAU_COMPACT3' 
 									|| currSpec == 'GRAU_COMPACT3'  || currSpec == 'PERC_VAZIOS2' || currSpec == 'ESPESSURA' ){
@@ -301,6 +266,14 @@ define(
 									currWorkOrderSpec.getRuntimeFieldMetadata("numvalue").set("readonly", true);
 									currWorkOrderSpec.getRuntimeFieldMetadata("alnvalue").set("readonly", true);
 									currWorkOrderSpec._isReadOnly = true;
+								}
+								if (classification == "1508" && datatype == "ALN") {
+									let default_value = "Não";
+									classifications.forEach(element => {
+										if (currSpec == element && !currWorkOrderSpec.get('alnvalue')) {
+											currWorkOrderSpec.set('alnvalue', default_value);
+										}
+									});
 								}
 							
 							}
@@ -480,7 +453,7 @@ define(
 					
 					},
 					 */
-					
+
 					updateFollwupGPSPosition : function (workOrder) {
 
 						var onSuccessCallback = function (position) {
@@ -679,6 +652,7 @@ define(
 						var workOrderSet = CommonHandler._getAdditionalResource(eventContext,"workOrder");
 						var currWO = workOrderSet.getCurrentRecord();
 						var classsify = currWO.get('classstructureid');
+						var parentJpnum = currWO.get('parentJpnum');
 						var self = this;
 						var classstructure = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,classstructure);
@@ -705,17 +679,18 @@ define(
 							
 						var iscClasssify = classstructure.find('classstructureid == $1', classsify);
 						var parentClass = iscClasssify[0].ancestor;
-						
+						//var parentJpnum = currWO.get('msjpnum');
+						var parentJpnum = currWO.getPendingOrOriginalValue("msjpnum");
 						var ancestorLoc = CommonHandler._getAdditionalResource(eventContext,'ancestorLoc');
 						CommonHandler._clearFilterForResource(eventContext,ancestorLoc);
 						ancestorLoc.filter('ancestor == $1', parentClass);
 						ancestorLoc.filter('classstructureid != $1', parentClass);
 						classsify = classsify.toString();
-						if(classsify == '1570'){
+						if(parentJpnum == '1570'){
 							ancestorLoc.filter('classstructureid != $1', '1569');
 							ancestorLoc.filter('classstructureid != $1', '1575');
 						}
-						if(classsify == '1569'){
+						if(parentJpnum == '1569'){
 							ancestorLoc.filter('classstructureid != $1', '1570');
 							ancestorLoc.filter('classstructureid != $1', '1574');
 						}
@@ -805,8 +780,7 @@ define(
 										   //}
 										}
 									}
-						
-					   /*  if (woCategory.count() != 0) { //Recupera as categorias referentes a OS
+						if (woCategory.count() != 0) { //Recupera as categorias referentes a OS
 							for(var i = 0 ; i < woCategory.count(); i++){ //Para cada Categoria
 								category = woCategory.data[i].ms_photosessionid; //Identifica a categoria atual
 								var attCatSet = msDoclinksSet.find('ms_photosessionid == $1', category); //Busca os registros na MS_DOCLINKS dessa categoria
@@ -823,23 +797,21 @@ define(
 										}
 									}
 							}
-						} */
+						}
 						
-/*                          var appAttachmentSet = eventContext.application.getResource('attachments');
+					var appAttachmentSet = eventContext.application.getResource('attachments');
 						CommonHandler._clearFilterForResource(eventContext,appAttachmentSet);
 						var ActCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource").getCurrentRecord();
 						var section = ActCategory.get("ms_photosessionid");
-						
+						//appAttachmentSet.filter('category == $1', section);
+
 						var findNoCat = appAttachmentSet.find('category == null');
 						if (findNoCat.length > 0){
 							for(var j = 0 ; j < findNoCat.length; j++){
 							   findNoCat[j].set("category", section); //Define sua categoria
 							}
-						}*/
-						var appAttachmentSet = eventContext.application.getResource('attachments');
-						CommonHandler._clearFilterForResource(eventContext,appAttachmentSet);
-						var ActCategory = CommonHandler._getAdditionalResource(eventContext,"photosessionlineResource").getCurrentRecord();
-						var section = ActCategory.get("ms_photosessionid");
+						}
+						
 						appAttachmentSet.filter('category == $1', section);
 						//var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
 						//eventContext.ui.getCurrentViewControl().refresh();
@@ -1090,13 +1062,15 @@ define(
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 						var curWo = workOrderSet.getCurrentRecord();
 						var subItem = curWo.get('identifier');
+						var classstructureid = curWo.get('classstructureid');
 						var Spec = eventContext.application.getResource("workOrder.workOrderSpec");	
 						CommonHandler._clearFilterForResource(eventContext,Spec);
-						Spec.filter("refobjectid == $1", subItem);
-						 var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
+						Spec.filter("refobjectid == $1 && classstructureid == $2", subItem, classstructureid);
+						var viewId = eventContext.ui.getCurrentViewControl().id.toLowerCase();
 						eventContext.ui.getCurrentViewControl(viewId).refreshLists();
 						eventContext.ui.getCurrentViewControl(viewId).refresh(); 
 					},
+					
 					filterAttributesOrigItem: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (render)
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
 						var wotcorigirecSet = CommonHandler._getAdditionalResource(this,"wotcorigirec");
@@ -1112,8 +1086,24 @@ define(
 					},
 					backSpec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
 						var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
+						var Spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
 						var curWo = workOrderSet.getCurrentRecord();
-						ModelService.save(workOrderSet);
+						let status = curWo.get('status');
+						if (status == 'EMAND') {				
+							if (curWo != null && curWo.workOrderSpec != null && Spec !== undefined){
+								for (var i = 0; i < Spec.count(); i++) {
+									var currWorkOrderSpec = Spec.getRecordAt(i);
+									if (currWorkOrderSpec.get('alnvalue')) {
+										let alnvalue = currWorkOrderSpec.get('alnvalue');
+										alnvalue = alnvalue.toLocaleUpperCase();
+										if (alnvalue == "NÃO" || alnvalue == "SIM") {											
+											currWorkOrderSpec.set('alnvalue', alnvalue);
+										}
+									}				
+								}
+							}			
+							ModelService.save(workOrderSet);
+						}
 						var viewHistory = eventContext.ui.viewHistory;
 						var previousView = viewHistory[viewHistory.length-2];
 						eventContext.ui.returnToView(previousView.id);
@@ -1186,6 +1176,8 @@ define(
 						var filter = [];		
 
 						msamcrew.filter('ms_contractnum == $1 && ms_active == $2', pd_contractnum, 1);
+						//msamcrew.filter('ms_contractnum == $1 && ms_active == $2 && ms_siteid == $3', pd_contractnum, 1, null);
+
 					},
 
 					/*isOrigRec: function(eventContext){//filtra o registro especifico que originou o subitem de controle tecnologico (click)
