@@ -98,7 +98,7 @@
 						<eventHandler class="platform.handlers.LoginHandler" event="render" id="ConnectionSettings_link_eventHandlers_render_showHideSettingsLink" method="showHideSettingsLink"/>
 					</eventHandlers>
 				</link>
-				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:0102231535"/>
+				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2310230000P"/>
 								
 			</container>
 			<eventHandlers id="platform.LoginView_eventHandlers">

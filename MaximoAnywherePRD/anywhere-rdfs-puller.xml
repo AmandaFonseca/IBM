@@ -69,7 +69,7 @@
 		<downloadOneRdf context="/oslc/sp/SmarterPhysicalInfrastructure" />
 		<downloadOneRdf context="/oslc/sp/FriendOfAFriend" />
 		
-		<!-- ESTRUTURAS PARA APP SGZDescarte: -->
+		<!-- ESTRUTURAS PARA APP SGZDescarte:
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/doclinks/attachment" />
@@ -83,11 +83,12 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/alndomain" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzdescarte/ms_photosessionline" />
+		-->
 		<!-- FIM ESTRUTURAS PARA APP SGZDescarte -->
 		
-		<!-- ESTRUTURAS PARA APP SGZTec: -->
-		<!--
-        <downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi" />
+		<!-- ESTRUTURAS PARA APP SGZTec:-->
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/woserviceaddress" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcwotcorigi" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/doclinks/attachment" />
@@ -105,7 +106,8 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks/attachment" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcorigattach/doclinks/attachment/meta" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
-		-->
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgztec/wptool" />		
+		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew" />
 		<!-- FIM ESTRUTURAS PARA APP SGZTec -->
 		
 		
