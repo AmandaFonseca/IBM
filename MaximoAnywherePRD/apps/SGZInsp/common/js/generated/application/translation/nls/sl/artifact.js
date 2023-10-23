@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 00:46:06
+// Build: 2023-10-23 03:38:14
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[razložiti~Error retrieving the user name from the device]",
          "System Data Download Error" : "[razložiti~System Data Download Error]",
          "Error downloading System Data" : "[razložiti~Error downloading System Data]",
-         "Username" : "[razložiti~Username]",
-         "Password" : "[razložiti~Password]",
-         "Esqueceu a Senha?" : "[razložiti~Esqueceu a Senha?]",
-         "Sign In" : "[razložiti~Sign In]",
-         "Manual do Aplicativo" : "[razložiti~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[razložiti~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[razložiti~Instaladores]",
          "Privacy Policy" : "[razložiti~Privacy Policy]",
-         "Connection Settings" : "[razložiti~Connection Settings]",
-         "v7.6.4:0509232200P" : "[razložiti~v7.6.4:0509232200P]",
          "My Assigned Work" : "[razložiti~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[razložiti~Inspeções Pendentes]",
          "Records with Errors" : "[razložiti~Records with Errors]",
@@ -294,6 +289,7 @@ define({
          "Electronic Signature Authentication" : "[razložiti~Electronic Signature Authentication]",
          "User Name" : "[razložiti~User Name]",
          "User name" : "[razložiti~User name]",
+         "Password" : "[razložiti~Password]",
          "Reason for Change" : "[razložiti~Reason for Change]",
          "Capture Real Signature" : "[razložiti~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[razložiti~Work Order]",

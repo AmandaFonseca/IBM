@@ -1,4 +1,4 @@
-     [echo] 2023-09-06 00:47:37> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
+     [echo] 2023-10-23 03:39:19> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -101,7 +101,7 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 00:47:37> Trying to connect to Maximo: https://smgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-10-23 03:39:20> Trying to connect to Maximo: https://smgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
@@ -112,20 +112,20 @@ Override ignored for property "si.auth.sso.isLTPA"
       [get] https://smgimax.prefeitura.sp.gov.br:443/maximo moved to https://smgimax.prefeitura.sp.gov.br/maximo/
       [get] https://smgimax.prefeitura.sp.gov.br/maximo/ moved to https://smgimax.prefeitura.sp.gov.br/maximo/ui/maximo.jsp
       [get] https://smgimax.prefeitura.sp.gov.br/maximo/ui/maximo.jsp moved to https://smgimax.prefeitura.sp.gov.br/maximo/webclient/login/login.jsp?appservauth=true
-init:  duration 1 second
+init:  duration 0 seconds
 [antcallback] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\anywhere-apps-builder.xml.
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 00:47:38> Java version was checked.
-verify-compatibility:  duration 1 second
+     [echo] 2023-10-23 03:39:20> Java version was checked.
+verify-compatibility:  duration 0 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\anywhere-system-verification.xml.
 [available] Found directory: build\managed
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 00:47:38> maximo anywhere platform is already installed.
-verify-environment-compatibility:  duration 1 second
+     [echo] 2023-10-23 03:39:20> maximo anywhere platform is already installed.
+verify-environment-compatibility:  duration 0 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD
   [antcall] calling target(s) [init] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\build.xml
@@ -473,68 +473,75 @@ Complete build sequence is [-update-buildtimestamp, pull-rdfs-from-server, Appli
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 00:47:40> Updating C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp About Build Time Panel
+     [echo] 2023-10-23 03:39:41> Updating C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec About Build Time Panel
 [available] Found: version.txt
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
 Override ignored for property "core.build.datetime"
 Override ignored for property "base.build.datetime"
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\ar\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\cs\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\da\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\de\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\en-gb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\en-us\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\en\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\es\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\fi\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\fr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\hr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\hu\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\it\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\ja\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\ko\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\nb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\nl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\pl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\pt\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\ru\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\sk\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\sl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\sv\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\zh-tw\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\application\translation\nls\zh\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\cs\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\da\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\de\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\en-gb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\en-us\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\en\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\es\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\fi\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\fr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\hr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\hu\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\it\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\ja\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\ko\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\nb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\nl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\pl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\pt\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\ru\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\sk\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\sl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\sv\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\zh-tw\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp\common\js\generated\application\translation\nls\zh\artifact.js' by line.
--update-buildtimestamp:  duration 0 seconds
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\ar\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\cs\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\da\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\de\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\en-gb\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\en-us\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\en\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\es\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\fi\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\fr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\hr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\hu\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\it\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\ja\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\ko\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\nb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\nl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\pl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\pt\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\ru\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\sk\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\sl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\sv\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\zh-tw\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\application\translation\nls\zh\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\cs\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\da\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\de\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\en-gb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\en-us\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\en\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\es\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\fi\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\fr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\hr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\hu\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\it\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\ja\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\ko\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\nb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\nl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\pl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\pt\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\ru\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\sk\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\sl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\sv\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\zh-tw\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec\common\js\generated\application\translation\nls\zh\artifact.js' by line.
+-update-buildtimestamp:  duration 1 second
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\anywhere-apps-builder.xml.
-   [delete] Deleting: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZInsp.zip
-      [zip] Building zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZInsp.zip
+   [delete] Deleting: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZTec.zip
+      [zip] Building zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZTec.zip
       [zip] adding directory css/
       [zip] adding directory idx/
       [zip] adding directory idx/mobile/
@@ -563,7 +570,6 @@ Override ignored for property "base.build.datetime"
       [zip] adding directory images/
       [zip] adding directory images/mdpi/
       [zip] adding directory images/mdpi/statusicons/
-      [zip] adding directory images/mdpi/statusicons/teste/
       [zip] adding directory img/
       [zip] adding directory js/
       [zip] adding directory js/application/
@@ -600,7 +606,6 @@ Override ignored for property "base.build.datetime"
       [zip] adding directory js/application/translation/nls/zh/
       [zip] adding directory js/application/translation/nls/zh-tw/
       [zip] adding directory js/custom/
-      [zip] adding directory js/custom/business/
       [zip] adding directory js/custom/handlers/
       [zip] adding directory js/generated/
       [zip] adding directory js/generated/application/
@@ -993,10 +998,9 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/images/headerIcons.png
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/main.css
       [zip] adding entry idx/mobile/themes/oneui_ios/oneui_ios.css
-      [zip] adding entry images/mdpi/1.png
-      [zip] adding entry images/mdpi/1.svg
-      [zip] adding entry images/mdpi/Logo_SGZInsp_H.svg
-      [zip] adding entry images/mdpi/Logo_SGZ_Insp.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_H_Tec.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_P_Tec.png
+      [zip] adding entry images/mdpi/Logo_SGZ_Tec.svg
       [zip] adding entry images/mdpi/Use-Current-Location.png
       [zip] adding entry images/mdpi/Use-Current-Location.svg
       [zip] adding entry images/mdpi/action_addCrewLabor_OFF.png
@@ -1029,8 +1033,6 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry images/mdpi/calibrationpoint_normal_status.png
       [zip] adding entry images/mdpi/calibrationpoint_warning_status.png
       [zip] adding entry images/mdpi/download-ok.png
-      [zip] adding entry images/mdpi/gmaps.png
-      [zip] adding entry images/mdpi/gmaps_icon.png
       [zip] adding entry images/mdpi/header_addCrewLabor_OFF.png
       [zip] adding entry images/mdpi/header_addCrewLabor_ON.png
       [zip] adding entry images/mdpi/header_app_WorkExecution.png
@@ -1068,20 +1070,10 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry images/mdpi/map_wo_default_selected.svg
       [zip] adding entry images/mdpi/msg_downloadComplete_small.png
       [zip] adding entry images/mdpi/msg_downloadComplete_small.svg
-      [zip] adding entry images/mdpi/old_Logo_SGZ_Insp.svg
       [zip] adding entry images/mdpi/spinner.gif
       [zip] adding entry images/mdpi/status_error.svg
-      [zip] adding entry images/mdpi/statusicons/1.png
-      [zip] adding entry images/mdpi/statusicons/1.svg
-      [zip] adding entry images/mdpi/statusicons/2.png
-      [zip] adding entry images/mdpi/statusicons/2.svg
-      [zip] adding entry images/mdpi/statusicons/AGINSP_.png
-      [zip] adding entry images/mdpi/statusicons/AGINSP_.svg
-      [zip] adding entry images/mdpi/statusicons/AGINSP_OLD.png
-      [zip] adding entry images/mdpi/statusicons/AGINSP_oldv1.png
       [zip] adding entry images/mdpi/statusicons/APPR.png
       [zip] adding entry images/mdpi/statusicons/APPR.svg
-      [zip] adding entry images/mdpi/statusicons/APROVADO_oldv1.png
       [zip] adding entry images/mdpi/statusicons/CAN.png
       [zip] adding entry images/mdpi/statusicons/CAN.svg
       [zip] adding entry images/mdpi/statusicons/CLOSE.png
@@ -1092,11 +1084,6 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry images/mdpi/statusicons/HISTEDIT.svg
       [zip] adding entry images/mdpi/statusicons/INPRG.png
       [zip] adding entry images/mdpi/statusicons/INPRG.svg
-      [zip] adding entry images/mdpi/statusicons/PLANEJAR.png
-      [zip] adding entry images/mdpi/statusicons/PLANEJAR.svg
-      [zip] adding entry images/mdpi/statusicons/PRECANC.png
-      [zip] adding entry images/mdpi/statusicons/PRECANC.svg
-      [zip] adding entry images/mdpi/statusicons/PRECANC_OLD.png
       [zip] adding entry images/mdpi/statusicons/WAPPR.png
       [zip] adding entry images/mdpi/statusicons/WAPPR.svg
       [zip] adding entry images/mdpi/statusicons/WMATL.png
@@ -1105,11 +1092,6 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry images/mdpi/statusicons/WPCOND.svg
       [zip] adding entry images/mdpi/statusicons/WSCH.png
       [zip] adding entry images/mdpi/statusicons/WSCH.svg
-      [zip] adding entry images/mdpi/statusicons/teste/1.png
-      [zip] adding entry images/mdpi/statusicons/teste/1.svg
-      [zip] adding entry images/mdpi/statusicons/warning.png
-      [zip] adding entry images/mdpi/statusicons/warning.svg
-      [zip] adding entry images/mdpi/waze_icon.png
       [zip] adding entry images/mdpi/xsample.gif
       [zip] adding entry img/logo.png
       [zip] adding entry index.html
@@ -1141,8 +1123,8 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/application/business/WoStatusObject.js
       [zip] adding entry js/application/business/WorkLogObject.js
       [zip] adding entry js/application/business/WorkOrderObject.js
-      [zip] adding entry js/application/business/WorkOrderObject_copia.js
       [zip] adding entry js/application/business/WorkOrderStatusHandler.js
+      [zip] adding entry js/application/business/WorkOrderStatusHandler.zip
       [zip] adding entry js/application/business/WorkOrderTimer.js
       [zip] adding entry js/application/business/WpEditSettings.js
       [zip] adding entry js/application/business/calibration/DataSheetCalculation.js
@@ -1216,13 +1198,10 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/application/translation/nls/sv/artifact.js
       [zip] adding entry js/application/translation/nls/zh-tw/artifact.js
       [zip] adding entry js/application/translation/nls/zh/artifact.js
-      [zip] adding entry js/custom/business/MSAttachmentsObject.js
       [zip] adding entry js/custom/handlers/MSAttachmentExtensionHandler.js
-      [zip] adding entry js/custom/handlers/MSClassifyWorkOrderHandler.js
       [zip] adding entry js/custom/handlers/MSLoginHandler.js
       [zip] adding entry js/custom/handlers/MSStatusChangeHandler.js
       [zip] adding entry js/custom/handlers/WODetailExtensionHandler.js
-      [zip] adding entry js/custom/handlers/WorkOrderStatusHandler.js
       [zip] adding entry js/generated/application/data/ApplicationStoresBuilder.js
       [zip] adding entry js/generated/application/pushNotification/PushNotificationSelfRegistrationGenerated.js
       [zip] adding entry js/generated/application/translation/nls/artifact.js
@@ -1368,7 +1347,6 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/platform/geolocation/GeoLocationService.js
       [zip] adding entry js/platform/geolocation/GeoLocationServiceHelper.js
       [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.js
-      [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.zip
       [zip] adding entry js/platform/geolocation/GspVerifier.js
       [zip] adding entry js/platform/handlers/AdditionalDataDialogHandler.js
       [zip] adding entry js/platform/handlers/AttachmentHandler.js
@@ -1599,6 +1577,7 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/platform/ui/control/css/hdpi.css
       [zip] adding entry js/platform/ui/control/css/large-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/large-portrait-controls.css
+      [zip] adding entry js/platform/ui/control/css/mdpi-Copia.css
       [zip] adding entry js/platform/ui/control/css/mdpi.css
       [zip] adding entry js/platform/ui/control/css/medium-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/medium-portrait-controls.css
@@ -1625,7 +1604,7 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-Thin.woff
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-ThinItalic.woff
       [zip] adding entry js/platform/ui/control/css/skin/skin2015.css
-      [zip] adding entry js/platform/ui/control/css/skin/skin2018 - Copia.css
+      [zip] adding entry js/platform/ui/control/css/skin/skin2018-Copia.css
       [zip] adding entry js/platform/ui/control/css/skin/skin2018.css
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/bee-empty.svg
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/checked-icon.svg
@@ -2603,11 +2582,11 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry dojo/resources/blank.gif
       [zip] adding entry ol.js
       [zip] adding entry winstore-jscompat.js
--zip-app:  duration 1 second
+-zip-app:  duration 4 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\anywhere-apps-builder.xml.
-zip-all-apps:  duration 1 second
+zip-all-apps:  duration 4 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\anywhere-apps-builder.xml.
-all-gen:  duration 1 second
+all-gen:  duration 4 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD
   [antcall] calling target(s) [all-deploy] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\build.xml
@@ -2722,7 +2701,7 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 00:47:41> Trying to connect to Maximo: https://smgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-10-23 03:39:46> Trying to connect to Maximo: https://smgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
@@ -2797,15 +2776,15 @@ Override ignored for property "ant.file.basename"
 allApps:
 
 -process-app-artifact:
-     [echo] processing app C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZInsp
+     [echo] processing app C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZTec
 
 admin-loader:
      [java] authenticate() send request to get HttpSession cookie. 
      [java] 
-     [java] Get https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZInsp%22
+     [java] Get https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZTec%22
      [java] authenticate() send request to get HttpSession cookie. 
      [java] 
-     [java] Get https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZInsp%22
+     [java] Get https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZTec%22
      [java] App entry already exists on maximo.
      [echo] FORM authentication
      [exec] Note: Unnecessary use of -X or --request, POST is already inferred.
@@ -2826,30 +2805,30 @@ admin-loader:
      [exec] > 
      [exec] } [43 bytes data]
      [exec] HTTP/1.1 302 Found
-     [exec] Date: Wed, 06 Sep 2023 03:47:39 GMT
+     [exec] Date: Mon, 23 Oct 2023 06:39:41 GMT
      [exec] X-Powered-By: Servlet/3.1
      [exec] X-Frame-Options: SAMEORIGIN
      [exec] Location: https://smgimax.prefeitura.sp.gov.br/maximo/oslc/login/
      [exec] Content-Length: 0
-     [exec] Set-Cookie: LtpaToken2=08PkSsUmce4c1cQWBddvvDdHgTXQDMFj4BIkA4YEcbbcragOL/uPHtb0Y5tcF1DsJw74ertBG1EtXcr1YJhtWAI4gGzMrvf89bl0Ne9uNdIcRLG0rKseQa7CDWVVctSC0+xrjmsJiWFm4lsob9PwVW5F/lDR9RdxhYyPO89WaTzIDGze+mO4uto/y1x/t8rf0JpdxbJXBcFiXzTXk0uMxAS1dl7XRDMs+C4qPe8bwzSkKmppdl8Dhy2TjnnWt7zHdrmoW5bSIJnNcELtAtQ/DgcDkb0Eti4HfT+O00QAHzA9FQ/K7ivx39ai95ypdGDnNi7ZlgG6+uWDH2AsOiqZ+ZDQsg7EHvdJqvHZSGlRUDapbWh22ZHH12V18W6j8krM+62hCGF57KGf6S0aiKHeMVS2YLf+TYjpPA< HTTP/1.1 302 Found
-     [exec] < Date: Wed, 06 Sep 2023 03:47:39 GMT
-     [exec] < X-Powered-By: Servlet/3.1
-     [exec] < X-Frame-Options: SAMEORIGIN
-     [exec] < Location: https://smgimax.prefeitura.sp.gov.br/maximo/oslc/login/
-     [exec] < Content-Length: 0
-     [exec] * Added cookie LtpaToken2="08PkSsUmce4cUuSyJ5mPaOi5TNASa0OuauV409FJKRb/U93JWDv3JkV7TY/MZqvGeiFva4sQMa0MwlPPoL2aNXvvUPaxXdSvReZ0ky1s/YeK+hwGIhM3CVwXY8JNHNGFFsDI76/EFnT+oldRUKXCKHEH8Bd3B1A46zu8pLHLGkA+Wt85niBGkr3Ksan8EH4cj7sLOtvoL9dQXXTPfugLroFF+tcapOVUgl09jPJBlbJ+HHgv3BbHKlOfT46pvYzK+mOCYJPXon+21cQWBddvvDdHgTXQDMFj4BIkA4YEcbbcragOL/uPHtb0Y5tcF1DsJw74ertBG1EtXcr1YJhtWAI4gGzMrvf89bl0Ne9uNdIcRLG0rKseQa7CDWVVctSC0+xrjmsJiWFmCgJglIeXLKqTcHjyEP840cV7zmtmhpFGTxoqgcDyACCtflWLDlT/qtfJnOth6L4Xfe/421fLSCi/RB/JOFFvQ3cBJnMJcN3iaikDp2g7+XHppyPscNgw==; Path=/; 4lsob9PwVW5F/lDR9RdxhYyPO89WaTzIDGze+mO4uto/y1x/t8rf0JpdxbJXBcFiXzTXk0uMxAS1dl7XRDMs+C4qPe8bwzSkKmppdl8Dhy2TjnnWt7zHdrmoW5bSIJnNHttpOnly
+     [exec] Set-Cookie: LtpaToken2=7vQUcm9QB4rvL67QcIdP4NPoQ9HtUCjbyOKH5kJz3w45ofYdEdz+XjCAcxO6NyG3DmimbaXUfQJ19l7z3t+WqjlomdWS/t5ccGZrlwjGMuXjqRnMLkIrae1WDMfve/ppDAYm8WI/h3+nLZRGALRlO/1/rujk8N+wTuoW6UpZcom9mh1vXXtbT/Y7yrH6wFFlJBJlUfByrmAP8AmaToeDCCyF9kqyYZ0YvR0h6siz6SboelUeCBvGpLGPPwsKxSl1eMOV3by3wlaQM/NiDDDoRQt7DnFqAohVFfG6Dm8jW2slMhrh2JHUVfX2Z57Bzm5kWC6Xnzqap+6mutVyT8esjI4RBlLBVV8ld2dXQRcNzagybivPgb/R0jllE28hVX8+6d/p0stxo+2IvZjQAFeVScqaxdcNYCalgsHUNiQlHuTQC7oqOtdA9Wk0B3fTw7u3M7X73zvop9PUTZZchIncFmYpP9REh/YQ+3sHJ8cxyHSdIaUKsg67RPDWiS881qzGiZP8dHSv6SMzrGq9RaloyVdaF8SS7M+mQlDj0ZocZnOw7b+3qdYgo56GS51Pmd7/e3wcXUmrXYAbAyqcuDDwe064eFHSzCQS/REoNWORBZjd9UAHBy4yCsrZRDnwHJ2ggy8cdbyPZz8terAYhu/rhU5kVuG+t7x0wvkZOm/BSxfZRnajLcgxUAbCInzszlDKs8lzFsHXET57AdTQMxaaYS9W5RdBMaxeEWyBrLY1icnZxrx5lJ4LqphZGwzW6nrvPGqSnKVz48Q2C5LiDNBiqA==; Path=/; HttpOnly
      [exec] Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] Content-Language: c.u-US
      [exec] 
-     [exec] cELtAtQ/DgcDkb0Eti4HfT+O00QAHzA9FQ/K7ivx39ai95ypdGDnNi7ZlgG6+uWDH2AsOiqZ+ZDQsg7EHvdJqvHZSGlRUDapbWh22ZHH12V18W6j8krM+62hCGF57KGf6S0aiKHeMVS2YLf+TYjpPAUuSyJ5mPaOi5TNASa0OuauV409FJKRb/U93JWDv3JkV7TY/MZqvGeiFva4sQMa0MwlPPoL2aNXvvUPaxXdSvReZ0ky1s/YeK+hwGIhM3CVwXY8JNHNGFFsDI76/EFnT+oldRUKXCKHEH8Bd3B1A46zu8pLHLGkA+Wt85niBGkr3Ksan8EH4cj7sLOtvoL9dQXXTPfugLroFF+tcapOVUgl09jPJBlbJ+HHgv3BbHKlOfT46pvYzK+mOCYJPXon+2CgJglIeXLKqTcHjyEP840cV7zmtmhpFGTxoqgcDyACCtflWLDlT/qtfJnOth6L4Xfe/421fLSCi/RB/JOFFvQ3cBJnMJcN3iaikDp2g7+XHppyPscNgw==" for domain smgimax.prefeitura.sp.gov.br, path /, expire 0
-     [exec] < Set-Cookie: LtpaToken2=08PkSsUmce4c1cQWBddvvDdHgTXQDMFj4BIkA4YEcbbcragOL/uPHtb0Y5tcF1DsJw74ertBG1EtXcr1YJhtWAI4gGzMrvf89bl0Ne9uNdIcRLG0rKseQa7CDWVVctSC0+xrjmsJiWFm4lsob9PwVW5F/lDR9RdxhYyPO89WaTzIDGze+mO4uto/y1x/t8rf0JpdxbJXBcFiXzTXk0uMxAS1dl7XRDMs+C4qPe8bwzSkKmppdl8Dhy2TjnnWt7zHdrmoW5bSIJnNcELtAtQ/DgcDkb0Eti4HfT+O00QAHzA9FQ/K7ivx39ai95ypdGDnNi7ZlgG6+uWDH2AsOiqZ+ZDQsg7EHvdJqvHZSGlRUDapbWh22ZHH12V18W6j8krM+62hCGF57KGf6S0aiKHeMVS2YLf+TYjpPAUuSyJ5mPaOi5TNASa0OuauV409FJKRb/U93JWDv3JkV7TY/MZqvGeiFva4sQMa0MwlPPoL2aNXvvUPaxXdSvReZ0ky1s/YeK+hwGIhM3CVwXY8JNHNGFFsDI76/EFnT+oldRUKXCKHEH8Bd3B1A46zu8pLHLGkA+Wt85niBGkr3Ksan8EH4cj7sLOtvoL9dQXXTPfugLroFF+tcapOVUgl09jPJBlbJ+HHgv3BbHKlOfT46pvYzK+mOCYJPXon+2CgJglIeXLKqTcHjyEP840cV7zmtmhpFGTxoqgcDyACCtflWLDlT/qtfJnOth6L4Xfe/421fLSCi/RB/JOFFvQ3cBJnMJcN3iaikDp2g7+XHppyPscNgw==; Path=/; HttpOnly
+     [exec] < HTTP/1.1 302 Found
+     [exec] < Date: Mon, 23 Oct 2023 06:39:41 GMT
+     [exec] < X-Powered-By: Servlet/3.1
+     [exec] < X-Frame-Options: SAMEORIGIN
+     [exec] < Location: https://smgimax.prefeitura.sp.gov.br/maximo/oslc/login/
+     [exec] < Content-Length: 0
+     [exec] * Added cookie LtpaToken2="7vQUcm9QB4rvL67QcIdP4NPoQ9HtUCjbyOKH5kJz3w45ofYdEdz+XjCAcxO6NyG3DmimbaXUfQJ19l7z3t+WqjlomdWS/t5ccGZrlwjGMuXjqRnMLkIrae1WDMfve/ppDAYm8WI/h3+nLZRGALRlO/1/rujk8N+wTuoW6UpZcom9mh1vXXtbT/Y7yrH6wFFlJBJlUfByrmAP8AmaToeDCCyF9kqyYZ0YvR0h6siz6SboelUeCBvGpLGPPwsKxSl1eMOV3by3wlaQM/NiDDDoRQt7DnFqAohVFfG6Dm8jW2slMhrh2JHUVfX2Z57Bzm5kWC6Xnzqap+6mutVyT8esjI4RBlLBVV8ld2dXQRcNzagybivPgb/R0jllE28hVX8+6d/p0stxo+2IvZjQAFeVScqaxdcNYCalgsHUNiQlHuTQC7oqOtdA9Wk0B3fTw7u3M7X73zvop9PUTZZchIncFmYpP9REh/YQ+3sHJ8cxyHSdIaUKsg67RPDWiS881qzGiZP8dHSv6SMzrGq9RaloyVdaF8SS7M+mQlDj0ZocZnOw7b+3qdYgo56GS51Pmd7/e3wcXUmrXYAbAyqcuDDwe064eFHSzCQS/REoNWORBZjd9UAHBy4yCsrZRDnwHJ2ggy8cdbyPZz8terAYhu/rhU5kVuG+t7x0wvkZOm/BSxfZRnajLcgxUAbCInzszlDKs8lzFsHXET57AdTQMxaaYS9W5RdBMaxeEWyBrLY1icnZxrx5lJ4LqphZGwzW6nrvPGqSnKVz48Q2C5LiDNBiqA==" for domain smgimax.prefeitura.sp.gov.br, path /, expire 0
+     [exec] < Set-Cookie: LtpaToken2=7vQUcm9QB4rvL67QcIdP4NPoQ9HtUCjbyOKH5kJz3w45ofYdEdz+XjCAcxO6NyG3DmimbaXUfQJ19l7z3t+WqjlomdWS/t5ccGZrlwjGMuXjqRnMLkIrae1WDMfve/ppDAYm8WI/h3+nLZRGALRlO/1/rujk8N+wTuoW6UpZcom9mh1vXXtbT/Y7yrH6wFFlJBJlUfByrmAP8AmaToeDCCyF9kqyYZ0YvR0h6siz6SboelUeCBvGpLGPPwsKxSl1eMOV3by3wlaQM/NiDDDoRQt7DnFqAohVFfG6Dm8jW2slMhrh2JHUVfX2Z57Bzm5kWC6Xnzqap+6mutVyT8esjI4RBlLBVV8ld2dXQRcNzagybivPgb/R0jllE28hVX8+6d/p0stxo+2IvZjQAFeVScqaxdcNYCalgsHUNiQlHuTQC7oqOtdA9Wk0B3fTw7u3M7X73zvop9PUTZZchIncFmYpP9REh/YQ+3sHJ8cxyHSdIaUKsg67RPDWiS881qzGiZP8dHSv6SMzrGq9RaloyVdaF8SS7M+mQlDj0ZocZnOw7b+3qdYgo56GS51Pmd7/e3wcXUmrXYAbAyqcuDDwe064eFHSzCQS/REoNWORBZjd9UAHBy4yCsrZRDnwHJ2ggy8cdbyPZz8terAYhu/rhU5kVuG+t7x0wvkZOm/BSxfZRnajLcgxUAbCInzszlDKs8lzFsHXET57AdTQMxaaYS9W5RdBMaxeEWyBrLY1icnZxrx5lJ4LqphZGwzW6nrvPGqSnKVz48Q2C5LiDNBiqA==; Path=/; HttpOnly
      [exec] < Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] < Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] < Content-Language: c.u-US
      [exec] < 
      [exec] 
-     [exec] 100    43    0     0  100    43      0    373 --:--:-- --:--:-- --:--:--   377* Connection #0 to host smgimax.prefeitura.sp.gov.br left intact
+     [exec] 100    43    0     0  100    43      0    393 --:--:-- --:--:-- --:--:--   401* Connection #0 to host smgimax.prefeitura.sp.gov.br left intact
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -2976,9 +2955,9 @@ Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
 Override ignored for property "si.adminmode"
 Override ignored for property "si.auth.sso.isLTPA"
-     [echo] Doing upload of SGZInsp.zip file to https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZInsp&appversion=7.6.4:
+     [echo] Doing upload of SGZTec.zip file to https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZTec&appversion=7.6.4:
      [echo] Authentication Type form
-     [echo]  https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZInsp&appversion=7.6.4: 
+     [echo]  https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZTec&appversion=7.6.4: 
      [echo] FORM UPLOAD
      [exec] Current OS is Windows 10
      [exec] Executing 'curl' with arguments:
@@ -2990,24 +2969,25 @@ Override ignored for property "si.auth.sso.isLTPA"
 '-c'
 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD/uploadcookie.txt'
 '-T'
-'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD/bin/SGZInsp.zip'
-'https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZInsp&appversion=7.6.4:'
+'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD/bin/SGZTec.zip'
+'https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZTec&appversion=7.6.4:'
 
 The ' characters around the executable and arguments are
 not part of the command.
      [exec]   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
      [exec]                                  Dload  Upload   Total   Spent    Left  Speed
      [exec] 
-     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 28 5483k    0     0   28 1552k      0  4635k  0:00:01 --:--:--  0:00:01 4646k
-     [exec] 100 5483k  100    47  100 5483k     39  4609k  0:00:01  0:00:01 --:--:-- 4615k{"deployeddatetime":"2023-09-06 00:47:41.311"}
- [loadfile] loading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZInsp.response into property curl.upload.result
- [loadfile] loaded 531 characters
+     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+     [exec] {"deployeddatetime":"2023-10-23 03:39:42.848"}
+     [exec] 100 5237k  100    47  100 5237k     43  4885k  0:00:01  0:00:01 --:--:-- 4894k100 5237k  100    47  100 5237k     43  4883k  0:00:01  0:00:01 --:--:-- 4890k
+ [loadfile] loading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZTec.response into property curl.upload.result
+ [loadfile] loaded 545 characters
      [echo] Checksum acquired
-     [echo] 2023-09-06 00:47:41.311
-      [zip] SGZInsp.checksum added as SGZInsp.checksum doesn't exist.
+     [echo] 2023-10-23 03:39:42.848
+      [zip] SGZTec.checksum added as SGZTec.checksum doesn't exist.
       [zip] No sources found.
-      [zip] Updating zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZInsp.zip
-      [zip] adding entry SGZInsp.checksum
+      [zip] Updating zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZTec.zip
+      [zip] adding entry SGZTec.checksum
       [zip] adding directory css/
       [zip] adding directory dijit/
       [zip] adding directory dijit/nls/
@@ -3226,7 +3206,6 @@ not part of the command.
       [zip] adding directory images/
       [zip] adding directory images/mdpi/
       [zip] adding directory images/mdpi/statusicons/
-      [zip] adding directory images/mdpi/statusicons/teste/
       [zip] adding directory img/
       [zip] adding directory js/
       [zip] adding directory js/application/
@@ -3263,7 +3242,6 @@ not part of the command.
       [zip] adding directory js/application/translation/nls/zh/
       [zip] adding directory js/application/translation/nls/zh-tw/
       [zip] adding directory js/custom/
-      [zip] adding directory js/custom/business/
       [zip] adding directory js/custom/handlers/
       [zip] adding directory js/generated/
       [zip] adding directory js/generated/application/
@@ -4270,10 +4248,9 @@ not part of the command.
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/images/headerIcons.png
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/main.css
       [zip] adding entry idx/mobile/themes/oneui_ios/oneui_ios.css
-      [zip] adding entry images/mdpi/1.png
-      [zip] adding entry images/mdpi/1.svg
-      [zip] adding entry images/mdpi/Logo_SGZInsp_H.svg
-      [zip] adding entry images/mdpi/Logo_SGZ_Insp.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_H_Tec.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_P_Tec.png
+      [zip] adding entry images/mdpi/Logo_SGZ_Tec.svg
       [zip] adding entry images/mdpi/Use-Current-Location.png
       [zip] adding entry images/mdpi/Use-Current-Location.svg
       [zip] adding entry images/mdpi/action_addCrewLabor_OFF.png
@@ -4306,8 +4283,6 @@ not part of the command.
       [zip] adding entry images/mdpi/calibrationpoint_normal_status.png
       [zip] adding entry images/mdpi/calibrationpoint_warning_status.png
       [zip] adding entry images/mdpi/download-ok.png
-      [zip] adding entry images/mdpi/gmaps.png
-      [zip] adding entry images/mdpi/gmaps_icon.png
       [zip] adding entry images/mdpi/header_addCrewLabor_OFF.png
       [zip] adding entry images/mdpi/header_addCrewLabor_ON.png
       [zip] adding entry images/mdpi/header_app_WorkExecution.png
@@ -4345,20 +4320,10 @@ not part of the command.
       [zip] adding entry images/mdpi/map_wo_default_selected.svg
       [zip] adding entry images/mdpi/msg_downloadComplete_small.png
       [zip] adding entry images/mdpi/msg_downloadComplete_small.svg
-      [zip] adding entry images/mdpi/old_Logo_SGZ_Insp.svg
       [zip] adding entry images/mdpi/spinner.gif
       [zip] adding entry images/mdpi/status_error.svg
-      [zip] adding entry images/mdpi/statusicons/1.png
-      [zip] adding entry images/mdpi/statusicons/1.svg
-      [zip] adding entry images/mdpi/statusicons/2.png
-      [zip] adding entry images/mdpi/statusicons/2.svg
-      [zip] adding entry images/mdpi/statusicons/AGINSP_.png
-      [zip] adding entry images/mdpi/statusicons/AGINSP_.svg
-      [zip] adding entry images/mdpi/statusicons/AGINSP_OLD.png
-      [zip] adding entry images/mdpi/statusicons/AGINSP_oldv1.png
       [zip] adding entry images/mdpi/statusicons/APPR.png
       [zip] adding entry images/mdpi/statusicons/APPR.svg
-      [zip] adding entry images/mdpi/statusicons/APROVADO_oldv1.png
       [zip] adding entry images/mdpi/statusicons/CAN.png
       [zip] adding entry images/mdpi/statusicons/CAN.svg
       [zip] adding entry images/mdpi/statusicons/CLOSE.png
@@ -4369,11 +4334,6 @@ not part of the command.
       [zip] adding entry images/mdpi/statusicons/HISTEDIT.svg
       [zip] adding entry images/mdpi/statusicons/INPRG.png
       [zip] adding entry images/mdpi/statusicons/INPRG.svg
-      [zip] adding entry images/mdpi/statusicons/PLANEJAR.png
-      [zip] adding entry images/mdpi/statusicons/PLANEJAR.svg
-      [zip] adding entry images/mdpi/statusicons/PRECANC.png
-      [zip] adding entry images/mdpi/statusicons/PRECANC.svg
-      [zip] adding entry images/mdpi/statusicons/PRECANC_OLD.png
       [zip] adding entry images/mdpi/statusicons/WAPPR.png
       [zip] adding entry images/mdpi/statusicons/WAPPR.svg
       [zip] adding entry images/mdpi/statusicons/WMATL.png
@@ -4382,11 +4342,6 @@ not part of the command.
       [zip] adding entry images/mdpi/statusicons/WPCOND.svg
       [zip] adding entry images/mdpi/statusicons/WSCH.png
       [zip] adding entry images/mdpi/statusicons/WSCH.svg
-      [zip] adding entry images/mdpi/statusicons/teste/1.png
-      [zip] adding entry images/mdpi/statusicons/teste/1.svg
-      [zip] adding entry images/mdpi/statusicons/warning.png
-      [zip] adding entry images/mdpi/statusicons/warning.svg
-      [zip] adding entry images/mdpi/waze_icon.png
       [zip] adding entry images/mdpi/xsample.gif
       [zip] adding entry img/logo.png
       [zip] adding entry index.html
@@ -4418,8 +4373,8 @@ not part of the command.
       [zip] adding entry js/application/business/WoStatusObject.js
       [zip] adding entry js/application/business/WorkLogObject.js
       [zip] adding entry js/application/business/WorkOrderObject.js
-      [zip] adding entry js/application/business/WorkOrderObject_copia.js
       [zip] adding entry js/application/business/WorkOrderStatusHandler.js
+      [zip] adding entry js/application/business/WorkOrderStatusHandler.zip
       [zip] adding entry js/application/business/WorkOrderTimer.js
       [zip] adding entry js/application/business/WpEditSettings.js
       [zip] adding entry js/application/business/calibration/DataSheetCalculation.js
@@ -4493,13 +4448,10 @@ not part of the command.
       [zip] adding entry js/application/translation/nls/sv/artifact.js
       [zip] adding entry js/application/translation/nls/zh-tw/artifact.js
       [zip] adding entry js/application/translation/nls/zh/artifact.js
-      [zip] adding entry js/custom/business/MSAttachmentsObject.js
       [zip] adding entry js/custom/handlers/MSAttachmentExtensionHandler.js
-      [zip] adding entry js/custom/handlers/MSClassifyWorkOrderHandler.js
       [zip] adding entry js/custom/handlers/MSLoginHandler.js
       [zip] adding entry js/custom/handlers/MSStatusChangeHandler.js
       [zip] adding entry js/custom/handlers/WODetailExtensionHandler.js
-      [zip] adding entry js/custom/handlers/WorkOrderStatusHandler.js
       [zip] adding entry js/generated/application/data/ApplicationStoresBuilder.js
       [zip] adding entry js/generated/application/pushNotification/PushNotificationSelfRegistrationGenerated.js
       [zip] adding entry js/generated/application/translation/nls/artifact.js
@@ -4645,7 +4597,6 @@ not part of the command.
       [zip] adding entry js/platform/geolocation/GeoLocationService.js
       [zip] adding entry js/platform/geolocation/GeoLocationServiceHelper.js
       [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.js
-      [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.zip
       [zip] adding entry js/platform/geolocation/GspVerifier.js
       [zip] adding entry js/platform/handlers/AdditionalDataDialogHandler.js
       [zip] adding entry js/platform/handlers/AttachmentHandler.js
@@ -4876,6 +4827,7 @@ not part of the command.
       [zip] adding entry js/platform/ui/control/css/hdpi.css
       [zip] adding entry js/platform/ui/control/css/large-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/large-portrait-controls.css
+      [zip] adding entry js/platform/ui/control/css/mdpi-Copia.css
       [zip] adding entry js/platform/ui/control/css/mdpi.css
       [zip] adding entry js/platform/ui/control/css/medium-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/medium-portrait-controls.css
@@ -4902,7 +4854,7 @@ not part of the command.
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-Thin.woff
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-ThinItalic.woff
       [zip] adding entry js/platform/ui/control/css/skin/skin2015.css
-      [zip] adding entry js/platform/ui/control/css/skin/skin2018 - Copia.css
+      [zip] adding entry js/platform/ui/control/css/skin/skin2018-Copia.css
       [zip] adding entry js/platform/ui/control/css/skin/skin2018.css
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/bee-empty.svg
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/checked-icon.svg
@@ -5076,13 +5028,13 @@ not part of the command.
       [zip] adding entry ol.js
       [zip] adding entry winstore-jscompat.js
       [zip] adding entry worklight.properties
-   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZInsp.checksum
-   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZInsp.response
--zip-app-upload:  duration 2 seconds
+   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZTec.checksum
+   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\bin\SGZTec.response
+-zip-app-upload:  duration 3 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\anywhere-apps-builder.xml.
-zip-upload-all-apps:  duration 2 seconds
+zip-upload-all-apps:  duration 3 seconds
       [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\anywhere-apps-builder.xml.
-all-deploy:  duration 2 seconds
+all-deploy:  duration 3 seconds
   [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\build.xml.
 Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD
   [antcall] calling target(s) [show-support-page] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\build.xml

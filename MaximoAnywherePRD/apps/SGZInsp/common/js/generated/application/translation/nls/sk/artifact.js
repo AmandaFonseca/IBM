@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 00:46:06
+// Build: 2023-10-23 03:38:14
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[spôsobených~Error retrieving the user name from the device]",
          "System Data Download Error" : "[spôsobených~System Data Download Error]",
          "Error downloading System Data" : "[spôsobených~Error downloading System Data]",
-         "Username" : "[spôsobených~Username]",
-         "Password" : "[spôsobených~Password]",
-         "Esqueceu a Senha?" : "[spôsobených~Esqueceu a Senha?]",
-         "Sign In" : "[spôsobených~Sign In]",
-         "Manual do Aplicativo" : "[spôsobených~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[spôsobených~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[spôsobených~Instaladores]",
          "Privacy Policy" : "[spôsobených~Privacy Policy]",
-         "Connection Settings" : "[spôsobených~Connection Settings]",
-         "v7.6.4:0509232200P" : "[spôsobených~v7.6.4:0509232200P]",
          "My Assigned Work" : "[spôsobených~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[spôsobených~Inspeções Pendentes]",
          "Records with Errors" : "[spôsobených~Records with Errors]",
@@ -294,6 +289,7 @@ define({
          "Electronic Signature Authentication" : "[spôsobených~Electronic Signature Authentication]",
          "User Name" : "[spôsobených~User Name]",
          "User name" : "[spôsobených~User name]",
+         "Password" : "[spôsobených~Password]",
          "Reason for Change" : "[spôsobených~Reason for Change]",
          "Capture Real Signature" : "[spôsobených~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[spôsobených~Work Order]",

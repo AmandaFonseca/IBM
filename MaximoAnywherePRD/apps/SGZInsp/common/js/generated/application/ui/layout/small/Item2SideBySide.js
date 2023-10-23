@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 00:45:59
+// Build: 2023-10-23 03:38:08
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/small/Item2SideBySide", 
       [

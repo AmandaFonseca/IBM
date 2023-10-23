@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 00:46:04
+// Build: 2023-10-23 03:38:12
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[中国的~Error retrieving the user name from the device]",
          "System Data Download Error" : "[中国的~System Data Download Error]",
          "Error downloading System Data" : "[中国的~Error downloading System Data]",
-         "Username" : "[中国的~Username]",
-         "Password" : "[中国的~Password]",
-         "Esqueceu a Senha?" : "[中国的~Esqueceu a Senha?]",
-         "Sign In" : "[中国的~Sign In]",
-         "Manual do Aplicativo" : "[中国的~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[中国的~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[中国的~Instaladores]",
          "Privacy Policy" : "[中国的~Privacy Policy]",
-         "Connection Settings" : "[中国的~Connection Settings]",
-         "v7.6.4:0509232200P" : "[中国的~v7.6.4:0509232200P]",
          "My Assigned Work" : "[中国的~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[中国的~Inspeções Pendentes]",
          "Records with Errors" : "[中国的~Records with Errors]",
@@ -294,6 +289,7 @@ define({
          "Electronic Signature Authentication" : "[中国的~Electronic Signature Authentication]",
          "User Name" : "[中国的~User Name]",
          "User name" : "[中国的~User name]",
+         "Password" : "[中国的~Password]",
          "Reason for Change" : "[中国的~Reason for Change]",
          "Capture Real Signature" : "[中国的~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[中国的~Work Order]",

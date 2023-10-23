@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 00:46:02
+// Build: 2023-10-23 03:38:10
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/small/CalibrationPointsFunction", 
       [

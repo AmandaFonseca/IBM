@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 00:46:04
+// Build: 2023-10-23 03:38:12
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[können~Error retrieving the user name from the device]",
          "System Data Download Error" : "[können~System Data Download Error]",
          "Error downloading System Data" : "[können~Error downloading System Data]",
-         "Username" : "[können~Username]",
-         "Password" : "[können~Password]",
-         "Esqueceu a Senha?" : "[können~Esqueceu a Senha?]",
-         "Sign In" : "[können~Sign In]",
-         "Manual do Aplicativo" : "[können~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[können~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[können~Instaladores]",
          "Privacy Policy" : "[können~Privacy Policy]",
-         "Connection Settings" : "[können~Connection Settings]",
-         "v7.6.4:0509232200P" : "[können~v7.6.4:0509232200P]",
          "My Assigned Work" : "[können~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[können~Inspeções Pendentes]",
          "Records with Errors" : "[können~Records with Errors]",
@@ -294,6 +289,7 @@ define({
          "Electronic Signature Authentication" : "[können~Electronic Signature Authentication]",
          "User Name" : "[können~User Name]",
          "User name" : "[können~User name]",
+         "Password" : "[können~Password]",
          "Reason for Change" : "[können~Reason for Change]",
          "Capture Real Signature" : "[können~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[können~Work Order]",

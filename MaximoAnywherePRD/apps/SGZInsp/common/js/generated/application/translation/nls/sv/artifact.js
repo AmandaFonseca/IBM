@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 00:46:06
+// Build: 2023-10-23 03:38:14
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[trettioåriga~Error retrieving the user name from the device]",
          "System Data Download Error" : "[trettioåriga~System Data Download Error]",
          "Error downloading System Data" : "[trettioåriga~Error downloading System Data]",
-         "Username" : "[trettioåriga~Username]",
-         "Password" : "[trettioåriga~Password]",
-         "Esqueceu a Senha?" : "[trettioåriga~Esqueceu a Senha?]",
-         "Sign In" : "[trettioåriga~Sign In]",
-         "Manual do Aplicativo" : "[trettioåriga~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[trettioåriga~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[trettioåriga~Instaladores]",
          "Privacy Policy" : "[trettioåriga~Privacy Policy]",
-         "Connection Settings" : "[trettioåriga~Connection Settings]",
-         "v7.6.4:0509232200P" : "[trettioåriga~v7.6.4:0509232200P]",
          "My Assigned Work" : "[trettioåriga~My Assigned Work]",
          "Inspe\u00E7\u00F5es Pendentes" : "[trettioåriga~Inspeções Pendentes]",
          "Records with Errors" : "[trettioåriga~Records with Errors]",
@@ -294,6 +289,7 @@ define({
          "Electronic Signature Authentication" : "[trettioåriga~Electronic Signature Authentication]",
          "User Name" : "[trettioåriga~User Name]",
          "User name" : "[trettioåriga~User name]",
+         "Password" : "[trettioåriga~Password]",
          "Reason for Change" : "[trettioåriga~Reason for Change]",
          "Capture Real Signature" : "[trettioåriga~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[trettioåriga~Work Order]",
