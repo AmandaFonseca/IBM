@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:29:41
+// Build: 2023-10-27 15:49:48
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[članak~Error retrieving the user name from the device]",
          "System Data Download Error" : "[članak~System Data Download Error]",
          "Error downloading System Data" : "[članak~Error downloading System Data]",
-         "Username" : "[članak~Username]",
-         "Password" : "[članak~Password]",
-         "Esqueceu a Senha?" : "[članak~Esqueceu a Senha?]",
-         "Sign In" : "[članak~Sign In]",
-         "Manual do Aplicativo" : "[članak~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[članak~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[članak~Instaladores]",
          "Privacy Policy" : "[članak~Privacy Policy]",
-         "Connection Settings" : "[članak~Connection Settings]",
-         "v7.6.4:2305231200P" : "[članak~v7.6.4:2305231200P]",
          "Lista Padr\u00E3o" : "[članak~Lista Padrão]",
          "Synchronize Data" : "[članak~Synchronize Data]",
          "Generate new Service Order" : "[članak~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[članak~Electronic Signature Authentication]",
          "User Name" : "[članak~User Name]",
          "User name" : "[članak~User name]",
+         "Password" : "[članak~Password]",
          "Reason for Change" : "[članak~Reason for Change]",
          "Capture Real Signature" : "[članak~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[članak~Service Request]",

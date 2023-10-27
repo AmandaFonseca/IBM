@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:29:40
+// Build: 2023-10-27 15:49:47
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[ясяс~Error retrieving the user name from the device]",
          "System Data Download Error" : "[ясяс~System Data Download Error]",
          "Error downloading System Data" : "[ясяс~Error downloading System Data]",
-         "Username" : "[ясяс~Username]",
-         "Password" : "[ясяс~Password]",
-         "Esqueceu a Senha?" : "[ясяс~Esqueceu a Senha?]",
-         "Sign In" : "[ясяс~Sign In]",
-         "Manual do Aplicativo" : "[ясяс~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[ясяс~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[ясяс~Instaladores]",
          "Privacy Policy" : "[ясяс~Privacy Policy]",
-         "Connection Settings" : "[ясяс~Connection Settings]",
-         "v7.6.4:2305231200P" : "[ясяс~v7.6.4:2305231200P]",
          "Lista Padr\u00E3o" : "[ясяс~Lista Padrão]",
          "Synchronize Data" : "[ясяс~Synchronize Data]",
          "Generate new Service Order" : "[ясяс~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[ясяс~Electronic Signature Authentication]",
          "User Name" : "[ясяс~User Name]",
          "User name" : "[ясяс~User name]",
+         "Password" : "[ясяс~Password]",
          "Reason for Change" : "[ясяс~Reason for Change]",
          "Capture Real Signature" : "[ясяс~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[ясяс~Service Request]",

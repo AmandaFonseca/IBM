@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:29:40
+// Build: 2023-10-27 15:49:47
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[대학에~Error retrieving the user name from the device]",
          "System Data Download Error" : "[대학에~System Data Download Error]",
          "Error downloading System Data" : "[대학에~Error downloading System Data]",
-         "Username" : "[대학에~Username]",
-         "Password" : "[대학에~Password]",
-         "Esqueceu a Senha?" : "[대학에~Esqueceu a Senha?]",
-         "Sign In" : "[대학에~Sign In]",
-         "Manual do Aplicativo" : "[대학에~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[대학에~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[대학에~Instaladores]",
          "Privacy Policy" : "[대학에~Privacy Policy]",
-         "Connection Settings" : "[대학에~Connection Settings]",
-         "v7.6.4:2305231200P" : "[대학에~v7.6.4:2305231200P]",
          "Lista Padr\u00E3o" : "[대학에~Lista Padrão]",
          "Synchronize Data" : "[대학에~Synchronize Data]",
          "Generate new Service Order" : "[대학에~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[대학에~Electronic Signature Authentication]",
          "User Name" : "[대학에~User Name]",
          "User name" : "[대학에~User name]",
+         "Password" : "[대학에~Password]",
          "Reason for Change" : "[대학에~Reason for Change]",
          "Capture Real Signature" : "[대학에~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[대학에~Service Request]",

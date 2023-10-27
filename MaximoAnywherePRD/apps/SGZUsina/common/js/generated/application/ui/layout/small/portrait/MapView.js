@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:29:37
+// Build: 2023-10-27 15:49:44
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/small/portrait/MapView", 
       [

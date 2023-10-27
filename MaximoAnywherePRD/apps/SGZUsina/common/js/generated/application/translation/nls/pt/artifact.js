@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:29:40
+// Build: 2023-10-27 15:49:47
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[vagão do metrô~Error retrieving the user name from the device]",
          "System Data Download Error" : "[vagão do metrô~System Data Download Error]",
          "Error downloading System Data" : "[vagão do metrô~Error downloading System Data]",
-         "Username" : "[vagão do metrô~Username]",
-         "Password" : "[vagão do metrô~Password]",
-         "Esqueceu a Senha?" : "[vagão do metrô~Esqueceu a Senha?]",
-         "Sign In" : "[vagão do metrô~Sign In]",
-         "Manual do Aplicativo" : "[vagão do metrô~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[vagão do metrô~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[vagão do metrô~Instaladores]",
          "Privacy Policy" : "[vagão do metrô~Privacy Policy]",
-         "Connection Settings" : "[vagão do metrô~Connection Settings]",
-         "v7.6.4:2305231200P" : "[vagão do metrô~v7.6.4:2305231200P]",
          "Lista Padr\u00E3o" : "[vagão do metrô~Lista Padrão]",
          "Synchronize Data" : "[vagão do metrô~Synchronize Data]",
          "Generate new Service Order" : "[vagão do metrô~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[vagão do metrô~Electronic Signature Authentication]",
          "User Name" : "[vagão do metrô~User Name]",
          "User name" : "[vagão do metrô~User name]",
+         "Password" : "[vagão do metrô~Password]",
          "Reason for Change" : "[vagão do metrô~Reason for Change]",
          "Capture Real Signature" : "[vagão do metrô~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[vagão do metrô~Service Request]",

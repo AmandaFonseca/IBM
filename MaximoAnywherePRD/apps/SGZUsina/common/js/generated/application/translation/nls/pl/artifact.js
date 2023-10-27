@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:29:41
+// Build: 2023-10-27 15:49:48
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[Okrągłego~Error retrieving the user name from the device]",
          "System Data Download Error" : "[Okrągłego~System Data Download Error]",
          "Error downloading System Data" : "[Okrągłego~Error downloading System Data]",
-         "Username" : "[Okrągłego~Username]",
-         "Password" : "[Okrągłego~Password]",
-         "Esqueceu a Senha?" : "[Okrągłego~Esqueceu a Senha?]",
-         "Sign In" : "[Okrągłego~Sign In]",
-         "Manual do Aplicativo" : "[Okrągłego~Manual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[Okrągłego~Esta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[Okrągłego~Instaladores]",
          "Privacy Policy" : "[Okrągłego~Privacy Policy]",
-         "Connection Settings" : "[Okrągłego~Connection Settings]",
-         "v7.6.4:2305231200P" : "[Okrągłego~v7.6.4:2305231200P]",
          "Lista Padr\u00E3o" : "[Okrągłego~Lista Padrão]",
          "Synchronize Data" : "[Okrągłego~Synchronize Data]",
          "Generate new Service Order" : "[Okrągłego~Generate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[Okrągłego~Electronic Signature Authentication]",
          "User Name" : "[Okrągłego~User Name]",
          "User name" : "[Okrągłego~User name]",
+         "Password" : "[Okrągłego~Password]",
          "Reason for Change" : "[Okrągłego~Reason for Change]",
          "Capture Real Signature" : "[Okrągłego~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[Okrągłego~Service Request]",

@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-05-23 12:29:39
+// Build: 2023-10-27 15:49:46
 //----------------------------------------------------------------//
 define({
    
@@ -26,14 +26,9 @@ define({
          "Error retrieving the user name from the device" : "[engbError retrieving the user name from the device]",
          "System Data Download Error" : "[engbSystem Data Download Error]",
          "Error downloading System Data" : "[engbError downloading System Data]",
-         "Username" : "[engbUsername]",
-         "Password" : "[engbPassword]",
-         "Esqueceu a Senha?" : "[engbEsqueceu a Senha?]",
-         "Sign In" : "[engbSign In]",
-         "Manual do Aplicativo" : "[engbManual do Aplicativo]",
+         "Esta vers\u00E3o foi descontinuada. Por favor, clique no bot\u00E3o abaixo para fazer o download da ultima vers\u00E3o do aplicativo" : "[engbEsta versão foi descontinuada. Por favor, clique no botão abaixo para fazer o download da ultima versão do aplicativo]",
+         "Instaladores" : "[engbInstaladores]",
          "Privacy Policy" : "[engbPrivacy Policy]",
-         "Connection Settings" : "[engbConnection Settings]",
-         "v7.6.4:2305231200P" : "[engbv7.6.4:2305231200P]",
          "Lista Padr\u00E3o" : "[engbLista Padrão]",
          "Synchronize Data" : "[engbSynchronize Data]",
          "Generate new Service Order" : "[engbGenerate new Service Order]",
@@ -199,6 +194,7 @@ define({
          "Electronic Signature Authentication" : "[engbElectronic Signature Authentication]",
          "User Name" : "[engbUser Name]",
          "User name" : "[engbUser name]",
+         "Password" : "[engbPassword]",
          "Reason for Change" : "[engbReason for Change]",
          "Capture Real Signature" : "[engbCapture Real Signature]",
          "primaryResourceSingleLabel" : "[engbService Request]",
