@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 20:31:19
+// Build: 2023-11-30 10:35:51
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[대학에~Manual do Aplicativo]",
          "Privacy Policy" : "[대학에~Privacy Policy]",
          "Connection Settings" : "[대학에~Connection Settings]",
-         "v7.6.4:v7.6.4:2809232000H" : "[대학에~v7.6.4:v7.6.4:2809232000H]",
+         "v7.6.4:0H" : "[대학에~v7.6.4:0H]",
          "My Assigned Work" : "[대학에~My Assigned Work]",
          "Default List" : "[대학에~Default List]",
          "Records with Errors" : "[대학에~Records with Errors]",
@@ -144,7 +144,6 @@ define({
          "New Status" : "[대학에~New Status]",
          "Select from list" : "[대학에~Select from list]",
          "Motivo" : "[대학에~Motivo]",
-         "C\u00F3digo Motivo" : "[대학에~Código Motivo]",
          "Save" : "[대학에~Save]",
          "Equipes" : "[대학에~Equipes]",
          "Work Order Status" : "[대학에~Work Order Status]",
@@ -153,7 +152,6 @@ define({
          "Select Value" : "[대학에~Select Value]",
          "Selecionar Ticket" : "[대학에~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[대학에~Selecione a Classificação]",
-         "Selecione o motivo" : "[대학에~Selecione o motivo]",
          "Attachment Details" : "[대학에~Attachment Details]",
          "Name" : "[대학에~Name]",
          "Folder" : "[대학에~Folder]",

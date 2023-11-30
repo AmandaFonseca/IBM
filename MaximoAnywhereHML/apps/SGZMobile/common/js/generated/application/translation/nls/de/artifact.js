@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 20:31:19
+// Build: 2023-11-30 10:35:50
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[können~Manual do Aplicativo]",
          "Privacy Policy" : "[können~Privacy Policy]",
          "Connection Settings" : "[können~Connection Settings]",
-         "v7.6.4:v7.6.4:2809232000H" : "[können~v7.6.4:v7.6.4:2809232000H]",
+         "v7.6.4:0H" : "[können~v7.6.4:0H]",
          "My Assigned Work" : "[können~My Assigned Work]",
          "Default List" : "[können~Default List]",
          "Records with Errors" : "[können~Records with Errors]",
@@ -144,7 +144,6 @@ define({
          "New Status" : "[können~New Status]",
          "Select from list" : "[können~Select from list]",
          "Motivo" : "[können~Motivo]",
-         "C\u00F3digo Motivo" : "[können~Código Motivo]",
          "Save" : "[können~Save]",
          "Equipes" : "[können~Equipes]",
          "Work Order Status" : "[können~Work Order Status]",
@@ -153,7 +152,6 @@ define({
          "Select Value" : "[können~Select Value]",
          "Selecionar Ticket" : "[können~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[können~Selecione a Classificação]",
-         "Selecione o motivo" : "[können~Selecione o motivo]",
          "Attachment Details" : "[können~Attachment Details]",
          "Name" : "[können~Name]",
          "Folder" : "[können~Folder]",

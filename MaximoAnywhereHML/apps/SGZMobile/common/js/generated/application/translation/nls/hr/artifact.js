@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 20:31:20
+// Build: 2023-11-30 10:35:54
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[članak~Manual do Aplicativo]",
          "Privacy Policy" : "[članak~Privacy Policy]",
          "Connection Settings" : "[članak~Connection Settings]",
-         "v7.6.4:v7.6.4:2809232000H" : "[članak~v7.6.4:v7.6.4:2809232000H]",
+         "v7.6.4:0H" : "[članak~v7.6.4:0H]",
          "My Assigned Work" : "[članak~My Assigned Work]",
          "Default List" : "[članak~Default List]",
          "Records with Errors" : "[članak~Records with Errors]",
@@ -144,7 +144,6 @@ define({
          "New Status" : "[članak~New Status]",
          "Select from list" : "[članak~Select from list]",
          "Motivo" : "[članak~Motivo]",
-         "C\u00F3digo Motivo" : "[članak~Código Motivo]",
          "Save" : "[članak~Save]",
          "Equipes" : "[članak~Equipes]",
          "Work Order Status" : "[članak~Work Order Status]",
@@ -153,7 +152,6 @@ define({
          "Select Value" : "[članak~Select Value]",
          "Selecionar Ticket" : "[članak~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[članak~Selecione a Classificação]",
-         "Selecione o motivo" : "[članak~Selecione o motivo]",
          "Attachment Details" : "[članak~Attachment Details]",
          "Name" : "[članak~Name]",
          "Folder" : "[članak~Folder]",

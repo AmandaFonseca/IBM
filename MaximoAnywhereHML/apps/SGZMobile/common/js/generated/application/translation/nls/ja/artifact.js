@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 20:31:19
+// Build: 2023-11-30 10:35:51
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[島の第~Manual do Aplicativo]",
          "Privacy Policy" : "[島の第~Privacy Policy]",
          "Connection Settings" : "[島の第~Connection Settings]",
-         "v7.6.4:v7.6.4:2809232000H" : "[島の第~v7.6.4:v7.6.4:2809232000H]",
+         "v7.6.4:0H" : "[島の第~v7.6.4:0H]",
          "My Assigned Work" : "[島の第~My Assigned Work]",
          "Default List" : "[島の第~Default List]",
          "Records with Errors" : "[島の第~Records with Errors]",
@@ -144,7 +144,6 @@ define({
          "New Status" : "[島の第~New Status]",
          "Select from list" : "[島の第~Select from list]",
          "Motivo" : "[島の第~Motivo]",
-         "C\u00F3digo Motivo" : "[島の第~Código Motivo]",
          "Save" : "[島の第~Save]",
          "Equipes" : "[島の第~Equipes]",
          "Work Order Status" : "[島の第~Work Order Status]",
@@ -153,7 +152,6 @@ define({
          "Select Value" : "[島の第~Select Value]",
          "Selecionar Ticket" : "[島の第~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[島の第~Selecione a Classificação]",
-         "Selecione o motivo" : "[島の第~Selecione o motivo]",
          "Attachment Details" : "[島の第~Attachment Details]",
          "Name" : "[島の第~Name]",
          "Folder" : "[島の第~Folder]",

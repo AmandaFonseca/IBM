@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 20:31:20
+// Build: 2023-11-30 10:35:52
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[onbepaalde~Manual do Aplicativo]",
          "Privacy Policy" : "[onbepaalde~Privacy Policy]",
          "Connection Settings" : "[onbepaalde~Connection Settings]",
-         "v7.6.4:v7.6.4:2809232000H" : "[onbepaalde~v7.6.4:v7.6.4:2809232000H]",
+         "v7.6.4:0H" : "[onbepaalde~v7.6.4:0H]",
          "My Assigned Work" : "[onbepaalde~My Assigned Work]",
          "Default List" : "[onbepaalde~Default List]",
          "Records with Errors" : "[onbepaalde~Records with Errors]",
@@ -144,7 +144,6 @@ define({
          "New Status" : "[onbepaalde~New Status]",
          "Select from list" : "[onbepaalde~Select from list]",
          "Motivo" : "[onbepaalde~Motivo]",
-         "C\u00F3digo Motivo" : "[onbepaalde~Código Motivo]",
          "Save" : "[onbepaalde~Save]",
          "Equipes" : "[onbepaalde~Equipes]",
          "Work Order Status" : "[onbepaalde~Work Order Status]",
@@ -153,7 +152,6 @@ define({
          "Select Value" : "[onbepaalde~Select Value]",
          "Selecionar Ticket" : "[onbepaalde~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[onbepaalde~Selecione a Classificação]",
-         "Selecione o motivo" : "[onbepaalde~Selecione o motivo]",
          "Attachment Details" : "[onbepaalde~Attachment Details]",
          "Name" : "[onbepaalde~Name]",
          "Folder" : "[onbepaalde~Folder]",

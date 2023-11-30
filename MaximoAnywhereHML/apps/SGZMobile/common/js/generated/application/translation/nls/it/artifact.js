@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 20:31:19
+// Build: 2023-11-30 10:35:51
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[quantitó~Manual do Aplicativo]",
          "Privacy Policy" : "[quantitó~Privacy Policy]",
          "Connection Settings" : "[quantitó~Connection Settings]",
-         "v7.6.4:v7.6.4:2809232000H" : "[quantitó~v7.6.4:v7.6.4:2809232000H]",
+         "v7.6.4:0H" : "[quantitó~v7.6.4:0H]",
          "My Assigned Work" : "[quantitó~My Assigned Work]",
          "Default List" : "[quantitó~Default List]",
          "Records with Errors" : "[quantitó~Records with Errors]",
@@ -144,7 +144,6 @@ define({
          "New Status" : "[quantitó~New Status]",
          "Select from list" : "[quantitó~Select from list]",
          "Motivo" : "[quantitó~Motivo]",
-         "C\u00F3digo Motivo" : "[quantitó~Código Motivo]",
          "Save" : "[quantitó~Save]",
          "Equipes" : "[quantitó~Equipes]",
          "Work Order Status" : "[quantitó~Work Order Status]",
@@ -153,7 +152,6 @@ define({
          "Select Value" : "[quantitó~Select Value]",
          "Selecionar Ticket" : "[quantitó~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[quantitó~Selecione a Classificação]",
-         "Selecione o motivo" : "[quantitó~Selecione o motivo]",
          "Attachment Details" : "[quantitó~Attachment Details]",
          "Name" : "[quantitó~Name]",
          "Folder" : "[quantitó~Folder]",

@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 20:31:20
+// Build: 2023-11-30 10:35:52
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[pohjoispäässä~Manual do Aplicativo]",
          "Privacy Policy" : "[pohjoispäässä~Privacy Policy]",
          "Connection Settings" : "[pohjoispäässä~Connection Settings]",
-         "v7.6.4:v7.6.4:2809232000H" : "[pohjoispäässä~v7.6.4:v7.6.4:2809232000H]",
+         "v7.6.4:0H" : "[pohjoispäässä~v7.6.4:0H]",
          "My Assigned Work" : "[pohjoispäässä~My Assigned Work]",
          "Default List" : "[pohjoispäässä~Default List]",
          "Records with Errors" : "[pohjoispäässä~Records with Errors]",
@@ -144,7 +144,6 @@ define({
          "New Status" : "[pohjoispäässä~New Status]",
          "Select from list" : "[pohjoispäässä~Select from list]",
          "Motivo" : "[pohjoispäässä~Motivo]",
-         "C\u00F3digo Motivo" : "[pohjoispäässä~Código Motivo]",
          "Save" : "[pohjoispäässä~Save]",
          "Equipes" : "[pohjoispäässä~Equipes]",
          "Work Order Status" : "[pohjoispäässä~Work Order Status]",
@@ -153,7 +152,6 @@ define({
          "Select Value" : "[pohjoispäässä~Select Value]",
          "Selecionar Ticket" : "[pohjoispäässä~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[pohjoispäässä~Selecione a Classificação]",
-         "Selecione o motivo" : "[pohjoispäässä~Selecione o motivo]",
          "Attachment Details" : "[pohjoispäässä~Attachment Details]",
          "Name" : "[pohjoispäässä~Name]",
          "Folder" : "[pohjoispäässä~Folder]",

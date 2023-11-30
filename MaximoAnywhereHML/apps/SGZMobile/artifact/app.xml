@@ -2248,16 +2248,16 @@
 				<attribute describedByProperty="spi_wm:worktype" id="workOrder_worktype_spi_wmworktype" name="worktype"/>
 				<attribute describedByProperty="spi_wm:wopriority" id="workOrder_priority_spi_wmwopriority" index="true" name="priority"/> 
 				<attribute describedByProperty="spi_wm:classstructureid" id="workOrder_classstructureid_spi_wmclassstructureid" name="classstructureid"/>			
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:formattedaddress}" id="workOrder_woserviceaddress_spiwoserviceaddressspi_wmformattedaddress" name="woserviceaddress"/>
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:saddresscode}" id="workOrder_woserviceaddresscode_spiwoserviceaddressspi_wmsaddresscode" name="woserviceaddresscode"/>
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:description}" id="workOrder_woserviceaddressdesc_spiwoserviceaddressspi_wmdescription" name="woserviceaddressdesc"/> 
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:formattedaddress}" id="workOrder_woserviceaddress_spiwoserviceaddressspi_wmformattedaddress" name="woserviceaddress"/>
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:saddresscode}" id="workOrder_woserviceaddresscode_spiwoserviceaddressspi_wmsaddresscode" name="woserviceaddresscode"/>
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:description}" id="workOrder_woserviceaddressdesc_spiwoserviceaddressspi_wmdescription" name="woserviceaddressdesc"/> 
 				<!-- SGZ Mobile woserviceaddress -->
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:addressline2}" id="workOrder_woserviceaddressaddressline2_spiwoserviceaddressspi_addressline2" name="woserviceaddressline2"/>
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:staddrnumber}" id="workOrder_woserviceaddressstaddrnumber_spiwoserviceaddressspi_staddrnumber" name="woservicetaddrnumber"/>
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:addressline3}" id="workOrder_woserviceaddressaddressline3_spiwoserviceaddressspi_addressline3" name="woserviceaddressline3"/>				
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:postalcode}" id="workOrder_woserviceaddresspostalcode_spiwoserviceaddressspi_postalcode" name="woservicepostalcode"/>
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:city}" id="workOrder_woserviceaddresscity_spiwoserviceaddressspi_city" name="woservicecity"/>
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:stateprovince}" id="workOrder_woserviceaddressstateprovince_spiwoserviceaddressspi_stateprovince" name="woservicestateprovince"/>				
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:addressline2}" id="workOrder_woserviceaddressaddressline2_spiwoserviceaddressspi_addressline2" name="woserviceaddressline2"/>
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:staddrnumber}" id="workOrder_woserviceaddressstaddrnumber_spiwoserviceaddressspi_staddrnumber" name="woservicetaddrnumber"/>
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:addressline3}" id="workOrder_woserviceaddressaddressline3_spiwoserviceaddressspi_addressline3" name="woserviceaddressline3"/>				
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:postalcode}" id="workOrder_woserviceaddresspostalcode_spiwoserviceaddressspi_postalcode" name="woservicepostalcode"/>
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:city}" id="workOrder_woserviceaddresscity_spiwoserviceaddressspi_city" name="woservicecity"/>
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:stateprovince}" id="workOrder_woserviceaddressstateprovince_spiwoserviceaddressspi_stateprovince" name="woservicestateprovince"/>				
 				
 				
 				<!-- SGZ Mobile attributes-->
@@ -2307,9 +2307,9 @@
 		 		
 				<!-- Complex attributes for supporting data -->
 				<attribute describedByProperty="spi_wm:task" describedByResource="taskResource" id="workOrder_tasklist_spi_wmtask" name="tasklist"/>
-				<attribute describedByProperty="spi_wm:assignment" describedByResource="assignmentResource" id="workOrder_assignmentlist_spi_wmassignment" name="assignmentlist"/>
-				<attribute describedByProperty="spi_wm:wpmaterial" describedByResource="plannedMaterialResource" id="workOrder_materiallist_spi_wmwpmaterial" name="materiallist"/>
-				<attribute describedByProperty="spi_wm:wptool" describedByResource="plannedToolResource" id="workOrder_toollist_spi_wmwptool" name="toollist"/>
+				<attribute describedByProperty="spi_wm:assignmentmob" describedByResource="assignmentResource" id="workOrder_assignmentlist_spi_wmassignment" name="assignmentlist"/>
+				<attribute describedByProperty="spi_wm:wpmaterialmob" describedByResource="plannedMaterialResource" id="workOrder_materiallist_spi_wmwpmaterial" name="materiallist"/>
+				<attribute describedByProperty="spi_wm:wptoolmob" describedByResource="plannedToolResource" id="workOrder_toollist_spi_wmwptool" name="toollist"/>
 				<attribute describedByProperty="spi_wm:actuallabormob" describedByResource="actualLaborResource" id="workOrder_actuallaborlist_spi_wmactuallabor" name="actuallaborlist"/>
 				<attribute describedByProperty="spi_wm:actualmaterialmob" describedByResource="actualMaterialResource" id="workOrder_actualmateriallist_spi_wmactualmaterial" name="actualmateriallist"/>
 				
@@ -2325,11 +2325,11 @@
 				<!-- Attributes needed for Maps -->
 				<attribute describedByProperty="spi_wm:calculatedy" id="workOrder_latitudey_spi_wmcalculatedy" name="latitudey"/>
 				<attribute describedByProperty="spi_wm:calculatedx" id="workOrder_longitudex_spi_wmcalculatedx" name="longitudex"/>
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:formattedaddress}" id="workOrder_formattedaddress_spiwoserviceaddressspi_wmformattedaddress" name="formattedaddress"/>
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:formattedaddress}" id="workOrder_formattedaddress_spiwoserviceaddressspi_wmformattedaddress" name="formattedaddress"/>
 				
 				<!-- Attributes needed for Geolocation Capture -->
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:longitudex}" id="workOrder_woserviceaddressx_longitudex" name="WOSAlongitudex"/>
-				<attribute describedByProperty="spi:woserviceaddress{spi_wm:latitudey}" id="workOrder_woserviceaddressy_latitudey" name="WOSAlatitudey"/> 
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:longitudex}" id="workOrder_woserviceaddressx_longitudex" name="WOSAlongitudex"/>
+				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:latitudey}" id="workOrder_woserviceaddressy_latitudey" name="WOSAlatitudey"/> 
 				
 				
 				<!-- Attributes needed for Geolocation Capture Ticket -->

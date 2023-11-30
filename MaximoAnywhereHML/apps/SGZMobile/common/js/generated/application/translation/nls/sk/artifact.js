@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 20:31:20
+// Build: 2023-11-30 10:35:53
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[spôsobených~Manual do Aplicativo]",
          "Privacy Policy" : "[spôsobených~Privacy Policy]",
          "Connection Settings" : "[spôsobených~Connection Settings]",
-         "v7.6.4:v7.6.4:2809232000H" : "[spôsobených~v7.6.4:v7.6.4:2809232000H]",
+         "v7.6.4:0H" : "[spôsobených~v7.6.4:0H]",
          "My Assigned Work" : "[spôsobených~My Assigned Work]",
          "Default List" : "[spôsobených~Default List]",
          "Records with Errors" : "[spôsobených~Records with Errors]",
@@ -144,7 +144,6 @@ define({
          "New Status" : "[spôsobených~New Status]",
          "Select from list" : "[spôsobených~Select from list]",
          "Motivo" : "[spôsobených~Motivo]",
-         "C\u00F3digo Motivo" : "[spôsobených~Código Motivo]",
          "Save" : "[spôsobených~Save]",
          "Equipes" : "[spôsobených~Equipes]",
          "Work Order Status" : "[spôsobených~Work Order Status]",
@@ -153,7 +152,6 @@ define({
          "Select Value" : "[spôsobených~Select Value]",
          "Selecionar Ticket" : "[spôsobených~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[spôsobených~Selecione a Classificação]",
-         "Selecione o motivo" : "[spôsobených~Selecione o motivo]",
          "Attachment Details" : "[spôsobených~Attachment Details]",
          "Name" : "[spôsobených~Name]",
          "Folder" : "[spôsobených~Folder]",

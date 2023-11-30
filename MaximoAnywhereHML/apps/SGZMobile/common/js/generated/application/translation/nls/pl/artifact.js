@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-28 20:31:20
+// Build: 2023-11-30 10:35:52
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[Okrągłego~Manual do Aplicativo]",
          "Privacy Policy" : "[Okrągłego~Privacy Policy]",
          "Connection Settings" : "[Okrągłego~Connection Settings]",
-         "v7.6.4:v7.6.4:2809232000H" : "[Okrągłego~v7.6.4:v7.6.4:2809232000H]",
+         "v7.6.4:0H" : "[Okrągłego~v7.6.4:0H]",
          "My Assigned Work" : "[Okrągłego~My Assigned Work]",
          "Default List" : "[Okrągłego~Default List]",
          "Records with Errors" : "[Okrągłego~Records with Errors]",
@@ -144,7 +144,6 @@ define({
          "New Status" : "[Okrągłego~New Status]",
          "Select from list" : "[Okrągłego~Select from list]",
          "Motivo" : "[Okrągłego~Motivo]",
-         "C\u00F3digo Motivo" : "[Okrągłego~Código Motivo]",
          "Save" : "[Okrągłego~Save]",
          "Equipes" : "[Okrągłego~Equipes]",
          "Work Order Status" : "[Okrągłego~Work Order Status]",
@@ -153,7 +152,6 @@ define({
          "Select Value" : "[Okrągłego~Select Value]",
          "Selecionar Ticket" : "[Okrągłego~Selecionar Ticket]",
          "Selecione a Classifica\u00E7\u00E3o" : "[Okrągłego~Selecione a Classificação]",
-         "Selecione o motivo" : "[Okrągłego~Selecione o motivo]",
          "Attachment Details" : "[Okrągłego~Attachment Details]",
          "Name" : "[Okrągłego~Name]",
          "Folder" : "[Okrągłego~Folder]",

@@ -69,12 +69,10 @@
 		<downloadOneRdf context="/oslc/sp/SmarterPhysicalInfrastructure" />
 		<downloadOneRdf context="/oslc/sp/FriendOfAFriend" />
 
-
-		<!-- ESTRUTURAS PARA APP SGZMobile: -->
+		<!-- ESTRUTURAS PARA APP SGZMobile:
 		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/assetspec" />
-		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/assignment" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/doclinks/attachment" />
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/doclinks/attachment/meta" />
@@ -95,7 +93,7 @@
 		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/ms_doclinks" />
 		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew" />
 		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew/person" />	
-		
+		-->
 		<!-- FIM ESTRUTURAS PARA APP SGZMobile: -->
 		
 		
