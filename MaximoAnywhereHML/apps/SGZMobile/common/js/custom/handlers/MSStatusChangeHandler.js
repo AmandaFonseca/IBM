@@ -559,9 +559,6 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 					var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 					var currentWorkOrder = eventContext.application.getResource("workOrder").getCurrentRecord();
                     var psconfigid = currentWorkOrder.get("ms_psconfigid");
-
-					let ms_invalidmsgnaorealizadaCod = "Preencha o campo Código Motivo com a justificativa da não realização do serviço.";
-
      
 					//Validate if status date change is lesser than last WO status change date
 						if(currentWorkOrder.getAsDateOrNull('changestatusdate') > statusChange.getAsDateOrNull('changedate')){
@@ -613,105 +610,104 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
                         }
                     
                     					
-						if (currentWorkOrder != null && currentWorkOrder.workOrderSpec != null && statusChange.get("status") == "CONC"){
-							Logger.error("DENTRO DO IF MEDI��O" + statusChange.get("status"));
-								var countNum = 0;
-								var countAln = 0;
-								var concasf = 0;
-								var nowDate = new Date();
-								var spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
-								var count = spec.count();
-								
-								for (var i = 0; i < count; i++) {
-								// var currWorkOrderSpec = currentWorkOrder.workOrderSpec.getRecordAt(i);
-								let currWorkOrderSpec = spec.getRecordAt(i)
-									var numValue = currWorkOrderSpec.get("numvalue");
-									var alnValue = currWorkOrderSpec.get("alnvalue");
-									var specID = currWorkOrderSpec.get('assetattrid');
-									var measureunitid = currWorkOrderSpec.get('measureunitid');
-									
-									var pdSpecReq = currWorkOrderSpec.get("pd_spec_required");
-									if (specID == 'CURA_CONC'){
-										var cura_conc = alnValue;
-									}
-									if (specID == 'NEC_CONC'){
-										//Verifica se é concordancia asfáltica
-										var nec_conc = alnValue;
-									}	
-									if (nec_conc == 'Sim'){
-										if  (cura_conc == null || cura_conc == undefined  || cura_conc == ""){
-										eventContext.ui.showMessage(MessageService.createStaticMessage("O campo 'Cura de concreto' precisa ser preenchido!").getMessage());
-										}
-										else{
-											var dateParts = cura_conc.split("/");
-											var newDate = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
-											var newDateFomatada = new Date(cura_conc);
-											let day = newDate.getMonth()+1;
-											let month = newDate.getDate();
-											let year = newDate.getFullYear();
-											//var isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
-											var isBoolean;
-											try {
-												isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
-												if (isBoolean == undefined || isBoolean == null || isBoolean == false) {
-													isBoolean = (newDateFomatada instanceof Date) && newDateFomatada !=null;
-												}
-											} catch (error) {
-												console.log(error);
-											}                                                    
-											
-											newDateFomatada = new Date('""'+day+"/"+month+"/"+year);
-											if (isBoolean) {
-												if(newDateFomatada < nowDate){
-													throw new PlatformRuntimeWarning("O campo 'Cura de concreto' precisa ser maior que a data atual!");
-													//eventContext.ui.showMessage(MessageService.createStaticMessage().getMessage());
-												
-												}
-											}
-											else{
-												throw new PlatformRuntimeWarning("Por favor, insira uma data valida!");
-												//eventContext.ui.showMessage(MessageService.createStaticMessage("Por favor, insira uma data valida!").getMessage());
-											}	
-										}
-									}
-									
-										if (alnValue == null || alnValue == "" || typeof alnValue === undefined){                            
-											if(pdSpecReq == true) {
-												if (numValue == null || numValue == "" || typeof numValue === undefined 
-												|| numValue == 0){
-													console.log("ms_semmedicao" + numValue);
-													throw new PlatformRuntimeException("ms_semmedicao");
-													return ;
-												}
-											}        
-											if(numValue == null || numValue == "" || typeof numValue === undefined) {
-											}else {
-												countNum++;
-											}
-										}
-										if (numValue == null || numValue == "" || typeof numValue === undefined){                            
-											if(pdSpecReq == true) {
-												if (alnValue == null || alnValue == "" || typeof alnValue === undefined){
-													throw new PlatformRuntimeException("ms_semmedicao");
-													return ;
-												}
-											}        
-											if(alnValue == null || alnValue == "" || typeof alnValue === undefined) {
-											}else {
-												countAln++;
-											}
-										}
-								}
-								if ((countNum == 0 || numValue == 0) && countAln == 0) {
-									throw new PlatformRuntimeException("ms_semmedicao");
-									return ;
-								}
-						}
+                if (currentWorkOrder != null && currentWorkOrder.workOrderSpec != null && statusChange.get("status") == "CONC"){
+                    Logger.error("DENTRO DO IF MEDI��O" + statusChange.get("status"));
+                        var countNum = 0;
+                        var countAln = 0;
+						var concasf = 0;
+                        var nowDate = new Date();
+                        var spec = CommonHandler._getAdditionalResource(eventContext,"workOrder.workOrderSpec");
+                        var count = spec.count();
+                        
+                        for (var i = 0; i < count; i++) {
+                           // var currWorkOrderSpec = currentWorkOrder.workOrderSpec.getRecordAt(i);
+						   let currWorkOrderSpec = spec.getRecordAt(i)
+                            var numValue = currWorkOrderSpec.get("numvalue");
+                            var alnValue = currWorkOrderSpec.get("alnvalue");
+                            var specID = currWorkOrderSpec.get('assetattrid');
+                            var measureunitid = currWorkOrderSpec.get('measureunitid');
+                            
+                            var pdSpecReq = currWorkOrderSpec.get("pd_spec_required");
+                            if (specID == 'CURA_CONC'){
+                                var cura_conc = alnValue;
+                            }
+                            if (specID == 'NEC_CONC'){
+                                //Verifica se é concordancia asfáltica
+                                var nec_conc = alnValue;
+                            }	
+                            if (nec_conc == 'Sim'){
+                                if  (cura_conc == null || cura_conc == undefined  || cura_conc == ""){
+                                 eventContext.ui.showMessage(MessageService.createStaticMessage("O campo 'Cura de concreto' precisa ser preenchido!").getMessage());
+                                }
+                                else{
+                                    var dateParts = cura_conc.split("/");
+                                    var newDate = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]); 
+                                    var newDateFomatada = new Date(cura_conc);
+                                    let day = newDate.getMonth()+1;
+                                    let month = newDate.getDate();
+                                    let year = newDate.getFullYear();
+                                    //var isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
+                                    var isBoolean;
+                                    try {
+                                        isBoolean = (newDateFomatada instanceof Date) && !isNaN(newDateFomatada);
+                                        if (isBoolean == undefined || isBoolean == null || isBoolean == false) {
+                                            isBoolean = (newDateFomatada instanceof Date) && newDateFomatada !=null;
+                                        }
+                                    } catch (error) {
+                                        console.log(error);
+                                    }                                                    
+                                    
+                                    newDateFomatada = new Date('""'+day+"/"+month+"/"+year);
+                                    if (isBoolean) {
+                                        if(newDateFomatada < nowDate){
+                                            throw new PlatformRuntimeWarning("O campo 'Cura de concreto' precisa ser maior que a data atual!");
+                                            //eventContext.ui.showMessage(MessageService.createStaticMessage().getMessage());
+                                           
+                                        }
+                                    }
+                                    else{
+                                        throw new PlatformRuntimeWarning("Por favor, insira uma data valida!");
+                                        //eventContext.ui.showMessage(MessageService.createStaticMessage("Por favor, insira uma data valida!").getMessage());
+                                    }	
+                                }
+                            }
+                               
+                                if (alnValue == null || alnValue == "" || typeof alnValue === undefined){                            
+                                    if(pdSpecReq == true) {
+                                        if (numValue == null || numValue == "" || typeof numValue === undefined 
+                                        || numValue == 0){
+                                            console.log("ms_semmedicao" + numValue);
+                                            throw new PlatformRuntimeException("ms_semmedicao");
+                                            return ;
+                                        }
+                                    }        
+                                    if(numValue == null || numValue == "" || typeof numValue === undefined) {
+                                    }else {
+                                        countNum++;
+                                    }
+                                }
+                                if (numValue == null || numValue == "" || typeof numValue === undefined){                            
+                                    if(pdSpecReq == true) {
+                                        if (alnValue == null || alnValue == "" || typeof alnValue === undefined){
+                                            throw new PlatformRuntimeException("ms_semmedicao");
+                                            return ;
+                                        }
+                                    }        
+                                    if(alnValue == null || alnValue == "" || typeof alnValue === undefined) {
+                                    }else {
+                                        countAln++;
+                                    }
+                                }
+                        }
+                        if ((countNum == 0 || numValue == 0) && countAln == 0) {
+                            throw new PlatformRuntimeException("ms_semmedicao");
+                            return ;
+                        }
+                }
 		
 					
 					 var statusChange = CommonHandler._getAdditionalResource(eventContext,"statusChangeResource").getCurrentRecord();
 					 var workOrderSet = CommonHandler._getAdditionalResource(this,"workOrder");
-
 					 var workOrder = workOrderSet.getCurrentRecord();
 					 var newStatus=statusChange.get("status");
 					 var emergency = workOrder.get("ms_emergency");
@@ -742,10 +738,11 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 								
 								
 								}  */
-
+								
+						
 						
 						var currMotivo = workOrder.get("motivo");                                         
-						if ((newStatus == "NAOREALIZADA" && currMotivo == null && !emergency)){
+						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
 							var fieldMetadata = workOrder.getRuntimeFieldMetadata("motivo");
 							fieldMetadata.set('required', true);                                                        
 						}else if(newStatus !== "NAOREALIZADA"){
@@ -755,20 +752,6 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 						if (newStatus == "NAOREALIZADA" && currMotivo == null && !emergency){
 						   throw new PlatformRuntimeException("ms_invalidmsgnaorealizada");                    
 						} 
-
-						var currCodMotivo = workOrder.get("pd_whynum");                                         
-						if ((newStatus == "NAOREALIZADA" && currCodMotivo == null && !emergency)){
-							var fieldMetadata = workOrder.getRuntimeFieldMetadata("pd_whynum");
-							fieldMetadata.set('required', true);                                                        
-						}else if(newStatus !== "NAOREALIZADA"){
-								var fieldMetadata = workOrder.getRuntimeFieldMetadata("pd_whynum");
-								fieldMetadata.set('required', false);
-						}
-						if (newStatus == "NAOREALIZADA" && currCodMotivo == null && !emergency){
-						   throw new PlatformRuntimeException(ms_invalidmsgnaorealizadaCod);                    
-						} 
-
-
 					
 					
 					this.inherited(arguments);	
@@ -851,40 +834,6 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 				});
 				
 			},
-			openPDWhy : function(eventContext) {
-				eventContext.application.showBusy();
-				this.topPage = false;
-				var filter="";
-				var woSet = eventContext.application.getResource('workOrder');
-				var wo = woSet.getCurrentRecord();
-				var selectedRecord = CommonHandler._getAdditionalResource(eventContext,"whylist").getCurrentRecord();
-				
-				if (selectedRecord) {
-					this.currentClass = selectedRecord.get('pd_whynum');
-					this.currentClassDesc = selectedRecord.get('pd_description');
-		
-					this.savePDWhy(eventContext);				
-					return;
-				}
-			},
-			savePDWhy: function(eventContext, skipDynamicCheck) {
-				eventContext.application.showBusy();
-				Logger.trace("Saving off the current reason");
-				var woSet = eventContext.application.getResource('workOrder');
-				var wo = woSet.getCurrentRecord();
-				let self = this;
-	
-		
-				//wo.set('ms_inspwhy', this.currentClass);
-				wo.set('pdwhy_description', this.currentClassDesc);
-				WorkOrderObject.updateSpecifications(wo).then(function(){
-					self.commitWOStatusChange(eventContext, skipDynamicCheck);
-					//eventContext.ui.hideCurrentView(PlatformConstants.CLEANUP);
-				}).otherwise(function(e){
-					eventContext.application.hideBusy();
-				});
-			  this.inherited(arguments);	 			
-			},  
 			saveWOShowView : function(eventContext) {
 					var workOrder = eventContext.application.getResource('workOrder');
 					var deferred = new Deferred();
@@ -896,6 +845,4 @@ function(declare, ApplicationHandlerBase, StatusChangeHandler,
 				}
 
 			});
-
-			
 });

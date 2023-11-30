@@ -1849,7 +1849,6 @@
 				</requiredResource>
 				<requiredResource id="WorkExecution.EditStatusView_statusChangeResource" name="statusChangeResource"/>
 				<requiredResource id="WorkExecution.EditStatusView_domainworktype" name="domainworktype"/>
-			    <requiredResource id="WorkExecution.PD_WhyView_ms_pdwhy" name="whylist"/>
 			</requiredResources>
 
 			<container id="WorkExecution.EditStatusView_workOrder_container_0" resource="workOrder">
@@ -1903,9 +1902,6 @@
 				<group id="WorkExecution.EditStatusView_group_011">
 					<groupitem id="WorkExecution.EditStatusView_workOrder_groupitem_011">
 						<textarea editable="true" id="WorkExecution.EditStatusView_statusChangeResource_groupitem_3_memo_motivo11" label="Motivo" resourceAttribute="motivo"/>
-					</groupitem>
-					<groupitem id="WorkExecution.reasonView.group.groupitem_1">
-						<text editable="false" id="WorkExecution.reasonView.group.groupitem.text_1" layoutInsertAt="item1" label="Código Motivo" resourceAttribute="pd_whynum" lookup="WorkExecution.whylookup"/>
 					</groupitem>
 				</group>
 				<!--<eventHandlers id="WorkExecution.EditStatusView_Save_button_eventHandlers_hide_Reason">
@@ -2001,31 +1997,31 @@
 		<!-- LOOKUP SECTION -->
 		<!-- *********************** -->
 
-		<lookup id="sgzMobile.amcrewLookup" label="Equipes" resource="msamcrew" filterClass="custom.handlers.WODetailExtensionHandler" filterMethod="selectTeamLookup">
-			<requiredResources id="sgzMobile.amcrewLookup_requiredResources">
-				<requiredResource id="sgzMobile.amcrewLookup_msamcrew" name="msamcrew"/>
-			</requiredResources>
+<lookup id="sgzMobile.amcrewLookup" label="Equipes" resource="msamcrew" filterClass="custom.handlers.WODetailExtensionHandler" filterMethod="selectTeamLookup">
+    <requiredResources id="sgzMobile.amcrewLookup_requiredResources">
+        <requiredResource id="sgzMobile.amcrewLookup_msamcrew" name="msamcrew"/>
+    </requiredResources>
 
-			<list id="sgzMobile.amcrewLookup_list" resource="msamcrew">
-				<searchAttributes id="sgzMobile.amcrewLookup_list_searchAttributes">
-					<searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_amcrew" name="amcrew"/>
-					<searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_description" name="displayname"/>
-				</searchAttributes>
-				<listItemTemplate id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1" layout="Item1Desc1" >
-					<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_list">
-						<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_list" method="setLocaleCrew"/>
-					</eventHandlers>
-					<listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_amcrew" layoutInsertAt="item1" resourceAttribute="amcrew"/>
-					<listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_description" layoutInsertAt="desc1" resourceAttribute="displayname"/>
-				</listItemTemplate>
-			</list>
-			<returnAttributes id="sgzMobile.amcrewLookup_returnAttributes">
-				<returnAttribute id="sgzMobile.amcrewLookup_returnAttributes_amcrew_amcrew" sourceAttribute="amcrew" targetAttribute="amcrew"/>
-			</returnAttributes>
-			<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_hide_footer">
-				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_hide_footer" method="hideFooterLookup"/>
+    <list id="sgzMobile.amcrewLookup_list" resource="msamcrew">
+        <searchAttributes id="sgzMobile.amcrewLookup_list_searchAttributes">
+            <searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_amcrew" name="amcrew"/>
+            <searchAttribute id="sgzMobile.amcrewLookup_list_searchAttribute_description" name="displayname"/>
+        </searchAttributes>
+        <listItemTemplate id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1" layout="Item1Desc1" >
+			<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_list">
+				<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_list" method="setLocaleCrew"/>
 			</eventHandlers>
-		</lookup>
+            <listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_amcrew" layoutInsertAt="item1" resourceAttribute="amcrew"/>
+            <listtext cssClass="bold textappearance-medium" id="sgzMobile.amcrewLookup_list_searchAttribute_listItemTemplate_Item1Desc1_description" layoutInsertAt="desc1" resourceAttribute="displayname"/>
+        </listItemTemplate>
+    </list>
+    <returnAttributes id="sgzMobile.amcrewLookup_returnAttributes">
+        <returnAttribute id="sgzMobile.amcrewLookup_returnAttributes_amcrew_amcrew" sourceAttribute="amcrew" targetAttribute="amcrew"/>
+    </returnAttributes>
+	<eventHandlers id="WorkExecution.WorkDetailView_workOrder_workOrderSpec_renderNoAssetToWO_0_eventHandlers_hide_footer">
+		<eventHandler class="custom.handlers.MSStatusChangeHandler" event="render" id="WorkExecution.WorkDetailView_eventHandlers_initialize_open_renderNoAssetToWO_hide_footer" method="hideFooterLookup"/>
+	</eventHandlers>
+</lookup>
 		
 		<lookup filterClass="custom.handlers.MSStatusChangeHandler" filterMethod="filterWOStatus" id="WorkExecution.statusLookup" label="Work Order Status" resource="domainwostatus">	
 			<requiredResources id="WorkExecution.statusLookup_requiredResources">
@@ -2198,26 +2194,7 @@
 			</returnAttributes>
 		</lookup>
 		
-		<lookup id="WorkExecution.whylookup" label="Selecione o motivo" resource="whylist">
-			<requiredResources id="WorkExecution.whylookup_requiredResources">
-				<requiredResource id="WorkExecution.whylookup.requiredResource.whylist" name="whylist"/>
-			</requiredResources>
-			<list id="WorkExecution.whylookup.list" resource="whylist">
-				<listItemTemplate id="WorkExecution.whylookup.listItemTemplate">
-					<listtext cssClass="bold textappearance-medium" id="WorkExecution.whylookup.listtext.description" resourceAttribute="description"/>
-					<eventHandlers id="WorkExecution.PD_WhyView_listItemTemplate_FailureReportList_eventHandlers">
-						<eventHandler class="custom.handlers.MSStatusChangeHandler" event="click" id="WorkExecution.PD_WhyView_listItemTemplate_FailureReportList_eventHandlers_click_openPDWhy" method="openPDWhy"/>
-					</eventHandlers> 
-				
-				</listItemTemplate>
-			</list>
-			<returnAttributes id="WorkExecution.whylookup.returnAttributes">
-				<returnAttribute id="WorkExecution.whylookup.returnAttributes.pd_whynum.ms_whynum" sourceAttribute="pd_whynum" targetAttribute="pd_whynum"/>
-			</returnAttributes>
-		</lookup>		
-	
-
-
+		
 	
 	</ui>
 
@@ -2271,21 +2248,20 @@
 				<attribute describedByProperty="spi_wm:worktype" id="workOrder_worktype_spi_wmworktype" name="worktype"/>
 				<attribute describedByProperty="spi_wm:wopriority" id="workOrder_priority_spi_wmwopriority" index="true" name="priority"/> 
 				<attribute describedByProperty="spi_wm:classstructureid" id="workOrder_classstructureid_spi_wmclassstructureid" name="classstructureid"/>			
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:formattedaddress}" id="workOrder_woserviceaddress_spiwoserviceaddressspi_wmformattedaddress" name="woserviceaddress"/>
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:saddresscode}" id="workOrder_woserviceaddresscode_spiwoserviceaddressspi_wmsaddresscode" name="woserviceaddresscode"/>
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:description}" id="workOrder_woserviceaddressdesc_spiwoserviceaddressspi_wmdescription" name="woserviceaddressdesc"/> 
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:formattedaddress}" id="workOrder_woserviceaddress_spiwoserviceaddressspi_wmformattedaddress" name="woserviceaddress"/>
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:saddresscode}" id="workOrder_woserviceaddresscode_spiwoserviceaddressspi_wmsaddresscode" name="woserviceaddresscode"/>
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:description}" id="workOrder_woserviceaddressdesc_spiwoserviceaddressspi_wmdescription" name="woserviceaddressdesc"/> 
 				<!-- SGZ Mobile woserviceaddress -->
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:addressline2}" id="workOrder_woserviceaddressaddressline2_spiwoserviceaddressspi_addressline2" name="woserviceaddressline2"/>
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:staddrnumber}" id="workOrder_woserviceaddressstaddrnumber_spiwoserviceaddressspi_staddrnumber" name="woservicetaddrnumber"/>
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:addressline3}" id="workOrder_woserviceaddressaddressline3_spiwoserviceaddressspi_addressline3" name="woserviceaddressline3"/>				
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:postalcode}" id="workOrder_woserviceaddresspostalcode_spiwoserviceaddressspi_postalcode" name="woservicepostalcode"/>
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:city}" id="workOrder_woserviceaddresscity_spiwoserviceaddressspi_city" name="woservicecity"/>
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:stateprovince}" id="workOrder_woserviceaddressstateprovince_spiwoserviceaddressspi_stateprovince" name="woservicestateprovince"/>				
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:addressline2}" id="workOrder_woserviceaddressaddressline2_spiwoserviceaddressspi_addressline2" name="woserviceaddressline2"/>
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:staddrnumber}" id="workOrder_woserviceaddressstaddrnumber_spiwoserviceaddressspi_staddrnumber" name="woservicetaddrnumber"/>
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:addressline3}" id="workOrder_woserviceaddressaddressline3_spiwoserviceaddressspi_addressline3" name="woserviceaddressline3"/>				
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:postalcode}" id="workOrder_woserviceaddresspostalcode_spiwoserviceaddressspi_postalcode" name="woservicepostalcode"/>
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:city}" id="workOrder_woserviceaddresscity_spiwoserviceaddressspi_city" name="woservicecity"/>
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:stateprovince}" id="workOrder_woserviceaddressstateprovince_spiwoserviceaddressspi_stateprovince" name="woservicestateprovince"/>				
 				
 				
 				<!-- SGZ Mobile attributes-->
 				<attribute describedByProperty="spi_wm:ms_reason" id="workOrder_spi_ms_reason" name="motivo"/>																			
-				<attribute describedByProperty="spi_wm:pd_whynum" id="workOrder_spi_ms_pd_whynum" name="pd_whynum"/>																			
 				<attribute describedByProperty="spi_wm:pd_obs" id="workOrder_spi_pd_obs" name="pd_obs"/>
 				<attribute describedByProperty="spi_wm:ms_aging" id="workOrder_spi_ms_aging" name="ms_aging"/>
 				<attribute describedByProperty="spi_wm:newchildclass" id="workOrder_spi_newchildclass" name="newchildclass"/>
@@ -2331,9 +2307,9 @@
 		 		
 				<!-- Complex attributes for supporting data -->
 				<attribute describedByProperty="spi_wm:task" describedByResource="taskResource" id="workOrder_tasklist_spi_wmtask" name="tasklist"/>
-				<attribute describedByProperty="spi_wm:assignmentmob" describedByResource="assignmentResource" id="workOrder_assignmentlist_spi_wmassignment" name="assignmentlist"/>
-				<attribute describedByProperty="spi_wm:wpmaterialmob" describedByResource="plannedMaterialResource" id="workOrder_materiallist_spi_wmwpmaterial" name="materiallist"/>
-				<attribute describedByProperty="spi_wm:wptoolmob" describedByResource="plannedToolResource" id="workOrder_toollist_spi_wmwptool" name="toollist"/>
+				<attribute describedByProperty="spi_wm:assignment" describedByResource="assignmentResource" id="workOrder_assignmentlist_spi_wmassignment" name="assignmentlist"/>
+				<attribute describedByProperty="spi_wm:wpmaterial" describedByResource="plannedMaterialResource" id="workOrder_materiallist_spi_wmwpmaterial" name="materiallist"/>
+				<attribute describedByProperty="spi_wm:wptool" describedByResource="plannedToolResource" id="workOrder_toollist_spi_wmwptool" name="toollist"/>
 				<attribute describedByProperty="spi_wm:actuallabormob" describedByResource="actualLaborResource" id="workOrder_actuallaborlist_spi_wmactuallabor" name="actuallaborlist"/>
 				<attribute describedByProperty="spi_wm:actualmaterialmob" describedByResource="actualMaterialResource" id="workOrder_actualmateriallist_spi_wmactualmaterial" name="actualmateriallist"/>
 				
@@ -2349,11 +2325,11 @@
 				<!-- Attributes needed for Maps -->
 				<attribute describedByProperty="spi_wm:calculatedy" id="workOrder_latitudey_spi_wmcalculatedy" name="latitudey"/>
 				<attribute describedByProperty="spi_wm:calculatedx" id="workOrder_longitudex_spi_wmcalculatedx" name="longitudex"/>
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:formattedaddress}" id="workOrder_formattedaddress_spiwoserviceaddressspi_wmformattedaddress" name="formattedaddress"/>
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:formattedaddress}" id="workOrder_formattedaddress_spiwoserviceaddressspi_wmformattedaddress" name="formattedaddress"/>
 				
 				<!-- Attributes needed for Geolocation Capture -->
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:longitudex}" id="workOrder_woserviceaddressx_longitudex" name="WOSAlongitudex"/>
-				<attribute describedByProperty="spi:woserviceaddressmob{spi_wm:latitudey}" id="workOrder_woserviceaddressy_latitudey" name="WOSAlatitudey"/> 
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:longitudex}" id="workOrder_woserviceaddressx_longitudex" name="WOSAlongitudex"/>
+				<attribute describedByProperty="spi:woserviceaddress{spi_wm:latitudey}" id="workOrder_woserviceaddressy_latitudey" name="WOSAlatitudey"/> 
 				
 				
 				<!-- Attributes needed for Geolocation Capture Ticket -->
@@ -2444,17 +2420,7 @@
 				</conditions> -->
 		</resource>
 		
-
-		<resource describedBy="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_pdwhy" id="whylist" name="whylist" pageSize="50" providedBy="/oslc/sp/WorkManagement">
-			<attributes id="whylist_attributes">
-				<attribute describedByProperty="spi_wm:pd_whynum" id="whylist_pd_whynum_spipd_whynum" index="true" name="pd_whynum"/> 
-				<attribute describedByProperty="spi_wm:description" id="whylist_description_spidescription" index="true" name="description"/>
-			</attributes>
-			<queryBases id="whylist_queryBases">
-				<queryBase id="ms_oslcpdwhy_queryBase_getms_ms_oslcpdwhy" name="getms_oslcpdwhy" queryUri="/oslc/os/ms_oslcpdwhy"/>
-	 		</queryBases>
-	 		<whereClause clause="spi_wm:pd_active=1 and spi_wm:ms_objectname='WORKORDER' and spi_wm:pd_whytype='NAOREALIZADA'"  id="ms_oslcpdwhy_whereClause"/>
-		</resource>			
+		
 
 		<!-- Recurso para linhas de categorias para fotos (Categorias)  -->
   
