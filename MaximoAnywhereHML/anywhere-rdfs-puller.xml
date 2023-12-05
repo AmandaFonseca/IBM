@@ -68,6 +68,33 @@
 		<downloadOneRdf context="/oslc/sp/AssetManagement" />
 		<downloadOneRdf context="/oslc/sp/SmarterPhysicalInfrastructure" />
 		<downloadOneRdf context="/oslc/sp/FriendOfAFriend" />
+
+		<!-- ESTRUTURAS PARA APP SGZMobile:
+		<downloadOneRdf context="/oslc/shapes/ms_oslcpdwhy" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/assetspec" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/doclinks" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/doclinks/attachment" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/doclinks/attachment/meta" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/labtrans" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/matusetrans" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/tooltrans" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/woactivity" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/woactivity/wochangestatus" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/workorderspec" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/woserviceaddress" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/wostatus" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/wplabor" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/wpmaterial" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/wpservice" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/wptool" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/ms_woamtkdisch" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/ms_photosessionline" />
+		<downloadOneRdf context="/oslc/shapes/ms_oslcsgzmobile/ms_doclinks" />
+		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew" />
+		<downloadOneRdf context="/oslc/shapes/ms_sgzmobileamcrew/person" />	
+		-->
+		<!-- FIM ESTRUTURAS PARA APP SGZMobile: -->
 		
 		
 		<!-- ESTRUTURAS PARA APP SGZTec:

@@ -65,15 +65,15 @@ remove-spatial-reference:
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 12:01:33> Removing spatial reference for SGZUsina
-[available] Found: apps\SGZUsina\platform-artifacts\map\app.xml.backup
+     [echo] 2023-11-30 10:32:58> Removing spatial reference for SGZMobile
+[available] Found: apps\SGZMobile\platform-artifacts\map\app.xml.backup
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 12:01:33>  Backup File Already present for SGZUsina
-  [xmltask] Reading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/apps/SGZUsina/platform-artifacts/map/app.xml
+     [echo] 2023-11-30 10:32:58>  Backup File Already present for SGZMobile
+  [xmltask] Reading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/apps/SGZMobile/platform-artifacts/map/app.xml
   [xmltask] Executing xmltask 1.16.1
-  [xmltask] Processing C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/apps/SGZUsina/platform-artifacts/map/app.xml into C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/apps/SGZUsina/platform-artifacts/map/app.xml
+  [xmltask] Processing C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/apps/SGZMobile/platform-artifacts/map/app.xml into C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/apps/SGZMobile/platform-artifacts/map/app.xml
   [xmltask] Using predefined xml catalog
   [xmltask] Applying CopyAction(removetag) to /app/data/resource[@providedBy='/oslc/sp/Spatial']/text()
   [xmltask] Applied CopyAction(removetag) - 0 match(es)
@@ -85,5 +85,5 @@ Override ignored for property "TODAY"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-09-06 12:01:33> Removed Spatial Reference for SGZUsina
+     [echo] 2023-11-30 10:32:58> Removed Spatial Reference for SGZMobile
 remove-spatial-reference:  duration 0 seconds

@@ -924,5 +924,7 @@ define({
 	"TimeSheet": "Registro de Trabalho",
 	"Service Item": "Item de OS",
 	"ms_semmedicao": "Favor informar uma Medição maior que 0 para Concluir a Ordem de Serviço",
-    "ms_invalidstatusattachmentqtdcat" : "A seção de fotos {0} precisa de ao menos {1} foto(s) para alterar o status para Concluído."
+    "ms_invalidstatusattachmentqtdcat" : "A seção de fotos {0} precisa de ao menos {1} foto(s) para alterar o status para Concluído.",
+	"ms_invalidmsgnaorealizadaCod": "Preencha o campo Código Motivo com a justificativa da não realização do serviço.",
+
 });

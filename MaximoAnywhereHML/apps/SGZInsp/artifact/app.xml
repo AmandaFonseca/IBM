@@ -2399,6 +2399,7 @@
 				<!-- <attribute describedByProperty="spi_wm:pd_why{spi_wm:description}" id="pdwhy_description_0" name="pdwhy_description" /> -->
 				<attribute describedByProperty="spi_wm:ms_inspectionapp{spi_wm:ms_reinspec}" id="ms_reinspec" name="ms_reinspec" />
 				<attribute describedByProperty="spi_wm:ms_inspwhy" id="ms_inspwhy" name="ms_inspwhy" />
+				<attribute describedByProperty="spi_wm:pd_whynum" id="pd_whynum" name="pd_whynum" />
 				<attribute describedByProperty="spi_wm:ms_inspectionapp{spi_wm:ms_assigntype}" id="ms_assigntype" name="ms_assigntype" />
 				<attribute describedByProperty="spi_wm:ms_inspectionapp{spi_wm:ms_allowaccept}" id="ms_allowaccept" name="ms_allowaccept" />
 				<attribute describedByProperty="spi_wm:ms_inspectionapp{spi_wm:ms_canceldate}" id="ms_canceldate" name="ms_canceldate" />

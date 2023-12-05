@@ -1211,7 +1211,6 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/platform/geolocation/GeoLocationService.js
       [zip] adding entry js/platform/geolocation/GeoLocationServiceHelper.js
       [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.js
-      [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.zip
       [zip] adding entry js/platform/geolocation/GspVerifier.js
       [zip] adding entry js/platform/handlers/AdditionalDataDialogHandler.js
       [zip] adding entry js/platform/handlers/AttachmentHandler.js
@@ -1442,6 +1441,7 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/platform/ui/control/css/hdpi.css
       [zip] adding entry js/platform/ui/control/css/large-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/large-portrait-controls.css
+      [zip] adding entry js/platform/ui/control/css/mdpi-Copia.css
       [zip] adding entry js/platform/ui/control/css/mdpi.css
       [zip] adding entry js/platform/ui/control/css/medium-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/medium-portrait-controls.css
@@ -1468,7 +1468,7 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-Thin.woff
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-ThinItalic.woff
       [zip] adding entry js/platform/ui/control/css/skin/skin2015.css
-      [zip] adding entry js/platform/ui/control/css/skin/skin2018 - Copia.css
+      [zip] adding entry js/platform/ui/control/css/skin/skin2018-Copia.css
       [zip] adding entry js/platform/ui/control/css/skin/skin2018.css
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/bee-empty.svg
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/checked-icon.svg
@@ -2653,14 +2653,14 @@ admin-loader:
      [exec]   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
      [exec]                                  Dload  Upload   Total   Spent    Left  Speed
      [exec] 
-     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 35.198.61.197:443...* Connected to hsmgimax.prefeitura.sp.gov.br (35.198.61.197) port 443 (#0)
+     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 35.198.61.197:443...* Connected to hsmgimax.prefeitura.sp.gov.br (35.198.61.197) port 443
      [exec] * schannel: disabled automatic use of client certificate
      [exec] * ALPN: offers http/1.1
      [exec] * ALPN: server did not agree on a protocol. Uses default.
      [exec] * using HTTP/1.x
      [exec] > POST /maximo/oslc/login/j_security_check?j_username=maxadmin&j_password=P@ssword01 HTTP/1.1
      [exec] > Host: hsmgimax.prefeitura.sp.gov.br
-     [exec] > User-Agent: curl/8.0.1
+     [exec] > User-Agent: curl/8.4.0
      [exec] > Accept: */*
      [exec] > Content-Type: multipart/form-data
      [exec] > Content-Length: 43
@@ -4333,7 +4333,6 @@ not part of the command.
       [zip] adding entry js/platform/geolocation/GeoLocationService.js
       [zip] adding entry js/platform/geolocation/GeoLocationServiceHelper.js
       [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.js
-      [zip] adding entry js/platform/geolocation/GeoLocationTrackingService.zip
       [zip] adding entry js/platform/geolocation/GspVerifier.js
       [zip] adding entry js/platform/handlers/AdditionalDataDialogHandler.js
       [zip] adding entry js/platform/handlers/AttachmentHandler.js
@@ -4564,6 +4563,7 @@ not part of the command.
       [zip] adding entry js/platform/ui/control/css/hdpi.css
       [zip] adding entry js/platform/ui/control/css/large-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/large-portrait-controls.css
+      [zip] adding entry js/platform/ui/control/css/mdpi-Copia.css
       [zip] adding entry js/platform/ui/control/css/mdpi.css
       [zip] adding entry js/platform/ui/control/css/medium-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/medium-portrait-controls.css
@@ -4590,7 +4590,7 @@ not part of the command.
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-Thin.woff
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-ThinItalic.woff
       [zip] adding entry js/platform/ui/control/css/skin/skin2015.css
-      [zip] adding entry js/platform/ui/control/css/skin/skin2018 - Copia.css
+      [zip] adding entry js/platform/ui/control/css/skin/skin2018-Copia.css
       [zip] adding entry js/platform/ui/control/css/skin/skin2018.css
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/bee-empty.svg
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/checked-icon.svg
