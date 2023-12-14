@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:26
+// Build: 2023-12-14 10:48:28
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[erÕsíteni~Manual do Aplicativo]",
          "Privacy Policy" : "[erÕsíteni~Privacy Policy]",
          "Connection Settings" : "[erÕsíteni~Connection Settings]",
-         "v7.6.4:0112221800H" : "[erÕsíteni~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[erÕsíteni~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[erÕsíteni~Informações do Veículo]",
          "Synchronize Data" : "[erÕsíteni~Synchronize Data]",
          "Validar Placa" : "[erÕsíteni~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[erÕsíteni~Categorias de Anexos]",
          "Categorias" : "[erÕsíteni~Categorias]",
          "Attachments" : "[erÕsíteni~Attachments]",
+         "Attachments (Categorizado)" : "[erÕsíteni~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[erÕsíteni~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[erÕsíteni~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[erÕsíteni~Yes]",
          "No" : "[erÕsíteni~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[erÕsíteni~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[erÕsíteni~Service Request]",
          "primaryResourcePluralLabel" : "[erÕsíteni~Service Requests]",
-         "applicationName" : "[erÕsíteni~SGZAterro]",
+         "SGZAterro" : "[erÕsíteni~SGZAterro]",
          "invalidLocation" : "[erÕsíteni~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[erÕsíteni~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[erÕsíteni~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

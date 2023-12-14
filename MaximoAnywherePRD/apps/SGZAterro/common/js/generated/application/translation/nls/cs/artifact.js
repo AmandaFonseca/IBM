@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:25
+// Build: 2023-12-14 10:48:28
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[českém~Manual do Aplicativo]",
          "Privacy Policy" : "[českém~Privacy Policy]",
          "Connection Settings" : "[českém~Connection Settings]",
-         "v7.6.4:0112221800H" : "[českém~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[českém~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[českém~Informações do Veículo]",
          "Synchronize Data" : "[českém~Synchronize Data]",
          "Validar Placa" : "[českém~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[českém~Categorias de Anexos]",
          "Categorias" : "[českém~Categorias]",
          "Attachments" : "[českém~Attachments]",
+         "Attachments (Categorizado)" : "[českém~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[českém~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[českém~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[českém~Yes]",
          "No" : "[českém~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[českém~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[českém~Service Request]",
          "primaryResourcePluralLabel" : "[českém~Service Requests]",
-         "applicationName" : "[českém~SGZAterro]",
+         "SGZAterro" : "[českém~SGZAterro]",
          "invalidLocation" : "[českém~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[českém~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[českém~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

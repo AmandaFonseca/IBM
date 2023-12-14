@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:24
+// Build: 2023-12-14 10:48:28
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[vagão do metrô~Manual do Aplicativo]",
          "Privacy Policy" : "[vagão do metrô~Privacy Policy]",
          "Connection Settings" : "[vagão do metrô~Connection Settings]",
-         "v7.6.4:0112221800H" : "[vagão do metrô~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[vagão do metrô~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[vagão do metrô~Informações do Veículo]",
          "Synchronize Data" : "[vagão do metrô~Synchronize Data]",
          "Validar Placa" : "[vagão do metrô~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[vagão do metrô~Categorias de Anexos]",
          "Categorias" : "[vagão do metrô~Categorias]",
          "Attachments" : "[vagão do metrô~Attachments]",
+         "Attachments (Categorizado)" : "[vagão do metrô~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[vagão do metrô~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[vagão do metrô~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[vagão do metrô~Yes]",
          "No" : "[vagão do metrô~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[vagão do metrô~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[vagão do metrô~Service Request]",
          "primaryResourcePluralLabel" : "[vagão do metrô~Service Requests]",
-         "applicationName" : "[vagão do metrô~SGZAterro]",
+         "SGZAterro" : "[vagão do metrô~SGZAterro]",
          "invalidLocation" : "[vagão do metrô~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[vagão do metrô~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[vagão do metrô~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

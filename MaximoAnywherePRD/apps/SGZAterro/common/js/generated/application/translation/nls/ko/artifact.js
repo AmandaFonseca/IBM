@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:24
+// Build: 2023-12-14 10:48:27
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[대학에~Manual do Aplicativo]",
          "Privacy Policy" : "[대학에~Privacy Policy]",
          "Connection Settings" : "[대학에~Connection Settings]",
-         "v7.6.4:0112221800H" : "[대학에~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[대학에~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[대학에~Informações do Veículo]",
          "Synchronize Data" : "[대학에~Synchronize Data]",
          "Validar Placa" : "[대학에~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[대학에~Categorias de Anexos]",
          "Categorias" : "[대학에~Categorias]",
          "Attachments" : "[대학에~Attachments]",
+         "Attachments (Categorizado)" : "[대학에~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[대학에~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[대학에~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[대학에~Yes]",
          "No" : "[대학에~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[대학에~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[대학에~Service Request]",
          "primaryResourcePluralLabel" : "[대학에~Service Requests]",
-         "applicationName" : "[대학에~SGZAterro]",
+         "SGZAterro" : "[대학에~SGZAterro]",
          "invalidLocation" : "[대학에~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[대학에~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[대학에~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

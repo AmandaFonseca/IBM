@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:25
+// Build: 2023-12-14 10:48:28
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[pohjoispäässä~Manual do Aplicativo]",
          "Privacy Policy" : "[pohjoispäässä~Privacy Policy]",
          "Connection Settings" : "[pohjoispäässä~Connection Settings]",
-         "v7.6.4:0112221800H" : "[pohjoispäässä~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[pohjoispäässä~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[pohjoispäässä~Informações do Veículo]",
          "Synchronize Data" : "[pohjoispäässä~Synchronize Data]",
          "Validar Placa" : "[pohjoispäässä~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[pohjoispäässä~Categorias de Anexos]",
          "Categorias" : "[pohjoispäässä~Categorias]",
          "Attachments" : "[pohjoispäässä~Attachments]",
+         "Attachments (Categorizado)" : "[pohjoispäässä~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[pohjoispäässä~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[pohjoispäässä~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[pohjoispäässä~Yes]",
          "No" : "[pohjoispäässä~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[pohjoispäässä~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[pohjoispäässä~Service Request]",
          "primaryResourcePluralLabel" : "[pohjoispäässä~Service Requests]",
-         "applicationName" : "[pohjoispäässä~SGZAterro]",
+         "SGZAterro" : "[pohjoispäässä~SGZAterro]",
          "invalidLocation" : "[pohjoispäässä~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[pohjoispäässä~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[pohjoispäässä~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

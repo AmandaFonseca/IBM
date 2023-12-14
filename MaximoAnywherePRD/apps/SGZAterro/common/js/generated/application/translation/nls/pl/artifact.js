@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:25
+// Build: 2023-12-14 10:48:28
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[Okrągłego~Manual do Aplicativo]",
          "Privacy Policy" : "[Okrągłego~Privacy Policy]",
          "Connection Settings" : "[Okrągłego~Connection Settings]",
-         "v7.6.4:0112221800H" : "[Okrągłego~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[Okrągłego~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[Okrągłego~Informações do Veículo]",
          "Synchronize Data" : "[Okrągłego~Synchronize Data]",
          "Validar Placa" : "[Okrągłego~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[Okrągłego~Categorias de Anexos]",
          "Categorias" : "[Okrągłego~Categorias]",
          "Attachments" : "[Okrągłego~Attachments]",
+         "Attachments (Categorizado)" : "[Okrągłego~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[Okrągłego~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[Okrągłego~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[Okrągłego~Yes]",
          "No" : "[Okrągłego~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[Okrągłego~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[Okrągłego~Service Request]",
          "primaryResourcePluralLabel" : "[Okrągłego~Service Requests]",
-         "applicationName" : "[Okrągłego~SGZAterro]",
+         "SGZAterro" : "[Okrągłego~SGZAterro]",
          "invalidLocation" : "[Okrągłego~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[Okrągłego~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[Okrągłego~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

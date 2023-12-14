@@ -1,12 +1,12 @@
 
 -process-app-artifact:
-     [echo] processing app C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywherePRD\apps\SGZUsina
+     [echo] processing app C:\IBM\Anywhere\ambientes\IBM\MaximoAnywherePRD\apps\SGZAterro
 
 admin-loader:
      [java] authenticate() send request to get HttpSession cookie. 
      [java] 
-     [java] Get https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZUsina%22
+     [java] Get https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZAterro%22
      [java] authenticate() send request to get HttpSession cookie. 
      [java] 
-     [java] Get https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZUsina%22
+     [java] Get https://smgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZAterro%22
      [java] App entry already exists on maximo.

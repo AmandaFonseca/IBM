@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:25
+// Build: 2023-12-14 10:48:28
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[ясяс~Manual do Aplicativo]",
          "Privacy Policy" : "[ясяс~Privacy Policy]",
          "Connection Settings" : "[ясяс~Connection Settings]",
-         "v7.6.4:0112221800H" : "[ясяс~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[ясяс~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[ясяс~Informações do Veículo]",
          "Synchronize Data" : "[ясяс~Synchronize Data]",
          "Validar Placa" : "[ясяс~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[ясяс~Categorias de Anexos]",
          "Categorias" : "[ясяс~Categorias]",
          "Attachments" : "[ясяс~Attachments]",
+         "Attachments (Categorizado)" : "[ясяс~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[ясяс~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[ясяс~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[ясяс~Yes]",
          "No" : "[ясяс~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[ясяс~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[ясяс~Service Request]",
          "primaryResourcePluralLabel" : "[ясяс~Service Requests]",
-         "applicationName" : "[ясяс~SGZAterro]",
+         "SGZAterro" : "[ясяс~SGZAterro]",
          "invalidLocation" : "[ясяс~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[ясяс~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[ясяс~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

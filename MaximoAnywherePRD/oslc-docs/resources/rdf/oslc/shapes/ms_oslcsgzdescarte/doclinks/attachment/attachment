@@ -3,7 +3,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:oslc="http://open-services.net/ns/core#"
     xmlns:spi="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#">
-  <oslc:ResourceShape rdf:about="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcsgzdescarte/doclinks/attachment">
+  <oslc:ResourceShape rdf:about="https://smgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcsgzdescarte/doclinks/attachment">
     <oslc:property>
       <oslc:Property>
         <oslc:name>describedBy</oslc:name>
@@ -11,7 +11,7 @@
         <oslc:propertyDefinition rdf:resource="http://www.w3.org/2007/05/powder-s#describedBy"/>
         <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
         <oslc:representation rdf:resource="http://open-services.net/ns/core#Reference"/>
-        <oslc:valueShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcsgzdescarte/doclinks/attachment/meta"/>
+        <oslc:valueShape rdf:resource="https://smgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcsgzdescarte/doclinks/attachment/meta"/>
         <oslc:range rdf:resource="http://open-services.net/ns/cm#AttachmentDescriptor"/>
       </oslc:Property>
     </oslc:property>

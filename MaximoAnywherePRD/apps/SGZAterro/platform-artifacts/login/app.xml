@@ -54,7 +54,7 @@
 			</requiredResources>
 			<container cssClass="loginForm" id="platform.LoginView_container_0">
 				<!--<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/app_icon_main.svg" cssClass="productLogo"/>-->
-				<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_Aterro.svg"/>
+				<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_Aterro.svg"/>
 				<!--<image id="platform.LoginView_image_0" image="../../../../../../images/mdpi/Logo_SGZ_H_Aterro.png"/>-->
  				<!--<text cssClass="productName" editable="false" id="platform.LoginView_container_0_appName" resourceAttribute="appName"/>--> 
 				<text cssClass="errorMsg" editable="false" id="platform.LoginView_container_0_errorMsg" resourceAttribute="errorMsg"/>
@@ -99,7 +99,7 @@
 						<eventHandler class="platform.handlers.LoginHandler" event="render" id="ConnectionSettings_link_eventHandlers_render_showHideSettingsLink" method="showHideSettingsLink"/>
 					</eventHandlers>
 				</link>
-				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:2612222129P"/>
+				<text labelCss="loginLink" id="PrivacyPolicy_versao" label="v7.6.4:1412231100P"/>
 								
 			</container>
 			<eventHandlers id="platform.LoginView_eventHandlers">

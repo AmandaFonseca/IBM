@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:24
+// Build: 2023-12-14 10:48:27
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[島の第~Manual do Aplicativo]",
          "Privacy Policy" : "[島の第~Privacy Policy]",
          "Connection Settings" : "[島の第~Connection Settings]",
-         "v7.6.4:0112221800H" : "[島の第~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[島の第~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[島の第~Informações do Veículo]",
          "Synchronize Data" : "[島の第~Synchronize Data]",
          "Validar Placa" : "[島の第~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[島の第~Categorias de Anexos]",
          "Categorias" : "[島の第~Categorias]",
          "Attachments" : "[島の第~Attachments]",
+         "Attachments (Categorizado)" : "[島の第~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[島の第~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[島の第~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[島の第~Yes]",
          "No" : "[島の第~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[島の第~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[島の第~Service Request]",
          "primaryResourcePluralLabel" : "[島の第~Service Requests]",
-         "applicationName" : "[島の第~SGZAterro]",
+         "SGZAterro" : "[島の第~SGZAterro]",
          "invalidLocation" : "[島の第~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[島の第~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[島の第~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

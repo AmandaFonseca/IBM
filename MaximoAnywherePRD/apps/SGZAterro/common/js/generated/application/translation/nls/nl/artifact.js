@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:25
+// Build: 2023-12-14 10:48:28
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[onbepaalde~Manual do Aplicativo]",
          "Privacy Policy" : "[onbepaalde~Privacy Policy]",
          "Connection Settings" : "[onbepaalde~Connection Settings]",
-         "v7.6.4:0112221800H" : "[onbepaalde~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[onbepaalde~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[onbepaalde~Informações do Veículo]",
          "Synchronize Data" : "[onbepaalde~Synchronize Data]",
          "Validar Placa" : "[onbepaalde~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[onbepaalde~Categorias de Anexos]",
          "Categorias" : "[onbepaalde~Categorias]",
          "Attachments" : "[onbepaalde~Attachments]",
+         "Attachments (Categorizado)" : "[onbepaalde~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[onbepaalde~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[onbepaalde~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[onbepaalde~Yes]",
          "No" : "[onbepaalde~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[onbepaalde~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[onbepaalde~Service Request]",
          "primaryResourcePluralLabel" : "[onbepaalde~Service Requests]",
-         "applicationName" : "[onbepaalde~SGZAterro]",
+         "SGZAterro" : "[onbepaalde~SGZAterro]",
          "invalidLocation" : "[onbepaalde~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[onbepaalde~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[onbepaalde~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

@@ -19,100 +19,6 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_description</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_description"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>256</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Nome do Aterro Sanitário</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <spi:scale>10</spi:scale>
-        <oslc:name>ms_latitudey</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_latitudey"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Latitude</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_addressline3</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_addressline3"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>255</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Bairro</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_addressline2</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_addressline2"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>255</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Referência</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_createdate</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_createdate"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <oslc:defaultValue>&amp;SYSDATE&amp;</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Data de criação</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_addressline</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_addressline"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>256</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Logradouro</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_active</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_active"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>true</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Ativo</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_createby</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_createby"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>30</oslc:maxSize>
-        <oslc:defaultValue>&amp;USERNAME&amp;</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Criado Por</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:describes rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Ms_landfill"/>
-    <oslc:property>
-      <oslc:Property>
         <oslc:name>ms_contact</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
         <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_contact"/>
@@ -136,6 +42,18 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>ms_addressline3</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_addressline3"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>255</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Bairro</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
         <oslc:name>ms_remarks</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
         <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_remarks"/>
@@ -143,19 +61,6 @@
         <oslc:maxSize>256</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
         >Observações</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:name>MS_SGZDESCARTE</oslc:name>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_company</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_company"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>25</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Empresa</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -172,14 +77,14 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <spi:pkIndex>1</spi:pkIndex>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#bigint"/>
-        <oslc:name>ms_landfillid</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_landfillid"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>ms_addressline2</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_addressline2"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>255</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Código do Aterro</dcterms:title>
+        >Referência</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -193,16 +98,109 @@
         >Telefone</dcterms:title>
       </oslc:Property>
     </oslc:property>
+    <oslc:describes rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#Ms_landfill"/>
+    <oslc:name>MS_SGZDESCARTE</oslc:name>
+    <oslc:property>
+      <oslc:Property>
+        <spi:scale>10</spi:scale>
+        <oslc:name>ms_longitudex</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_longitudex"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Longitude</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_formattedaddress</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_formattedaddress"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>150</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Endereço Formatado</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <spi:scale>10</spi:scale>
+        <oslc:name>ms_latitudey</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_latitudey"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Latitude</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#lower"/>
+        <oslc:name>ms_email</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_email"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>256</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >E-mail</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
     <oslc:property>
       <oslc:Property>
         <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_codlog</oslc:name>
+        <oslc:name>ms_addressline</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_codlog"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_addressline"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>30</oslc:maxSize>
+        <oslc:maxSize>256</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Codlog</dcterms:title>
+        >Logradouro</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <spi:pkIndex>1</spi:pkIndex>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#bigint"/>
+        <oslc:name>ms_landfillid</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_landfillid"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Código do Aterro</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>ms_company</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_company"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>25</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Empresa</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_description</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_description"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>256</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Nome do Aterro Sanitário</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_active</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_active"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>true</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Ativo</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -219,13 +217,14 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <spi:scale>10</spi:scale>
-        <oslc:name>ms_longitudex</oslc:name>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>ms_codlog</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_longitudex"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_codlog"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>30</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Longitude</dcterms:title>
+        >Codlog</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -241,25 +240,26 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_formattedaddress</oslc:name>
+        <oslc:name>ms_createdate</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_formattedaddress"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>150</oslc:maxSize>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_createdate"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <oslc:defaultValue>&amp;SYSDATE&amp;</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Endereço Formatado</dcterms:title>
+        >Data de criação</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#lower"/>
-        <oslc:name>ms_email</oslc:name>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>ms_createby</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_email"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#ms_createby"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>256</oslc:maxSize>
+        <oslc:maxSize>30</oslc:maxSize>
+        <oslc:defaultValue>&amp;USERNAME&amp;</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >E-mail</dcterms:title>
+        >Criado Por</dcterms:title>
       </oslc:Property>
     </oslc:property>
   </oslc:ResourceShape>

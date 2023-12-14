@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:23
+// Build: 2023-12-14 10:48:27
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[中國的~Manual do Aplicativo]",
          "Privacy Policy" : "[中國的~Privacy Policy]",
          "Connection Settings" : "[中國的~Connection Settings]",
-         "v7.6.4:0112221800H" : "[中國的~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[中國的~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[中國的~Informações do Veículo]",
          "Synchronize Data" : "[中國的~Synchronize Data]",
          "Validar Placa" : "[中國的~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[中國的~Categorias de Anexos]",
          "Categorias" : "[中國的~Categorias]",
          "Attachments" : "[中國的~Attachments]",
+         "Attachments (Categorizado)" : "[中國的~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[中國的~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[中國的~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[中國的~Yes]",
          "No" : "[中國的~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[中國的~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[中國的~Service Request]",
          "primaryResourcePluralLabel" : "[中國的~Service Requests]",
-         "applicationName" : "[中國的~SGZAterro]",
+         "SGZAterro" : "[中國的~SGZAterro]",
          "invalidLocation" : "[中國的~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[中國的~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[中國的~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

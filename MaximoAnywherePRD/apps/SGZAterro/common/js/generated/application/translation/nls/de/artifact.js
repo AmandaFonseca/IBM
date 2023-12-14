@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:24
+// Build: 2023-12-14 10:48:27
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[können~Manual do Aplicativo]",
          "Privacy Policy" : "[können~Privacy Policy]",
          "Connection Settings" : "[können~Connection Settings]",
-         "v7.6.4:0112221800H" : "[können~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[können~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[können~Informações do Veículo]",
          "Synchronize Data" : "[können~Synchronize Data]",
          "Validar Placa" : "[können~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[können~Categorias de Anexos]",
          "Categorias" : "[können~Categorias]",
          "Attachments" : "[können~Attachments]",
+         "Attachments (Categorizado)" : "[können~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[können~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[können~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[können~Yes]",
          "No" : "[können~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[können~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[können~Service Request]",
          "primaryResourcePluralLabel" : "[können~Service Requests]",
-         "applicationName" : "[können~SGZAterro]",
+         "SGZAterro" : "[können~SGZAterro]",
          "invalidLocation" : "[können~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[können~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[können~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

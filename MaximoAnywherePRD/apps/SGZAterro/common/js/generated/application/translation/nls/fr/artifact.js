@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:23
+// Build: 2023-12-14 10:48:27
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[françaisé~Manual do Aplicativo]",
          "Privacy Policy" : "[françaisé~Privacy Policy]",
          "Connection Settings" : "[françaisé~Connection Settings]",
-         "v7.6.4:0112221800H" : "[françaisé~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[françaisé~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[françaisé~Informações do Veículo]",
          "Synchronize Data" : "[françaisé~Synchronize Data]",
          "Validar Placa" : "[françaisé~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[françaisé~Categorias de Anexos]",
          "Categorias" : "[françaisé~Categorias]",
          "Attachments" : "[françaisé~Attachments]",
+         "Attachments (Categorizado)" : "[françaisé~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[françaisé~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[françaisé~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[françaisé~Yes]",
          "No" : "[françaisé~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[françaisé~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[françaisé~Service Request]",
          "primaryResourcePluralLabel" : "[françaisé~Service Requests]",
-         "applicationName" : "[françaisé~SGZAterro]",
+         "SGZAterro" : "[françaisé~SGZAterro]",
          "invalidLocation" : "[françaisé~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[françaisé~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[françaisé~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

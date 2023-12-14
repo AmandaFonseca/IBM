@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:23
+// Build: 2023-12-14 10:48:27
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[engbManual do Aplicativo]",
          "Privacy Policy" : "[engbPrivacy Policy]",
          "Connection Settings" : "[engbConnection Settings]",
-         "v7.6.4:0112221800H" : "[engbv7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[engbv7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[engbInformações do Veículo]",
          "Synchronize Data" : "[engbSynchronize Data]",
          "Validar Placa" : "[engbValidar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[engbCategorias de Anexos]",
          "Categorias" : "[engbCategorias]",
          "Attachments" : "[engbAttachments]",
+         "Attachments (Categorizado)" : "[engbAttachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[engb1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[engbAre you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[engbYes]",
          "No" : "[engbNo]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[engbCapture Real Signature]",
          "primaryResourceSingleLabel" : "[engbService Request]",
          "primaryResourcePluralLabel" : "[engbService Requests]",
-         "applicationName" : "[engbSGZAterro]",
+         "SGZAterro" : "[engbSGZAterro]",
          "invalidLocation" : "[engbThe specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[engbThe specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[engbThe specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",

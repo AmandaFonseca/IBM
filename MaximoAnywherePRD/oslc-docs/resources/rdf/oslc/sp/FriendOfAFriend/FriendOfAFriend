@@ -2,41 +2,11 @@
     xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:oslc="http://open-services.net/ns/core#">
-  <oslc:ServiceProvider rdf:about="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/sp/FriendOfAFriend">
+  <oslc:ServiceProvider rdf:about="https://smgimax.prefeitura.sp.gov.br/maximo/oslc/sp/FriendOfAFriend">
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
-        <oslc:prefix>rdfs</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
-    <dcterms:publisher>
-      <oslc:Publisher>
-        <dcterms:title>tpae Oslc Provider</dcterms:title>
-        <dcterms:identifier>tpae</dcterms:identifier>
-      </oslc:Publisher>
-    </dcterms:publisher>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://purl.org/dc/terms/"/>
-        <oslc:prefix>dcterms</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-        <oslc:prefix>rdf</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://open-services.net/ns/idevice#"/>
-        <oslc:prefix>comp</oslc:prefix>
-      </oslc:PrefixDefinition>
-    </oslc:prefixDefinition>
-    <oslc:prefixDefinition>
-      <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#"/>
-        <oslc:prefix>spi_wm</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <oslc:prefix>foaf</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
     <oslc:prefixDefinition>
@@ -45,16 +15,30 @@
         <oslc:prefix>spi</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
+    <dcterms:description>ServiceProvider for FriendOfAFriend</dcterms:description>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://open-services.net/ns/core#"/>
-        <oslc:prefix>oslc</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/work/smarter_physical_infrastructure#"/>
+        <oslc:prefix>spi_wm</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <dcterms:title>FriendOfAFriend</dcterms:title>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+        <oslc:prefix>rdf</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/registry#"/>
-        <oslc:prefix>rr</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <oslc:prefix>rdfs</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://open-services.net/ns/core#"/>
+        <oslc:prefix>oslc</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
     <oslc:service>
@@ -62,7 +46,7 @@
         <oslc:queryCapability>
           <oslc:QueryCapability>
             <oslc:resourceType rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-            <oslc:queryBase rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcperson"/>
+            <oslc:queryBase rdf:resource="https://smgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcperson"/>
             <dcterms:title>OSLC query capability for Person</dcterms:title>
           </oslc:QueryCapability>
         </oslc:queryCapability>
@@ -70,8 +54,8 @@
           <oslc:CreationFactory>
             <oslc:usage rdf:resource="http://open-services.net/ns/core#default"/>
             <oslc:resourceType rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-            <oslc:resourceShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcperson"/>
-            <oslc:creation rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcperson"/>
+            <oslc:resourceShape rdf:resource="https://smgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcperson"/>
+            <oslc:creation rdf:resource="https://smgimax.prefeitura.sp.gov.br/maximo/oslc/os/oslcperson"/>
             <dcterms:title>OSLC creation factory for Person</dcterms:title>
           </oslc:CreationFactory>
         </oslc:creationFactory>
@@ -80,17 +64,33 @@
     </oslc:service>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://purl.org/dc/terms/"/>
+        <oslc:prefix>dcterms</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
+        <oslc:prefixBase rdf:resource="http://jazz.net/ns/ism/registry#"/>
+        <oslc:prefix>rr</oslc:prefix>
+      </oslc:PrefixDefinition>
+    </oslc:prefixDefinition>
+    <oslc:prefixDefinition>
+      <oslc:PrefixDefinition>
         <oslc:prefixBase rdf:resource="http://open-services.net/ns/asset#"/>
         <oslc:prefix>oslc_asset</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
-    <dcterms:title>FriendOfAFriend</dcterms:title>
     <oslc:prefixDefinition>
       <oslc:PrefixDefinition>
-        <oslc:prefixBase rdf:resource="http://xmlns.com/foaf/0.1/"/>
-        <oslc:prefix>foaf</oslc:prefix>
+        <oslc:prefixBase rdf:resource="http://open-services.net/ns/idevice#"/>
+        <oslc:prefix>comp</oslc:prefix>
       </oslc:PrefixDefinition>
     </oslc:prefixDefinition>
-    <dcterms:description>ServiceProvider for FriendOfAFriend</dcterms:description>
+    <dcterms:publisher>
+      <oslc:Publisher>
+        <dcterms:title>tpae Oslc Provider</dcterms:title>
+        <dcterms:identifier>tpae</dcterms:identifier>
+      </oslc:Publisher>
+    </dcterms:publisher>
   </oslc:ServiceProvider>
 </rdf:RDF>

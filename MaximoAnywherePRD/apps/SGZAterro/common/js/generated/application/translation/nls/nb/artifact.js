@@ -4,7 +4,7 @@
  *
  * 5725-M39
  *
- * (C) COPYRIGHT IBM CORP. 2022 All Rights Reserved.
+ * (C) COPYRIGHT IBM CORP. 2023 All Rights Reserved.
  * US Government Users Restricted Rights - Use, duplication or
  * disclosure restricted by GSA ADP Schedule Contract with
  * IBM Corp. 
@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2022-12-01 21:56:26
+// Build: 2023-12-14 10:48:28
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[også populært~Manual do Aplicativo]",
          "Privacy Policy" : "[også populært~Privacy Policy]",
          "Connection Settings" : "[også populært~Connection Settings]",
-         "v7.6.4:0112221800H" : "[også populært~v7.6.4:0112221800H]",
+         "v7.6.4:1412231100P" : "[også populært~v7.6.4:1412231100P]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[også populært~Informações do Veículo]",
          "Synchronize Data" : "[også populært~Synchronize Data]",
          "Validar Placa" : "[også populært~Validar Placa]",
@@ -79,6 +79,8 @@ define({
          "Categorias de Anexos" : "[også populært~Categorias de Anexos]",
          "Categorias" : "[også populært~Categorias]",
          "Attachments" : "[også populært~Attachments]",
+         "Attachments (Categorizado)" : "[også populært~Attachments (Categorizado)]",
+         "1- Categorias de Anexos (Filho)" : "[også populært~1- Categorias de Anexos (Filho)]",
          "Are you sure you wish to Cancel?  All changes to this request will be lost." : "[også populært~Are you sure you wish to Cancel?  All changes to this request will be lost.]",
          "Yes" : "[også populært~Yes]",
          "No" : "[også populært~No]",
@@ -203,7 +205,7 @@ define({
          "Capture Real Signature" : "[også populært~Capture Real Signature]",
          "primaryResourceSingleLabel" : "[også populært~Service Request]",
          "primaryResourcePluralLabel" : "[også populært~Service Requests]",
-         "applicationName" : "[også populært~SGZAterro]",
+         "SGZAterro" : "[også populært~SGZAterro]",
          "invalidLocation" : "[også populært~The specified location was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidAsset" : "[også populært~The specified asset was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
          "invalidPriority" : "[også populært~The specified priority was not found on this device. Verify that the identifier is correct, or refresh your data when you are online.]",
