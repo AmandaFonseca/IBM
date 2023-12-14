@@ -6,27 +6,16 @@
   <oslc:ResourceShape rdf:about="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/msoslcsarbocient">
     <oslc:property>
       <oslc:Property>
-        <spi:pkIndex>1</spi:pkIndex>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#bigint"/>
-        <oslc:name>ms_arbospecid</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_arbospecid"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Id do Registro</dcterms:title>
+        <oslc:name>numericdomain</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#numericdomain"/>
+        <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
+        <oslc:representation rdf:resource="http://open-services.net/ns/core#Inline"/>
+        <oslc:valueShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/msoslcsarbocient/numericdomain"/>
+        <oslc:range rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#Numericdomain"/>
       </oslc:Property>
     </oslc:property>
     <oslc:name>msarbospeccient</oslc:name>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_species</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_species"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Espécie</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
     <oslc:describes rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#msarbospeccient"/>
     <oslc:property>
       <oslc:Property>
@@ -50,36 +39,24 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_changeby</oslc:name>
+        <spi:pkIndex>1</spi:pkIndex>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#bigint"/>
+        <oslc:name>ms_arbospecid</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_changeby"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>30</oslc:maxSize>
-        <oslc:defaultValue>&amp;USERNAME&amp;</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Modificado Por</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>numericdomain</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#numericdomain"/>
-        <oslc:valueType rdf:resource="http://open-services.net/ns/core#Resource"/>
-        <oslc:representation rdf:resource="http://open-services.net/ns/core#Inline"/>
-        <oslc:valueShape rdf:resource="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/msoslcsarbocient/numericdomain"/>
-        <oslc:range rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#Numericdomain"/>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_genre</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_genre"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_arbospecid"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Gênero</dcterms:title>
+        >Id do Registro</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_species</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_species"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Espécie</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -101,6 +78,29 @@
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
         >Científico</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>ms_changeby</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_changeby"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>30</oslc:maxSize>
+        <oslc:defaultValue>&amp;USERNAME&amp;</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Modificado Por</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_genre</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_genre"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Gênero</dcterms:title>
       </oslc:Property>
     </oslc:property>
   </oslc:ResourceShape>

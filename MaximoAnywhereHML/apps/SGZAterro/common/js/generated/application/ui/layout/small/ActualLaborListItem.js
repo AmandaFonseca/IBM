@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 08:48:06
+// Build: 2023-12-13 19:19:07
 //----------------------------------------------------------------//
 define(   "generated/application/ui/layout/small/ActualLaborListItem", 
       [

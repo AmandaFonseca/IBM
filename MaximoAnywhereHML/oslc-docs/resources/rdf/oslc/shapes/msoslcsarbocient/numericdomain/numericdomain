@@ -6,15 +6,25 @@
   <oslc:ResourceShape rdf:about="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/msoslcsarbocient/numericdomain">
     <oslc:property>
       <oslc:Property>
-        <spi:pkIndex>1</spi:pkIndex>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>domainid</oslc:name>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#bigint"/>
+        <oslc:name>numericdomainid</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#domainid"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>18</oslc:maxSize>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#numericdomainid"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Domínio</dcterms:title>
+        >NUMERICDOMAINID</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <spi:pkIndex>2</spi:pkIndex>
+        <spi:scale>10</spi:scale>
+        <oslc:name>value</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#value"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Valor</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -32,17 +42,6 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>valueid</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#valueid"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>300</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >ID do Valor</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
         <oslc:name>description</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
         <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#description"/>
@@ -52,31 +51,32 @@
         >Descrição</dcterms:title>
       </oslc:Property>
     </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <spi:pkIndex>2</spi:pkIndex>
-        <spi:scale>10</spi:scale>
-        <oslc:name>value</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#value"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Valor</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
     <oslc:name>msarbospeccient</oslc:name>
     <oslc:property>
       <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#bigint"/>
-        <oslc:name>numericdomainid</oslc:name>
+        <oslc:name>valueid</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#numericdomainid"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#valueid"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>300</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >NUMERICDOMAINID</dcterms:title>
+        >ID do Valor</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:describes rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#Numericdomain"/>
+    <oslc:property>
+      <oslc:Property>
+        <spi:pkIndex>1</spi:pkIndex>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>domainid</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#domainid"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>18</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Domínio</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
     <oslc:property>
       <oslc:Property>
         <spi:pkIndex>3</spi:pkIndex>

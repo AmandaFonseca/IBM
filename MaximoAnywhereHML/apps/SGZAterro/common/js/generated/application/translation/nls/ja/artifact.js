@@ -14,7 +14,7 @@
 //----------------------------------------------------------------//
 // This is auto generated code. Do not modify it manually.
 // Product and Version: IBM Maximo Anywhere Version 7.5
-// Build: 2023-09-06 08:48:11
+// Build: 2023-12-13 19:19:09
 //----------------------------------------------------------------//
 define({
    
@@ -33,7 +33,7 @@ define({
          "Manual do Aplicativo" : "[島の第~Manual do Aplicativo]",
          "Privacy Policy" : "[島の第~Privacy Policy]",
          "Connection Settings" : "[島の第~Connection Settings]",
-         "v7.6.4:2408231600H" : "[島の第~v7.6.4:2408231600H]",
+         "v7.6.4:2408231600.H" : "[島の第~v7.6.4:2408231600.H]",
          "Informa\u00E7\u00F5es do Ve\u00EDculo" : "[島の第~Informações do Veículo]",
          "Synchronize Data" : "[島の第~Synchronize Data]",
          "Validar Placa" : "[島の第~Validar Placa]",

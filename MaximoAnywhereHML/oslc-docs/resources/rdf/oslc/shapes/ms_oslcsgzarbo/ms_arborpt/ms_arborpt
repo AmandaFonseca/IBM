@@ -6,242 +6,16 @@
   <oslc:ResourceShape rdf:about="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/ms_oslcsgzarbo/ms_arborpt">
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_postage</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_postage"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <oslc:name>ms_gasnetwork</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_gasnetwork"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Porte</dcterms:title>
+        >Rede de Gás</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:name>ms_SgzArbo</oslc:name>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_termite01</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_termite01"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Cupim</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_prioritylevel</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_prioritylevel"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Nível de Prioridade</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <spi:scale>2</spi:scale>
-        <oslc:name>ms_hollow03</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_hollow03"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Oco (%)</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_fungi04</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fungi04"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Fungos</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_assetnum</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_assetnum"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>12</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Ativo</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_ant02</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_ant02"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Formiga Carpinteira</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_comments</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_comments"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>255</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Observações</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_interference02</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_interference02"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>3</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Interferência</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_mechinjury03</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_mechinjury03"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Injúria Mecânica</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_termite03</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_termite03"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Cupim</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <spi:scale>2</spi:scale>
-        <oslc:name>ms_hollow01</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_hollow01"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Oco (%)</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_exposed</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_exposed"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Exposto</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_annealing02</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_annealing02"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Anelamento</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_mechinjury04</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_mechinjury04"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Injúria Mecânica</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_uncup</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_uncup"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Copa Desequilibrada</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_createdate</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_createdate"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <oslc:defaultValue>&amp;SYSDATE&amp;</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Data de Criação</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_waternetwork</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_waternetwork"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Rede de Água</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_mechinjury01</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_mechinjury01"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Injúria Mecânica</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_driving</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_driving"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Condução</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_cleaning</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_cleaning"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Limpeza</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_transitplates</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_transitplates"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Placas de Trânsito</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
     <oslc:property>
       <oslc:Property>
         <oslc:name>ms_termite02</oslc:name>
@@ -250,181 +24,6 @@
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
         >Cupim</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_inspectionbox</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_inspectionbox"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Caixa de Inspeção</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_fruits</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fruits"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Frutos</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <spi:pkIndex>1</spi:pkIndex>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#bigint"/>
-        <oslc:name>ms_arborptid</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_arborptid"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Id do Registro</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_adequacy</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_adequacy"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Adequação</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_parasitesplants</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_parasitesplants"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Plantas Parasitas</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_drills03</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_drills03"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Brocas</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_telecommunic</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_telecommunic"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Telecomunicações</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_apparentdamage03</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_apparentdamage03"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>3</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Dano Aparente</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_accbark</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_accbark"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Casca Inclusa</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_fungi03</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fungi03"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Fungos</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_ant01</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_ant01"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Formiga Carpinteira</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_tvoltage</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_tvoltage"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Rede de alta tensão/Transformador</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_crack</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_crack"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Rachadura</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_lifting</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_lifting"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Levantamento</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_planting01</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_planting01"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Plantio</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_drills01</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_drills01"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Brocas</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -440,12 +39,13 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_enddate</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_enddate"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <oslc:name>ms_virus</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_virus"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Validade</dcterms:title>
+        >Bacterioses/Viroses</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -461,115 +61,6 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <spi:scale>2</spi:scale>
-        <oslc:name>ms_hollow02</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_hollow02"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Oco (%)</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_virus</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_virus"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Bacterioses/Viroses</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_lightstraffic</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_lightstraffic"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Semáforos</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_drills04</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_drills04"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Brocas</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_changedate</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_changedate"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <oslc:defaultValue>&amp;SYSDATE&amp;</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Modificado Em</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_senescence</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_senescence"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Senescência</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_tranplante</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_tranplante"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Transplante</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_suppression</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_suppression"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Supressão</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_fungi02</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fungi02"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Fungos</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_ant04</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_ant04"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Formiga Carpinteira</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
         <oslc:name>ms_flower</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
         <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_flower"/>
@@ -577,50 +68,6 @@
         <oslc:defaultValue>false</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
         >Flor</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_active</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_active"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Laudo Ativo</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_monitoring</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_monitoring"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Monitoramento</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_drills02</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_drills02"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Brocas</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_busstop</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_busstop"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Ponto de Ônibus</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -636,6 +83,17 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
+        <oslc:name>ms_driving</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_driving"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Condução</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
         <oslc:name>ms_apparentdamage02</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
         <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_apparentdamage02"/>
@@ -647,42 +105,43 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_gasnetwork</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_gasnetwork"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Rede de Gás</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_tvehicle</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_tvehicle"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Trânsito de veículos/Pedestres</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_corrective</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_corrective"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Corretiva</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_interference01</oslc:name>
+        <spi:scale>2</spi:scale>
+        <oslc:name>ms_hollow02</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_interference01"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_hollow02"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Oco (%)</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_lightstraffic</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_lightstraffic"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Semáforos</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:describes rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#Msarborpt"/>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_waternetwork</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_waternetwork"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Rede de Água</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_interference02</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_interference02"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <oslc:maxSize>3</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
@@ -691,146 +150,35 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_postwallbuilding</oslc:name>
+        <oslc:name>ms_tvoltage</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_postwallbuilding"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_tvoltage"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <oslc:defaultValue>false</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Edificações/Muro/Poste</dcterms:title>
+        >Rede de alta tensão/Transformador</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_physicalbarrier</oslc:name>
+        <oslc:name>ms_drills03</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_physicalbarrier"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_drills03"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <oslc:defaultValue>false</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Barreira Fisica</dcterms:title>
+        >Brocas</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_lighting</oslc:name>
+        <oslc:name>ms_parasitesplants</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_lighting"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_parasitesplants"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <oslc:defaultValue>false</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Iluminação</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_cropped</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_cropped"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Cortada</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_todonothing</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_todonothing"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Nada a fazer</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <spi:scale>2</spi:scale>
-        <oslc:name>ms_hollow04</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_hollow04"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Oco (%)</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_badformation</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_badformation"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Má-formação</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_apparentdamage01</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_apparentdamage01"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>3</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Dano Aparente</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_coilfolded</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_coilfolded"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Dobrada/Enovelada</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_version</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_version"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <oslc:defaultValue>1</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Versão</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>ms_wonum</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_wonum"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>20</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Ordem de Serviço</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_lamppost</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_lamppost"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Poste</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_mechinjury02</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_mechinjury02"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Injúria Mecânica</dcterms:title>
+        >Plantas Parasitas</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -844,80 +192,69 @@
         >Edificações</dcterms:title>
       </oslc:Property>
     </oslc:property>
-    <oslc:describes rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#Ms_arborpt"/>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_termite04</oslc:name>
+        <oslc:name>ms_lifting</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_lifting"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Levantamento</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_accbark</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_accbark"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Casca Inclusa</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_drills02</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_drills02"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Brocas</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_annealing02</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_annealing02"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Anelamento</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_crack</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_termite04"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_crack"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Cupim</dcterms:title>
+        >Rachadura</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_sapoozing</oslc:name>
+        <oslc:name>ms_mechinjury03</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_sapoozing"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_mechinjury03"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <oslc:defaultValue>false</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Exsudação de Seiva</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_sitesuitability</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_sitesuitability"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Adequação do Canteiro</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <spi:scale>2</spi:scale>
-        <oslc:name>ms_dry</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_dry"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Seco (%)</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_fungi01</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fungi01"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Fungos</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_ant03</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_ant03"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Formiga Carpinteira</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>ms_wall</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_wall"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <oslc:defaultValue>false</oslc:defaultValue>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Muro</dcterms:title>
+        >Injúria Mecânica</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -946,13 +283,446 @@
     </oslc:property>
     <oslc:property>
       <oslc:Property>
-        <oslc:name>ms_inadequatepruning</oslc:name>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>ms_assetnum</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_inadequatepruning"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_assetnum"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>12</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Ativo</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_comments</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_comments"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>255</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Observações</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <spi:scale>2</spi:scale>
+        <oslc:name>ms_hollow01</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_hollow01"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Oco (%)</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_tranplante</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_tranplante"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <oslc:defaultValue>false</oslc:defaultValue>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Poda Inadequada</dcterms:title>
+        >Transplante</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_termite03</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_termite03"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Cupim</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_cropped</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_cropped"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Cortada</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_sitesuitability</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_sitesuitability"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Adequação do Canteiro</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_postage</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_postage"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Porte</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <spi:scale>2</spi:scale>
+        <oslc:name>ms_hollow03</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_hollow03"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Oco (%)</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_tvehicle</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_tvehicle"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Trânsito de veículos/Pedestres</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_planting01</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_planting01"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Plantio</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_fruits</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fruits"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Frutos</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <spi:scale>2</spi:scale>
+        <oslc:name>ms_dry</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_dry"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Seco (%)</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_prioritylevel</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_prioritylevel"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Nível de Prioridade</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_apparentdamage03</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_apparentdamage03"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>3</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Dano Aparente</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_ant03</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_ant03"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Formiga Carpinteira</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_mechinjury01</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_mechinjury01"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Injúria Mecânica</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_fungi03</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fungi03"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Fungos</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_uncup</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_uncup"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Copa Desequilibrada</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_lamppost</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_lamppost"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Poste</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_telecommunic</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_telecommunic"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Telecomunicações</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <spi:scale>2</spi:scale>
+        <oslc:name>ms_hollow04</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_hollow04"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Oco (%)</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_active</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_active"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Laudo Ativo</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_changedate</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_changedate"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <oslc:defaultValue>&amp;SYSDATE&amp;</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Modificado Em</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_mechinjury02</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_mechinjury02"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Injúria Mecânica</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_badformation</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_badformation"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Má-formação</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_inspectionbox</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_inspectionbox"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Caixa de Inspeção</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_transitplates</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_transitplates"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Placas de Trânsito</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_ant01</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_ant01"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Formiga Carpinteira</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_createdate</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_createdate"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <oslc:defaultValue>&amp;SYSDATE&amp;</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Data de Criação</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_mechinjury04</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_mechinjury04"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Injúria Mecânica</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_postwallbuilding</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_postwallbuilding"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Edificações/Muro/Poste</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_wall</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_wall"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Muro</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_termite04</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_termite04"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Cupim</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_adequacy</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_adequacy"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Adequação</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_exposed</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_exposed"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Exposto</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_fungi01</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fungi01"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Fungos</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_drills04</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_drills04"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Brocas</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_enddate</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_enddate"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Validade</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_apparentdamage01</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_apparentdamage01"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>3</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Dano Aparente</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_sapoozing</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_sapoozing"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Exsudação de Seiva</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -964,6 +734,236 @@
         <oslc:maxSize>3</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
         >Dano Aparente</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_cleaning</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_cleaning"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Limpeza</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_lighting</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_lighting"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Iluminação</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_ant04</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_ant04"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Formiga Carpinteira</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_fungi04</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fungi04"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Fungos</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_interference01</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_interference01"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>3</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Interferência</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_termite01</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_termite01"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Cupim</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_version</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_version"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <oslc:defaultValue>1</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Versão</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_physicalbarrier</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_physicalbarrier"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Barreira Fisica</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_busstop</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_busstop"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Ponto de Ônibus</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <spi:pkIndex>1</spi:pkIndex>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#bigint"/>
+        <oslc:name>ms_arborptid</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_arborptid"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Id do Registro</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_todonothing</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_todonothing"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Nada a fazer</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_inadequatepruning</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_inadequatepruning"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Poda Inadequada</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_drills01</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_drills01"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Brocas</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_ant02</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_ant02"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Formiga Carpinteira</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_corrective</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_corrective"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Corretiva</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_fungi02</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_fungi02"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Fungos</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_suppression</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_suppression"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Supressão</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_monitoring</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_monitoring"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Monitoramento</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_senescence</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_senescence"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Senescência</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>ms_wonum</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_wonum"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>20</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Ordem de Serviço</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>ms_coilfolded</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#ms_coilfolded"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <oslc:defaultValue>false</oslc:defaultValue>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Dobrada/Enovelada</dcterms:title>
       </oslc:Property>
     </oslc:property>
   </oslc:ResourceShape>

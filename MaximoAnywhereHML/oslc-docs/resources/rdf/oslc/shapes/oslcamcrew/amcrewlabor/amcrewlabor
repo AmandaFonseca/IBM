@@ -3,18 +3,19 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:oslc="http://open-services.net/ns/core#"
     xmlns:spi="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#">
-  <oslc:ResourceShape rdf:about="https://bvtsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcamcrew/amcrewlabor">
+  <oslc:ResourceShape rdf:about="https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/shapes/oslcamcrew/amcrewlabor">
     <oslc:describes rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#AmcrewAmcrewLabor"/>
     <oslc:property>
       <oslc:Property>
+        <spi:pkIndex>3</spi:pkIndex>
         <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>craft</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#craft"/>
+        <oslc:name>position</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#position"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>8</oslc:maxSize>
+        <oslc:maxSize>20</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Categoria</dcterms:title>
+        >Cargo</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -32,23 +33,13 @@
     <oslc:property>
       <oslc:Property>
         <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>vendor</oslc:name>
+        <oslc:name>skilllevel</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#vendor"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#skilllevel"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>25</oslc:maxSize>
+        <oslc:maxSize>15</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Fornecedor</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:name>enddate</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#enddate"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Data de Encerramento</dcterms:title>
+        >Nível de Qualificação</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -59,31 +50,6 @@
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
         >Data Efetiva</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <spi:pkIndex>3</spi:pkIndex>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>position</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Exactly-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#position"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>20</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Cargo</dcterms:title>
-      </oslc:Property>
-    </oslc:property>
-    <oslc:property>
-      <oslc:Property>
-        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>calnum</oslc:name>
-        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#calnum"/>
-        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>8</oslc:maxSize>
-        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Calendário</dcterms:title>
       </oslc:Property>
     </oslc:property>
     <oslc:property>
@@ -101,16 +67,15 @@
     <oslc:property>
       <oslc:Property>
         <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
-        <oslc:name>skilllevel</oslc:name>
+        <oslc:name>calnum</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
-        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#skilllevel"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#calnum"/>
         <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <oslc:maxSize>15</oslc:maxSize>
+        <oslc:maxSize>8</oslc:maxSize>
         <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
-        >Nível de Qualificação</dcterms:title>
+        >Calendário</dcterms:title>
       </oslc:Property>
     </oslc:property>
-    <oslc:name>Amcrew</oslc:name>
     <oslc:property>
       <oslc:Property>
         <spi:pkIndex>4</spi:pkIndex>
@@ -126,6 +91,18 @@
     <oslc:property>
       <oslc:Property>
         <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>craft</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#craft"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>8</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Categoria</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
         <oslc:name>shiftnum</oslc:name>
         <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
         <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#shiftnum"/>
@@ -135,5 +112,28 @@
         >Turno</dcterms:title>
       </oslc:Property>
     </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:name>enddate</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#enddate"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Data de Encerramento</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:property>
+      <oslc:Property>
+        <oslc:usage rdf:resource="http://jazz.net/ns/ism/datatypes/smarter_physical_infrastructure#upper"/>
+        <oslc:name>vendor</oslc:name>
+        <oslc:occurs rdf:resource="http://open-services.net/ns/core#Zero-or-one"/>
+        <oslc:propertyDefinition rdf:resource="http://jazz.net/ns/ism/asset/smarter_physical_infrastructure#vendor"/>
+        <oslc:valueType rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <oslc:maxSize>25</oslc:maxSize>
+        <dcterms:title rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"
+        >Fornecedor</dcterms:title>
+      </oslc:Property>
+    </oslc:property>
+    <oslc:name>Amcrew</oslc:name>
   </oslc:ResourceShape>
 </rdf:RDF>

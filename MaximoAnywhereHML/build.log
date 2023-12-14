@@ -1,4 +1,4 @@
-     [echo] 2023-10-27 15:39:19> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
+     [echo] 2023-12-13 19:18:53> Currently, the build is configured to not check for updates because the build.update.check.enabled=false property has been set in the build.properties file.
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -21,10 +21,10 @@ Override ignored for property "globalization.use.mock"
 Override ignored for property "update.artifact.timestamps"
 Override ignored for property "adapter.connection.protocol"
 Override ignored for property "config.dir"
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/build-taskdef.xml
-parsing buildfile jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/build-taskdef.xml
+parsing buildfile jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
 Trying to override old definition of datatype antlib:org.apache.ivy.ant:settings
 Trying to override old definition of task antlib:org.apache.ivy.ant:resources
 Trying to override old definition of task antlib:org.apache.ivy.ant:configure
@@ -91,7 +91,7 @@ Overriding previous definition of reference to ant.projectHelper
 Override ignored for property "appsToBuild"
 Override ignored for property "isWindows"
 Property "env.JAVA_HOME" has not been set
-[antcallback] Entering C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml...
+[antcallback] Entering C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml...
 Build sequence for target(s) `init' is [init]
 Complete build sequence is [init, pull-rdfs-from-server, Application Utils Script.test, zip-upload-all-apps, -update-common-messages, -update-inspection, zip-all-apps, restart-liberty, -zip-app, -bvt-project-exists, -update-buildtimestamp, -update-config-authconfig, test, process_bvt_scripts_all, -zip-app-upload, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
 
@@ -100,39 +100,39 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-10-27 15:39:20> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-12-13 19:18:53> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
 Override ignored for property "si.adminmode"
 Override ignored for property "si.auth.sso.isLTPA"
       [get] Getting: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
-      [get] To: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\.maximo-url-test
+      [get] To: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\.maximo-url-test
       [get] https://hsmgimax.prefeitura.sp.gov.br:443/maximo moved to https://hsmgimax.prefeitura.sp.gov.br/maximo/
       [get] https://hsmgimax.prefeitura.sp.gov.br/maximo/ moved to https://hsmgimax.prefeitura.sp.gov.br/maximo/ui/maximo.jsp
       [get] https://hsmgimax.prefeitura.sp.gov.br/maximo/ui/maximo.jsp moved to https://hsmgimax.prefeitura.sp.gov.br/maximo/webclient/login/login.jsp?appservauth=true
-init:  duration 1 second
-[antcallback] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
+init:  duration 0 seconds
+[antcallback] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml.
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-10-27 15:39:22> Java version was checked.
-verify-compatibility:  duration 2 seconds
-      [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-system-verification.xml.
+     [echo] 2023-12-13 19:18:54> Java version was checked.
+verify-compatibility:  duration 0 seconds
+      [ant] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-system-verification.xml.
 [available] Found directory: build\managed
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-10-27 15:39:22> maximo anywhere platform is already installed.
-verify-environment-compatibility:  duration 2 seconds
-  [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-  [antcall] calling target(s) [init] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/build.xml
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
+     [echo] 2023-12-13 19:18:54> maximo anywhere platform is already installed.
+verify-environment-compatibility:  duration 0 seconds
+  [antcall] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml.
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+  [antcall] calling target(s) [init] in build file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/build.xml
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/util.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/util.xml
  [macrodef] creating macro  echotimestamp
 Overriding previous definition of reference to ant.projectHelper
 Override ignored for property "ant.file.basename"
@@ -158,10 +158,10 @@ Override ignored for property "globalization.use.mock"
 Override ignored for property "update.artifact.timestamps"
 Override ignored for property "adapter.connection.protocol"
 Override ignored for property "config.dir"
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/build-taskdef.xml
-parsing buildfile jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/build-taskdef.xml
+parsing buildfile jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
 Trying to override old definition of datatype antlib:org.apache.ivy.ant:settings
 Trying to override old definition of task antlib:org.apache.ivy.ant:resources
 Trying to override old definition of task antlib:org.apache.ivy.ant:configure
@@ -227,18 +227,18 @@ Trying to override old definition of task for
 Overriding previous definition of reference to ant.projectHelper
 Override ignored for property "appsToBuild"
 Property "env.JAVA_HOME" has not been set
-      [ant] Entering C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml...
+      [ant] Entering C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml...
 Build sequence for target(s) `zip-all-apps' is [zip-all-apps]
 Complete build sequence is [zip-all-apps, pull-rdfs-from-server, Application Utils Script.test, zip-upload-all-apps, -update-common-messages, -update-inspection, restart-liberty, -zip-app, -bvt-project-exists, init, -update-buildtimestamp, -update-config-authconfig, test, process_bvt_scripts_all, -zip-app-upload, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
 
 zip-all-apps:
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-  [antcall] calling target(s) [-zip-app] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/anywhere-apps-builder.xml
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+  [antcall] calling target(s) [-zip-app] in build file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/anywhere-apps-builder.xml
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/util.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/util.xml
  [macrodef] creating macro  echotimestamp
 Overriding previous definition of reference to ant.projectHelper
 Override ignored for property "ant.file.basename"
@@ -264,10 +264,10 @@ Override ignored for property "globalization.use.mock"
 Override ignored for property "update.artifact.timestamps"
 Override ignored for property "adapter.connection.protocol"
 Override ignored for property "config.dir"
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/build-taskdef.xml
-parsing buildfile jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/build-taskdef.xml
+parsing buildfile jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
 Trying to override old definition of datatype antlib:org.apache.ivy.ant:settings
 Trying to override old definition of task antlib:org.apache.ivy.ant:resources
 Trying to override old definition of task antlib:org.apache.ivy.ant:configure
@@ -344,18 +344,18 @@ Override ignored for property "appserver.was.profile"
 Override ignored for property "appserver.was85liberty.serverInstance"
 Build sequence for target(s) `-zip-app' is [-zip-app]
 Complete build sequence is [-zip-app, pull-rdfs-from-server, Application Utils Script.test, zip-upload-all-apps, -update-common-messages, -update-inspection, zip-all-apps, restart-liberty, -bvt-project-exists, init, -update-buildtimestamp, -update-config-authconfig, test, process_bvt_scripts_all, -zip-app-upload, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
-  [antcall] Entering C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml...
+  [antcall] Entering C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml...
 Build sequence for target(s) `-zip-app' is [-zip-app]
 Complete build sequence is [-zip-app, pull-rdfs-from-server, Application Utils Script.test, zip-upload-all-apps, -update-common-messages, -update-inspection, zip-all-apps, restart-liberty, -bvt-project-exists, init, -update-buildtimestamp, -update-config-authconfig, test, process_bvt_scripts_all, -zip-app-upload, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
 
 -zip-app:
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-  [antcall] calling target(s) [-update-buildtimestamp] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/anywhere-apps-builder.xml
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+  [antcall] calling target(s) [-update-buildtimestamp] in build file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/anywhere-apps-builder.xml
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/util.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/util.xml
  [macrodef] creating macro  echotimestamp
 Overriding previous definition of reference to ant.projectHelper
 Override ignored for property "ant.file.basename"
@@ -381,10 +381,10 @@ Override ignored for property "globalization.use.mock"
 Override ignored for property "update.artifact.timestamps"
 Override ignored for property "adapter.connection.protocol"
 Override ignored for property "config.dir"
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/build-taskdef.xml
-parsing buildfile jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/build-taskdef.xml
+parsing buildfile jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
 Trying to override old definition of datatype antlib:org.apache.ivy.ant:settings
 Trying to override old definition of task antlib:org.apache.ivy.ant:resources
 Trying to override old definition of task antlib:org.apache.ivy.ant:configure
@@ -461,7 +461,7 @@ Override ignored for property "appserver.was.profile"
 Override ignored for property "appserver.was85liberty.serverInstance"
 Build sequence for target(s) `-update-buildtimestamp' is [-update-buildtimestamp]
 Complete build sequence is [-update-buildtimestamp, pull-rdfs-from-server, Application Utils Script.test, zip-upload-all-apps, -update-common-messages, -update-inspection, zip-all-apps, restart-liberty, -zip-app, -bvt-project-exists, init, -update-config-authconfig, test, process_bvt_scripts_all, -zip-app-upload, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
-  [antcall] Entering C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml...
+  [antcall] Entering C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml...
 Build sequence for target(s) `-update-buildtimestamp' is [-update-buildtimestamp]
 Complete build sequence is [-update-buildtimestamp, pull-rdfs-from-server, Application Utils Script.test, zip-upload-all-apps, -update-common-messages, -update-inspection, zip-all-apps, restart-liberty, -zip-app, -bvt-project-exists, init, -update-config-authconfig, test, process_bvt_scripts_all, -zip-app-upload, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
 
@@ -469,68 +469,75 @@ Complete build sequence is [-update-buildtimestamp, pull-rdfs-from-server, Appli
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-10-27 15:39:30> Updating C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina About Build Time Panel
+     [echo] 2023-12-13 19:19:12> Updating C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro About Build Time Panel
 [available] Found: version.txt
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
 Override ignored for property "core.build.datetime"
 Override ignored for property "base.build.datetime"
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\ar\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\cs\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\da\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\de\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\en-gb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\en-us\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\en\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\es\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\fi\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\fr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\hr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\hu\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\it\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\ja\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\ko\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\nb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\nl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\pl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\pt\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\ru\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\sk\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\sl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\sv\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\zh-tw\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\application\translation\nls\zh\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\cs\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\da\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\de\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\en-gb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\en-us\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\en\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\es\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\fi\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\fr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\hr\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\hu\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\it\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\ja\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\ko\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\nb\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\nl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\pl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\pt\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\ru\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\sk\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\sl\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\sv\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\zh-tw\artifact.js' by line.
-[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina\common\js\generated\application\translation\nls\zh\artifact.js' by line.
--update-buildtimestamp:  duration 2 seconds
-  [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-   [delete] Deleting: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZUsina.zip
-      [zip] Building zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZUsina.zip
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\ar\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\cs\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\da\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\de\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\en-gb\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\en-us\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\en\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\es\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\fi\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\fr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\hr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\hu\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\it\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\ja\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\ko\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\nb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\nl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\pl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\pt\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\ru\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\sk\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\sl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\sv\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\zh-tw\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\application\translation\nls\zh\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\cs\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\da\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\de\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\en-gb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\en-us\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\en\artifact.js' by line.
+[replaceregexp] File has changed; saving the updated file
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\es\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\fi\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\fr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\hr\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\hu\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\it\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\ja\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\ko\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\nb\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\nl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\pl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\pt\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\ru\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\sk\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\sl\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\sv\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\zh-tw\artifact.js' by line.
+[replaceregexp] Replacing pattern '@build@",' with '20200219_095840-0500 [202002190944]",' in 'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro\common\js\generated\application\translation\nls\zh\artifact.js' by line.
+-update-buildtimestamp:  duration 1 second
+  [antcall] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml.
+   [delete] Deleting: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\bin\SGZAterro.zip
+      [zip] Building zip: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\bin\SGZAterro.zip
       [zip] adding directory css/
       [zip] adding directory idx/
       [zip] adding directory idx/mobile/
@@ -984,8 +991,15 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/images/headerIcons.png
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/main.css
       [zip] adding entry idx/mobile/themes/oneui_ios/oneui_ios.css
+      [zip] adding entry images/mdpi/Logo_SGZ_Aterro.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_Descarte.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_H_Aterro.png
+      [zip] adding entry images/mdpi/Logo_SGZ_H_Aterro.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_H_Descarte.svg
       [zip] adding entry images/mdpi/Logo_SGZ_H_Usina.svg
       [zip] adding entry images/mdpi/Logo_SGZ_Usina.svg
+      [zip] adding entry images/mdpi/Use-Current-Location.png
+      [zip] adding entry images/mdpi/Use-Current-Location.svg
       [zip] adding entry images/mdpi/acBtn_createNew.png
       [zip] adding entry images/mdpi/acBtn_createNew.svg
       [zip] adding entry images/mdpi/acBtn_viewList.png
@@ -1005,6 +1019,10 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry images/mdpi/action_timer_OFF.svg
       [zip] adding entry images/mdpi/action_timer_ON.png
       [zip] adding entry images/mdpi/app_icon_main.svg
+      [zip] adding entry images/mdpi/calibrationpoint_critical_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_none_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_normal_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_warning_status.png
       [zip] adding entry images/mdpi/download-ok.png
       [zip] adding entry images/mdpi/header_addCrewLabor_OFF.png
       [zip] adding entry images/mdpi/header_addCrewLabor_ON.png
@@ -1033,11 +1051,38 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry images/mdpi/spinner.gif
       [zip] adding entry images/mdpi/statusicons/AG_CARREG.png
       [zip] adding entry images/mdpi/statusicons/AG_CARREG.svg
+      [zip] adding entry images/mdpi/statusicons/AG_DESCARTE.png
+      [zip] adding entry images/mdpi/statusicons/APPR.png
+      [zip] adding entry images/mdpi/statusicons/APPR.svg
+      [zip] adding entry images/mdpi/statusicons/CAN.png
+      [zip] adding entry images/mdpi/statusicons/CAN.svg
       [zip] adding entry images/mdpi/statusicons/CARREGADO.png
       [zip] adding entry images/mdpi/statusicons/CARREGADO.svg
       [zip] adding entry images/mdpi/statusicons/CARREG_INC.svg
       [zip] adding entry images/mdpi/statusicons/CLOSE.png
       [zip] adding entry images/mdpi/statusicons/CLOSE.svg
+      [zip] adding entry images/mdpi/statusicons/COMP.png
+      [zip] adding entry images/mdpi/statusicons/COMP.svg
+      [zip] adding entry images/mdpi/statusicons/HISTEDIT.png
+      [zip] adding entry images/mdpi/statusicons/HISTEDIT.svg
+      [zip] adding entry images/mdpi/statusicons/INPRG.png
+      [zip] adding entry images/mdpi/statusicons/INPRG.svg
+      [zip] adding entry images/mdpi/statusicons/NOVO.png
+      [zip] adding entry images/mdpi/statusicons/SGZ_Aterro_Aguardando Descarte.png
+      [zip] adding entry images/mdpi/statusicons/SGZ_Aterro_Emergencial.png
+      [zip] adding entry images/mdpi/statusicons/SGZ_Novo.png
+      [zip] adding entry images/mdpi/statusicons/WAPPR.png
+      [zip] adding entry images/mdpi/statusicons/WAPPR.svg
+      [zip] adding entry images/mdpi/statusicons/WMATL.png
+      [zip] adding entry images/mdpi/statusicons/WMATL.svg
+      [zip] adding entry images/mdpi/statusicons/WPCOND.png
+      [zip] adding entry images/mdpi/statusicons/WPCOND.svg
+      [zip] adding entry images/mdpi/statusicons/WSCH.png
+      [zip] adding entry images/mdpi/statusicons/WSCH.svg
+      [zip] adding entry images/mdpi/statusicons/old_AG_DESCARTE.png
+      [zip] adding entry images/mdpi/statusicons/old_novo.png
+      [zip] adding entry images/mdpi/statusicons/old_true.png
+      [zip] adding entry images/mdpi/statusicons/true.png
       [zip] adding entry images/mdpi/xsample.gif
       [zip] adding entry img/logo.png
       [zip] adding entry index.html
@@ -1088,10 +1133,7 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/application/translation/nls/zh-tw/artifact.js
       [zip] adding entry js/application/translation/nls/zh/artifact.js
       [zip] adding entry js/custom/handlers/MSLoginHandler.js
-      [zip] adding entry js/custom/handlers/MSLoginHandler.zip
       [zip] adding entry js/custom/handlers/MSSRDetailHandler.js
-      [zip] adding entry js/custom/handlers/MSSRDetailHandler.zip
-      [zip] adding entry js/custom/handlers/MSSRDetailHandlerbkp.js
       [zip] adding entry js/generated/application/data/ApplicationStoresBuilder.js
       [zip] adding entry js/generated/application/pushNotification/PushNotificationSelfRegistrationGenerated.js
       [zip] adding entry js/generated/application/translation/nls/artifact.js
@@ -1441,7 +1483,6 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/platform/ui/control/css/hdpi.css
       [zip] adding entry js/platform/ui/control/css/large-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/large-portrait-controls.css
-      [zip] adding entry js/platform/ui/control/css/mdpi-Copia.css
       [zip] adding entry js/platform/ui/control/css/mdpi.css
       [zip] adding entry js/platform/ui/control/css/medium-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/medium-portrait-controls.css
@@ -1468,7 +1509,7 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-Thin.woff
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-ThinItalic.woff
       [zip] adding entry js/platform/ui/control/css/skin/skin2015.css
-      [zip] adding entry js/platform/ui/control/css/skin/skin2018-Copia.css
+      [zip] adding entry js/platform/ui/control/css/skin/skin2018 - Copia.css
       [zip] adding entry js/platform/ui/control/css/skin/skin2018.css
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/bee-empty.svg
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/checked-icon.svg
@@ -2446,19 +2487,19 @@ Override ignored for property "base.build.datetime"
       [zip] adding entry dojo/resources/blank.gif
       [zip] adding entry ol.js
       [zip] adding entry winstore-jscompat.js
--zip-app:  duration 39 seconds
-  [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-zip-all-apps:  duration 39 seconds
-      [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-all-gen:  duration 39 seconds
-  [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-  [antcall] calling target(s) [all-deploy] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/build.xml
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
+-zip-app:  duration 10 seconds
+  [antcall] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml.
+zip-all-apps:  duration 10 seconds
+      [ant] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml.
+all-gen:  duration 10 seconds
+  [antcall] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml.
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+  [antcall] calling target(s) [all-deploy] in build file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/build.xml
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/util.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/util.xml
  [macrodef] creating macro  echotimestamp
 Overriding previous definition of reference to ant.projectHelper
 Override ignored for property "ant.file.basename"
@@ -2484,10 +2525,10 @@ Override ignored for property "globalization.use.mock"
 Override ignored for property "update.artifact.timestamps"
 Override ignored for property "adapter.connection.protocol"
 Override ignored for property "config.dir"
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/build-taskdef.xml
-parsing buildfile jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/build-taskdef.xml
+parsing buildfile jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
 Trying to override old definition of datatype antlib:org.apache.ivy.ant:settings
 Trying to override old definition of task antlib:org.apache.ivy.ant:resources
 Trying to override old definition of task antlib:org.apache.ivy.ant:configure
@@ -2553,7 +2594,7 @@ Trying to override old definition of task for
 Overriding previous definition of reference to ant.projectHelper
 Override ignored for property "appsToBuild"
 Property "env.JAVA_HOME" has not been set
-      [ant] Entering C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml...
+      [ant] Entering C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml...
 Build sequence for target(s) `zip-upload-all-apps' is [zip-upload-all-apps]
 Complete build sequence is [zip-upload-all-apps, pull-rdfs-from-server, Application Utils Script.test, -update-common-messages, -update-inspection, zip-all-apps, restart-liberty, -zip-app, -bvt-project-exists, init, -update-buildtimestamp, -update-config-authconfig, test, process_bvt_scripts_all, -zip-app-upload, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
 
@@ -2564,21 +2605,21 @@ Overriding previous definition of property "user_pwd"
 Override ignored for property "DSTAMP"
 Override ignored for property "TSTAMP"
 Override ignored for property "TODAY"
-     [echo] 2023-10-27 15:40:11> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
+     [echo] 2023-12-13 19:19:23> Trying to connect to Maximo: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
 Override ignored for property "si.auth.sso.identity.header"
 Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
 Override ignored for property "si.adminmode"
 Override ignored for property "si.auth.sso.isLTPA"
       [get] Getting: https://hsmgimax.prefeitura.sp.gov.br:443/maximo
-      [get] To: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\.maximo-url-test
+      [get] To: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\.maximo-url-test
       [get] https://hsmgimax.prefeitura.sp.gov.br:443/maximo moved to https://hsmgimax.prefeitura.sp.gov.br/maximo/
       [get] https://hsmgimax.prefeitura.sp.gov.br/maximo/ moved to https://hsmgimax.prefeitura.sp.gov.br/maximo/ui/maximo.jsp
       [get] https://hsmgimax.prefeitura.sp.gov.br/maximo/ui/maximo.jsp moved to https://hsmgimax.prefeitura.sp.gov.br/maximo/webclient/login/login.jsp?appservauth=true
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-      [ant] calling target(s) [allApps] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\admin-config-loader.xml
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\admin-config-loader.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/admin-config-loader.xml
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+      [ant] calling target(s) [allApps] in build file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\admin-config-loader.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\admin-config-loader.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/admin-config-loader.xml
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -2638,15 +2679,15 @@ Override ignored for property "ant.file.basename"
 allApps:
 
 -process-app-artifact:
-     [echo] processing app C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\apps\SGZUsina
+     [echo] processing app C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\apps\SGZAterro
 
 admin-loader:
      [java] authenticate() send request to get HttpSession cookie. 
      [java] 
-     [java] Get https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZUsina%22
+     [java] Get https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZAterro%22
      [java] authenticate() send request to get HttpSession cookie. 
      [java] 
-     [java] Get https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZUsina%22
+     [java] Get https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/oslcanywhereapp/?_lid=maxadmin&_lpwd=********&oslc.where=spi%3Aappid%3D%22SGZAterro%22
      [java] App entry already exists on maximo.
      [echo] FORM authentication
      [exec] Note: Unnecessary use of -X or --request, POST is already inferred.
@@ -2655,7 +2696,7 @@ admin-loader:
      [exec] 
      [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 35.198.61.197:443...* Connected to hsmgimax.prefeitura.sp.gov.br (35.198.61.197) port 443
      [exec] * schannel: disabled automatic use of client certificate
-     [exec] * ALPN: offers http/1.1
+     [exec] * ALPN: curl offers http/1.1
      [exec] * ALPN: server did not agree on a protocol. Uses default.
      [exec] * using HTTP/1.x
      [exec] > POST /maximo/oslc/login/j_security_check?j_username=maxadmin&j_password=P@ssword01 HTTP/1.1
@@ -2667,30 +2708,30 @@ admin-loader:
      [exec] > 
      [exec] } [43 bytes data]
      [exec] HTTP/1.1 302 Found
-     [exec] Date: Fri, 27 Oct 2023 18:40:17 GMT
+     [exec] Date: Wed, 13 Dec 2023 22:12:00 GMT
      [exec] X-Powered-By: Servlet/3.1
      [exec] X-Frame-Options: SAMEORIGIN
      [exec] Location: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
      [exec] Content-Length: 0
-     [exec] Set-Cookie: LtpaToken2=o5U22jU2eIryfmdqEPLq0XlbkXZYUTu9mrY3ikx0uFoAl9Ca6ntGw7kVzXSomCnlxeOaNjpPAo9/XvQOkyEx0FYbwZKie/zsz+azeOqaK9SX95QeeVmz0Z33k/IxLIZlp7+zO1/9K91hwghJu/mxlaLGJfzI3UK3ymtzLePuavfF4q4OSeixzQtTK3kiz1zoc29rbOCRMU/nZ27F1uFRVsZD+AoR3uLcgcK4J+uG6P387LXtw4EZmgHRdA/WvIACqXKaH8MsY4GRPf0nVJdJjRolmO6xptTn34AVDRyk7F8cXfgsEQI8cTB9iK5KnubsUwyKlOS4M9zZsfVa4UQJ31U71x+niFGymgmvIBG8mJFkqaD7MCYxqFiUXxU0Q3w+AEP0acBmGU2evCMJNoj7ZpVQsfj7IenSK/YAc3j5ZJ0jUbjc+g2dlm9sUO/hoS8D/x36kjLbEy81Uli1J5+0i6fZCF2A3dWJpyka5RtW60YqhT+LCkQyg//W8Y2B3rUdo9F6TJ4fWAiPbq2VNxuQGKyHOybzzYk4pU5SHlw4y+6jf/wB+RZeEKX7WraARIMoqBOQltDJPpRQGFE0ibltwR3GUB8q+UTl4Jqf1iT44D/w3ghj9tnHL+n2Ry/Q4KNiBOFmdWBb0m2+2+nNEGmKJAVx1PjYibDf1mRKJx/Grm7u3jVopyOqyA7rboZecTxmSUTQFYcOtfh1NlqXKZLuRvFfdPzMPoiQghHKmtDDW/ciPb1xJQZfgsMOnxSV/FXvNcwuEfo7Tg5NO3R2aXc4Tg==; Path=/; HttpOnly
+     [exec] Set-Cookie: LtpaToken2=q4YiYotoNE8KoYbdck7QsEqGNGlEgS2eT7/XnfrHWjUZf/qrtVKrDx6bQWCOh0FRaj9B0H1LQ+cUN1qVlWeTo9RWHhTFo95wIz0z/rjg3KAnsujbiM1HThjYO4uXwslo3pV5Kl2t2ZIWziBzJ12Tpqkuv3UmY1rVi0f0AXhFsdOTLKkIT2BKuNT6bJJaaNROTMTbYJWeU1tcjpUZjDOJN58LpYTrKy622fXybtiKMLUsUoVOmEm/MZxjscTPR619A6oU+wNO6dUSqmYMg1sNVoI0aCf+FZb1KnHf1daD2FOFL6H+hJXL9xgsM0SrzgyLZYHjbXc40RjlpIACi15IlwAzSRUFO7+hz4lmw6dwGlmW/Gzd+H3kLgN0xtTzizi05qMdVJ6ta3YCkuzPD8iEHWSM0eKANvnhRPy53F+rz0cdIPtrnrszNKVrLFBDKE+XKHvHYgYddkHSK3q73ny1BOOuEZecIt82XBNQz0SI3QhcezzVQfYcNF/2T/7LpY2VLCP0PubqZlEQEbkWHInvUawgG8qGJVQOPEoLVTApzhSWyeW5WZQzjfwSoZ3kqWIA2mzqVNFVn6sOra00HNBj4knmqvwHKUR62EejLDLa1QzWM5nRtoiAOiUG7fh8VIUEsnDQSum5PuYughRDVbWs533eGuQ5b3gI2ciAZR3/lYXIxyQW6O6idRkz1/vcmwKnjbO3/RMRwDjsroTATQFQAXqoN6okjCfjczyeI5NaKSAZbxXgCO7R0mGv3Pir77d1SBvEg/bYhxSnNZ1VA8dWWg==; Path=/; HttpOnly
      [exec] Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] Content-Language: c.u-US
      [exec] 
      [exec] < HTTP/1.1 302 Found
-     [exec] < Date: Fri, 27 Oct 2023 18:40:17 GMT
+     [exec] < Date: Wed, 13 Dec 2023 22:12:00 GMT
      [exec] < X-Powered-By: Servlet/3.1
      [exec] < X-Frame-Options: SAMEORIGIN
      [exec] < Location: https://hsmgimax.prefeitura.sp.gov.br/maximo/oslc/login/
      [exec] < Content-Length: 0
-     [exec] * Added cookie LtpaToken2="o5U22jU2eIryfmdqEPLq0XlbkXZYUTu9mrY3ikx0uFoAl9Ca6ntGw7kVzXSomCnlxeOaNjpPAo9/XvQOkyEx0FYbwZKie/zsz+azeOqaK9SX95QeeVmz0Z33k/IxLIZlp7+zO1/9K91hwghJu/mxlaLGJfzI3UK3ymtzLePuavfF4q4OSeixzQtTK3kiz1zoc29rbOCRMU/nZ27F1uFRVsZD+AoR3uLcgcK4J+uG6P387LXtw4EZmgHRdA/WvIACqXKaH8MsY4GRPf0nVJdJjRolmO6xptTn34AVDRyk7F8cXfgsEQI8cTB9iK5KnubsUwyKlOS4M9zZsfVa4UQJ31U71x+niFGymgmvIBG8mJFkqaD7MCYxqFiUXxU0Q3w+AEP0acBmGU2evCMJNoj7ZpVQsfj7IenSK/YAc3j5ZJ0jUbjc+g2dlm9sUO/hoS8D/x36kjLbEy81Uli1J5+0i6fZCF2A3dWJpyka5RtW60YqhT+LCkQyg//W8Y2B3rUdo9F6TJ4fWAiPbq2VNxuQGKyHOybzzYk4pU5SHlw4y+6jf/wB+RZeEKX7WraARIMoqBOQltDJPpRQGFE0ibltwR3GUB8q+UTl4Jqf1iT44D/w3ghj9tnHL+n2Ry/Q4KNiBOFmdWBb0m2+2+nNEGmKJAVx1PjYibDf1mRKJx/Grm7u3jVopyOqyA7rboZecTxmSUTQFYcOtfh1NlqXKZLuRvFfdPzMPoiQghHKmtDDW/ciPb1xJQZfgsMOnxSV/FXvNcwuEfo7Tg5NO3R2aXc4Tg==" for domain hsmgimax.prefeitura.sp.gov.br, path /, expire 0
-     [exec] < Set-Cookie: LtpaToken2=o5U22jU2eIryfmdqEPLq0XlbkXZYUTu9mrY3ikx0uFoAl9Ca6ntGw7kVzXSomCnlxeOaNjpPAo9/XvQOkyEx0FYbwZKie/zsz+azeOqaK9SX95QeeVmz0Z33k/IxLIZlp7+zO1/9K91hwghJu/mxlaLGJfzI3UK3ymtzLePuavfF4q4OSeixzQtTK3kiz1zoc29rbOCRMU/nZ27F1uFRVsZD+AoR3uLcgcK4J+uG6P387LXtw4EZmgHRdA/WvIACqXKaH8MsY4GRPf0nVJdJjRolmO6xptTn34AVDRyk7F8cXfgsEQI8cTB9iK5KnubsUwyKlOS4M9zZsfVa4UQJ31U71x+niFGymgmvIBG8mJFkqaD7MCYxqFiUXxU0Q3w+AEP0acBmGU2evCMJNoj7ZpVQsfj7IenSK/YAc3j5ZJ0jUbjc+g2dlm9sUO/hoS8D/x36kjLbEy81Uli1J5+0i6fZCF2A3dWJpyka5RtW60YqhT+LCkQyg//W8Y2B3rUdo9F6TJ4fWAiPbq2VNxuQGKyHOybzzYk4pU5SHlw4y+6jf/wB+RZeEKX7WraARIMoqBOQltDJPpRQGFE0ibltwR3GUB8q+UTl4Jqf1iT44D/w3ghj9tnHL+n2Ry/Q4KNiBOFmdWBb0m2+2+nNEGmKJAVx1PjYibDf1mRKJx/Grm7u3jVopyOqyA7rboZecTxmSUTQFYcOtfh1NlqXKZLuRvFfdPzMPoiQghHKmtDDW/ciPb1xJQZfgsMOnxSV/FXvNcwuEfo7Tg5NO3R2aXc4Tg==; Path=/; HttpOnly
+     [exec] * Added cookie LtpaToken2="q4YiYotoNE8KoYbdck7QsEqGNGlEgS2eT7/XnfrHWjUZf/qrtVKrDx6bQWCOh0FRaj9B0H1LQ+cUN1qVlWeTo9RWHhTFo95wIz0z/rjg3KAnsujbiM1HThjYO4uXwslo3pV5Kl2t2ZIWziBzJ12Tpqkuv3UmY1rVi0f0AXhFsdOTLKkIT2BKuNT6bJJaaNROTMTbYJWeU1tcjpUZjDOJN58LpYTrKy622fXybtiKMLUsUoVOmEm/MZxjscTPR619A6oU+wNO6dUSqmYMg1sNVoI0aCf+FZb1KnHf1daD2FOFL6H+hJXL9xgsM0SrzgyLZYHjbXc40RjlpIACi15IlwAzSRUFO7+hz4lmw6dwGlmW/Gzd+H3kLgN0xtTzizi05qMdVJ6ta3YCkuzPD8iEHWSM0eKANvnhRPy53F+rz0cdIPtrnrszNKVrLFBDKE+XKHvHYgYddkHSK3q73ny1BOOuEZecIt82XBNQz0SI3QhcezzVQfYcNF/2T/7LpY2VLCP0PubqZlEQEbkWHInvUawgG8qGJVQOPEoLVTApzhSWyeW5WZQzjfwSoZ3kqWIA2mzqVNFVn6sOra00HNBj4knmqvwHKUR62EejLDLa1QzWM5nRtoiAOiUG7fh8VIUEsnDQSum5PuYughRDVbWs533eGuQ5b3gI2ciAZR3/lYXIxyQW6O6idRkz1/vcmwKnjbO3/RMRwDjsroTATQFQAXqoN6okjCfjczyeI5NaKSAZbxXgCO7R0mGv3Pir77d1SBvEg/bYhxSnNZ1VA8dWWg==" for domain hsmgimax.prefeitura.sp.gov.br, path /, expire 0
+     [exec] < Set-Cookie: LtpaToken2=q4YiYotoNE8KoYbdck7QsEqGNGlEgS2eT7/XnfrHWjUZf/qrtVKrDx6bQWCOh0FRaj9B0H1LQ+cUN1qVlWeTo9RWHhTFo95wIz0z/rjg3KAnsujbiM1HThjYO4uXwslo3pV5Kl2t2ZIWziBzJ12Tpqkuv3UmY1rVi0f0AXhFsdOTLKkIT2BKuNT6bJJaaNROTMTbYJWeU1tcjpUZjDOJN58LpYTrKy622fXybtiKMLUsUoVOmEm/MZxjscTPR619A6oU+wNO6dUSqmYMg1sNVoI0aCf+FZb1KnHf1daD2FOFL6H+hJXL9xgsM0SrzgyLZYHjbXc40RjlpIACi15IlwAzSRUFO7+hz4lmw6dwGlmW/Gzd+H3kLgN0xtTzizi05qMdVJ6ta3YCkuzPD8iEHWSM0eKANvnhRPy53F+rz0cdIPtrnrszNKVrLFBDKE+XKHvHYgYddkHSK3q73ny1BOOuEZecIt82XBNQz0SI3QhcezzVQfYcNF/2T/7LpY2VLCP0PubqZlEQEbkWHInvUawgG8qGJVQOPEoLVTApzhSWyeW5WZQzjfwSoZ3kqWIA2mzqVNFVn6sOra00HNBj4knmqvwHKUR62EejLDLa1QzWM5nRtoiAOiUG7fh8VIUEsnDQSum5PuYughRDVbWs533eGuQ5b3gI2ciAZR3/lYXIxyQW6O6idRkz1/vcmwKnjbO3/RMRwDjsroTATQFQAXqoN6okjCfjczyeI5NaKSAZbxXgCO7R0mGv3Pir77d1SBvEg/bYhxSnNZ1VA8dWWg==; Path=/; HttpOnly
      [exec] < Expires: Thu, 01 Dec 1994 16:00:00 GMT
      [exec] < Cache-Control: no-cache="set-cookie, set-cookie2"
      [exec] < Content-Language: c.u-US
      [exec] < 
      [exec] 
-     [exec] 100    43    0     0  100    43      0    291 --:--:-- --:--:-- --:--:--   302* Connection #0 to host hsmgimax.prefeitura.sp.gov.br left intact
+     [exec] 100    43    0     0  100    43      0    422 --:--:-- --:--:-- --:--:--   430* Connection #0 to host hsmgimax.prefeitura.sp.gov.br left intact
 Override ignored for property "adapter.connection.port"
 Override ignored for property "platformzip.location"
 Override ignored for property "build.target"
@@ -2713,10 +2754,10 @@ Override ignored for property "globalization.use.mock"
 Override ignored for property "update.artifact.timestamps"
 Override ignored for property "adapter.connection.protocol"
 Override ignored for property "config.dir"
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/build-taskdef.xml
-parsing buildfile jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build-taskdef.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/build-taskdef.xml
+parsing buildfile jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml with URI = jar:file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/libs/build/ivy-2.3.0.jar!/org/apache/ivy/ant/antlib.xml from a zip file
 Trying to override old definition of datatype antlib:org.apache.ivy.ant:settings
 Trying to override old definition of task antlib:org.apache.ivy.ant:resources
 Trying to override old definition of task antlib:org.apache.ivy.ant:configure
@@ -2793,7 +2834,7 @@ Override ignored for property "appserver.was.profile"
 Override ignored for property "appserver.was85liberty.serverInstance"
 Build sequence for target(s) `-zip-app-upload' is [-zip-app-upload]
 Complete build sequence is [-zip-app-upload, pull-rdfs-from-server, Application Utils Script.test, zip-upload-all-apps, -update-common-messages, -update-inspection, zip-all-apps, restart-liberty, -zip-app, -bvt-project-exists, init, -update-buildtimestamp, -update-config-authconfig, test, process_bvt_scripts_all, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
-  [antcall] Entering C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml...
+  [antcall] Entering C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml...
 Build sequence for target(s) `-zip-app-upload' is [-zip-app-upload]
 Complete build sequence is [-zip-app-upload, pull-rdfs-from-server, Application Utils Script.test, zip-upload-all-apps, -update-common-messages, -update-inspection, zip-all-apps, restart-liberty, -zip-app, -bvt-project-exists, init, -update-buildtimestamp, -update-config-authconfig, test, process_bvt_scripts_all, -deploy-all-apps, -build-all-apps, , build-and-deploy-all]
 
@@ -2816,9 +2857,9 @@ Override ignored for property "si.platform.context"
 Override ignored for property "si.auth.type"
 Override ignored for property "si.adminmode"
 Override ignored for property "si.auth.sso.isLTPA"
-     [echo] Doing upload of SGZUsina.zip file to https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZUsina&appversion=7.6.4:
+     [echo] Doing upload of SGZAterro.zip file to https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZAterro&appversion=7.6.4:
      [echo] Authentication Type form
-     [echo]  https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZUsina&appversion=7.6.4: 
+     [echo]  https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZAterro&appversion=7.6.4: 
      [echo] FORM UPLOAD
      [exec] Current OS is Windows 10
      [exec] Executing 'curl' with arguments:
@@ -2826,29 +2867,29 @@ Override ignored for property "si.auth.sso.isLTPA"
 '-X'
 'POST'
 '-b'
-'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/uploadcookie.txt'
+'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML/uploadcookie.txt'
 '-c'
-'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/uploadcookie.txt'
+'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML/uploadcookie.txt'
 '-T'
-'C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML/bin/SGZUsina.zip'
-'https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZUsina&appversion=7.6.4:'
+'C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML/bin/SGZAterro.zip'
+'https://hsmgimax.prefeitura.sp.gov.br:443/maximo/oslc/os/OSLCMAXAPPDATA?action=wsmethod:uploadFile&appid=SGZAterro&appversion=7.6.4:'
 
 The ' characters around the executable and arguments are
 not part of the command.
      [exec]   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
      [exec]                                  Dload  Upload   Total   Spent    Left  Speed
      [exec] 
-     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 18 4742k    0     0   18  896k      0  2581k  0:00:01 --:--:--  0:00:01 2597k 89 4742k    0     0   89 4224k      0  3142k  0:00:01  0:00:01 --:--:-- 3145k100 4742k    0     0  100 4742k      0  1898k  0:00:02  0:00:02 --:--:-- 1899k100 4742k    0     0  100 4742k      0  1355k  0:00:03  0:00:03 --:--:-- 1356k100 4742k    0     0  100 4742k      0  1054k  0:00:04  0:00:04 --:--:-- 1054k100 4742k    0     0  100 4742k      0   862k  0:00:05  0:00:05 --:--:--  746k100 4742k    0     0  100 4742k      0   729k  0:00:06  0:00:06 --:--:--  100k100 4742k    0     0  100 4742k      0   632k  0:00:07  0:00:07 --:--:--     0
-     [exec] {"deployeddatetime":"2023-10-27 15:40:25.888"}
-     [exec] 100 4742k  100    47  100 4742k      5   586k  0:00:09  0:00:08  0:00:01    10
- [loadfile] loading C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZUsina.response into property curl.upload.result
- [loadfile] loaded 1091 characters
+     [exec]   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  1 5394k    0     0    1 98304      0  1117k  0:00:04 --:--:--  0:00:04 1129k100 5394k    0     0  100 5394k      0  2606k  0:00:02  0:00:02 --:--:-- 2609k100 5394k    0     0  100 5394k      0  1751k  0:00:03  0:00:03 --:--:-- 1751k100 5394k    0     0  100 5394k      0  1318k  0:00:04  0:00:04 --:--:-- 1318k100 5394k    0     0  100 5394k      0  1056k  0:00:05  0:00:05 --:--:-- 1056k100 5394k    0     0  100 5394k      0   881k  0:00:06  0:00:06 --:--:--  878k100 5394k    0     0  100 5394k      0   756k  0:00:07  0:00:07 --:--:--     0100 5394k    0     0  100 5394k      0   662k  0:00:08  0:00:08 --:--:--     0100 5394k    0     0  100 5394k      0   589k  0:00:09  0:00:09 --:--:--     0100 5394k    0     0  100 5394k      0   531k  0:00:10  0:00:10 --:--:--     0100 5394k    0     0  100 5394k      0   483k  0:00:11  0:00:11 --:--:--     0100 5394k    0     0  100 5394k      0   443k  0:00:12  0:00:12 --:--:--     0100 5394k    0     0  100 5394k      0   409k  0:00:13  0:00:13 --:--:--     0100 5394k    0     0  100 5394k      0   379k  0:00:14  0:00:14 --:--:--     0100 5394k    0     0  100 5394k      0   354k  0:00:15  0:00:15 --:--:--     0100 5394k    0     0  100 5394k      0   332k  0:00:16  0:00:16 --:--:--     0100 5394k    0     0  100 5394k      0   313k  0:00:17  0:00:17 --:--:--     0100 5394k    0     0  100 5394k      0   295k  0:00:18  0:00:18 --:--:--     0100 5394k    0     0  100 5394k      0   280k  0:00:19  0:00:19 --:--:--     0100 5394k    0     0  100 5394k      0   266k  0:00:20  0:00:20 --:--:--     0100 5394k    0     0  100 5394k      0   253k  0:00:21  0:00:21 --:--:--     0100 5394k    0     0  100 5394k      0   242k  0:00:22  0:00:22 --:--:--     0100 5394k    0     0  100 5394k      0   231k  0:00:23  0:00:23 --:--:--     0100 5394k    0     0  100 5394k      0   222k  0:00:24  0:00:24 --:--:--     0100 5394k    0     0  100 5394k      0   213k  0:00:25  0:00:25 --:--:--     0100 5394k    0     0  100 5394k      0   204k  0:00:26  0:00:26 --:--:--     0100 5394k    0     0  100 5394k      0   197k  0:00:27  0:00:27 --:--:--     0100 5394k    0     0  100 5394k      0   190k  0:00:28  0:00:28 --:--:--     0100 5394k    0     0  100 5394k      0   183k  0:00:29  0:00:29 --:--:--     0100 5394k    0     0  100 5394k      0   177k  0:00:30  0:00:30 --:--:--     0100 5394k    0     0  100 5394k      0   171k  0:00:31  0:00:31 --:--:--     0100 5394k    0     0  100 5394k      0   166k  0:00:32  0:00:32 --:--:--     0100 5394k    0     0  100 5394k      0   161k  0:00:33  0:00:33 --:--:--     0100 5394k    0     0  100 5394k      0   156k  0:00:34  0:00:34 --:--:--     0100 5394k    0     0  100 5394k      0   152k  0:00:35  0:00:35 --:--:--     0100 5394k    0     0  100 5394k      0   148k  0:00:36  0:00:36 --:--:--     0100 5394k    0     0  100 5394k      0   144k  0:00:37  0:00:37 --:--:--     0100 5394k    0     0  100 5394k      0   140k  0:00:38  0:00:38 --:--:--     0100 5394k    0     0  100 5394k      0   136k  0:00:39  0:00:39 --:--:--     0
+     [exec] {"deployeddatetime":"2023-12-13 19:12:40.004"}
+     [exec] 100 5394k  100    47  100 5394k      1   133k  0:00:47  0:00:40  0:00:07     9100 5394k  100    47  100 5394k      1   133k  0:00:47  0:00:40  0:00:07    12
+ [loadfile] loading C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\bin\SGZAterro.response into property curl.upload.result
+ [loadfile] loaded 3587 characters
      [echo] Checksum acquired
-     [echo] 2023-10-27 15:40:25.888
-      [zip] SGZUsina.checksum added as SGZUsina.checksum doesn't exist.
+     [echo] 2023-12-13 19:12:40.004
+      [zip] SGZAterro.checksum added as SGZAterro.checksum doesn't exist.
       [zip] No sources found.
-      [zip] Updating zip: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZUsina.zip
-      [zip] adding entry SGZUsina.checksum
+      [zip] Updating zip: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\bin\SGZAterro.zip
+      [zip] adding entry SGZAterro.checksum
       [zip] adding directory css/
       [zip] adding directory dijit/
       [zip] adding directory dijit/nls/
@@ -4106,8 +4147,15 @@ not part of the command.
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/images/headerIcons.png
       [zip] adding entry idx/mobile/themes/oneui_ios/idx/main.css
       [zip] adding entry idx/mobile/themes/oneui_ios/oneui_ios.css
+      [zip] adding entry images/mdpi/Logo_SGZ_Aterro.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_Descarte.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_H_Aterro.png
+      [zip] adding entry images/mdpi/Logo_SGZ_H_Aterro.svg
+      [zip] adding entry images/mdpi/Logo_SGZ_H_Descarte.svg
       [zip] adding entry images/mdpi/Logo_SGZ_H_Usina.svg
       [zip] adding entry images/mdpi/Logo_SGZ_Usina.svg
+      [zip] adding entry images/mdpi/Use-Current-Location.png
+      [zip] adding entry images/mdpi/Use-Current-Location.svg
       [zip] adding entry images/mdpi/acBtn_createNew.png
       [zip] adding entry images/mdpi/acBtn_createNew.svg
       [zip] adding entry images/mdpi/acBtn_viewList.png
@@ -4127,6 +4175,10 @@ not part of the command.
       [zip] adding entry images/mdpi/action_timer_OFF.svg
       [zip] adding entry images/mdpi/action_timer_ON.png
       [zip] adding entry images/mdpi/app_icon_main.svg
+      [zip] adding entry images/mdpi/calibrationpoint_critical_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_none_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_normal_status.png
+      [zip] adding entry images/mdpi/calibrationpoint_warning_status.png
       [zip] adding entry images/mdpi/download-ok.png
       [zip] adding entry images/mdpi/header_addCrewLabor_OFF.png
       [zip] adding entry images/mdpi/header_addCrewLabor_ON.png
@@ -4155,11 +4207,38 @@ not part of the command.
       [zip] adding entry images/mdpi/spinner.gif
       [zip] adding entry images/mdpi/statusicons/AG_CARREG.png
       [zip] adding entry images/mdpi/statusicons/AG_CARREG.svg
+      [zip] adding entry images/mdpi/statusicons/AG_DESCARTE.png
+      [zip] adding entry images/mdpi/statusicons/APPR.png
+      [zip] adding entry images/mdpi/statusicons/APPR.svg
+      [zip] adding entry images/mdpi/statusicons/CAN.png
+      [zip] adding entry images/mdpi/statusicons/CAN.svg
       [zip] adding entry images/mdpi/statusicons/CARREGADO.png
       [zip] adding entry images/mdpi/statusicons/CARREGADO.svg
       [zip] adding entry images/mdpi/statusicons/CARREG_INC.svg
       [zip] adding entry images/mdpi/statusicons/CLOSE.png
       [zip] adding entry images/mdpi/statusicons/CLOSE.svg
+      [zip] adding entry images/mdpi/statusicons/COMP.png
+      [zip] adding entry images/mdpi/statusicons/COMP.svg
+      [zip] adding entry images/mdpi/statusicons/HISTEDIT.png
+      [zip] adding entry images/mdpi/statusicons/HISTEDIT.svg
+      [zip] adding entry images/mdpi/statusicons/INPRG.png
+      [zip] adding entry images/mdpi/statusicons/INPRG.svg
+      [zip] adding entry images/mdpi/statusicons/NOVO.png
+      [zip] adding entry images/mdpi/statusicons/SGZ_Aterro_Aguardando Descarte.png
+      [zip] adding entry images/mdpi/statusicons/SGZ_Aterro_Emergencial.png
+      [zip] adding entry images/mdpi/statusicons/SGZ_Novo.png
+      [zip] adding entry images/mdpi/statusicons/WAPPR.png
+      [zip] adding entry images/mdpi/statusicons/WAPPR.svg
+      [zip] adding entry images/mdpi/statusicons/WMATL.png
+      [zip] adding entry images/mdpi/statusicons/WMATL.svg
+      [zip] adding entry images/mdpi/statusicons/WPCOND.png
+      [zip] adding entry images/mdpi/statusicons/WPCOND.svg
+      [zip] adding entry images/mdpi/statusicons/WSCH.png
+      [zip] adding entry images/mdpi/statusicons/WSCH.svg
+      [zip] adding entry images/mdpi/statusicons/old_AG_DESCARTE.png
+      [zip] adding entry images/mdpi/statusicons/old_novo.png
+      [zip] adding entry images/mdpi/statusicons/old_true.png
+      [zip] adding entry images/mdpi/statusicons/true.png
       [zip] adding entry images/mdpi/xsample.gif
       [zip] adding entry img/logo.png
       [zip] adding entry index.html
@@ -4210,10 +4289,7 @@ not part of the command.
       [zip] adding entry js/application/translation/nls/zh-tw/artifact.js
       [zip] adding entry js/application/translation/nls/zh/artifact.js
       [zip] adding entry js/custom/handlers/MSLoginHandler.js
-      [zip] adding entry js/custom/handlers/MSLoginHandler.zip
       [zip] adding entry js/custom/handlers/MSSRDetailHandler.js
-      [zip] adding entry js/custom/handlers/MSSRDetailHandler.zip
-      [zip] adding entry js/custom/handlers/MSSRDetailHandlerbkp.js
       [zip] adding entry js/generated/application/data/ApplicationStoresBuilder.js
       [zip] adding entry js/generated/application/pushNotification/PushNotificationSelfRegistrationGenerated.js
       [zip] adding entry js/generated/application/translation/nls/artifact.js
@@ -4563,7 +4639,6 @@ not part of the command.
       [zip] adding entry js/platform/ui/control/css/hdpi.css
       [zip] adding entry js/platform/ui/control/css/large-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/large-portrait-controls.css
-      [zip] adding entry js/platform/ui/control/css/mdpi-Copia.css
       [zip] adding entry js/platform/ui/control/css/mdpi.css
       [zip] adding entry js/platform/ui/control/css/medium-landscape-controls.css
       [zip] adding entry js/platform/ui/control/css/medium-portrait-controls.css
@@ -4590,7 +4665,7 @@ not part of the command.
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-Thin.woff
       [zip] adding entry js/platform/ui/control/css/skin/IBMPlexSans-ThinItalic.woff
       [zip] adding entry js/platform/ui/control/css/skin/skin2015.css
-      [zip] adding entry js/platform/ui/control/css/skin/skin2018-Copia.css
+      [zip] adding entry js/platform/ui/control/css/skin/skin2018 - Copia.css
       [zip] adding entry js/platform/ui/control/css/skin/skin2018.css
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/bee-empty.svg
       [zip] adding entry js/platform/ui/control/css/skin/skinIcons/checked-icon.svg
@@ -4764,21 +4839,21 @@ not part of the command.
       [zip] adding entry ol.js
       [zip] adding entry winstore-jscompat.js
       [zip] adding entry worklight.properties
-   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZUsina.checksum
-   [delete] Deleting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\bin\SGZUsina.response
--zip-app-upload:  duration 11 seconds
-  [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-zip-upload-all-apps:  duration 11 seconds
-      [ant] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\anywhere-apps-builder.xml.
-all-deploy:  duration 11 seconds
-  [antcall] Exiting C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml.
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-  [antcall] calling target(s) [show-support-page] in build file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/build.xml
-Project base dir set to: C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML
-Importing file C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\build.xml
+   [delete] Deleting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\bin\SGZAterro.checksum
+   [delete] Deleting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\bin\SGZAterro.response
+-zip-app-upload:  duration 42 seconds
+  [antcall] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml.
+zip-upload-all-apps:  duration 42 seconds
+      [ant] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\anywhere-apps-builder.xml.
+all-deploy:  duration 42 seconds
+  [antcall] Exiting C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml.
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+  [antcall] calling target(s) [show-support-page] in build file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/build.xml
+Project base dir set to: C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML
+Importing file C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml from C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\build.xml
 Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\IBM\Anywhere\MaximoAnywhere\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/MaximoAnywhere/MaximoAnywhereHML/util.xml
+parsing buildfile C:\IBM\Anywhere\ambientes\IBM\MaximoAnywhereHML\util.xml with URI = file:/C:/IBM/Anywhere/ambientes/IBM/MaximoAnywhereHML/util.xml
  [macrodef] creating macro  echotimestamp
 Overriding previous definition of reference to ant.projectHelper
 Override ignored for property "ant.file.basename"
